@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+       thread-count="5">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+
+    <test name="All Endpoints of Opt-Out Email">
+        <classes>
+            <class name="io.rcrm.api.optoutemail.AllEndpointsOfOptOutEmailTest">
+                <methods>
+                    <include name="optOutEmail"/>
+                    <include name="optInEmail"/>
+                    <include name="getAllOptedOutEntities"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Opt-Out/In Endpoints">
+        <classes>
+            <class name="io.rcrm.api.optoutemail.OptOutEmail_PostTest">
+                <methods>
+                    <include name="optOutInEmail"/>
+                    <include name="optOutEmailWithInvalidFields"/>
+                    <include name="optOutEmailWithoutRequiredFields"/>
+                    <include name="unAuthorizedUserCannotOptOut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Opted-Out Endpoints">
+        <classes>
+            <class name="io.rcrm.api.optoutemail.OptOutEmail_GetTest">
+                <methods>
+                    <include name="getAllOptedOutEntities"/>
+                    <include name="getAllOptedOutEntitiesWithInvalidFields"/>
+                    <include name="getAllOptedOutEntitiesWithoutRequiredFields"/>
+                    <include name="verifyDependencyOfFields"/>
+                    <include name="unAuthorizedUserCannotGetAllOptedOutEntities"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Cross Account Security Suite" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+        <listener class-name="io.rcrm.api.listeners.RetryListener"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+    <test name="Cross Account Hiring Pipeline Security Tests">
+        <classes>
+            <class name="io.recruitcrm.hiringPipeline.CrossAccountHiringPipelineSecurityTest">
+                <methods>
+                    <include name="crossAccountHiringPipelineOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account SMS Template Security Tests">
+        <classes>
+            <class name="io.recruitcrm.albatross.smsTemplate.CrossAccountSmsTemplateSecurityTest">
+                <methods>
+                    <include name="crossAccountSmsTemplateOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Email Sequence Security Tests">
+        <classes>
+            <class name="io.recruitcrm.nyma.emailsequence.CrossAccountEmailSequenceSecurityTest">
+                <methods>
+                    <include name="crossAccountEmailSequenceOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Enrollment Security Tests">
+        <classes>
+            <class name="io.recruitcrm.nyma.emailsequence.CrossAccountEnrollmentSecurityTest">
+                <methods>
+                    <include name="crossAccountEnrollmentOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Ostrich Security Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.CrossAccountOstrichSecurityTest">
+                <methods>
+                    <include name="crossAccountOstrichOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account AuditLog Operations Security Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.auditlog.CrossAccountAuditLogSecurityTest">
+                <methods>
+                    <include name="crossAccountAuditLogOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Job Boards Security Tests">
+        <classes>
+            <class name="io.rcrm.api.externalJobBoards.CrossAccountJobBoardsSecurityTest">
+                <methods>
+                    <include name="crossAccountJobBoardOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account XML Feed Security Tests">
+        <classes>
+            <class name="io.rcrm.api.externalJobBoards.CrossAccountXMLFeedSecurityTest">
+                <methods>
+                    <include name="crossAccountXMLFeedOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Logicmelon and Broadbean Security Tests">
+        <classes>
+            <class name="io.rcrm.api.externalJobBoards.CrossAccountLogicmelonAndBroadbeanSecurityTest">
+                <methods>
+                    <include name="crossAccountLogicmelonBroadbeanOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Save Preferences Security">
+        <classes>
+            <class name="io.recruitcrm.report.savePerferences.CrossAccountSavePreferencesSecurityTest">
+                <methods>
+                    <include name="crossAccountSavePreferencesOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account ESR Security Tests">
+        <classes>
+            <class name="io.recruitcrm.executiveSummary.SearchReport.CrossAccountESRSecurityTest">
+                <methods>
+                    <include name="crossAccountESROperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Comm Service Security Tests">
+        <classes>
+            <class name="io.recruitcrm.comm.CrossAccountCommSecurityTest">
+                <methods>
+                    <include name="crossAccountCommOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Candidate Lifecycle Report Security">
+        <classes>
+            <class name="io.recruitcrm.report.CrossAccountCandidateLifecycleReportSecurityTest">
+                <methods>
+                    <include name="crossAccountCandidateLifecycleReportOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Team Performance Report Security">
+        <classes>
+            <class name="io.recruitcrm.report.CrossAccountTeamPerformanceReportSecurityTest">
+                <methods>
+                    <include name="crossAccountTeamPerformanceReportOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Time To Hire Report Security">
+        <classes>
+            <class name="io.recruitcrm.report.CrossAccountTimeToHireReportSecurityTest">
+                <methods>
+                    <include name="crossAccountTimeToHireReportOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Target Reports Security">
+        <classes>
+            <class name="io.recruitcrm.report.CrossAccountTargetReportsSecurityTest">
+                <methods>
+                    <include name="crossAccountTargetReportsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Get User For Reports Security">
+        <classes>
+            <class name="io.recruitcrm.report.CrossAccountGetUserForReportsSecurityTest">
+                <methods>
+                    <include name="crossAccountGetUserForReportsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Get Team Mode Security">
+        <classes>
+            <class name="io.recruitcrm.report.CrossAccountGetTeamModeSecurityTest">
+                <methods>
+                    <include name="crossAccountGetTeamModeOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Get Reports KPIs Security">
+        <classes>
+            <class name="io.recruitcrm.report.CrossAccountGetReportsKPIsSecurityTest">
+                <methods>
+                    <include name="crossAccountGetReportsKPIsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Client Performance Report Security">
+        <classes>
+            <class name="io.recruitcrm.report.CrossAccountClientPerformanceReportSecurityTest">
+                <methods>
+                    <include name="crossAccountClientPerformanceReportOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Candidate Service Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountCandidateServiceSecurityTest">
+                <methods>
+                    <include name="crossAccountCandidateServiceOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CrossAccountTargetReportSearchSecurityTest - Cross-Account Target Reports Search Security">
+        <classes>
+            <class name="io.recruitcrm.report.CrossAccountTargetReportSearchSecurityTest">
+                <methods>
+                    <include name="crossAccountTargetReportsSearchOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Vonq Operations Security Test">
+        <classes>
+            <class name="io.recruitcrm.premiumJobBoard.CrossAccountVonqSecurityTest">
+                <methods>
+                    <include name="crossAccountVonqOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Albatross Delete Call Recording Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.callLogs.DeleteCallRecordingTest">
+                <methods>
+                    <include name="testValidCrossAccountDeleteCallRecording"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Target Reports Update Security Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.account.CrossAccountTargetReportsUpdateSecurityTest">
+                <methods>
+                    <include name="crossAccountTargetReportsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Get Entity Files Endpoint Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityFilesTest">
+                <methods>
+                    <include name="crossAccountGetEntityFiles" />
+                 </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Candidate Edit Security Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.CrossAccountCandidateEditSecurityTest">
+                <methods>
+                    <include name="crossAccountCandidateEditOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Get Associate Count Endpoint Test-cases">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetAssociateCountTest">
+                <methods>
+                    <include name="crossAccountGetAssociateCountTest" />
+                 </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Parse Resume Security Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.CrossAccountParseResumeSecurityTest">
+                <methods>
+                    <include name="crossAccountParseResumeOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Neptune Service - Generate Call Transcript">
+        <classes>
+            <class name="io.recruitcrm.albatross.neptune.GenerateCallTranscriptTest">
+                <methods>
+                    <include name="crossAccountGenerateCallTranscriptTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Albatross Generate Email Security Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.neptune.GenerateEmailTest">
+                <methods>
+                    <include name="testValidCrossAccountGenerateEmail" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Duplicate Merge Security Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.job.CrossAccountMergeDuplicatesSecurityTest">
+                <methods>
+                    <include name="crossAccountMergeDuplicatesOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross-Account Update User Profile Test">
+        <classes>
+            <class name="io.rcrm.api.users.UpdateUserProfileTest">
+                <methods>
+                    <include name="updateUserProfile_CrossAccountAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Job Application Closed Label - Success Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.job.CrossAccountJobApplicationClosedLabelSecurityTest">
+                <methods>
+                    <include name="testSuccessScenarios" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Job Application Closed Label - Security Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.job.CrossAccountJobApplicationClosedLabelSecurityTest">
+                <methods>
+                    <include name="testSecurityScenarios" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate History - Cross Account Tests">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.CrossAccountCandidateHistorySecurityTest">
+                <methods>
+                    <include name="crossAccountCandidateHistoryOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hiring Stage History Remark - Cross Account Testing">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.CrossAccountCandidateHiringStageHistoryRemarkSecurityTest">
+                <methods>
+                    <include name="crossAccountCandidateHiringStageHistoryRemarkOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Candidate Related Hotlists Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountCandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="crossAccountCandidateRelatedHotlistsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Candidate Widget Count Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountGetCandidateWidgetCountTest">
+                <methods>
+                    <include name="crossAccountWidgetCountOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Get Candidates Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountGetCandidatesTest">
+                <methods>
+                    <include name="crossAccountCandidatesOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Details Page Fields Count Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountGetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="crossAccountDetailsPageFieldsCountOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Candidate Off Limit Status Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountGetOffLimitStatusTest">
+                <methods>
+                    <include name="crossAccountOffLimitStatusOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cross Account Company Off Limit Status Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountGetCompanyOffLimitStatusTest">
+                <methods>
+                    <include name="crossAccountOffLimitStatusOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Candidate Answers - Security Operations">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountGetCandidateAnswersTest">
+                <methods>
+                    <include name="crossAccountCandidateAnswersOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Candidate Related Deals - Security Operations">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountGetCandidateRelatedDealsTest">
+                <methods>
+                    <include name="crossAccountCandidateRelatedDealsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Pitch Candidate Stage History - Security Operations">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountGetPitchCandidateStageHistoryTest">
+                <methods>
+                    <include name="crossAccountPitchCandidateStageHistoryOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Update Default Social Links Security Test">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountUpdateDefaultSocialLinksTest">
+                <methods>
+                    <include name="crossAccountUpdateDefaultSocialLinksOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Update Fields Security Test">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountPostUpdateFieldsTest">
+                <methods>
+                    <include name="crossAccountUpdateFieldsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Work History Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountWorkHistorySecurityTest">
+                <methods>
+                    <include name="crossAccountWorkHistoryOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Education History Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountEducationHistorySecurityTest">
+                <methods>
+                    <include name="crossAccountEducationHistoryOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Saved Search Pinned/Unpinned Security Tests -->
+    <test name="Cross Account Saved Search Pinned - Security Operations">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountPostSavedSearchPinnedTest">
+                <methods>
+                    <include name="crossAccountSavedSearchPinnedOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Contact Saved Search Pinned/Unpinned Security Tests -->
+    <test name="Cross Account Contact Saved Search Pinned - Security Operations">
+        <classes>
+            <class name="io.recruitcrm.ContactService.CrossAccountPostSavedSearchPinnedTest">
+                <methods>
+                    <include name="crossAccountSavedSearchPinnedOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+     <!-- Cross Account Pitch Candidate Contacts Tests -->
+    <test name="Cross Account Pitch Candidate Contacts - Security">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountGetPitchCandidateContactsTest">
+                <methods>
+                    <include name="crossAccountPitchCandidateContactsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+  
+    <!-- Cross Account Hotlist Pinned/Unpinned Security Tests -->
+    <test name="Cross Account Hotlist Pinned - Security Operations">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountPostHotlistPinnedTest">
+                <methods>
+                    <include name="crossAccountHotlistPinnedOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Contact Hotlist Pinned/Unpinned Security Tests -->
+    <test name="Cross Account Contact Hotlist Pinned - Security Operations">
+        <classes>
+            <class name="io.recruitcrm.ContactService.CrossAccountPostHotlistPinnedTest">
+                <methods>
+                    <include name="crossAccountHotlistPinnedOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+      <!-- Cross Account Company Pitched Candidates Security -->
+    <test name="Cross Account Company Pitched Candidates Operations">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountCompanyPitchedCandidatesTest">
+                <methods>
+                    <include name="crossAccountCompanyPitchedCandidatesOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Company Related Deals Security Tests -->
+    <test name="Cross Account Company Related Deals - Security">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountGetCompanyRelatedDealsTest">
+                <methods>
+                    <include name="crossAccountCompanyRelatedDealsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Company Widget Count -->
+    <test name="Cross Account Company V2 Widget Count Test">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountCompanyV2WidgetCountTest">
+                <methods>
+                    <include name="crossAccountCompanyV2WidgetCountOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+  
+    <!-- Cross Account Get Company Details Page Field Count -->
+    <test name="Cross Account Get Company Details Page Field Count">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountGetCompanyDetailsPageFieldCountTest">
+                <methods>
+                    <include name="crossAccountCompanyDetailsPageFieldsCountOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Get Company Details Page Related hotlist & Remove from Hotlist -->
+    <test name="Cross Account Company Related Hotlists Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountCompanyRelatedHotlistsTest">
+                <methods>
+                    <include name="crossAccountCompanyRelatedHotlistsOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

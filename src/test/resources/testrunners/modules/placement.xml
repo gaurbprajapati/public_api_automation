@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Placement API Test Suite" verbose="1" parallel="methods" thread-count="8">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+   <test name="Create Placement">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreatePlacement_Test" >
+			<methods>
+				<include name="createPlacementWithValidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>	
+	<test name="Create Placement 400">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreatePlacement_Test" >
+			<methods>
+				<include name="createPlacementWithInvalidId_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Placement 404">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreatePlacement_Test" >
+			<methods>
+				<include name="createPlacementWithInvalidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Placement 404 - AccountB">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreatePlacement_Test" >
+			<methods>
+				<include name="createPlacementWithCrossAccountToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Placement 404 - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreatePlacement_Test" >
+			<methods>
+				<include name="createPlacementWithAdminToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Placement 404 - TeamMember">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreatePlacement_Test" >
+			<methods>
+				<include name="createPlacementWithTeamMemberToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Placement 404 - RestrictedTeamMember">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreatePlacement_Test" >
+			<methods>
+				<include name="createPlacementWithRestrictedTeamMemberToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="get Placements By Candidates valid token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetPlacementsByCandidates_Test">
+                <methods>
+                    <include name="getPlacementsByValidCandidate_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="get Placements By Candidates 400">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetPlacementsByCandidates_Test">
+                <methods>
+                    <include name="getPlacementsByInvalidId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="get Placements By Candidates 404">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetPlacementsByCandidates_Test">
+                <methods>
+                    <include name="getPlacementsByInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="get Placements By Candidates 404 - AccountB">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetPlacementsByCandidates_Test">
+                <methods>
+                    <include name="getPlacementsByCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="get Placements By Candidates 404 - Admin">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetPlacementsByCandidates_Test">
+                <methods>
+                    <include name="getPlacementsByAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="get Placements By Candidates 404 - TeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetPlacementsByCandidates_Test">
+                <methods>
+                    <include name="getPlacementsByTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="get Placements By Candidates 404 - RestrictedTeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetPlacementsByCandidates_Test">
+                <methods>
+                    <include name="getPlacementsByRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Entity Columns valid token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementsEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Entity Columns invalid token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementsEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Entity Columns 404 - AccountB">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementsEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsWithCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Entity Columns admin token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementsEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Entity Columns team member token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementsEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Entity Columns restricted token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementsEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsWithRestrictedToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Count valid token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchCount_Test">
+                <methods>
+                    <include name="placementSearchCountWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Count invalid token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchCount_Test">
+                <methods>
+                    <include name="placementSearchCountWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Count 404 - AccountB">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchCount_Test">
+                <methods>
+                    <include name="placementSearchCountWithCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Count admin token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchCount_Test">
+                <methods>
+                    <include name="placementSearchCountWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Count team member token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchCount_Test">
+                <methods>
+                    <include name="placementSearchCountWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Count restricted token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchCount_Test">
+                <methods>
+                    <include name="placementSearchCountWithRestrictedToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Count valid token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementCount_Test">
+                <methods>
+                    <include name="placementCountWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Count invalid token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementCount_Test">
+                <methods>
+                    <include name="placementCountWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Count 404 - AccountB">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementCount_Test">
+                <methods>
+                    <include name="placementCountWithCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Count admin token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementCount_Test">
+                <methods>
+                    <include name="placementCountWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Count team member token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementCount_Test">
+                <methods>
+                    <include name="placementCountWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Count restricted token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementCount_Test">
+                <methods>
+                    <include name="placementCountWithRestrictedToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Get valid token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchGet_Test">
+                <methods>
+                    <include name="placementSearchGetWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Get invalid token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchGet_Test">
+                <methods>
+                    <include name="placementSearchGetWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Get 404 - AccountB">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchGet_Test">
+                <methods>
+                    <include name="placementSearchGetWithCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Get admin token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchGet_Test">
+                <methods>
+                    <include name="placementSearchGetWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Get team member token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchGet_Test">
+                <methods>
+                    <include name="placementSearchGetWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placement Search Get restricted token">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.PlacementSearchGet_Test">
+                <methods>
+                    <include name="placementSearchGetWithRestrictedToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placement By Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetPlacementById_Test">
+				<methods>
+					<include name="getPlacementByIdWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Placement By Id With Admin Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetPlacementById_Test">
+				<methods>
+					<include name="getPlacementByIdWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Placement By Id With Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetPlacementById_Test">
+				<methods>
+					<include name="getPlacementByIdWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Placement By Id With Restricted Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetPlacementById_Test">
+				<methods>
+					<include name="getPlacementByIdWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Placement By Id With Unauthorized Access">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetPlacementById_Test">
+				<methods>
+					<include name="getPlacementByIdWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Placement By Id With Cross Account Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetPlacementById_Test">
+				<methods>
+					<include name="getPlacementByIdWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Placement By Id With Invalid Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetPlacementById_Test">
+				<methods>
+					<include name="getPlacementByIdWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Placements with Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ArchivePlacements_Test">
+				<methods>
+					<include name="archivePlacementsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Placements with Invalid Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ArchivePlacements_Test">
+				<methods>
+					<include name="archivePlacementsWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Placements with Cross Account Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ArchivePlacements_Test">
+				<methods>
+					<include name="archivePlacementsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Placements with Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ArchivePlacements_Test">
+				<methods>
+					<include name="archivePlacementsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Placements with Admin Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ArchivePlacements_Test">
+				<methods>
+					<include name="archivePlacementsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Placements with Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ArchivePlacements_Test">
+				<methods>
+					<include name="archivePlacementsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Placements with Restricted Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ArchivePlacements_Test">
+				<methods>
+					<include name="archivePlacementsWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Un Archive Placements with Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnArchivePlacements_Test">
+				<methods>
+					<include name="unArchivePlacementsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Un Archive Placements with Invalid Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnArchivePlacements_Test">
+				<methods>
+					<include name="unArchivePlacementsWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Un Archive Placements with Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnArchivePlacements_Test">
+				<methods>
+					<include name="unArchivePlacementsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Un Archive Placements with Cross Account Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnArchivePlacements_Test">
+				<methods>
+					<include name="unArchivePlacementsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Un Archive Placements with Admin Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnArchivePlacements_Test">
+				<methods>
+					<include name="unArchivePlacementsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Un Archive Placements with Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnArchivePlacements_Test">
+				<methods>
+					<include name="unArchivePlacementsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Un Archive Placements with Restricted Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnArchivePlacements_Test">
+				<methods>
+					<include name="unArchivePlacementsWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Placements with Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeletePlacements_Test">
+				<methods>
+					<include name="deletePlacementsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Placements with Invalid Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeletePlacements_Test">
+				<methods>
+					<include name="deletePlacementsWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Placements with Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeletePlacements_Test">
+				<methods>
+					<include name="deletePlacementsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Placements with Cross Account Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeletePlacements_Test">
+				<methods>
+					<include name="deletePlacementsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Placements with Admin Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeletePlacements_Test">
+				<methods>
+					<include name="deletePlacementsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Placements with Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeletePlacements_Test">
+				<methods>
+					<include name="deletePlacementsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Placements with Restricted Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeletePlacements_Test">
+				<methods>
+					<include name="deletePlacementsWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Placement with Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.EditPlacement_Test">
+				<methods>
+					<include name="editPlacementWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Placement with Invalid Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.EditPlacement_Test">
+				<methods>
+					<include name="editPlacementWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Placement with Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.EditPlacement_Test">
+				<methods>
+					<include name="editPlacementWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Placement with Cross Account Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.EditPlacement_Test">
+				<methods>
+					<include name="editPlacementWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Placement with Admin Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.EditPlacement_Test">
+				<methods>
+					<include name="editPlacementWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Placement with Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.EditPlacement_Test">
+				<methods>
+					<include name="editPlacementWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Placement with Restricted Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.EditPlacement_Test">
+				<methods>
+					<include name="editPlacementWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Unplaced Candidates By Job with Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.getUnplacedCandidatesByJob_Test">
+				<methods>
+					<include name="getUnplacedCandidatesByJobWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Unplaced Candidates By Job with Invalid Job Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.getUnplacedCandidatesByJob_Test">
+				<methods>
+					<include name="getUnplacedCandidatesByJobWithInvalidJobId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Unplaced Candidates By Job with Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.getUnplacedCandidatesByJob_Test">
+				<methods>
+					<include name="getUnplacedCandidatesByJobWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Unplaced Candidates By Job with Cross Account Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.getUnplacedCandidatesByJob_Test">
+				<methods>
+					<include name="getUnplacedCandidatesByJobWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Unplaced Candidates By Job with Admin Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.getUnplacedCandidatesByJob_Test">
+				<methods>
+					<include name="getUnplacedCandidatesByJobWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Unplaced Candidates By Job with Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.getUnplacedCandidatesByJob_Test">
+				<methods>
+					<include name="getUnplacedCandidatesByJobWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Unplaced Candidates By Job with Restricted Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.getUnplacedCandidatesByJob_Test">
+				<methods>
+					<include name="getUnplacedCandidatesByJobWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Placements Public API - Create Placement With Valid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.CreatePlacementAPI_Test">
+                <methods>
+                    <include name="createPlacementWithValidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Public API - Create Placement With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.CreatePlacementAPI_Test">
+                <methods>
+                    <include name="createPlacementWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Public API - Create Placement With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.CreatePlacementAPI_Test">
+                <methods>
+                    <include name="createPlacementWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Sorting Parameters">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithSortingParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Limit Parameters">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithLimitParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Invalid Page Number">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithInvalidPageNumber_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Missing Sort Params">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithMissingSortParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Invalid Sort Params">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithInvalidSortParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Valid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithValidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Deleted Custom Fields">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithDeletedCustomFields_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Empty Data">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithEmptyData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Placement By Id With Valid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deletePlacementByIdWithValidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Already Deleted Placement">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deleteAlreadyDeletedPlacement_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Placement By Id With Invalid Id">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deletePlacementByIdWithInvalidId_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Placement By Id With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deletePlacementByIdWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Placement By Id With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deletePlacementByIdWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Standard Fields">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithStandardFields_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Custom Fields">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithCustomFields_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Invalid Contact Slug">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithInvalidContactSlug_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Same Values">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementWithSameValues_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Null Values">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementWithNullValues_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement With Invalid Id">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithInvalidId_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements By Id Public API - Get Placements By Id With Valid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsByIdAPI_Test">
+                <methods>
+                    <include name="getPlacementsByIdWithValidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements By Id Public API - Get Placements By Id With Invalid Id">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsByIdAPI_Test">
+                <methods>
+                    <include name="getPlacementsByIdWithInvalidId_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements By Id Public API - Get Placements By Id With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsByIdAPI_Test">
+                <methods>
+                    <include name="getPlacementsByIdWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements By Id Public API - Get Placements By Id With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsByIdAPI_Test">
+                <methods>
+                    <include name="getPlacementsByIdWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Candidate Data">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByCandidateData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Company Slug And Name">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByCompanyData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Job Slug And Name">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByJobData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Contact Slug And Name">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByContactData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Deal Slug And Name">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByDealData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Id">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementById_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Created From And To">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByCreatedFromAndTo_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Invalid Created From And To">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByInvalidCreatedFromAndTo_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Sort Order">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithSortOrder_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Exact Search">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithExactSearch_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Multiple Entity Slugs">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithMultipleEntitySlugs_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Valid Placement Id And Invalid Slug Params">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithValidPlacementIdAndInvalidSlugParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Invalid Search Param">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithInvalidSearchParam_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Invalid Email">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithInvalidEmail_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

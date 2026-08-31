@@ -1,0 +1,129 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"silent_progress": {
+			"type": "boolean"
+		},
+		"message": {
+			"type": "string"
+		},
+		"message_type": {
+			"type": "string"
+		},
+		"data": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"entity_id": {
+					"type": "integer"
+				},
+				"entity_type": {
+					"type": "integer"
+				},
+				"account_id": {
+					"type": "integer"
+				},
+				"off_limit_status_id": {
+					"type": "integer"
+				},
+				"off_limit_reason": {
+					"type": "string"
+				},
+				"off_limit_end_date": {
+					"type": "integer"
+				},
+				"created_on": {
+					"type": "integer"
+				},
+				"created_by": {
+					"type": "integer"
+				},
+				"off_limit_contact": {
+					"type": "integer"
+				},
+				"off_limit_candidate": {
+					"type": "integer"
+				},
+				"migration_reserved": {
+					"type": "string"
+				},
+				"marked_by_name": {
+					"type": "string"
+				},
+				"off_limit_start_date": {
+					"type": "integer"
+				},
+				"status_label": {
+					"type": "string"
+				},
+				"background_color_hex": {
+					"type": "string"
+				},
+				"text_color_hex": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id",
+				"entity_id",
+				"entity_type",
+				"account_id",
+				"off_limit_status_id",
+				"off_limit_reason",
+				"off_limit_end_date",
+				"created_on",
+				"created_by",
+				"off_limit_contact",
+				"off_limit_candidate",
+				"migration_reserved",
+				"marked_by_name",
+				"off_limit_start_date",
+				"status_label",
+				"background_color_hex",
+				"text_color_hex"
+			]
+		},
+		"user": {
+			"type": "string"
+		},
+		"notifications": {
+			"type": "array",
+			"items": {}
+		},
+		"status": {
+			"type": "string"
+		},
+		"application_version": {
+			"type": "string"
+		},
+		"recaptcha_site_key": {
+			"type": "string"
+		},
+		"start_time": {
+			"type": "number"
+		},
+		"end_time": {
+			"type": "number"
+		},
+		"time_to_output": {
+			"type": "number"
+		}
+	},
+	"required": [
+		"silent_progress",
+		"message",
+		"message_type",
+		"data",
+		"user",
+		"notifications",
+		"status",
+		"application_version",
+		"recaptcha_site_key",
+		"start_time",
+		"end_time",
+		"time_to_output"
+	]
+}

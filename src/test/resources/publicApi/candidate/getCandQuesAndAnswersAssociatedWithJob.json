@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string"
+    },
+    "statusCode": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Question ID": {
+              "type": "integer"
+            },
+            "Question": {
+              "type": "string"
+            },
+            "Answer": {
+              "type": "string"
+            },
+            "Answer ID": {
+              "type": "null"
+            },
+            "Job Title": {
+              "type": "string"
+            },
+            "Job ID": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "Question ID",
+            "Question",
+            "Answer",
+            "Answer ID",
+            "Job Title",
+            "Job ID"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "statusCode",
+    "message"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"_id": {
+							"type": "string"
+						},
+						"action_name": {
+							"type": "string"
+						},
+						"action_type": {
+							"type": "string"
+						},
+						"action_key": {
+							"type": "string"
+						},
+						"message": {
+							"type": "string"
+						},
+						"entity_slug": {
+							"type": "array",
+								"items": [
+									{
+										"type": "object"
+									}
+								]
+						},
+						"entity_slug_detail": {
+							"type": "array",
+								"items": [
+									{
+										"type": "object"
+									}
+								]
+						},
+						"field_updated_detail": {
+							"type": "array",
+								"items": [
+									{
+										"type": "object",
+										"properties": {
+											"field_name": {
+												"type": "string"
+											},
+											"old_value": {
+												"type": "string"
+											},
+											"new_value": {
+												"type": "string"
+											}
+										}
+									}
+								]
+						},
+						"user_id": {
+							"type": "integer"
+						},
+						"user_name": {
+							"type": "string"
+						},
+						"account_id": {
+							"type": "integer"
+						},
+						"account_name": {
+							"type": "string"
+						},
+						"added_on": {
+							"type": "integer"
+						}
+					},
+					"required": [
+						"_id",
+						"action_name",
+						"action_type",
+						"action_key",
+						"message",
+						"entity_slug",
+						"entity_slug_detail",
+						"field_updated_detail",
+						"user_id",
+						"user_name",
+						"account_id",
+						"account_name",
+						"added_on"
+					]
+				}
+			]
+		}
+	},
+	"required": [
+		"current_page",
+		"data",
+		"next_page_url",
+		"path",
+		"per_page",
+		"prev_page_url",
+		"to"
+	]
+}

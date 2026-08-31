@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Get invoice status list API response",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"id": {
+				"type": "integer"
+			},
+			"status_label": {
+				"type": "string"
+			}
+		},
+		"required": [
+			"id",
+			"status_label"
+		],
+		"additionalProperties": false
+	}
+}

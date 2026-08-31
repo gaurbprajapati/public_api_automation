@@ -1,0 +1,79 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Portal Status Update Response",
+    "type": "object",
+    "required": [
+      "silent_progress",
+      "message",
+      "message_type",
+      "data",
+      "user",
+      "notifications",
+      "status",
+      "application_version",
+      "recaptcha_site_key",
+      "start_time",
+      "end_time",
+      "time_to_output"
+    ],
+    "properties": {
+      "silent_progress": {
+        "type": "boolean"
+      },
+      "message": {
+        "type": "string"
+      },
+      "message_type": {
+        "type": "string",
+        "enum": ["is-success", "is-error", "warning", "info"]
+      },
+      "data": {
+        "type": "object",
+        "required": [
+          "id",
+          "contractorId",
+          "portalStatus",
+          "inviteCount",
+          "lastInviteSentAt",
+          "updatedBy",
+          "updatedOn"
+        ],
+        "properties": {
+          "id": { "type": "integer" },
+          "contractorId": { "type": "integer" },
+          "portalStatus": { "type": "integer" },
+          "inviteCount": { "type": "integer" },
+          "lastInviteSentAt": { "type": "integer", "description": "Unix timestamp" },
+          "updatedBy": { "type": "integer" },
+          "updatedOn": { "type": "integer", "description": "Unix timestamp" }
+        },
+        "additionalProperties": false
+      },
+      "user": {
+        "type": "string"
+      },
+      "notifications": {
+        "type": "array",
+        "items": {}
+      },
+      "status": {
+        "type": "integer"
+      },
+      "application_version": {
+        "type": "string"
+      },
+      "recaptcha_site_key": {
+        "type": "string"
+      },
+      "start_time": {
+        "type": "number"
+      },
+      "end_time": {
+        "type": "number"
+      },
+      "time_to_output": {
+        "type": "number"
+      }
+    },
+    "additionalProperties": false
+  }  

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Rest API Test Suite">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+	<test name="Get All Note Types of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetNoteTypesTest">
+				<methods>
+					<include name="getAllNoteTypes_Test" />
+					<include name="unauthorizedUserCannotGetAllNoteTypes_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Qualifications of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetQualificationsTest">
+				<methods>
+					<include name="getAllQualifications_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllQualifications_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Currencies of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCurrenciesTest">
+				<methods>
+					<include name="getAllCurrencies_Test" />
+					<include name="unauthorizedUserCannotGetAllCurrencies_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Salary Types of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetSalaryTypesTest">
+				<methods>
+					<include name="getAllSalaryTypes_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllSalaryTypes_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Industries of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetIndustriesTest">
+				<methods>
+					<include name="getAllIndustries_Test" />
+					<include name="unauthorizedUserCannotGetAllIndustries_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Languages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetLanguagesTest">
+				<methods>
+					<include name="getAllLanguages_Test" />
+					<include name="unauthorizedUserCannotGetAllLanguages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All proficiencies of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetProficienciesTest">
+				<methods>
+					<include name="getAllProficiencies_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllProficiencies_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Call Types of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCallTypesTest">
+				<methods>
+					<include name="getAllCallTypes_Test" />
+					<include name="unauthorizedUserCannotGetAllCallTypes_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Contact Stages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetContactStagesTest">
+				<methods>
+					<include name="getAllContactStages_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllContactStages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Deal stages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetDealStagesTest">
+				<methods>
+					<include name="getAllDealStages_Test" />
+					<include name="unauthorizedUserCannotGetAllDealStages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Job stages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetJobStagesTest">
+				<methods>
+					<include name="getAllJobStages_Test" />
+					<include name="unauthorizedUserCannotGetAllJobStages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Candidate stages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCandidateStagesTest">
+				<methods>
+					<include name="getAllCandidateStages_Test" />
+					<include
+						name="getAllCandidateStagesByHiringPipelineID_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllCandidateStages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Candidate Questions of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCandidateQuestionsTest">
+				<methods>
+					<include name="getAllCandidateQuestions_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllCandidateQuestions_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Collaborators of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCollaboratorsTest">
+				<methods>
+					<include name="getAllCollaborators_Test" />
+					<include
+						name="unauthorizedUserShouldNotAccessCollaborators_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All custom hiring pipelines">
+		<classes>
+			<class name="io.rcrm.api.list.GetMultipleHiringPipelineListTest">
+				<methods>
+					<include name="getAllMultipleHiringPipeline_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllMultipleHiringPipeline_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Off Limit Apis Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.AllEndpointsOfOffLimitTest">
+				<methods>
+					<include name="getOffLimitStatus" />
+					<include name="markCandidateAsOffLimit" />
+					<include name="markCompanyAsOffLimit" />
+					<include name="markContactAsOffLimit" />
+					<include name="getCandidatesOffLimit" />
+					<include name="getContactsOffLimit" />
+					<include name="getCompaniesOffLimit" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Off Limit Candidates Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitCandidatesTest">
+				<methods>
+					<include name="getOffLimitCandidatesWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Off Limit Contacts Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitContactsTest">
+				<methods>
+					<include name="getOffLimitContactsWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Off Limit Companies Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitCompaniesTest">
+				<methods>
+					<include name="getOffLimitCompaniesWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Xml Feed List Test Cases-2-Done">
+		<classes>
+			<class name="io.rcrm.api.list.GetXmlFeedListTest">
+				<methods>
+					<include name="getXmlFeedList"/>
+					<include name="getXmlFeedListWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+</suite>

@@ -1,0 +1,133 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Get invoice by id API response",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"invoice_id": {
+			"type": "string"
+		},
+		"template": {
+			"type": "object",
+			"properties": {
+				"template_id": {
+					"type": "integer"
+				},
+				"template_name": {
+					"type": "string"
+				}
+			}
+		},
+		"description": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"billed_to_client": {
+			"type": "object",
+			"properties": {
+				"company_slug": {
+					"type": "string"
+				},
+				"company_name": {
+					"type": "string"
+				},
+				"address": {
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"contact_slug": {
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"email": {
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"contact_name": {
+					"type": [
+						"string",
+						"null"
+					]
+				},
+				"contact_number": {
+					"type": [
+						"string",
+						"null"
+					]
+				}
+			}
+		},
+		"associated_entities": {
+			"type": "object",
+			"properties": {
+				"candidate_slugs": {
+					"type": "array",
+					"items": {}
+				},
+				"contact_slugs": {
+					"type": "array",
+					"items": {}
+				},
+				"company_slugs": {
+					"type": "array",
+					"items": {}
+				},
+				"deal_slugs": {
+					"type": "array",
+					"items": {}
+				},
+				"job_slugs": {
+					"type": "array",
+					"items": {}
+				}
+			}
+		},
+		"total_amount": {
+			"type": "string"
+		},
+		"total_amount_in_account_currency": {
+			"type": "string"
+		},
+		"invoice_status": {
+			"type": "integer"
+		},
+		"created_by": {
+			"type": "integer"
+		},
+		"created_on": {
+			"type": "string"
+		},
+		"due_date": {
+			"type": "string"
+		},
+		"issue_date": {
+			"type": "string"
+		},
+		"invoice_fields": {
+			"type": "array"
+		},
+		"invoice_pdf": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"id",
+		"invoice_id",
+		"template",
+		"billed_to_client",
+		"associated_entities",
+		"created_by",
+		"created_on"
+	],
+	"additionalProperties": true
+}

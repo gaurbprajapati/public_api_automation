@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Boolean Search Suite" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+
+    <!-- Candidate Boolean Search -->
+    <test name="Candidate Boolean Search">
+        <classes>
+            <class name="io.recruitcrm.BooleanSearch.BooleanSearchCandidateTest">
+                <methods>
+                    <include name="booleanSearchCandidateTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Boolean Search -->
+    <test name="Job Boolean Search">
+        <classes>
+            <class name="io.recruitcrm.BooleanSearch.BooleanSearchJobTest">
+                <methods>
+                    <include name="booleanSearchJobTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Company Boolean Search Query Validator -->
+    <test name="Company Boolean Search Query Validator">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CompanyBooleanSearchQueryValidatorTest">
+                <methods>
+                    <include name="companyBooleanSearchQueryValidatorTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Company Boolean Search -->
+    <test name="Company Boolean Search">
+        <classes>
+            <class name="io.recruitcrm.BooleanSearch.BooleanSearchCompanyTest">
+                <methods>
+                    <include name="booleanSearchCompanyTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Contact Boolean Search -->
+    <test name="Contact Boolean Search">
+        <classes>
+            <class name="io.recruitcrm.BooleanSearch.BooleanSearchContactTest">
+                <methods>
+                    <include name="booleanSearchContactTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

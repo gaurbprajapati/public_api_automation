@@ -1,0 +1,2465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ContractStaffing Test Suite" thread-count="15" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+	<!-- Enable Timesheet Settings Tests -->
+	<test name="Enable_Timesheet_Settings_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enable_Timesheet_Settings_Empty_Request_Body">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsWithEmptyRequestBodyTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enable_Timesheet_Settings_Invalid_Job_Dates">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsWithInvalidJobDatesTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- BNP-7584 / PAY-712: Break-calculation removal and mandatory currency validation on timesheet-settings -->
+	<test name="Enable_Timesheet_Settings_CalculateBreakTime_True_Rejected">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsWithCalculateBreakTimeTrueTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enable_Timesheet_Settings_Null_Pay_Currency_Id">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsWithNullPayCurrencyIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enable_Timesheet_Settings_Null_Bill_Currency_Id">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsWithNullBillCurrencyIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enable_Timesheet_Settings_Null_Pay_Rate">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsWithNullPayRateTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enable_Timesheet_Settings_Null_Bill_Rate">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsWithNullBillRateTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enable_Timesheet_Settings_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotEnableTimesheetSettingsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Get Timesheet Settings Tests -->
+	<test name="Get_Timesheet_Settings_By_Job_And_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="getTimesheetSettingsByJobAndContractorTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Timesheet_Settings_Invalid_Job_And_Contractor_IDs">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="getTimesheetSettingsWithInvalidJobIdAndContractorIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Timesheet_Settings_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotGetTimesheetSettingsByJobAndContractorTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Validate Timesheet Settings Tests -->
+	<test name="Validate_Timesheet_Settings_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="validateTimesheetSettingsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Validate_Timesheet_Settings_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotValidateTimesheetSettingsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Free Slots Tests -->
+	<test name="Get_Free_Slots_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getFreeSlotsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- <test name="Get_Free_Slots_Empty_Request_Body">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getFreeSlotsWithEmptyRequestBodyTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Free_Slots_Invalid_Date_Range">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getFreeSlotsWithInvalidDateRangeTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Free_Slots_Invalid_Contractor_ID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getFreeSlotsWithInvalidContractorIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Free_Slots_Invalid_Timesheet_Frequency">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getFreeSlotsWithInvalidTimesheetFrequencyTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Free_Slots_Invalid_Timesheet_Start_Day">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getFreeSlotsWithInvalidTimesheetStartDayTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Free_Slots_Multiple_Contractors">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getFreeSlotsWithMultipleContractorsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	<test name="Get_Free_Slots_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotGetFreeSlotsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Add Timesheet Tests -->
+	<test name="Add_Timesheet_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="addTimeSheetTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Add_Timesheet_Invalid_Free_Slot">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="addTimeSheetWithInvalidFreeSlotTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Add_Timesheet_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="addTimeSheetUnauthorizedUserTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Add_Timesheet_Invalid_Job_And_Contractor_IDs">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="addTimeSheetWithInvalidJobIdAndContractorIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Get All Timesheets Tests -->
+	<test name="Get_All_Timesheets_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getAllTimesheetsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- <test name="Get_All_Timesheets_Invalid_Job_ID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getAllTimesheetsWithInvalidJobIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	<test name="Get_All_Timesheets_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.AddTimeSheetTest">
+				<methods>
+					<include name="getAllTimesheetsUnauthorizedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Time Log Tests -->
+	<test name="Get_Time_Log_Of_Timesheet_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="getTimeLogOfTimeSheetTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Time_Log_Of_Timesheet_Invalid_Timesheet_ID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="getTimeLogOfTimeSheetWithInvalidTimesheetIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Time_Log_Of_Timesheet_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotGetTimeLogOfTimeSheetTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Submit Time Log Tests -->
+	<test name="Submit_Time_Log_For_Timesheet_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="submitTimeLogForTimesheetTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Submit_Time_Log_For_Timesheet_Invalid_Timesheet_ID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="submitTimeLogForTimesheetWithInvalidTimesheetIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Submit_Time_Log_For_Timesheet_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotSubmitTimeLogTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Submit_Timesheet_For_Multiple_Contractors">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="submitTimesheetForMultipleContractorsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Submit_Time_Log_For_Timesheet_With_N_Entry">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="submitTimeLogForTimesheetWithNEntryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Submit_Time_Log_For_Timesheet_With_N_Entry_Multiple_Contractors">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="submitTimeLogForTimesheetWithNEntryMultipleContractorsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Approve Timesheet Tests -->
+	<test name="Approve_Timesheet_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="approveTimeSheetTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Approve_Timesheet_Invalid_Approval_Status">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="approveTimeSheetWithInvalidApprovalStatusTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Approve_Timesheet_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotApproveTimeSheetTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Timesheet Status History Tests -->
+		<test thread-count="5" parallel="tests" name="Get_Timesheet_Status_History_Valid_Request" verbose="0">
+			<classes>
+				<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+					<methods>
+						<include name="getTimeSheetStatusHistoryRejectedTest"/>
+						<include name="getTimeSheetStatusHistoryApprovedTest"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+	<test name="Get_Timesheet_Status_History_Invalid_Timesheet_ID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="getTimeSheetStatusHistoryWithInvalidTimesheetIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Timesheet_Status_History_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotGetTimeSheetStatusHistoryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Delete Single Timesheet Tests -->
+	<test name="Delete_Single_Timesheet_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.DeleteTimeSheetTest">
+				<methods>
+					<include name="deleteTimesheetTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete_Single_Timesheet_Invalid_Timesheet_ID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.DeleteTimeSheetTest">
+				<methods>
+					<include name="deleteTimesheetWithInvalidTimesheetIDTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete_Single_Timesheet_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.DeleteTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotDeleteTimesheetTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Bulk Delete Timesheet Tests -->
+	<test name="Bulk_Delete_Timesheets_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.DeleteTimeSheetTest">
+				<methods>
+					<include name="bulkDeleteTimesheetsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Bulk_Delete_Timesheets_Invalid_Timesheet_IDs">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.DeleteTimeSheetTest">
+				<methods>
+					<include name="bulkDeleteTimesheetsWithInvalidIDsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Bulk_Delete_Timesheets_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.DeleteTimeSheetTest">
+				<methods>
+					<include name="unauthorizedUserCannotBulkDeleteTimesheetsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- Hour-based delete (submit uses hour-based bulk update API) -->
+	<test name="Delete_Single_Timesheet_Hour_Based_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.DeleteTimesheetsHourBasedTest">
+				<methods>
+					<include name="deleteTimesheetsHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete_Single_Timesheet_Hour_Based_Invalid_Timesheet_ID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.DeleteTimesheetsHourBasedTest">
+				<methods>
+					<include name="deleteTimesheetWithInvalidTimesheetIDHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete_Single_Timesheet_Hour_Based_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.DeleteTimesheetsHourBasedTest">
+				<methods>
+					<include name="unauthorizedUserCannotDeleteTimesheetHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Bulk_Delete_Timesheets_Hour_Based_Valid_Request">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.DeleteTimesheetsHourBasedTest">
+				<methods>
+					<include name="bulkDeleteTimesheetsHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Bulk_Delete_Timesheets_Hour_Based_Invalid_Timesheet_IDs">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.DeleteTimesheetsHourBasedTest">
+				<methods>
+					<include name="bulkDeleteTimesheetsWithInvalidIDsHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Bulk_Delete_Timesheets_Hour_Based_Unauthorized_User">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.DeleteTimesheetsHourBasedTest">
+				<methods>
+					<include name="unauthorizedUserCannotBulkDeleteTimesheetsHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Rule Engine - Create Template ">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateCreationTests">
+				<methods>
+					<include name="verifyCreateRuleTemplateTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Engine - Malformed JSON Handling">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateCreationTests">
+				<methods>
+					<include name="verifyMalformedJsonHandling"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Engine - Large Payload Handling">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateCreationTests">
+				<methods>
+					<include name="verifyExcessivelyLargePayload"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Engine - Special Characters in Template Name">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateCreationTests">
+				<methods>
+					<include name="verifySpecialCharactersInTemplateName"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Engine - Duplicate Template Name Handling">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateCreationTests">
+				<methods>
+					<include name="verifyDuplicateTemplateNameHandling"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Get">
+		<classes>
+			<class
+					name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateGetTests">
+				<methods>
+					<include name="verifyGetTemplateByIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template List">
+		<classes>
+			<class
+					name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateListTests">
+				<methods>
+					<include name="verifyListTemplatesTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Update">
+		<classes>
+			<class
+					name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateUpdateTests">
+				<methods>
+					<include name="verifyUpdateRuleTemplateTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Clone">
+		<classes>
+			<class
+					name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateCloneTests">
+				<methods>
+					<include name="verifyCloneTemplateTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Delete">
+		<classes>
+			<class
+					name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateDeleteTests">
+				<methods>
+					<include name="verifyDeleteTemplateTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+    <test name="Rule template sorting test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateSortingTests">
+                <methods>
+                    <include name="verifyRuleTemplateSortingTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!--    timesheet setting preference test -->
+
+    <test name="Timesheet empty setting preference test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.TimesheetsSettingTest">
+                <methods>
+                    <include name="verifyTimesheetsPreferenceTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet setting preference test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.TimesheetsSettingTest">
+                <methods>
+                    <include name="verifyTimesheetsSettingPreferenceTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet setting preference unauthorize user test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.TimesheetsSettingTest">
+                <methods>
+                    <include name="verifyUnauthorizedUserTimesheetsSettingTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Get Timesheet Enabled Assigned Candidates Tests -->
+    <test name="Get_Timesheet_Enabled_Assigned_Candidates_Valid_Request">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetsListPage.TimesheetEnableAssignCandidateTest">
+                <methods>
+                    <include name="verifyGetTimesheetEnabledAssignedCandidatesTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get_Timesheet_Enabled_Assigned_Candidates_Empty_Body">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetsListPage.TimesheetEnableAssignCandidateTest">
+                <methods>
+                    <include name="verifyGetTimesheetEnabledAssignedCandidatesWithEmptyBodyTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get_Timesheet_Enabled_Assigned_Candidates_Invalid_Job_Id">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetsListPage.TimesheetEnableAssignCandidateTest">
+                <methods>
+                    <include name="verifyGetTimesheetEnabledAssignedCandidatesWithInvalidJobIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get_Timesheet_Enabled_Assigned_Candidates_Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetsListPage.TimesheetEnableAssignCandidateTest">
+                <methods>
+                    <include name="verifyGetTimesheetEnabledAssignedCandidatesUnauthorizedTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Deal Timesheet Validation Tests -->
+
+    <test name="Validate time logs with valid timesheet IDs">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.ValidateTimesheetTest">
+                <methods>
+                    <include name="validateTimeLogsWithValidTimesheetIdsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate time logs with empty timesheet IDs">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.ValidateTimesheetTest">
+                <methods>
+                    <include name="validateTimeLogsWithEmptyTimesheetIdsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate time logs with invalid timesheet IDs">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.ValidateTimesheetTest">
+                <methods>
+                    <include name="validateTimeLogsWithInvalidTimesheetIdsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate time logs with null timesheet IDs">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.ValidateTimesheetTest">
+                <methods>
+                    <include name="validateTimeLogsWithNullTimesheetIdsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate time logs with mixed valid and invalid IDs">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.ValidateTimesheetTest">
+                <methods>
+                    <include name="validateTimeLogsWithMixedValidInvalidIdsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate time logs with unauthorized token">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.ValidateTimesheetTest">
+                <methods>
+                    <include name="validateTimeLogsWithUnauthorizedTokenTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify deal time logs test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.ValidateTimesheetTest">
+                <methods>
+                    <include name="verifyTimeLogDealTimesheetsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate deal time logs with invalid timesheet IDs">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.ValidateTimesheetTest">
+                <methods>
+                    <include name="validateDealTimeLogsWithInvalidTimesheetIdsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate deal time logs with unauthorized token">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.ValidateTimesheetTest">
+                <methods>
+                    <include name="validateDealTimeLogsWithUnauthorizedTokenTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!-- timesheets invoice test case end -->
+	<test name="Get_Invoice_Template_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.timesheetInvoice.InvoiceTemplateTest">
+				<methods>
+					<include name="getInvoiceTemplateTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate_Invoice_Timesheets_Id_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.timesheetInvoice.TimesheetInvoiceValidationTest">
+				<methods>
+					<include name="validateInvoiceTimesheetsIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate_Invoice_Approved_Timesheets_Id_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.timesheetInvoice.TimesheetInvoiceValidationTest">
+				<methods>
+					<include name="validateInvoiceApprovedTimesheetsIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate_Invoice_Timesheets_Id_With_Different_Company_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.timesheetInvoice.TimesheetInvoiceValidationTest">
+				<methods>
+					<include name="validateInvoiceTimesheetsIdWithDifferentCompanyTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<!-- Mark Rule Engine Template as Default Test -->
+	<test name="Rule Template Mark As Default - Success">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateMarkAsDefaultTest">
+				<methods>
+					<include name="verifyMarkAsDefault_200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Mark As Default - Unauthorized">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateMarkAsDefaultTest">
+				<methods>
+					<include name="verifyMarkAsDefault_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Mark As Default - Not Found">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateMarkAsDefaultTest">
+				<methods>
+					<include name="verifyMarkAsDefault_404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Mark As Default - Validation Error">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateMarkAsDefaultTest">
+				<methods>
+					<include name="verifyMarkAsDefault_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Mark As Default - Toggle Behavior">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateMarkAsDefaultTest">
+				<methods>
+					<include name="verifyMarkAsDefaultToggle" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Mark As Default - Multiple Templates">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateMarkAsDefaultTest">
+				<methods>
+					<include name="verifyMultipleTemplatesDefaultBehavior" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rule Template Mark As Default - List Order Verification">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.RuleEngine.RuleTemplateMarkAsDefaultTest">
+				<methods>
+					<include name="verifyDefaultTemplateAppearsFirstInList" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!--    Export timesheets tests-->
+
+    <test name="Export Timesheets test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportTimesheetsFieldsTest">
+                <methods>
+                    <include name="exportTimesheetsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get entity columns of timesheets for export ">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportEntityColumnsTest">
+                <methods>
+                    <include name="getTimesheetsEntityColumnsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get entity columns of candidates for export timesheets">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportEntityColumnsTest">
+                <methods>
+                    <include name="getCandidateEntityColumnsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test  name="Search_Entity_With_Job_Filter_Test" >
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetsListPage.AddTimesheetsJobFilterTest">
+                <methods>
+                    <include name="verifySearchEntityWithJobFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Search_Entity_With_Job_Filter_Unauthorized_Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetsListPage.AddTimesheetsJobFilterTest">
+                <methods>
+                    <include name="verifySearchEntityWithJobFilterUnauthorizedTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- Pay Bill Status Tests -->
+    <test name="Update_Pay_Bill_Status_200_Paid">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetInvoice.PayBillStatusTest">
+                <methods>
+                    <include name="updatepaybill200_paid_test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update_Pay_Bill_Status_200_Unpaid">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetInvoice.PayBillStatusTest">
+                <methods>
+                    <include name="updatepaybill200_unpaid_test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update_Pay_Bill_Status_401_Invalid_Auth">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetInvoice.PayBillStatusTest">
+                <methods>
+                    <include name="updatepaybill401_invalidAuth_test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="Enable Portal Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.EnablePortalTest">
+                <methods>
+                    <include name="updatePortalStatusTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enable Portal Test with Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.EnablePortalTest">
+                <methods>
+                    <include name="unauthorizedUserCannotUpdatePortalStatusTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enable Portal Test with Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.EnablePortalTest">
+                <methods>
+                    <include name="updatePortalStatusWithEmptyRequestBodyTest" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="Enable Portal Test with Invalid Contractor Id">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.EnablePortalTest">
+                <methods>
+                    <include name="updatePortalStatusWithInvalidContractorIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enable Portal Test with Invalid Email">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.EnablePortalTest">
+                <methods>
+                    <include name="updatePortalStatusWithInvalidEmailTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enable Portal Test with Invalid Portal Status">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.EnablePortalTest">
+                <methods>
+                    <include name="updatePortalStatusWithInvalidPortalStatusTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Portal Status Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.GetPortalStatusTest">
+                <methods>
+                    <include name="getPortalStatusTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Portal Status Test with Missing Contractor Id">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.GetPortalStatusTest">
+                <methods>
+                    <include name="getPortalStatusWithMissingContractorIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Portal Status Test with Invalid Contractor Id">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.GetPortalStatusTest">
+                <methods>
+                    <include name="getPortalStatusWithInvalidContractorIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="Get Portal Status Test with Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.GetPortalStatusTest">
+                <methods>
+                    <include name="unauthorizedUserCannotGetPortalStatusTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Portal Status Test with Empty Contractor Id">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.GetPortalStatusTest">
+                <methods>
+                    <include name="getPortalStatusWithEmptyContractorIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>  
+    <test name="Get Contractor Timesheet Enabled Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.ContractorTimesheetEnabledTest">
+                <methods>
+                    <include name="getContractorTimesheetEnabledTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Contractor Timesheet Enabled Test with Custom Timesheet Settings">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.ContractorTimesheetEnabledTest">
+                <methods>
+                    <include name="getContractorTimesheetEnabledWithCustomTimesheetSettingsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="Get Contractor Timesheet Enabled Test without Time Sheet Enabled"> 
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.ContractorTimesheetEnabledTest">
+                <methods>
+                    <include name="getContractorTimesheetEnabledWithoutTimeSheetEnabledTest" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="Get Contractor Timesheet Enabled Test with Invalid Contractor Id">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.ContractorTimesheetEnabledTest">
+                <methods>
+                    <include name="unauthorizedUserCannotGetContractorTimesheetEnabledTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+   <test name="Get Contractor Timesheet Enabled Test with Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.contractorPortal.ContractorTimesheetEnabledTest">
+                <methods>
+                    <include name="getContractorTimesheetEnabledWithInvalidContractorIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Time Sheet Sorting Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.TimeSheetSortingTest">
+                <methods>
+                    <include name="verifyTimesheetSortingTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Time Sheet Sorting Test with changes order">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.TimeSheetSortingTest">
+                <methods>
+                    <include name="verifySortingChangesOrderTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Time Sheet Sorting On Deals Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.TimeSheetSortingOnDealsTest">
+                <methods>
+                    <include name="verifyTimesheetSortingOnDealsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Time Sheet Sorting On Deals Test with changes order">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.TimeSheetSortingOnDealsTest">
+                <methods>
+                    <include name="verifySortingChangesOrderOnDealsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="Validate timesheet export fields hour based 1">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportTimesheetsFieldsTest">
+				<methods>
+					<include name="exportTimesheets12HourBaseTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate timesheet export fields hour based">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.exportTimeSheets.ExportTimeSheetsHourBaseTest">
+				<methods>
+					<include name="exportTimesheetsHourBaseTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - getTimeLogOfTimeSheetTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="getTimeLogOfTimeSheetHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - getTimeLogOfTimeSheetWithInvalidTimesheetIdTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="getTimeLogOfTimeSheetWithInvalidTimesheetIdHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - unauthorizedUserCannotGetTimeLogOfTimeSheetTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="unauthorizedUserCannotGetTimeLogOfTimeSheetHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - submitTimeLogForTimesheetTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="submitTimeLogForTimesheetHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - unauthorizedUserCannotSubmitTimeLogTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="unauthorizedUserCannotSubmitTimeLogHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - approveTimeSheetTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="approveTimeSheetHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - unauthorizedUserCannotApproveTimeSheetTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="unauthorizedUserCannotApproveTimeSheetHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - getTimeSheetStatusHistoryTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="getTimeSheetStatusHistoryHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - getTimeSheetStatusHistoryWithInvalidTimesheetIdTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="getTimeSheetStatusHistoryWithInvalidTimesheetIdHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkUpdateTimeSheetsHourBased - unauthorizedUserCannotGetTimeSheetStatusHistoryTest">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.BulkUpdateTimeSheets.BulkUpdateTimeSheetsHourBasedTest">
+				<methods>
+					<include name="unauthorizedUserCannotGetTimeSheetStatusHistoryHourBasedTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Shift-based rule engine smoke (5 JSON scenarios per suite); full suite: shiftBasedRuleEngineSmoke.xml -->
+	<test name="Shift_Rule_Engine_Smoke_Single_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifySingleRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Double_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyDoubleRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Three_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyThreeRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Four_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyFourRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Five_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyFiveRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_No_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyNoRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Biweekly">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyBiweeklyCalculations" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Monthly">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyMonthlyCalculations" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+		<test name="Submit_Timesheets_Two_Candidates_Two_Jobs_Same_Settings">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.SubmitTimeSheetTest">
+				<methods>
+					<include name="submitTimesheetsForTwoCandidatesOnTwoJobsSameSettingsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Agency - CreateReimbursementTest - createReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithInvalidTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithBlankDescription">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithBlankDescription" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithBlankAmount">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithBlankAmount" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - DeleteReimbursementTest - deleteReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	 <test name="Agency - DeleteReimbursementTest - deleteReimbursementWithInvalidTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursementWithInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementCountTest - getReimbursementCountWithoutReimbursements_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementCountTest">
+				<methods>
+					<include name="getReimbursementCountWithoutReimbursements_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetReimbursementCountTest - getReimbursementCount_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementCountTest">
+				<methods>
+					<include name="getReimbursementCount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementListWithoutReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementListWithoutReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementWithInvalidTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementWithInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetTimesheetsWithReimbursementTest - getTimesheetWithReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetTimesheetsWithReimbursementTest">
+				<methods>
+					<include name="getTimesheetWithReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementTest - updateReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetReimbursementCountTest - getReimbursementCountWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementCountTest">
+				<methods>
+					<include name="getReimbursementCountWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetReimbursementCountTest - getReimbursementCountWithNegativeTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementCountTest">
+				<methods>
+					<include name="getReimbursementCountWithNegativeTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetReimbursementList_Test - getReimbursements_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursements_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementsWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementsWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementsWithReopenedReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementsWithReopenedReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementRemarkExceedsMaxLength_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementRemarkExceedsMaxLength_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementWithPendingId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithPendingId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementWithEmptyRemark">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithEmptyRemark" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementInvalidTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - approveReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="approveReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - rejectReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="rejectReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithBlankDescription">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithBlankDescription" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithBlankAmount">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithBlankAmount" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithApprovedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithApprovedId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableFlags_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableFlags_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableForNotApprovedReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableForNotApprovedReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableWithNoPayload_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableWithNoPayload_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableFlagsForInvalidTimesheetId_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableFlagsForInvalidTimesheetId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - approveAlreadyApprovedReimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="approveAlreadyApprovedReimbursement" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - rejectAlreadyRejectedReimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="rejectAlreadyRejectedReimbursement" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - rejectApprovedReimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="rejectApprovedReimbursement" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - approveRejectedReimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="approveRejectedReimbursement" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementStatusTest - rejectReimbursementWithNoRemark">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="rejectReimbursementWithNoRemark" /> 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - updateReimbursementWithInvalidStatus_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="updateReimbursementWithInvalidStatus_Test" /> 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithReimbursementDisabled">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithReimbursementDisabled" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetStatusHistoryTest - getReimbursementStatusHistory_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetStatusHistoryTest">
+				<methods>
+					<include name="getReimbursementStatusHistory_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetStatusHistoryTest - getReimbursementStatusHistoryAfterApprove_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetStatusHistoryTest">
+				<methods>
+					<include name="getReimbursementStatusHistoryAfterApprove_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Timesheet_Settings_By_Job_And_Contractor_With_Reimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="getTimesheetSettingsByJobAndContractorWithReimbursementTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enable_Timesheet_Settings_Valid_Request_With_Reimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsWithReimbursementTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - Delete_Approved_Reimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteApprovedReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - Reopen_Reimbursement_With_Invalid_Timesheet_Id">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetTimesheetsWithReimbursementTest - getTimesheetWithMissingJobId_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetTimesheetsWithReimbursementTest">
+				<methods>
+					<include name="getTimesheetWithMissingJobId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+    <test name="Agency - DeleteReimbursementTest - deleteReimbursementWithInvalidReimbursementID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursementWithInvalidReimbursementID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithInvoiceLinkedId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - DeleteReimbursementTest - deleteReimbursementWithInvalidTimesheetID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursementWithInvalidTimesheetID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementEmptyBody">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementEmptyBody" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementListWithNegativeTimesheetId_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementListWithNegativeTimesheetId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementsWithInvalidReimbursementId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementsWithInvalidReimbursementId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementWithEmptyPayload">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithEmptyPayload" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementStatusTest - updateReimbursementInvalidId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="updateReimbursementInvalidId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementStatusTest - updateReimbursementInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="updateReimbursementInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithInvalidReimbursementId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithInvalidReimbursementId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetStatusHistoryTest - getStatusHistoryWithInvalidReimbursementId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetStatusHistoryTest">
+				<methods>
+					<include name="getStatusHistoryWithInvalidReimbursementId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetStatusHistoryTest - getStatusHistoryWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetStatusHistoryTest">
+				<methods>
+					<include name="getStatusHistoryWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableForInvalidReimbursementId_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableForInvalidReimbursementId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Agency - PostTimesheetsInvoicesTest - postTimesheetsInvoices_success">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.PostTimesheetsInvoicesTest">
+				<methods>
+					<include name="postTimesheetsInvoices_success" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - PostTimesheetsInvoicesTest - postTimesheetsInvoices_emptyTimesheetIds_returns400">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.PostTimesheetsInvoicesTest">
+				<methods>
+					<include name="postTimesheetsInvoices_emptyTimesheetIds_returns400" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - verifyLimitExceededForReimbursements">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="verifyLimitExceededForReimbursements" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	 <test name="Agency - PostTimesheetsInvoicesTest - postTimesheetsInvoices_unauthorized_returns401">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.PostTimesheetsInvoicesTest">
+				<methods>
+					<include name="postTimesheetsInvoices_unauthorized_returns401" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - PostTimesheetsInvoicesTest - postTimesheetsInvoices_templateNotFound_returns404">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.PostTimesheetsInvoicesTest">
+				<methods>
+					<include name="postTimesheetsInvoices_templateNotFound_returns404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+
+    <test name="Agency - DeleteReimbursementTest - deleteReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursementWithInvoiceLinkedId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - updatePayableBillableWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="updatePayableBillableWithInvoiceLinkedId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithInvoiceLinkedId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - ReopenReimbursementTest - reopenRejectedReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenRejectedReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithRejectedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithRejectedId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+<!--	public api shift base rules-->
+	<test name="PublicAPI_Smoke_GetTimesheetById">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiShiftSmokeTest">
+				<methods>
+					<include name="smokeGetTimesheetByIdTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_Smoke_GetTimesheetWithWorkTimeDetails">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiShiftSmokeTest">
+				<methods>
+					<include name="smokeGetTimesheetWithWorkTimeDetailsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_Smoke_GetTimesheetsList">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiShiftSmokeTest">
+				<methods>
+					<include name="smokeGetTimesheetsListTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="PublicAPI_ShiftBased_GetTimesheetsListAllParams">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListWithAllCorrectParamsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_ShiftBased_GetTimesheetsListByCandidateSlug">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByCandidateSlugTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_ShiftBased_GetTimesheetsListByCompanySlug">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByCompanySlugTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_ShiftBased_GetTimesheetsListByJobSlug">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByJobSlugTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_ShiftBased_GetTimesheetsListByStatus">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByTimesheetStatusTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_ShiftBased_GetTimesheetsListByPagination">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByPaginationTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_ShiftBased_GetTimesheetsListBySortParams">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListBySortParamsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_ShiftBased_GetTimesheetsListByTimeLogs">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByTimeLogsParamTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_ShiftBased_GetTimesheetsListByDateRange">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByDateRangeTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Smoke Test hours based rule engine test  -->
+	<test name="Hours_Based_Smoke_Test smokeVerifyDailyOTHoursCalculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hoursBasedRuleEngineCalculation.smoke.HoursBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyDailyOTHoursCalculation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Hours_Based_Smoke_Test smokeVerifyWeeklyOTHoursCalculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hoursBasedRuleEngineCalculation.smoke.HoursBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyWeeklyOTHoursCalculation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Hours_Based_Smoke_Test smokeVerifyBiweeklyHoursCalculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hoursBasedRuleEngineCalculation.smoke.HoursBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyBiweeklyHoursCalculation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Hours_Based_Smoke_Test smokeVerifyMonthlyHoursCalculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hoursBasedRuleEngineCalculation.smoke.HoursBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyMonthlyHoursCalculation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--   hours based public api test -->
+
+
+	    <test name="PublicAPI_Hours_Smoke_GetTimesheetById">
+	        <classes>
+	            <class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiHoursSmokeTest">
+	                <methods>
+	                    <include name="smokeGetTimesheetByIdTest" />
+	                </methods>
+	            </class>
+	        </classes>
+	    </test>
+
+	<test name="PublicAPI_Hours_Smoke_GetTimesheetWithWorkTimeDetails">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiHoursSmokeTest">
+				<methods>
+					<include name="smokeGetTimesheetWithWorkTimeDetailsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	    <test name="PublicAPI_Hours_Smoke_GetTimesheetsList">
+	        <classes>
+	            <class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiHoursSmokeTest">
+	                <methods>
+	                    <include name="smokeGetTimesheetsListTest" />
+	                </methods>
+	            </class>
+	        </classes>
+	    </test>
+
+
+	<test name="PublicAPI_HoursBased_GetTimesheetsListAllParams">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListWithAllCorrectParamsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_HoursBased_GetTimesheetsListByCandidateSlug">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByCandidateSlugTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_HoursBased_GetTimesheetsListByCompanySlug">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByCompanySlugTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_HoursBased_GetTimesheetsListByJobSlug">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByJobSlugTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_HoursBased_GetTimesheetsListByStatus">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByTimesheetStatusTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_HoursBased_GetTimesheetsListByPagination">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByPaginationTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_HoursBased_GetTimesheetsListBySortParams">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListBySortParamsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_HoursBased_GetTimesheetsListByTimeLogs">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByTimeLogsParamTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="PublicAPI_HoursBased_GetTimesheetsListByDateRange">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+				<methods>
+					<include name="getTimesheetsListByDateRangeTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+    <test name="Timesheet Status Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.statusFilter.TimesheetStatusFilterTest">
+                <methods>
+                    <include name="timesheetStatusFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Company Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.companyNameFilter.TimesheetCompanyNameFilterTest">
+                <methods>
+                    <include name="timesheetCompanyNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Company Search Entity Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.searchEntity.TimesheetCompanySearchEntityTest">
+                <methods>
+                    <include name="timesheetCompanySearchEntityTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Job Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.jobNameFilter.TimesheetJobNameFilterTest">
+                <methods>
+                    <include name="timesheetJobNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Job Search Entity Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.searchEntity.TimesheetJobSearchEntityTest">
+                <methods>
+                    <include name="timesheetJobSearchEntityTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Deal Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.dealNameFilter.TimesheetDealNameFilterTest">
+                <methods>
+                    <include name="timesheetDealNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Deal Search Entity Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.searchEntity.TimesheetDealSearchEntityTest">
+                <methods>
+                    <include name="timesheetDealSearchEntityTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Period Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.timesheetPeriodFilter.TimesheetPeriodFilterTest">
+                <methods>
+                    <include name="timesheetPeriodFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- All Contractor Page Filters -->
+    <test name="Contractor Status Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allContractorPage.statusFilter.ContractorStatusFilterTest">
+                <methods>
+                    <include name="contractorStatusFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contractor Job Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allContractorPage.jobNameFilter.ContractorJobNameFilterTest">
+                <methods>
+                    <include name="contractorJobNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contractor Deal Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allContractorPage.dealNameFilter.ContractorDealNameFilterTest">
+                <methods>
+                    <include name="contractorDealNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Settings - Margin and Markup Modes">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.MarginMarkupTimesheetSettingsTest">
+                <methods>
+                    <include name="enableTimesheetSettingsInMarginModeTest" />
+                    <include name="enableTimesheetSettingsInMarkupModeTest" />
+                    <include name="enableTimesheetSettingsInFixedRateModeTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Settings - Margin and Markup Clamp Behavior">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.MarginMarkupTimesheetSettingsTest">
+                <methods>
+                    <include name="marginPercentageBelowMinimumIsClampedTest" />
+                    <include name="marginPercentageAboveMaximumIsClampedTest" />
+                    <include name="markupPercentageBelowMinimumIsClampedTest" />
+                    <include name="markupPercentageAboveMaximumIsClampedTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Settings - Margin and Markup Validation">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.MarginMarkupTimesheetSettingsTest">
+                <methods>
+                    <include name="nullCalculateChargeByIsRejectedTest" />
+                    <include name="nullMarginPercentageIsRejectedTest" />
+                    <include name="nullMarkupPercentageIsRejectedTest" />
+                    <include name="invalidCalculateChargeByEnumValueIsRejectedTest" />
+                    <include name="zeroPayRateIsNowAcceptedTest" />
+                    <include name="zeroBillRateIsNowAcceptedTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

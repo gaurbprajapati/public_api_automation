@@ -1,0 +1,80 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Invoice Summary API response",
+	"type": "object",
+	"properties": {
+		"meta": {
+			"type": "object",
+			"properties": {
+				"message": {
+					"type": "string"
+				},
+				"requestUuid": {
+					"type": "string"
+				},
+				"responseType": {
+					"type": "object",
+					"properties": {
+						"context": {
+							"type": "string"
+						},
+						"code": {
+							"type": "integer"
+						}
+					},
+					"required": [
+						"context",
+						"code"
+					]
+				},
+				"timestamp": {
+					"type": "string"
+				},
+				"status": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"message",
+				"requestUuid",
+				"responseType",
+				"timestamp",
+				"status"
+			]
+		},
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"totalNumber": {
+						"type": "integer"
+					},
+					"totalValue": {
+						"type": "number"
+					},
+					"currencySymbol": {
+						"type": "string"
+					},
+					"currencyName": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"totalNumber",
+					"totalValue",
+					"currencySymbol",
+					"currencyName"
+				]
+			}
+		}
+	},
+	"required": [
+		"meta",
+		"data"
+	]
+}

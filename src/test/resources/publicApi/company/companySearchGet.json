@@ -1,0 +1,582 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": ["Companies fetched successfully", "Entities retrieved successfully"]
+        },
+        "requestUuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "responseType": {
+          "type": "object",
+          "required": ["context", "code"],
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": ["Request is successful"]
+            },
+            "code": {
+              "type": "integer",
+              "enum": [103]
+            }
+          }
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [200]
+        }
+      }
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "srno",
+          "companyname",
+          "haschildren",
+          "hasparent",
+          "industryid",
+          "industry",
+          "website",
+          "sanitized_website",
+          "ownerid",
+          "slug",
+          "deleted",
+          "totalopenjob",
+          "totalclosedjob",
+          "totalonholdjob",
+          "totalcanceledjob",
+          "ownername",
+          "creatorname",
+          "updatorname",
+          "accountid",
+          "createdby",
+          "createdon",
+          "updatedby",
+          "updatedon",
+          "resumetext",
+          "company_owner_status",
+          "company_creator_status",
+          "company_updator_status",
+          "contact_linked"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "srno": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "companyname": {
+            "type": "string"
+          },
+          "aboutcompany": {
+            "type": ["string", "null"]
+          },
+          "parentcompanyid": {
+            "type": ["integer", "null"]
+          },
+          "parentcompanyslug": {
+            "type": ["string", "null"]
+          },
+          "parentSrNo": {
+            "type": ["integer", "null"]
+          },
+          "parentCity": {
+            "type": ["string", "null"]
+          },
+          "parentWebSite": {
+            "type": ["string", "null"]
+          },
+          "parentIndustryName": {
+            "type": ["string", "null"]
+          },
+          "parentLogo": {
+            "type": ["string", "null"]
+          },
+          "haschildren": {
+            "type": "integer",
+            "enum": [0, 1]
+          },
+          "hasparent": {
+            "type": "integer",
+            "enum": [0, 1]
+          },
+          "parentcompanyname": {
+            "type": ["string", "null"]
+          },
+          "city": {
+            "type": ["string", "null"]
+          },
+          "lat": {
+            "type": ["number", "null"]
+          },
+          "lng": {
+            "type": ["number", "null"]
+          },
+          "industryid": {
+            "type": ["integer", "null"]
+          },
+          "industry": {
+            "type": ["string", "null"]
+          },
+          "website": {
+            "type": "string"
+          },
+          "sanitized_website": {
+            "type": ["string", "null"]
+          },
+          "address": {
+            "type": ["string", "null"]
+          },
+          "logo": {
+            "type": ["string", "null"]
+          },
+          "ownerid": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ownerPhoto": {
+            "type": ["string", "null"]
+          },
+          "creatorPhoto": {
+            "type": ["string", "null"]
+          },
+          "updatorPhoto": {
+            "type": ["string", "null"]
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "deleted": {
+            "type": "integer",
+            "enum": [0, 1]
+          },
+          "profilefacebook": {
+            "type": ["string", "null"]
+          },
+          "profiletwitter": {
+            "type": ["string", "null"]
+          },
+          "profilelinkedin": {
+            "type": ["string", "null"]
+          },
+          "totalopenjob": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "totalclosedjob": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "totalonholdjob": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "totalcanceledjob": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "ownername": {
+            "type": "string"
+          },
+          "creatorname": {
+            "type": "string"
+          },
+          "updatorname": {
+            "type": "string"
+          },
+          "accountid": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "createdby": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "createdon": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "updatedby": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "updatedon": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "locality": {
+            "type": ["string", "null"]
+          },
+          "state": {
+            "type": ["string", "null"]
+          },
+          "country": {
+            "type": ["string", "null"]
+          },
+          "postal_code": {
+            "type": ["string", "null"]
+          },
+          "formatted_profile_linkedin": {
+            "type": ["string", "null"]
+          },
+          "linkedin_id": {
+            "type": ["string", "null"]
+          },
+          "monster_board_company_name": {
+            "type": ["string", "null"]
+          },
+          "indeed_opted_out": {
+            "type": ["boolean", "null"]
+          },
+          "custcolumn1": {
+            "type": ["string", "null"]
+          },
+          "custcolumn2": {
+            "type": ["string", "null"]
+          },
+          "custcolumn3": {
+            "type": ["string", "null"]
+          },
+          "custcolumn4": {
+            "type": ["string", "null"]
+          },
+          "custcolumn5": {
+            "type": ["string", "null"]
+          },
+          "custcolumn6": {
+            "type": ["string", "null"]
+          },
+          "custcolumn7": {
+            "type": ["string", "null"]
+          },
+          "custcolumn8": {
+            "type": ["string", "null"]
+          },
+          "custcolumn9": {
+            "type": ["string", "null"]
+          },
+          "custcolumn10": {
+            "type": ["string", "null"]
+          },
+          "custcolumn11": {
+            "type": ["string", "null"]
+          },
+          "custcolumn12": {
+            "type": ["string", "null"]
+          },
+          "custcolumn13": {
+            "type": ["string", "null"]
+          },
+          "custcolumn14": {
+            "type": ["string", "null"]
+          },
+          "custcolumn15": {
+            "type": ["string", "null"]
+          },
+          "custcolumn16": {
+            "type": ["string", "null"]
+          },
+          "custcolumn17": {
+            "type": ["string", "null"]
+          },
+          "custcolumn18": {
+            "type": ["string", "null"]
+          },
+          "custcolumn19": {
+            "type": ["string", "null"]
+          },
+          "custcolumn20": {
+            "type": ["string", "null"]
+          },
+          "custcolumn21": {
+            "type": ["string", "null"]
+          },
+          "custcolumn22": {
+            "type": ["string", "null"]
+          },
+          "custcolumn23": {
+            "type": ["string", "null"]
+          },
+          "custcolumn24": {
+            "type": ["string", "null"]
+          },
+          "custcolumn25": {
+            "type": ["string", "null"]
+          },
+          "custcolumn26": {
+            "type": ["string", "null"]
+          },
+          "custcolumn27": {
+            "type": ["string", "null"]
+          },
+          "custcolumn28": {
+            "type": ["string", "null"]
+          },
+          "custcolumn29": {
+            "type": ["string", "null"]
+          },
+          "custcolumn30": {
+            "type": ["string", "null"]
+          },
+          "custcolumn31": {
+            "type": ["string", "null"]
+          },
+          "custcolumn32": {
+            "type": ["string", "null"]
+          },
+          "custcolumn33": {
+            "type": ["string", "null"]
+          },
+          "custcolumn34": {
+            "type": ["string", "null"]
+          },
+          "custcolumn35": {
+            "type": ["string", "null"]
+          },
+          "custcolumn36": {
+            "type": ["string", "null"]
+          },
+          "custcolumn37": {
+            "type": ["string", "null"]
+          },
+          "custcolumn38": {
+            "type": ["string", "null"]
+          },
+          "custcolumn39": {
+            "type": ["string", "null"]
+          },
+          "custcolumn40": {
+            "type": ["string", "null"]
+          },
+          "custcolumn41": {
+            "type": ["string", "null"]
+          },
+          "custcolumn42": {
+            "type": ["string", "null"]
+          },
+          "custcolumn43": {
+            "type": ["string", "null"]
+          },
+          "custcolumn44": {
+            "type": ["string", "null"]
+          },
+          "custcolumn45": {
+            "type": ["string", "null"]
+          },
+          "custcolumn46": {
+            "type": ["string", "null"]
+          },
+          "custcolumn47": {
+            "type": ["string", "null"]
+          },
+          "custcolumn48": {
+            "type": ["string", "null"]
+          },
+          "custcolumn49": {
+            "type": ["string", "null"]
+          },
+          "custcolumn50": {
+            "type": ["string", "null"]
+          },
+          "custcolumn51": {
+            "type": ["string", "null"]
+          },
+          "custcolumn52": {
+            "type": ["string", "null"]
+          },
+          "custcolumn53": {
+            "type": ["string", "null"]
+          },
+          "custcolumn54": {
+            "type": ["string", "null"]
+          },
+          "custcolumn55": {
+            "type": ["string", "null"]
+          },
+          "custcolumn56": {
+            "type": ["string", "null"]
+          },
+          "custcolumn57": {
+            "type": ["string", "null"]
+          },
+          "custcolumn58": {
+            "type": ["string", "null"]
+          },
+          "custcolumn59": {
+            "type": ["string", "null"]
+          },
+          "custcolumn60": {
+            "type": ["string", "null"]
+          },
+          "custcolumn61": {
+            "type": ["string", "null"]
+          },
+          "custcolumn62": {
+            "type": ["string", "null"]
+          },
+          "custcolumn63": {
+            "type": ["string", "null"]
+          },
+          "custcolumn64": {
+            "type": ["string", "null"]
+          },
+          "custcolumn65": {
+            "type": ["string", "null"]
+          },
+          "custcolumn66": {
+            "type": ["string", "null"]
+          },
+          "custcolumn67": {
+            "type": ["string", "null"]
+          },
+          "custcolumn68": {
+            "type": ["string", "null"]
+          },
+          "custcolumn69": {
+            "type": ["string", "null"]
+          },
+          "custcolumn70": {
+            "type": ["string", "null"]
+          },
+          "custcolumn71": {
+            "type": ["string", "null"]
+          },
+          "custcolumn72": {
+            "type": ["string", "null"]
+          },
+          "custcolumn73": {
+            "type": ["string", "null"]
+          },
+          "custcolumn74": {
+            "type": ["string", "null"]
+          },
+          "custcolumn75": {
+            "type": ["string", "null"]
+          },
+          "custcolumn76": {
+            "type": ["string", "null"]
+          },
+          "custcolumn77": {
+            "type": ["string", "null"]
+          },
+          "custcolumn78": {
+            "type": ["string", "null"]
+          },
+          "custcolumn79": {
+            "type": ["string", "null"]
+          },
+          "custcolumn80": {
+            "type": ["string", "null"]
+          },
+          "custcolumn81": {
+            "type": ["string", "null"]
+          },
+          "custcolumn82": {
+            "type": ["string", "null"]
+          },
+          "custcolumn83": {
+            "type": ["string", "null"]
+          },
+          "custcolumn84": {
+            "type": ["string", "null"]
+          },
+          "custcolumn85": {
+            "type": ["string", "null"]
+          },
+          "custcolumn86": {
+            "type": ["string", "null"]
+          },
+          "custcolumn87": {
+            "type": ["string", "null"]
+          },
+          "custcolumn88": {
+            "type": ["string", "null"]
+          },
+          "custcolumn89": {
+            "type": ["string", "null"]
+          },
+          "custcolumn90": {
+            "type": ["string", "null"]
+          },
+          "custcolumn91": {
+            "type": ["string", "null"]
+          },
+          "custcolumn92": {
+            "type": ["string", "null"]
+          },
+          "custcolumn93": {
+            "type": ["string", "null"]
+          },
+          "custcolumn94": {
+            "type": ["string", "null"]
+          },
+          "custcolumn95": {
+            "type": ["string", "null"]
+          },
+          "custcolumn96": {
+            "type": ["string", "null"]
+          },
+          "custcolumn97": {
+            "type": ["string", "null"]
+          },
+          "custcolumn98": {
+            "type": ["string", "null"]
+          },
+          "custcolumn99": {
+            "type": ["string", "null"]
+          },
+          "custcolumn100": {
+            "type": ["string", "null"]
+          },
+          "resumetext": {
+            "type": "string"
+          },
+          "company_owner_status": {
+            "type": "integer",
+            "enum": [0, 1]
+          },
+          "company_creator_status": {
+            "type": "integer",
+            "enum": [0, 1]
+          },
+          "company_updator_status": {
+            "type": "integer",
+            "enum": [0, 1]
+          },
+          "last_meeting_created_on": {
+            "type": ["integer", "null"]
+          },
+          "last_meeting_created_by": {
+            "type": ["integer", "null"]
+          },
+          "contact_linked": {
+            "type": "string",
+            "enum": ["Yes", "No"]
+          },
+          "logoUrl": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+  }
+}

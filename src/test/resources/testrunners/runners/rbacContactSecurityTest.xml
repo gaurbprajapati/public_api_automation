@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RBAC Contact Security Test Suite" thread-count="3" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+    <test name="RBAC Contact Create Security - all">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.contact.RBACContactCreateSecurityTest">
+                <methods>
+                    <include name="createContactSecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="RBAC Contact View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.contact.RBACContactViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewContact_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="RBAC Contact Edit Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.contact.RBACContactViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editContact_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>  
+          <test name="RBAC Contact Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes> 
+            <class name="io.recruitcrm.albatross.contact.RBACContactViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteContact_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBACGetContactWidgetCountSecurityTest">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.ContactService.RBACGetContactWidgetCountSecurityTest">
+                <methods>
+                    <include name="getContactWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Get Contact Related Hotlists Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.ContactService.RBACGetContactRelatedHotlistsSecurityTest">
+                <methods>
+                    <include name="getContactRelatedHotlists_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBACGetContactOffLimitStatusSecurityTest">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.ContactService.RBACGetContactOffLimitStatusSecurityTest">
+                <methods>
+                    <include name="getContactOffLimitStatus_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Contact Related Deals View Security Test">
+        <classes>
+            <class name="io.recruitcrm.ContactService.RBACGetContactRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getContactRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

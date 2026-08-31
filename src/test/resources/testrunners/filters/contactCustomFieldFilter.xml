@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contact Custom Field Filter Search" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    
+    <test name="Entity Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="entityCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Text Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="textCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Number Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="numberCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Date Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="dateCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Dropdown And Multiselect Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="dropdownAndMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Checkbox Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="checkboxCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

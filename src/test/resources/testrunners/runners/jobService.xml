@@ -1,0 +1,2286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest API Test Suite" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+    <test name="Get Job Bulk Action User View - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getJobBulkActionUserView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Bulk Action User View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getJobBulkActionUserView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Bulk Action User View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getJobBulkActionUserView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Bulk Action Account View - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getJobBulkActionAccountView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Bulk Action Account View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getJobBulkActionAccountView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Bulk Action Account View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getJobBulkActionAccountView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Bulk Action User View - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateJobBulkActionUserView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Bulk Action User View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateJobBulkActionUserView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Bulk Action User View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateJobBulkActionUserView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Bulk Action User View - Restricted For Locked User">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateJobBulkActionUserView_RestrictedForLockedUser" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Bulk Action Account View - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateJobBulkActionAccountView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Bulk Action Account View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateJobBulkActionAccountView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Bulk Action Account View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateJobBulkActionAccountView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Other User Cannot Update Account View">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobListBulkActionCustomisationTest">
+                <methods>
+                    <include name="verifyOtherUserCannotUpdateAccountView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Hotlist Pinned/Unpinned Endpoint Tests -->
+    <test name="Hotlist Pin - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin Unpin - Workflow">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPinUnpin_Workflow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Invalid Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_InvalidHotlistId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Invalid Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_InvalidHotlistId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Missing Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_MissingHotlistId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Missing Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_MissingHotlistId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Saved Searches List Tests -->
+    <test name="Saved Searches - Basic Validation and Schema">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="getJobSavedSearch_success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Sort By Name">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchList_sortByName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Sort By Created On">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchList_sortByCreatedOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Sort By Updated On">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchList_sortByUpdatedOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Pinned State">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_isPinnedReflectsPinUnpin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Share Visibility">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_ShareWithTeammates_Visibility"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Collaborators">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_Collaborators_UserIdsListed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Comprehensive Field Validation">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_ComprehensiveFieldValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - without Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Saved Searches - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Saved Searches - Missing Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_MissingQueryParameters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Saved Searches - Invalid Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_InvalidQueryParameters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Filters">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchesFilters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Saved Search Count Endpoint Tests -->
+    <test name="Get Saved Search Count - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Saved Search Count - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Saved Search Count - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Saved Search Count - Data Provider">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_DataProvider" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Saved Search Pinned/Unpinned Endpoint Tests -->
+    <test name="Saved Search Pin - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin Unpin - Workflow">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPinUnpin_Workflow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Invalid Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_InvalidSavedSearchId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Invalid Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_InvalidSavedSearchId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Missing Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_MissingSavedSearchId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Missing Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_MissingSavedSearchId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Hotlist Tests -->
+    <test name="Get Job Hotlist - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistTest">
+                <methods>
+                    <include name="getJobHotlist_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Hotlist - Sort By Name">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistTest">
+                <methods>
+                    <include name="verifyJobHotlist_sortByName" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Hotlist - Sort By Created On">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistTest">
+                <methods>
+                    <include name="verifyJobHotlist_sortByCreatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Hotlist - Sort By Updated On">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistTest">
+                <methods>
+                    <include name="verifyJobHotlist_sortByUpdatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Hotlist - Filters">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistTest">
+                <methods>
+                    <include name="verifyJobHotlistFilters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Hotlist - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistTest">
+                <methods>
+                    <include name="getJobHotlist_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Hotlist - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistTest">
+                <methods>
+                    <include name="getJobHotlist_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Hotlist Count Tests -->
+    <test name="Get Job Hotlist Count - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistCountTest">
+                <methods>
+                    <include name="getJobHotlistCountTest_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Hotlist Count - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistCountTest">
+                <methods>
+                    <include name="getJobHotlistCountTest_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Hotlist Count - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistCountTest">
+                <methods>
+                    <include name="getJobHotlistCountTest_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Hotlist Count - Data Provider">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobHotlistCountTest">
+                <methods>
+                    <include name="getJobHotlistCountTest_DataProvider" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job List Page Entity Columns Tests -->
+    <test name="Job List Page Entity Columns - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobListPageEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsTest_200"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job List Page Entity Columns - Verify Custom Fields">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobListPageEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsVerifyCustomFields_200"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job List Page Entity Columns - Verify Column Properties">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobListPageEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsVerifyColumnProperties_200"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job List Page Entity Columns - Verify All Default Fields">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobListPageEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsVerifyAllDefaultFields_200"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job List Page Entity Columns - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobListPageEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsUnauthorizedTest_401"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job List Page Entity Columns - Invalid URL">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobListPageEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsTest_404"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job List Page Entity Columns - Missing Entity">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobListPageEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsTest_400"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job List Page Entity Columns - Method Not Allowed">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobListPageEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsTest_405"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Search Count Tests -->
+    <test name="Job Search Count - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count - After Creating Job">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_AfterCreatingJob"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count - With Owner Filter">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_WithOwnerFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count - With Job Status Open">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_WithJobStatusOpen"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count - With Job Status Closed">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_WithJobStatusClosed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count - With Job Status Bypass">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_WithJobStatusBypass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count - With Job Status Inclusion">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_WithJobStatusInclusion"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count - With Archived Filter">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobSearchCountTest">
+                <methods>
+                    <include name="testJobSearchCount_WithArchivedFilter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Search Count RBAC Tests -->
+    <test name="Job Search Count RBAC - View Owner Only">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACJobSearchCountSecurityTest">
+                <methods>
+                    <include name="testJobSearchCount_RBAC_ViewOwnerOnly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count RBAC - Nothing Access">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACJobSearchCountSecurityTest">
+                <methods>
+                    <include name="testJobSearchCount_RBAC_Nothing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search Count RBAC - Team Access">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACJobSearchCountSecurityTest">
+                <methods>
+                    <include name="testJobSearchCount_RBAC_TeamAccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Quick View Count Tests -->
+    <test name="Job Quick View Count - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobQuickViewCountTest">
+                <methods>
+                    <include name="testJobQuickViewCount_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Quick View Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobQuickViewCountTest">
+                <methods>
+                    <include name="testJobQuickViewCount_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Quick View Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobQuickViewCountTest">
+                <methods>
+                    <include name="testJobQuickViewCount_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Quick View Count - After Creating Job">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobQuickViewCountTest">
+                <methods>
+                    <include name="testJobQuickViewCount_AfterCreatingJob"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Quick View Count - Open Jobs Count After Status Change">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobQuickViewCountTest">
+                <methods>
+                    <include name="testOpenJobsCount_AfterStatusChange"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Quick View Count - On Hold Jobs Count After Status Change">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobQuickViewCountTest">
+                <methods>
+                    <include name="testOnHoldJobsCount_AfterStatusChange"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Quick View Count - Cancelled Jobs Count After Status Change">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobQuickViewCountTest">
+                <methods>
+                    <include name="testCancelledJobsCount_AfterStatusChange"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Quick View Count - Archived Jobs Count After Archiving">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobQuickViewCountTest">
+                <methods>
+                    <include name="testArchivedJobsCount_AfterArchiving"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Quick View Count RBAC Tests -->
+    <test name="Job Quick View Count RBAC - View Owner Only">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACJobQuickViewCountSecurityTest">
+                <methods>
+                    <include name="testJobQuickViewCount_RBAC_ViewOwnerOnly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Quick View Count RBAC - Nothing Access">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACJobQuickViewCountSecurityTest">
+                <methods>
+                    <include name="testJobQuickViewCount_RBAC_Nothing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Quick View Count RBAC - Team Access">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACJobQuickViewCountSecurityTest">
+                <methods>
+                    <include name="testJobQuickViewCount_RBAC_TeamAccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Entity Columns Tests (entity-columns?entity=jobs) -->
+    <test name="Job Entity Columns - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsTest_200"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Entity Columns - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsUnauthorizedTest_401"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Entity Columns - Invalid URL">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsTest_404"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Entity Columns - Missing Entity">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsTest_400"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Entity Columns - Method Not Allowed">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsTest_405"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Entity Columns - Invalid Entity Types">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobEntityColumnsTest">
+                <methods>
+                    <include name="getJobEntityColumnsTestInvalidEntityTypes"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Jobs Account View Columns Tests -->
+    <test name="Jobs Account View Columns - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobsAccountViewColumnsTest">
+                <methods>
+                    <include name="getJobsAccountViewColumns_200"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Jobs Account View Columns - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobsAccountViewColumnsTest">
+                <methods>
+                    <include name="getJobsAccountViewColumns_401"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Jobs Account View Columns - Unauthorized With Non-Owner Tokens">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobsAccountViewColumnsTest">
+                <methods>
+                    <include name="getJobsAccountViewColumns_401_WithNonOwnerTokens"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Jobs Account View Columns - Not Found">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobsAccountViewColumnsTest">
+                <methods>
+                    <include name="getJobsAccountViewColumns_404"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Jobs Account View Columns - Bad Request">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobsAccountViewColumnsTest">
+                <methods>
+                    <include name="getJobsAccountViewColumns_400"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Jobs Account View Columns - Method Not Allowed">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobsAccountViewColumnsTest">
+                <methods>
+                    <include name="getJobsAccountViewColumns_405"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reset Entity Columns - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.ResetEntityColumnsTest">
+                <methods>
+                    <include name="resetEntityColumns_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reset Entity Columns - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.ResetEntityColumnsTest">
+                <methods>
+                    <include name="resetEntityColumns_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reset Entity Columns - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.ResetEntityColumnsTest">
+                <methods>
+                    <include name="resetEntityColumns_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reset Entity Columns - Missing Entity">
+        <classes>
+            <class name="io.recruitcrm.JobService.ResetEntityColumnsTest">
+                <methods>
+                    <include name="resetEntityColumns_MissingEntity" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reset Entity Columns - Invalid Entity">
+        <classes>
+            <class name="io.recruitcrm.JobService.ResetEntityColumnsTest">
+                <methods>
+                    <include name="resetEntityColumns_InvalidEntity" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reset Entity Columns - Others View Owner Only">
+        <classes>
+            <class name="io.recruitcrm.JobService.ResetEntityColumnsTest">
+                <methods>
+                    <include name="verifyOtherUserCannotResetEntityColumnsForOthersView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Reset Entity Columns - Restriction On Reset">
+        <classes>
+            <class name="io.recruitcrm.JobService.ResetEntityColumnsTest">
+                <methods>
+                    <include name="verifyRestrictionOnResetEntityColumns" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Widget Save State - My View">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobWidgetCustomizationSaveStateTest">
+                <methods>
+                    <include name="customizeJobWidgetsMyView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Widget Save State - Other View">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobWidgetCustomizationSaveStateTest">
+                <methods>
+                    <include name="customizeJobWidgetsOtherView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Widget Save State - Other User Restricted Other View">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobWidgetCustomizationSaveStateTest">
+                <methods>
+                    <include name="verifyOtherUserRestrictedToEditOtherView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Widget Save State - Restrict Customize When Locked">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobWidgetCustomizationSaveStateTest">
+                <methods>
+                    <include name="verifyUserRestrictedToCustomizeJobWidgets" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Widget Save State - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobWidgetCustomizationSaveStateTest">
+                <methods>
+                    <include name="customizeJobWidgetsStateInvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Widget Save State - Empty Data">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobWidgetCustomizationSaveStateTest">
+                <methods>
+                    <include name="customizeJobWidgetsSaveStateEmptyData" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize User View - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeUserViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeUserView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize User View - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeUserViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeUserView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize User View - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeUserViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeUserView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize User View - Missing ViewType">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeUserViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeUserView_MissingViewType" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize User View - Empty ViewType">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeUserViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeUserView_EmptyViewType" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize User View - Invalid ViewType">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeUserViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeUserView_InvalidViewType" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize User View - Invalid Endpoint">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeUserViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeUserView_InvalidEndpoint" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize User View - Wrong Method">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeUserViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeUserView_WrongMethod" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize Account View - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeAccountViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeAccountView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize Account View - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeAccountViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeAccountView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize Account View - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeAccountViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeAccountView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize Account View - Missing View Type">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeAccountViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeAccountView_MissingViewType" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize Account View - Empty View Type">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeAccountViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeAccountView_EmptyViewType" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize Account View - Invalid View Type">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeAccountViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeAccountView_InvalidViewType" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize Account View - Invalid Endpoint">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeAccountViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeAccountView_InvalidEndpoint" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize Account View - Wrong Method">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeAccountViewTest">
+                <methods>
+                    <include name="testEntityWidgetsCustomizeAccountView_WrongMethod" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Entity Widgets Customize Account View - Other User Cannot Access">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetEntityWidgetsCustomizeAccountViewTest">
+                <methods>
+                    <include name="verifyOtherUserCannotGetWidgetsCustomizeAccountView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Sort Order">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsSearchAndSortTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsWithSortOrder" />
+                    <include name="testJobRelatedHotlistsSearch" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Job Related Hotlists">
+        <classes>
+            <class name="io.recruitcrm.JobService.CrossAccountJobRelatedHotlistsTest">
+                <methods>
+                    <include name="crossAccountJobRelatedHotlistsOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Search Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsSearch_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Search Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsSearch_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Search Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsSearch_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Search Invalid Entity Name">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsSearch_InvalidEntityName" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Search Cross Entity Name">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsSearch_CrossEntityName" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Search Invalid Record Id">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsSearch_InvalidRecordId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Search Missing Entity Name">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsSearch_MissingEntityName" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Search Missing Record Id">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsSearch_MissingRecordId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Related Hotlists - Search Invalid Page And Size">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobRelatedHotlistsTest">
+                <methods>
+                    <include name="testJobRelatedHotlistsSearch_InvalidPageAndSize" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountSuccess" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountWithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountInvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountEmptyRequestBody" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Missing Entity Type">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountMissingEntityType" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Invalid Entity Type">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountInvalidEntityType" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Invalid My View Fields Count">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountInvalidMyViewFieldsCount" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Invalid Other View Fields Count">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountInvalidOtherViewFieldsCount" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Negative Values">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountNegativeValues" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Zero Values">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountZeroValues" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Empty Values">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountEmptyValues" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Admin">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountForAdmin" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Job Details Page Field Count - Restricted User">
+        <classes>
+            <class name="io.recruitcrm.JobService.UpdateJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testUpdateJobDetailsPageFieldsCountForRestrictedUser" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cross Account Get Job Details Page Field Count">
+        <classes>
+            <class name="io.recruitcrm.JobService.CrossAccountGetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="crossAccountJobDetailsPageFieldsCountOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Details Page Field Count - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testGetJobDetailsPageFieldsCountSuccess" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Details Page Field Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testGetJobDetailsPageFieldsCountWithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Details Page Field Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testGetJobDetailsPageFieldsCountInvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Details Page Field Count - Missing User Id">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testGetJobDetailsPageFieldsCountMissingUserId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Details Page Field Count - Missing Account Id">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testGetJobDetailsPageFieldsCountMissingAccountId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Details Page Field Count - Missing Entity Type">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testGetJobDetailsPageFieldsCountMissingEntityType" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Details Page Field Count - Invalid Account Id">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testGetJobDetailsPageFieldsCountInvalidAccountId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Details Page Field Count - Invalid User Id">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testGetJobDetailsPageFieldsCountInvalidUserId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Job Details Page Field Count - Non Owner User Id">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobDetailsPageFieldCountTest">
+                <methods>
+                    <include name="testGetJobDetailsPageFieldsCountWithNonOwnerUserId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Search Endpoint Tests -->
+    <test name="Job Search - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="testJobSearch_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search - Workflow">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="testJobSearch_Workflow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="testJobSearch_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="testJobSearch_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="testJobSearch_EmptyRequestBody"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search - Invalid Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="testJobSearch_InvalidQueryParameters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search - Missing Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="testJobSearch_MissingQueryParameters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search - Comprehensive Data Validation">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="testJobSearch_ComprehensiveDataValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Search RBAC Tests -->
+    <test name="Job Search RBAC - View Owner Only">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACJobSearchSecurityTest">
+                <methods>
+                    <include name="testJobSearch_RBAC_ViewOwnerOnly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search RBAC - Nothing Access">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACJobSearchSecurityTest">
+                <methods>
+                    <include name="testJobSearch_RBAC_Nothing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search RBAC - Team Access">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACJobSearchSecurityTest">
+                <methods>
+                    <include name="testJobSearch_RBAC_TeamAccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Search Sorting Tests -->
+    <test name="Job Search - Sort By Text Fields">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="searchJob_SortByTextField"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search - Sort By Numeric Fields">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="searchJob_SortByNumericField"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Job Search - Sort By Date Fields">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="searchJob_SortByDateField"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job Search Custom Field Sorting Tests -->
+    <test name="Job Search - Sort By Custom Fields">
+        <classes>
+            <class name="io.recruitcrm.JobService.PostJobSearchTest">
+                <methods>
+                    <include name="searchJob_SortByCustomField"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+  
+  <test name="Job Related Deals - Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobRelatedDealsTest">
+                <methods>
+                    <include name="testGetJobRelatedDealsSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Related Deals - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobRelatedDealsTest">
+                <methods>
+                    <include name="testGetJobRelatedDealsWithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Related Deals - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobRelatedDealsTest">
+                <methods>
+                    <include name="testGetJobRelatedDealsInvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Related Deals - Invalid Job Slug">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobRelatedDealsTest">
+                <methods>
+                    <include name="testGetJobRelatedDealsInvalidJobSlug"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Related Deals - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobRelatedDealsTest">
+                <methods>
+                    <include name="testGetJobRelatedDealsEmptyRequestBody"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Related Deals - Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobRelatedDealsTest">
+                <methods>
+                    <include name="testGetJobRelatedDealsSearch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Related Deals - With Sort Order">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobRelatedDealsTest">
+                <methods>
+                    <include name="testGetJobRelatedDealsWithSortOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- GetJobV2WidgetCountTest -->
+    <test name="Job V2 Widget Count - All Zero Counts">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_AllZeroCounts"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - With All Data">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_WithAllData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - With Widget Keys">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_WithWidgetKeys"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - With Multiple Widget Keys">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_WithMultipleWidgetKeys"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - Missing Entity Type">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_MissingEntityType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - Missing Record Id">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_MissingRecordId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - Missing Record Slug">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_MissingRecordSlug"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - Invalid Record Id">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_InvalidRecordId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - Invalid Record Slug">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_InvalidRecordSlug"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job V2 Widget Count - Invalid Entity Type">
+        <classes>
+            <class name="io.recruitcrm.JobService.GetJobV2WidgetCountTest">
+                <methods>
+                    <include name="testJobV2WidgetCount_InvalidEntityType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+  
+    <!-- Job detail page RBAC (widget count, related deals, related hotlists) -->
+    <test name="Job Detail RBAC - Widget Count">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACGetJobWidgetCountSecurityTest">
+                <methods>
+                    <include name="getJobWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Detail RBAC - Related Deals">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACGetJobRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getJobRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Detail RBAC - Related Hotlists">
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACGetJobRelatedHotlistsSecurityTest">
+                <methods>
+                    <include name="getJobRelatedHotlists_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- Job detail page custom view (CrossAccount) -->
+    <test name="Job Custom View - updateJobDetailActionUserView_Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateJobDetailActionUserView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateJobDetailActionUserView_WithoutAuth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateJobDetailActionUserView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateJobDetailActionUserView_InvalidAuth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateJobDetailActionUserView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateJobDetailActionUserView_RestrictedForLockedUser">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateJobDetailActionUserView_RestrictedForLockedUser" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateJobDetailActionAccountView_Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateJobDetailActionAccountView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateJobDetailActionAccountView_WithoutAuth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateJobDetailActionAccountView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateJobDetailActionAccountView_InvalidAuth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateJobDetailActionAccountView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - verifyOtherUserCannotUpdateAccountView">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="verifyOtherUserCannotUpdateAccountView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateCustomViewUserView">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateCustomViewUserView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateCustomViewAccountView">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateCustomViewAccountView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateCustomViewAccountViewWithIncorrectToken">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateCustomViewAccountViewWithIncorrectToken" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateCustomViewUserViewWithEmptyBody">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateCustomViewUserViewWithEmptyBody" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateCustomViewAccountViewWithEmptyBody">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateCustomViewAccountViewWithEmptyBody" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - updateCustomViewUserViewWithIncorrectToken">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="updateCustomViewUserViewWithIncorrectToken" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - getJobDetailActionUserView_Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="getJobDetailActionUserView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - getJobDetailActionUserView_WithoutAuth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="getJobDetailActionUserView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - getJobDetailActionUserView_InvalidAuth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="getJobDetailActionUserView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - getJobDetailActionAccountView_Success">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="getJobDetailActionAccountView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - getJobDetailActionAccountView_WithoutAuth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="getJobDetailActionAccountView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - getJobDetailActionAccountView_InvalidAuth">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="getJobDetailActionAccountView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - getCustomView">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="getCustomView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Custom View - getCustomViewInvalidAuthToken">
+        <classes>
+            <class name="io.recruitcrm.JobService.JobCustomViewTest">
+                <methods>
+                    <include name="getCustomViewInvalidAuthToken" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

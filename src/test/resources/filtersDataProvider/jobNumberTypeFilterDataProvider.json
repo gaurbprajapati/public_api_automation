@@ -1,0 +1,3411 @@
+{
+  "ID": [
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "5",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "15",
+      "description": "Exact match (max seeded)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Zero id",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "-100",
+      "description": "Negative id",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "1000",
+      "description": "Invalid high id",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "1",
+      "description": "Not equal (broad)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "15",
+      "description": "Not equal (broad)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "1000",
+      "description": "Not equal to invalid high id",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "2",
+      "description": "Starts with 2 (may be empty depending on ids)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "1,15",
+      "description": "Range 1-15",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "5,10",
+      "description": "Range 5-10",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "10,15",
+      "description": "Decimal range input",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "1",
+      "description": "More than 1",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "More than 10",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Less than 10",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "2",
+      "description": "Less than 2",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ],
+  "Bill Rate": [
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "35.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "75.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "90.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "100.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "150.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "100.0",
+      "description": "Decimal input exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "-10.0",
+      "description": "Negative input (should not exist)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_not",
+      "filterValue": "75.0",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_not",
+      "filterValue": "150.0",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (100,150)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "begins_with",
+      "filterValue": "3",
+      "description": "Starts with 3 (35)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (90,100,150)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (35,75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "30.0,80.0",
+      "description": "Range 30-80",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "80.0,160.0",
+      "description": "Range 80-160",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "34.5,75.5",
+      "description": "Decimal range input",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "-20.0,0.0",
+      "description": "Negative range (should be empty)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_mt",
+      "filterValue": "80.0",
+      "description": "More than 80",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_mt",
+      "filterValue": "120.0",
+      "description": "More than 120",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_lt",
+      "filterValue": "50.0",
+      "description": "Less than 50",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_lt",
+      "filterValue": "100.0",
+      "description": "Less than 100",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "7.0",
+      "description": "Exact match smallest non-decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "10.0",
+      "description": "Exact match non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "250.0",
+      "description": "Exact match largest non-decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "67.50",
+      "description": "Exact match decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "175.99",
+      "description": "Exact match decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "0.01",
+      "description": "Small decimal not present",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_not",
+      "filterValue": "10.0",
+      "description": "Not equal non-decimal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_not",
+      "filterValue": "67.50",
+      "description": "Not equal decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_not",
+      "filterValue": "250.0",
+      "description": "Not equal largest value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "5.0,10.0",
+      "description": "Range covering small values (7,10)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "60.0,100.0",
+      "description": "Range covering mid values with decimal (67.50,75,90,100)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "67.49,67.51",
+      "description": "Tight decimal range around 67.50",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "175.0,176.0",
+      "description": "Tight range around decimal 175.99",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "100.0,250.0",
+      "description": "Range covering high values (100,150,175.99,250)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "300.0,500.0",
+      "description": "Range covering high 3-digit values (499.99)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_mt",
+      "filterValue": "0.0",
+      "description": "More than zero (all non-empty match)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_mt",
+      "filterValue": "35.0",
+      "description": "More than 35 non-decimal boundary",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_mt",
+      "filterValue": "67.50",
+      "description": "More than decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_mt",
+      "filterValue": "175.99",
+      "description": "More than high decimal (only 250 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_mt",
+      "filterValue": "250.0",
+      "description": "More than 250 (499.99,1875.25 match)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_lt",
+      "filterValue": "7.0",
+      "description": "Less than 7 (1.50 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_lt",
+      "filterValue": "10.0",
+      "description": "Less than 10 non-decimal boundary",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_lt",
+      "filterValue": "67.50",
+      "description": "Less than decimal value (7,10,35)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_lt",
+      "filterValue": "175.99",
+      "description": "Less than high decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "begins_with",
+      "filterValue": "7",
+      "description": "Starts with 7 (7,75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "begins_with",
+      "filterValue": "25",
+      "description": "Starts with 25 (250)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "begins_with",
+      "filterValue": "67",
+      "description": "Starts with 67 (67.50 decimal)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "begins_with",
+      "filterValue": "17",
+      "description": "Starts with 17 (175.99 decimal)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "ends_with",
+      "filterValue": "7",
+      "description": "Ends with 7 (7)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "ends_with",
+      "filterValue": "99",
+      "description": "Ends with 99 (175.99 decimal)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "1.50",
+      "description": "Exact match small decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "112.01",
+      "description": "Exact match 3-digit decimal (.01)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "499.99",
+      "description": "Exact match 3-digit decimal (.99)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is",
+      "filterValue": "1875.25",
+      "description": "Exact match 4-digit decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_not",
+      "filterValue": "1875.25",
+      "description": "Not equal 4-digit decimal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "0.0,2.0",
+      "description": "Range covering sub-unit decimal (1.50)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "110.0,115.0",
+      "description": "Tight range around 3-digit decimal (112.01)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "490.0,500.0",
+      "description": "Tight range around 3-digit decimal (499.99)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "1800.0,1900.0",
+      "description": "Range covering 4-digit decimal (1875.25)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_between",
+      "filterValue": "2000.0,3000.0",
+      "description": "Range above all values",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_mt",
+      "filterValue": "499.99",
+      "description": "More than 3-digit decimal (only 1875.25 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_mt",
+      "filterValue": "1875.25",
+      "description": "More than largest 4-digit value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_lt",
+      "filterValue": "1.50",
+      "description": "Less than smallest decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "is_lt",
+      "filterValue": "112.01",
+      "description": "Less than 3-digit decimal (1.50,7,10,35,67.50,75,90,100)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "begins_with",
+      "filterValue": "11",
+      "description": "Starts with 11 (112.01)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "begins_with",
+      "filterValue": "49",
+      "description": "Starts with 49 (499.99)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "begins_with",
+      "filterValue": "187",
+      "description": "Starts with 187 (1875.25)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "ends_with",
+      "filterValue": "01",
+      "description": "Ends with 01 (112.01)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "bill_rate",
+      "filterType": "ends_with",
+      "filterValue": "50",
+      "description": "Ends with 50 (1.50,67.50)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    }
+  ],
+  "Pay Rate": [
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "25.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "45.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "50.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "60.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "75.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "75.0",
+      "description": "Decimal input exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "-5.0",
+      "description": "Negative input (should not exist)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_not",
+      "filterValue": "50.0",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_not",
+      "filterValue": "75.0",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "5",
+      "description": "Starts with 5 (50)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "6",
+      "description": "Starts with 6 (60)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (25,45,75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (50,60)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "20.0,50.0",
+      "description": "Range 20-50",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "50.0,100.0",
+      "description": "Range 50-100",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "24.5,60.5",
+      "description": "Decimal range input",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "-10.0,0.0",
+      "description": "Negative range (should be empty)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_mt",
+      "filterValue": "50.0",
+      "description": "More than 50",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_mt",
+      "filterValue": "80.0",
+      "description": "More than 80",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_lt",
+      "filterValue": "50.0",
+      "description": "Less than 50",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_lt",
+      "filterValue": "70.0",
+      "description": "Less than 70",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "5.0",
+      "description": "Exact match smallest non-decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "9.0",
+      "description": "Exact match non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "105.0",
+      "description": "Exact match largest non-decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "45.75",
+      "description": "Exact match decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "120.25",
+      "description": "Exact match decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "0.01",
+      "description": "Small decimal not present",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_not",
+      "filterValue": "9.0",
+      "description": "Not equal non-decimal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_not",
+      "filterValue": "45.75",
+      "description": "Not equal decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_not",
+      "filterValue": "120.25",
+      "description": "Not equal decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "1.0,9.0",
+      "description": "Range covering small values (5,9)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "40.0,50.0",
+      "description": "Range covering mid values with decimal (45,45.75,50)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "45.74,45.76",
+      "description": "Tight decimal range around 45.75",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "120.0,121.0",
+      "description": "Tight range around decimal 120.25",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "75.0,120.25",
+      "description": "Range covering high values (75,105,120.25)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "200.0,500.0",
+      "description": "Range covering 3-digit values (333.33)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_mt",
+      "filterValue": "0.0",
+      "description": "More than zero (all non-empty match)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_mt",
+      "filterValue": "45.0",
+      "description": "More than 45 non-decimal boundary",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_mt",
+      "filterValue": "45.75",
+      "description": "More than decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_mt",
+      "filterValue": "105.0",
+      "description": "More than high non-decimal (only 120.25 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_mt",
+      "filterValue": "120.25",
+      "description": "More than 120.25 (333.33,1250.50 match)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_lt",
+      "filterValue": "5.0",
+      "description": "Less than 5 (0.99 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_lt",
+      "filterValue": "9.0",
+      "description": "Less than 9 non-decimal boundary (only 5 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_lt",
+      "filterValue": "45.75",
+      "description": "Less than decimal value (5,9,25,45)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_lt",
+      "filterValue": "120.25",
+      "description": "Less than high decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "9",
+      "description": "Starts with 9 (9)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (105,120.25)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "45",
+      "description": "Starts with 45 (45,45.75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "12",
+      "description": "Starts with 12 (120.25 decimal)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "ends_with",
+      "filterValue": "9",
+      "description": "Ends with 9 (9)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "ends_with",
+      "filterValue": "25",
+      "description": "Ends with 25 (25,120.25)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "0.99",
+      "description": "Exact match sub-unit decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "78.01",
+      "description": "Exact match 2-digit decimal (.01)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "333.33",
+      "description": "Exact match 3-digit repeating decimal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is",
+      "filterValue": "1250.50",
+      "description": "Exact match 4-digit decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_not",
+      "filterValue": "1250.50",
+      "description": "Not equal 4-digit decimal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "0.0,1.0",
+      "description": "Range covering sub-unit decimal (0.99)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "75.0,80.0",
+      "description": "Range covering 2-digit and decimal (75,78.01)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "300.0,400.0",
+      "description": "Range covering 3-digit decimal (333.33)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "1200.0,1300.0",
+      "description": "Range covering 4-digit decimal (1250.50)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_between",
+      "filterValue": "1500.0,2000.0",
+      "description": "Range above all values",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_mt",
+      "filterValue": "333.33",
+      "description": "More than 3-digit decimal (only 1250.50 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_mt",
+      "filterValue": "1250.50",
+      "description": "More than largest 4-digit value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_lt",
+      "filterValue": "0.99",
+      "description": "Less than smallest sub-unit value",
+      "expectedResult": "data exists with zero",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "is_lt",
+      "filterValue": "78.01",
+      "description": "Less than 2-digit decimal (0.99,5,9,25,45,45.75,50,60,75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "0",
+      "description": "Starts with 0 (0.99 sub-unit)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "33",
+      "description": "Starts with 33 (333.33)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "78",
+      "description": "Starts with 78 (78.01)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "begins_with",
+      "filterValue": "125",
+      "description": "Starts with 125 (1250.50)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "ends_with",
+      "filterValue": "01",
+      "description": "Ends with 01 (78.01)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "pay_rate",
+      "filterType": "ends_with",
+      "filterValue": "33",
+      "description": "Ends with 33 (333.33)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    }
+  ],
+  "Minimum Experience": [
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is",
+      "filterValue": "3",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is",
+      "filterValue": "5",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is",
+      "filterValue": "10",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is",
+      "filterValue": "20",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is",
+      "filterValue": "-5",
+      "description": "Negative input",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_not",
+      "filterValue": "10",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (10,12,15,18)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "begins_with",
+      "filterValue": "2",
+      "description": "Starts with 2 (20)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (0,10,20)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (5,15)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty (0 treated as empty)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_between",
+      "filterValue": "0,5",
+      "description": "Range 0-5",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_between",
+      "filterValue": "5,10",
+      "description": "Range 5-10",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_between",
+      "filterValue": "9,13",
+      "description": "Range 9-13",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_mt",
+      "filterValue": "5",
+      "description": "More than 5",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_mt",
+      "filterValue": "15",
+      "description": "More than 15",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_lt",
+      "filterValue": "5",
+      "description": "Less than 5",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "minexperienceinyears",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Less than 10",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ],
+  "Maximum Experience": [
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is",
+      "filterValue": "6",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is",
+      "filterValue": "10",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is",
+      "filterValue": "18",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is",
+      "filterValue": "25",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is",
+      "filterValue": "-3",
+      "description": "Negative input",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_not",
+      "filterValue": "6",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_not",
+      "filterValue": "25",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (10,12,15,18)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "begins_with",
+      "filterValue": "2",
+      "description": "Starts with 2 (20,22,25)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (10,20)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (25,15)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty (0 treated as empty)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_between",
+      "filterValue": "1,6",
+      "description": "Range 1-6",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_between",
+      "filterValue": "6,12",
+      "description": "Range 6-12",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_between",
+      "filterValue": "9,16",
+      "description": "Range 9-16",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "More than 10",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_mt",
+      "filterValue": "20",
+      "description": "More than 20",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Less than 10",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "maxexperienceinyears",
+      "filterType": "is_lt",
+      "filterValue": "5",
+      "description": "Less than 5",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ],
+  "Min. Salary": [
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "20000.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "30000.50",
+      "description": "Exact match (decimal stored)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "90000.5",
+      "description": "Exact match (decimal stored)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "120000.25",
+      "description": "Exact match (decimal stored)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "120000.25",
+      "description": "Exact match repeated (stability)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "120000.0",
+      "description": "Decimal input, integer boundary",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "-10000.5",
+      "description": "Negative input (should not exist)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "-95000.5",
+      "description": "Negative input (should not exist)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "-999999.99",
+      "description": "Negative input not present",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_not",
+      "filterValue": "20000.0",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_not",
+      "filterValue": "120000.25",
+      "description": "Not equal (decimal)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "12",
+      "description": "Starts with 12",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "9",
+      "description": "Starts with 9",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (if any)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty (0 treated as empty)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "20000.0,95000.0",
+      "description": "Range 20000-95000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "29999.9,30000.6",
+      "description": "Tight decimal range around 30000.5",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "119999.5,120000.5",
+      "description": "Tight decimal range around 120000.25",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "-100000.0,0.0",
+      "description": "Negative range (should be empty)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_mt",
+      "filterValue": "100000.0",
+      "description": "More than 100000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_mt",
+      "filterValue": "200000.0",
+      "description": "More than 200000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_lt",
+      "filterValue": "50000.0",
+      "description": "Less than 50000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_lt",
+      "filterValue": "100000.0",
+      "description": "Less than 100000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "10000.50",
+      "description": "Exact match decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "80000.0",
+      "description": "Exact match non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "87654.32",
+      "description": "Exact match varied decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "95000.50",
+      "description": "Exact match decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "100000.0",
+      "description": "Exact match non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "150000.0",
+      "description": "Exact match non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "400000.0",
+      "description": "Exact match large non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "500000.0",
+      "description": "Exact match largest non-decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "0.01",
+      "description": "Small decimal not present",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_not",
+      "filterValue": "80000.0",
+      "description": "Not equal non-decimal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_not",
+      "filterValue": "95000.50",
+      "description": "Not equal decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_not",
+      "filterValue": "500000.0",
+      "description": "Not equal largest value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "10000.0,20000.0",
+      "description": "Range covering small values (10000.50,20000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "79999.0,85001.0",
+      "description": "Range covering mid values (80000,80000,85000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "95000.0,95001.0",
+      "description": "Tight range around decimal 95000.50",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "100000.0,150000.0",
+      "description": "Range covering upper-mid values (100000,110000,120000.25,150000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "200000.0,500000.0",
+      "description": "Range covering large values (200000,400000,500000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "500001.0,999999.0",
+      "description": "Range above all values",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_mt",
+      "filterValue": "0.0",
+      "description": "More than zero (all match)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_mt",
+      "filterValue": "95000.50",
+      "description": "More than decimal boundary",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_mt",
+      "filterValue": "400000.0",
+      "description": "More than large non-decimal (only 500000 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_mt",
+      "filterValue": "500000.0",
+      "description": "More than largest value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_lt",
+      "filterValue": "10000.50",
+      "description": "Less than smallest decimal value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_lt",
+      "filterValue": "20000.0",
+      "description": "Less than 20000 (only 10000.50 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_lt",
+      "filterValue": "85000.0",
+      "description": "Less than non-decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_lt",
+      "filterValue": "95000.50",
+      "description": "Less than decimal boundary",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "8",
+      "description": "Starts with 8 (80000,85000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "20",
+      "description": "Starts with 20 (20000,200000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "4",
+      "description": "Starts with 4 (400000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "5",
+      "description": "Starts with 5 (500000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "ends_with",
+      "filterValue": "25",
+      "description": "Ends with 25 (120000.25)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "ends_with",
+      "filterValue": "50",
+      "description": "Ends with 50 (10000.50,30000.50,95000.50)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "76500.99",
+      "description": "Exact match non-round decimal (.99)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "111111.11",
+      "description": "Exact match repeating decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is",
+      "filterValue": "199001.0",
+      "description": "Exact match non-round non-decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_not",
+      "filterValue": "111111.11",
+      "description": "Not equal repeating decimal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "76000.0,77000.0",
+      "description": "Tight range around non-round decimal (76500.99)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "87000.0,88000.0",
+      "description": "Tight range around varied decimal (87654.32)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "111111.0,111112.0",
+      "description": "Tight range around repeating decimal (111111.11)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_between",
+      "filterValue": "198000.0,200000.0",
+      "description": "Range covering non-round value (199001)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_mt",
+      "filterValue": "199001.0",
+      "description": "More than non-round value (400000,500000 match)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "is_lt",
+      "filterValue": "76500.99",
+      "description": "Less than non-round decimal (10000.50,20000,30000.50)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "76",
+      "description": "Starts with 76 (76500.99)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "87",
+      "description": "Starts with 87 (87654.32)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "111",
+      "description": "Starts with 111 (111111.11)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "begins_with",
+      "filterValue": "19",
+      "description": "Starts with 19 (199001)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "ends_with",
+      "filterValue": "99",
+      "description": "Ends with 99 (76500.99)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "ends_with",
+      "filterValue": "32",
+      "description": "Ends with 32 (87654.32)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "ends_with",
+      "filterValue": "11",
+      "description": "Ends with 11 (111111.11)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymin",
+      "filterType": "ends_with",
+      "filterValue": "01",
+      "description": "Ends with 01 (199001)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    }
+  ],
+  "Max. Salary": [
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "40000.75",
+      "description": "Exact match (decimal stored)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "140000.25",
+      "description": "Exact match (decimal stored)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "180000.75",
+      "description": "Exact match (decimal stored)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "299500.75",
+      "description": "Exact match varied decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "800000.0",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "180000.0",
+      "description": "Decimal input, integer boundary",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "-999999.99",
+      "description": "Negative input not present",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_not",
+      "filterValue": "300000.0",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_not",
+      "filterValue": "180000.75",
+      "description": "Not equal (decimal)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "18",
+      "description": "Starts with 18",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "29",
+      "description": "Starts with 29 (299500.75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (if any)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty (0 treated as empty)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "40000.0,130000.0",
+      "description": "Range 40000-130000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "140000.0,200000.0",
+      "description": "Range 140000-200000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "39999.9,40001.0",
+      "description": "Tight decimal range around 40000.75",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_mt",
+      "filterValue": "200000.0",
+      "description": "More than 200000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_mt",
+      "filterValue": "600000.0",
+      "description": "More than 600000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_lt",
+      "filterValue": "100000.0",
+      "description": "Less than 100000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_lt",
+      "filterValue": "200000.0",
+      "description": "Less than 200000",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "120000.0",
+      "description": "Exact match non-decimal positive (2 jobs)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "123456.78",
+      "description": "Exact match varied decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "130000.0",
+      "description": "Exact match non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "150000.0",
+      "description": "Exact match non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "200000.0",
+      "description": "Exact match non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "250000.0",
+      "description": "Exact match non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "400000.0",
+      "description": "Exact match large non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "600000.0",
+      "description": "Exact match large non-decimal positive",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "0.01",
+      "description": "Small decimal not present",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_not",
+      "filterValue": "120000.0",
+      "description": "Not equal non-decimal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_not",
+      "filterValue": "140000.25",
+      "description": "Not equal decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_not",
+      "filterValue": "800000.0",
+      "description": "Not equal largest value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "120000.0,130000.0",
+      "description": "Range covering clustered values (120000,120000,125000,130000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "140000.24,140000.26",
+      "description": "Tight decimal range around 140000.25",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "180000.74,180000.76",
+      "description": "Tight decimal range around 180000.75",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "200000.0,400000.0",
+      "description": "Range covering large values (200000,250000,300000,400000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "400000.0,800000.0",
+      "description": "Range covering highest values (400000,600000,800000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "900000.0,999999.0",
+      "description": "Range above all values",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_mt",
+      "filterValue": "0.0",
+      "description": "More than zero (all match)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_mt",
+      "filterValue": "150000.0",
+      "description": "More than non-decimal boundary",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_mt",
+      "filterValue": "180000.75",
+      "description": "More than decimal boundary",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_mt",
+      "filterValue": "400000.0",
+      "description": "More than large non-decimal (600000,800000 match)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_mt",
+      "filterValue": "800000.0",
+      "description": "More than largest value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_lt",
+      "filterValue": "40000.75",
+      "description": "Less than smallest decimal value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_lt",
+      "filterValue": "120000.0",
+      "description": "Less than non-decimal (only 40000.75 matches)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_lt",
+      "filterValue": "140000.25",
+      "description": "Less than decimal boundary",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_lt",
+      "filterValue": "300000.0",
+      "description": "Less than large non-decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "12",
+      "description": "Starts with 12 (120000,125000,130000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "4",
+      "description": "Starts with 4 (40000.75,400000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "6",
+      "description": "Starts with 6 (600000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "15",
+      "description": "Starts with 15 (150000,160000)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "ends_with",
+      "filterValue": "75",
+      "description": "Ends with 75 (40000.75,180000.75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "ends_with",
+      "filterValue": "25",
+      "description": "Ends with 25 (140000.25)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "119876.54",
+      "description": "Exact match non-round decimal (.54)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is",
+      "filterValue": "165432.0",
+      "description": "Exact match non-round non-decimal value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_not",
+      "filterValue": "165432.0",
+      "description": "Not equal non-round value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "119000.0,120000.0",
+      "description": "Tight range around non-round decimal (119876.54)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "123000.0,124000.0",
+      "description": "Tight range around varied decimal (123456.78)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "165000.0,166000.0",
+      "description": "Tight range around non-round value (165432)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_between",
+      "filterValue": "299000.0,300000.0",
+      "description": "Tight range around non-round decimal (299500.75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE_START_END"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_mt",
+      "filterValue": "299500.75",
+      "description": "More than non-round decimal (400000,600000,800000 match)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "is_lt",
+      "filterValue": "119876.54",
+      "description": "Less than non-round decimal (40000.75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "DOUBLE"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "119",
+      "description": "Starts with 119 (119876.54)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "1234",
+      "description": "Starts with 1234 (123456.78)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "16",
+      "description": "Starts with 16 (165432)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "begins_with",
+      "filterValue": "299",
+      "description": "Starts with 299 (299500.75)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "ends_with",
+      "filterValue": "54",
+      "description": "Ends with 54 (119876.54)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "ends_with",
+      "filterValue": "78",
+      "description": "Ends with 78 (123456.78)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "annualsalarymax",
+      "filterType": "ends_with",
+      "filterValue": "32",
+      "description": "Ends with 32 (165432)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    }
+  ],
+  "Openings": [
+    {
+      "dbField": "noofopenings",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is",
+      "filterValue": "10",
+      "description": "Exact match",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is",
+      "filterValue": "20",
+      "description": "Exact match",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is",
+      "filterValue": "35",
+      "description": "Exact match",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is",
+      "filterValue": "50",
+      "description": "Exact match",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is",
+      "filterValue": "25",
+      "description": "Decimal input exact match",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is",
+      "filterValue": "-5",
+      "description": "Negative input",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_not",
+      "filterValue": "1",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_not",
+      "filterValue": "50",
+      "description": "Not equal",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (10,12,15)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "begins_with",
+      "filterValue": "3",
+      "description": "Starts with 3 (30,35)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (10,20,30,50)",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (15,25,35)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty (0 treated as empty)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_between",
+      "filterValue": "1,10",
+      "description": "Range 1-10",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_between",
+      "filterValue": "10,30",
+      "description": "Range 10-30",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_between",
+      "filterValue": "24,35",
+      "description": "Decimal range input",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "More than 10",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_mt",
+      "filterValue": "35",
+      "description": "More than 35",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_lt",
+      "filterValue": "5",
+      "description": "Less than 5",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "noofopenings",
+      "filterType": "is_lt",
+      "filterValue": "15",
+      "description": "Less than 15",
+      "expectedResult": "data exists",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ]
+}

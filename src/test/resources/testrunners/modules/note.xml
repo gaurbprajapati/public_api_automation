@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Technostars - Harika Kurella, Priyanka Shinde -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Create Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.CreateNewNoteTest">
+				<methods>
+
+					<include name="createNewNote" />
+					<include name="createNoteWithDisableAutoTeamsPopulation" />
+					<include name="createNoteWithEnableAutoTeamsPopulation" />
+					<include name="createNoteWithCollaborators" />
+					<include name="createNoteWithInvalidCollaborators" />
+					<include name="createNoteWithInvalidCollaboratorsTeams" />
+					<include name="createNewNoteWithAssociates" />
+					<include name="createNewNoteWithAllValidAssociates" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.AllEndpointsOfNotesTest">
+				<methods>
+
+					<include name="createNewNote" />
+					<include name="showAllNotes_GET" />
+					<include name="searchNoteByID" />
+					<include name="searchNoteByFields" />
+					<include name="editNoteById" />
+					<include name="DeleteNoteByID" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Note By ID Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.SearchNoteByIDTest">
+				<methods>
+
+					<include name="searchNoteByID" />
+					<include
+						name="unauthorizedUserShouldNotBeAbleToSearchNoteByID_noteTest" />
+
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Delete Note By ID Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.DeleteNoteByIDTest">
+				<methods>
+
+					<include name="deleteNoteByID_noteTest" />
+					<include
+						name="unauthorizedUserShouldNotBeAbleToDeleteNoteByID_noteTest" />
+
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.GetAllNotesTest">
+				<methods>
+					<include name="getAllNotes_noteTest" />
+					<include
+						name="unauthorizedCannotAccessgGetAllNotes_noteTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search by all fields Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.SearchNoteByAllFieldsTest">
+				<methods>
+
+					<include name="searchNoteByAllFields_noteTest" />
+					<include name="searchNoteByAllByInvalidFields_noteTest" />
+					<include name="unauthorizedUserCannotAccessSearchNoteByAllFields_noteTest" />
+					<include name="searchNoteByDateFilters" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.EditNoteByIDTest">
+				<methods>
+
+					<include name="editNoteById_notesTest" />
+					<include name="unauthorizedCannoteEditNoteById_notesTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,636 @@
+{
+  "noteDescriptionSearchTestCases": [
+    {
+      "testCaseId": "basic_text_search",
+      "description": "Basic text search patterns",
+      "searchTerms": [
+        {
+          "term": "To Do note",
+          "expectedResults": ["note1", "note4", "note7", "note10"]
+        },
+        {
+          "term": "Inbound",
+          "expectedResults": ["calllog1", "calllog9"]
+        },
+        {
+          "term": "created by",
+          "expectedResults": ["note1", "note2", "note3", "note4", "note5", "note6", "note7", "note8", "note9", "note10", "note11", "note12", "calllog1", "calllog2", "calllog3", "calllog4", "calllog5", "calllog6", "calllog7", "calllog8", "calllog9", "calllog10", "calllog11", "calllog12"]
+        },
+        {
+          "term": "collaborator",
+          "expectedResults": ["note1", "note2", "note3", "note4", "note5", "note6", "note7", "note8", "note9", "note10", "note11", "note12", "calllog1", "calllog2", "calllog3", "calllog4", "calllog5", "calllog6", "calllog7", "calllog8", "calllog9", "calllog10", "calllog11", "calllog12"]
+        },
+        {
+          "term": "note1",
+          "expectedResults": ["note1, note10, note11, note12"]
+        },
+        {
+          "term": "calllog2",
+          "expectedResults": ["calllog2"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "case_sensitivity",
+      "description": "Case sensitivity testing",
+      "searchTerms": [
+        {
+          "term": "UPPERCASE",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "lowercase",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "MixedCase",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "CASE-SENSITIVE",
+          "expectedResults": ["note12", "calllog12"]
+        },
+        {
+          "term": "case-insensitive",
+          "expectedResults": ["note12", "calllog12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "numbers_and_digits",
+      "description": "Numbers and digits search",
+      "searchTerms": [
+        {
+          "term": "12345",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "abc123",
+          "expectedResults": ["note6", "calllog6"]
+        },
+        {
+          "term": "0xFF",
+          "expectedResults": ["note3", "calllog3"]
+        },
+        {
+          "term": "010101",
+          "expectedResults": ["note3", "calllog3"]
+        },
+        {
+          "term": "1,2,3",
+          "expectedResults": ["note11", "calllog11"]
+        },
+        {
+          "term": "one, two, three",
+          "expectedResults": ["note11", "calllog11"]
+        },
+        {
+          "term": "1st, 2nd, 3rd",
+          "expectedResults": ["note11", "calllog11"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "special_characters",
+      "description": "Special characters and symbols",
+      "searchTerms": [
+        {
+          "term": "!@#$%^&*()_+=-{}[]|:;'<>,.?/`~",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "$€¥£₹",
+          "expectedResults": ["note3", "calllog3"]
+        },
+        {
+          "term": "∑√∞≈≠",
+          "expectedResults": ["note3", "calllog3"]
+        },
+        {
+          "term": "½ ⅓ ¾",
+          "expectedResults": ["note11", "calllog11"]
+        },
+        {
+          "term": "I II III IV",
+          "expectedResults": ["note11", "calllog11"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "unicode_and_emojis",
+      "description": "Unicode characters and emojis",
+      "searchTerms": [
+        {
+          "term": "😀🔥",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "🔥💡⚡",
+          "expectedResults": ["note6", "calllog6"]
+        },
+        {
+          "term": "αβγ",
+          "expectedResults": ["note3", "calllog3"]
+        },
+        {
+          "term": "résumé",
+          "expectedResults": ["note3", "calllog3"]
+        },
+        {
+          "term": "jalapeño",
+          "expectedResults": ["note3", "calllog3"]
+        },
+        {
+          "term": "smörgåsbord",
+          "expectedResults": ["note3", "calllog3"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "multilingual_text",
+      "description": "Multilingual text search",
+      "searchTerms": [
+        {
+          "term": "こんにちは",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "Привет",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "مرحبا",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "हिन्दी",
+          "expectedResults": ["note1", "note10", "calllog1", "calllog10"]
+        },
+        {
+          "term": "中文测试",
+          "expectedResults": ["note7", "calllog7"]
+        },
+        {
+          "term": "Français",
+          "expectedResults": ["note7", "calllog7"]
+        },
+        {
+          "term": "Español",
+          "expectedResults": ["note7", "calllog7"]
+        },
+        {
+          "term": "Türkçe",
+          "expectedResults": ["note7", "calllog7"]
+        },
+        {
+          "term": "EnglishabcРусский文字हिन्दी",
+          "expectedResults": ["note10", "calllog10"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "quotes_and_quotation_marks",
+      "description": "Quotes and quotation marks",
+      "searchTerms": [
+        {
+          "term": "'single'",
+          "expectedResults": ["note2", "calllog2"]
+        },
+        {
+          "term": "\"double\"",
+          "expectedResults": ["note2", "calllog2"]
+        },
+        {
+          "term": "quotes",
+          "expectedResults": ["note2", "calllog2"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "hyphenated_and_camelcase",
+      "description": "Hyphenated words and camelCase",
+      "searchTerms": [
+        {
+          "term": "hyphenated-words",
+          "expectedResults": ["note2", "calllog2"]
+        },
+        {
+          "term": "camelCaseWords",
+          "expectedResults": ["note2", "calllog2"]
+        },
+        {
+          "term": "snake_case_text",
+          "expectedResults": ["note2", "calllog2"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "whitespace_variations",
+      "description": "Whitespace and spacing variations",
+      "searchTerms": [
+        {
+          "term": "extra spaces   between   words",
+          "expectedResults": ["note2", "calllog2"]
+        },
+        {
+          "term": "whitespace variations   ",
+          "expectedResults": ["note7", "calllog7"]
+        },
+        {
+          "term": "very looooooooooooooooooooooooooooooooooooooong string",
+          "expectedResults": ["note8", "calllog8"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "escape_sequences",
+      "description": "Escape sequences and special formatting",
+      "searchTerms": [
+        {
+          "term": "\\\\n newline",
+          "expectedResults": ["note4", "calllog4"]
+        },
+        {
+          "term": "\\\\t tab",
+          "expectedResults": ["note4", "calllog4"]
+        },
+        {
+          "term": "line-break \\n test",
+          "expectedResults": ["note7", "calllog7"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "json_and_html",
+      "description": "JSON-like and HTML content",
+      "searchTerms": [
+        {
+          "term": "{key:value}",
+          "expectedResults": ["note4", "calllog4"]
+        },
+        {
+          "term": "<b>bold</b>",
+          "expectedResults": ["note4", "calllog4"]
+        },
+        {
+          "term": "&amp; entities",
+          "expectedResults": ["note4", "calllog4"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "sql_injection",
+      "description": "SQL injection test patterns",
+      "searchTerms": [
+        {
+          "term": " OR 1=1 --",
+          "expectedResults": ["note4", "calllog4"]
+        },
+        {
+          "term": "SQL injection",
+          "expectedResults": ["note4", "calllog4"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "hashtags_and_mentions",
+      "description": "Hashtags and mentions",
+      "searchTerms": [
+        {
+          "term": "#TagSearch",
+          "expectedResults": ["note6", "calllog6"]
+        },
+        {
+          "term": "#CaseSensitive",
+          "expectedResults": ["note6", "calllog6"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "urls_and_emails",
+      "description": "URLs and email addresses",
+      "searchTerms": [
+        {
+          "term": "https://example.com",
+          "expectedResults": ["note6", "calllog6"]
+        },
+        {
+          "term": "test@example.com",
+          "expectedResults": ["note6", "calllog6"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "palindrome_and_reversed",
+      "description": "Palindrome and reversed text",
+      "searchTerms": [
+        {
+          "term": "racecar",
+          "expectedResults": ["note7", "calllog7"]
+        },
+        {
+          "term": "ʇxǝʇ",
+          "expectedResults": ["note7", "calllog7"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "boolean_values",
+      "description": "Boolean values and keywords",
+      "searchTerms": [
+        {
+          "term": "true/false",
+          "expectedResults": ["note9", "calllog9"]
+        },
+        {
+          "term": "Yes/No",
+          "expectedResults": ["note9", "calllog9"]
+        },
+        {
+          "term": "Y/N",
+          "expectedResults": ["note9", "calllog9"]
+        },
+        {
+          "term": "AND OR NOT",
+          "expectedResults": ["note9", "calllog9"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "date_formats",
+      "description": "Date and time formats",
+      "searchTerms": [
+        {
+          "term": "2025-09-17",
+          "expectedResults": ["note9", "calllog9"]
+        },
+        {
+          "term": "17/09/2025",
+          "expectedResults": ["note9", "calllog9"]
+        },
+        {
+          "term": "12:34:56",
+          "expectedResults": ["note9", "calllog9"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "regex_patterns",
+      "description": "Regex-like patterns",
+      "searchTerms": [
+        {
+          "term": ".* ?+[]",
+          "expectedResults": ["note10", "calllog10"]
+        },
+        {
+          "term": "*search?",
+          "expectedResults": ["note10", "calllog10"]
+        },
+        {
+          "term": "wildcard",
+          "expectedResults": ["note10", "calllog10"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "duplicate_content",
+      "description": "Duplicate lines and repeated content",
+      "searchTerms": [
+        {
+          "term": "Repeated repeated repeated",
+          "expectedResults": ["note5", "calllog5"]
+        },
+        {
+          "term": "duplicate lines",
+          "expectedResults": ["note10", "calllog10"]
+        },
+        {
+          "term": "line1\\nline1",
+          "expectedResults": ["note10", "calllog10"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "keyword_stemming",
+      "description": "Keyword stemming and pluralization",
+      "searchTerms": [
+        {
+          "term": "run, running, ran",
+          "expectedResults": ["note12", "calllog12"]
+        },
+        {
+          "term": "cat, cats",
+          "expectedResults": ["note12", "calllog12"]
+        },
+        {
+          "term": "to/too/two",
+          "expectedResults": ["note12", "calllog12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "edge_cases",
+      "description": "Edge cases and special scenarios",
+      "searchTerms": [
+        {
+          "term": "null",
+          "expectedResults": ["note8", "calllog8"]
+        },
+        {
+          "term": "zero-width space",
+          "expectedResults": ["note8", "calllog8"]
+        },
+        {
+          "term": "mixed encoding UTF-8 vs ASCII",
+          "expectedResults": ["note8", "calllog8"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "misspellings",
+      "description": "Misspellings and typos",
+      "searchTerms": [
+        {
+          "term": "descreption",
+          "expectedResults": ["note2", "calllog2"]
+        },
+        {
+          "term": "desc",
+          "expectedResults": ["note2", "calllog2"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "fractions_and_roman",
+      "description": "Fractions and Roman numerals",
+      "searchTerms": [
+        {
+          "term": "½ ⅓ ¾",
+          "expectedResults": ["note11", "calllog11"]
+        },
+        {
+          "term": "I II III IV",
+          "expectedResults": ["note11", "calllog11"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "lorem_ipsum",
+      "description": "Lorem ipsum text",
+      "searchTerms": [
+        {
+          "term": "Lorem ipsum",
+          "expectedResults": ["note5", "calllog5"]
+        },
+        {
+          "term": "dolor sit amet",
+          "expectedResults": ["note5", "calllog5"]
+        },
+        {
+          "term": "consectetur adipiscing elit",
+          "expectedResults": ["note5", "calllog5"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "partial_word_search",
+      "description": "Partial word matching",
+      "searchTerms": [
+        {
+          "term": "collabor",
+          "expectedResults": ["note1", "note2", "note3", "note4", "note5", "note6", "note7", "note8", "note9", "note10", "note11", "note12", "calllog1", "calllog2", "calllog3", "calllog4", "calllog5", "calllog6", "calllog7", "calllog8", "calllog9", "calllog10", "calllog11", "calllog12"]
+        },
+        {
+          "term": "admin",
+          "expectedResults": ["note1", "note2", "note6", "note10", "calllog1", "calllog2", "calllog6", "calllog10"]
+        },
+        {
+          "term": "team",
+          "expectedResults": ["note2", "note3", "note4", "note5", "note6", "note7", "note10", "note11", "note12", "calllog2", "calllog3", "calllog4", "calllog5", "calllog6", "calllog7", "calllog10", "calllog11", "calllog12"]
+        },
+        {
+          "term": "note",
+          "expectedResults": ["note1", "note2", "note3", "note4", "note5", "note6", "note7", "note8", "note9", "note10", "note11", "note12"]
+        },
+        {
+          "term": "created",
+          "expectedResults": ["note1", "note2", "note3", "note4", "note5", "note6", "note7", "note8", "note9", "note10", "note11", "note12", "calllog1", "calllog2", "calllog3", "calllog4", "calllog5", "calllog6", "calllog7", "calllog8", "calllog9", "calllog10", "calllog11", "calllog12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "exact_phrase_search",
+      "description": "Exact phrase matching",
+      "searchTerms": [
+        {
+          "term": "To Do note created by owner",
+          "expectedResults": ["note1"]
+        },
+        {
+          "term": "Call note created by admin",
+          "expectedResults": ["note2"]
+        },
+        {
+          "term": "Custom note created by teamMember",
+          "expectedResults": ["note3"]
+        },
+        {
+          "term": "Inbound call created by owner",
+          "expectedResults": ["calllog1", "calllog9"]
+        },
+        {
+          "term": "Outbound call created by admin",
+          "expectedResults": ["calllog2", "calllog6", "calllog10"]
+        },
+        {
+          "term": "Video call created by teamMember",
+          "expectedResults": ["calllog3", "calllog7", "calllog11"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "non_existent_search",
+      "description": "Non-existent search terms",
+      "searchTerms": [
+        {
+          "term": "xyz123nonexistent",
+          "expectedResults": []
+        },
+        {
+          "term": "qwertyuiop",
+          "expectedResults": []
+        },
+        {
+          "term": "asdfghjkl",
+          "expectedResults": []
+        }
+      ]
+    },
+    {
+      "testCaseId": "special_regex_characters",
+      "description": "Special regex characters as literal text",
+      "searchTerms": [
+        {
+          "term": ".*",
+          "expectedResults": ["note10", "calllog10"]
+        },
+        {
+          "term": "?+",
+          "expectedResults": ["note10", "calllog10"]
+        },
+        {
+          "term": "[]",
+          "expectedResults": ["note1, note10", "calllog1", "calllog10"]
+        },
+        {
+          "term": "()",
+          "expectedResults": ["note1", "calllog1"]
+        },
+        {
+          "term": "{}",
+          "expectedResults": ["note1", "calllog1"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "mixed_scripts",
+      "description": "Mixed script searching",
+      "searchTerms": [
+        {
+          "term": "Englishabc",
+          "expectedResults": ["note10", "calllog10"]
+        },
+        {
+          "term": "Русский",
+          "expectedResults": ["note10", "calllog10"]
+        },
+        {
+          "term": "文字",
+          "expectedResults": ["note10", "calllog10"]
+        },
+        {
+          "term": "हिन्दी",
+          "expectedResults": ["note1", "note10", "calllog1", "calllog10"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "frequency_testing",
+      "description": "Word frequency testing",
+      "searchTerms": [
+        {
+          "term": "repeated",
+          "expectedResults": ["note5", "calllog5"]
+        },
+        {
+          "term": "words",
+          "expectedResults": ["note2", "note5", "note9", "note11", "calllog2", "calllog5", "calllog9", "calllog11"]
+        },
+        {
+          "term": "frequency",
+          "expectedResults": ["note5", "calllog5"]
+        }
+      ]
+    }
+  ]
+}

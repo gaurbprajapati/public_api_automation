@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="AI Copilot Test Suite" verbose="1" parallel="methods" thread-count="5">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+
+    <test name="Ask AI Copilot Tests">
+        <classes>
+            <class name="io.rcrm.api.copilot.AskAICopilotTest">
+                <methods>
+                    <include name="askCopilotWithValidMessage_POST" />
+                    <include name="askCopilotWithCustomMessage_POST" />
+                    <include name="askCopilotWithMaxLengthMessage_POST" />
+                    <include name="askCopilotWithNewChatSession_POST" />
+                    <include name="askCopilotWithExistingChatSession_POST" />
+                    <include name="askCopilotWithRecruitingQuery_POST" />
+                    <include name="askCopilotWithEmptyMessage_POST" />
+                    <include name="askCopilotWithExceedMaxLengthMessage_POST" />
+                    <include name="askCopilotWithMissingMessage_POST" />
+                    <include name="askCopilotWithInvalidAuth_POST" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Copilot Saved Prompts Endpoints Test">
+        <classes>
+            <class name="io.rcrm.api.copilot.SavedPromptsAICopilotTest">
+                <methods>
+                    <include name="savePromptWithValidData_POST" />
+                    <include name="savePromptWithPinnedTrue_POST" />
+                    <include name="savePromptWithoutPinnedField_POST" />
+                    <include name="savePromptWithMinLengthTitle_POST" />
+                    <include name="savePromptWithMaxLengthTitle_POST" />
+                    <include name="savePromptWithMinLengthPrompt_POST" />
+                    <include name="savePromptWithLongPrompt_POST" />
+                    <include name="savePromptWithEmptyTitle_POST" />
+                    <include name="savePromptWithExceedMaxTitle_POST" />
+                    <include name="savePromptWithEmptyPrompt_POST" />
+                    <include name="savePromptWithMissingTitle_POST" />
+                    <include name="savePromptWithMissingPrompt_POST" />
+                    <include name="savePromptWithInvalidAuth_POST" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Copilot more than 50 Saved Prompts Test ">
+        <classes>
+            <class name="io.rcrm.api.copilot.SavedPromptsAICopilotTest">
+                <methods>
+                    <include name="saveMoreThanFiftyPrompts_POST" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Saved Prompts Tests">
+        <classes>
+            <class name="io.rcrm.api.copilot.UpdateSavedPromptsAICopilotTest">
+                <methods>
+                    <include name="updatePromptWithValidData_PATCH" />
+                    <include name="updatePromptSetPinnedTrue_PATCH" />
+                    <include name="updatePromptWithEmptyTitle_PATCH" />
+                    <include name="updatePromptWithExceedMaxTitle_PATCH" />
+                    <include name="updatePromptWithEmptyPrompt_PATCH" />
+                    <include name="updatePromptWithMissingTitle_PATCH" />
+                    <include name="updatePromptWithMissingPrompt_PATCH" />
+                    <include name="updatePromptWithInvalidId_PATCH" />
+                    <include name="updatePromptWithInvalidAuth_PATCH" />
+                    <include name="updatePromptWithNonExistentId_PATCH" />
+                    <include name="updatePromptWithInvalidPayload_PATCH" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Delete Conversation Tests">
+        <classes>
+            <class name="io.rcrm.api.copilot.DeleteConversationAICopilotTest">
+                <methods>
+                    <include name="deleteConversationWithValidId_DELETE" />
+                    <include name="deleteConversationTwice_DELETE" />
+                    <include name="deleteConversationWithInvalidId_DELETE" />
+                    <include name="deleteConversationWithInvalidAuth_DELETE" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Toggle Pin Prompt Tests">
+        <classes>
+            <class name="io.rcrm.api.copilot.TogglePinPromptAICopilotTest">
+                <methods>
+                    <include name="pinPromptWithValidId_POST" />
+                    <include name="unpinPromptWithValidId_POST" />
+                    <include name="togglePinMultipleTimes_POST" />
+                    <include name="pinPromptWithInvalidId_POST" />
+                    <include name="pinPromptWithInvalidAuth_POST" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Copilot more than 6 Pinned Prompts Test ">
+        <classes>
+            <class name="io.rcrm.api.copilot.TogglePinPromptAICopilotTest">
+                <methods>
+                    <include name="pinMoreThanSixPrompts_POST" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Pinned Prompts Tests">
+        <classes>
+            <class name="io.rcrm.api.copilot.GetPinnedPromptsAICopilotTest">
+                <methods>
+                    <include name="getPinnedPromptsWithoutSearch_GET" />
+                    <include name="getPinnedPromptsWithSearch_GET" />
+                    <include name="getPinnedPromptsWithPartialSearch_GET" />
+                    <include name="getPinnedPromptsWithMaxLengthSearch_GET" />
+                    <include name="getPinnedPromptsWithNoMatch_GET" />
+                    <include name="getPinnedPromptsWithInvalidAuth_GET" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Copilot Candidate Tool Data Validation">
+        <classes>
+            <class name="io.rcrm.api.copilot.datavalidation.AICopilotCandidateToolTests">
+                <methods>
+                    <include name="validateCandidatesWithJavaSkill_GET" />
+                    <include name="validateCandidatesWithJavaAndGoogleOrAppleExperience_GET" />
+                    <include name="validateCandidatesAddedInLast10Days_GET" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Copilot Job Tool Data Validation">
+        <classes>
+            <class name="io.rcrm.api.copilot.datavalidation.AICopilotJobToolTests">
+                <methods>
+                    <include name="validateClientsWithOpenJobsLast30Days_GET" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

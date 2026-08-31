@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RBAC Candidate View Security Test Suite" thread-count="8" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+    <test name="RBAC Candidate Create Security - all">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateCreateSecurityTest">
+                <methods>
+                    <include name="createCandidateSecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCandidate_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Edit Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editCandidate_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteCandidate_Test"/>
+                </methods>
+            </class>
+        </classes>
+   </test>
+   <test name="RBAC Get Candidates V2 Security Test">
+    <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCandidateV2_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Widget Count Security Test">
+       <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCandidateWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Contact Numbers Security Test">
+        <parameter name="role" value="AccountOwner-AccountOwner"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateContactNumbers_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Activity Data Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateActivityData_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Education History Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateEducationHistory_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Work Experience Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateWorkExperience_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Update Default Social Links Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="updateDefaultSocialLinks_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Related Hotlists Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateRelatedHotlists_Test"/>
+                  </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Related Deals View Security Test">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.RBACGetCandidateRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getCandidateRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBACCandidateAssignedJobsSecurityTest">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.RBACCandidateAssignedJobsSecurityTest">
+				<methods>
+					<include name="viewCandidateAssignedJobs_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="RBACGetPitchCandidateContactsSecurityTest">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.RBACGetPitchCandidateContactsSecurityTest">
+                <methods>
+                    <include name="getPitchCandidateContacts_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

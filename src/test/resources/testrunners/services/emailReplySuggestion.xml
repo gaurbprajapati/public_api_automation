@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Neptune Email Reply Suggestion" verbose="1" parallel="tests" thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<test name="Email Reply Suggestion - Generate">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.EmailReplySuggestionTest">
+				<methods>
+					<include name="generateAIReplySuggestionTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Email Reply Suggestion - Invalid Payload">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.EmailReplySuggestionTest">
+				<methods>
+					<include name="invalidPayloadTestForAIReplySuggestion" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Email Reply Suggestion - Unauthorized">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.EmailReplySuggestionTest">
+				<methods>
+					<include name="unauthorizedTestForAIReplySuggestion" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

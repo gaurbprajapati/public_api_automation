@@ -1,0 +1,1994 @@
+{
+  "Owner": [
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin owner",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember owner",
+      "expectedResult": "Contact3,Contact4,Contact12,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember owner",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner role",
+      "expectedResult": "Contact6,Contact7,Contact8,Contact9,Contact13,Contact14"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team owner",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty owner",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin owner",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember owner",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember owner",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner role",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team owner",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty owner (should return all with values)",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin owner",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember owner",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember owner",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team owner",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team owner",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or team owner",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - owner or team owner",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - restrictedTeamMember or team owner",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any owner value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude team owner",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin owner",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember owner",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember owner",
+      "expectedResult": "Contact6,Contact7,Contact8,Contact9,Contact13,Contact14"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or team owner",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember or team owner",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude owner or team owner",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude any owner value",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_empty",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - owner field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "has_any_value",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - owner field has any value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    }
+  ],
+  "CreatedBy": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember createdBy",
+      "expectedResult": "Contact3,Contact4,Contact12,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember createdBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner createdBy",
+      "expectedResult": "Contact6,Contact7,Contact8,Contact9,Contact13,Contact14"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team createdBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty createdBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin createdBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember createdBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner createdBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty createdBy (should return all with values)",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember createdBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner createdBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team createdBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team createdBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or team createdBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - owner or team createdBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - restrictedTeamMember or team createdBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, teamMember, or restrictedTeamMember createdBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, restrictedTeamMember, or owner createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any createdBy value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude team createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin createdBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember createdBy",
+      "expectedResult": "Contact6,Contact7,Contact8,Contact9,Contact13,Contact14"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or team createdBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember or team createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude owner or team createdBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude restrictedTeamMember or owner createdBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude any createdBy value",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - createdBy field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - createdBy field has any value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    }
+  ],
+  "UpdatedBy": [
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember updatedBy",
+      "expectedResult": "Contact3,Contact4,Contact12,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember updatedBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner updatedBy",
+      "expectedResult": "Contact6,Contact7,Contact8,Contact9,Contact13,Contact14"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team updatedBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty updatedBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin updatedBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty updatedBy (should return all with values)",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner updatedBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team updatedBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or team updatedBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - owner or team updatedBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - restrictedTeamMember or team updatedBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, teamMember, or restrictedTeamMember updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, restrictedTeamMember, or owner updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any updatedBy value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude team updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin updatedBy",
+      "expectedResult": "Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember updatedBy",
+      "expectedResult": "Contact6,Contact7,Contact8,Contact9,Contact13,Contact14"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or team updatedBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember or team updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude owner or team updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact10,Contact11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude restrictedTeamMember or owner updatedBy",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude any updatedBy value",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_empty",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - updatedBy field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "has_any_value",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - updatedBy field has any value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    }
+  ],
+  "Stage": [
+    {
+      "dbField": "stageid",
+      "filterType": "is",
+      "filterValue": "{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Lead stage",
+      "expectedResult": "Contact1,Contact4,Contact7,Contact10,Contact13"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is",
+      "filterValue": "{FollowUp}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for FollowUp stage",
+      "expectedResult": "Contact2,Contact5,Contact8,Contact11,Contact14"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is",
+      "filterValue": "{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Client stage",
+      "expectedResult": "Contact3,Contact6,Contact9,Contact12,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is_not",
+      "filterValue": "{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Lead stage",
+      "expectedResult": "Contact2,Contact3,Contact5,Contact6,Contact8,Contact9,Contact11,Contact12,Contact14,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is_not",
+      "filterValue": "{FollowUp}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude FollowUp stage",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact6,Contact7,Contact9,Contact10,Contact12,Contact13,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is_not",
+      "filterValue": "{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Client stage",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact7,Contact8,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Lead stage",
+      "expectedResult": "Contact1,Contact4,Contact7,Contact10,Contact13"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{FollowUp}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value FollowUp stage",
+      "expectedResult": "Contact2,Contact5,Contact8,Contact11,Contact14"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Client stage",
+      "expectedResult": "Contact3,Contact6,Contact9,Contact12,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Lead},{FollowUp}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Lead or FollowUp stage",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact7,Contact8,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Lead},{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Lead or Client stage",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact6,Contact7,Contact9,Contact10,Contact12,Contact13,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{FollowUp},{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - FollowUp or Client stage",
+      "expectedResult": "Contact2,Contact3,Contact5,Contact6,Contact8,Contact9,Contact11,Contact12,Contact14,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Lead},{FollowUp},{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - any stage value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Lead stage",
+      "expectedResult": "Contact2,Contact3,Contact5,Contact6,Contact8,Contact9,Contact11,Contact12,Contact14,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{FollowUp}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude FollowUp stage",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact6,Contact7,Contact9,Contact10,Contact12,Contact13,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Client stage",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact7,Contact8,Contact10,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Lead},{FollowUp}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Lead or FollowUp stage",
+      "expectedResult": "Contact3,Contact6,Contact9,Contact12,Contact15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Lead},{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Lead or Client stage",
+      "expectedResult": "Contact2,Contact5,Contact8,Contact11,Contact14"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{FollowUp},{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude FollowUp or Client stage",
+      "expectedResult": "Contact1,Contact4,Contact7,Contact10,Contact13"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Lead},{FollowUp},{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude any stage value",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - stage field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - stage field has any value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    }
+  ],
+  "LastCommsType": [
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{Email}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Email LastCommsType",
+      "expectedResult": "Contact1,Contact6,Contact11"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for CallLog LastCommsType",
+      "expectedResult": "Contact2,Contact7,Contact12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Message LastCommsType",
+      "expectedResult": "Contact3,Contact8,Contact13"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Meeting LastCommsType",
+      "expectedResult": "Contact4,Contact9,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for SMS LastCommsType",
+      "expectedResult": "Contact5,Contact10,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{Email}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Email LastCommsType",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact5,Contact7,Contact8,Contact9,Contact10,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude CallLog LastCommsType",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact6,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Message LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact12,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Meeting LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact8,Contact10,Contact11,Contact12,Contact13,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude SMS LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact11,Contact12,Contact13,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value Email LastCommsType",
+      "expectedResult": "Contact1,Contact6,Contact11"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value CallLog LastCommsType",
+      "expectedResult": "Contact2,Contact7,Contact12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value Message LastCommsType",
+      "expectedResult": "Contact3,Contact8,Contact13"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value Meeting LastCommsType",
+      "expectedResult": "Contact4,Contact9,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value SMS LastCommsType",
+      "expectedResult": "Contact5,Contact10,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or CallLog LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact6,Contact7,Contact11,Contact12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or Message LastCommsType",
+      "expectedResult": "Contact1,Contact3,Contact6,Contact8,Contact11,Contact13"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or Meeting LastCommsType",
+      "expectedResult": "Contact1,Contact4,Contact6,Contact9,Contact11,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact5,Contact6,Contact10,Contact11,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or Message LastCommsType",
+      "expectedResult": "Contact2,Contact3,Contact7,Contact8,Contact12,Contact13"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or Meeting LastCommsType",
+      "expectedResult": "Contact2,Contact4,Contact7,Contact9,Contact12,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or SMS LastCommsType",
+      "expectedResult": "Contact2,Contact5,Contact7,Contact10,Contact12,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Message},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Message or Meeting LastCommsType",
+      "expectedResult": "Contact3,Contact4,Contact8,Contact9,Contact13,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Message},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Message or SMS LastCommsType",
+      "expectedResult": "Contact3,Contact5,Contact8,Contact10,Contact13,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Meeting or SMS LastCommsType",
+      "expectedResult": "Contact4,Contact5,Contact9,Contact10,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or CallLog or Message LastCommsType",
+      "expectedResult": "Contact1,Contact11,Contact12,Contact13,Contact2,Contact3,Contact6,Contact7,Contact8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or CallLog or Meeting LastCommsType",
+      "expectedResult": "Contact1,Contact11,Contact12,Contact14,Contact2,Contact4,Contact6,Contact7,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or CallLog or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact12,Contact15,Contact2,Contact5,Contact6,Contact7"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{Message},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or Message or Meeting LastCommsType",
+      "expectedResult": "Contact1,Contact11,Contact13,Contact14,Contact3,Contact4,Contact6,Contact8,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{Message},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or Message or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact13,Contact15,Contact3,Contact5,Contact6,Contact8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact14,Contact15,Contact4,Contact5,Contact6,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{Message},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or Message or Meeting LastCommsType",
+      "expectedResult": "Contact12,Contact13,Contact14,Contact2,Contact3,Contact4,Contact7,Contact8,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{Message},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or Message or SMS LastCommsType",
+      "expectedResult": "Contact10,Contact12,Contact13,Contact15,Contact2,Contact3,Contact5,Contact7,Contact8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact10,Contact12,Contact14,Contact15,Contact2,Contact4,Contact5,Contact7,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Message},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Message or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact10,Contact13,Contact14,Contact15,Contact3,Contact4,Contact5,Contact8,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{Message},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or CallLog or Message or Meeting LastCommsType",
+      "expectedResult": "Contact1,Contact11,Contact12,Contact13,Contact14,Contact2,Contact3,Contact4,Contact6,Contact7,Contact8,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{Message},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or CallLog or Message or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact12,Contact13,Contact15,Contact2,Contact3,Contact5,Contact6,Contact7,Contact8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or CallLog or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact12,Contact14,Contact15,Contact2,Contact4,Contact5,Contact6,Contact7,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{Message},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or Message or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact13,Contact14,Contact15,Contact3,Contact4,Contact5,Contact6,Contact8,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{Message},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or Message or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact10,Contact12,Contact13,Contact14,Contact15,Contact2,Contact3,Contact4,Contact5,Contact7,Contact8,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{Message},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - any LastCommsType value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email LastCommsType",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact5,Contact7,Contact8,Contact9,Contact10,Contact12,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog LastCommsType",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact6,Contact8,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Message LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact12,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Meeting LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact8,Contact10,Contact11,Contact12,Contact13,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude SMS LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact11,Contact12,Contact13,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or CallLog LastCommsType",
+      "expectedResult": "Contact3,Contact4,Contact5,Contact8,Contact9,Contact10,Contact13,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or Message LastCommsType",
+      "expectedResult": "Contact2,Contact4,Contact5,Contact7,Contact9,Contact10,Contact12,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or Meeting LastCommsType",
+      "expectedResult": "Contact2,Contact3,Contact5,Contact7,Contact8,Contact10,Contact12,Contact13,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or SMS LastCommsType",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact7,Contact8,Contact9,Contact12,Contact13,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or Message LastCommsType",
+      "expectedResult": "Contact1,Contact4,Contact5,Contact6,Contact9,Contact10,Contact11,Contact14,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or Meeting LastCommsType",
+      "expectedResult": "Contact1,Contact3,Contact5,Contact6,Contact8,Contact10,Contact11,Contact13,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact6,Contact8,Contact9,Contact11,Contact13,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Message},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Message or Meeting LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact7,Contact10,Contact11,Contact12,Contact15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Message},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Message or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact6,Contact7,Contact9,Contact11,Contact12,Contact14"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Meeting or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact6,Contact7,Contact8,Contact11,Contact12,Contact13"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or CallLog or Message LastCommsType",
+      "expectedResult": "Contact10,Contact14,Contact15,Contact4,Contact5,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or CallLog or Meeting LastCommsType",
+      "expectedResult": "Contact10,Contact13,Contact15,Contact3,Contact5,Contact8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or CallLog or SMS LastCommsType",
+      "expectedResult": "Contact13,Contact14,Contact3,Contact4,Contact8,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{Message},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or Message or Meeting LastCommsType",
+      "expectedResult": "Contact10,Contact12,Contact15,Contact2,Contact5,Contact7"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{Message},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or Message or SMS LastCommsType",
+      "expectedResult": "Contact12,Contact14,Contact2,Contact4,Contact7,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact12,Contact13,Contact2,Contact3,Contact7,Contact8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{Message},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or Message or Meeting LastCommsType",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact15,Contact5,Contact6"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{Message},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or Message or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact11,Contact14,Contact4,Contact6,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact11,Contact13,Contact3,Contact6,Contact8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Message},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Message or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact11,Contact12,Contact2,Contact6,Contact7"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{Message},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or CallLog or Message or Meeting LastCommsType",
+      "expectedResult": "Contact10,Contact15,Contact5"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{Message},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or CallLog or Message or SMS LastCommsType",
+      "expectedResult": "Contact14,Contact4,Contact9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or CallLog or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact13,Contact3,Contact8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{Message},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or Message or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact12,Contact2,Contact7"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{Message},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or Message or Meeting or SMS LastCommsType",
+      "expectedResult": "Contact1,Contact11,Contact6"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{Message},{Meeting},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude any LastCommsType value",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Empty filter - LastCommsType field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Has Any Value filter - LastCommsType field has any value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15"
+    }
+  ],
+  "Off Limit Status": [
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is",
+      "filterValue": "{Unavailable}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Unavailable status",
+      "expectedResult": "Contact1,Contact2,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is",
+      "filterValue": "{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Contractual Off-Limits status",
+      "expectedResult": "Contact3,Contact5,Contact7"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is",
+      "filterValue": "{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Existing Customer status",
+      "expectedResult": "Contact4,Contact6"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is_not",
+      "filterValue": "{Unavailable}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Unavailable status",
+      "expectedResult": "Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is_not",
+      "filterValue": "{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Contractual Off-Limits status",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact2,Contact4,Contact6,Contact8,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is_not",
+      "filterValue": "{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Existing Customer status",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact2,Contact3,Contact5,Contact7,Contact8,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Unavailable}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Unavailable status",
+      "expectedResult": "Contact1,Contact2,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Contractual Off-Limits status",
+      "expectedResult": "Contact3,Contact5,Contact7"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Existing Customer status",
+      "expectedResult": "Contact4,Contact6"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Unavailable},{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Unavailable or Contractual Off-Limits status",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact7,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Unavailable},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Unavailable or Existing Customer status",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact6,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Contractual Off-Limits},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Contractual Off-Limits or Existing Customer status",
+      "expectedResult": "Contact3,Contact4,Contact5,Contact6,Contact7"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Unavailable},{Contractual Off-Limits},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - any status value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Unavailable}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Unavailable status",
+      "expectedResult": "Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Contractual Off-Limits status",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact2,Contact4,Contact6,Contact8,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Existing Customer status",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact2,Contact3,Contact5,Contact7,Contact8,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Unavailable},{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Unavailable or Contractual Off-Limits status",
+      "expectedResult": "Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact4,Contact6,Contact8"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Unavailable},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Unavailable or Existing Customer status",
+      "expectedResult": "Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact3,Contact5,Contact7,Contact8"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Contractual Off-Limits},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Contractual Off-Limits or Existing Customer status",
+      "expectedResult": "Contact1,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact2,Contact8,Contact9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Unavailable},{Contractual Off-Limits},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude any status value",
+      "expectedResult": "Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact8"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - off limit status field is empty",
+      "expectedResult": "Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,Contact8"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - off limit status field has any value",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9"
+    }
+  ]
+}

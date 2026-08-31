@@ -1,0 +1,438 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "requestUuid": {
+            "type": "string"
+          },
+          "responseType": {
+            "type": "object",
+            "properties": {
+              "context": {
+                "type": "string"
+              },
+              "code": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "context",
+              "code"
+            ]
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "message",
+          "requestUuid",
+          "responseType",
+          "timestamp",
+          "status"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "templates": {
+            "type": "array",
+            "items": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "templateName": {
+                    "type": "string"
+                  },
+                  "shareWith": {
+                    "type": "object",
+                    "properties": {
+                      "users": {
+                        "type": "array",
+                        "items": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "photo": {
+                                "type": "null"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "photo"
+                            ]
+                          }
+                        ]
+                      },
+                      "teams": {
+                        "type": "array",
+                        "items": {}
+                      }
+                    },
+                    "required": [
+                      "users",
+                      "teams"
+                    ]
+                  },
+                  "templateTableFields": {
+                    "type": "string"
+                  },
+                  "templateTheme": {
+                    "type": "string"
+                  },
+                  "dueIn": {
+                    "type": "string"
+                  },
+                  "isDefault": {
+                    "type": "integer"
+                  },
+                  "createdBy": {
+                    "type": "integer"
+                  },
+                  "createdOn": {
+                    "type": "integer"
+                  },
+                  "updatedOn": {
+                    "type": "integer"
+                  },
+                  "collaboratorsIds": {
+                    "type": "string"
+                  },
+                  "createdByName": {
+                    "type": "string"
+                  },
+                  "createdByPhoto": {
+                    "type": "null"
+                  },
+                  "isPayBill": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id",
+                  "templateName",
+                  "shareWith",
+                  "templateTableFields",
+                  "templateTheme",
+                  "dueIn",
+                  "isDefault",
+                  "createdBy",
+                  "createdOn",
+                  "updatedOn",
+                  "collaboratorsIds",
+                  "createdByName",
+                  "createdByPhoto",
+                  "isPayBill"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "templateName": {
+                    "type": "string"
+                  },
+                  "shareWith": {
+                    "type": "object",
+                    "properties": {
+                      "users": {
+                        "type": "array",
+                        "items": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "photo": {
+                                "type": "null"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "photo"
+                            ]
+                          }
+                        ]
+                      },
+                      "teams": {
+                        "type": "array",
+                        "items": {}
+                      }
+                    },
+                    "required": [
+                      "users",
+                      "teams"
+                    ]
+                  },
+                  "templateTableFields": {
+                    "type": "string"
+                  },
+                  "templateTheme": {
+                    "type": "string"
+                  },
+                  "dueIn": {
+                    "type": "string"
+                  },
+                  "isDefault": {
+                    "type": "integer"
+                  },
+                  "createdBy": {
+                    "type": "integer"
+                  },
+                  "createdOn": {
+                    "type": "integer"
+                  },
+                  "updatedOn": {
+                    "type": "integer"
+                  },
+                  "collaboratorsIds": {
+                    "type": "string"
+                  },
+                  "createdByName": {
+                    "type": "string"
+                  },
+                  "createdByPhoto": {
+                    "type": "null"
+                  },
+                  "isPayBill": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id",
+                  "templateName",
+                  "shareWith",
+                  "templateTableFields",
+                  "templateTheme",
+                  "dueIn",
+                  "isDefault",
+                  "createdBy",
+                  "createdOn",
+                  "updatedOn",
+                  "collaboratorsIds",
+                  "createdByName",
+                  "createdByPhoto",
+                  "isPayBill"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "templateName": {
+                    "type": "string"
+                  },
+                  "shareWith": {
+                    "type": "object",
+                    "properties": {
+                      "users": {
+                        "type": "array",
+                        "items": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "photo": {
+                                "type": "null"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "photo"
+                            ]
+                          }
+                        ]
+                      },
+                      "teams": {
+                        "type": "array",
+                        "items": {}
+                      }
+                    },
+                    "required": [
+                      "users",
+                      "teams"
+                    ]
+                  },
+                  "templateTableFields": {
+                    "type": "string"
+                  },
+                  "templateTheme": {
+                    "type": "string"
+                  },
+                  "dueIn": {
+                    "type": "string"
+                  },
+                  "isDefault": {
+                    "type": "integer"
+                  },
+                  "createdBy": {
+                    "type": "integer"
+                  },
+                  "createdOn": {
+                    "type": "integer"
+                  },
+                  "updatedOn": {
+                    "type": "integer"
+                  },
+                  "collaboratorsIds": {
+                    "type": "string"
+                  },
+                  "createdByName": {
+                    "type": "string"
+                  },
+                  "createdByPhoto": {
+                    "type": "null"
+                  },
+                  "isPayBill": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id",
+                  "templateName",
+                  "shareWith",
+                  "templateTableFields",
+                  "templateTheme",
+                  "dueIn",
+                  "isDefault",
+                  "createdBy",
+                  "createdOn",
+                  "updatedOn",
+                  "collaboratorsIds",
+                  "createdByName",
+                  "createdByPhoto",
+                  "isPayBill"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "templateName": {
+                    "type": "string"
+                  },
+                  "shareWith": {
+                    "type": "object",
+                    "properties": {
+                      "users": {
+                        "type": "array",
+                        "items": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "photo": {
+                                "type": "null"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "photo"
+                            ]
+                          }
+                        ]
+                      },
+                      "teams": {
+                        "type": "array",
+                        "items": {}
+                      }
+                    },
+                    "required": [
+                      "users",
+                      "teams"
+                    ]
+                  },
+                  "templateTableFields": {
+                    "type": "string"
+                  },
+                  "templateTheme": {
+                    "type": "string"
+                  },
+                  "dueIn": {
+                    "type": "string"
+                  },
+                  "isDefault": {
+                    "type": "integer"
+                  },
+                  "createdBy": {
+                    "type": "integer"
+                  },
+                  "createdOn": {
+                    "type": "integer"
+                  },
+                  "updatedOn": {
+                    "type": "integer"
+                  },
+                  "collaboratorsIds": {
+                    "type": "string"
+                  },
+                  "createdByName": {
+                    "type": "string"
+                  },
+                  "createdByPhoto": {
+                    "type": "null"
+                  },
+                  "isPayBill": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id",
+                  "templateName",
+                  "shareWith",
+                  "templateTableFields",
+                  "templateTheme",
+                  "dueIn",
+                  "isDefault",
+                  "createdBy",
+                  "createdOn",
+                  "updatedOn",
+                  "collaboratorsIds",
+                  "createdByName",
+                  "createdByPhoto",
+                  "isPayBill"
+                ]
+              }
+            ]
+          },
+          "totalCount": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "templates",
+          "totalCount"
+        ]
+      }
+    },
+    "required": [
+      "meta",
+      "data"
+    ]
+  }

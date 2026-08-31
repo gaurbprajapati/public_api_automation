@@ -1,0 +1,1412 @@
+{
+  "ID": [
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match, standard ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_001"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "10",
+      "description": "Exact match, valid ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_002"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_003"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "1",
+      "description": "Not equal to 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_NOT_004"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "100",
+      "description": "Not equal to invalid ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_NOT_005"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "5",
+      "description": "Greater than 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_MT_006"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "20",
+      "description": "Less than 20",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_LT_007"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "1,10",
+      "description": "Between 1 and 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_BETWEEN_008"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_HAS_ANY_VALUE_009"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_EMPTY_010"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "15",
+      "description": "Exact match, largest ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_055"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "-1",
+      "description": "Negative ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_056"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "15",
+      "description": "Not equal to largest ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_NOT_057"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "Greater than 0 (all IDs match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_MT_058"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "15",
+      "description": "Greater than largest ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_MT_059"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "description": "Less than smallest ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_LT_060"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "5",
+      "description": "Less than 5 (IDs 1-4)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_LT_061"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "5,15",
+      "description": "Between 5 and 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_BETWEEN_062"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "20,30",
+      "description": "Between 20 and 30 (no IDs in range)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_IS_BETWEEN_063"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (1,10-15)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_BEGINS_WITH_064"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "2",
+      "description": "Starts with 2 (2)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_BEGINS_WITH_065"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (5,15)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_ENDS_WITH_066"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (10)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ID_ENDS_WITH_067"
+    }
+  ],
+  "Open Jobs": [
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_011"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "12",
+      "description": "Exact match, valid open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_012"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "25",
+      "description": "Exact match, valid open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_013"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "100",
+      "description": "Exact match, invalid high value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_014"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_NOT_015"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "12",
+      "description": "Not equal to valid value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_NOT_016"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "Greater than 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_MT_017"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_lt",
+      "filterValue": "20",
+      "description": "Less than 20",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_LT_018"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "10,30",
+      "description": "Between 10 and 30",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_BETWEEN_019"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_HAS_ANY_VALUE_020"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_EMPTY_021"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "3",
+      "description": "Exact match, small value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_068"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "50",
+      "description": "Exact match, largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_069"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "35",
+      "description": "Exact match, mid-high value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_070"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "50",
+      "description": "Not equal to largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_NOT_071"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "50",
+      "description": "Greater than largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_MT_072"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "Greater than 0 (all non-zero match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_MT_073"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "40",
+      "description": "Greater than 40 (45,50 match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_MT_074"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_lt",
+      "filterValue": "3",
+      "description": "Less than 3 (0,0 match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_LT_075"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "Less than 0 (no match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_LT_076"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "0,8",
+      "description": "Between 0 and 8 (0,0,3,8)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_BETWEEN_077"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "35,50",
+      "description": "Between 35 and 50 (35,40,45,50)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_BETWEEN_078"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "51,100",
+      "description": "Between 51 and 100 (no match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_IS_BETWEEN_079"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (12,15)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_BEGINS_WITH_080"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "2",
+      "description": "Starts with 2 (20,22,25,28)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_BEGINS_WITH_081"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "4",
+      "description": "Starts with 4 (40,45)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_BEGINS_WITH_082"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "5",
+      "description": "Starts with 5 (50)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_BEGINS_WITH_083"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (0,20,30,40,50)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_ENDS_WITH_084"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (15,25,35,45)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_ENDS_WITH_085"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "ends_with",
+      "filterValue": "8",
+      "description": "Ends with 8 (8,28)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_OPEN_JOBS_ENDS_WITH_086"
+    }
+  ],
+  "Closed Jobs": [
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_022"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "5",
+      "description": "Exact match, valid closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_023"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "12",
+      "description": "Exact match, valid closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_024"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "100",
+      "description": "Exact match, invalid high value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_025"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_NOT_026"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "5",
+      "description": "Not equal to valid value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_NOT_027"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "5",
+      "description": "Greater than 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_MT_028"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_lt",
+      "filterValue": "15",
+      "description": "Less than 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_LT_029"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "5,20",
+      "description": "Between 5 and 20",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_BETWEEN_030"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_HAS_ANY_VALUE_031"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_EMPTY_032"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "2",
+      "description": "Exact match, smallest non-zero value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_087"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "25",
+      "description": "Exact match, largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_088"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "18",
+      "description": "Exact match, mid-high value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_089"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "25",
+      "description": "Not equal to largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_NOT_090"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "25",
+      "description": "Greater than largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_MT_091"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "Greater than 0 (all non-zero match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_MT_092"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "15",
+      "description": "Greater than 15 (16,18,20,22,25 match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_MT_093"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_lt",
+      "filterValue": "2",
+      "description": "Less than 2 (0 match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_LT_094"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "Less than 0 (no match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_LT_095"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "0,5",
+      "description": "Between 0 and 5 (0,2,5)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_BETWEEN_096"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "15,25",
+      "description": "Between 15 and 25 (15,16,18,20,22,25)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_BETWEEN_097"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "26,50",
+      "description": "Between 26 and 50 (no match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_IS_BETWEEN_098"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (10,12,14,15,16,18)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_BEGINS_WITH_099"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "begins_with",
+      "filterValue": "2",
+      "description": "Starts with 2 (2,20,22,25)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_BEGINS_WITH_100"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "begins_with",
+      "filterValue": "9",
+      "description": "Starts with 9 (9)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_BEGINS_WITH_101"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (0,10,20)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_ENDS_WITH_102"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (5,15,25)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_ENDS_WITH_103"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "2",
+      "description": "Ends with 2 (2,12,22)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CLOSED_JOBS_ENDS_WITH_104"
+    }
+  ],
+  "On Hold Jobs": [
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_033"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "2",
+      "description": "Exact match, valid on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_034"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "7",
+      "description": "Exact match, valid on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_035"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "100",
+      "description": "Exact match, invalid high value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_036"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_NOT_037"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "2",
+      "description": "Not equal to valid value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_NOT_038"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_mt",
+      "filterValue": "5",
+      "description": "Greater than 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_MT_039"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Less than 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_LT_040"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "1,10",
+      "description": "Between 1 and 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_BETWEEN_041"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_HAS_ANY_VALUE_042"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_EMPTY_043"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match, small value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_105"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "15",
+      "description": "Exact match, largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_106"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "10",
+      "description": "Exact match, mid value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_107"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "15",
+      "description": "Not equal to largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_NOT_108"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_mt",
+      "filterValue": "15",
+      "description": "Greater than largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_MT_109"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "Greater than 0 (all non-zero match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_MT_110"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "Greater than 10 (11,12,15 match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_MT_111"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "description": "Less than 1 (0,0 match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_LT_112"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "Less than 0 (no match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_LT_113"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "0,5",
+      "description": "Between 0 and 5 (0,0,1,2,3,4,5)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_BETWEEN_114"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "10,15",
+      "description": "Between 10 and 15 (10,11,12,15)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_BETWEEN_115"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "16,30",
+      "description": "Between 16 and 30 (no match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_IS_BETWEEN_116"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (1,10,11,12,15)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_BEGINS_WITH_117"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "begins_with",
+      "filterValue": "9",
+      "description": "Starts with 9 (9)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_BEGINS_WITH_118"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "begins_with",
+      "filterValue": "7",
+      "description": "Starts with 7 (7)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_BEGINS_WITH_119"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (0,0,10)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_ENDS_WITH_120"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (5,15)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_ENDS_WITH_121"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "2",
+      "description": "Ends with 2 (2,12)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_ON_HOLD_JOBS_ENDS_WITH_122"
+    }
+  ],
+  "Cancelled Jobs": [
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_044"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "4",
+      "description": "Exact match, valid cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_045"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "9",
+      "description": "Exact match, valid cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_046"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "100",
+      "description": "Exact match, invalid high value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_047"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_NOT_048"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "4",
+      "description": "Not equal to valid value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_NOT_049"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "5",
+      "description": "Greater than 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_MT_050"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Less than 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_LT_051"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "3,12",
+      "description": "Between 3 and 12",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_BETWEEN_052"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_HAS_ANY_VALUE_053"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_EMPTY_054"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match, smallest non-zero value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_123"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "14",
+      "description": "Exact match, largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_124"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "10",
+      "description": "Exact match, mid value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_125"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "14",
+      "description": "Not equal to largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_NOT_126"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "14",
+      "description": "Greater than largest value",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_MT_127"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "Greater than 0 (all non-zero match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_MT_128"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "Greater than 10 (11,12,13,14 match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_MT_129"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "description": "Less than 1 (0 match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_LT_130"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "Less than 0 (no match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_LT_131"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "0,5",
+      "description": "Between 0 and 5 (0,1,2,3,4,5)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_BETWEEN_132"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "10,14",
+      "description": "Between 10 and 14 (10,11,12,13,14)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_BETWEEN_133"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "15,30",
+      "description": "Between 15 and 30 (no match)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER_START_END",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_IS_BETWEEN_134"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Starts with 1 (1,10,11,12,13,14)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_BEGINS_WITH_135"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "begins_with",
+      "filterValue": "9",
+      "description": "Starts with 9 (9)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_BEGINS_WITH_136"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "begins_with",
+      "filterValue": "8",
+      "description": "Starts with 8 (8)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_BEGINS_WITH_137"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (0,10)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_ENDS_WITH_138"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "4",
+      "description": "Ends with 4 (4,14)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_ENDS_WITH_139"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "3",
+      "description": "Ends with 3 (3,13)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "All Results",
+      "testCaseId": "TC_CONTACT_COMPANY_CANCELLED_JOBS_ENDS_WITH_140"
+    }
+  ]
+}

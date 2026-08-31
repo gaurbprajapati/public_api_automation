@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Get Entity Columns Success Response Schema",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": ["Entity columns fetched successfully"]
+        },
+        "requestUuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": ["Request is successful"]
+            },
+            "code": {
+              "type": "integer",
+              "enum": [103]
+            }
+          },
+          "required": ["context", "code"]
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [200]
+        }
+      },
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "columns": {
+            "type": "object",
+            "patternProperties": {
+              "^[a-zA-Z0-9_]+$": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string"
+                  },
+                  "label": {
+                    "type": ["string", "null"]
+                  },
+                  "longlabel": {
+                    "type": ["string", "null"]
+                  },
+                  "entity": {
+                    "type": "string"
+                  },
+                  "colId": {
+                    "type": ["string", "null"]
+                  },
+                  "width": {
+                    "type": ["number", "null"]
+                  },
+                  "pinned": {
+                    "type": ["boolean", "null"]
+                  },
+                  "sortable": {
+                    "type": "boolean"
+                  },
+                  "visible": {
+                    "type": "boolean"
+                  },
+                  "listPageOrder": {
+                    "type": "number"
+                  },
+                  "type": {
+                    "type": ["string", "null"]
+                  },
+                  "visible_locked": {
+                    "type": "boolean"
+                  },
+                  "allow_on_export": {
+                    "type": "boolean"
+                  },
+                  "disable_on_export": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "field",
+                  "entity",
+                  "sortable",
+                  "visible",
+                  "listPageOrder",
+                  "visible_locked",
+                  "allow_on_export",
+                  "disable_on_export"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": ["columns"]
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["meta", "data"]
+}

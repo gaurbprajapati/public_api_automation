@@ -1,0 +1,246 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": [
+              {
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string"
+                  },
+                  "notification_id": {
+                    "type": "null"
+                  },
+                  "payload": {
+                    "type": "object",
+                    "properties": {
+                      "receiver": {
+                        "type": "integer"
+                      },
+                      "destination": {
+                        "type": "string"
+                      },
+                      "cta_id": {
+                        "type": "array",
+                        "items": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "context": {
+                        "type": "object",
+                        "properties": {
+                          "template": {
+                            "type": "object",
+                            "properties": {
+                              "job_name": {
+                                "type": "string"
+                              },
+                              "company_name": {
+                                "type": "string"
+                              },
+                              "company_profile_pic": {
+                                "type": "null"
+                              }
+                            },
+                            "required": [
+                              "job_name",
+                              "company_name",
+                              "company_profile_pic"
+                            ]
+                          },
+                          "cta": {
+                            "type": "object",
+                            "properties": {
+                              "job_slug": {
+                                "type": "string"
+                              },
+                              "company_slug": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "job_slug",
+                              "company_slug"
+                            ]
+                          },
+                          "child_notification": {
+                            "type": "array",
+                            "items": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "context": {
+                                    "type": "object",
+                                    "properties": {
+                                      "template": {
+                                        "type": "object",
+                                        "properties": {
+                                          "candidate_name": {
+                                            "type": "string"
+                                          },
+                                          "candidate_profile_pic": {
+                                            "type": "null"
+                                          }
+                                        },
+                                        "required": [
+                                          "candidate_name",
+                                          "candidate_profile_pic"
+                                        ]
+                                      },
+                                      "cta": {
+                                        "type": "object",
+                                        "properties": {
+                                          "candidate_slug": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "candidate_slug"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "template",
+                                      "cta"
+                                    ]
+                                  },
+                                  "read_status": {
+                                    "type": "boolean"
+                                  },
+                                  "click_status": {
+                                    "type": "boolean"
+                                  },
+                                  "created_on": {
+                                    "type": "integer"
+                                  },
+                                  "child_id": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "context",
+                                  "read_status",
+                                  "click_status",
+                                  "created_on",
+                                  "child_id"
+                                ]
+                              }
+                            ]
+                          },
+                          "child_notification_count": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "template",
+                          "cta",
+                          "child_notification",
+                          "child_notification_count"
+                        ]
+                      },
+                      "event_name": {
+                        "type": "string"
+                      },
+                      "action_name": {
+                        "type": "string"
+                      },
+                      "sender": {
+                        "type": "integer"
+                      },
+                      "source": {
+                        "type": "string"
+                      },
+                      "template_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "receiver",
+                      "destination",
+                      "cta_id",
+                      "type",
+                      "context",
+                      "event_name",
+                      "action_name",
+                      "sender",
+                      "source",
+                      "template_id"
+                    ]
+                  },
+                  "read_status": {
+                    "type": "boolean"
+                  },
+                  "click_status": {
+                    "type": "boolean"
+                  },
+                  "created_on": {
+                    "type": "integer"
+                  },
+                  "updated_on": {
+                    "type": "integer"
+                  },
+                  "__v": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "_id",
+                  "notification_id",
+                  "payload",
+                  "read_status",
+                  "click_status",
+                  "created_on",
+                  "updated_on",
+                  "__v"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "records"
+        ]
+      },
+      "meta": {
+        "type": "object",
+        "properties": {
+          "request_UUID": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "message_type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "request_UUID",
+          "message",
+          "message_type",
+          "status"
+        ]
+      }
+    },
+    "required": [
+      "data",
+      "meta"
+    ]
+  }

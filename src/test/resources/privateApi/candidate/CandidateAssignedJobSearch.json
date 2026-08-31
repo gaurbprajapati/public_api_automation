@@ -1,0 +1,981 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "context",
+            "code"
+          ]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "assign_job_candidate_id": {
+              "type": "integer"
+            },
+            "candidatestatusid": {
+              "type": "integer"
+            },
+            "candidatestatus": {
+              "type": "string"
+            },
+            "creator_status": {
+              "type": "boolean"
+            },
+            "remark": {
+              "type": "null"
+            },
+            "share": {
+              "type": "integer"
+            },
+            "stagedate": {
+              "type": "integer"
+            },
+            "invoiceid": {
+              "type": "null"
+            },
+            "formatted_cv": {
+              "type": "null"
+            },
+            "coverletter": {
+              "type": "null"
+            },
+            "portfolio": {
+              "type": "null"
+            },
+            "other_file_1": {
+              "type": "null"
+            },
+            "other_file_2": {
+              "type": "null"
+            },
+            "client_id": {
+              "type": "null"
+            },
+            "client_name": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "srno": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "qualificationid": {
+              "type": "integer"
+            },
+            "specialization": {
+              "type": "string"
+            },
+            "minexperienceinyears": {
+              "type": "integer"
+            },
+            "maxexperienceinyears": {
+              "type": "integer"
+            },
+            "annualsalarymin": {
+              "type": "number"
+            },
+            "annualsalarymax": {
+              "type": "number"
+            },
+            "noofopenings": {
+              "type": "integer"
+            },
+            "jobstatus": {
+              "type": "integer"
+            },
+            "job_document_id": {
+              "type": "null"
+            },
+            "companyid": {
+              "type": "integer"
+            },
+            "jdtext": {
+              "type": "string"
+            },
+            "pay_rate": {
+              "type": "number"
+            },
+            "bill_rate": {
+              "type": "number"
+            },
+            "jdtextdetails": {
+              "type": "string"
+            },
+            "details": {
+              "type": "null"
+            },
+            "allowapply": {
+              "type": "integer"
+            },
+            "companyname": {
+              "type": "string"
+            },
+            "contactid": {
+              "type": "integer"
+            },
+            "contactnumber": {
+              "type": "string"
+            },
+            "accountid": {
+              "type": "integer"
+            },
+            "createdby": {
+              "type": "integer"
+            },
+            "createdbyname": {
+              "type": "string"
+            },
+            "createdbyphoto": {
+              "type": "null"
+            },
+            "createdon": {
+              "type": "integer"
+            },
+            "updatedby": {
+              "type": "integer"
+            },
+            "updatedbyname": {
+              "type": "string"
+            },
+            "updatedbyphoto": {
+              "type": "null"
+            },
+            "updatedon": {
+              "type": "integer"
+            },
+            "ownerid": {
+              "type": "integer"
+            },
+            "ownername": {
+              "type": "string"
+            },
+            "detailfilename": {
+              "type": "null"
+            },
+            "city": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "locality": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "lat": {
+              "type": "integer"
+            },
+            "lng": {
+              "type": "integer"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "authid": {
+              "type": "null"
+            },
+            "deleted": {
+              "type": "integer"
+            },
+            "submitcandidateemailsenton": {
+              "type": "integer"
+            },
+            "hiring_pipeline_id": {
+              "type": "integer"
+            },
+            "hiring_pipeline_name": {
+              "type": "string"
+            },
+            "archived": {
+              "type": "integer"
+            },
+            "companyslug": {
+              "type": "string"
+            },
+            "companylogo": {
+              "type": "null"
+            },
+            "companywebsite": {
+              "type": "string"
+            },
+            "companyaddress": {
+              "type": "null"
+            },
+            "companydeleted": {
+              "type": "integer"
+            },
+            "contactslug": {
+              "type": "string"
+            },
+            "contactname": {
+              "type": "string"
+            },
+            "contactemail": {
+              "type": "string"
+            },
+            "contactphoto": {
+              "type": "null"
+            },
+            "contacttitle": {
+              "type": "null"
+            },
+            "currencyid": {
+              "type": "integer"
+            },
+            "currencycountry": {
+              "type": "string"
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "jobpostingstatus": {
+              "type": "integer"
+            },
+            "jobpostingdate": {
+              "type": "integer"
+            },
+            "qualification": {
+              "type": "string"
+            },
+            "jobcode": {
+              "type": "null"
+            },
+            "showcompany": {
+              "type": "integer"
+            },
+            "canaccess": {
+              "type": "null"
+            },
+            "kanban_visible_fields": {
+              "type": "null"
+            },
+            "salarytype": {
+              "type": "string"
+            },
+            "salarytypelable": {
+              "type": "string"
+            },
+            "job_type": {
+              "type": "string"
+            },
+            "job_type_lable": {
+              "type": "string"
+            },
+            "job_category": {
+              "type": "string"
+            },
+            "jobstatuscomment": {
+              "type": "string"
+            },
+            "showaccountname": {
+              "type": "integer"
+            },
+            "sharecandidatefields": {
+              "type": "null"
+            },
+            "jobquestions": {
+              "type": "string"
+            },
+            "remote": {
+              "type": "null"
+            },
+            "postalcode": {
+              "type": "null"
+            },
+            "mapped_pending_job_id": {
+              "type": "null"
+            },
+            "enable_vms_link": {
+              "type": "integer"
+            },
+            "closed_logicmelon_advert": {
+              "type": "integer"
+            },
+            "job_skill": {
+              "type": "string"
+            },
+            "custcolumn1": {
+              "type": "null"
+            },
+            "custcolumn2": {
+              "type": "null"
+            },
+            "custcolumn3": {
+              "type": "null"
+            },
+            "custcolumn4": {
+              "type": "null"
+            },
+            "custcolumn5": {
+              "type": "null"
+            },
+            "custcolumn6": {
+              "type": "null"
+            },
+            "custcolumn7": {
+              "type": "null"
+            },
+            "custcolumn8": {
+              "type": "null"
+            },
+            "custcolumn9": {
+              "type": "null"
+            },
+            "custcolumn10": {
+              "type": "null"
+            },
+            "custcolumn11": {
+              "type": "null"
+            },
+            "custcolumn12": {
+              "type": "null"
+            },
+            "custcolumn13": {
+              "type": "null"
+            },
+            "custcolumn14": {
+              "type": "null"
+            },
+            "custcolumn15": {
+              "type": "null"
+            },
+            "custcolumn16": {
+              "type": "null"
+            },
+            "custcolumn17": {
+              "type": "null"
+            },
+            "custcolumn18": {
+              "type": "null"
+            },
+            "custcolumn19": {
+              "type": "null"
+            },
+            "custcolumn20": {
+              "type": "null"
+            },
+            "custcolumn21": {
+              "type": "null"
+            },
+            "custcolumn22": {
+              "type": "null"
+            },
+            "custcolumn23": {
+              "type": "null"
+            },
+            "custcolumn24": {
+              "type": "null"
+            },
+            "custcolumn25": {
+              "type": "null"
+            },
+            "custcolumn26": {
+              "type": "null"
+            },
+            "custcolumn27": {
+              "type": "null"
+            },
+            "custcolumn28": {
+              "type": "null"
+            },
+            "custcolumn29": {
+              "type": "null"
+            },
+            "custcolumn30": {
+              "type": "null"
+            },
+            "custcolumn31": {
+              "type": "null"
+            },
+            "custcolumn32": {
+              "type": "null"
+            },
+            "custcolumn33": {
+              "type": "null"
+            },
+            "custcolumn34": {
+              "type": "null"
+            },
+            "custcolumn35": {
+              "type": "null"
+            },
+            "custcolumn36": {
+              "type": "null"
+            },
+            "custcolumn37": {
+              "type": "null"
+            },
+            "custcolumn38": {
+              "type": "null"
+            },
+            "custcolumn39": {
+              "type": "null"
+            },
+            "custcolumn40": {
+              "type": "null"
+            },
+            "custcolumn41": {
+              "type": "null"
+            },
+            "custcolumn42": {
+              "type": "null"
+            },
+            "custcolumn43": {
+              "type": "null"
+            },
+            "custcolumn44": {
+              "type": "null"
+            },
+            "custcolumn45": {
+              "type": "null"
+            },
+            "custcolumn46": {
+              "type": "null"
+            },
+            "custcolumn47": {
+              "type": "null"
+            },
+            "custcolumn48": {
+              "type": "null"
+            },
+            "custcolumn49": {
+              "type": "null"
+            },
+            "custcolumn50": {
+              "type": "null"
+            },
+            "custcolumn51": {
+              "type": "null"
+            },
+            "custcolumn52": {
+              "type": "null"
+            },
+            "custcolumn53": {
+              "type": "null"
+            },
+            "custcolumn54": {
+              "type": "null"
+            },
+            "custcolumn55": {
+              "type": "null"
+            },
+            "custcolumn56": {
+              "type": "null"
+            },
+            "custcolumn57": {
+              "type": "null"
+            },
+            "custcolumn58": {
+              "type": "null"
+            },
+            "custcolumn59": {
+              "type": "null"
+            },
+            "custcolumn60": {
+              "type": "null"
+            },
+            "custcolumn61": {
+              "type": "null"
+            },
+            "custcolumn62": {
+              "type": "null"
+            },
+            "custcolumn63": {
+              "type": "null"
+            },
+            "custcolumn64": {
+              "type": "null"
+            },
+            "custcolumn65": {
+              "type": "null"
+            },
+            "custcolumn66": {
+              "type": "null"
+            },
+            "custcolumn67": {
+              "type": "null"
+            },
+            "custcolumn68": {
+              "type": "null"
+            },
+            "custcolumn69": {
+              "type": "null"
+            },
+            "custcolumn70": {
+              "type": "null"
+            },
+            "custcolumn71": {
+              "type": "null"
+            },
+            "custcolumn72": {
+              "type": "null"
+            },
+            "custcolumn73": {
+              "type": "null"
+            },
+            "custcolumn74": {
+              "type": "null"
+            },
+            "custcolumn75": {
+              "type": "null"
+            },
+            "custcolumn76": {
+              "type": "null"
+            },
+            "custcolumn77": {
+              "type": "null"
+            },
+            "custcolumn78": {
+              "type": "null"
+            },
+            "custcolumn79": {
+              "type": "null"
+            },
+            "custcolumn80": {
+              "type": "null"
+            },
+            "custcolumn81": {
+              "type": "null"
+            },
+            "custcolumn82": {
+              "type": "null"
+            },
+            "custcolumn83": {
+              "type": "null"
+            },
+            "custcolumn84": {
+              "type": "null"
+            },
+            "custcolumn85": {
+              "type": "null"
+            },
+            "custcolumn86": {
+              "type": "null"
+            },
+            "custcolumn87": {
+              "type": "null"
+            },
+            "custcolumn88": {
+              "type": "null"
+            },
+            "custcolumn89": {
+              "type": "null"
+            },
+            "custcolumn90": {
+              "type": "null"
+            },
+            "custcolumn91": {
+              "type": "null"
+            },
+            "custcolumn92": {
+              "type": "null"
+            },
+            "custcolumn93": {
+              "type": "null"
+            },
+            "custcolumn94": {
+              "type": "null"
+            },
+            "custcolumn95": {
+              "type": "null"
+            },
+            "custcolumn96": {
+              "type": "null"
+            },
+            "custcolumn97": {
+              "type": "null"
+            },
+            "custcolumn98": {
+              "type": "null"
+            },
+            "custcolumn99": {
+              "type": "null"
+            },
+            "custcolumn100": {
+              "type": "null"
+            },
+            "companycontact": {
+              "type": "string"
+            },
+            "companycontactname": {
+              "type": "string"
+            },
+            "company_city": {
+              "type": "null"
+            },
+            "accountlogo": {
+              "type": "null"
+            },
+            "externalpagepassword": {
+              "type": "string"
+            },
+            "online_candidate_list_passcode": {
+              "type": "string"
+            },
+            "update_profile_passcode": {
+              "type": "string"
+            },
+            "job_online_candidate_list_passcode": {
+              "type": "null"
+            },
+            "enable_request_update_passcode": {
+              "type": "integer"
+            },
+            "enable_online_candidate_passcode": {
+              "type": "integer"
+            },
+            "accounttitle": {
+              "type": "string"
+            },
+            "candidateterms": {
+              "type": "string"
+            },
+            "jobapplicationsettings": {
+              "type": "string"
+            },
+            "eeocompliance": {
+              "type": "integer"
+            },
+            "gdprcompliance": {
+              "type": "integer"
+            },
+            "sharejobimage": {
+              "type": "null"
+            },
+            "externalpageheadings": {
+              "type": "string"
+            },
+            "defaultsharecandidatefields": {
+              "type": "string"
+            },
+            "view_in_vms": {
+              "type": "integer"
+            },
+            "job_application_settings": {
+              "type": "string"
+            },
+            "resumetext": {
+              "type": "string"
+            },
+            "jobstatuslabel": {
+              "type": "string"
+            },
+            "contact_email_opt_out": {
+              "type": "integer"
+            },
+            "job_owner_status": {
+              "type": "integer"
+            },
+            "job_creator_status": {
+              "type": "integer"
+            },
+            "job_updator_status": {
+              "type": "integer"
+            },
+            "job_associated_cust_column_1": {
+              "type": "null"
+            },
+            "job_associated_cust_column_2": {
+              "type": "null"
+            },
+            "job_associated_cust_column_3": {
+              "type": "null"
+            },
+            "job_associated_cust_column_4": {
+              "type": "null"
+            },
+            "job_associated_cust_column_5": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "assign_job_candidate_id",
+            "candidatestatusid",
+            "candidatestatus",
+            "creator_status",
+            "remark",
+            "share",
+            "stagedate",
+            "invoiceid",
+            "formatted_cv",
+            "coverletter",
+            "portfolio",
+            "other_file_1",
+            "other_file_2",
+            "client_id",
+            "client_name",
+            "id",
+            "srno",
+            "name",
+            "description",
+            "qualificationid",
+            "specialization",
+            "minexperienceinyears",
+            "maxexperienceinyears",
+            "annualsalarymin",
+            "annualsalarymax",
+            "noofopenings",
+            "jobstatus",
+            "job_document_id",
+            "companyid",
+            "jdtext",
+            "pay_rate",
+            "bill_rate",
+            "jdtextdetails",
+            "details",
+            "allowapply",
+            "companyname",
+            "contactid",
+            "contactnumber",
+            "accountid",
+            "createdby",
+            "createdbyname",
+            "createdbyphoto",
+            "createdon",
+            "updatedby",
+            "updatedbyname",
+            "updatedbyphoto",
+            "updatedon",
+            "ownerid",
+            "ownername",
+            "detailfilename",
+            "city",
+            "address",
+            "locality",
+            "state",
+            "country",
+            "lat",
+            "lng",
+            "slug",
+            "authid",
+            "deleted",
+            "submitcandidateemailsenton",
+            "hiring_pipeline_id",
+            "hiring_pipeline_name",
+            "archived",
+            "companyslug",
+            "companylogo",
+            "companywebsite",
+            "companyaddress",
+            "companydeleted",
+            "contactslug",
+            "contactname",
+            "contactemail",
+            "contactphoto",
+            "contacttitle",
+            "currencyid",
+            "currencycountry",
+            "symbol",
+            "jobpostingstatus",
+            "jobpostingdate",
+            "qualification",
+            "jobcode",
+            "showcompany",
+            "canaccess",
+            "kanban_visible_fields",
+            "salarytype",
+            "salarytypelable",
+            "job_type",
+            "job_type_lable",
+            "job_category",
+            "jobstatuscomment",
+            "showaccountname",
+            "sharecandidatefields",
+            "jobquestions",
+            "remote",
+            "postalcode",
+            "mapped_pending_job_id",
+            "enable_vms_link",
+            "closed_logicmelon_advert",
+            "job_skill",
+            "custcolumn1",
+            "custcolumn2",
+            "custcolumn3",
+            "custcolumn4",
+            "custcolumn5",
+            "custcolumn6",
+            "custcolumn7",
+            "custcolumn8",
+            "custcolumn9",
+            "custcolumn10",
+            "custcolumn11",
+            "custcolumn12",
+            "custcolumn13",
+            "custcolumn14",
+            "custcolumn15",
+            "custcolumn16",
+            "custcolumn17",
+            "custcolumn18",
+            "custcolumn19",
+            "custcolumn20",
+            "custcolumn21",
+            "custcolumn22",
+            "custcolumn23",
+            "custcolumn24",
+            "custcolumn25",
+            "custcolumn26",
+            "custcolumn27",
+            "custcolumn28",
+            "custcolumn29",
+            "custcolumn30",
+            "custcolumn31",
+            "custcolumn32",
+            "custcolumn33",
+            "custcolumn34",
+            "custcolumn35",
+            "custcolumn36",
+            "custcolumn37",
+            "custcolumn38",
+            "custcolumn39",
+            "custcolumn40",
+            "custcolumn41",
+            "custcolumn42",
+            "custcolumn43",
+            "custcolumn44",
+            "custcolumn45",
+            "custcolumn46",
+            "custcolumn47",
+            "custcolumn48",
+            "custcolumn49",
+            "custcolumn50",
+            "custcolumn51",
+            "custcolumn52",
+            "custcolumn53",
+            "custcolumn54",
+            "custcolumn55",
+            "custcolumn56",
+            "custcolumn57",
+            "custcolumn58",
+            "custcolumn59",
+            "custcolumn60",
+            "custcolumn61",
+            "custcolumn62",
+            "custcolumn63",
+            "custcolumn64",
+            "custcolumn65",
+            "custcolumn66",
+            "custcolumn67",
+            "custcolumn68",
+            "custcolumn69",
+            "custcolumn70",
+            "custcolumn71",
+            "custcolumn72",
+            "custcolumn73",
+            "custcolumn74",
+            "custcolumn75",
+            "custcolumn76",
+            "custcolumn77",
+            "custcolumn78",
+            "custcolumn79",
+            "custcolumn80",
+            "custcolumn81",
+            "custcolumn82",
+            "custcolumn83",
+            "custcolumn84",
+            "custcolumn85",
+            "custcolumn86",
+            "custcolumn87",
+            "custcolumn88",
+            "custcolumn89",
+            "custcolumn90",
+            "custcolumn91",
+            "custcolumn92",
+            "custcolumn93",
+            "custcolumn94",
+            "custcolumn95",
+            "custcolumn96",
+            "custcolumn97",
+            "custcolumn98",
+            "custcolumn99",
+            "custcolumn100",
+            "companycontact",
+            "companycontactname",
+            "company_city",
+            "accountlogo",
+            "externalpagepassword",
+            "online_candidate_list_passcode",
+            "update_profile_passcode",
+            "job_online_candidate_list_passcode",
+            "enable_request_update_passcode",
+            "enable_online_candidate_passcode",
+            "accounttitle",
+            "candidateterms",
+            "jobapplicationsettings",
+            "eeocompliance",
+            "gdprcompliance",
+            "sharejobimage",
+            "externalpageheadings",
+            "defaultsharecandidatefields",
+            "view_in_vms",
+            "job_application_settings",
+            "resumetext",
+            "jobstatuslabel",
+            "contact_email_opt_out",
+            "job_owner_status",
+            "job_creator_status",
+            "job_updator_status",
+            "job_associated_cust_column_1",
+            "job_associated_cust_column_2",
+            "job_associated_cust_column_3",
+            "job_associated_cust_column_4",
+            "job_associated_cust_column_5"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "meta",
+    "data"
+  ]
+}

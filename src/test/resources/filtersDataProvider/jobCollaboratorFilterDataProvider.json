@@ -1,0 +1,544 @@
+{
+    "Collaborator": [
+        {
+            "dbField": "collaborator",
+            "filterType": "is",
+            "filterValue": "User:[{owner},{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1",
+            "description": "Is filter - exact match for User:['owner', 'teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_001"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is",
+            "filterValue": "User:[{owner},{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job2,Job5",
+            "description": "Is filter - exact match for User:['owner', 'admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_002"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is",
+            "filterValue": "User:[{teamMember}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job3",
+            "description": "Is filter - exact match for User:['teamMember'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_003"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is",
+            "filterValue": "User:[{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job4",
+            "description": "Is filter - exact match for User:['admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_004"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is",
+            "filterValue": "User:[{admin}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job8",
+            "description": "Is filter - exact match for User:['admin'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_005"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is",
+            "filterValue": "User:[{owner}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Empty",
+            "description": "Is filter - exact match for User:['owner'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_007"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is",
+            "filterValue": "User:[{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Empty",
+            "description": "Is filter - exact match for User:['teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_008"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is",
+            "filterValue": "User:[],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Empty",
+            "description": "Is filter - exact match for User:[],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_009"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is",
+            "filterValue": "User:[{owner}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Empty",
+            "description": "Is filter - exact match for User:['owner'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_010"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is_not",
+            "filterValue": "User:[{owner},{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "description": "Is Not filter - excludes exact match for User:['owner', 'teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_011"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is_not",
+            "filterValue": "User:[{owner},{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job3,Job4,Job6,Job7,Job8,Job9",
+            "description": "Is Not filter - excludes exact match for User:['owner', 'admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_012"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is_not",
+            "filterValue": "User:[{teamMember}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job4,Job5,Job6,Job7,Job8,Job9",
+            "description": "Is Not filter - excludes exact match for User:['teamMember'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_013"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is_not",
+            "filterValue": "User:[{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job5,Job6,Job7,Job8,Job9",
+            "description": "Is Not filter - excludes exact match for User:['admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_014"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is_not",
+            "filterValue": "User:[{admin}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job9",
+            "description": "Is Not filter - excludes exact match for User:['admin'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_015"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is_not",
+            "filterValue": "User:[{owner}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "description": "Is Not filter - excludes exact match for User:['owner'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_017"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is_not",
+            "filterValue": "User:[{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "description": "Is Not filter - excludes exact match for User:['teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_018"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is_not",
+            "filterValue": "User:[],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "description": "Is Not filter - excludes exact match for User:[],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_019"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{owner}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job5",
+            "description": "Contains filter - jobs that have all of User:['owner'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_020"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job2,Job4,Job5,Job8",
+            "description": "Contains filter - jobs that have all of User:['admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_021"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job3",
+            "description": "Contains filter - jobs that have all of User:['teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_022"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job3,Job8",
+            "description": "Contains filter - jobs that have all of User:[],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_023"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{owner},{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job2,Job5",
+            "description": "Contains filter - jobs that have all of User:['owner', 'admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_024"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{owner},{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1",
+            "description": "Contains filter - jobs that have all of User:['owner', 'teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_025"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{admin}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job8",
+            "description": "Contains filter - jobs that have all of User:['admin'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_026"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{owner}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Empty",
+            "description": "Contains filter - jobs that have all of User:['owner'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_027"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{teamMember}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job3",
+            "description": "Contains filter - jobs that have all of User:['teamMember'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_028"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{owner},{admin}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Empty",
+            "description": "Contains filter - jobs that have all of User:['owner', 'admin'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_029"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains",
+            "filterValue": "User:[{owner},{teamMember}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Empty",
+            "description": "Contains filter - jobs that have all of User:['owner', 'teamMember'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_030"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{owner}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job5",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['owner'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_031"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job2,Job4,Job5,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_032"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job3",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_033"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job3,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:[],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_034"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{owner},{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['owner', 'admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_035"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{owner},{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job3,Job5",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['owner', 'teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_036"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{admin},{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['admin', 'teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_037"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{owner}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['owner'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_038"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{admin}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['admin'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_039"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{teamMember}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job3,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['teamMember'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_040"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{owner},{admin}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['owner', 'admin'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_041"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{owner},{teamMember}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['owner', 'teamMember'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_042"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{admin},{teamMember}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['admin', 'teamMember'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_043"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "contains_at_least_one",
+            "filterValue": "User:[{owner},{admin},{teamMember}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job8",
+            "description": "Contains at Least One filter - jobs that have at least one of User:['owner', 'admin', 'teamMember'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_044"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[{owner}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job10,Job11,Job12,Job13,Job14,Job15,Job3,Job4,Job6,Job7,Job8,Job9",
+            "description": "Does Not Contain filter - excludes jobs that have User:['owner'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_045"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job3,Job6,Job7,Job9",
+            "description": "Does Not Contain filter - excludes jobs that have User:['admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_046"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job4,Job5,Job6,Job7,Job8,Job9",
+            "description": "Does Not Contain filter - excludes jobs that have User:['teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_047"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job4,Job5,Job6,Job7,Job9",
+            "description": "Does Not Contain filter - excludes jobs that have User:[],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_048"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[{owner},{admin}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job3,Job4,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter - excludes jobs that have User:['owner', 'admin'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_049"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[{owner},{teamMember}],Team:[]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter - excludes jobs that have User:['owner', 'teamMember'],Team:[]",
+            "testCaseId": "TC_COLLABORATOR_050"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[{admin}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job9",
+            "description": "Does Not Contain filter - excludes jobs that have User:['admin'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_051"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[{owner}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "description": "Does Not Contain filter - excludes jobs that have User:['owner'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_052"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[{teamMember}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job4,Job5,Job6,Job7,Job8,Job9",
+            "description": "Does Not Contain filter - excludes jobs that have User:['teamMember'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_053"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "does_not_contain",
+            "filterValue": "User:[{owner},{admin}],Team:[{team}]",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter - excludes jobs that have User:['owner', 'admin'],Team:['team']",
+            "testCaseId": "TC_COLLABORATOR_054"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job10,Job11,Job12,Job13,Job14,Job15,Job6,Job7,Job9",
+            "description": "Is Empty filter - jobs with no collaborators",
+            "testCaseId": "TC_COLLABORATOR_055"
+        },
+        {
+            "dbField": "collaborator",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "ENTITY_ASSOCIATION",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job8",
+            "description": "Has Any Value filter - jobs with at least one collaborator",
+            "testCaseId": "TC_COLLABORATOR_056"
+        }
+    ]
+}

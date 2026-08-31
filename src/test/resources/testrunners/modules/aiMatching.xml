@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- Owner - Saastar - AI Matching Feature (PW-5554) -->
+<suite name="Rest API Test Suite" verbose="1" parallel="tests" thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<!-- ===== Neptune ai-matching/search/get ===== -->
+
+	<test name="AI Matching Search - Happy Path JD">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_HappyPath_JdText" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Happy Path Resume">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_HappyPath_ResumeText" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_ResponseStructure" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Pagination Params">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_PaginationParams" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Tools Tech Extracted">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_ToolsTechExtracted" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Empty Body">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_EmptyBody" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Missing Entity">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_MissingEntity" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Empty raw_text">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_EmptyRawText" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Missing raw_text Inside Entity">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_MissingRawTextInsideEntity" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Missing Weights">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_MissingWeights" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_InvalidToken" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching Search - Wrong HTTP Method">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingSearchTest">
+				<methods><include name="verifySearchGet_WrongHttpMethod" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Albatross candidate-matching ===== -->
+
+	<test name="AI Matching C2C - Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingCandidateTest">
+				<methods><include name="verifyCandidateMatching_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching C2C - Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingCandidateTest">
+				<methods><include name="verifyCandidateMatching_ResponseStructure" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching C2C - Data Field Shape">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingCandidateTest">
+				<methods><include name="verifyCandidateMatching_DataFieldShape" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching C2C - Invalid Slug">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingCandidateTest">
+				<methods><include name="verifyCandidateMatching_InvalidSlug" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching C2C - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingCandidateTest">
+				<methods><include name="verifyCandidateMatching_InvalidToken" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Albatross job-candidate-matching ===== -->
+
+	<test name="AI Matching J2C - Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingJobTest">
+				<methods><include name="verifyJobCandidateMatching_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching J2C - Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingJobTest">
+				<methods><include name="verifyJobCandidateMatching_ResponseStructure" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching J2C - Data Field Shape">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingJobTest">
+				<methods><include name="verifyJobCandidateMatching_DataFieldShape" /></methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="AI Matching J2C - Invalid Slug">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingJobTest">
+				<methods><include name="verifyJobCandidateMatching_InvalidSlug" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AI Matching J2C - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingJobTest">
+				<methods><include name="verifyJobCandidateMatching_InvalidToken" /></methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

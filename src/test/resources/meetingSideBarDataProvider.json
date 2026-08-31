@@ -1,0 +1,332 @@
+{
+  "Filter By User - Meetings": [
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}}],\"userFilter\":[{{owner}},{{admin}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}}]}",
+      "description": "Filter meetings created by owner, admin OR collaborated with owner, admin OR collaborated with team1",
+      "expectedResult": "meeting1, meeting2, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting12"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[],\"userFilter\":[{{owner}}],\"userSlugs\":[{{userSlugOwner}}]}",
+      "description": "Filter meetings created by owner OR collaborated with owner",
+      "expectedResult": "meeting1, meeting5, meeting7, meeting9"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "description": "Filter meetings created by team1 members OR collaborated with team1",
+      "expectedResult": "meeting4, meeting6, meeting8"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}},{{team2}}],\"userFilter\":[{{owner}},{{admin}},{{teamMember}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}},{{userSlugTeamMember}}]}",
+      "description": "Filter meetings created by multiple users and teams OR collaborated with them",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team2}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "description": "Filter meetings created by team2 members OR collaborated with team2",
+      "expectedResult": "meeting6, meeting8"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}},{{team2}}],\"userFilter\":[{{owner}},{{admin}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}}]}",
+      "description": "Filter meetings created by owner, admin OR team1, team2 OR collaborated with them",
+      "expectedResult": "meeting1, meeting2, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting12"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[],\"userFilter\":[{{owner}},{{admin}},{{teamMember}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}},{{userSlugTeamMember}}]}",
+      "description": "Filter meetings created by any of the specified users OR collaborated with them",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}},{{team2}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "description": "Filter meetings created by any of the specified teams OR collaborated with them",
+      "expectedResult": "meeting4, meeting6, meeting8"
+    }
+  ],
+  "Filter By Meeting Type - Meetings": [
+    {
+      "filter": "meetingtype",
+      "filterValue": "[{{meeting_type_client}}]",
+      "description": "Filter meetings by client meeting type",
+      "expectedResult": "meeting1, meeting3, meeting5, meeting7, meeting9, meeting11"
+    },
+    {
+      "filter": "meetingtype",
+      "filterValue": "[{{meeting_type_internal}}]",
+      "description": "Filter meetings by internal meeting type",
+      "expectedResult": "meeting2, meeting4, meeting6, meeting8, meeting10, meeting12"
+    },
+    {
+      "filter": "meetingtype",
+      "filterValue": "[{{meeting_type_client}},{{meeting_type_internal}}]",
+      "description": "Filter meetings by multiple meeting types",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    },
+    {
+      "filter": "meetingtype",
+      "filterValue": "[]",
+      "description": "No meeting type filter applied",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    }
+  ],
+  "Filter By Meeting Status - Meetings": [
+    {
+      "filter": "status",
+      "filterValue": "Complete",
+      "description": "Filter meetings by completed status (past meetings)",
+      "expectedResult": "meeting1, meeting11, meeting5, meeting6, meeting3, meeting4, meeting8"
+    },
+    {
+      "filter": "status",
+      "filterValue": "Incomplete",
+      "description": "Filter meetings by incomplete status (future meetings)",
+      "expectedResult": "meeting12, meeting2, meeting10, meeting9, meeting7"
+    },
+    {
+      "filter": "status",
+      "filterValue": "All",
+      "description": "Show all meetings regardless of status",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    }
+  ],
+  "Filter By Created Date - Meetings": [
+    {
+      "filter": "createdon",
+      "filterValue": "2",
+      "description": "Filter meetings created today",
+      "expectedResult": "meeting1, meeting3, meeting5, meeting7, meeting8, meeting9, meeting11, meeting12"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "4",
+      "description": "Filter meetings created yesterday",
+      "expectedResult": "meeting2, meeting10"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "5",
+      "description": "Filter meetings created this week",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting5, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "6",
+      "description": "Filter meetings created last week",
+      "expectedResult": "meeting6"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "7",
+      "description": "Filter meetings created this month",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "8",
+      "description": "Filter meetings created last month",
+      "expectedResult": "meeting4"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "1",
+      "description": "Filter meetings created - All Time",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "9",
+      "description": "Filter meetings created within custom date range",
+      "expectedResult": ""
+    }
+  ],
+  "Filter By Schedule Date - Meetings": [
+    {
+      "filter": "scheduledate",
+      "filterValue": "2",
+      "description": "Filter meetings scheduled for today",
+      "expectedResult": "meeting1, meeting3, meeting5, meeting8, meeting11"
+    },
+    {
+      "filter": "scheduledate",
+      "filterValue": "4",
+      "description": "Filter meetings scheduled for yesterday",
+      "expectedResult": "meeting4, meeting6"
+    },
+    {
+      "filter": "scheduledate",
+      "filterValue": "5",
+      "description": "Filter meetings scheduled for this week",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting11"
+    },
+    {
+      "filter": "scheduledate",
+      "filterValue": "6",
+      "description": "Filter meetings scheduled for last week",
+      "expectedResult": "Empty"
+    },
+    {
+      "filter": "scheduledate",
+      "filterValue": "7",
+      "description": "Filter meetings scheduled for this month",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    },
+    {
+      "filter": "scheduledate",
+      "filterValue": "8",
+      "description": "Filter meetings scheduled for last month",
+      "expectedResult": "Empty"
+    },
+    {
+      "filter": "scheduledate",
+      "filterValue": "1",
+      "description": "Filter meetings scheduled - All Time",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    },
+    {
+      "filter": "scheduledate",
+      "filterValue": "9",
+      "description": "Filter meetings scheduled within custom date range",
+      "expectedResult": ""
+    }
+  ],
+  "Filter By Associations - Meetings": [
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}}],\"3\":[{{associated_companies_company1}}],\"4\":[{{associated_jobs_job1}}],\"5\":[{{associated_candidates_candidate1}}],\"11\":[{{associated_deals_deal1}}]}",
+      "description": "Filter meetings associated with candidate1, contact1, deal1, job1, company1",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting11, meeting12"
+    },
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}}],\"3\":[],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter meetings associated with contact1 only",
+      "expectedResult": "meeting3, meeting11"
+    },
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[{{associated_companies_company1}}],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter meetings associated with company1 only",
+      "expectedResult": "meeting11, meeting2"
+    },
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[],\"4\":[{{associated_jobs_job1}}],\"5\":[],\"11\":[]}",
+      "description": "Filter meetings associated with job1 only",
+      "expectedResult": "meeting4, meeting12"
+    },
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[],\"4\":[],\"5\":[{{associated_candidates_candidate1}}],\"11\":[]}",
+      "description": "Filter meetings associated with candidate1 only",
+      "expectedResult": "meeting1, meeting12"
+    },
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[],\"4\":[],\"5\":[],\"11\":[{{associated_deals_deal1}}]}",
+      "description": "Filter meetings associated with deal1 only",
+      "expectedResult": "meeting5, meeting6"
+    },
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}},{{associated_contacts_contact2}}],\"3\":[{{associated_companies_company1}},{{associated_companies_company2}}],\"4\":[{{associated_jobs_job1}},{{associated_jobs_job2}}],\"5\":[{{associated_candidates_candidate1}},{{associated_candidates_candidate2}}],\"11\":[{{associated_deals_deal1}},{{associated_deals_deal2}}]}",
+      "description": "Filter meetings associated with multiple entities across all types",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting11, meeting12"
+    },
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}}],\"3\":[{{associated_companies_company1}}],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter meetings associated with contact1 OR company1",
+      "expectedResult": "meeting3, meeting2, meeting11"
+    },
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact2}}],\"3\":[{{associated_companies_company2}}],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter meetings associated with contact2 OR company2",
+      "expectedResult": "meeting2, meeting3, meeting5"
+    },
+    {
+      "filter": "meeting_associated_with",
+      "filterValue": "{}",
+      "description": "No association filter applied",
+      "expectedResult": "meeting1, meeting2, meeting3, meeting4, meeting5, meeting6, meeting7, meeting8, meeting9, meeting10, meeting11, meeting12"
+    }
+  ],
+  "Combined Filter Scenarios": [
+    {
+      "description": "Owner user's client meetings with candidate associations",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[{{owner}}],\"userSlugs\":[{{userSlugOwner}}]}",
+      "meetingStatus": "All",
+      "meeting_types": "[{{meeting_type_client}}]",
+      "createdDate": "1",
+      "scheduleDate": "1",
+      "associations": "{\"5\":[\"{{associated_candidates_candidate1}}\"]}",
+      "expectedResult": "meeting1"
+    },
+    {
+      "description": "Admin user's incomplete internal meetings",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[{{admin}}],\"userSlugs\":[{{userSlugAdmin}}]}",
+      "meetingStatus": "Incomplete",
+      "meeting_types": "[{{meeting_type_internal}}]",
+      "createdDate": "1",
+      "scheduleDate": "1",
+      "associations": "{}",
+      "expectedResult": "meeting2, meeting10, meeting12"
+    },
+    {
+      "description": "Team1 members' meetings with company associations",
+      "userFilter": "{\"teamFilter\":[{{team1}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "meetingStatus": "All",
+      "meeting_types": "[{{meeting_type_client}},{{meeting_type_internal}}]",
+      "createdDate": "1",
+      "scheduleDate": "1",
+      "associations": "{\"3\":[\"{{associated_companies_company1}}\"]}",
+      "expectedResult": "Empty"
+    },
+    {
+      "description": "Owner and Admin users' completed meetings with multiple associations",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[{{owner}},{{admin}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}}]}",
+      "meetingStatus": "Complete",
+      "meeting_types": "[]",
+      "createdDate": "1",
+      "scheduleDate": "1",
+      "associations": "{\"5\":[\"{{associated_candidates_candidate1}}\"],\"4\":[\"{{associated_jobs_job1}}\"]}",
+      "expectedResult": "meeting1"
+    },
+    {
+      "description": "Multi-User Multi-Type: Owner and Admin users' all meeting types with any status",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[{{owner}},{{admin}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}}]}",
+      "meetingStatus": "All",
+      "meeting_types": "[{{meeting_type_client}},{{meeting_type_internal}}]",
+      "createdDate": "1",
+      "scheduleDate": "1",
+      "associations": "{}",
+      "expectedResult": "meeting12, meeting1, meeting2, meeting10, meeting5, meeting6, meeting9, meeting7, meeting8"
+    },
+    {
+      "description": "TeamMember user's incomplete internal meetings with company associations",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[{{teamMember}}],\"userSlugs\":[{{userSlugTeamMember}}]}",
+      "meetingStatus": "Incomplete",
+      "meeting_types": "[{{meeting_type_internal}}]",
+      "createdDate": "1",
+      "scheduleDate": "1",
+      "associations": "{\"3\": [\"{{associated_companies_company1}}\"]}",
+      "expectedResult": "meeting2"
+    },
+    {
+      "description": "All users' incomplete meetings with candidate associations",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[],\"userSlugs\":[]}",
+      "meetingStatus": "Incomplete",
+      "meeting_types": "[]",
+      "createdDate": "1",
+      "scheduleDate": "1",
+      "associations": "{\"5\": [\"{{associated_candidates_candidate1}}\", \"{{associated_candidates_candidate2}}\"]}",
+      "expectedResult": "meeting12, meeting7"
+    }
+  ]
+}

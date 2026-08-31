@@ -1,0 +1,4192 @@
+{
+    "textCF": [
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "John Smith Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_001"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Klaus Müller Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_002"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "John _Under_Score Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with underscores",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_003"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "José García Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with accents",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_004"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Seán O'Malley Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with apostrophe",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_005"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "James Washington Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard name",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_006"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "John [Bracket] (Tech) Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with brackets",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_007"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "李明 王 Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Chinese characters",
+            "expectedResult": "Company9",
+            "testCaseId": "TC_CCF_008"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Sarah Johnson Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard name",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_009"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "David Sigma Contact Σ",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Greek letters",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_010"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Alpha β Systems Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Greek beta",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_011"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Contact Empty",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match empty contact",
+            "expectedResult": "Company15",
+            "testCaseId": "TC_CCF_012"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is_not",
+            "filterValue": "John Smith Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude standard name",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15",
+            "testCaseId": "TC_CCF_013"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Substring match",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15",
+            "testCaseId": "TC_CCF_014"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "John",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - John name search",
+            "expectedResult": "Company1,Company3,Company8",
+            "testCaseId": "TC_CCF_015"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Müller",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Müller name search",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_016"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "_",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Underscore character",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_017"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Σ",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Greek letter search",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_018"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "β",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Greek beta search",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_019"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "[",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Opening square bracket",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_020"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "]",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Closing square bracket",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_021"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "(",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Opening parenthesis",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_022"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": ")",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Closing parenthesis",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_023"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "O'Malley",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Apostrophe name",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_024"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude substring",
+            "expectedResult": "Company with no contact",
+            "testCaseId": "TC_CCF_025"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "John",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude John",
+            "expectedResult": "Company2,Company4,Company5,Company6,Company9,Company10,Company11,Company12,Company15",
+            "testCaseId": "TC_CCF_026"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "John",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Starts With - Prefix match",
+            "expectedResult": "Company1,Company3,Company8",
+            "testCaseId": "TC_CCF_027"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Klaus",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Starts With - Klaus prefix",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_028"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "José",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Starts With - José prefix",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_029"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Seán",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Starts With - Seán prefix",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_030"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "James",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Starts With - James prefix",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_031"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Sarah",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Starts With - Sarah prefix",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_032"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "David",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Starts With - David prefix",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_033"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Alpha",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Starts With - Alpha prefix",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_034"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Suffix match",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_035"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Σ",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Greek letter suffix",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_036"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Empty",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Empty suffix",
+            "expectedResult": "Company15",
+            "testCaseId": "TC_CCF_037"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "John,Klaus",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple names",
+            "expectedResult": "Company1,Company2,Company3,Company8",
+            "testCaseId": "TC_CCF_038"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Σ,β",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple Greek letters",
+            "expectedResult": "Company11,Company12",
+            "testCaseId": "TC_CCF_039"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Contact",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Contact word",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_040"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Smith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Smith word",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_041"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15",
+            "testCaseId": "TC_CCF_042"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "company with no contact",
+            "testCaseId": "TC_CCF_043"
+        }
+    ],
+    "numberCF": [
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "10.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 10.5",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_044"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-15",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for two-digit negative value -15",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_045"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "30.25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 30.25",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_046"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for zero value",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_047"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-8000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for four-digit negative value -8000",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_048"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "12.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 12.75",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_049"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-500.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for three-digit negative value -500",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_050"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "50.99",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 50.99",
+            "expectedResult": "Company9",
+            "testCaseId": "TC_CCF_051"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "100.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 100.5",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_052"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "200.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 200.75",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_053"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "300.25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 300.25",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_054"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "999999999",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for non-existent value",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_CCF_055"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude single digit value 10",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9",
+            "testCaseId": "TC_CCF_056"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "-15",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude two-digit negative value -15",
+            "expectedResult": "Company1,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15",
+            "testCaseId": "TC_CCF_057"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude zero value",
+            "expectedResult": "Company1,Company2,Company3,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15",
+            "testCaseId": "TC_CCF_058"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "1",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 1 prefix",
+            "expectedResult": "Company1,Company6,Company10",
+            "testCaseId": "TC_CCF_059"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "2",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 2 prefix",
+            "expectedResult": "Company11,Company2,Company4",
+            "testCaseId": "TC_CCF_060"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "3",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 3 prefix",
+            "expectedResult": "Company3,Company12",
+            "testCaseId": "TC_CCF_061"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 5 prefix",
+            "expectedResult": "Company9",
+            "testCaseId": "TC_CCF_062"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-1",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -1 prefix",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_063"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -5 prefix",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_064"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-8",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -8 prefix",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_065"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 0 suffix",
+            "expectedResult": "Company2,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_066"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "00",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 00 suffix",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_067"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 000 suffix",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_068"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "2",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 2 suffix",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_CCF_069"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 5 suffix",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company2,Company3,Company6,Company8",
+            "testCaseId": "TC_CCF_070"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than 50",
+            "expectedResult": "Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_071"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than 100",
+            "expectedResult": "Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_072"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "200",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than 200",
+            "expectedResult": "Company11,Company12",
+            "testCaseId": "TC_CCF_073"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than zero",
+            "expectedResult": "Company2,Company5,Company8",
+            "testCaseId": "TC_CCF_074"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "20",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than 20",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8",
+            "testCaseId": "TC_CCF_075"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "0,50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range match 0 to 50",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company6",
+            "testCaseId": "TC_CCF_076"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "50,200",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range match 50 to 200",
+            "expectedResult": "Company10,Company9",
+            "testCaseId": "TC_CCF_077"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-1000,0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range match -1000 to 0",
+            "expectedResult": "Company2,Company4,Company8",
+            "testCaseId": "TC_CCF_078"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Has Any Value - Non-empty",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_079"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Company15",
+            "testCaseId": "TC_CCF_080"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Negative threshold between -8000 and -500",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company2,Company3,Company4,Company6,Company8,Company9",
+            "testCaseId": "TC_CCF_081"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-15",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Negative threshold matching -15",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company2,Company3,Company4,Company6,Company9",
+            "testCaseId": "TC_CCF_082"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "10.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Decimal threshold matching 10.5",
+            "expectedResult": "Company10,Company11,Company12,Company2,Company3,Company4,Company6,Company9",
+            "testCaseId": "TC_CCF_083"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "15",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Threshold matching 15",
+            "expectedResult": "Company10,Company11,Company12,Company2,Company3,Company4,Company9",
+            "testCaseId": "TC_CCF_084"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "20.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Decimal threshold matching 20.75",
+            "expectedResult": "Company10,Company11,Company12,Company3,Company4,Company9",
+            "testCaseId": "TC_CCF_085"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "30.25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Decimal threshold matching 30.25",
+            "expectedResult": "Company10,Company11,Company12,Company9",
+            "testCaseId": "TC_CCF_086"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "50.99",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Decimal threshold matching 50.99",
+            "expectedResult": "Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_087"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "100.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Decimal threshold matching 100.5",
+            "expectedResult": "Company11,Company12",
+            "testCaseId": "TC_CCF_088"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "200.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Decimal threshold matching 200.75",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_089"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "300.25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Decimal threshold matching 300.25",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_CCF_090"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "350",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Very high threshold - excludes all (non-existent value)",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_CCF_091"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Negative threshold between -8000 and -500",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_092"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-500",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Negative threshold just below -500.5",
+            "expectedResult": "Company5,Company8",
+            "testCaseId": "TC_CCF_093"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-15",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Negative threshold matching -15",
+            "expectedResult": "Company5,Company8",
+            "testCaseId": "TC_CCF_094"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Zero threshold",
+            "expectedResult": "Company2,Company5,Company8",
+            "testCaseId": "TC_CCF_095"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "10.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Decimal threshold matching 10.5",
+            "expectedResult": "Company2,Company4,Company5,Company8",
+            "testCaseId": "TC_CCF_096"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "15",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Threshold matching 15",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8",
+            "testCaseId": "TC_CCF_097"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "20.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Decimal threshold matching 20.75",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8",
+            "testCaseId": "TC_CCF_098"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "30.25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Decimal threshold matching 30.25",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8",
+            "testCaseId": "TC_CCF_099"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "50.99",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Decimal threshold matching 50.99",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8",
+            "testCaseId": "TC_CCF_100"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "100.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Decimal threshold matching 100.5",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9",
+            "testCaseId": "TC_CCF_101"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "200.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Decimal threshold matching 200.75",
+            "expectedResult": "Company1,Company10,Company2,Company3,Company4,Company5,Company6,Company8,Company9",
+            "testCaseId": "TC_CCF_102"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "300.25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Decimal threshold matching 300.25",
+            "expectedResult": "Company1,Company10,Company11,Company2,Company3,Company4,Company5,Company6,Company8,Company9",
+            "testCaseId": "TC_CCF_103"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-10000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Very negative threshold - excludes all (non-existent value)",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_CCF_104"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-1000,-100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Negative range covering -500.5",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_105"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-20,0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range from negative to zero",
+            "expectedResult": "Company2,Company4",
+            "testCaseId": "TC_CCF_106"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "0,15",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range covering 0, 10.5, 12.75, 15",
+            "expectedResult": "Company1,Company4,Company6",
+            "testCaseId": "TC_CCF_107"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "10,20",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range covering 10.5, 12.75, 15, 20.75",
+            "expectedResult": "Company1,Company6",
+            "testCaseId": "TC_CCF_108"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "20,30",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range covering 20.75, 25.123456, 30.25",
+            "expectedResult": "Company2,Company4",
+            "testCaseId": "TC_CCF_109"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "30,50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range covering 30.25, 50.99",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_110"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "50,100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range covering 50.99, 100.5",
+            "expectedResult": "Company9",
+            "testCaseId": "TC_CCF_111"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "100,200",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range covering 100.5, 200.75",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_112"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "200,300",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range covering 200.75, 300.25",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_113"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-8000,-500",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range covering -8000 and -500.5",
+            "expectedResult": "Company5,Company8",
+            "testCaseId": "TC_CCF_114"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-100,100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Wide range covering negative and positive",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company6,Company9",
+            "testCaseId": "TC_CCF_115"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "0,300",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range from zero to maximum",
+            "expectedResult": "Company1,Company10,Company11,Company2,Company3,Company4,Company6,Company9",
+            "testCaseId": "TC_CCF_116"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "10.4,10.6",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Narrow range around 10.5",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_117"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "25.1,25.2",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range covering 25.123456",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_118"
+        }
+    ],
+    "dateCF": [
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_equal_to",
+            "filterValue": "2022-06-15",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Is Equal To - Exact date match",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_081"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_equal_to",
+            "filterValue": "2023-03-10",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Is Equal To - Exact date match",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_082"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "today",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Today relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_083"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "yesterday",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Yesterday relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_084"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_week",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - This week relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_085"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_week",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Last week relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_086"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_month",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - This month relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_087"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_month",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Last month relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_088"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_quarter",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - This quarter relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_089"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_quarter",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Last quarter relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_090"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_year",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - This year relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_091"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_year",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Last year relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_092"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_30",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Last 30 days relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_093"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_60",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Last 60 days relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_094"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_90",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Last 90 days relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_095"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_365",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Is - Last 365 days relative date",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_096"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_before",
+            "filterValue": "2025-02-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Is Before - Before date",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_097"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_before",
+            "filterValue": "2025-03-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Is Before - Before date",
+            "expectedResult": "Company1,Company2,Company3,Company4",
+            "testCaseId": "TC_CCF_098"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_before",
+            "filterValue": "2025-04-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Is Before - Before date",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_099"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_after",
+            "filterValue": "2025-03-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Is After - After date",
+            "expectedResult": "Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_100"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_after",
+            "filterValue": "2025-04-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Is After - After date",
+            "expectedResult": "Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_101"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_after",
+            "filterValue": "2025-05-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Is After - After date",
+            "expectedResult": "Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_102"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_between",
+            "filterValue": "2022-01-01,2025-02-15",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG_START_END",
+            "description": "Is Between - Date range",
+            "expectedResult": "Company1,Company2,Company3,Company4",
+            "testCaseId": "TC_CCF_103"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_between",
+            "filterValue": "2023-02-01,2025-03-15",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG_START_END",
+            "description": "Is Between - Date range",
+            "expectedResult": "Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_104"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_between",
+            "filterValue": "1998-04-01,2025-06-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG_START_END",
+            "description": "Is Between - Date range",
+            "expectedResult": "Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_105"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_mt",
+            "filterValue": "30",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Is More Than - More than 30 days ago",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_106"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_lt",
+            "filterValue": "30",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Is Less Than - Less than 30 days ago",
+            "expectedResult": "Dynamic",
+            "testCaseId": "TC_CCF_107"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "has_any_value",
+            "filterValue": "0",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Has Any Value - Non-empty",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_108"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_empty",
+            "filterValue": "0",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Company15",
+            "testCaseId": "TC_CCF_109"
+        }
+    ],
+    "dropdownCF": [
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A",
+            "expectedResult": "Company1,Company3,Company6",
+            "testCaseId": "TC_CCF_110"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "Option B",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_111"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option C",
+            "expectedResult": "Company4,Company5",
+            "testCaseId": "TC_CCF_112"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A",
+            "expectedResult": "Company10,Company11,Company12,Company15,Company2,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_113"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option A",
+            "expectedResult": "Company10,Company11,Company12,Company15,Company2,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_114"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A",
+            "expectedResult": "Company1,Company3,Company6",
+            "testCaseId": "TC_CCF_115"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty dropdown values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_116"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty dropdown values",
+            "expectedResult": "Company10,Company11,Company12,Company15,Company2,Company4,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_117"
+        }
+    ],
+    "multiselectCF": [
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_118"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A and Option B",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_119"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B and Option A (reversed order)",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_120"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_121"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A, Option B, and Option C",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_122"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B,Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B, Option A, and Option C (reversed order)",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_123"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option C, Option B, and Option A (reversed order)",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_124"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A,Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A, Option C, and Option B (reversed order)",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_125"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B and Option C",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_126"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option C and Option B (reversed order)",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_127"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A",
+            "expectedResult": "Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_128"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_129"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C (exact match only)",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_130"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A and Option B",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_131"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B and Option A (reversed order)",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_132"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A, Option B, and Option C",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_133"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C, Option B, and Option A (reversed order)",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_134"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B and Option C",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_135"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C and Option B (reversed order)",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_136"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Option A value present",
+            "expectedResult": "Company1,Company2,Company4",
+            "testCaseId": "TC_CCF_137"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Option B value present",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_138"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Option C value present",
+            "expectedResult": "Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_139"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option A and Option B present",
+            "expectedResult": "Company2,Company4",
+            "testCaseId": "TC_CCF_140"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option B and Option A present (reversed order)",
+            "expectedResult": "Company2,Company4",
+            "testCaseId": "TC_CCF_141"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option B and Option C present",
+            "expectedResult": "Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_142"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option C and Option B present (reversed order)",
+            "expectedResult": "Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_143"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option A and Option C present",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_144"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - All three values present",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_145"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - All three values present (reversed order)",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_146"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option A",
+            "expectedResult": "Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_147"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option B",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company4,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_148"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option C",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_149"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option A and Option B present together",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_150"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option B and Option A present together (reversed order)",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_151"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option B and Option C present together",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_152"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option C and Option B present together (reversed order)",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_153"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option A and Option C present together",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_154"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option C and Option A present together (reversed order)",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_155"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A",
+            "expectedResult": "Company1,Company2,Company4",
+            "testCaseId": "TC_CCF_156"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A or Option B",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_157"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B or Option A (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_158"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_159"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C",
+            "expectedResult": "Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_160"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B or Option C",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_161"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C or Option B (reversed order)",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_162"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A or Option C",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_163"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C or Option A (reversed order)",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_164"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A, Option B, or Option C",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_165"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C, Option B, or Option A (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_166"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty multiselect values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6",
+            "testCaseId": "TC_CCF_167"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty multiselect values",
+            "expectedResult": "Company10,Company11,Company12,Company15,Company2,Company4,Company6,Company8,Company9,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_168"
+        }
+    ],
+    "candidateCF": [
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_169"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_170"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_171"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_not",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude single value",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_172"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_not",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude multiple values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_173"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_not",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude multiple values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_174"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_175"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_176"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_177"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Single value absent",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_178"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Multiple values absent",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_179"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Multiple values absent",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_180"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_181"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_182"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_183"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_184"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_185"
+        }
+    ],
+    "companyCF": [
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_186"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_187"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_188"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_not",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_189"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_not",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_190"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_not",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_191"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_192"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_193"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_194"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_195"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_196"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_197"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_198"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_199"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_200"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Company1,Company2",
+            "testCaseId": "TC_CCF_201"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_202"
+        }
+    ],
+    "contactCF": [
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_203"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Company2,Company4",
+            "testCaseId": "TC_CCF_204"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Company2,Company4",
+            "testCaseId": "TC_CCF_205"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_not",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_206"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_not",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_207"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_not",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_208"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Company2,Company3,Company4",
+            "testCaseId": "TC_CCF_209"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Company2,Company4",
+            "testCaseId": "TC_CCF_210"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Company2,Company4",
+            "testCaseId": "TC_CCF_211"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_212"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_213"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_214"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Company2,Company3,Company4",
+            "testCaseId": "TC_CCF_215"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Company2,Company3,Company4",
+            "testCaseId": "TC_CCF_216"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Company2,Company3,Company4",
+            "testCaseId": "TC_CCF_217"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Company2,Company3,Company4",
+            "testCaseId": "TC_CCF_218"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_219"
+        }
+    ],
+    "jobCF": [
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_220"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_221"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_222"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_not",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_223"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_not",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_224"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_not",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_225"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_226"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_227"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_228"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_229"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_230"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_231"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_232"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_233"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_234"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_235"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_236"
+        }
+    ],
+    "dealsCF": [
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_237"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_238"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_239"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_not",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_240"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_not",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_241"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_not",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_242"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_243"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_244"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_245"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Company1,Company2,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_246"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_247"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_248"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_249"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_250"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_251"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Company3,Company4",
+            "testCaseId": "TC_CCF_252"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Company1,Company2,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_253"
+        }
+    ],
+    "userCF": [
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_CCF_254"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_255"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_256"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match owner value",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_257"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_258"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_259"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_260"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact owner value",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_261"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_262"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_263"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_264"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Owner value present",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_265"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_266"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_267"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_268"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude owner value",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_269"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_270"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_271"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_272"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{admin,owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Admin or Owner",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_273"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{owner,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Admin or Owner (reversed order)",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_274"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_275"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_276"
+        }
+    ],
+    "teamCF": [
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_277"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_278"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_279"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is_not",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_280"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is_not",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_281"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is_not",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_282"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_283"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_284"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_285"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_286"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_287"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_288"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_289"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_290"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_291"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Company5,Company6",
+            "testCaseId": "TC_CCF_292"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company6,Company8,Company9,Company10,Company11,Company12,Company15,entityCompany1,entityCompany2",
+            "testCaseId": "TC_CCF_293"
+        }
+    ],
+    "phonenumberCF": [
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "4155550100",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard phone",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_294"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "+498912345678",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international phone",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_295"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "5551234567",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match phone number",
+            "expectedResult": "Company3,Company6",
+            "testCaseId": "TC_CCF_296"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "+34911234567",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Spanish phone",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_297"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "+35312345678",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Irish phone",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_298"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "3210987654",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match phone number",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_299"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "01012345678",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Chinese phone",
+            "expectedResult": "Company9",
+            "testCaseId": "TC_CCF_300"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "4258828080",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Microsoft phone",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_301"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "4155550200",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Sigma phone",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_302"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "6505550300",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Alpha phone",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_303"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is_not",
+            "filterValue": "4155550100",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude standard phone",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15",
+            "testCaseId": "TC_CCF_304"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "415",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Area code search",
+            "expectedResult": "Company1,Company11",
+            "testCaseId": "TC_CCF_305"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "555",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Common number sequence",
+            "expectedResult": "Company1,Company3,Company6,Company11,Company12",
+            "testCaseId": "TC_CCF_306"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "+49",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - German country code",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_307"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "+34",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Spanish country code",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_308"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "+353",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Irish country code",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_309"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "555",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude 555 sequence",
+            "expectedResult": "Company2,Company4,Company5,Company8,Company9,Company10,Company15",
+            "testCaseId": "TC_CCF_310"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "begins_with",
+            "filterValue": "415",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - 415 prefix",
+            "expectedResult": "Company1,Company11",
+            "testCaseId": "TC_CCF_311"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "begins_with",
+            "filterValue": "+49",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - International prefix",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_312"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "ends_with",
+            "filterValue": "0100",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - 0100 suffix",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_313"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "ends_with",
+            "filterValue": "0200",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - 0200 suffix",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_314"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "415,425",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple area codes",
+            "expectedResult": "Company1,Company10,Company11",
+            "testCaseId": "TC_CCF_315"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty phone fields",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_316"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty phone fields",
+            "expectedResult": "Company15",
+            "testCaseId": "TC_CCF_317"
+        }
+    ],
+    "longtextCF": [
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "John Smith is the Operations Head at Tech Solutions Inc. with extensive experience in enterprise operations and management.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match for Company1's contact profile",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_318"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "Klaus Müller is the Geschäftsführer at Innovate GmbH with expertise in German technology sector.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match for Company2's contact profile",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_319"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "John _Under_Score is the Data_Analyst_Lead at Under_Score_Analytics_Corp.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with underscores",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_320"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "José García is the Director de Operaciones at Tecnología Ibérica S.L.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with accents",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_321"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "Seán O'Malley is the Security Operations Manager at O'Malley's Security Solutions.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with apostrophe",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_322"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "James Washington is the Operations + Strategy Lead at Top Secret Agency + Division.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with plus sign",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_323"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "John [Bracket] (Tech) is the Operations [Manager] (Lead) at Bracket [Technologies] (Inc.).",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with brackets",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_324"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "李明 王 is the 运营总监 at 阿里巴巴集团.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Chinese characters",
+            "expectedResult": "Company9",
+            "testCaseId": "TC_CCF_325"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "Sarah Johnson is the Operations Director at Microsoft Corporation.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard profile",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_326"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "David Sigma is the Operations Head Σ at Sigma Technologies Inc. Σ.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Greek letters",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_327"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "Alpha β Systems is the Operations Head α β at Alpha β Systems Corp.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Greek beta",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_328"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Empty long text field",
+            "expectedResult": "Company15",
+            "testCaseId": "TC_CCF_329"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is_not",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Non-empty long text fields",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_330"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Operations",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Operations keyword",
+            "expectedResult": "Company1,Company3,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_331"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Tech Solutions",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Tech Solutions phrase",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_332"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Microsoft",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Microsoft keyword",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_333"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Σ",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Greek letter",
+            "expectedResult": "Company11,Company12",
+            "testCaseId": "TC_CCF_334"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "β",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Greek beta",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_335"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "_",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Underscore character",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_336"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "[",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Opening bracket",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_337"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "+",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Plus sign",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_338"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Operations",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Operations not present",
+            "expectedResult": "Company2,Company4,Company15",
+            "testCaseId": "TC_CCF_339"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "begins_with",
+            "filterValue": "John Smith",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Name at start",
+            "expectedResult": "Company1,Company3,Company8",
+            "testCaseId": "TC_CCF_340"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "begins_with",
+            "filterValue": "Klaus Müller",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - German name at start",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_341"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "begins_with",
+            "filterValue": "Sarah Johnson",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Name at start",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_342"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "management.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Period ending",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_343"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "Σ.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Greek letter ending",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_344"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "Corp.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Corp ending",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_345"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Operations,Microsoft",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple keywords",
+            "expectedResult": "Company1,Company3,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_346"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty long text fields",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_347"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty long text fields",
+            "expectedResult": "Company15",
+            "testCaseId": "TC_CCF_348"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Operations",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Operations word",
+            "expectedResult": "Company1,Company3,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_349"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Microsoft",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Microsoft word",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_350"
+        }
+    ],
+    "social_profileCF": [
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/johnsmith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard LinkedIn URL",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_351"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/klausmüller",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international LinkedIn URL",
+            "expectedResult": "Company2",
+            "testCaseId": "TC_CCF_352"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/john_under_score",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with underscores",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_353"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/joségarcía",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with accents",
+            "expectedResult": "Company4",
+            "testCaseId": "TC_CCF_354"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/seánomalley",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with accents",
+            "expectedResult": "Company5",
+            "testCaseId": "TC_CCF_355"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/jameswashington",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard LinkedIn URL",
+            "expectedResult": "Company6",
+            "testCaseId": "TC_CCF_356"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/johnbracket",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match LinkedIn URL",
+            "expectedResult": "Company8",
+            "testCaseId": "TC_CCF_357"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/limingwang",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Chinese LinkedIn URL",
+            "expectedResult": "Company9",
+            "testCaseId": "TC_CCF_358"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/sarahjohnson",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Microsoft LinkedIn URL",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_359"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/davidsigma",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Sigma LinkedIn URL",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_360"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/in/alphabeta",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Alpha LinkedIn URL",
+            "expectedResult": "Company12",
+            "testCaseId": "TC_CCF_361"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match empty",
+            "expectedResult": "Company15",
+            "testCaseId": "TC_CCF_362"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is_not",
+            "filterValue": "https://www.linkedin.com/in/johnsmith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude standard LinkedIn URL",
+            "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15",
+            "testCaseId": "TC_CCF_363"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains",
+            "filterValue": "linkedin.com/in/john",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - John LinkedIn URLs",
+            "expectedResult": "Company1,Company3,Company8",
+            "testCaseId": "TC_CCF_364"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains",
+            "filterValue": "linkedin.com/in/sarah",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Sarah LinkedIn URL",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_365"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains",
+            "filterValue": "linkedin.com/in/david",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - David LinkedIn URL",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_366"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains",
+            "filterValue": "_",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Underscore in URL",
+            "expectedResult": "Company3",
+            "testCaseId": "TC_CCF_367"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "linkedin.com/in/john",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude John LinkedIn URLs",
+            "expectedResult": "Company2,Company4,Company5,Company6,Company9,Company10,Company11,Company12,Company15",
+            "testCaseId": "TC_CCF_368"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "begins_with",
+            "filterValue": "https://www.linkedin.com/in/john",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - John LinkedIn URL prefix",
+            "expectedResult": "Company1,Company3,Company8",
+            "testCaseId": "TC_CCF_369"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "begins_with",
+            "filterValue": "https://www.linkedin.com/in/sarah",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Sarah LinkedIn URL prefix",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_370"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "ends_with",
+            "filterValue": "johnsmith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Standard LinkedIn URL suffix",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_371"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "ends_with",
+            "filterValue": "sarahjohnson",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Sarah LinkedIn URL suffix",
+            "expectedResult": "Company10",
+            "testCaseId": "TC_CCF_372"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "ends_with",
+            "filterValue": "davidsigma",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - David LinkedIn URL suffix",
+            "expectedResult": "Company11",
+            "testCaseId": "TC_CCF_373"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "john,sarah",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple LinkedIn URLs",
+            "expectedResult": "Company1,Company3,Company8,Company10",
+            "testCaseId": "TC_CCF_374"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty social profile URLs",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_375"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty social profile URLs",
+            "expectedResult": "Company15",
+            "testCaseId": "TC_CCF_376"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "linkedin",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - LinkedIn domain",
+            "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12",
+            "testCaseId": "TC_CCF_377"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "johnsmith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - johnsmith word",
+            "expectedResult": "Company1",
+            "testCaseId": "TC_CCF_378"
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "message": {
+            "type": "string"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "parent_xml": {
+                    "type": "string"
+                },
+                "dynamic_job_xml": {
+                    "type": "string"
+                },
+                "job_last_updatedon_limit": {
+                    "type": "integer"
+                },
+                "decode_xml_data": {
+                    "type": "integer"
+                },
+                "created_by": {
+                    "type": "integer"
+                },
+                "updated_by": {
+                    "type": "integer"
+                },
+                "account_id": {
+                    "type": "integer"
+                },
+                "updated_on": {
+                    "type": "integer"
+                },
+                "created_on": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "title",
+                "parent_xml",
+                "dynamic_job_xml",
+                "job_last_updatedon_limit",
+                "decode_xml_data",
+                "created_by",
+                "updated_by",
+                "account_id",
+                "updated_on",
+                "created_on",
+                "id"
+            ]
+        },
+        "status": {
+            "type": "string"
+        },
+        "message_type": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "message",
+        "data",
+        "status",
+        "message_type"
+    ]
+}

@@ -1,0 +1,1231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ScenarIQ API Test Suite" thread-count="10" parallel="tests">
+
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+
+    <!-- ====== Account Tests ====== -->
+
+    <test name="ScenarIQ — Account — accept Invitation With Valid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.AcceptInvitationTest">
+                <methods><include name="acceptInvitationWithValidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — accept Invitation With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.AcceptInvitationTest">
+                <methods><include name="acceptInvitationWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — accept Invitation With Missing Name">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.AcceptInvitationTest">
+                <methods><include name="acceptInvitationWithMissingNameTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — accept Invitation With Short Password">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.AcceptInvitationTest">
+                <methods><include name="acceptInvitationWithShortPasswordTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — delete User By Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.DeleteAccountUserTest">
+                <methods><include name="deleteUserByOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — delete User By Non Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.DeleteAccountUserTest">
+                <methods><include name="deleteUserByNonOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — delete Non Existent User">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.DeleteAccountUserTest">
+                <methods><include name="deleteNonExistentUserTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — owner Cannot Delete Self">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.DeleteAccountUserTest">
+                <methods><include name="ownerCannotDeleteSelfTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — get Account Users As Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.GetUsersTest">
+                <methods><include name="getAccountUsersAsOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — get Account Users As Member">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.GetUsersTest">
+                <methods><include name="getAccountUsersAsMemberTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — get Account Users With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.GetUsersTest">
+                <methods><include name="getAccountUsersWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — invite User As Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.InviteUserTest">
+                <methods><include name="inviteUserAsOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — invite User As Admin">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.InviteUserTest">
+                <methods><include name="inviteUserAsAdminTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — invite User As Member">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.InviteUserTest">
+                <methods><include name="inviteUserAsMemberTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — invite With Invalid Email">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.InviteUserTest">
+                <methods><include name="inviteWithInvalidEmailTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — invite With Missing Role">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.InviteUserTest">
+                <methods><include name="inviteWithMissingRoleTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — invite With Invalid Role">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.InviteUserTest">
+                <methods><include name="inviteWithInvalidRoleTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — invite Existing Member">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.InviteUserTest">
+                <methods><include name="inviteExistingMemberTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — invite Exceeding Plan Limit">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.InviteUserTest">
+                <methods><include name="inviteExceedingPlanLimitTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — generate Reset Link By Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.ResetLinkTest">
+                <methods><include name="generateResetLinkByOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — generate Reset Link By Non Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.ResetLinkTest">
+                <methods><include name="generateResetLinkByNonOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — generate Reset Link For Non Existent User">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.ResetLinkTest">
+                <methods><include name="generateResetLinkForNonExistentUserTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — update User Role By Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.UpdateAccountUserTest">
+                <methods><include name="updateUserRoleByOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — update User Role By Non Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.UpdateAccountUserTest">
+                <methods><include name="updateUserRoleByNonOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — update User Status By Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.UpdateAccountUserTest">
+                <methods><include name="updateUserStatusByOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — update Non Existent User">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.UpdateAccountUserTest">
+                <methods><include name="updateNonExistentUserTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Account — disable And Re Enable User">
+        <classes>
+            <class name="io.recruitcrm.scenariq.account.UpdateAccountUserTest">
+                <methods><include name="disableAndReEnableUserTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- ====== Auth Tests ====== -->
+
+    <test name="ScenarIQ — Auth — delete Account With Valid Password">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.DeleteAccountTest">
+                <methods><include name="deleteAccountWithValidPasswordTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — delete Account With Wrong Password">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.DeleteAccountTest">
+                <methods><include name="deleteAccountWithWrongPasswordTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — delete Account By Non Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.DeleteAccountTest">
+                <methods><include name="deleteAccountByNonOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — health Check">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.HealthCheckTest">
+                <methods><include name="healthCheckTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — login With Valid Credentials">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LoginTest">
+                <methods><include name="loginWithValidCredentialsTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — login With Invalid Password">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LoginTest">
+                <methods><include name="loginWithInvalidPasswordTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — login With Non Existent Email">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LoginTest">
+                <methods><include name="loginWithNonExistentEmailTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — login With Missing Email">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LoginTest">
+                <methods><include name="loginWithMissingEmailTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — login With Missing Password">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LoginTest">
+                <methods><include name="loginWithMissingPasswordTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — login With Invalid Email Format">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LoginTest">
+                <methods><include name="loginWithInvalidEmailFormatTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — login With Empty Body">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LoginTest">
+                <methods><include name="loginWithEmptyBodyTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — logout With Valid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LogoutTest">
+                <methods><include name="logoutWithValidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — logout With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LogoutTest">
+                <methods><include name="logoutWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — logout With Expired Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LogoutTest">
+                <methods><include name="logoutWithExpiredTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — logout With Missing Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.LogoutTest">
+                <methods><include name="logoutWithMissingTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — get Profile With Valid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="getProfileWithValidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — get Profile With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="getProfileWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — update Profile Name">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="updateProfileNameTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — update Profile Email">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="updateProfileEmailTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — update Profile Timezone">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="updateProfileTimezoneTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — update Profile With Invalid Email">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="updateProfileWithInvalidEmailTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — update Profile With Empty Name">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="updateProfileWithEmptyNameTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — change Password With Valid Data">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="changePasswordWithValidDataTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — change Password With Wrong Current Password">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="changePasswordWithWrongCurrentPasswordTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — change Password With Short New Password">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="changePasswordWithShortNewPasswordTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — update Git Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="updateGitTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — update Git Token With Null Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.ProfileTest">
+                <methods><include name="updateGitTokenWithNullTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Valid Data">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithValidDataTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Existing Email">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithExistingEmailTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Missing Name">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithMissingNameTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Missing Email">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithMissingEmailTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Invalid Email Format">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithInvalidEmailFormatTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Missing Password">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithMissingPasswordTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Short Password">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithShortPasswordTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Missing Account Name">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithMissingAccountNameTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Empty Body">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithEmptyBodyTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Auth — signup With Null Fields">
+        <classes>
+            <class name="io.recruitcrm.scenariq.auth.SignupTest">
+                <methods><include name="signupWithNullFieldsTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- ====== E2E Tests ====== -->
+
+    <test name="ScenarIQ — E2E — end To End Scan Lifecycle">
+        <classes>
+            <class name="io.recruitcrm.scenariq.businessflow.EndToEndScanFlowTest">
+                <methods><include name="endToEndScanLifecycleTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — E2E — end To End Workspace Creation And Setup">
+        <classes>
+            <class name="io.recruitcrm.scenariq.businessflow.EndToEndWorkspaceFlowTest">
+                <methods><include name="endToEndWorkspaceCreationAndSetupTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — E2E — free Plan Service Limit">
+        <classes>
+            <class name="io.recruitcrm.scenariq.businessflow.PlanLimitFlowTest">
+                <methods><include name="freePlanServiceLimitTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — E2E — free Plan Credit Limit">
+        <classes>
+            <class name="io.recruitcrm.scenariq.businessflow.PlanLimitFlowTest">
+                <methods><include name="freePlanCreditLimitTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — E2E — free Plan Invite Limit">
+        <classes>
+            <class name="io.recruitcrm.scenariq.businessflow.PlanLimitFlowTest">
+                <methods><include name="freePlanInviteLimitTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — E2E — rbac Owner Full Access">
+        <classes>
+            <class name="io.recruitcrm.scenariq.businessflow.RBACFlowTest">
+                <methods><include name="rbacOwnerFullAccessTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — E2E — rbac Member Limited Access">
+        <classes>
+            <class name="io.recruitcrm.scenariq.businessflow.RBACFlowTest">
+                <methods><include name="rbacMemberLimitedAccessTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — E2E — rbac Admin Mid Access">
+        <classes>
+            <class name="io.recruitcrm.scenariq.businessflow.RBACFlowTest">
+                <methods><include name="rbacAdminMidAccessTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — E2E — end To End Team Management">
+        <classes>
+            <class name="io.recruitcrm.scenariq.businessflow.TeamManagementFlowTest">
+                <methods><include name="endToEndTeamManagementTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- ====== Endpoint Tests ====== -->
+
+    <test name="ScenarIQ — Endpoint — get Automation Prompt When Not Generated">
+        <classes>
+            <class name="io.recruitcrm.scenariq.endpoint.AutomationPromptTest">
+                <methods><include name="getAutomationPromptWhenNotGeneratedTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Endpoint — generate Automation Prompt Template">
+        <classes>
+            <class name="io.recruitcrm.scenariq.endpoint.AutomationPromptTest">
+                <methods><include name="generateAutomationPromptTemplateTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Endpoint — generate Automation Prompt Regenerate">
+        <classes>
+            <class name="io.recruitcrm.scenariq.endpoint.AutomationPromptTest">
+                <methods><include name="generateAutomationPromptRegenerateTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Endpoint — get Automation Prompt After Generation">
+        <classes>
+            <class name="io.recruitcrm.scenariq.endpoint.AutomationPromptTest">
+                <methods><include name="getAutomationPromptAfterGenerationTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Endpoint — record Prompt Copy">
+        <classes>
+            <class name="io.recruitcrm.scenariq.endpoint.AutomationPromptTest">
+                <methods><include name="recordPromptCopyTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Endpoint — generate Prompt With Invalid Endpoint Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.endpoint.AutomationPromptTest">
+                <methods><include name="generatePromptWithInvalidEndpointIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Endpoint — generate Prompt With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.endpoint.AutomationPromptTest">
+                <methods><include name="generatePromptWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- ====== Feedback Tests ====== -->
+
+    <test name="ScenarIQ — Feedback — submit Feedback With Valid Data">
+        <classes>
+            <class name="io.recruitcrm.scenariq.feedback.SubmitFeedbackTest">
+                <methods><include name="submitFeedbackWithValidDataTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Feedback — submit Feedback With All Ratings">
+        <classes>
+            <class name="io.recruitcrm.scenariq.feedback.SubmitFeedbackTest">
+                <methods><include name="submitFeedbackWithAllRatingsTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Feedback — submit Feedback With Long Message">
+        <classes>
+            <class name="io.recruitcrm.scenariq.feedback.SubmitFeedbackTest">
+                <methods><include name="submitFeedbackWithLongMessageTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Feedback — submit Feedback With Invalid Rating">
+        <classes>
+            <class name="io.recruitcrm.scenariq.feedback.SubmitFeedbackTest">
+                <methods><include name="submitFeedbackWithInvalidRatingTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Feedback — submit Feedback With Missing Rating">
+        <classes>
+            <class name="io.recruitcrm.scenariq.feedback.SubmitFeedbackTest">
+                <methods><include name="submitFeedbackWithMissingRatingTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Feedback — submit Feedback With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.feedback.SubmitFeedbackTest">
+                <methods><include name="submitFeedbackWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- ====== Scan Tests ====== -->
+
+    <test name="ScenarIQ — Scan — cancel In Progress Scan">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.CancelScanTest">
+                <methods><include name="cancelInProgressScanTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — cancel Already Completed Scan">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.CancelScanTest">
+                <methods><include name="cancelAlreadyCompletedScanTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — cancel Already Cancelled Scan">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.CancelScanTest">
+                <methods><include name="cancelAlreadyCancelledScanTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — cancel Scan With Invalid Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.CancelScanTest">
+                <methods><include name="cancelScanWithInvalidIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — cancel Scan With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.CancelScanTest">
+                <methods><include name="cancelScanWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get Scan Report">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScanReportTest">
+                <methods><include name="getScanReportTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get Scan Report With Invalid Scan Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScanReportTest">
+                <methods><include name="getScanReportWithInvalidScanIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get Scan Report With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScanReportTest">
+                <methods><include name="getScanReportWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get Active Scans">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getActiveScansTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get Active Scans With No Active Scan">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getActiveScansWithNoActiveScanTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get Scan Detail">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getScanDetailTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get Scan Detail With Invalid Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getScanDetailWithInvalidIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get Scan Detail From Different Account">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getScanDetailFromDifferentAccountTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get All Scans">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getAllScansTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get All Scans With Service Filter">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getAllScansWithServiceFilterTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get All Scans With Status Filter">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getAllScansWithStatusFilterTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get All Scans With Pagination">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getAllScansWithPaginationTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get Service Scans">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getServiceScansTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — get All Scans With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.GetScansTest">
+                <methods><include name="getAllScansWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — resume Enrichment On Completed Scan">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.ResumeEnrichmentTest">
+                <methods><include name="resumeEnrichmentOnCompletedScanTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — resume Enrichment On In Progress Scan">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.ResumeEnrichmentTest">
+                <methods><include name="resumeEnrichmentOnInProgressScanTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — resume Enrichment With Invalid Scan Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.ResumeEnrichmentTest">
+                <methods><include name="resumeEnrichmentWithInvalidScanIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — resume Enrichment With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.ResumeEnrichmentTest">
+                <methods><include name="resumeEnrichmentWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan With Default Settings">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanWithDefaultSettingsTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan With Deterministic Mode">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanWithDeterministicModeTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan With Ai Enabled">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanWithAiEnabledTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan Without Ai">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanWithoutAiTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan Force Full Scan">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanForceFullScanTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan With Insufficient Credits">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanWithInsufficientCreditsTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan While Another In Progress">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanWhileAnotherInProgressTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan With Invalid Service Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanWithInvalidServiceIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan From Different Account">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanFromDifferentAccountTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Scan — trigger Scan With All Modes">
+        <classes>
+            <class name="io.recruitcrm.scenariq.scan.TriggerScanTest">
+                <methods><include name="triggerScanWithAllModesTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- ====== Service Tests ====== -->
+
+    <test name="ScenarIQ — Service — delete Service By Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.DeleteServiceTest">
+                <methods><include name="deleteServiceByOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — delete Service By Member Who Registered">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.DeleteServiceTest">
+                <methods><include name="deleteServiceByMemberWhoRegisteredTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — delete Service By Member Who Did Not Register">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.DeleteServiceTest">
+                <methods><include name="deleteServiceByMemberWhoDidNotRegisterTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — delete Service With Invalid Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.DeleteServiceTest">
+                <methods><include name="deleteServiceWithInvalidIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — delete Service With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.DeleteServiceTest">
+                <methods><include name="deleteServiceWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — get All Services">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.GetServiceTest">
+                <methods><include name="getAllServicesTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — get Service By Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.GetServiceTest">
+                <methods><include name="getServiceByIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — get Service With Invalid Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.GetServiceTest">
+                <methods><include name="getServiceWithInvalidIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — get Service From Different Account">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.GetServiceTest">
+                <methods><include name="getServiceFromDifferentAccountTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — get Services With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.GetServiceTest">
+                <methods><include name="getServicesWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service With Valid Data">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceWithValidDataTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service With All Fields">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceWithAllFieldsTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service With Missing Name">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceWithMissingNameTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service With Missing Type">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceWithMissingTypeTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service With Invalid Type">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceWithInvalidTypeTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service With Missing Backend Repo">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceWithMissingBackendRepoTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service With Missing Automation Repo">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceWithMissingAutomationRepoTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service With Duplicate Name">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceWithDuplicateNameTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service Exceeding Plan Limit">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceExceedingPlanLimitTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — register Service With Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.RegisterServiceTest">
+                <methods><include name="registerServiceWithInvalidTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service Name">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTest">
+                <methods><include name="updateServiceNameTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service By Member Who Registered">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTest">
+                <methods><include name="updateServiceByMemberWhoRegisteredTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service By Member Who Did Not Register">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTest">
+                <methods><include name="updateServiceByMemberWhoDidNotRegisterTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service By Admin">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTest">
+                <methods><include name="updateServiceByAdminTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service With Invalid Id">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTest">
+                <methods><include name="updateServiceWithInvalidIdTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service Name To Duplicate">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTest">
+                <methods><include name="updateServiceNameToDuplicateTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service Token By Owner">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTokenTest">
+                <methods><include name="updateServiceTokenByOwnerTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service Token By Admin">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTokenTest">
+                <methods><include name="updateServiceTokenByAdminTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service Token By Member">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTokenTest">
+                <methods><include name="updateServiceTokenByMemberTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScenarIQ — Service — update Service Token With Missing Git Token">
+        <classes>
+            <class name="io.recruitcrm.scenariq.service.UpdateServiceTokenTest">
+                <methods><include name="updateServiceTokenWithMissingGitTokenTest" /></methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

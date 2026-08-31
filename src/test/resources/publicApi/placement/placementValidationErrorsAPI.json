@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Placement validation errors response (422)",
+	"type": "object",
+	"properties": {
+		"company_slug": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"candidate_slug": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"job_slug": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"contact_slugs": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"deal_slugs": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"currency_id": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	},
+	"additionalProperties": true
+}

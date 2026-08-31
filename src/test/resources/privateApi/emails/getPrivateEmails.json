@@ -1,0 +1,229 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "fail"
+      ]
+    },
+    "action_name": {
+      "type": "string"
+    },
+    "actionid": {
+      "type": "string"
+    },
+    "intercom": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "account_id": {
+                "type": "string"
+              },
+              "drafts": {
+                "type": "array"
+              },
+              "first_message_timestamp": {
+                "type": "integer"
+              },
+              "has_attachments": {
+                "type": "boolean"
+              },
+              "id": {
+                "type": "string"
+              },
+              "labels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "display_name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "display_name",
+                    "id",
+                    "name"
+                  ]
+                }
+              },
+              "last_message_received_timestamp": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "last_message_sent_timestamp": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "last_message_timestamp": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "last_updated_timestamp": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "messages": {
+                "type": "array"
+              },
+              "object": {
+                "type": "string"
+              },
+              "participants": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "email",
+                    "name"
+                  ]
+                }
+              },
+              "snippet": {
+                "type": "string"
+              },
+              "starred": {
+                "type": "boolean"
+              },
+              "subject": {
+                "type": "string"
+              },
+              "unread": {
+                "type": "boolean"
+              },
+              "version": {
+                "type": "integer"
+              },
+              "date": {
+                "type": "integer"
+              },
+              "recieveremail": {
+                "type": "string"
+              },
+              "recievername": {
+                "type": "string"
+              },
+              "senderemail": {
+                "type": "string"
+              },
+              "sendername": {
+                "type": "string"
+              },
+              "blacklisted": {
+                "type": "boolean"
+              },
+              "blacklisted_email": {
+                "type": "string"
+              },
+              "hide_details": {
+                "type": "boolean"
+              },
+              "last_sent_message_id": {
+                "type": "integer"
+              },
+              "numemailsinthread": {
+                "type": "integer"
+              },
+              "emailtype": {
+                "type": "string"
+              },
+              "private_emails": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "account_id",
+              "drafts",
+              "first_message_timestamp",
+              "has_attachments",
+              "id",
+              "labels",
+              "last_message_sent_timestamp",
+              "last_message_timestamp",
+              "last_updated_timestamp",
+              "messages",
+              "object",
+              "participants",
+              "snippet",
+              "starred",
+              "subject",
+              "unread",
+              "version",
+              "date",
+              "recieveremail",
+              "recievername",
+              "senderemail",
+              "sendername",
+              "blacklisted",
+              "blacklisted_email",
+              "hide_details",
+              "last_sent_message_id",
+              "numemailsinthread",
+              "emailtype",
+              "private_emails"
+            ]
+          }
+        },
+        "filtered_count": {
+          "type": "integer"
+        },
+        "total_count": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "records",
+        "filtered_count",
+        "total_count"
+      ]
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "status",
+    "data"
+  ]
+}

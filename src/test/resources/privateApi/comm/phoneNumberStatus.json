@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "local": {
+      "type": "object",
+      "properties": {
+        "bundle_created": {
+          "type": "boolean"
+        },
+        "bundle_sid": {
+          "type": "boolean"
+        },
+        "bundle_details": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "bundle_created",
+        "bundle_sid",
+        "bundle_details"
+      ]
+    },
+    "mobile": {
+      "type": "object",
+      "properties": {
+        "bundle_created": {
+          "type": "boolean"
+        },
+        "bundle_sid": {
+          "type": "boolean"
+        },
+        "bundle_details": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "bundle_created",
+        "bundle_sid",
+        "bundle_details"
+      ]
+    }
+  },
+  "required": [
+    "local",
+    "mobile"
+  ]
+}

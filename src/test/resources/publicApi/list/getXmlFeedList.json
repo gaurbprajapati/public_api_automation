@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "default_xml_feeds": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "label": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "label"
+                    ]
+                }
+            ]
+        },
+        "custom_xml_feeds": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "label": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "label"
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "default_xml_feeds",
+        "custom_xml_feeds"
+    ]
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string",
+      "description": "Success message like 'Update Field Successful '"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": [
+        "is-success",
+        "is_danger"
+      ]
+    },
+    "data": {
+      "type": "array"
+    },
+    "notifications": {
+      "type": "array"
+    },
+    "user": {
+      "type": "object",
+      "description": "Contains user details including accountid"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "fail"
+      ]
+    },
+    "action_name": {
+      "type": "string",
+      "description": "Action name like 'Update Field' for success or empty string for failures"
+    },
+    "actionid": {
+      "type": [
+        "integer",
+        "string"
+      ],
+      "description": "Unique action identifier for success or empty string for failures"
+    },
+    "intercom": {
+      "type": [
+        "null",
+        "object"
+      ]
+    },
+    "recaptcha_site_key": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "notifications",
+    "user",
+    "status",
+    "action_name",
+    "actionid"
+  ]
+}

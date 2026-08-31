@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Candidate Filters - Activity Fields Only" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+
+    <!-- Notes Activity Filters -->
+    <test name="Notes Date Field Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.NotesActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="notesDateFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Notes Multiselect/Dropdown Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.NotesActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="notesMultiselectFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Notes Note Exists (checkbox) Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.NotesActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="notesNoteExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Call Log Activity Filters -->
+    <test name="Call Log Date Field Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CallLogActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="callLogDateFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Call Log Multiselect/Dropdown Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CallLogActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="callLogMultiselectFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Call Log Exists (checkbox) Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CallLogActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="callLogCallExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Task Activity Filters -->
+    <test name="Task Text Field Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.TaskActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="tasksTextFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Task Date Field Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.TaskActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="tasksDateFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Task Multiselect/Dropdown Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.TaskActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="tasksMultiselectFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Task Exists (checkbox) Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.TaskActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="tasksTaskExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Meeting Activity Filters -->
+    <test name="Meeting Text Field Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.MeetingActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="meetingsTextFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Meeting Date Field Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.MeetingActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="meetingsDateFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Meeting Multiselect/Dropdown Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.MeetingActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="meetingsMultiselectFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Meeting Exists (checkbox) Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.MeetingActivityFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="meetingsMeetingExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,436 @@
+{
+  "Id": [
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match, standard ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 1"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero ID (should be empty as IDs are positive)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "-100",
+      "description": "Exact match, negative ID (should be empty as IDs are positive)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "2",
+      "description": "Exact match, ID 2",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 2"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "3",
+      "description": "Exact match, ID 3",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 3"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "5",
+      "description": "Exact match, ID 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 5"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "10",
+      "description": "Exact match, ID 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 10"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "15",
+      "description": "Exact match, ID 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 15"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "1.0",
+      "description": "Exact match, decimal format ID (1.0 should match 1)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 1"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "2.0",
+      "description": "Exact match, decimal format ID (2.0 should match 2)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 2"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "15.0",
+      "description": "Exact match, decimal format ID (15.0 should match 15)",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 15"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "100",
+      "description": "Exact match, high ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "999",
+      "description": "Exact match, very high ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "1000000",
+      "description": "Exact match, very high ID (likely empty)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "999999",
+      "description": "Exact match, extremely high ID (likely empty)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "-1",
+      "description": "Exact match, negative one ID (should be empty as IDs are positive)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "-50",
+      "description": "Exact match, negative ID (should be empty as IDs are positive)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "1",
+      "description": "Not equal to 1 (excludes exact match)",
+      "expectedResult": "All contacts except ID 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero (should return all as IDs are positive)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "-100",
+      "description": "Not equal to negative (should return all as IDs are positive)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "1000000",
+      "description": "Not equal to very high ID (should return all)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "Is more than 0 (should return all contacts as IDs are positive)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "1",
+      "description": "Is more than 1",
+      "expectedResult": "Contacts with ID > 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "5",
+      "description": "Is more than 5",
+      "expectedResult": "Contacts with ID > 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "-100",
+      "description": "Is more than negative (should return all as IDs are positive)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "1000000",
+      "description": "Is more than very high ID (should be empty)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "description": "Is less than 1 (should be empty as IDs are positive)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "5",
+      "description": "Is less than 5",
+      "expectedResult": "Contacts with ID < 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Is less than 10",
+      "expectedResult": "Contacts with ID < 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "1000000",
+      "description": "Is less than very high ID (should return all)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "1,10",
+      "description": "Is between 1-10",
+      "expectedResult": "Contacts with ID between 1 and 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "5,15",
+      "description": "Is between 5-15",
+      "expectedResult": "Contacts with ID between 5 and 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "0,5",
+      "description": "Is between 0-5",
+      "expectedResult": "Contacts with ID between 0 and 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "-100,0",
+      "description": "Is between negative and zero (should be empty as IDs are positive)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "-100,100",
+      "description": "Is between wide range (should return all)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "1000000,2000000",
+      "description": "Is between very high range (should be empty)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "1,1",
+      "description": "Is between single value (exact match)",
+      "expectedResult": "Contact with ID 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value (should return all contacts as IDs are always present)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty (should be empty as IDs are always present)",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Begins with 1 (contact ID 1, 10, 15)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "Contacts with ID beginning with 1"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "5",
+      "description": "Begins with 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "Contact with ID 5"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "0",
+      "description": "Begins with 0 (should be empty as IDs are positive)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "-10",
+      "description": "Begins with negative (should be empty)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (contact ID 5, 15)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "Contacts with ID ending with 5"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (contact ID 10)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "Contact with ID 10"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "1",
+      "description": "Ends with 1 (contact ID 1)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "Contact with ID 1"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "2",
+      "description": "Ends with 2 (contact ID 2)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "Contact with ID 2"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "1.0",
+      "description": "Ends with decimal (should be empty)",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "expectedResult": "Empty"
+    }
+  ]
+}

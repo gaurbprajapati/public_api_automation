@@ -1,0 +1,629 @@
+{
+  "Contact Owner": [
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin owner",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember owner",
+      "expectedResult": "Company3,Company4,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember owner",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner role",
+      "expectedResult": "Company6,Company8,Company9"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team owner",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty owner",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin owner",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember owner",
+      "expectedResult": "Company1,Company2,Company5,Company6,Company8,Company9,Company10,Company11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember owner",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner role",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team owner",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty owner (should return all with values)",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin owner",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember owner",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember owner",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team owner",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team owner",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any owner value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin owner",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember owner",
+      "expectedResult": "Company6,Company8,Company9"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - owner field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - owner field has any value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    }
+  ],
+  "Contact CreatedBy": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin createdBy",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember createdBy",
+      "expectedResult": "Company3,Company4,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember createdBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner createdBy",
+      "expectedResult": "Company6,Company8,Company9"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team createdBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty createdBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin createdBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember createdBy",
+      "expectedResult": "Company1,Company2,Company5,Company6,Company8,Company9,Company10,Company11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember createdBy",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner createdBy",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team createdBy",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty createdBy (should return all with values)",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin createdBy",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember createdBy",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember createdBy",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner createdBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team createdBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team createdBy",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any createdBy value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin createdBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember createdBy",
+      "expectedResult": "Company6,Company8,Company9"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - createdBy field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - createdBy field has any value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    }
+  ],
+  "Contact UpdatedBy": [
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin updatedBy",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember updatedBy",
+      "expectedResult": "Company3,Company4,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember updatedBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner updatedBy",
+      "expectedResult": "Company6,Company8,Company9"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team updatedBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty updatedBy",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin updatedBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember updatedBy",
+      "expectedResult": "Company1,Company2,Company5,Company6,Company8,Company9,Company10,Company11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember updatedBy",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner updatedBy",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team updatedBy",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty updatedBy (should return all with values)",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin updatedBy",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember updatedBy",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember updatedBy",
+      "expectedResult": "Company1,Company2,Company5,Company10,Company11"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner updatedBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team updatedBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team updatedBy",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any updatedBy value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin updatedBy",
+      "expectedResult": "Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember updatedBy",
+      "expectedResult": "Company6,Company8,Company9"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - updatedBy field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - updatedBy field has any value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="RCRM API Health Suite" thread-count="15" parallel="tests">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+		<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+    <test name="Timesheet Settings - Margin and Markup Modes">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.MarginMarkupTimesheetSettingsTest">
+                <methods>
+                    <include name="enableTimesheetSettingsInMarginModeTest" />
+                    <include name="enableTimesheetSettingsInMarkupModeTest" />
+                    <include name="enableTimesheetSettingsInFixedRateModeTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Settings - Margin and Markup Clamp Behavior">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.MarginMarkupTimesheetSettingsTest">
+                <methods>
+                    <include name="marginPercentageBelowMinimumIsClampedTest" />
+                    <include name="marginPercentageAboveMaximumIsClampedTest" />
+                    <include name="markupPercentageBelowMinimumIsClampedTest" />
+                    <include name="markupPercentageAboveMaximumIsClampedTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Settings - Margin and Markup Validation">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.MarginMarkupTimesheetSettingsTest">
+                <methods>
+                    <include name="nullCalculateChargeByIsRejectedTest" />
+                    <include name="nullMarginPercentageIsRejectedTest" />
+                    <include name="nullMarkupPercentageIsRejectedTest" />
+                    <include name="invalidCalculateChargeByEnumValueIsRejectedTest" />
+                    <include name="zeroPayRateIsNowAcceptedTest" />
+                    <include name="zeroBillRateIsNowAcceptedTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

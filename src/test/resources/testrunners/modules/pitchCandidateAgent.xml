@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- Owner - Saastar - AI Pitch Candidate to Contact Agent Feature -->
+<suite name="Rest API Test Suite" verbose="1" parallel="tests"
+	thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<!-- ===== Settings GET ===== -->
+
+	<test name="Get Pitch Settings - Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifyGetPitchSettings_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Pitch Settings - Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifyGetPitchSettings_ResponseStructure" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Pitch Settings - Default Response">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifyGetPitchSettings_DefaultResponse" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Pitch Settings - Meta Fields">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifyGetPitchSettings_MetaFields" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Pitch Settings - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifyGetPitchSettings_InvalidToken" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Pitch Settings - Wrong Http Method">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifyGetPitchSettings_WrongHttpMethod" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Settings SAVE ===== -->
+
+	<test name="Save Pitch Settings - Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Logos Disabled">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_WithLogosDisabled" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Talent Grid Preset">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_TalentGridPreset" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Save And Retrieve Round Trip">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_SaveAndRetrieveRoundTrip" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - With Reset Flag">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_WithResetFlag" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - With Source Preview">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_WithSourcePreview" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Email Signature Disabled">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_WithEmailSignatureDisabled" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - With Preview Template">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_WithPreviewTemplate" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Prompt Exceeds 5000 Chars">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_PromptExceeds5000Chars" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_InvalidToken" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Empty Body">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_EmptyBody" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Null Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_NullPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Invalid Logo Values">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_InvalidLogoValues" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Missing Required Booleans">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_MissingRequiredBooleans" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - GET Method Not Allowed">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_GetMethodNotAllowed" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Generate Email - Preview Mode ===== -->
+
+	<test name="Generate Email - Preview Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_PreviewMode_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Preview Contains Html">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_PreviewMode_ResponseContainsHtml" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Preview Token Usage">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_PreviewMode_TokenUsage" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Preview With Regenerate">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_PreviewMode_WithRegenerate" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Generate Email - Generate Mode ===== -->
+
+	<test name="Generate Email - Generate Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Generate Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_ResponseStructure" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Generate With Custom Details">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_WithCustomDetails" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Generate Multiple Candidates">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_MultipleCandidates" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Exceed Max Candidates">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_ExceedMaxCandidates" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Missing Columns">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_MissingColumns" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Validate Instruction ===== -->
+
+	<test name="Validate Instruction - Valid Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyValidateInstruction_ValidPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate Instruction - Irrelevant Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyValidateInstruction_IrrelevantPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate Instruction - Empty Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyValidateInstruction_EmptyPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate Instruction - Missing Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyValidateInstruction_MissingPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate Instruction - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyValidateInstruction_InvalidToken" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Generate Email - Error Scenarios ===== -->
+
+	<test name="Generate Email - Invalid Mode">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_InvalidMode" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - No Candidate Ids">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_NoCandidateIds" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Empty Candidate Ids">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_EmptyCandidateIds" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Invalid Candidate Ids">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_InvalidCandidateIds" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Preview Missing Instruction">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_PreviewMode_MissingInstruction" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_InvalidToken" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Empty Body">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_EmptyBody" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - GET Method Not Allowed">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GetMethodNotAllowed" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Preview Logos Disabled">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_PreviewMode_LogosDisabled" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Preview Very Long Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_PreviewMode_VeryLongPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate Instruction - HTML Injection Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyValidateInstruction_HtmlInjectionPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Negative Candidate Id">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_NegativeCandidateId" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Zero Candidate Id">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_ZeroCandidateId" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - DELETE Method Not Allowed">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_DeleteMethodNotAllowed" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate Instruction - DELETE Method Not Allowed">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyValidateInstruction_DeleteMethodNotAllowed" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Preview Empty String Instruction">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_PreviewMode_EmptyStringInstruction" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Preview Null Instruction">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_PreviewMode_NullInstruction" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email - Exactly Max Candidates">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateGenerateEmailTest">
+				<methods><include name="verifyGenerateEmail_GenerateMode_ExactlyMaxCandidates" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Settings - Additional Edge Cases ===== -->
+
+	<test name="Save Pitch Settings - Special Characters In Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_SpecialCharactersInPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Reset Clears Preview Template">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_ResetClearsPreviewTemplate" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Pitch Settings - DELETE Method Not Allowed">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifyGetPitchSettings_DeleteMethodNotAllowed" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Pitch Settings - Toggle Logos Persistence">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.PitchCandidateAgentSettingsTest">
+				<methods><include name="verifySavePitchSettings_ToggleLogosPersistence" /></methods>
+			</class>
+		</classes>
+	</test>
+</suite>

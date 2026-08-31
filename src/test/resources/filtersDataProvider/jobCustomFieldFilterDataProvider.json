@@ -1,0 +1,4486 @@
+{
+    "candidateCF": [
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_CCF_001"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_CCF_002"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_CCF_003"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_not",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude single value",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CCF_004"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_not",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude multiple values",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CCF_005"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_not",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude multiple values",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CCF_006"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_CCF_007"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_CCF_008"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_CCF_009"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Single value absent",
+            "expectedResult": "Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CCF_010"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Multiple values absent",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CCF_011"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Multiple values absent",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CCF_012"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_CCF_013"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_CCF_014"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_CCF_015"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_CCF_016"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CCF_017"
+        }
+    ],
+    "textCF": [
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "John Smith 👤",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard name with emoji",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_TCF_001"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Hans Müller 👤",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international name with emoji",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_TCF_002"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Analytics Expert_123",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with underscores and numbers",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_TCF_003"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "José García",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with accents",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_TCF_004"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Seán O'Malley",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with apostrophe",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_TCF_005"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Agent Secret + Division",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with plus sign",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_TCF_006"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": " Leading Spaces",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with leading spaces",
+            "expectedResult": "Job7",
+            "testCaseId": "TC_TCF_007"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Trailing Spaces ",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with trailing spaces",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_TCF_008"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Multiple  Spaces  Between  Words",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with multiple spaces between words",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_TCF_009"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Special\"Chars'Test<>&",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with special characters",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_TCF_010"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "X",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match single character",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_TCF_011"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Smith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Last name search",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_TCF_016"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Müller",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - International name search",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_TCF_017"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Expert",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Expert word search",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_TCF_018"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "García",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Accent search",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_TCF_019"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "O'Malley",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Apostrophe search",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_TCF_020"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "+",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Plus sign search",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_TCF_021"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "👤",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Emoji search",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_TCF_022"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "123",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Numbers search",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_TCF_023"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "\"",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Double quote search",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_TCF_024"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "'",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Single quote search",
+            "expectedResult": "Job10,Job5",
+            "testCaseId": "TC_TCF_025"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "<",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Less than symbol search",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_TCF_026"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "John",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - John prefix",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_TCF_027"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Hans",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Hans prefix",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_TCF_028"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "👤",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Emoji suffix",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_TCF_042"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Expert_123",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Underscore and numbers suffix",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_TCF_043"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "García",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - García suffix with accent",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_TCF_044"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "O'Malley",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - O'Malley suffix with apostrophe",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_TCF_045"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "+ Division",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Plus sign suffix",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_TCF_046"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Spaces",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Leading spaces text ending",
+            "expectedResult": "Job7",
+            "testCaseId": "TC_TCF_047"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Spaces ",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Trailing spaces suffix",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_TCF_048"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Words",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Multiple spaces text ending",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_TCF_049"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "<>&",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Special characters suffix",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_TCF_050"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "X",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Single character suffix",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_TCF_051"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Smith,Müller",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple names",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_TCF_056"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "👤,123",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Emoji or numbers",
+            "expectedResult": "Job1,Job2,Job3",
+            "testCaseId": "TC_TCF_057"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty text fields",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_TCF_059"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty text fields",
+            "expectedResult": "entityJob1,entityJob2",
+            "testCaseId": "TC_TCF_060"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Smith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Smith word",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_TCF_061"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Müller",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Müller word",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_TCF_062"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Analytics",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Analytics word",
+            "expectedResult": "Job3,Job14",
+            "testCaseId": "TC_TCF_063"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "José",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - José word",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_TCF_064"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Seán",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Seán word",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_TCF_065"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Agent",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Agent word",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_TCF_066"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Leading",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Leading word",
+            "expectedResult": "Job7",
+            "testCaseId": "TC_TCF_067"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Trailing",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Trailing word",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_TCF_068"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Multiple",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Multiple word",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_TCF_069"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Special",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Special word",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_TCF_070"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "lowercase",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Lowercase word",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_TCF_071"
+        }
+    ],
+    "companyCF": [
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_COCF_001"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_COCF_002"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_COCF_003"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_not",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_COCF_004"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_not",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_COCF_005"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_not",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_COCF_006"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_COCF_007"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_COCF_008"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_COCF_009"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_COCF_010"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_COCF_011"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_COCF_012"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_COCF_013"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_COCF_014"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_COCF_015"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_COCF_016"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_COCF_017"
+        }
+    ],
+    "contactCF": [
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_CTCF_001"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Job2,Job4",
+            "testCaseId": "TC_CTCF_002"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Job2,Job4",
+            "testCaseId": "TC_CTCF_003"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_not",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CTCF_004"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_not",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Job1,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CTCF_005"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_not",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Job1,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CTCF_006"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Job2,Job3,Job4",
+            "testCaseId": "TC_CTCF_007"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Job2,Job4",
+            "testCaseId": "TC_CTCF_008"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Job2,Job4",
+            "testCaseId": "TC_CTCF_009"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Job1,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CTCF_010"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Job1,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CTCF_011"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Job1,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CTCF_012"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Job2,Job3,Job4",
+            "testCaseId": "TC_CTCF_013"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Job2,Job3,Job4",
+            "testCaseId": "TC_CTCF_014"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Job2,Job3,Job4",
+            "testCaseId": "TC_CTCF_015"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Job2,Job3,Job4",
+            "testCaseId": "TC_CTCF_016"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Job1,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CTCF_017"
+        }
+    ],
+    "jobCF": [
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_JCF_001"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_JCF_002"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_JCF_003"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_not",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_JCF_004"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_not",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_JCF_005"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_not",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_JCF_006"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_JCF_007"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_JCF_008"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_JCF_009"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Job1,Job2,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_JCF_010"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_JCF_011"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_JCF_012"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_JCF_013"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_JCF_014"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_JCF_015"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_JCF_016"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Job1,Job2,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_JCF_017"
+        }
+    ],
+    "dealsCF": [
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_DCF_001"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_DCF_002"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_DCF_003"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_not",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DCF_004"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_not",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DCF_005"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_not",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DCF_006"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_DCF_007"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_DCF_008"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_DCF_009"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Job1,Job2,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DCF_010"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DCF_011"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DCF_012"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_DCF_013"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_DCF_014"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_DCF_015"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Job3,Job4",
+            "testCaseId": "TC_DCF_016"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Job1,Job2,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DCF_017"
+        }
+    ],
+    "userCF": [
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_UCF_001"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_UCF_002"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_UCF_003"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match owner value",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_UCF_004"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_UCF_005"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_UCF_006"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_UCF_007"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact owner value",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_UCF_008"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_UCF_009"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_UCF_010"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_UCF_011"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Owner value present",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_UCF_012"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_UCF_013"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_UCF_014"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_UCF_015"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude owner value",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_UCF_016"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_UCF_017"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_UCF_018"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_UCF_019"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{admin,owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Admin or Owner",
+            "expectedResult": "Job5,Job6",
+            "testCaseId": "TC_UCF_020"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{owner,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Admin or Owner (reversed order)",
+            "expectedResult": "Job5,Job6",
+            "testCaseId": "TC_UCF_021"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Job5,Job6",
+            "testCaseId": "TC_UCF_022"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_UCF_023"
+        }
+    ],
+    "dropdownCF": [
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A",
+            "expectedResult": "Job1,Job3,Job6",
+            "testCaseId": "TC_DDF_001"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "Option B",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_DDF_002"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option C",
+            "expectedResult": "Job4,Job5",
+            "testCaseId": "TC_DDF_003"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A",
+            "expectedResult": "Job2,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_004"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option A",
+            "expectedResult": "Job2,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_005"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A",
+            "expectedResult": "Job1,Job3,Job6",
+            "testCaseId": "TC_DDF_006"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty dropdown values",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_DDF_007"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty dropdown values",
+            "expectedResult": "Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_008"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_010"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C",
+            "expectedResult": "Job1,Job2,Job3,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_011"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option B",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_013"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option C",
+            "expectedResult": "Job1,Job2,Job3,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_014"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,Option B",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option A and Option B (multiple values)",
+            "expectedResult": "Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_015"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B,Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option B and Option C (multiple values)",
+            "expectedResult": "Job1,Job3,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_016"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option A and Option C (multiple values)",
+            "expectedResult": "Job2,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_017"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude all options (empty values only)",
+            "expectedResult": "Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_018"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_DDF_019"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C",
+            "expectedResult": "Job4,Job5",
+            "testCaseId": "TC_DDF_020"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option B",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A or Option B (multiple values)",
+            "expectedResult": "Job1,Job2,Job3,Job6",
+            "testCaseId": "TC_DDF_021"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B,Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B or Option C (multiple values)",
+            "expectedResult": "Job2,Job4,Job5",
+            "testCaseId": "TC_DDF_022"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A or Option C (multiple values)",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_DDF_023"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Any option (all non-empty values)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_DDF_024"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "NonExistentOption",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Non-existent option (should return empty)",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_DDF_025"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is_not",
+            "filterValue": "NonExistentOption",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Non-existent option (should return all contacts)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_026"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "NonExistentOption",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Non-existent option (should return all contacts)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_027"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "NonExistentOption",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Non-existent option (should return empty)",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_DDF_028"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,NonExistentOption",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A or non-existent (should return Option A contacts)",
+            "expectedResult": "Job1,Job3,Job6",
+            "testCaseId": "TC_DDF_029"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,NonExistentOption",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Option A or non-existent (exclude Option A)",
+            "expectedResult": "Job2,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_DDF_030"
+        }
+    ],
+    "multiselectCF": [
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_MSF_001"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A and Option B",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_MSF_002"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B and Option A (reversed order)",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_MSF_003"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_MSF_004"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A, Option B, and Option C",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_MSF_005"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B,Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B, Option A, and Option C (reversed order)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_MSF_006"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option C, Option B, and Option A (reversed order)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_MSF_007"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A,Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A, Option C, and Option B (reversed order)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_MSF_008"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B and Option C",
+            "expectedResult": "Job5,Job6",
+            "testCaseId": "TC_MSF_009"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option C and Option B (reversed order)",
+            "expectedResult": "Job5,Job6",
+            "testCaseId": "TC_MSF_010"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_011"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_012"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C (exact match only)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_013"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A and Option B",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_014"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B and Option A (reversed order)",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_015"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A, Option B, and Option C",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_016"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C, Option B, and Option A (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_017"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B and Option C",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_018"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C and Option B (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_019"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Option A value present",
+            "expectedResult": "Job1,Job2,Job4",
+            "testCaseId": "TC_MSF_020"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Option B value present",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_021"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Option C value present",
+            "expectedResult": "Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_022"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option A and Option B present",
+            "expectedResult": "Job2,Job4",
+            "testCaseId": "TC_MSF_023"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option B and Option A present (reversed order)",
+            "expectedResult": "Job2,Job4",
+            "testCaseId": "TC_MSF_024"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option B and Option C present",
+            "expectedResult": "Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_025"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option C and Option B present (reversed order)",
+            "expectedResult": "Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_026"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option A and Option C present",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_MSF_027"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - All three values present",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_MSF_028"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - All three values present (reversed order)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_MSF_029"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option A",
+            "expectedResult": "Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_030"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option B",
+            "expectedResult": "Job1,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_031"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option C",
+            "expectedResult": "Job1,Job2,Job3,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_032"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option A and Option B present together",
+            "expectedResult": "Job1,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_033"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option B and Option A present together (reversed order)",
+            "expectedResult": "Job1,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_034"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option B and Option C present together",
+            "expectedResult": "Job1,Job2,Job3,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_035"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option C and Option B present together (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_036"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option A and Option C present together",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_037"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option C and Option A present together (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_038"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A",
+            "expectedResult": "Job1,Job2,Job4",
+            "testCaseId": "TC_MSF_039"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A or Option B",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_040"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B or Option A (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_041"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_042"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C",
+            "expectedResult": "Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_043"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B or Option C",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_044"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C or Option B (reversed order)",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_045"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A or Option C",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_046"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C or Option A (reversed order)",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_047"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A, Option B, or Option C",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_048"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C, Option B, or Option A (reversed order)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_049"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty multiselect values",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6",
+            "testCaseId": "TC_MSF_050"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty multiselect values",
+            "expectedResult": "Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_MSF_051"
+        }
+    ],
+    "numberCF": [
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "5.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 5.5",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_NCF_001"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "5.50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 5.5",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_NCF_001"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for two-digit negative value -25",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_NCF_002"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-25.0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for two-digit negative value -25",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_NCF_002"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-150",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for three-digit negative value -150",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_NCF_003"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-150.00",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for three-digit negative value -150",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_NCF_003"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for zero value",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_NCF_004"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-8000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for four-digit negative value -8000",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_NCF_005"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "12.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 12.75",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_NCF_006"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-500",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for three-digit negative value -500",
+            "expectedResult": "Job7",
+            "testCaseId": "TC_NCF_007"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for four-digit negative value -1000",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_NCF_008"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-50.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for negative decimal value -50.5",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_NCF_009"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "200.25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for decimal value 200.25",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_NCF_010"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "5.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude decimal value 5.5",
+            "expectedResult": "Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,entityJob1,entityJob2",
+            "testCaseId": "TC_NCF_017"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "-25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude two-digit negative value -25",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job3,Job4,Job5,Job6,Job7,Job8,Job9,entityJob1,entityJob2",
+            "testCaseId": "TC_NCF_018"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude zero value",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job5,Job6,Job7,Job8,Job9,entityJob1,entityJob2",
+            "testCaseId": "TC_NCF_019"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "-8000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude four-digit negative value -8000",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job6,Job7,Job8,Job9,entityJob1,entityJob2",
+            "testCaseId": "TC_NCF_020"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "12.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude decimal value 12.75",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job7,Job8,Job9,entityJob1,entityJob2",
+            "testCaseId": "TC_NCF_021"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "0,100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range from 0 to 100 (Job1=5.5, Job4=0, Job6=12.75)",
+            "expectedResult": "Job1,Job4,Job6",
+            "testCaseId": "TC_NCF_023"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-100,0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range from -100 to 0 (Job2=-25, Job4=0, Job9=-50.5)",
+            "expectedResult": "Job2,Job4,Job9",
+            "testCaseId": "TC_NCF_024"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-1000,-100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range from -1000 to -100 (Job3=-150, Job7=-500, Job8=-1000)",
+            "expectedResult": "Job3,Job7,Job8",
+            "testCaseId": "TC_NCF_025"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-10000,-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range from -10000 to -1000 (Job5=-8000, Job8=-1000)",
+            "expectedResult": "Job5,Job8",
+            "testCaseId": "TC_NCF_026"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-100,-1",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range from -100 to -1 (Job2=-25, Job9=-50.5)",
+            "expectedResult": "Job2,Job9",
+            "testCaseId": "TC_NCF_027"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "5,20",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Range from 5 to 20 (Job1=5.5, Job6=12.75)",
+            "expectedResult": "Job1,Job6",
+            "testCaseId": "TC_NCF_028"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "0,1",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Boundary test inclusive (0 to 0)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_NCF_033"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "5.5,15",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Start=5.5 (Job1 on lower bound), end different",
+            "expectedResult": "Job1,Job6",
+            "testCaseId": "TC_NCF_033a"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "0,5.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - End=5.5 (Job1 on upper bound), start different",
+            "expectedResult": "Job4,Job1",
+            "testCaseId": "TC_NCF_033b"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "12.75,20",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Start=12.75 (Job6 on lower bound), end different",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_NCF_033c"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "5,12.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - End=12.75 (Job6 on upper bound), start different",
+            "expectedResult": "Job1,Job6",
+            "testCaseId": "TC_NCF_033d"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-1000,-100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Start=-1000 (Job8 on lower bound), end different",
+            "expectedResult": "Job8,Job7,Job9",
+            "testCaseId": "TC_NCF_033e"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-1500,-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - End=-1000 (Job8 on upper bound), start different",
+            "expectedResult": "Job5,Job8",
+            "testCaseId": "TC_NCF_033f"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-50.5,-50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Start=-50.5 (Job9 on lower bound), end different",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_NCF_033g"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-100,-50.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - End=-50.5 (Job9 on upper bound), start different",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_NCF_033h"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Greater Than - Values greater than 0 (Job1=5.5, Job6=12.75)",
+            "expectedResult": "Job1,Job6",
+            "testCaseId": "TC_NCF_029"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Greater Than - Values greater than 10 (Job6=12.75)",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_NCF_030"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Greater Than - Values greater than -100",
+            "expectedResult": "Job1,Job2,Job4,Job6,Job9",
+            "testCaseId": "TC_NCF_031"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Greater Than - Values greater than -1000",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job6,Job7,Job9",
+            "testCaseId": "TC_NCF_032"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "5.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Greater Than - Exclusive boundary (strictly > 5.5, excludes Job1)",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_NCF_032a"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "12.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Greater Than - Exclusive boundary (strictly > 12.75, excludes Job6)",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_NCF_032b"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Values less than 0",
+            "expectedResult": "Job2,Job3,Job5,Job7,Job8,Job9",
+            "testCaseId": "TC_NCF_034"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Values less than -10",
+            "expectedResult": "Job2,Job3,Job5,Job7,Job8,Job9",
+            "testCaseId": "TC_NCF_035"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Values less than 10 (Job1=5.5, Job4=0, Job6=12.75 excludes Job6)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job7,Job8,Job9",
+            "testCaseId": "TC_NCF_036"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Values less than -100",
+            "expectedResult": "Job3,Job5,Job7,Job8",
+            "testCaseId": "TC_NCF_037"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "5.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Exclusive boundary (strictly < 5.5, excludes Job1)",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job7,Job8,Job9",
+            "testCaseId": "TC_NCF_037a"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "12.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Exclusive boundary (strictly < 12.75, excludes Job6)",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job7,Job8,Job9",
+            "testCaseId": "TC_NCF_037b"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Exclusive boundary (strictly < -1000, excludes Job8)",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_NCF_037d"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "1",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 1 prefix (Job6=12.75)",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_NCF_040"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-1",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -1 prefix (Job8=-1000)",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_NCF_041"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -5 prefix (Job7=-500, Job9=-50.5)",
+            "expectedResult": "Job7,Job9",
+            "testCaseId": "TC_NCF_042"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-8",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -8 prefix (Job5=-8000)",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_NCF_043"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 5 prefix (Job1=5.5)",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_NCF_044"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 0 prefix (Job4=0)",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_NCF_045"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 0 suffix",
+            "expectedResult": "Job4,Job8",
+            "testCaseId": "TC_NCF_054"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 5 suffix (Job1=5.5, Job9=-50.5)",
+            "expectedResult": "Job1,Job9",
+            "testCaseId": "TC_NCF_055"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 75 suffix (decimal)",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_NCF_056"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 25 suffix (Job2=-25)",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_NCF_057"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 000 suffix (Job8=-1000)",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_NCF_058"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "4",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 4 suffix (no match)",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_NCF_058b"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": ".5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - .5 suffix (decimal)",
+            "expectedResult": "Job1,Job9",
+            "testCaseId": "TC_NCF_059"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "00",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 00 suffix",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_NCF_060"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "has_any_value",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Has Any Value - Non-empty number fields",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_NCF_061"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_empty",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Empty - Empty number fields (Job10-15 have no numberCF)",
+            "expectedResult": "Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_NCF_062"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": ".5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - Decimal suffix .5",
+            "expectedResult": "Job1,Job9",
+            "testCaseId": "TC_NCF_096"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": ".75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - Decimal suffix .75",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_NCF_097"
+        }
+    ],
+    "dateCF": [
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "today",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is today",
+            "expectedResult": "Jobs with dateCF on today",
+            "testCaseId": "TC_DTCF_001"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "yesterday",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is yesterday",
+            "expectedResult": "Jobs with dateCF on yesterday",
+            "testCaseId": "TC_DTCF_002"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_week",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is this week",
+            "expectedResult": "Jobs with dateCF on this week",
+            "testCaseId": "TC_DTCF_003"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_week",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last week",
+            "expectedResult": "Jobs with dateCF on last week",
+            "testCaseId": "TC_DTCF_004"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_month",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is this month",
+            "expectedResult": "Jobs with dateCF on this month",
+            "testCaseId": "TC_DTCF_005"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_month",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last month",
+            "expectedResult": "Jobs with dateCF on last month",
+            "testCaseId": "TC_DTCF_006"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_quarter",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is this quarter",
+            "expectedResult": "Jobs with dateCF on this quarter",
+            "testCaseId": "TC_DTCF_007"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_quarter",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last quarter",
+            "expectedResult": "Jobs with dateCF on last quarter",
+            "testCaseId": "TC_DTCF_008"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_year",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is this year",
+            "expectedResult": "Jobs with dateCF on this year",
+            "testCaseId": "TC_DTCF_009"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_year",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last year",
+            "expectedResult": "Jobs with dateCF on last year",
+            "testCaseId": "TC_DTCF_010"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_30",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last 30 days",
+            "expectedResult": "Jobs with dateCF on last 30 days",
+            "testCaseId": "TC_DTCF_011"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_60",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last 60 days",
+            "expectedResult": "Jobs with dateCF on last 60 days",
+            "testCaseId": "TC_DTCF_012"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_90",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last 90 days",
+            "expectedResult": "Jobs with dateCF on last 90 days",
+            "testCaseId": "TC_DTCF_013"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_365",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last 365 days",
+            "expectedResult": "Jobs with dateCF on last 365 days",
+            "testCaseId": "TC_DTCF_014"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "all_time",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is all time",
+            "expectedResult": "All",
+            "testCaseId": "TC_DTCF_015"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_equal_to",
+            "filterValue": "2022-06-15",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is equal to 2022-06-15",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_DTCF_016"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_equal_to",
+            "filterValue": "2023-03-10",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is equal to 2023-03-10",
+            "expectedResult": "Job",
+            "testCaseId": "TC_DTCF_017"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_before",
+            "filterValue": "2025-02-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is before 2025-02-01",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_DTCF_020"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_before",
+            "filterValue": "2025-02-14",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is before 2025-02-01",
+            "expectedResult": "Job1,Job2,Job3",
+            "testCaseId": "TC_DTCF_021"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_after",
+            "filterValue": "2024-06-06",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is after 2025-07-01",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_DTCF_023"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_after",
+            "filterValue": "2024-06-05",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is after 2025-07-01",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_DTCF_024"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_between",
+            "filterValue": "2025-01-01,2025-03-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG_START_END",
+            "description": "Date CF is between 2025-01-01 and 2025-03-01",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5",
+            "testCaseId": "TC_DTCF_026"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_between",
+            "filterValue": "2024-06-06,2024-06-07",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG_START_END",
+            "description": "Date CF is between 2024-06-06 and 2024-06-07",
+            "expectedResult": "Job14,Job15",
+            "testCaseId": "TC_DTCF_027"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_lt",
+            "filterValue": "30",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is less than 30 days ago",
+            "expectedResult": "Jobs with dateCF within last 30 days",
+            "testCaseId": "TC_DTCF_030"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_lt",
+            "filterValue": "1",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is less than 30 days ago",
+            "expectedResult": "Jobs with dateCF within last 30 days",
+            "testCaseId": "TC_DTCF_031"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_mt",
+            "filterValue": "30",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is more than 30 days ago",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_DTCF_034"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_mt",
+            "filterValue": "1",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is more than 1 day ago",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_DTCF_035"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_empty",
+            "filterValue": "0",
+            "filterValue_TYPE": "LONG",
+            "fieldType": "date",
+            "description": "Date CF is empty",
+            "expectedResult": "2 contacts",
+            "testCaseId": "TC_DTCF_037"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "has_any_value",
+            "filterValue": "0",
+            "filterValue_TYPE": "LONG",
+            "fieldType": "date",
+            "description": "Date CF has any value",
+            "expectedResult": "15 contacts have dateCF value",
+            "testCaseId": "TC_DTCF_038"
+        }
+    ],
+    "longtextCF": [
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "John Smith is a Senior Manager with extensive experience in business development and client relations. John Smith specializes in strategic partnerships and has a proven track record of driving growth and building long-term relationships with key stakeholders. With expertise in senior manager, John Smith brings valuable insights and leadership to every engagement.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match for Contact1 long text profile",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_LTCF_001"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "Hans Müller is a Geschäftsführer with extensive experience in business development and client relations. Hans Müller specializes in strategic partnerships and has a proven track record of driving growth and building long-term relationships with key stakeholders. With expertise in geschäftsführer, Hans Müller brings valuable insights and leadership to every engagement.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match for Contact2 long text profile",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_LTCF_002"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is_not",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Non-empty long text fields",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_LTCF_003"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is_not",
+            "filterValue": "John Smith is a Senior Manager with extensive experience in business development and client relations. John Smith specializes in strategic partnerships and has a proven track record of driving growth and building long-term relationships with key stakeholders. With expertise in senior manager, John Smith brings valuable insights and leadership to every engagement.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude Contact1 long text",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_LTCF_004"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Senior Manager",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Job title search in long text",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_LTCF_005"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Geschäftsführer",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - German job title",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_LTCF_006"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Data Scientist",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Data Scientist keyword",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_LTCF_007"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "strategic partnerships",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Common phrase in long text",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8",
+            "testCaseId": "TC_LTCF_008"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Leading Spaces",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Leading spaces text",
+            "expectedResult": "Job7",
+            "testCaseId": "TC_LTCF_009"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Special Characters",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Special characters keyword",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_LTCF_010"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "Very Long Text",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Very long text keyword",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_LTCF_011"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "strategic partnerships",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude strategic partnerships",
+            "expectedResult": "Job10,Job11,Job12,Job13,Job14,Job15,Job7,Job9,entityJob1,entityJob2",
+            "testCaseId": "TC_LTCF_016"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "technology",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Technology not present",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,entityJob1,entityJob2",
+            "testCaseId": "TC_LTCF_017"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "begins_with",
+            "filterValue": "John Smith",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Contact name at start",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_LTCF_018"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "begins_with",
+            "filterValue": "Hans Müller",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - German name at start",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_LTCF_019"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "every engagement.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Period ending",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8",
+            "testCaseId": "TC_LTCF_027"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "text descriptions.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Text descriptions ending",
+            "expectedResult": "Job7",
+            "testCaseId": "TC_LTCF_028"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "character support.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Character support ending",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_LTCF_029"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "initiatives.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Initiatives ending",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_LTCF_030"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "descriptions.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Descriptions ending",
+            "expectedResult": "Job15",
+            "testCaseId": "TC_LTCF_032"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Senior Manager,Data Scientist",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Job title keywords",
+            "expectedResult": "Job1,Job3",
+            "testCaseId": "TC_LTCF_033"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "lowercase,UPPERCASE",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Case variation keywords",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_LTCF_034"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty long text fields",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_LTCF_036"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty long text fields",
+            "expectedResult": "entityJob1,entityJob2",
+            "testCaseId": "TC_LTCF_037"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "strategic",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Strategic word",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8",
+            "testCaseId": "TC_LTCF_038"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "partnerships",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Partnerships word",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8",
+            "testCaseId": "TC_LTCF_039"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "lowercase",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Lowercase word",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_LTCF_040"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "UPPERCASE",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Uppercase word",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_LTCF_041"
+        }
+    ],
+    "emailCF": [
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "johnsmith@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard email",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_ECF_001"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "hansmüller@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international email",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_ECF_002"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "analyticsexpert@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match analytics email",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_ECF_003"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "joségarcía@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match accented email",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_ECF_004"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "seánomalley@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with apostrophe",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_ECF_005"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "agentsecret@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match agent email",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_ECF_006"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match empty",
+            "expectedResult": "Job7",
+            "testCaseId": "TC_ECF_007"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "johnbracket@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match bracket email",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_ECF_008"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "limingwang@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Chinese email",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_ECF_009"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is",
+            "filterValue": "satyanadella@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Microsoft email",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_ECF_010"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is_not",
+            "filterValue": "johnsmith@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude standard email",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_ECF_016"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is_not",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude empty",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_ECF_017"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains",
+            "filterValue": "@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Domain search",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_ECF_018"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains",
+            "filterValue": "john",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Username search",
+            "expectedResult": "Job1,Job8",
+            "testCaseId": "TC_ECF_019"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains",
+            "filterValue": "sigma",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Sigma username search",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_ECF_020"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains",
+            "filterValue": "alpha",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Alpha username search",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_ECF_021"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains",
+            "filterValue": "analytics",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Analytics username search",
+            "expectedResult": "Job3,Job14",
+            "testCaseId": "TC_ECF_022"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude yopmail domain",
+            "expectedResult": "Job7,entityJob1,entityJob2",
+            "testCaseId": "TC_ECF_023"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "john",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude john usernames",
+            "expectedResult": "Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job7,Job9,entityJob1,entityJob2",
+            "testCaseId": "TC_ECF_024"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "begins_with",
+            "filterValue": "john",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Username prefix",
+            "expectedResult": "Job1,Job8",
+            "testCaseId": "TC_ECF_025"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "begins_with",
+            "filterValue": "hans",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Hans prefix",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_ECF_026"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "ends_with",
+            "filterValue": "@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Domain suffix",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_ECF_030"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "ends_with",
+            "filterValue": "smith@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Smith email suffix",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_ECF_031"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "ends_with",
+            "filterValue": "nadella@yopmail.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Nadella email suffix",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_ECF_032"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "john,satya",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple usernames",
+            "expectedResult": "Job1,Job8",
+            "testCaseId": "TC_ECF_033"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "sigma,alpha",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Greek letter usernames",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_ECF_034"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty email fields",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_ECF_036"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty email fields",
+            "expectedResult": "Job7,entityJob1,entityJob2",
+            "testCaseId": "TC_ECF_037"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "yopmail",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Yopmail domain",
+            "expectedResult": "Job1,Job10,Job11,Job12,Job13,Job14,Job15,Job2,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_ECF_038"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "johnsmith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Johnsmith word",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_ECF_039"
+        },
+        {
+            "dbField": "custcolumn{emailCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "satyanadella",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Satyanadella word",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_ECF_040"
+        }
+    ],
+    "phonenumberCF": [
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "415-555-0101",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard phone",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_PNCF_001"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "+49 89 12345679",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international phone",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_PNCF_002"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "555_123_4568",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with underscores",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_PNCF_003"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "+34 91 123 45 68",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with spaces",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_PNCF_004"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "+353 1 234 5679",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Irish phone",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_PNCF_005"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "555 123 4568 ext. 790",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with extension",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_PNCF_006"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "321-098-7655",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with dashes",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_PNCF_007"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "010-12345679",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Chinese phone",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_PNCF_008"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "425-882-8081",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Microsoft phone",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_PNCF_009"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "415-555-0201",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Sigma phone",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_PNCF_010"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is_not",
+            "filterValue": "415-555-0101",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude standard phone",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_PNCF_015"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is_not",
+            "filterValue": "+49 89 12345679",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude international phone",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_PNCF_016"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "415",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Area code search",
+            "expectedResult": "Job1,Job11",
+            "testCaseId": "TC_PNCF_017"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "555",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Common number sequence",
+            "expectedResult": "Job1,Job6,Job11,Job12,Job13,Job14,Job15",
+            "testCaseId": "TC_PNCF_018"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "123",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Common number pattern",
+            "expectedResult": "Job3,Job4,Job6",
+            "testCaseId": "TC_PNCF_019"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "ext.",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Extension keyword",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_PNCF_020"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "555",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude 555 sequence",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job7,Job8,Job9,Job10",
+            "testCaseId": "TC_PNCF_021"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "ext.",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude extension",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_PNCF_022"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "begins_with",
+            "filterValue": "415",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - 415 prefix",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_PNCF_023"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "begins_with",
+            "filterValue": "+49",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - International prefix",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_PNCF_024"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "ends_with",
+            "filterValue": "0101",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - 0101 suffix",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_PNCF_027"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "ends_with",
+            "filterValue": "ext. 790",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Extension suffix",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_PNCF_028"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "ends_with",
+            "filterValue": "4568",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - 4568 suffix",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_PNCF_029"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "415,425",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple area codes",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_PNCF_030"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "+49,+34",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - International prefixes",
+            "expectedResult": "Job2,Job4",
+            "testCaseId": "TC_PNCF_031"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty phone fields",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "testCaseId": "TC_PNCF_032"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty phone fields",
+            "expectedResult": "Job7,entityJob1,entityJob2",
+            "testCaseId": "TC_PNCF_033"
+        }
+    ],
+    "social_profileCF": [
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/johnsmith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard LinkedIn URL",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_SPCF_001"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/hansmueller",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international LinkedIn URL",
+            "expectedResult": "Job2",
+            "testCaseId": "TC_SPCF_002"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/analyticsexpert",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match analytics LinkedIn URL",
+            "expectedResult": "Job3",
+            "testCaseId": "TC_SPCF_003"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/josegarcia",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match accented LinkedIn URL",
+            "expectedResult": "Job4",
+            "testCaseId": "TC_SPCF_004"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/seanomalley",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with apostrophe",
+            "expectedResult": "Job5",
+            "testCaseId": "TC_SPCF_005"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/agentsecret",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match agent LinkedIn URL",
+            "expectedResult": "Job6",
+            "testCaseId": "TC_SPCF_006"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/brackettech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match bracket LinkedIn URL",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_SPCF_007"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/阿里巴巴",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Chinese characters",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_SPCF_008"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/satyanadella",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Microsoft LinkedIn URL",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_SPCF_009"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://linkedin.com/in/sigmatech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Sigma LinkedIn URL",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_SPCF_010"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is_not",
+            "filterValue": "https://linkedin.com/in/johnsmith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude standard LinkedIn URL",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_SPCF_016"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is_not",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude empty",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_SPCF_017"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains",
+            "filterValue": "linkedin.com/in/john",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - John LinkedIn URLs",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_SPCF_018"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains",
+            "filterValue": "linkedin.com/in/analytics",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Analytics LinkedIn URLs",
+            "expectedResult": "Job3,Job14",
+            "testCaseId": "TC_SPCF_021"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains",
+            "filterValue": "linkedin.com/in/alpha",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Alpha LinkedIn URL",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_SPCF_022"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "linkedin.com/in/tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude tech LinkedIn URLs",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job6,Job7,Job9,Job10,Job15",
+            "testCaseId": "TC_SPCF_023"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "linkedin.com",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude all LinkedIn URLs",
+            "expectedResult": "Job7,entityJob1,entityJob2",
+            "testCaseId": "TC_SPCF_024"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "begins_with",
+            "filterValue": "https://linkedin.com/in/john",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - John LinkedIn URL prefix",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_SPCF_025"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "ends_with",
+            "filterValue": "johnsmith",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Standard LinkedIn URL suffix",
+            "expectedResult": "Job1",
+            "testCaseId": "TC_SPCF_028"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "ends_with",
+            "filterValue": "satyanadella",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Microsoft LinkedIn URL suffix",
+            "expectedResult": "Empty",
+            "testCaseId": "TC_SPCF_029"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "ends_with",
+            "filterValue": "阿里巴巴",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Chinese characters suffix",
+            "expectedResult": "Job9",
+            "testCaseId": "TC_SPCF_030"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "tech,microsoft",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple LinkedIn URLs",
+            "expectedResult": "Job8",
+            "testCaseId": "TC_SPCF_031"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "john,hans",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - John and Hans LinkedIn URLs",
+            "expectedResult": "Job1,Job2",
+            "testCaseId": "TC_SPCF_032"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty social profile URLs",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "testCaseId": "TC_SPCF_033"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty social profile URLs",
+            "expectedResult": "Job7,entityJob1,entityJob2",
+            "testCaseId": "TC_SPCF_034"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "linkedin",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - LinkedIn domain",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "testCaseId": "TC_SPCF_035"
+        }
+    ],
+    "checkboxCF": [
+        {
+            "dbField": "custcolumn{checkboxCF}",
+            "filterType": "yes",
+            "filterValue": "1",
+            "fieldType": "checkbox",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Yes - Return jobs with checkbox value Yes",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job6,Job8,Job9",
+            "testCaseId": "TC_CHKCF_001"
+        },
+        {
+            "dbField": "custcolumn{checkboxCF}",
+            "filterType": "no",
+            "filterValue": "0",
+            "fieldType": "checkbox",
+            "filterValue_TYPE": "INTEGER",
+            "description": "No - Return jobs with checkbox value No",
+            "expectedResult": "Job3,Job7,Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_CHKCF_002"
+        }
+    ],
+    "fileCF": [
+        {
+            "dbField": "custcolumn{fileCF}",
+            "filterType": "yes",
+            "filterValue": "1",
+            "fieldType": "file",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Yes - Return jobs with file value Yes",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9",
+            "testCaseId": "TC_FILECF_001"
+        },
+        {
+            "dbField": "custcolumn{fileCF}",
+            "filterType": "no",
+            "filterValue": "0",
+            "fieldType": "file",
+            "filterValue_TYPE": "INTEGER",
+            "description": "No - Return jobs with file value No",
+            "expectedResult": "Job10,Job11,Job12,Job13,Job14,Job15,entityJob1,entityJob2",
+            "testCaseId": "TC_FILECF_002"
+        }
+    ]
+}

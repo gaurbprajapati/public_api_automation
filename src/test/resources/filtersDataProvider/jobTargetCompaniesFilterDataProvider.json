@@ -1,0 +1,524 @@
+{
+    "TargetCompanies": [
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company1_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1",
+            "description": "Is filter with single value - exact match for company1 only",
+            "testCaseId": "TC_TARGETCOMPANIES_001"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company1_id},{company2_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job5",
+            "description": "Is filter with multiple values - exact match for company1,company2 combination",
+            "testCaseId": "TC_TARGETCOMPANIES_002"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company2_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job2",
+            "description": "Is filter with single value - exact match for company2 only",
+            "testCaseId": "TC_TARGETCOMPANIES_003"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job3",
+            "description": "Is filter with single value - exact match for company3 only",
+            "testCaseId": "TC_TARGETCOMPANIES_004"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company4_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job4",
+            "description": "Is filter with single value - exact match for company4 only",
+            "testCaseId": "TC_TARGETCOMPANIES_005"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job6",
+            "description": "Is filter with multiple values - exact match for company2,company3 combination",
+            "testCaseId": "TC_TARGETCOMPANIES_006"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company1_id},{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job7",
+            "description": "Is filter with all three values - exact match for company1,company2,company3 combination",
+            "testCaseId": "TC_TARGETCOMPANIES_007"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with company5 only - empty target companies should return no jobs",
+            "testCaseId": "TC_TARGETCOMPANIES_008"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company1_id},{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with company1 and company5 combination - should return empty since no job has both",
+            "testCaseId": "TC_TARGETCOMPANIES_009"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company2_id},{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with company2 and company5 combination - should return empty since no job has both",
+            "testCaseId": "TC_TARGETCOMPANIES_010"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company3_id},{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with company3 and company5 combination - should return empty since no job has both",
+            "testCaseId": "TC_TARGETCOMPANIES_011"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is",
+            "filterValue": "{company4_id},{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with company4 and company5 combination - should return empty since no job has both",
+            "testCaseId": "TC_TARGETCOMPANIES_012"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_not",
+            "filterValue": "{company1_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job2,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Is Not filter with single value - excludes jobs with exact match company1 only",
+            "testCaseId": "TC_TARGETCOMPANIES_013"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_not",
+            "filterValue": "{company1_id},{company2_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Is Not filter with multiple values - excludes jobs with exact match company1,company2 combination",
+            "testCaseId": "TC_TARGETCOMPANIES_014"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_not",
+            "filterValue": "{company2_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job3,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Is Not filter with single value - excludes jobs with exact match company2 only",
+            "testCaseId": "TC_TARGETCOMPANIES_015"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_not",
+            "filterValue": "{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Is Not filter with single value - excludes jobs with exact match company3 only",
+            "testCaseId": "TC_TARGETCOMPANIES_016"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_not",
+            "filterValue": "{company4_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Is Not filter with single value - excludes jobs with exact match company4 only",
+            "testCaseId": "TC_TARGETCOMPANIES_017"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_not",
+            "filterValue": "{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Is Not filter with multiple values - excludes jobs with exact match company2,company3 combination",
+            "testCaseId": "TC_TARGETCOMPANIES_018"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_not",
+            "filterValue": "{company1_id},{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Is Not filter with all three values - excludes jobs with exact match company1,company2,company3 combination",
+            "testCaseId": "TC_TARGETCOMPANIES_019"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_not",
+            "filterValue": "{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with company5 - all jobs should be returned since no job has company5",
+            "testCaseId": "TC_TARGETCOMPANIES_020"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_not",
+            "filterValue": "{company1_id},{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with company1 and company5 combination - all jobs should be returned",
+            "testCaseId": "TC_TARGETCOMPANIES_021"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company1_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job5,Job7",
+            "description": "Contains filter with single value - jobs that have company1 (may have other companies too)",
+            "testCaseId": "TC_TARGETCOMPANIES_022"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company1_id},{company2_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job5,Job7",
+            "description": "Contains filter with multiple values - jobs that have both company1 and company2 (may have additional companies)",
+            "testCaseId": "TC_TARGETCOMPANIES_023"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company2_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job2,Job5,Job6,Job7",
+            "description": "Contains filter with single value - jobs that have company2",
+            "testCaseId": "TC_TARGETCOMPANIES_024"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job3,Job6,Job7",
+            "description": "Contains filter with single value - jobs that have company3 (may have other companies too)",
+            "testCaseId": "TC_TARGETCOMPANIES_025"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company4_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job4",
+            "description": "Contains filter with single value - jobs that have company4",
+            "testCaseId": "TC_TARGETCOMPANIES_026"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job6,Job7",
+            "description": "Contains filter with multiple values - jobs that have both company2 and company3",
+            "testCaseId": "TC_TARGETCOMPANIES_027"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company1_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job7",
+            "description": "Contains filter with multiple values - jobs that have both company1 and company3 (may have additional companies)",
+            "testCaseId": "TC_TARGETCOMPANIES_028"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company1_id},{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job7",
+            "description": "Contains filter with all three values - jobs that have all three companies (company1, company2, and company3)",
+            "testCaseId": "TC_TARGETCOMPANIES_029"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with company5 - empty target companies should return no jobs",
+            "testCaseId": "TC_TARGETCOMPANIES_030"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company1_id},{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with company1 and company5 - should return empty since no job has both",
+            "testCaseId": "TC_TARGETCOMPANIES_031"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains",
+            "filterValue": "{company2_id},{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with company2 and company5 - should return empty since no job has both",
+            "testCaseId": "TC_TARGETCOMPANIES_032"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1_id},{company2_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job5,Job6,Job7",
+            "description": "Contains at Least One filter - jobs that have at least one of company1 or company2",
+            "testCaseId": "TC_TARGETCOMPANIES_033"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job3,Job5,Job6,Job7",
+            "description": "Contains at Least One filter - jobs that have at least one of company1 or company3",
+            "testCaseId": "TC_TARGETCOMPANIES_034"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job2,Job3,Job5,Job6,Job7",
+            "description": "Contains at Least One filter - jobs that have at least one of company2 or company3",
+            "testCaseId": "TC_TARGETCOMPANIES_035"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1_id},{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7",
+            "description": "Contains at Least One filter - jobs that have at least one of company1, company2, or company3",
+            "testCaseId": "TC_TARGETCOMPANIES_036"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1_id},{company4_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job4,Job5,Job7",
+            "description": "Contains at Least One filter with company1 and company4 - returns jobs with company1 or company4",
+            "testCaseId": "TC_TARGETCOMPANIES_037"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company2_id},{company4_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job2,Job4,Job5,Job6,Job7",
+            "description": "Contains at Least One filter with company2 and company4 - returns jobs with company2 or company4",
+            "testCaseId": "TC_TARGETCOMPANIES_038"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company3_id},{company4_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job3,Job4,Job6,Job7",
+            "description": "Contains at Least One filter with company3 and company4 - returns jobs with company3 or company4",
+            "testCaseId": "TC_TARGETCOMPANIES_039"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1_id},{company2_id},{company3_id},{company4_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7",
+            "description": "Contains at Least One filter with all four companies - returns jobs with any of company1, company2, company3, or company4",
+            "testCaseId": "TC_TARGETCOMPANIES_040"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job2,Job3,Job4,Job6,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter with single value - excludes jobs that have company1 anywhere",
+            "testCaseId": "TC_TARGETCOMPANIES_041"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1_id},{company2_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job6,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter with multiple values - excludes jobs that have both company1 and company2 together",
+            "testCaseId": "TC_TARGETCOMPANIES_042"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company2_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job3,Job4,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter with single value - excludes jobs that have company2 anywhere",
+            "testCaseId": "TC_TARGETCOMPANIES_043"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job4,Job5,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter with single value - excludes jobs that have company3 anywhere",
+            "testCaseId": "TC_TARGETCOMPANIES_044"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company4_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job5,Job6,Job7,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter with single value - excludes jobs that have company4 anywhere",
+            "testCaseId": "TC_TARGETCOMPANIES_045"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter with multiple values - excludes jobs that have both company1 and company3 together",
+            "testCaseId": "TC_TARGETCOMPANIES_046"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter with multiple values - excludes jobs that have both company2 and company3 together",
+            "testCaseId": "TC_TARGETCOMPANIES_047"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1_id},{company2_id},{company3_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Does Not Contain filter with all three values - excludes jobs that have all three companies together",
+            "testCaseId": "TC_TARGETCOMPANIES_048"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with company5 - all jobs should be returned since no job has company5",
+            "testCaseId": "TC_TARGETCOMPANIES_049"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1_id},{company5_id}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with company1 and company5 - excludes jobs that have both company1 and company5 together (since company5 has no jobs, no job can have both, so all are included)",
+            "testCaseId": "TC_TARGETCOMPANIES_050"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job8,Job9,Job10,Job11,Job12,Job13,Job14,Job15",
+            "description": "Is Empty filter - jobs with no target companies assigned",
+            "testCaseId": "TC_TARGETCOMPANIES_051"
+        },
+        {
+            "dbField": "targetcompanies",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Job1,Job2,Job3,Job4,Job5,Job6,Job7",
+            "description": "Has Any Value filter - jobs with at least one target company assigned",
+            "testCaseId": "TC_TARGETCOMPANIES_052"
+        }
+    ]
+}

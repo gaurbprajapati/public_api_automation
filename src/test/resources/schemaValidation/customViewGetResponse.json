@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer"
+            }
+          },
+          "required": ["context", "code"],
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"],
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "accountId": {
+          "type": "integer"
+        },
+        "entityId": {
+          "type": "integer"
+        },
+        "listActions": {
+          "type": "object",
+          "properties": {
+            "setting": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  }
+                },
+                "required": ["id"],
+                "additionalProperties": false
+              }
+            },
+            "meta": {
+              "type": "object",
+              "properties": {
+                "updatedBy": {
+                  "type": "integer"
+                },
+                "updatedOn": {
+                  "type": "integer"
+                }
+              },
+              "required": ["updatedBy", "updatedOn"],
+              "additionalProperties": false
+            }
+          },
+          "required": ["setting", "meta"],
+          "additionalProperties": false
+        },
+        "listActionsLocked": {
+          "type": "integer"
+        },
+        "detailActionsLocked": {
+          "type": "integer"
+        }
+      },
+      "required": ["accountId", "entityId", "listActions"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["meta", "data"],
+  "additionalProperties": false
+}

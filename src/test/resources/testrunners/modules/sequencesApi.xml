@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest Sequences API Test Suite">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+	<test name="All email sequences api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.AllEndpointsOfEmailSequencesTest">
+				<methods>
+					<include name="enrollInSequence_POST" />
+					<include name="getAllEnrollmentStatuses_Test" />
+					<include name="searchEnrollmentByProspectSlug" />
+					<include name="searchSequenceBySequenceId" />
+					<include name="unenrollInSequence_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get all enrollments statuses api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.GetAllEnrollmentStatusesTest">
+				<methods>
+					<include name="getAllEnrollmentStatuses_Test" />
+					<include name="unauthorizedUserCannotGetGetAllEnrollmentStatuses_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enroll In Sequence api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.EnrollInSequenceTest">
+				<methods>
+					<include name="enrollInSequenceWithMandatoryFields_POST" />
+					<include name="enrollInSequenceWithAllFields_POST" />
+					<include name="enrollInSequenceWithInvalidEnrolledByFields_POST" />
+					<include name="enrollInSequenceWithInvalidSequenceIdFields_POST" />
+					<include name="enrollInSequenceWithInvalidProspectSlugFields_POST" />
+					<include name="unAuthorizedUserCannotAccessEnrollInSequence" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search in Sequences api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.SearchSequenceByFieldsTest">
+				<methods>
+					<include name="searchSequenceBySequenceId" />
+					<include name="searchSequenceBySequenceName" />
+					<include name="searchSequenceBySequenceType" />
+					<include name="searchSequenceByAdded_From" />
+					<include name="searchSequenceByAdded_to" />
+					<include name="searchSequenceByUpdatedFrom" />
+					<include name="searchSequenceByUpdatedTo" />
+					<include name="searchSequenceByAllFields" />
+					<include name="searchSequenceBySortByAsc" />
+					<include name="searchSequenceBySortByDesc" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search in Enrollment api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.SearchEnrollmentByFieldsTest">
+				<methods>
+					<include name="searchEnrollmentById" />
+					<include name="searchEnrollmentBySequenceId" />
+					<include name="searchEnrollmentByProspectSlug" />
+					<include name="searchEnrollmentByProspectType" />
+					<include name="searchEnrollmentsByEnrollmentStatus" />
+					<include name="searchEnrollmentsByAllFields" />
+					<include name="searchEnrollmentBySortByAsc" />
+					<include name="searchEnrollmentBySortByDesc" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Unenroll In Sequence api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.UnenrollInSequenceTest">
+				<methods>
+					<include name="unenrollInSequenceWithMandatoryFields_POST" />
+					<include name="unenrollInSequenceWithInvaliUnenrolledByFields_POST" />
+					<include name="unenrollInSequenceWithInvalidProspectSlugFields_POST" />
+					<include name="unenrollInSequenceWithAllFields_POST" />
+					<include name="unAuthorizedUserCannotAccessUnenrollInSequence" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enroll In Sequence with first email step starting with zero day">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.EnrollInSequenceWithFirstEmailStepAtZeroDayTest">
+				<methods>
+					<include name="enrollInSequenceWithFirstEmailStepAtZeroDay" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enroll In Sequence with first email step starting with zero day POST">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.EnrollInSequenceWithFirstEmailStepAtZeroDayTest">
+				<methods>
+					<include name="enrollCandContactInSequenceFirstEmailStepAtZeroDay_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

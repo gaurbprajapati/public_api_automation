@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "successCode": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "candidate_slug": {
+          "type": "string"
+        },
+        "contact_slug": {
+          "type": "string"
+        },
+        "status_id": {
+          "type": "number"
+        },
+        "stage_date": {
+          "type": "string"
+        },
+        "remark": {
+          "type": "string"
+        },
+        "created_on": {
+          "type": "string"
+        },
+        "created_by": {
+          "type": "number"
+        },
+        "updated_on": {
+          "type": "string"
+        },
+        "updated_by": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "candidate_slug",
+        "contact_slug",
+        "status_id",
+        "stage_date",
+        "remark",
+        "created_on",
+        "created_by",
+        "updated_on",
+        "updated_by"
+      ]
+    }
+  },
+  "required": [
+    "success",
+    "successCode",
+    "message",
+    "data"
+  ]
+}

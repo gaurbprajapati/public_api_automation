@@ -1,0 +1,124 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "meta": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "requestUuid": {
+                    "type": "string"
+                },
+                "responseType": {
+                    "type": "object",
+                    "properties": {
+                        "context": {
+                            "type": "string"
+                        },
+                        "code": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "context",
+                        "code"
+                    ]
+                },
+                "timestamp": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "message",
+                "requestUuid",
+                "responseType",
+                "timestamp",
+                "status"
+            ]
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "timesheetId": {
+                    "type": "integer"
+                },
+                "statusHistory": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "status": {
+                                "type": "integer"
+                            },
+                            "remark": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "updatedOn": {
+                                "type": "integer"
+                            },
+                            "updatedBy": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "photo": {
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ]
+                                    },
+                                    "userTypeId": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "required": [
+                                    "id",
+                                    "name",
+                                    "photo",
+                                    "userTypeId"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "status",
+                            "remark",
+                            "updatedOn",
+                            "updatedBy"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "timesheetId",
+                "statusHistory"
+            ]
+        },
+        "errors": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "Array of error objects if any validation errors occurred"
+        }
+    },
+    "required": [
+        "meta",
+        "data"
+    ]
+}

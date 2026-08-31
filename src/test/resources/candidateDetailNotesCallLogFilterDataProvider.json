@@ -1,0 +1,252 @@
+{
+  "Filter By User - Notes and Call Log": [
+    {
+      "filter": "createdby",
+      "filterValue": "{\"teamFilter\":[{{team1}}],\"userFilter\":[{{owner}},{{admin}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}}]}",
+      "description": "Filter notes/call logs created by owner, admin OR collaborated with owner, admin OR collaborated with team1",
+      "expectedResult": "calllog1, calllog2, calllog4, calllog5, calllog6, calllog7, calllog8, calllog9, calllog10, calllog12, note1, note2, note4, note5, note6, note7, note8, note9, note10, note12"
+    },
+    {
+      "filter": "createdby",
+      "filterValue": "{\"teamFilter\":[],\"userFilter\":[{{owner}}],\"userSlugs\":[{{userSlugOwner}}]}",
+      "description": "Filter notes/call logs created by owner OR collaborated with owner",
+      "expectedResult": "note1, note5, note7, note8, note9, calllog1, calllog5, calllog7, calllog8, calllog9"
+    },
+    {
+      "filter": "createdby",
+      "filterValue": "{\"teamFilter\":[{{team1}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "description": "Filter notes/call logs created by team1 members OR collaborated with team1",
+      "expectedResult": "note4, note6, note8, note10, note12, calllog4, calllog6, calllog8, calllog10, calllog12"
+    },
+    {
+      "filter": "createdby",
+      "filterValue": "{\"teamFilter\":[{{team1}},{{team2}}],\"userFilter\":[{{owner}},{{admin}},{{teamMember}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}},{{userSlugTeamMember}}]}",
+      "description": "Filter notes/call logs created by multiple users and teams OR collaborated with them",
+      "expectedResult": "calllog1, calllog2, calllog3, calllog4, calllog5, calllog6, calllog7, calllog8, calllog9, calllog10, calllog11, calllog12, note1, note2, note3, note4, note5, note6, note7, note8, note9, note10, note11, note12"
+    },
+    {
+      "filter": "createdby",
+      "filterValue": "{\"teamFilter\":[{{team2}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "description": "Filter notes/call logs created by team2 members OR collaborated with team2",
+      "expectedResult": "note5, note6, note8, note11, calllog5, calllog6, calllog8, calllog11"
+    },
+    {
+      "filter": "createdby",
+      "filterValue": "{\"teamFilter\":[{{team1}},{{team2}}],\"userFilter\":[{{owner}},{{admin}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}}]}",
+      "description": "Filter notes/call logs created by owner, admin OR team1, team2 OR collaborated with them",
+      "expectedResult": "calllog1, calllog2, calllog4, calllog5, calllog6, calllog7, calllog8, calllog9, calllog10, calllog11, calllog12, note1, note2, note4, note5, note6, note7, note8, note9, note10, note11, note12"
+    },
+    {
+      "filter": "createdby",
+      "filterValue": "{\"teamFilter\":[],\"userFilter\":[{{owner}},{{admin}},{{teamMember}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}},{{userSlugTeamMember}}]}",
+      "description": "Filter notes/call logs created by any of the specified users OR collaborated with them",
+      "expectedResult": "calllog1, calllog2, calllog3, calllog5, calllog6, calllog7, calllog8, calllog9, calllog10, calllog11, calllog12, note1, note2, note3, note5, note6, note7, note8, note9, note10, note11, note12"
+    },
+    {
+      "filter": "createdby",
+      "filterValue": "{\"teamFilter\":[{{team1}},{{team2}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "description": "Filter notes/call logs created by any of the specified teams OR collaborated with them",
+      "expectedResult": "calllog4, calllog5, calllog6, calllog8, calllog10, calllog11, calllog12, note4, note5, note6, note8, note10, note11, note12"
+    }
+  ],
+  "Filter By Type - Notes": [
+    {
+      "filter": "notetype",
+      "filterValue": "[{{Call}},{{Custom Note Type}}]",
+      "description": "Filter notes with type Call or Custom Note Type",
+      "expectedResult": "note2, note3, note5, note9, note11, note12"
+    },
+    {
+      "filter": "notetype",
+      "filterValue": "[{{Call}}]",
+      "description": "Filter notes with type Call only",
+      "expectedResult": "note2, note5, note11"
+    },
+    {
+      "filter": "notetype",
+      "filterValue": "[{{Custom Note Type}}]",
+      "description": "Filter notes with type Custom Note Type only",
+      "expectedResult": "note3, note9, note12"
+    },
+    {
+      "filter": "notetype",
+      "filterValue": "[{{To Do}}]",
+      "description": "Filter notes with type To Do only",
+      "expectedResult": "note1, note4, note7, note10"
+    },
+    {
+      "filter": "notetype",
+      "filterValue": "[{{Call}},{{Custom Note Type}},{{To Do}}]",
+      "description": "Filter notes with any of the specified types",
+      "expectedResult": "note1, note2, note3, note4, note5, note7, note9, note10, note11, note12"
+    },
+    {
+      "filter": "notetype",
+      "filterValue": "[{{To Do}},{{Call}}]",
+      "description": "Filter notes with type To Do or Call",
+      "expectedResult": "note1, note2, note4, note5, note7, note10, note11"
+    },
+    {
+      "filter": "notetype",
+      "filterValue": "[{{Not Available}}]",
+      "description": "Filter notes with no note type",
+      "expectedResult": "note6, note8"
+    }
+  ],
+  "Filter By Type - Call Log": [
+    {
+      "filter": "calltype",
+      "filterValue": "[{{Inbound}},{{Outbound}}]",
+      "description": "Filter call logs with type Inbound or Outbound",
+      "expectedResult": "calllog1, calllog2, calllog9, calllog10"
+    },
+    {
+      "filter": "calltype",
+      "filterValue": "[{{Inbound}}]",
+      "description": "Filter call logs with type Inbound only",
+      "expectedResult": "calllog1, calllog9"
+    },
+    {
+      "filter": "calltype",
+      "filterValue": "[{{Outbound}}]",
+      "description": "Filter call logs with type Outbound only",
+      "expectedResult": "calllog2, calllog10"
+    },
+    {
+      "filter": "calltype",
+      "filterValue": "[{{Video Call}}]",
+      "description": "Filter call logs with type Video Call only",
+      "expectedResult": "calllog3, calllog7, calllog11"
+    },
+    {
+      "filter": "calltype",
+      "filterValue": "[{{Custom Call Type}}]",
+      "description": "Filter call logs with type Custom Call Type only",
+      "expectedResult": "calllog4, calllog8, calllog12"
+    },
+    {
+      "filter": "calltype",
+      "filterValue": "[{{Inbound}},{{Outbound}},{{Video Call}},{{Custom Call Type}}]",
+      "description": "Filter call logs with any of the specified types",
+      "expectedResult": "calllog1, calllog2, calllog3, calllog4, calllog7, calllog8, calllog9, calllog10, calllog11, calllog12"
+    },
+    {
+      "filter": "calltype",
+      "filterValue": "[{{Inbound}},{{Video Call}}]",
+      "description": "Filter call logs with type Inbound or Video Call",
+      "expectedResult": "calllog1, calllog3, calllog7, calllog9, calllog11"
+    },
+    {
+      "filter": "calltype",
+      "filterValue": "[{{Not Available}}]",
+      "description": "Filter call logs with no Call Type",
+      "expectedResult": "calllog5, calllog6"
+    }
+  ],
+  "Filter By Created Date - Notes and Call Log": [
+    {
+      "filter": "createdon",
+      "filterValue": "1",
+      "description": "All Time - Show all notes regardless of creation date",
+      "expectedResult": "Note1, Note2, Note3, Note4, Note5, Note6, Note7, Note8, Note9, Note10, Note11, Note12"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "2",
+      "description": "Today - Show notes created today",
+      "expectedResult": "Note11, Note12, Note3, CallLog11, CallLog12, CallLog3"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "4",
+      "description": "Yesterday - Show notes created yesterday",
+      "expectedResult": "Note2"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "5",
+      "description": "This Week - Show notes created this week",
+      "expectedResult": "Note1, Note3"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "6",
+      "description": "Last Week - Show notes created last week",
+      "expectedResult": "Note2, Note4"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "7",
+      "description": "This Month - Show notes created this month",
+      "expectedResult": "Note1, Note2, Note3, Note4"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "8",
+      "description": "Last Month - Show notes created last month",
+      "expectedResult": "Note5, Note6"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "9",
+      "description": "Custom Range - Show notes created within custom date range",
+      "expectedResult": "Note1, Note2, Note3, Note4, Note5, Note6"
+    }
+  ],
+  "Filter By Associations - Notes and Call Log": [
+    {
+      "filter": "note_call_log_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}}],\"3\":[{{associated_companies_company1}}],\"4\":[{{associated_jobs_job1}}],\"5\":[{{associated_candidates_candidate1}}],\"11\":[{{associated_deals_deal1}}]}",
+      "description": "Filter notes and call logs associated with candidate1, contact1, deal1, job1, company1",
+      "expectedResult": "note1, note2, note3, note4, note5, note6, note8, note10, note12, calllog1, calllog2, calllog3,calllog4, calllog5, calllog6, calllog8, calllog10, calllog12"
+    },
+    {
+      "filter": "note_call_log_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}}],\"3\":[],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter notes and call logs associated with contact1 only",
+      "expectedResult": "note3, note6, note8, note10, calllog3, calllog6, calllog8, calllog10"
+    },
+    {
+      "filter": "note_call_log_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[{{associated_companies_company1}}],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter notes and call logs associated with company1 only",
+      "expectedResult": "note2, note6, note8, note10, note12, calllog2, calllog6, calllog8, calllog10, calllog12"
+    },
+    {
+      "filter": "note_call_log_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[],\"4\":[{{associated_jobs_job1}}],\"5\":[],\"11\":[]}",
+      "description": "Filter notes and call logs associated with job1 only",
+      "expectedResult": "note4, note6, note8, note10, calllog4, calllog6, calllog8, calllog10"
+    },
+    {
+      "filter": "note_call_log_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[],\"4\":[],\"5\":[{{associated_candidates_candidate1}}],\"11\":[]}",
+      "description": "Filter notes and call logs associated with candidate1 only",
+      "expectedResult": "note1, note6, note8, note10, note12, calllog1, calllog6, calllog8, calllog10, calllog12"
+    },
+    {
+      "filter": "note_call_log_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[],\"4\":[],\"5\":[],\"11\":[{{associated_deals_deal1}}]}",
+      "description": "Filter notes and call logs associated with deal1 only",
+      "expectedResult": "note5, note6, note8, note10, calllog5, calllog6, calllog8, calllog10"
+    },
+    {
+      "filter": "note_call_log_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}},{{associated_contacts_contact2}}],\"3\":[{{associated_companies_company1}},{{associated_companies_company2}}],\"4\":[{{associated_jobs_job1}},{{associated_jobs_job2}}],\"5\":[{{associated_candidates_candidate1}},{{associated_candidates_candidate2}}],\"11\":[{{associated_deals_deal1}},{{associated_deals_deal2}}]}",
+      "description": "Filter notes and call logs associated with multiple entities across all types",
+      "expectedResult": "note1, note2, note3, note4, note5, note6, note8, note10, note12, calllog1, calllog2, calllog3, calllog4, calllog5, calllog6, calllog8, calllog10, calllog12"
+    },
+    {
+      "filter": "note_call_log_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}}],\"3\":[{{associated_companies_company1}}],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter notes and call logs associated with contact1 OR company1",
+      "expectedResult": "note2, note3, note6, note8, note10, note12, calllog2, calllog3, calllog6, calllog8, calllog10, calllog12"
+    },
+    {
+      "filter": "note_call_log_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact2}}],\"3\":[{{associated_companies_company2}}],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter notes and call logs associated with contact2 OR company2",
+      "expectedResult": "note2, note3, note8, note10, calllog2, calllog3, calllog8, calllog10"
+    }
+  ]
+}

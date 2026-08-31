@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "status",
+    "action_name",
+    "actionid",
+    "intercom"
+  ],
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": ["is-success", "is-danger"]
+    },
+    "data": {
+      "type": "object",
+      "required": ["records", "filtered_count", "total_count"],
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": {}
+        },
+        "filtered_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "total_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "fail"]
+    },
+    "action_name": {
+      "type": "string"
+    },
+    "actionid": {
+      "type": "string"
+    },
+    "intercom": {
+      "type": "string"
+    }
+  }
+}

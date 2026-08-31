@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Company Dropdown and Multiselect Custom Field Filter Search" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    <test name="Dropdown and Multiselect Custom Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="dropdownAndMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Checkbox Custom Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="checkboxCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

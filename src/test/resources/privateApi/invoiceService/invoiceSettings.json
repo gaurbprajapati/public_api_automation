@@ -1,0 +1,128 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "requestUuid": {
+            "type": "string"
+          },
+          "responseType": {
+            "type": "object",
+            "properties": {
+              "context": {
+                "type": "string"
+              },
+              "code": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "context",
+              "code"
+            ]
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "message",
+          "requestUuid",
+          "responseType",
+          "timestamp",
+          "status"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": ["integer", "null"]
+          },
+          "invoiceName": {
+            "type": "null"
+          },
+          "website": {
+            "type": ["string", "null"]
+          },
+          "phone": {
+            "type": "null"
+          },
+          "address": {
+            "type": "null"
+          },
+          "notes": {
+            "type": "null"
+          },
+          "termsandconditions": {
+            "type": "null"
+          },
+          "signature": {
+            "type": ["integer", "null"]
+          },
+          "logo": {
+            "type": ["string", "null"]
+          },
+          "companyName": {
+            "type": ["string", "null"]
+          },
+          "email": {
+            "type": ["string", "null"]
+          },
+          "invoiceIdPrefix": {
+            "type": ["string", "null"]
+          },
+          "invoiceIdNumber": {
+            "type": ["string", "null"]
+          },
+          "userId": {
+            "type": ["integer", "null"]
+          },
+          "userName": {
+            "type": ["string", "null"]
+          },
+          "createdOn": {
+            "type": ["integer", "null"]
+          },
+          "updatedOn": {
+            "type": ["integer", "null"]
+          },
+          "accountId": {
+            "type": ["integer", "null"]
+          }
+        },
+        "required": [
+          "id",
+          "invoiceName",
+          "website",
+          "phone",
+          "address",
+          "notes",
+          "termsandconditions",
+          "signature",
+          "logo",
+          "companyName",
+          "email",
+          "invoiceIdPrefix",
+          "invoiceIdNumber",
+          "userId",
+          "userName",
+          "createdOn",
+          "updatedOn",
+          "accountId"
+        ]
+      }
+    },
+    "required": [
+      "meta",
+      "data"
+    ]
+  }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Candidate Filters - Custom Fields Only" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+
+    <test name="Candidate Custom Fields - Entity Custom Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CustomFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="entityCustomFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Custom Fields - Text Type Custom Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CustomFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="textCustomFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Custom Fields - Number Type Custom Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CustomFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="numberCustomFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Custom Fields - Date Type Custom Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CustomFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="dateCustomFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Custom Fields - Checkbox Type Custom Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CustomFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="checkboxCustomFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

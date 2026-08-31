@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Hours Based Rule Engine Calculation Test Suite" thread-count="20" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<!-- Weekly Hours-Based Calculations (DailyOT + WeeklyOT + SpecificHoursRange) -->
+	<test name="Hours_Based_Weekly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hoursBasedRuleEngineCalculation.weeklyCalculations.testClass.HoursWeeklyTest">
+				<methods>
+					<include name="verifyHoursWeeklyCalculation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Biweekly Hours-Based Calculations -->
+	<test name="Hours_Based_Biweekly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hoursBasedRuleEngineCalculation.biweeklyCalculations.BiweeklyHoursCalculationsTest">
+				<methods>
+					<include name="verifyBiweeklyHoursCalculation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Monthly Hours-Based Calculations -->
+	<test name="Hours_Based_Monthly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hoursBasedRuleEngineCalculation.monthlyCalculations.MonthlyHoursCalculationsTest">
+				<methods>
+					<include name="verifyMonthlyHoursCalculation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Smoke Test (first 2 scenarios per suite) -->
+	<test name="Hours_Based_Smoke_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hoursBasedRuleEngineCalculation.smoke.HoursBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyDailyOTHoursCalculation" />
+					<include name="smokeVerifyWeeklyOTHoursCalculation" />
+					<include name="smokeVerifySpecificHoursRangeCalculation" />
+					<include name="smokeVerifyBiweeklyHoursCalculation" />
+					<include name="smokeVerifyMonthlyHoursCalculation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

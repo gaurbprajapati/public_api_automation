@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Candidate Filters - Standard Fields (No Custom/Activity)" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+
+    <test name="Text Type Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.TextFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="textFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Skill Field Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.SkillsFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="skillsFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Number Type Candidate Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.NumberFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="numberFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Created By Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.DropdownFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="createdByDropdownFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Owner Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.DropdownFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="ownerDropdownFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Gender Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.DropdownFieldsCandidateFilterSearchTest">
+                <methods>
+                    <include name="genderDropdownFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Date Type Field Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.DateFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="dateFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Checkbox Field Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CustomFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="checkboxCustomFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Dropdown Field Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.CustomFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="dropdownAndMultiselectFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Education and Work History - Date Fields Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.EducationAndWorkHistoryFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="historyDateFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Education and Work History - Text Fields Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.EducationAndWorkHistoryFieldCandidateFilterSearchTest">
+                <methods>
+                    <include name="historyTextFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Hotlist Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.HotlistCandidateFilterSearchTest">
+                <methods>
+                    <include name="hotlistFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate OffLimit Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.Filters.OffLimitCandidateFilterSearchTest">
+                <methods>
+                    <include name="offLimitStatusFieldFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

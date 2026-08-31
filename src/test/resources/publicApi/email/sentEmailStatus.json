@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Email Send Status Response",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["Processing", "Success"],
+      "description": "Status of the email operation"
+    },
+    "message": {
+      "type": "string",
+      "description": "Descriptive status message"
+    },
+    "email_message_id": {
+      "type": ["string", "null"],
+      "description": "The message ID of the sent email (null if still processing)"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of the request in ISO 8601 format"
+    }
+  },
+  "required": ["status", "message", "email_message_id", "created_at"],
+  "additionalProperties": false
+}

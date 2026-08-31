@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contract Staffing Public API Suite" thread-count="30" parallel="tests">
+
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+    </listeners>
+
+<!--    &lt;!&ndash; ========================== SMOKE TESTS ========================== &ndash;&gt;-->
+
+    <test name="PublicAPI_Smoke_GetTimesheetById">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiShiftSmokeTest">
+                <methods>
+                    <include name="smokeGetTimesheetByIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_Smoke_GetTimesheetWithWorkTimeDetails">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiShiftSmokeTest">
+                <methods>
+                    <include name="smokeGetTimesheetWithWorkTimeDetailsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_Smoke_GetTimesheetsList">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiShiftSmokeTest">
+                <methods>
+                    <include name="smokeGetTimesheetsListTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--    &lt;!&ndash; ========================== MAIN TESTS: Shift-Based ========================== &ndash;&gt;-->
+
+<!--    <test name="PublicAPI_ShiftBased_GetTimesheetDataByID">-->
+<!--        <classes>-->
+<!--            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetDataTest">-->
+<!--                <methods>-->
+<!--                    <include name="getTimesheetsDataByIDTest" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetWithWorkTimeDetails">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetDataTest">
+                <methods>
+                    <include name="getTimesheetsDataWithWorkTimeDetailsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetsListAllParams">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListWithAllCorrectParamsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetsListByCandidateSlug">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByCandidateSlugTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetsListByCompanySlug">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByCompanySlugTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetsListByJobSlug">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByJobSlugTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetsListByStatus">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByTimesheetStatusTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetsListByPagination">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByPaginationTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetsListBySortParams">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListBySortParamsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetsListByTimeLogs">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByTimeLogsParamTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_ShiftBased_GetTimesheetsListByDateRange">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.shiftBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByDateRangeTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+    <!-- ========================== SMOKE TESTS: Hours-Based ========================== -->
+
+    <test name="PublicAPI_Hours_Smoke_GetTimesheetById">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiHoursSmokeTest">
+                <methods>
+                    <include name="smokeGetTimesheetByIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_Hours_Smoke_GetTimesheetWithWorkTimeDetails">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiHoursSmokeTest">
+                <methods>
+                    <include name="smokeGetTimesheetWithWorkTimeDetailsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_Hours_Smoke_GetTimesheetsList">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.smoke.PublicApiHoursSmokeTest">
+                <methods>
+                    <include name="smokeGetTimesheetsListTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ========================== MAIN TESTS: Hours-Based Public API ========================== -->
+
+<!--    <test name="PublicAPI_HoursBased_GetTimesheetDataByID">-->
+<!--        <classes>-->
+<!--            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetDataTest">-->
+<!--                <methods>-->
+<!--                    <include name="getTimesheetsDataByIDTest" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="PublicAPI_HoursBased_GetTimesheetWithWorkTimeDetails">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetDataTest">
+                <methods>
+                    <include name="getTimesheetsDataWithWorkTimeDetailsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_HoursBased_GetTimesheetsListAllParams">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListWithAllCorrectParamsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_HoursBased_GetTimesheetsListByCandidateSlug">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByCandidateSlugTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_HoursBased_GetTimesheetsListByCompanySlug">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByCompanySlugTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_HoursBased_GetTimesheetsListByJobSlug">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByJobSlugTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_HoursBased_GetTimesheetsListByStatus">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByTimesheetStatusTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_HoursBased_GetTimesheetsListByPagination">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByPaginationTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_HoursBased_GetTimesheetsListBySortParams">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListBySortParamsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_HoursBased_GetTimesheetsListByTimeLogs">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByTimeLogsParamTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PublicAPI_HoursBased_GetTimesheetsListByDateRange">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.publicApi.hoursBased.GetTimesheetsListDataTest">
+                <methods>
+                    <include name="getTimesheetsListByDateRangeTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

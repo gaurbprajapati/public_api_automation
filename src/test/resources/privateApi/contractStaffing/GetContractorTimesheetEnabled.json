@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Timesheet Enabled Status Response",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "responseType": {
+          "type": "object",
+          "required": ["context", "code"],
+          "properties": {
+            "context": { "type": "string" },
+            "code": { "type": "integer" }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Format: dd-MM-yyyy HH:mm:ss"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "integer",
+      "description": "1 = enabled, 0 = disabled"
+    }
+  },
+  "additionalProperties": false
+}

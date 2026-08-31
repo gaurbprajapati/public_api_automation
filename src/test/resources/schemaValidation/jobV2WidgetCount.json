@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": ["Widget Count fetched successfully"]
+        },
+        "requestUuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "responseType": {
+          "type": "object",
+          "required": ["context", "code"],
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": ["Request is successful"]
+            },
+            "code": {
+              "type": "integer",
+              "enum": [103]
+            }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [200]
+        }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "object",
+      "required": [
+        "hotlists",
+        "relatedDeals",
+        "candidatePipeline",
+        "executiveSearchReport",
+        "jobCampaigns",
+        "clientFeedback"
+      ],
+      "properties": {
+        "hotlists": { "type": "integer", "minimum": 0 },
+        "relatedDeals": { "type": "integer", "minimum": 0 },
+        "candidatePipeline": { "type": "integer", "minimum": 0 },
+        "executiveSearchReport": { "type": "integer", "minimum": 0 },
+        "jobCampaigns": { "type": "integer", "minimum": 0 },
+        "clientFeedback": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

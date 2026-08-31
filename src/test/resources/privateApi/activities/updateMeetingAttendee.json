@@ -1,0 +1,821 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "appointment": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "relatedto": {
+              "type": "string"
+            },
+            "relatedtotypeid": {
+              "type": "integer"
+            },
+            "relatedtoname": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "status": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "integer"
+            },
+            "enddate": {
+              "type": "integer"
+            },
+            "startdate": {
+              "type": "integer"
+            },
+            "reminderdate": {
+              "type": "integer"
+            },
+            "creatorname": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "ownerid": {
+              "type": "integer"
+            },
+            "accountid": {
+              "type": "integer"
+            },
+            "createdby": {
+              "type": "integer"
+            },
+            "createdon": {
+              "type": "integer"
+            },
+            "updatedby": {
+              "type": "integer"
+            },
+            "updatedon": {
+              "type": "integer"
+            },
+            "eventid": {
+              "type": "string"
+            },
+            "relatedtocompany": {
+              "type": "null"
+            },
+            "emailbatchid": {
+              "type": "null"
+            },
+            "mentionedusers": {
+              "type": "null"
+            },
+            "reminder": {
+              "type": "integer"
+            },
+            "htmllink": {
+              "type": "string"
+            },
+            "deleted": {
+              "type": "integer"
+            },
+            "calendarid": {
+              "type": "null"
+            },
+            "pin": {
+              "type": "integer"
+            },
+            "notetype": {
+              "type": "integer"
+            },
+            "no_cal_invites": {
+              "type": "integer"
+            },
+            "attendees": {
+              "type": "array",
+              "items": {}
+            },
+            "candidate": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "srno": {
+                  "type": "integer"
+                },
+                "firstname": {
+                  "type": "string"
+                },
+                "lastname": {
+                  "type": "string"
+                },
+                "emailid": {
+                  "type": "string"
+                },
+                "genderid": {
+                  "type": "integer"
+                },
+                "contactnumber": {
+                  "type": "string"
+                },
+                "qualificationid": {
+                  "type": "integer"
+                },
+                "specialization": {
+                  "type": "string"
+                },
+                "locationid": {
+                  "type": "integer"
+                },
+                "workexpyr": {
+                  "type": "integer"
+                },
+                "workexpmonth": {
+                  "type": "integer"
+                },
+                "candidatedob": {
+                  "type": "integer"
+                },
+                "currentsalary": {
+                  "type": "string"
+                },
+                "salaryexpectation": {
+                  "type": "string"
+                },
+                "resume": {
+                  "type": "string"
+                },
+                "resumefilename": {
+                  "type": "string"
+                },
+                "willingtorelocate": {
+                  "type": "integer"
+                },
+                "lastorganisation": {
+                  "type": "string"
+                },
+                "currentstatus": {
+                  "type": "string"
+                },
+                "noticeperiod": {
+                  "type": "integer"
+                },
+                "currencyid": {
+                  "type": "integer"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "authid": {
+                  "type": "null"
+                },
+                "resumeupdatedon": {
+                  "type": "integer"
+                },
+                "resumeupdaterequestedon": {
+                  "type": "integer"
+                },
+                "requestresumelinkstatus": {
+                  "type": "integer"
+                },
+                "resumeaddedon": {
+                  "type": "integer"
+                },
+                "profilepic": {
+                  "type": "string"
+                },
+                "profilefacebook": {
+                  "type": "string"
+                },
+                "profilegithub": {
+                  "type": "string"
+                },
+                "profiletwitter": {
+                  "type": "string"
+                },
+                "profilelinkedin": {
+                  "type": "string"
+                },
+                "deleted": {
+                  "type": "integer"
+                },
+                "ownerid": {
+                  "type": "integer"
+                },
+                "accountid": {
+                  "type": "integer"
+                },
+                "createdby": {
+                  "type": "integer"
+                },
+                "createdon": {
+                  "type": "integer"
+                },
+                "updatedby": {
+                  "type": "integer"
+                },
+                "updatedon": {
+                  "type": "integer"
+                },
+                "locality": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "lng": {
+                  "type": "integer"
+                },
+                "relevantexperience": {
+                  "type": "integer"
+                },
+                "position": {
+                  "type": "string"
+                },
+                "canaccess": {
+                  "type": "null"
+                },
+                "availablefrom": {
+                  "type": "integer"
+                },
+                "salarytype": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "sourceadded": {
+                  "type": "null"
+                },
+                "languageskills": {
+                  "type": "null"
+                },
+                "skill": {
+                  "type": "string"
+                },
+                "isduplicate": {
+                  "type": "integer"
+                },
+                "address": {
+                  "type": "string"
+                },
+                "lat": {
+                  "type": "null"
+                },
+                "sourceid": {
+                  "type": "null"
+                },
+                "migration_reserved1": {
+                  "type": "string"
+                },
+                "migration_reserved2": {
+                  "type": "string"
+                },
+                "email_opt_out": {
+                  "type": "integer"
+                },
+                "profilexing": {
+                  "type": "string"
+                },
+                "unavailable": {
+                  "type": "integer"
+                },
+                "availability_updated_by": {
+                  "type": "null"
+                },
+                "sms_consent": {
+                  "type": "integer"
+                },
+                "sovren_document_id": {
+                  "type": "null"
+                },
+                "email_opt_out_source": {
+                  "type": "null"
+                },
+                "merge_flag": {
+                  "type": "integer"
+                },
+                "formatted_contact_number": {
+                  "type": "string"
+                },
+                "formatted_profile_linkedin": {
+                  "type": "null"
+                },
+                "sms_opt_out": {
+                  "type": "integer"
+                },
+                "postal_code": {
+                  "type": "null"
+                },
+                "email": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "srno",
+                "firstname",
+                "lastname",
+                "emailid",
+                "genderid",
+                "contactnumber",
+                "qualificationid",
+                "specialization",
+                "locationid",
+                "workexpyr",
+                "workexpmonth",
+                "candidatedob",
+                "currentsalary",
+                "salaryexpectation",
+                "resume",
+                "resumefilename",
+                "willingtorelocate",
+                "lastorganisation",
+                "currentstatus",
+                "noticeperiod",
+                "currencyid",
+                "slug",
+                "authid",
+                "resumeupdatedon",
+                "resumeupdaterequestedon",
+                "requestresumelinkstatus",
+                "resumeaddedon",
+                "profilepic",
+                "profilefacebook",
+                "profilegithub",
+                "profiletwitter",
+                "profilelinkedin",
+                "deleted",
+                "ownerid",
+                "accountid",
+                "createdby",
+                "createdon",
+                "updatedby",
+                "updatedon",
+                "locality",
+                "city",
+                "state",
+                "country",
+                "lng",
+                "relevantexperience",
+                "position",
+                "canaccess",
+                "availablefrom",
+                "salarytype",
+                "source",
+                "sourceadded",
+                "languageskills",
+                "skill",
+                "isduplicate",
+                "address",
+                "lat",
+                "sourceid",
+                "migration_reserved1",
+                "migration_reserved2",
+                "email_opt_out",
+                "profilexing",
+                "unavailable",
+                "availability_updated_by",
+                "sms_consent",
+                "sovren_document_id",
+                "email_opt_out_source",
+                "merge_flag",
+                "formatted_contact_number",
+                "formatted_profile_linkedin",
+                "sms_opt_out",
+                "postal_code",
+                "email"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "relatedto",
+            "relatedtotypeid",
+            "relatedtoname",
+            "description",
+            "title",
+            "status",
+            "type",
+            "enddate",
+            "startdate",
+            "reminderdate",
+            "creatorname",
+            "address",
+            "ownerid",
+            "accountid",
+            "createdby",
+            "createdon",
+            "updatedby",
+            "updatedon",
+            "eventid",
+            "relatedtocompany",
+            "emailbatchid",
+            "mentionedusers",
+            "reminder",
+            "htmllink",
+            "deleted",
+            "calendarid",
+            "pin",
+            "notetype",
+            "no_cal_invites",
+            "attendees",
+            "candidate"
+          ]
+        },
+        "appointment_invitaion_template": {
+          "type": "object",
+          "properties": {
+            "htmlbody": {
+              "type": "string"
+            },
+            "subject": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "htmlbody",
+            "subject"
+          ]
+        },
+        "attendee_names_emails": {
+          "type": "object",
+          "properties": {
+            "rcrmtest0@gmail.com": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "rcrmtest0@gmail.com"
+          ]
+        },
+        "relatedtoobject": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "srno": {
+              "type": "integer"
+            },
+            "firstname": {
+              "type": "string"
+            },
+            "lastname": {
+              "type": "string"
+            },
+            "emailid": {
+              "type": "string"
+            },
+            "genderid": {
+              "type": "integer"
+            },
+            "contactnumber": {
+              "type": "string"
+            },
+            "qualificationid": {
+              "type": "integer"
+            },
+            "specialization": {
+              "type": "string"
+            },
+            "locationid": {
+              "type": "integer"
+            },
+            "workexpyr": {
+              "type": "integer"
+            },
+            "workexpmonth": {
+              "type": "integer"
+            },
+            "candidatedob": {
+              "type": "integer"
+            },
+            "currentsalary": {
+              "type": "string"
+            },
+            "salaryexpectation": {
+              "type": "string"
+            },
+            "resume": {
+              "type": "string"
+            },
+            "resumefilename": {
+              "type": "string"
+            },
+            "willingtorelocate": {
+              "type": "integer"
+            },
+            "lastorganisation": {
+              "type": "string"
+            },
+            "currentstatus": {
+              "type": "string"
+            },
+            "noticeperiod": {
+              "type": "integer"
+            },
+            "currencyid": {
+              "type": "integer"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "authid": {
+              "type": "null"
+            },
+            "resumeupdatedon": {
+              "type": "integer"
+            },
+            "resumeupdaterequestedon": {
+              "type": "integer"
+            },
+            "requestresumelinkstatus": {
+              "type": "integer"
+            },
+            "resumeaddedon": {
+              "type": "integer"
+            },
+            "profilepic": {
+              "type": "string"
+            },
+            "profilefacebook": {
+              "type": "string"
+            },
+            "profilegithub": {
+              "type": "string"
+            },
+            "profiletwitter": {
+              "type": "string"
+            },
+            "profilelinkedin": {
+              "type": "string"
+            },
+            "deleted": {
+              "type": "integer"
+            },
+            "ownerid": {
+              "type": "integer"
+            },
+            "accountid": {
+              "type": "integer"
+            },
+            "createdby": {
+              "type": "integer"
+            },
+            "createdon": {
+              "type": "integer"
+            },
+            "updatedby": {
+              "type": "integer"
+            },
+            "updatedon": {
+              "type": "integer"
+            },
+            "locality": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "lng": {
+              "type": "integer"
+            },
+            "relevantexperience": {
+              "type": "integer"
+            },
+            "position": {
+              "type": "string"
+            },
+            "canaccess": {
+              "type": "null"
+            },
+            "availablefrom": {
+              "type": "integer"
+            },
+            "salarytype": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            },
+            "sourceadded": {
+              "type": "null"
+            },
+            "languageskills": {
+              "type": "null"
+            },
+            "skill": {
+              "type": "string"
+            },
+            "isduplicate": {
+              "type": "integer"
+            },
+            "address": {
+              "type": "string"
+            },
+            "lat": {
+              "type": "null"
+            },
+            "sourceid": {
+              "type": "null"
+            },
+            "migration_reserved1": {
+              "type": "string"
+            },
+            "migration_reserved2": {
+              "type": "string"
+            },
+            "email_opt_out": {
+              "type": "integer"
+            },
+            "profilexing": {
+              "type": "string"
+            },
+            "unavailable": {
+              "type": "integer"
+            },
+            "availability_updated_by": {
+              "type": "null"
+            },
+            "sms_consent": {
+              "type": "integer"
+            },
+            "sovren_document_id": {
+              "type": "null"
+            },
+            "email_opt_out_source": {
+              "type": "null"
+            },
+            "merge_flag": {
+              "type": "integer"
+            },
+            "formatted_contact_number": {
+              "type": "string"
+            },
+            "formatted_profile_linkedin": {
+              "type": "null"
+            },
+            "sms_opt_out": {
+              "type": "integer"
+            },
+            "postal_code": {
+              "type": "null"
+            },
+            "email": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "srno",
+            "firstname",
+            "lastname",
+            "emailid",
+            "genderid",
+            "contactnumber",
+            "qualificationid",
+            "specialization",
+            "locationid",
+            "workexpyr",
+            "workexpmonth",
+            "candidatedob",
+            "currentsalary",
+            "salaryexpectation",
+            "resume",
+            "resumefilename",
+            "willingtorelocate",
+            "lastorganisation",
+            "currentstatus",
+            "noticeperiod",
+            "currencyid",
+            "slug",
+            "authid",
+            "resumeupdatedon",
+            "resumeupdaterequestedon",
+            "requestresumelinkstatus",
+            "resumeaddedon",
+            "profilepic",
+            "profilefacebook",
+            "profilegithub",
+            "profiletwitter",
+            "profilelinkedin",
+            "deleted",
+            "ownerid",
+            "accountid",
+            "createdby",
+            "createdon",
+            "updatedby",
+            "updatedon",
+            "locality",
+            "city",
+            "state",
+            "country",
+            "lng",
+            "relevantexperience",
+            "position",
+            "canaccess",
+            "availablefrom",
+            "salarytype",
+            "source",
+            "sourceadded",
+            "languageskills",
+            "skill",
+            "isduplicate",
+            "address",
+            "lat",
+            "sourceid",
+            "migration_reserved1",
+            "migration_reserved2",
+            "email_opt_out",
+            "profilexing",
+            "unavailable",
+            "availability_updated_by",
+            "sms_consent",
+            "sovren_document_id",
+            "email_opt_out_source",
+            "merge_flag",
+            "formatted_contact_number",
+            "formatted_profile_linkedin",
+            "sms_opt_out",
+            "postal_code",
+            "email"
+          ]
+        }
+      },
+      "required": [
+        "appointment",
+        "appointment_invitaion_template",
+        "attendee_names_emails",
+        "relatedtoobject"
+      ]
+    },
+    "user": {
+      "type": "string"
+    },
+    "notifications": {
+      "type": "string"
+    },
+    "status": {
+      "type": "integer"
+    },
+    "application_version": {
+      "type": "string"
+    },
+    "recaptcha_site_key": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "number"
+    },
+    "end_time": {
+      "type": "number"
+    },
+    "time_to_output": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "user",
+    "notifications",
+    "status",
+    "application_version",
+    "recaptcha_site_key",
+    "start_time",
+    "end_time",
+    "time_to_output"
+  ]
+}

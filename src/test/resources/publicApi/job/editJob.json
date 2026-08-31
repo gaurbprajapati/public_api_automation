@@ -1,0 +1,800 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "company_slug": {
+      "type": "string"
+    },
+    "contact_slug": {
+      "type": "string"
+    },
+    "secondary_contact_slugs": {
+      "type": "null"
+    },
+    "note_for_candidates": {
+      "type": "string"
+    },
+    "number_of_openings": {
+      "type": "integer"
+    },
+    "minimum_experience": {
+      "type": "integer"
+    },
+    "maximum_experience": {
+      "type": "integer"
+    },
+    "min_annual_salary": {
+      "type": "integer"
+    },
+    "max_annual_salary": {
+      "type": "integer"
+    },
+    "salary_type": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ]
+    },
+    "job_status": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ]
+    },
+    "job_status_comment": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "locality": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "created_on": {
+      "type": "string"
+    },
+    "created_by": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "contact_number": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "id",
+        "first_name",
+        "last_name",
+        "email",
+        "contact_number",
+        "avatar"
+      ]
+    },
+    "updated_on": {
+      "type": "string"
+    },
+    "updated_by": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "contact_number": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "id",
+        "first_name",
+        "last_name",
+        "email",
+        "contact_number",
+        "avatar"
+      ]
+    },
+    "owner": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "contact_number": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "id",
+        "first_name",
+        "last_name",
+        "email",
+        "contact_number",
+        "avatar"
+      ]
+    },
+    "enable_job_application_form": {
+      "type": "integer"
+    },
+    "job_posting_status": {
+      "type": "integer"
+    },
+    "job_code": {
+      "type": "null"
+    },
+    "show_company_logo": {
+      "type": "integer"
+    },
+    "specialization": {
+      "type": "string"
+    },
+    "qualification_id": {
+      "type": "integer"
+    },
+    "currency_id": {
+      "type": "integer"
+    },
+    "job_description_text": {
+      "type": "string"
+    },
+    "job_description_file": {
+      "type": "string"
+    },
+    "job_questions": {
+      "type": "array",
+      "items": {}
+    },
+    "custom_fields": {
+      "type": "array",
+      "items": {}
+    },
+    "resource_url": {
+      "type": "string"
+    },
+    "application_form_url": {
+      "type": "string"
+    },
+    "shared_job_image": {
+      "type": "string"
+    },
+    "job_skill": {
+      "type": "string"
+    },
+    "job_type": {
+      "type": "string"
+    },
+    "job_category": {
+      "type": "string"
+    },
+    "hiring_pipeline_id": {
+      "type": "integer"
+    },
+    "collaborator_users": {
+      "type": "array",
+      "items": {}
+    },
+    "collaborator_teams": {
+      "type": "array",
+      "items": {}
+    },
+    "company": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "industry_id": {
+          "type": "integer"
+        },
+        "company_name": {
+          "type": "string"
+        },
+        "about_company": {
+          "type": "null"
+        },
+        "logo": {
+          "type": "null"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "created_on": {
+          "type": "string"
+        },
+        "updated_on": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "city": {
+          "type": "null"
+        },
+        "address": {
+          "type": "null"
+        },
+        "facebook": {
+          "type": "string"
+        },
+        "twitter": {
+          "type": "string"
+        },
+        "linkedin": {
+          "type": "string"
+        },
+        "custom_fields": {
+          "type": "array",
+          "items": {}
+        },
+        "created_by": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "contact_number": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "first_name",
+            "last_name",
+            "email",
+            "contact_number",
+            "avatar"
+          ]
+        },
+        "updated_by": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "contact_number": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "first_name",
+            "last_name",
+            "email",
+            "contact_number",
+            "avatar"
+          ]
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "contact_number": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "first_name",
+            "last_name",
+            "email",
+            "contact_number",
+            "avatar"
+          ]
+        },
+        "resource_url": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "object",
+          "properties": {
+            "industry_id": {
+              "type": "integer"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "industry_id",
+            "label"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "industry_id",
+        "company_name",
+        "about_company",
+        "logo",
+        "slug",
+        "created_on",
+        "updated_on",
+        "website",
+        "city",
+        "address",
+        "facebook",
+        "twitter",
+        "linkedin",
+        "custom_fields",
+        "created_by",
+        "updated_by",
+        "owner",
+        "resource_url",
+        "industry"
+      ]
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "contact_number": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "null"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "company_slug": {
+          "type": "string"
+        },
+        "additional_company_slugs": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "facebook": {
+          "type": "string"
+        },
+        "twitter": {
+          "type": "string"
+        },
+        "linkedin": {
+          "type": "string"
+        },
+        "xing": {
+          "type": "string"
+        },
+        "created_on": {
+          "type": "string"
+        },
+        "updated_on": {
+          "type": "string"
+        },
+        "city": {
+          "type": "null"
+        },
+        "locality": {
+          "type": "null"
+        },
+        "address": {
+          "type": "null"
+        },
+        "designation": {
+          "type": "null"
+        },
+        "stage_id": {
+          "type": "integer"
+        },
+        "custom_fields": {
+          "type": "array",
+          "items": {}
+        },
+        "created_by": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "contact_number": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "first_name",
+            "last_name",
+            "email",
+            "contact_number",
+            "avatar"
+          ]
+        },
+        "updated_by": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "contact_number": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "first_name",
+            "last_name",
+            "email",
+            "contact_number",
+            "avatar"
+          ]
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "contact_number": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "first_name",
+            "last_name",
+            "email",
+            "contact_number",
+            "avatar"
+          ]
+        },
+        "resource_url": {
+          "type": "string"
+        },
+        "is_email_opted_out": {
+          "type": "string"
+        },
+        "email_opt_out_source": {
+          "type": "null"
+        },
+        "stage": {
+          "type": "object",
+          "properties": {
+            "stage_id": {
+              "type": "integer"
+            },
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "stage_id",
+            "label"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "first_name",
+        "last_name",
+        "email",
+        "contact_number",
+        "avatar",
+        "slug",
+        "company_slug",
+        "additional_company_slugs",
+        "facebook",
+        "twitter",
+        "linkedin",
+        "xing",
+        "created_on",
+        "updated_on",
+        "city",
+        "locality",
+        "address",
+        "designation",
+        "stage_id",
+        "custom_fields",
+        "created_by",
+        "updated_by",
+        "owner",
+        "resource_url",
+        "is_email_opted_out",
+        "email_opt_out_source",
+        "stage"
+      ]
+    },
+    "secondary_contacts": {
+      "type": "array",
+      "items": {}
+    },
+    "currency": {
+      "type": "object",
+      "properties": {
+        "currency_id": {
+          "type": "integer"
+        },
+        "code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "currency_id",
+        "code",
+        "country",
+        "currency",
+        "symbol"
+      ]
+    },
+    "qualification": {
+      "type": "object",
+      "properties": {
+        "qualification_id": {
+          "type": "integer"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "qualification_id",
+        "label"
+      ]
+    },
+    "xml_feeds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "label"
+        ]
+      }
+    }
+  },
+  "postal_code": {
+    "type": "string"
+  },
+  "calculate_charge_by": {
+    "type": ["integer", "null"]
+  },
+  "margin_percentage": {
+    "type": ["number", "null"]
+  },
+  "markup_percentage": {
+    "type": ["number", "null"]
+  },
+  "required": [
+    "id",
+    "slug",
+    "name",
+    "company_slug",
+    "contact_slug",
+    "secondary_contact_slugs",
+    "note_for_candidates",
+    "number_of_openings",
+    "minimum_experience",
+    "maximum_experience",
+    "min_annual_salary",
+    "max_annual_salary",
+    "salary_type",
+    "job_status",
+    "job_status_comment",
+    "latitude",
+    "longitude",
+    "city",
+    "locality",
+    "state",
+    "country",
+    "address",
+    "created_on",
+    "created_by",
+    "updated_on",
+    "updated_by",
+    "owner",
+    "enable_job_application_form",
+    "job_posting_status",
+    "job_code",
+    "show_company_logo",
+    "specialization",
+    "qualification_id",
+    "currency_id",
+    "job_description_text",
+    "job_description_file",
+    "job_questions",
+    "custom_fields",
+    "resource_url",
+    "application_form_url",
+    "shared_job_image",
+    "job_skill",
+    "job_type",
+    "job_category",
+    "hiring_pipeline_id",
+    "collaborator_users",
+    "collaborator_teams",
+    "company",
+    "contact",
+    "secondary_contacts",
+    "currency",
+    "qualification",
+    "xml_feeds",
+    "postal_code"
+  ]
+}

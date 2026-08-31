@@ -1,0 +1,37 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"campaign_name": {
+			"type": "string"
+		},
+		"job_id": {
+			"type": "integer"
+		},
+		"campaign_data": {
+			"type": "string"
+		},
+		"account_id": {
+			"type": "integer"
+		},
+		"created_on": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"created_by": {
+			"type": "integer"
+		}
+	},
+	"required": [
+		"id",
+		"campaign_name",
+		"job_id",
+		"campaign_data",
+		"account_id",
+		"created_on",
+		"created_by"
+	]
+}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multiple Time Entry Test Suite" thread-count="15" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<!-- Single Rule - Multiple Time Entry Weekly Calculations -->
+	<test name="Multiple_Time_Entry_Single_Rule_Weekly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.weeklyCalculations.testClass.SingleRuleTest">
+				<methods>
+					<include name="verifySingleRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Double Rule - Multiple Time Entry Weekly Calculations -->
+	<test name="Multiple_Time_Entry_Double_Rule_Weekly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.weeklyCalculations.testClass.DoubleRuleTest">
+				<methods>
+					<include name="verifyDoubleRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Three Rule - Multiple Time Entry Weekly Calculations -->
+	<test name="Multiple_Time_Entry_Three_Rule_Weekly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.weeklyCalculations.testClass.ThreeRuleTest">
+				<methods>
+					<include name="verifyThreeRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Four Rule - Multiple Time Entry Weekly Calculations -->
+	<test name="Multiple_Time_Entry_Four_Rule_Weekly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.weeklyCalculations.testClass.FourRuleTest">
+				<methods>
+					<include name="verifyFourRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Five Rule - Multiple Time Entry Weekly Calculations -->
+	<test name="Multiple_Time_Entry_Five_Rule_Weekly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.weeklyCalculations.testClass.FiveRuleTest">
+				<methods>
+					<include name="verifyFiveRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- No Rule - Multiple Time Entry Weekly Calculations -->
+	<test name="Multiple_Time_Entry_No_Rule_Weekly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.weeklyCalculations.testClass.NoRuleTest">
+				<methods>
+					<include name="verifyNoRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+    <!-- Biweekly Rule - Multiple Time Entry Biweekly Calculations -->
+    <test name="Multiple_Time_Entry_BiWeekly_Calculation">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.biweeklyCalculations.BiweeklyCalculationsTest">
+                <methods>
+                    <include name="verifyBiweeklyCalculations" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Monthly Rule - Multiple Time Entry Monthly Calculations -->
+    <test name="Multiple_Time_Entry_Monthly_Calculation">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.monthlyCalculations.MonthlyCalculationsTest">
+                <methods>
+                    <include name="verifyMonthlyCalculations" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+	<!-- unallocated hrs default pay test -->
+	<test name=" unallocated hrs default pay test ">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.UnallocatedHoursCalculations.UnallocatedHoursTest">
+				<methods>
+					<include name="verifyUnallocatedHoursCalculationTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

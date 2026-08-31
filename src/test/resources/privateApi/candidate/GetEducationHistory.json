@@ -1,0 +1,219 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer"
+            }
+          },
+          "required": ["context", "code"]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "candidateId": {
+                  "type": "integer"
+                },
+                "instituteName": {
+                  "type": "string"
+                },
+                "educationalQualification": {
+                  "type": "string"
+                },
+                "educationalSpecialization": {
+                  "type": "string"
+                },
+                "grade": {
+                  "type": "string"
+                },
+                "educationLocation": {
+                  "type": "string"
+                },
+                "educationStartDate": {
+                  "type": "integer"
+                },
+                "educationEndDate": {
+                  "type": "integer"
+                },
+                "educationDescription": {
+                  "type": "string"
+                },
+                "candidateSlug": {
+                  "type": "string"
+                },
+                "isManuallyAdded": {
+                  "type": "boolean"
+                },
+                "createdBy": {
+                  "type": "integer"
+                },
+                "updatedBy": {
+                  "type": "integer"
+                },
+                "createdOn": {
+                  "type": "integer"
+                },
+                "updatedOn": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "candidateId",
+                "instituteName",
+                "educationalQualification",
+                "educationalSpecialization",
+                "grade",
+                "educationLocation",
+                "educationStartDate",
+                "educationEndDate",
+                "educationDescription",
+                "candidateSlug",
+                "isManuallyAdded",
+                "createdBy",
+                "updatedBy",
+                "createdOn",
+                "updatedOn"
+              ]
+            }
+          ]
+        },
+        "pageable": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer"
+            },
+            "pageSize": {
+              "type": "integer"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {
+                "empty": {
+                  "type": "boolean"
+                },
+                "sorted": {
+                  "type": "boolean"
+                },
+                "unsorted": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["empty", "sorted", "unsorted"]
+            },
+            "offset": {
+              "type": "integer"
+            },
+            "paged": {
+              "type": "boolean"
+            },
+            "unpaged": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "pageNumber",
+            "pageSize",
+            "sort",
+            "offset",
+            "paged",
+            "unpaged"
+          ]
+        },
+        "totalElements": {
+          "type": "integer"
+        },
+        "totalPages": {
+          "type": "integer"
+        },
+        "last": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "number": {
+          "type": "integer"
+        },
+        "sort": {
+          "type": "object",
+          "properties": {
+            "empty": {
+              "type": "boolean"
+            },
+            "sorted": {
+              "type": "boolean"
+            },
+            "unsorted": {
+              "type": "boolean"
+            }
+          },
+          "required": ["empty", "sorted", "unsorted"]
+        },
+        "numberOfElements": {
+          "type": "integer"
+        },
+        "first": {
+          "type": "boolean"
+        },
+        "empty": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "content",
+        "pageable",
+        "totalElements",
+        "totalPages",
+        "last",
+        "size",
+        "number",
+        "sort",
+        "numberOfElements",
+        "first",
+        "empty"
+      ]
+    }
+  },
+  "required": ["meta", "data"]
+}

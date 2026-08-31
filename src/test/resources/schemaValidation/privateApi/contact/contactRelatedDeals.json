@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"],
+      "properties": {
+        "message": { "type": "string", "enum": ["Related deals fetched successfully"] },
+        "requestUuid": { "type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" },
+        "responseType": {
+          "type": "object",
+          "required": ["context", "code"],
+          "properties": {
+            "context": { "type": "string", "enum": ["Request is successful"] },
+            "code": { "type": "integer", "enum": [103] }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": { "type": "string", "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$" },
+        "status": { "type": "integer", "enum": [200] }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "object",
+      "required": ["deals"],
+      "properties": {
+        "deals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "dealvalue", "dealstagelabel", "slug"],
+            "properties": {
+              "id": { "type": "integer" },
+              "accountid": { "type": "integer" },
+              "srno": { "type": "integer" },
+              "name": { "type": "string" },
+              "dealstage": { "type": "integer" },
+              "dealstagelabel": { "type": "string" },
+              "dealvalue": { "type": "number" },
+              "dealpercentagevalue": { "type": "number" },
+              "closedate": { "type": "integer" },
+              "companyname": { "type": ["string", "null"] },
+              "companyslug": { "type": ["string", "null"] },
+              "ownername": { "type": "string" },
+              "archived": { "type": "integer" },
+              "relatedcandidate": { "type": ["integer", "null"] },
+              "relatedcompany": { "type": ["integer", "null"] },
+              "slug": { "type": "string" },
+              "candidatename": { "type": ["string", "null"] },
+              "candidateslug": { "type": ["string", "null"] },
+              "contactnumber": { "type": ["string", "null"] },
+              "emailid": { "type": ["string", "null"] },
+              "profilepic": { "type": ["string", "null"] },
+              "deal_owner_status": { "type": "integer" },
+              "dealtype": { "type": "integer" },
+              "split_type": { "type": "integer" },
+              "position": { "type": ["string", "null"] },
+              "createdby": { "type": "integer" },
+              "createdon": { "type": "integer" },
+              "updatedby": { "type": "integer" },
+              "updatedon": { "type": "integer" },
+              "migration_reserved1": { "type": ["string", "null"] },
+              "migration_reserved2": { "type": ["string", "null"] },
+              "migration_reserved3": { "type": ["string", "null"] },
+              "migration_reserved4": { "type": ["string", "null"] },
+              "migration_reserved5": { "type": ["string", "null"] },
+              "symbol": { "type": ["string", "null"] },
+              "email_opt_out": { "type": ["string", "null"] },
+              "ownerid": { "type": "integer" },
+              "percentage": { "type": "string" },
+              "related_job": { "type": ["integer", "string", "null"] },
+              "sourceid": { "type": ["integer", "null"] },
+              "owner_photo": { "type": ["string", "null"] }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

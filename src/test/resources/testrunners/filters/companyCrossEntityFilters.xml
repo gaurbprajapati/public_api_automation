@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Company Cross Entity Filter Search" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    
+    <!-- Text Field Cross Entity Filters -->
+    <test name="Text Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TextFieldCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="textFieldCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Number Field Cross Entity Filters -->
+    <test name="Number Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.NumberFieldCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="numberFieldCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Date Field Cross Entity Filters -->
+    <test name="Date Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.DateFieldCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="dateFieldCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Custom Field Cross Entity Filters -->
+    <test name="Entity Custom Field Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="entityCustomFieldCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Text Custom Field Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="textCustomFieldCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Number Custom Field Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="numberCustomFieldCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Date Custom Field Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="dateCustomFieldCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Dropdown And Multiselect Custom Field Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="dropdownAndMultiselectCustomFieldCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Contact Stage Cross Entity Filters -->
+    <test name="Contact Stage Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactStageCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactStageCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Contact Off Limit Status Cross Entity Filters -->
+    <test name="Contact Off Limit Status Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactOffLimitStatusCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactOffLimitStatusCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Contact Last Comms Type Cross Entity Filters -->
+    <test name="Contact Last Comms Type Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactLastCommsTypeCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactLastCommsTypeCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Contact Hotlist Cross Entity Filters -->
+    <test name="Contact Hotlist Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactHotlistCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactHotlistCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Contact Dropdown Fields Cross Entity Filters -->
+    <test name="Contact Owner Dropdown Fields Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactDropdownFieldsCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactOwnerDropdownFieldsCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Contact CreatedBy Dropdown Fields Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactDropdownFieldsCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactCreatedByDropdownFieldsCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Contact UpdatedBy Dropdown Fields Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactDropdownFieldsCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactUpdatedByDropdownFieldsCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

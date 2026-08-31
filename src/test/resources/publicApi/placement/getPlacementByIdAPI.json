@@ -1,0 +1,68 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Get placement by id API response",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"archived": {
+			"type": "integer"
+		},
+		"company_slug": {
+			"type": "string"
+		},
+		"candidate_slug": {
+			"type": "string"
+		},
+		"job_slug": {
+			"type": "string"
+		},
+		"contact_slugs": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"deal_slugs": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"custom_fields": {
+			"type": "array",
+			"items": {}
+		},
+		"currency_id": {
+			"type": "integer"
+		},
+		"created_on": {
+			"type": "string"
+		},
+		"updated_on": {
+			"type": "string"
+		},
+		"created_by": {
+			"type": "integer"
+		},
+		"updated_by": {
+			"type": "integer"
+		}
+	},
+	"required": [
+		"id",
+		"archived",
+		"company_slug",
+		"candidate_slug",
+		"job_slug",
+		"contact_slugs",
+		"deal_slugs",
+		"custom_fields",
+		"currency_id",
+		"created_on",
+		"updated_on",
+		"created_by",
+		"updated_by"
+	]
+}

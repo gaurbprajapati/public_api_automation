@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "context",
+            "code"
+          ]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "entityName": {
+            "type": "string"
+          },
+          "shared": {
+            "type": "integer"
+          },
+          "userId": {
+            "type": "integer"
+          },
+          "accountId": {
+            "type": "integer"
+          },
+          "createdOn": {
+            "type": "integer"
+          },
+          "updatedOn": {
+            "type": "integer"
+          },
+          "updatedBy": {
+            "type": "integer"
+          },
+          "userName": {
+            "type": ["string", "null"]
+          },
+          "count": {
+            "type": "integer"
+          },
+          "isPinned": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "entityName",
+          "shared",
+          "userId",
+          "accountId",
+          "createdOn",
+          "updatedOn",
+          "updatedBy",
+          "count",
+          "isPinned"
+        ]
+      }
+    }
+  },
+  "required": [
+    "meta",
+    "data"
+  ]
+}

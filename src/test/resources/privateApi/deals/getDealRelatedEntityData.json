@@ -1,0 +1,161 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "companies": {
+          "type": "object",
+          "patternProperties": {
+            "^[0-9]+$": {
+              "type": "object",
+              "properties": {
+                "dealid": {
+                  "type": "integer"
+                },
+                "companynames": {
+                  "type": "string"
+                },
+                "companyslugs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "dealid",
+                "companynames",
+                "companyslugs"
+              ]
+            }
+          }
+        },
+        "contacts": {
+          "type": "object",
+          "patternProperties": {
+            "^[0-9]+$": {
+              "type": "object",
+              "properties": {
+                "dealid": {
+                  "type": "integer"
+                },
+                "contactnames": {
+                  "type": "string"
+                },
+                "contactslugs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "dealid",
+                "contactnames",
+                "contactslugs"
+              ]
+            }
+          }
+        },
+        "candidates": {
+          "type": "object",
+          "patternProperties": {
+            "^[0-9]+$": {
+              "type": "object",
+              "properties": {
+                "dealid": {
+                  "type": "integer"
+                },
+                "candidatenames": {
+                  "type": "string"
+                },
+                "candidateslugs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "dealid",
+                "candidatenames",
+                "candidateslugs"
+              ]
+            }
+          }
+        },
+        "jobs": {
+          "type": "object",
+          "patternProperties": {
+            "^[0-9]+$": {
+              "type": "object",
+              "properties": {
+                "dealid": {
+                  "type": "integer"
+                },
+                "jobnames": {
+                  "type": "string"
+                },
+                "jobslugs": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "dealid",
+                "jobnames",
+                "jobslugs"
+              ]
+            }
+          }
+        }
+      },
+      "required": [
+        "companies",
+        "contacts",
+        "candidates",
+        "jobs"
+      ]
+    },
+    "user": {
+      "type": "string"
+    },
+    "notifications": {
+      "type": "array",
+      "items": {}
+    },
+    "status": {
+      "type": "string"
+    },
+    "application_version": {
+      "type": "string"
+    },
+    "recaptcha_site_key": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "number"
+    },
+    "end_time": {
+      "type": "number"
+    },
+    "time_to_output": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "user",
+    "notifications",
+    "status",
+    "application_version",
+    "recaptcha_site_key",
+    "start_time",
+    "end_time",
+    "time_to_output"
+  ]
+}

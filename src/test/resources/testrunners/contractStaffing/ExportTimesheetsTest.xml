@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contract Staffing Export Timesheets Suite" thread-count="10" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<!-- Shift-based (range / shift logging) export -->
+	<test name="Export_Timesheets_Shift_Based">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportTimesheetsFieldsTest">
+				<methods>
+					<include name="exportTimesheetsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Validate_Timesheet_Export_Fields_Shift_12Hour_Base">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportTimesheetsFieldsTest">
+				<methods>
+					<include name="exportTimesheets12HourBaseTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Hour-based export -->
+	<test name="Validate_Timesheet_Export_Fields_Hour_Based">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.exportTimeSheets.ExportTimeSheetsHourBaseTest">
+				<methods>
+					<include name="exportTimesheetsHourBaseTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Pay/Bill currency export fields (Timesheet Export currency enhancement) -->
+	<test name="Export_Timesheets_Currency_Fields_Shift_Based">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportTimesheetCurrencyFieldsTest">
+				<methods>
+					<include name="verifyExportIncludesPayAndBillCurrencyColumnsExcelTest" />
+					<include name="verifyExportIncludesPayAndBillCurrencyColumnsCsvTest" />
+					<include name="verifyExportWithOnlyPayCurrencyFieldTest" />
+					<include name="verifyExportWithOnlyBillCurrencyFieldTest" />
+					<include name="verifyExportWithoutCurrencyFieldsExcludesColumnsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Export_TimeSheets_Currency_Fields_Hour_Based">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.hourBasedTimeSheets.exportTimeSheets.ExportTimeSheetCurrencyFieldsTest">
+				<methods>
+					<include name="verifyExportIncludesPayAndBillCurrencyColumnsExcelTest" />
+					<include name="verifyExportIncludesPayAndBillCurrencyColumnsCsvTest" />
+					<include name="verifyExportWithOnlyPayCurrencyFieldTest" />
+					<include name="verifyExportWithOnlyBillCurrencyFieldTest" />
+					<include name="verifyExportWithoutCurrencyFieldsExcludesColumnsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Entity columns API (used for export configuration) -->
+	<test name="Get_Entity_Columns_Timesheets_For_Export">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportEntityColumnsTest">
+				<methods>
+					<include name="getTimesheetsEntityColumnsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get_Entity_Columns_Candidates_For_Export_Timesheets">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportEntityColumnsTest">
+				<methods>
+					<include name="getCandidateEntityColumnsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get_Entity_Columns_Timesheet_Deal_Currency_Columns">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportEntityColumnsTest">
+				<methods>
+					<include name="verifyTimesheetDealEntityColumnsIncludePayAndBillCurrencyTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

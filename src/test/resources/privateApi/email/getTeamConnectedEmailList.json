@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["message", "status", "team_emails"],
+  "properties": {
+    "message": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "team_emails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "emailsettingid", "senderemail", "lastemailsyncon", "lastemailreceivedon",
+          "lastemailsenton", "emailconnectedon", "isemailsyncing", "emailsettingtype",
+          "user_id", "hide_mails", "linked_email_type", "is_default", "user_name", "photo"
+        ],
+        "properties": {
+          "emailsettingid": { "type": "integer" },
+          "senderemail": { "type": "string", "format": "email" },
+          "lastemailsyncon": { "type": ["integer", "null"] },
+          "lastemailreceivedon": { "type": ["integer", "null"] },
+          "lastemailsenton": { "type": ["integer", "null"] },
+          "emailconnectedon": { "type": "integer" },
+          "isemailsyncing": { "type": "string" },
+          "emailsettingtype": { "type": "string" },
+          "user_id": { "type": "integer" },
+          "hide_mails": { "type": "integer" },
+          "linked_email_type": { "type": "integer" },
+          "is_default": { "type": "integer" },
+          "user_name": { "type": "string" },
+          "photo": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

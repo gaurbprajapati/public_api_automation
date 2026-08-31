@@ -1,0 +1,274 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "type": "object",
+        "properties": {
+          "message": { "type": "string" },
+          "requestUuid": { "type": "string" },
+          "responseType": {
+            "type": "object",
+            "properties": {
+              "context": { "type": "string" },
+              "code": { "type": "integer" }
+            },
+            "required": ["context", "code"]
+          },
+          "timestamp": { "type": "string" },
+          "status": { "type": "integer" }
+        },
+        "required": [
+          "message",
+          "requestUuid",
+          "responseType",
+          "timestamp",
+          "status"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "srno": { "type": "integer" },
+          "companyId": { "type": "integer" },
+          "candidateId": { "type": "integer" },
+          "jobId": { "type": "integer" },
+          "currencyId": { "type": "integer" },
+          "archived": { "type": "boolean" },
+          "accountId": { "type": "integer" },
+          "createdBy": { "type": "integer" },
+          "createdOn": { "type": "integer" },
+          "updatedBy": { "type": "integer" },
+          "createdAt": { "type": ["string", "null"] },
+          "updatedAt": { "type": ["string", "null"] },
+          "companyName": { "type": "string" },
+          "companySlug": { "type": "string" },
+          "companyLogo": { "type": ["string", "null"] },
+          "candidateName": { "type": "string" },
+          "candidateLogo": { "type": ["string", "null"] },
+          "candidateSlug": { "type": "string" },
+          "jobName": { "type": "string" },
+          "jobSlug": { "type": "string" },
+          "createdByName": { "type": "string" },
+          "createdByPhoto": { "type": ["string", "null"] },
+          "createdByStatus": { "type": "integer" },
+          "updatedByName": { "type": "string" },
+          "currencyName": { "type": "string" },
+          "currencySymbol": { "type": "string" },
+          "currencyCode": { "type": "string" },
+          "custcolumn1": { "type": ["string", "null"] },
+          "associations": {
+            "type": "array",
+            "items": [
+              {
+                "type": "object",
+                "properties": {
+                  "candidates": { "type": "null" },
+                  "companies": { "type": "null" },
+                  "contacts": {
+                    "type": "array",
+                    "items": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "offLimitStatusId": { "type": ["integer", "null"] },
+                          "offLimitReason": { "type": ["string", "null"] },
+                          "offLimitEndDate": { "type": ["string", "null"] },
+                          "offLimitStartDate": { "type": ["string", "null"] },
+                          "statusLabel": { "type": ["string", "null"] },
+                          "backgroundColorHex": { "type": ["string", "null"] },
+                          "textColorHex": { "type": ["string", "null"] },
+                          "markedByName": { "type": ["string", "null"] },
+                          "name": { "type": "string" },
+                          "title": { "type": ["string", "null"] },
+                          "phoneNumber": { "type": "string" },
+                          "email": { "type": "string" },
+                          "profilePic": { "type": ["string", "null"] },
+                          "initial": { "type": "string" },
+                          "slug": { "type": "string" },
+                          "serialNumber": { "type": "integer" },
+                          "contactId": { "type": "integer" },
+                          "companyName": { "type": "string" }
+                        },
+                        "required": [
+                          "offLimitStatusId",
+                          "offLimitReason",
+                          "offLimitEndDate",
+                          "offLimitStartDate",
+                          "statusLabel",
+                          "backgroundColorHex",
+                          "textColorHex",
+                          "markedByName",
+                          "name",
+                          "title",
+                          "phoneNumber",
+                          "email",
+                          "profilePic",
+                          "initial",
+                          "slug",
+                          "serialNumber",
+                          "contactId",
+                          "companyName"
+                        ]
+                      }
+                    ]
+                  },
+                  "jobs": { "type": "null" },
+                  "deals": { "type": "array", "items": {} }
+                },
+                "required": ["candidates", "companies", "contacts", "jobs", "deals"]
+              }
+            ]
+          },
+          "associationsIds": { "type": "null" },
+          "candidate": {
+            "type": "object",
+            "properties": {
+              "offLimitStatusId": { "type": ["integer", "null"] },
+              "offLimitReason": { "type": ["string", "null"] },
+              "offLimitEndDate": { "type": ["string", "null"] },
+              "offLimitStartDate": { "type": ["string", "null"] },
+              "statusLabel": { "type": ["string", "null"] },
+              "backgroundColorHex": { "type": ["string", "null"] },
+              "textColorHex": { "type": ["string", "null"] },
+              "markedByName": { "type": ["string", "null"] },
+              "name": { "type": "string" },
+              "currentOrgName": { "type": ["string", "null"] },
+              "title": { "type": ["string", "null"] },
+              "initial": { "type": "string" },
+              "email": { "type": "string" },
+              "photo": { "type": ["string", "null"] },
+              "slug": { "type": "string" },
+              "serialNumber": { "type": "integer" },
+              "candidateId": { "type": "integer" }
+            },
+            "required": [
+              "offLimitStatusId",
+              "offLimitReason",
+              "offLimitEndDate",
+              "offLimitStartDate",
+              "statusLabel",
+              "backgroundColorHex",
+              "textColorHex",
+              "markedByName",
+              "name",
+              "currentOrgName",
+              "title",
+              "initial",
+              "email",
+              "photo",
+              "slug",
+              "serialNumber",
+              "candidateId"
+            ]
+          },
+          "company": {
+            "type": "object",
+            "properties": {
+              "offLimitStatusId": { "type": ["integer", "null"] },
+              "offLimitReason": { "type": ["string", "null"] },
+              "offLimitEndDate": { "type": ["string", "null"] },
+              "offLimitStartDate": { "type": ["string", "null"] },
+              "statusLabel": { "type": ["string", "null"] },
+              "backgroundColorHex": { "type": ["string", "null"] },
+              "textColorHex": { "type": ["string", "null"] },
+              "markedByName": { "type": ["string", "null"] },
+              "name": { "type": "string" },
+              "website": { "type": ["string", "null"] },
+              "profilePic": { "type": ["string", "null"] },
+              "companyCity": { "type": ["string", "null"] },
+              "industryType": { "type": ["string", "null"] },
+              "initial": { "type": "string" },
+              "slug": { "type": "string" },
+              "serialNumber": { "type": "integer" },
+              "companyId": { "type": "integer" }
+            },
+            "required": [
+              "offLimitStatusId",
+              "offLimitReason",
+              "offLimitEndDate",
+              "offLimitStartDate",
+              "statusLabel",
+              "backgroundColorHex",
+              "textColorHex",
+              "markedByName",
+              "name",
+              "website",
+              "profilePic",
+              "companyCity",
+              "industryType",
+              "initial",
+              "slug",
+              "serialNumber",
+              "companyId"
+            ]
+          },
+          "job": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "initial": { "type": "string" },
+              "status": { "type": "string" },
+              "companyName": { "type": "string" },
+              "slug": { "type": "string" },
+              "serialNumber": { "type": "integer" },
+              "jobId": { "type": "integer" },
+              "jobCity": { "type": ["string", "null"] }
+            },
+            "required": [
+              "name",
+              "initial",
+              "status",
+              "companyName",
+              "slug",
+              "serialNumber",
+              "jobId",
+              "jobCity"
+            ]
+          },
+          "deals": { "type": "null" },
+          "contacts": { "type": "null" }
+        },
+        "required": [
+          "id",
+          "srno",
+          "companyId",
+          "candidateId",
+          "jobId",
+          "currencyId",
+          "archived",
+          "accountId",
+          "createdBy",
+          "createdOn",
+          "updatedBy",
+          "createdAt",
+          "updatedAt",
+          "companyName",
+          "companySlug",
+          "companyLogo",
+          "candidateName",
+          "candidateLogo",
+          "candidateSlug",
+          "jobName",
+          "jobSlug",
+          "createdByName",
+          "createdByPhoto",
+          "createdByStatus",
+          "updatedByName",
+          "currencyName",
+          "currencySymbol",
+          "currencyCode",
+          "custcolumn1",
+          "associations",
+          "associationsIds",
+          "candidate",
+          "company",
+          "job",
+          "deals",
+          "contacts"
+        ]
+      }
+    },
+    "required": ["meta", "data"]
+  }  

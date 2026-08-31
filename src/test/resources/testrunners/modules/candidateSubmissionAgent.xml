@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- Owner - Saastar - AI Candidate Submission Agent Feature -->
+<suite name="Rest API Test Suite" verbose="1" parallel="tests"
+	thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<test name="Get Submission Settings - Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifyGetSubmissionSettings_HappyPath" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Submission Settings - Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifyGetSubmissionSettings_ResponseStructure" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Submission Settings - Default Response Fields">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifyGetSubmissionSettings_DefaultResponseFields" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Submission Settings - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifyGetSubmissionSettings_InvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Submission Settings - Wrong Http Method">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifyGetSubmissionSettings_WrongHttpMethod" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Submission Settings - Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifySaveSubmissionSettings_HappyPath" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Submission Settings - With Logos Disabled">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifySaveSubmissionSettings_WithLogosDisabled" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Submission Settings - With Custom Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifySaveSubmissionSettings_WithCustomPrompt" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Submission Settings - Save And Retrieve">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifySaveSubmissionSettings_VerifySaveAndRetrieve" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Submission Settings - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifySaveSubmissionSettings_InvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Submission Settings - Empty Body">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifySaveSubmissionSettings_EmptyBody" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Submission Settings - Null Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifySaveSubmissionSettings_NullPrompt" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Submission Settings - Invalid Logo Values">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifySaveSubmissionSettings_InvalidLogoValues" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Submission Settings - GET Method Not Allowed">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionAgentSettingsTest">
+				<methods>
+					<include name="verifySaveSubmissionSettings_GetMethodNotAllowed" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Generate Email - Neptune ai-candidate-submission ===== -->
+
+	<test name="Generate Submission Email - Generate Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_GenerateMode_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Generate Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_GenerateMode_ResponseStructure" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Multiple Candidates">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_GenerateMode_MultipleCandidates" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Single Candidate">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_GenerateMode_SingleCandidate" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Custom Columns">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_GenerateMode_WithCustomColumns" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Logo Settings Analytics">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_GenerateMode_WithLogoFlagsFromSettings" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Preview Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_PreviewMode_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Preview Custom Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_PreviewMode_WithCustomPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Preview Missing Prompt">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_PreviewMode_MissingInstructionPrompt" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_InvalidToken" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Invalid Mode">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_InvalidMode" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Missing Job Id">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_MissingJobId" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Invalid Job Id">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_InvalidJobId" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Job With No Assigned Candidates">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_JobWithNoAssignedCandidates" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Empty Candidate Ids Fallback">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_EmptyCandidateIdsFallsBackToAllAssigned" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Submission Email - Invalid Candidate Ids Fallback">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.CandidateSubmissionGenerateEmailTest">
+				<methods><include name="verifyGenerateSubmissionEmail_InvalidCandidateIdsFallsBackToAllAssigned" /></methods>
+			</class>
+		</classes>
+	</test>
+</suite>

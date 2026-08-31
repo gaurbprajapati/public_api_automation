@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contract Staffing Filters" thread-count="10" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+    </listeners>
+
+    <!-- All Timesheet Page Filters -->
+    <test name="Timesheet Status Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.statusFilter.TimesheetStatusFilterTest">
+                <methods>
+                    <include name="timesheetStatusFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Company Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.companyNameFilter.TimesheetCompanyNameFilterTest">
+                <methods>
+                    <include name="timesheetCompanyNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Company Search Entity Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.searchEntity.TimesheetCompanySearchEntityTest">
+                <methods>
+                    <include name="timesheetCompanySearchEntityTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Job Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.jobNameFilter.TimesheetJobNameFilterTest">
+                <methods>
+                    <include name="timesheetJobNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Job Search Entity Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.searchEntity.TimesheetJobSearchEntityTest">
+                <methods>
+                    <include name="timesheetJobSearchEntityTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Deal Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.dealNameFilter.TimesheetDealNameFilterTest">
+                <methods>
+                    <include name="timesheetDealNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Deal Search Entity Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.searchEntity.TimesheetDealSearchEntityTest">
+                <methods>
+                    <include name="timesheetDealSearchEntityTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Timesheet Period Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allTimesheetPage.timesheetPeriodFilter.TimesheetPeriodFilterTest">
+                <methods>
+                    <include name="timesheetPeriodFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- All Contractor Page Filters -->
+    <test name="Contractor Status Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allContractorPage.statusFilter.ContractorStatusFilterTest">
+                <methods>
+                    <include name="contractorStatusFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contractor Job Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allContractorPage.jobNameFilter.ContractorJobNameFilterTest">
+                <methods>
+                    <include name="contractorJobNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contractor Deal Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allContractorPage.dealNameFilter.ContractorDealNameFilterTest">
+                <methods>
+                    <include name="contractorDealNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

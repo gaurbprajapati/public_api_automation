@@ -1,0 +1,202 @@
+{
+  "Contact Off Limit Status": [
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is",
+      "filterValue": "{Unavailable}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Unavailable off-limit status",
+      "expectedResult": "Company1,Company2,Company9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is",
+      "filterValue": "{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Contractual Off-Limits off-limit status",
+      "expectedResult": "Company3,Company5"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is",
+      "filterValue": "{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Existing Customer off-limit status",
+      "expectedResult": "Company4,Company6"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is_not",
+      "filterValue": "{Unavailable}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Unavailable off-limit status",
+      "expectedResult": "Company3,Company4,Company5,Company6,Company8,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is_not",
+      "filterValue": "{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Contractual Off-Limits off-limit status",
+      "expectedResult": "Company1,Company2,Company4,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is_not",
+      "filterValue": "{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Existing Customer off-limit status",
+      "expectedResult": "Company1,Company2,Company3,Company5,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Unavailable}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Unavailable off-limit status",
+      "expectedResult": "Company1,Company2,Company9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Contractual Off-Limits off-limit status",
+      "expectedResult": "Company3,Company5"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Existing Customer off-limit status",
+      "expectedResult": "Company4,Company6"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Unavailable},{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Unavailable or Contractual Off-Limits off-limit status",
+      "expectedResult": "Company1,Company2,Company3,Company5,Company9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Unavailable},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Unavailable or Existing Customer off-limit status",
+      "expectedResult": "Company1,Company2,Company4,Company6,Company9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Contractual Off-Limits},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Contractual Off-Limits or Existing Customer off-limit status",
+      "expectedResult": "Company3,Company4,Company5,Company6"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Unavailable},{Contractual Off-Limits},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - any off-limit status value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company9"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Unavailable}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Unavailable off-limit status",
+      "expectedResult": "Company3,Company4,Company5,Company6,Company8,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Contractual Off-Limits off-limit status",
+      "expectedResult": "Company1,Company2,Company4,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Existing Customer off-limit status",
+      "expectedResult": "Company1,Company2,Company3,Company5,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Unavailable},{Contractual Off-Limits}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Unavailable or Contractual Off-Limits off-limit status",
+      "expectedResult": "Company4,Company6,Company8,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Unavailable},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Unavailable or Existing Customer off-limit status",
+      "expectedResult": "Company3,Company5,Company8,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Contractual Off-Limits},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Contractual Off-Limits or Existing Customer off-limit status",
+      "expectedResult": "Company1,Company2,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{Unavailable},{Contractual Off-Limits},{Existing Customer}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude any off-limit status value",
+      "expectedResult": "Company8,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - off-limit status field is empty",
+      "expectedResult": "Company8,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "off_limit_status_id",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - off-limit status field has any value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company9"
+    }
+  ]
+}

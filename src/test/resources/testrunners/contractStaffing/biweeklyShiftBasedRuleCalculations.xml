@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Biweekly Shift Based Rule Calculations" thread-count="5" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<test name="Multiple_Time_Entry_BiWeekly_Calculation">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.biweeklyCalculations.BiweeklyCalculationsTest">
+				<methods>
+					<include name="verifyBiweeklyCalculations" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

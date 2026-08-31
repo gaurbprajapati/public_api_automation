@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "activity_id": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "collaborator_user_ids": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "collaborator_team_ids": {
+                  "type": "null"
+                },
+                "notetaskappointment_id": {
+                  "type": "integer"
+                },
+                "entity_owner_id": {
+                  "type": "integer"
+                },
+                "related_to_pic": {
+                  "type": "string"
+                },
+                "associations": {
+                  "type": "string"
+                },
+                "relatedto": {
+                  "type": "string"
+                },
+                "relatedtotypeid": {
+                  "type": "integer"
+                },
+                "relatedtoname": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "integer"
+                },
+                "enddate": {
+                  "type": "null"
+                },
+                "startdate": {
+                  "type": "integer"
+                },
+                "reminderdate": {
+                  "type": "integer"
+                },
+                "creatorname": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "null"
+                },
+                "allday": {
+                  "type": "integer"
+                },
+                "ownerid": {
+                  "type": "integer"
+                },
+                "accountid": {
+                  "type": "integer"
+                },
+                "createdby": {
+                  "type": "integer"
+                },
+                "createdon": {
+                  "type": "integer"
+                },
+                "updatedby": {
+                  "type": "integer"
+                },
+                "updatedon": {
+                  "type": "integer"
+                },
+                "eventid": {
+                  "type": "string"
+                },
+                "relatedtocompany": {
+                  "type": "null"
+                },
+                "emailbatchid": {
+                  "type": "null"
+                },
+                "mentionedusers": {
+                  "type": "null"
+                },
+                "reminder": {
+                  "type": "integer"
+                },
+                "htmllink": {
+                  "type": "string"
+                },
+                "deleted": {
+                  "type": "integer"
+                },
+                "calendarid": {
+                  "type": "null"
+                },
+                "pin": {
+                  "type": "integer"
+                },
+                "notetype": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "activity_id",
+                "collaborator_user_ids",
+                "collaborator_team_ids",
+                "notetaskappointment_id",
+                "entity_owner_id",
+                "related_to_pic",
+                "associations",
+                "relatedto",
+                "relatedtotypeid",
+                "relatedtoname",
+                "description",
+                "title",
+                "status",
+                "type",
+                "enddate",
+                "startdate",
+                "reminderdate",
+                "creatorname",
+                "address",
+                "allday",
+                "ownerid",
+                "accountid",
+                "createdby",
+                "createdon",
+                "updatedby",
+                "updatedon",
+                "eventid",
+                "relatedtocompany",
+                "emailbatchid",
+                "mentionedusers",
+                "reminder",
+                "htmllink",
+                "deleted",
+                "calendarid",
+                "pin",
+                "notetype"
+              ]
+            }
+          ]
+        },
+        "filtered_count": {
+          "type": "integer"
+        },
+        "total_count": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "records",
+        "filtered_count",
+        "total_count"
+      ]
+    },
+    "notifications": {
+      "type": "array",
+      "items": {}
+    },
+    "status": {
+      "type": "string"
+    },
+    "application_version": {
+      "type": "string"
+    },
+    "recaptcha_site_key": {
+      "type": "null"
+    },
+    "start_time": {
+      "type": "number"
+    },
+    "end_time": {
+      "type": "number"
+    },
+    "time_to_output": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "notifications",
+    "status",
+    "application_version",
+    "recaptcha_site_key",
+    "start_time",
+    "end_time",
+    "time_to_output"
+  ]
+}

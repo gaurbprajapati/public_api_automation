@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Placement unsupported search error response",
+	"type": "object",
+	"properties": {
+		"error": {
+			"type": "boolean",
+			"enum": [
+				true
+			]
+		},
+		"errorCode": {
+			"type": "integer",
+			"enum": [
+				400
+			]
+		},
+		"errorMessage": {
+			"type": "string",
+			"enum": [
+				"UNSUPPORTED_SEARCH"
+			]
+		}
+	},
+	"required": [
+		"error",
+		"errorCode",
+		"errorMessage"
+	],
+	"additionalProperties": false
+}

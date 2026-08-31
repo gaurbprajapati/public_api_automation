@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="companyServiceListPage" thread-count="10" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener"/>
+    </listeners>
+
+    <!-- Company List Bulk Action Customisation Tests -->
+    <test name="Get Company Bulk Action User View - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getCompanyBulkActionUserView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Bulk Action User View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getCompanyBulkActionUserView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Bulk Action User View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getCompanyBulkActionUserView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Bulk Action Account View - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getCompanyBulkActionAccountView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Bulk Action Account View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getCompanyBulkActionAccountView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Bulk Action Account View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getCompanyBulkActionAccountView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Company Bulk Action User View - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateCompanyBulkActionUserView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Company Bulk Action User View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateCompanyBulkActionUserView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Company Bulk Action User View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateCompanyBulkActionUserView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Company Bulk Action User View - Restricted For Locked User">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateCompanyBulkActionUserView_RestrictedForLockedUser" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Company Bulk Action Account View - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateCompanyBulkActionAccountView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Company Bulk Action Account View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateCompanyBulkActionAccountView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Company Bulk Action Account View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateCompanyBulkActionAccountView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Other User Cannot Update Account View">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CompanyListBulkActionCustomisationTest">
+                <methods>
+                    <include name="verifyOtherUserCannotUpdateAccountView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Hotlist Pinned Tests -->
+    <test name="Cross Account Hotlist Pinned Operations">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountPostHotlistPinnedTest">
+                <methods>
+                    <include name="crossAccountHotlistPinnedOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Saved Search Pinned Tests -->
+    <test name="Cross Account Saved Search Pinned Operations">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.CrossAccountPostSavedSearchPinnedTest">
+                <methods>
+                    <include name="crossAccountSavedSearchPinnedOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Get Company Hotlist Count Tests -->
+    <test name="Get Company Hotlist Count - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistCountTest">
+                <methods>
+                    <include name="getCompanyHotlistCountTest_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Hotlist Count - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistCountTest">
+                <methods>
+                    <include name="getCompanyHotlistCountTest_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Hotlist Count - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistCountTest">
+                <methods>
+                    <include name="getCompanyHotlistCountTest_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Hotlist Count - Data Provider">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistCountTest">
+                <methods>
+                    <include name="getCompanyHotlistCountTest_DataProvider" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Get Company Hotlist Tests -->
+    <test name="Get Company Hotlist - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistTest">
+                <methods>
+                    <include name="getCompanyHotlist_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Hotlist - Sort By Name">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistTest">
+                <methods>
+                    <include name="verifyCompanyHotlist_sortByName" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Hotlist - Sort By Created On">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistTest">
+                <methods>
+                    <include name="verifyCompanyHotlist_sortByCreatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Hotlist - Sort By Updated On">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistTest">
+                <methods>
+                    <include name="verifyCompanyHotlist_sortByUpdatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Hotlist - Filters">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistTest">
+                <methods>
+                    <include name="verifyCompanyHotlistFilters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Hotlist - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistTest">
+                <methods>
+                    <include name="getCompanyHotlist_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Company Hotlist - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyHotlistTest">
+                <methods>
+                    <include name="getCompanyHotlist_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Company List Page Entity Columns Tests -->
+    <test name="Company List Page Entity Columns - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyListPageEntityColumnsTest">
+                <methods>
+                    <include name="getCompanyEntityColumnsTest_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company List Page Entity Columns - Verify Custom Fields">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyListPageEntityColumnsTest">
+                <methods>
+                    <include name="getCompanyEntityColumnsVerifyCustomFields_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company List Page Entity Columns - Verify Column Properties">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyListPageEntityColumnsTest">
+                <methods>
+                    <include name="getCompanyEntityColumnsVerifyColumnProperties_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company List Page Entity Columns - Verify All Default Fields">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyListPageEntityColumnsTest">
+                <methods>
+                    <include name="getCompanyEntityColumnsVerifyAllDefaultFields_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company List Page Entity Columns - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyListPageEntityColumnsTest">
+                <methods>
+                    <include name="getCompanyEntityColumnsUnauthorizedTest_401" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company List Page Entity Columns - Invalid URL">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyListPageEntityColumnsTest">
+                <methods>
+                    <include name="getCompanyEntityColumnsTest_404" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company List Page Entity Columns - Missing Entity">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyListPageEntityColumnsTest">
+                <methods>
+                    <include name="getCompanyEntityColumnsTest_400" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company List Page Entity Columns - Method Not Allowed">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyListPageEntityColumnsTest">
+                <methods>
+                    <include name="getCompanyEntityColumnsTest_405" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Company Quick View Count Tests -->
+    <test name="Company Quick View Count - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyQuickViewCountTest">
+                <methods>
+                    <include name="testCompanyQuickViewCount_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Quick View Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyQuickViewCountTest">
+                <methods>
+                    <include name="testCompanyQuickViewCount_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Quick View Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyQuickViewCountTest">
+                <methods>
+                    <include name="testCompanyQuickViewCount_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Quick View Count - All Companies Count">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyQuickViewCountTest">
+                <methods>
+                    <include name="testAllCompaniesCount_AfterCreatingCompany" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Quick View Count - My Companies Count">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyQuickViewCountTest">
+                <methods>
+                    <include name="testMyCompaniesCount_AfterOwnershipChange" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Quick View Count - Not In Any Hotlist Count">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyQuickViewCountTest">
+                <methods>
+                    <include name="testNotInAnyHotlistCount_AfterAddingToHotlist" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Quick View Count - Off Limit Companies Count">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanyQuickViewCountTest">
+                <methods>
+                    <include name="testOffLimitCompaniesCount_AfterSettingOffLimit" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Company Search Count Tests -->
+    <test name="Company Search Count - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchCountTest">
+                <methods>
+                    <include name="testCompanySearchCount_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchCountTest">
+                <methods>
+                    <include name="testCompanySearchCount_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchCountTest">
+                <methods>
+                    <include name="testCompanySearchCount_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Count - After Creating Company">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchCountTest">
+                <methods>
+                    <include name="testCompanySearchCount_AfterCreatingCompany" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Count - With Owner Filter">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchCountTest">
+                <methods>
+                    <include name="testCompanySearchCount_WithOwnerFilter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Count - With Off Limit Filter">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchCountTest">
+                <methods>
+                    <include name="testCompanySearchCount_WithOffLimitFilter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Count - With Hotlist Filter">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchCountTest">
+                <methods>
+                    <include name="testCompanySearchCount_WithHotlistFilter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Company Search Get Tests -->
+    <test name="Company Search Get - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Get - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Get - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Get - After Creating Company">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_AfterCreatingCompany" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Get - With Owner Filter">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_WithOwnerFilter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Get - With Off Limit Filter">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_WithOffLimitFilter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search Get - With Hotlist Filter">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_WithHotlistFilter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Saved Search Count Tests -->
+    <test name="Get Saved Search Count - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Saved Search Count - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Saved Search Count - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Saved Search Count - Data Provider">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_DataProvider" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Saved Searches List Tests -->
+    <test name="Saved Searches - Basic Validation and Schema">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="getCompanySavedSearch_success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Sort By Name">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchList_sortByName" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Sort By Created On">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchList_sortByCreatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Sort By Updated On">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchList_sortByUpdatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Pinned State">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_isPinnedReflectsPinUnpin" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Share Visibility">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_ShareWithTeammates_Visibility" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Collaborators">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_Collaborators_UserIdsListed" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Comprehensive Field Validation">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_ComprehensiveFieldValidation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Missing Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_MissingQueryParameters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Invalid Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_InvalidQueryParameters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Filters">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.GetSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchesFilters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Post Company Search Tests -->
+    <test name="Company Search - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Workflow">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_Workflow" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_EmptyRequestBody" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Invalid Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_InvalidQueryParameters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Missing Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_MissingQueryParameters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Comprehensive Data Validation">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="testCompanySearch_ComprehensiveDataValidation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Sort By Text Fields">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="searchCompany_SortByTextField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Sort By Numeric Fields">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="searchCompany_SortByNumericField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Sort By Date Fields">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="searchCompany_SortByDateField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Sort By Custom Text Fields">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="searchCompany_SortByCustomTextField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Sort By Custom Numeric Fields">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="searchCompany_SortByCustomNumericField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Company Search - Sort By Custom Date Fields">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostCompanySearchTest">
+                <methods>
+                    <include name="searchCompany_SortByCustomDateField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Hotlist Pinned/Unpinned Tests -->
+    <test name="Hotlist Pin - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin Unpin - Workflow">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPinUnpin_Workflow" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Invalid Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_InvalidHotlistId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Invalid Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_InvalidHotlistId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Missing Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_MissingHotlistId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Missing Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_MissingHotlistId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Saved Search Pinned/Unpinned Tests -->
+    <test name="Saved Search Pin - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Success">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin Unpin - Workflow">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPinUnpin_Workflow" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Invalid Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_InvalidSavedSearchId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Invalid Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_InvalidSavedSearchId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Missing Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_MissingSavedSearchId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Missing Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_MissingSavedSearchId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

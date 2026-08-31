@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "primary": {
+      "type": "string",
+      "description": "Primary contact number of the candidate"
+    },
+    "custom": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of custom contact numbers"
+    },
+    "historical": {
+      "type": "array", 
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of historical contact numbers"
+    }
+  },
+  "required": [
+    "primary",
+    "custom", 
+    "historical"
+  ]
+}

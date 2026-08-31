@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "statusCode": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "answer_id": {
+              "type": "integer"
+            },
+            "answer": {
+              "type": "string"
+            },
+            "question_id": {
+              "type": "integer"
+            },
+            "question": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "answer_id",
+            "answer",
+            "question_id",
+            "question"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "success",
+    "statusCode",
+    "message",
+    "data"
+  ]
+}

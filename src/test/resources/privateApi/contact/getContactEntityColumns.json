@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Contact Entity Columns Response Schema",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "context",
+            "code"
+          ]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "columns": {
+            "type": "object",
+            "patternProperties": {
+              "^[a-zA-Z0-9_]+$": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": ["string", "null"]
+                  },
+                  "longlabel": {
+                    "type": ["string", "null"]
+                  },
+                  "entity": {
+                    "type": "string"
+                  },
+                  "field": {
+                    "type": "string"
+                  },
+                  "pseudo": {
+                    "type": "boolean"
+                  },
+                  "systemcolumn": {
+                    "type": "boolean"
+                  },
+                  "dbtype": {
+                    "type": ["string", "null"]
+                  },
+                  "dblength": {
+                    "type": ["number", "null"]
+                  },
+                  "external_label": {
+                    "type": ["string", "null"]
+                  },
+                  "order": {
+                    "type": "number"
+                  },
+                  "sortable": {
+                    "type": "boolean"
+                  },
+                  "visible": {
+                    "type": "boolean"
+                  },
+                  "detailPageVisible": {
+                    "type": ["boolean", "null"]
+                  },
+                  "visible_locked": {
+                    "type": "boolean"
+                  },
+                  "is_bulk_editable": {
+                    "type": "boolean"
+                  },
+                  "service": {
+                    "type": ["string", "null"]
+                  },
+                  "filter_type": {
+                    "type": ["string", "null"]
+                  },
+                  "filter_size": {
+                    "type": ["number", "null"]
+                  },
+                  "filter_type_locked": {
+                    "type": "boolean"
+                  },
+                  "filter_value": {
+                    "type": ["string", "null"]
+                  },
+                  "filter_value_second": {
+                    "type": ["string", "null"]
+                  },
+                  "allow_on_import": {
+                    "type": ["boolean", "null"]
+                  },
+                  "allow_on_export": {
+                    "type": ["boolean", "null"]
+                  },
+                  "disable_on_export": {
+                    "type": ["boolean", "null"]
+                  },
+                  "allow_on_apply": {
+                    "type": ["boolean", "null"]
+                  },
+                  "allow_on_profile_update": {
+                    "type": ["boolean", "null"]
+                  },
+                  "allow_on_talent_pool": {
+                    "type": ["boolean", "null"]
+                  },
+                  "visible_on_form": {
+                    "type": ["boolean", "null"]
+                  },
+                  "show_on_extension": {
+                    "type": ["boolean", "null"]
+                  },
+                  "required_on_form": {
+                    "type": ["boolean", "null"]
+                  },
+                  "required_on_import": {
+                    "type": ["boolean", "null"]
+                  },
+                  "required_on_apply": {
+                    "type": ["boolean", "null"]
+                  },
+                  "required_on_profile_update": {
+                    "type": ["boolean", "null"]
+                  },
+                  "required_on_talent_pool": {
+                    "type": ["boolean", "null"]
+                  },
+                  "hide_on_detail_page": {
+                    "type": ["boolean", "null"]
+                  },
+                  "type": {
+                    "type": ["string", "null"]
+                  },
+                  "default_value": {
+                    "type": ["string", "null"]
+                  },
+                  "data": {
+                    "type": ["array", "null"]
+                  },
+                  "dropdown_value": {
+                    "type": ["string", "null"]
+                  },
+                  "dropdown_field": {
+                    "type": ["string", "null"]
+                  },
+                  "detailPageOrder": {
+                    "type": "number"
+                  },
+                  "detailPageOrderV2": {
+                    "type": "number"
+                  },
+                  "listPageOrder": {
+                    "type": "number"
+                  },
+                  "primaryOrder": {
+                    "type": ["number", "null"]
+                  },
+                  "placeid": {
+                    "type": ["string", "null"]
+                  },
+                  "display_column": {
+                    "type": ["string", "null"]
+                  },
+                  "colId": {
+                    "type": ["string", "null"]
+                  },
+                  "width": {
+                    "type": ["number", "null"]
+                  },
+                  "pinned": {
+                    "type": ["boolean", "null"]
+                  },
+                  "sort": {
+                    "type": ["string", "null"]
+                  },
+                  "sortIndex": {
+                    "type": ["number", "null"]
+                  },
+                  "section": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "visible": {
+                        "type": "boolean"
+                      },
+                      "order": {
+                        "type": "number"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "isCustom": {
+                        "type": ["boolean", "null"]
+                      }
+                    }
+                  },
+                  "unit": {
+                    "type": ["string", "null"]
+                  },
+                  "custom_field_id": {
+                    "type": ["number", "null"]
+                  }
+                },
+                "required": [
+                  "entity",
+                  "field",
+                  "pseudo",
+                  "systemcolumn",
+                  "order",
+                  "sortable",
+                  "visible",
+                  "visible_locked",
+                  "is_bulk_editable",
+                  "filter_type_locked",
+                  "detailPageOrder",
+                  "detailPageOrderV2",
+                  "listPageOrder"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "columns"
+        ]
+      }
+    }
+  },
+  "required": [
+    "meta",
+    "data"
+  ]
+}
+

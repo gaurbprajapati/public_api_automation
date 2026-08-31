@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Company Off-Limit Status Not Found Response Schema",
+  "type": "object",
+  "required": ["timestamp", "status", "error", "path"],
+  "properties": {
+    "timestamp": {
+      "type": "string"
+    },
+    "status": {
+      "type": "integer",
+      "enum": [404]
+    },
+    "error": {
+      "type": "string",
+      "enum": ["Not Found"]
+    },
+    "path": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

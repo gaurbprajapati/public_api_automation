@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- Owner - Saastar - AI Resume Parser Feature -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<test name="Parse Resume - Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.ParseResumeTest">
+				<methods>
+					<include name="verifyParseResumeEndpoint" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Resume - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.ParseResumeTest">
+				<methods>
+					<include name="verifyParseResumeWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Resume - GET Method Not Allowed">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.ParseResumeTest">
+				<methods>
+					<include name="verifyParseResumeWithGetMethod" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Resume - Missing Action Steps">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.ParseResumeTest">
+				<methods>
+					<include name="verifyParseResumeWithMissingActionSteps" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Resume - Empty Body">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.ParseResumeTest">
+				<methods>
+					<include name="verifyParseResumeWithEmptyBody" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Resume - Missing Files Info">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.ParseResumeTest">
+				<methods>
+					<include name="verifyParseResumeWithMissingFilesInfo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Resume - Invalid Key Format">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.ParseResumeTest">
+				<methods>
+					<include name="verifyParseResumeWithInvalidKeyFormat" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Resume - Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.ParseResumeTest">
+				<methods>
+					<include name="verifyParseResumeResponseStructure" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

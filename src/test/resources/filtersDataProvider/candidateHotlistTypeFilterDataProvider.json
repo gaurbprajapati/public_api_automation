@@ -1,0 +1,654 @@
+{
+    "Hotlist": [
+        {
+            "testCaseId": "HOTLIST-CAND-001",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1",
+            "description": "Is filter with single value - exact match for hotlist1 only"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-002",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate4",
+            "description": "Is filter with multiple values - exact match for hotlist1,hotlist2 combination"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-003",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate2,Candidate15",
+            "description": "Is filter with single value - exact match for hotlist2 only"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-004",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate3",
+            "description": "Is filter with single value - exact match for hotlist3 only"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-005",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate7",
+            "description": "Is filter with multiple values - exact match for hotlist1,hotlist3 combination"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-006",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate6",
+            "description": "Is filter with multiple values - exact match for hotlist2,hotlist3 combination"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-007",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate5,Candidate9",
+            "description": "Is filter with all three values - exact match for hotlist1,hotlist2,hotlist3 combination"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-008",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist4 only - empty hotlist should return no candidates"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-009",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist1 and hotlist4 combination - should return empty since no candidate has both"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-010",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist2 and hotlist4 combination - should return empty since no candidate has both"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-011",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist3 and hotlist4 combination - should return empty since no candidate has both"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-012",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist1, hotlist2, and hotlist4 combination - should return empty since no candidate has all three"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-013",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist1, hotlist3, and hotlist4 combination - should return empty since no candidate has all three"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-014",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist2, hotlist3, and hotlist4 combination - should return empty since no candidate has all three"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-015",
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with all four hotlists combination - should return empty since no candidate has all four hotlists"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-016",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate2,Candidate3,Candidate4,Candidate5,Candidate6,Candidate7,Candidate9,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Is Not filter with single value - excludes candidates with exact match hotlist1 only"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-017",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate5,Candidate6,Candidate7,Candidate9,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Is Not filter with multiple values - excludes candidates with exact match hotlist1,hotlist2 combination"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-018",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate4,Candidate5,Candidate6,Candidate7,Candidate9,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Is Not filter with single value - excludes candidates with exact match hotlist3 only"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-019",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate3,Candidate4,Candidate5,Candidate6,Candidate7,Candidate9,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Is Not filter with single value - excludes candidates with exact match hotlist2 only"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-020",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate4,Candidate5,Candidate6,Candidate9,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Is Not filter with multiple values - excludes candidates with exact match hotlist1,hotlist3 combination"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-021",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate4,Candidate5,Candidate7,Candidate9,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Is Not filter with multiple values - excludes candidates with exact match hotlist2,hotlist3 combination"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-022",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate4,Candidate6,Candidate7,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Is Not filter with all three values - excludes candidates with exact match hotlist1,hotlist2,hotlist3 combination"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-023",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist4 - all candidates should be returned since no candidate has hotlist4"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-024",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist1 and hotlist4 combination - all candidates should be returned"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-025",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist2 and hotlist4 combination - all candidates should be returned"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-026",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist3 and hotlist4 combination - all candidates should be returned"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-027",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist1, hotlist2, and hotlist4 combination - all candidates should be returned"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-028",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist1, hotlist3, and hotlist4 combination - all candidates should be returned"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-029",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist2, hotlist3, and hotlist4 combination - all candidates should be returned"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-030",
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with all four hotlists combination - all candidates should be returned"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-031",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate4,Candidate5,Candidate7,Candidate9",
+            "description": "Contains filter with single value - candidates that have hotlist1 (may have other hotlists too)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-032",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate4,Candidate5,Candidate9",
+            "description": "Contains filter with multiple values - candidates that have both hotlist1 and hotlist2 (may have additional hotlists)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-033",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate5,Candidate6,Candidate9",
+            "description": "Contains filter with multiple values - candidates that have both hotlist2 and hotlist3"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-034",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate2,Candidate4,Candidate5,Candidate6,Candidate9,Candidate15",
+            "description": "Contains filter with single value - candidates that have hotlist2"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-035",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate3,Candidate5,Candidate6,Candidate7,Candidate9",
+            "description": "Contains filter with single value - candidates that have hotlist3 (may have other hotlists too)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-036",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate5,Candidate7,Candidate9",
+            "description": "Contains filter with multiple values - candidates that have both hotlist1 and hotlist3 (may have additional hotlists)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-037",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate5,Candidate9",
+            "description": "Contains filter with all three values - candidates that have all three hotlists (hotlist1, hotlist2, and hotlist3)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-038",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist4 - empty hotlist should return no candidates"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-039",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist1 and hotlist4 - should return empty since no candidate has both"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-040",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist2 and hotlist4 - should return empty since no candidate has both"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-041",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist3 and hotlist4 - should return empty since no candidate has both"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-042",
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist1, hotlist2, and hotlist4 - should return empty since no candidate has all three"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-043",
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate4,Candidate5,Candidate6,Candidate7,Candidate9,Candidate15",
+            "description": "Contains at Least One filter - candidates that have at least one of hotlist1 or hotlist2"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-044",
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate3,Candidate4,Candidate5,Candidate6,Candidate7,Candidate9",
+            "description": "Contains at Least One filter - candidates that have at least one of hotlist1 or hotlist3"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-045",
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate2,Candidate3,Candidate4,Candidate5,Candidate6,Candidate7,Candidate9,Candidate15",
+            "description": "Contains at Least One filter - candidates that have at least one of hotlist2 or hotlist3"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-046",
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate4,Candidate5,Candidate6,Candidate7,Candidate9,Candidate15",
+            "description": "Contains at Least One filter - candidates that have at least one of hotlist1, hotlist2, or hotlist3"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-047",
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate4,Candidate5,Candidate7,Candidate9",
+            "description": "Contains at Least One filter with hotlist1 and hotlist4 - returns candidates with hotlist1 (hotlist4 has no candidates)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-048",
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate2,Candidate4,Candidate5,Candidate6,Candidate9,Candidate15",
+            "description": "Contains at Least One filter with hotlist2 and hotlist4 - returns candidates with hotlist2 (hotlist4 has no candidates)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-049",
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate3,Candidate5,Candidate6,Candidate7,Candidate9",
+            "description": "Contains at Least One filter with hotlist3 and hotlist4 - returns candidates with hotlist3 (hotlist4 has no candidates)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-050",
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate4,Candidate5,Candidate6,Candidate7,Candidate9,Candidate15",
+            "description": "Contains at Least One filter with all four hotlists - returns candidates with any of hotlist1, hotlist2, or hotlist3 (hotlist4 has no candidates)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-051",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate2,Candidate3,Candidate6,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Does Not Contain filter with single value - excludes candidates that have hotlist1 anywhere"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-052",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate6,Candidate7,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Does Not Contain filter with multiple values - excludes candidates that have both hotlist1 and hotlist2 together"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-053",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate3,Candidate7,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Does Not Contain filter with single value - excludes candidates that have hotlist2 anywhere"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-054",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate4,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Does Not Contain filter with single value - excludes candidates that have hotlist3 anywhere"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-055",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate4,Candidate6,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Does Not Contain filter with multiple values - excludes candidates that have both hotlist1 and hotlist3 together"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-056",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate4,Candidate7,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Does Not Contain filter with multiple values - excludes candidates that have both hotlist2 and hotlist3 together"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-057",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate4,Candidate6,Candidate7,Candidate15,Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Does Not Contain filter with all three values - excludes candidates that have all three hotlists together"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-058",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist4 - all candidates should be returned since no candidate has hotlist4"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-059",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist1 and hotlist4 - excludes candidates that have both hotlist1 and hotlist4 together (since hotlist4 has no candidates, no candidate can have both, so all are included)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-060",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist2 and hotlist4 - excludes candidates that have both hotlist2 and hotlist4 together (since hotlist4 has no candidates, no candidate can have both, so all are included)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-061",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist3 and hotlist4 - excludes candidates that have both hotlist3 and hotlist4 together (since hotlist4 has no candidates, no candidate can have both, so all are included)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-062",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist1, hotlist2, and hotlist4 - excludes candidates that have all three hotlist1, hotlist2, and hotlist4 together (since hotlist4 has no candidates, no candidate can have all three together, so all are included)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-063",
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with all four hotlists - excludes candidates that have all four hotlist1, hotlist2, hotlist3, and hotlist4 together (since hotlist4 has no candidates, no candidate can have all four together, so all are included)"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-064",
+            "dbField": "hotlistid",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate8,Candidate10,Candidate11,Candidate12,Candidate13,Candidate14",
+            "description": "Is Empty filter - candidates with no hotlist assigned"
+        },
+        {
+            "testCaseId": "HOTLIST-CAND-065",
+            "dbField": "hotlistid",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Candidate1,Candidate2,Candidate3,Candidate4,Candidate5,Candidate6,Candidate7,Candidate9,Candidate15",
+            "description": "Has Any Value filter - candidates with at least one hotlist assigned"
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UpdateAssociationResponse",
+  "type": "object",
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "status",
+    "action_name",
+    "actionid",
+    "intercom"
+  ],
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": ["is-success", "is-danger"]
+    },
+    "data": {
+      "type": "array"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "fail"]
+    },
+    "action_name": {
+      "type": "string"
+    },
+    "actionid": {
+      "type": "integer"
+    },
+    "intercom": {
+      "type": "string"
+    }
+  }
+}

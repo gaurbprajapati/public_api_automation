@@ -1,0 +1,289 @@
+{
+    "Created By": [
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{owner}}",
+            "fieldType": "text",
+            "desciption": "Owner is the user who created the saved search",
+            "expectedResult": "All saved searches created by the owner"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{admin}}",
+            "fieldType": "text",
+            "desciption": "Admin is the user who created the saved search",
+            "expectedResult": "All saved searches created by the admin"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{teamMember}}",
+            "fieldType": "text",
+            "desciption": "Team member is the user who created the saved search",
+            "expectedResult": "All saved searches created by the team member"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{restrictedTeamMember}}",
+            "fieldType": "text",
+            "desciption": "Restricted team member is the user who created the saved search",
+            "expectedResult": "All saved searches created by the restricted team member"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{owner}},{{admin}}",
+            "fieldType": "text",
+            "desciption": "Owner or admin created the saved search",
+            "expectedResult": "All saved searches created by the owner or admin"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{owner}},{{admin}},{{teamMember}}",
+            "fieldType": "text",
+            "desciption": "Owner, admin or team member created the saved search",
+            "expectedResult": "All saved searches created by the owner, admin or team member"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{owner}},{{admin}},{{teamMember}},{{restrictedTeamMember}}",
+            "fieldType": "text",
+            "desciption": "Owner, admin, team member or restricted team member created the saved search",
+            "expectedResult": "All saved searches created by the owner, admin, team member or restricted team member"
+        }
+    ],
+    "Created On": [
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "today",
+            "fieldType": "date",
+            "desciption": "Created on today",
+            "expectedResult": "All saved searches created on today"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "yesterday",
+            "fieldType": "date",
+            "desciption": "Created on yesterday",
+            "expectedResult": "All saved searches created on yesterday"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "this_week",
+            "fieldType": "date",
+            "desciption": "Created on this week",
+            "expectedResult": "All saved searches created on this week"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_week",
+            "fieldType": "date",
+            "desciption": "Created on last week",
+            "expectedResult": "All saved searches created on last week"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "this_month",
+            "fieldType": "date",
+            "desciption": "Created on this month",
+            "expectedResult": "All saved searches created on this month"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_month",
+            "fieldType": "date",
+            "desciption": "Created on last month",
+            "expectedResult": "All saved searches created on last month"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "this_quarter",
+            "fieldType": "date",
+            "desciption": "Created on this quarter",
+            "expectedResult": "All saved searches created on this quarter"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_quarter",
+            "fieldType": "date",
+            "desciption": "Created on last quarter",
+            "expectedResult": "All saved searches created on last quarter"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "this_year",
+            "fieldType": "date",
+            "desciption": "Created on this year",
+            "expectedResult": "All saved searches created on this year"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_year",
+            "fieldType": "date",
+            "desciption": "Created on last year",
+            "expectedResult": "All saved searches created on last year"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_30",
+            "fieldType": "date",
+            "desciption": "Created on last 30 days",
+            "expectedResult": "All saved searches created on last 30 days"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_60",
+            "fieldType": "date",
+            "desciption": "Created on last 60 days",
+            "expectedResult": "All saved searches created on last 60 days"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_90",
+            "fieldType": "date",
+            "desciption": "Created on last 90 days",
+            "expectedResult": "All saved searches created on last 90 days"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_365",
+            "fieldType": "date",
+            "desciption": "Created on last 365 days",
+            "expectedResult": "All saved searches created on last 365 days"
+        }
+    ],
+    "Updated On": [
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "today",
+            "fieldType": "date",
+            "desciption": "Updated on today",
+            "expectedResult": "All saved searches updated on today"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "yesterday",
+            "fieldType": "date",
+            "desciption": "Updated on yesterday",
+            "expectedResult": "All saved searches updated on yesterday"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "this_week",
+            "fieldType": "date",
+            "desciption": "Updated on this week",
+            "expectedResult": "All saved searches updated on this week"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_week",
+            "fieldType": "date",
+            "desciption": "Updated on last week",
+            "expectedResult": "All saved searches updated on last week"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "this_month",
+            "fieldType": "date",
+            "desciption": "Updated on this month",
+            "expectedResult": "All saved searches updated on this month"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_month",
+            "fieldType": "date",
+            "desciption": "Updated on last month",
+            "expectedResult": "All saved searches updated on last month"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "this_quarter",
+            "fieldType": "date",
+            "desciption": "Updated on this quarter",
+            "expectedResult": "All saved searches updated on this quarter"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_quarter",
+            "fieldType": "date",
+            "desciption": "Updated on last quarter",
+            "expectedResult": "All saved searches updated on last quarter"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "this_year",
+            "fieldType": "date",
+            "desciption": "Updated on this year",
+            "expectedResult": "All saved searches updated on this year"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_year",
+            "fieldType": "date",
+            "desciption": "Updated on last year",
+            "expectedResult": "All saved searches updated on last year"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_30",
+            "fieldType": "date",
+            "desciption": "Updated on last 30 days",
+            "expectedResult": "All saved searches updated on last 30 days"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_60",
+            "fieldType": "date",
+            "desciption": "Updated on last 60 days",
+            "expectedResult": "All saved searches updated on last 60 days"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_90",
+            "fieldType": "date",
+            "desciption": "Updated on last 90 days",
+            "expectedResult": "All saved searches updated on last 90 days"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_365",
+            "fieldType": "date",
+            "desciption": "Updated on last 365 days",
+            "expectedResult": "All saved searches updated on last 365 days"
+        }
+    ]
+}
+

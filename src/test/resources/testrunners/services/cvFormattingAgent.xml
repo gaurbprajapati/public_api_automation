@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="CV Formatting Agent" verbose="1" parallel="false" thread-count="5">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener"/>
+    </listeners>
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<test name="Albatross admin CV formatting settings and Neptune generate-html">
+		<classes>
+			<class name="io.recruitcrm.adminSettings.CvFormattingAgentSettingsTest" />
+			<class name="io.recruitcrm.adminSettings.CvFormattingAgentGenerateHtmlTest" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,48 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Get Invoices By Association API response",
+	"type": "object",
+	"properties": {
+		"meta": {
+			"type": "object",
+			"properties": {
+				"message": {
+					"type": "string"
+				},
+				"status": {
+					"type": "integer"
+				}
+			},
+			"required": ["message", "status"]
+		},
+		"data": {
+			"type": "object",
+			"properties": {
+				"invoices": {
+					"type": "array"
+				},
+				"page": {
+					"type": "integer"
+				},
+				"pageSize": {
+					"type": "integer"
+				},
+				"total": {
+					"type": "integer"
+				},
+				"totalPages": {
+					"type": "integer"
+				},
+				"hasNext": {
+					"type": "boolean"
+				},
+				"hasPrevious": {
+					"type": "boolean"
+				}
+			},
+			"required": ["invoices", "page", "pageSize", "total", "totalPages", "hasNext", "hasPrevious"]
+		}
+	},
+	"required": ["meta", "data"],
+	"additionalProperties": true
+}

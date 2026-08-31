@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Stripe Additional Records Renewal Test Suite" parallel="tests" thread-count="20">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener" />
+    </listeners>
+
+    <test name="Stripe Renewal Automation - 1">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForProOneSeatWithRecordAddOnInterval_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 2">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessOneSeatWithRecordAddOnInterval_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 3">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseOneSeatWithRecordAddOnInterval_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 4">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForProOneSeatWithRecordAddOnInterval_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 5">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessOneSeatWithRecordAddOnInterval_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 6">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseOneSeatWithRecordAddOnInterval_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 7">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForProOneSeatWithMultipleRecordAddonsRetainedAcrossTwoRenewals_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 8">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForProOneSeatWithMultipleRecordAddonsRetainedAcrossTwoRenewals_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 9">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessOneSeatWithMultipleRecordAddonsRetainedAcrossTwoRenewals_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 10">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessOneSeatWithMultipleRecordAddonsRetainedAcrossTwoRenewals_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 11">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseOneSeatWithMultipleRecordAddonsRetainedAcrossTwoRenewals_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 12">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseOneSeatWithMultipleRecordAddonsRetainedAcrossTwoRenewals_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 13">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForProOneSeatAddAndRemoveRecordAddonsAcrossThreeRenewals_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 14">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForProOneSeatAddAndRemoveRecordAddonsAcrossThreeRenewals_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 15">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessSeatAddAndRemoveRecordAddonsAcrossThreeRenewals_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 16">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessSeatAddAndRemoveRecordAddonsAcrossThreeRenewals_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 17">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseOneSeatAddAndRemoveRecordAddonsAcrossThreeRenewals_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 18">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseOneSeatAddAndRemoveRecordAddonsAcrossThreeRenewals_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 19">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForProAddAndRemoveRecordAddOn_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 20">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForProAddAndRemoveRecordAddOn_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 21">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessAddAndRemoveRecordAddOn_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 22">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessAddAndRemoveRecordAddOn_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 23">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseAddAndRemoveRecordAddOn_Test">
+                        <parameter name="billingInterval" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 24">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAddonRecords_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseAddAndRemoveRecordAddOn_Test">
+                        <parameter name="billingInterval" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

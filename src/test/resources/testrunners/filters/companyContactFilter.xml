@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Company Contact Filter Search" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    <test name="Contact Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

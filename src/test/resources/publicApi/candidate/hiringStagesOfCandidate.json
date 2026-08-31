@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": [
+        {
+            "type": "object",
+            "properties": {
+                "job_slug": {
+                    "type": "string"
+                },
+                "candidate_slug": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "object",
+                    "properties": {
+                        "status_id": {
+                            "type": "integer"
+                        },
+                        "label": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "status_id",
+                        "label"
+                    ]
+                },
+                "remark": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "stage_date": {
+                    "type": "string"
+                },
+                "visibility": {
+                    "type": "integer"
+                },
+                "shared_list_url": {
+                    "type": "null"
+                },
+                "updated_on": {
+                    "type": "string"
+                },
+                "updated_by": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "first_name": {
+                            "type": "string"
+                        },
+                        "last_name": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        },
+                        "contact_number": {
+                            "type": ["null","string"]
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "first_name",
+                        "last_name",
+                        "email",
+                        "contact_number"
+                    ]
+                }
+            },
+            "required": [
+                "job_slug",
+                "candidate_slug",
+                "status",
+                "remark",
+                "stage_date",
+                "visibility",
+                "shared_list_url",
+                "updated_on",
+                "updated_by"
+            ]
+        }
+    ]
+}

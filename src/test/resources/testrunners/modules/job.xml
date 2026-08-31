@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Saastar - Rahul Shibu, Sandeep Patil -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="10">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="All Job Endpoints">
+		<classes>
+			<class name="io.rcrm.api.job.AllEndPointsOfJobTest">
+				<methods>
+
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include name="createNewJob_POST" />
+					<include name="verifyValidationOfCreateNewContact" />
+					<include name="editJobBySlug_POST" />
+					<include name="showAllJobs_GET" />
+					<include name="searchJobByName_GET" />
+					<include name="searchJobBySlug_GET" />
+					<include name="deleteJobBySlug_GET" />
+					<include name="searchJobBySkill_GET"/>
+					<include name="getAssignedCandidatesForJob_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Job Endpoints">
+		<classes>
+			<class name="io.rcrm.api.job.CreateNewJobTest">
+				<methods>
+
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include name="createNewJob_POST" />
+					<include
+						name="userCanCreateNewJobWithOnlyMandatoryFieldsAndVerifyReponseBodyAndCode200" />
+					<include name="createNewJobWithInValidMandatoryFields" />
+					<include
+						name="userCannotCreateNewJobWithInValidHiringPipelineID" />
+
+					<include name="createNewJobWithEmptyRequestBody" />
+					<include
+						name="createNewJobWithInvalidJobNameCompanySlugOpenings" />
+					<include name="createNewJobWithInvalidContactSlug" />
+					<include name="createNewJobWithInvalidJobName" />
+					<include name="createNewJobWithInvalidMinimumExperience" />
+					<include name="createNewJobWithInvalidMaximumExperience" />
+					<include
+						name="VerifyErrorMessagesCreateNewJobWithInvalidSpecialization" />
+					<include
+						name="userCannotCreateNewJobWithInvalidCityFieldValueAndVerifyResponseErrorMessages" />
+					<include
+						name="VerifyInvalidValidationForLocalityField_CreateNewjob" />
+					<include
+						name="VerifyInvalidValidationForStateField_CreateNewjob" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Job delete Endpoint">
+		<classes>
+			<class name="io.rcrm.api.job.DeleteJobTest">
+				<methods>
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include
+						name="userCanCreateNewJobWithOnlyMandatoryFieldsAndVerifyReponseBodyAndCode200" />
+					<include name="deleteJobBySlug_GET" />
+					<include name="deleteJobByInvalidSlug_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Search Job By Slug  Endpoint">
+		<classes>
+			<class name="io.rcrm.api.job.SearchJobBySlugTest">
+				<methods>
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include
+						name="userCanCreateNewJobWithOnlyMandatoryFieldsAndVerifyReponseBodyAndCode200" />
+					<include name="searchJobBySlug_GET" />
+					<include name="searchJobByInvalidSlug_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Search Job By Job Fields Endpoint">
+		<classes>
+			<class name="io.rcrm.api.job.SearchJobsByFieldsTest">
+				<methods>
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include name="createNewJobAndVerifyStatusOk" />
+					<include name="searchJobByJobName_GET" />
+					<include name="searchJobByNoteForCandidate_GET" />
+					<include name="searchJobByCity_GET" />
+					<include name="searchJobByLocality_GET" />
+					<include name="searchJobByFullAddress_GET" />
+					<include name="searchJobByCountry_GET" />
+					<include name="searchJobByCompanyName_GET" />
+					<include name="searchJobByContactName_GET" />
+					<include name="searchJobByContactEmail_GET" />
+					<include name="searchJobByContactNumber_GET" />
+					<include name="searchJobByJobStatus_GET" />
+					<include name="searchJobBySlug_GET" />
+					<include name="searchJobByInvalidJobName_GET" />
+					<include name="searchJobByAllFields_GET" />
+					<include name="searchJobByJobSkill"/>
+					<include name="searchJobByCreatedFrom" />
+					<include name="searchJobByCreatedTo" />
+					<include name="searchJobByUpdatedFrom" />
+					<include name="searchJobByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Questions And Answers - Valid Response 200">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="getCandQuesAndAnswersWithValidResponse200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Questions And Answers - Invalid Response 404">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="getCandQuesAndAnswersWithInValidResponse404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Post Candidate Questions And Answers - Valid Response 200">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="postCandQuesAndAnswersWithValidResponse200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Post Candidate Questions And Answers - Invalid Response 404">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="postCandQuesAndAnswersWithInValidResponse404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Questions And Answers Associated With Job - Valid Response 200">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="getCandQuesAndAnswersAssociatedWithJobWithValidResponse200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Questions And Answers Associated With Job - Invalid Response 404">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="getCandQuesAndAnswersAssociatedWithJobWithInValidResponse404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Post Candidate Questions And Answers Associated With Job - Valid Response 200">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="postCandQuesAndAnswersAssociatedWithJobWithValidResponse200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Post Candidate Questions And Answers Associated With Job - Invalid Response 404">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="postCandQuesAndAnswersAssociatedWithJobWithValidResponse404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Job Associated Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.job.CustomFieldsAndJobAssociatedFieldsTest">
+				<methods>
+					<include name="getJobAssociatedFieldsWithValidResponse200"/>
+					<include name="getJobAssociatedFieldsWithInvalidResponse404"/>
+					<include name="getCustomFieldsWithValidResponse200"/>
+					<include name="getCustomFieldsWithInvalidResponse404"/>
+					<include name="getJobCustomFieldsWithValidResponse200"/>
+					<include name="getJobCustomFieldsWithInvalidResponse404"/>
+					<include name="updateJobAssociatedFieldsWithValidResponse200"/>
+					<include name="updateJobAssociatedFieldsWithInvalidResponse404"/> 
+					<include name="getJobAssociatedFieldsWithInvalidAuthToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Job Endpoint">
+		<classes>
+			<class name="io.rcrm.api.job.EditJobTest">
+				<methods>
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include name="createNewWithOnlyMandatoryFields" />
+					<include
+						name="userCannotEditJobWithInvalidHiringPipelineID" />
+
+					<include name="editAllFieldsOfJob_POST" />
+					<include name="editJobByInvalidJobSlug_POST" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Get External Job Team Collaborator Detail With Invalid ID">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobTeamCollaboratorDetailWithInvalidIdTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Team Collaborator Detail">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobTeamCollaboratorDetailTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Page">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobPageTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Page With Company Slug Filter">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobPageWithCompanySlugFilterTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Page With Invalid Company Slug Filter">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobPageWithCompanyInValidSlugFilterTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Page With Team ID Filter">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobPageWithTeamIDFilterTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Page With Invalid Team ID Filter">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobPageWithTeamInValidIDFilterTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Page With Invalid Account">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobPageWithInvalidAccountTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Company Detail">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobCompanyDetailTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Company Detail With Invalid Slug">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ExternalJobPageTest">
+				<methods>
+					<include name="getExternalJobCompanyDetailWithInvalidSlugTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Job Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AllEndpointJobAlbatrossTest">
+				<methods>
+					<include name="searchJob_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Job with Invalid Data Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AllEndpointJobAlbatrossTest">
+				<methods>
+					<include name="searchJobWithInvalidData_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Unauthorized User Cannot Search Job Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AllEndpointJobAlbatrossTest">
+				<methods>
+					<include name="unautorizedUserCannotSearchJob_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Check Job Merge Duplicate Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AllEndpointJobAlbatrossTest">
+				<methods>
+					<include name="checkJobMergeDuplicate_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Check Job Merge Duplicate with Invalid Job ID Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AllEndpointJobAlbatrossTest">
+				<methods>
+					<include name="checkJobMergeDuplicateWithInvalidJobId_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Unauthorized User Cannot Check Job Merge Duplicate Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AllEndpointJobAlbatrossTest">
+				<methods>
+					<include name="unautorizedUserCannotCheckJobMergeDuplicate_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Merge Job Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AllEndpointJobAlbatrossTest">
+				<methods>
+					<include name="mergeJob_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Merge Job with Empty Request Body Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AllEndpointJobAlbatrossTest">
+				<methods>
+					<include name="mergeJobWithEmptyRequestBody_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Unauthorized User Cannot Merge Job Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AllEndpointJobAlbatrossTest">
+				<methods>
+					<include name="unautorizedUserCannotMergeJob_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Jobs - Verify Custom Field in All Jobs">
+		<classes>
+			<class name="io.rcrm.api.job.CustomFieldsAndJobAssociatedFieldsTest">
+				<methods>
+					<include name="verifyCustomFieldValueInShowAllJobs_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Job - Margin and Markup">
+		<classes>
+			<class name="io.rcrm.api.job.CreateJobWithMarginMarkupTest">
+				<methods>
+					<include name="createJobInFixedRateModeTest" />
+					<include name="createJobInMarginModeTest" />
+					<include name="createJobInMarkupModeTest" />
+					<include name="createJobWithFieldsOmittedDefaultsToFixedRateTest" />
+					<include name="createJobRejectsOutOfRangeMarginOrMarkupTest" />
+					<include name="createJobRejectsInvalidCalculateChargeByEnumTest" />
+					<include name="createJobWithInvalidTokenTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Job - Margin and Markup">
+		<classes>
+			<class name="io.rcrm.api.job.EditJobWithMarginMarkupTest">
+				<methods>
+					<include name="editJobSwitchesFromFixedRateToMarginModeTest" />
+					<include name="editJobSwitchesFromMarginToMarkupModeTest" />
+					<include name="editJobRejectsOutOfRangeMarginOrMarkupTest" />
+					<include name="editNonExistentJobReturns404Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Jobs - Margin and Markup">
+		<classes>
+			<class name="io.rcrm.api.job.GetAllJobsMarginMarkupTest">
+				<methods>
+					<include name="listedJobIncludesMarginMarkupFieldsAsIntegerEnumTest" />
+					<include name="getAllJobsSchemaIncludesMarginMarkupFieldsTest" />
+					<include name="getAllJobsWithInvalidTokenTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

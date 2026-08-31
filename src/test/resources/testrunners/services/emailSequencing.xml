@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- Owner - Technostars - Harika Kurella, Priyanka Shinde -->
+<suite name="Rest API Test Suite" verbose="1" thread-count="13" parallel="tests">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="All EndPoints of Enrollments Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.emailsequence.AllEndPointsOfEnrollmentsTest">
+				<methods>
+					<include name="createEmailSequence" />
+					<include name="addEmailStepToSequence" />
+					<include name="addTaskStepToSequence" />
+					<include name="validateEnrollments" />
+					<include name="enrollToSequence" />
+					<include name="getEnrollmentsOfSequence" />
+					<include name="getPausedEnrollments" />
+					<include name="resumeEnrollment" />
+					<include name="updateStepByEnrollmentId" />
+					<include name="getEnrollmentDetails" />
+					<include name="unEnrollInSequence" />
+					<include name="unEnrollAllInSequence" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Edit Sequence Steps Endpoints Test-cases">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.AddEditSequenceStepsTest">
+				<methods>
+					<include name="updateTemplateOfEmailStep" />
+					<include name="updateTemplateOfTaskStep" />
+					<include name="updateTemplateofSmsStep" />
+					<include name="updateTemplateOfLinkedInStep" />
+					<include name="updateSettingsOfEmailStep" />
+					<include name="updateSettingsOfTaskStep" />
+					<include name="updateSettingsOfSmsStep" />
+					<include name="addEmailStepToSequenceInvalidAuth" />
+					<include name="addTaskStepToSequenceInvalidAuth" />
+					<include name="addSmsStepToSequenceInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="All EndPoints of Email Sequencing Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.emailsequence.AllEndpointsOfEmailSequencingTest">
+				<methods>
+					<include name="createEmailSequence" />
+					<include name="editEmailSequence" />
+					<include name="getEmailSequence" />
+					<include name="getEmailSequenceById" />
+					<include name="getEmailSequenceStats" />
+					<include name="addEmailStepToSequence" />
+					<include name="addTaskStepToSequence" />
+					<include name="addLinkedInStepToSequence" />
+					<include name="DeleteStepInSequence" />
+					<include name="cloneSequence" />
+					<include name="DeleteSequence" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Clone Sequence Endpoints Test-cases">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.CloneSequenceTest">
+				<methods>
+					<include name="cloneSequence" />
+					<include name="cloneSequenceWithInvalidId" />
+					<include name="cloneSequenceWithInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Sequence Endpoints Test-cases">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.CreateSequenceTest">
+				<methods>
+					<include name="createEmailSequence" />
+					<include name="createEmailSequenceInvalidAuth" />
+					<include name="createSequenceWithEmptyTitle" />
+					<include name="createSequenceWithInvalidEntity" />
+					<include name="createSequenceWithEmptySettings" />
+					<include name="createSequenceWithExistingTitle" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Sequence Endpoints Test-cases">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.DeleteSequenceTest">
+				<methods>
+					<include name="DeleteSequenceById" />
+					<include name="DeleteSequenceByIdInvalid" />
+					<include name="DeleteSequenceInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Sequence Steps Endpoints Test-cases">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.emailsequence.DeleteSequenceStepsTest">
+				<methods>
+					<include name="DeleteTaskStepInSequence" />
+					<include name="DeleteSmsStepInSequence" />
+					<include name="DeleteLinkedInStepInSequence" />
+					<include name="DeleteEmailStepInSequence" />
+					<include name="DeleteStepInvalidId" />
+					<include name="DeleteStepInvalidAuth" />
+					<include name="DeleteStep_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Edit Sequence Endpoints Test-cases">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.EditSequenceTest">
+				<methods>
+					<include name="editEmailSequence" />
+					<include name="editEmailSequenceInvalidAuth" />
+					<include name="editEmailSequenceEmptyTitle" />
+					<include name="editEmailSequenceEmptySettings" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Enroll To a Sequence EndPoints Test-cases">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.EnrollInsequenceTest">
+				<methods>
+					<include name="validateEnrollments" />
+					<include name="enrollWithInvalidStepCount" />
+					<include name="enrollToSequence" />
+					<include name="validateInvalidEnrollments" />
+					<include name="enrollInvalidDataToSequence" />
+					<include name="validateInvalidAuth" />
+					<include name="enrollInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Email Sequence Endpoints Test-cases">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.GetEmailSequenceTest">
+				<methods>
+					<include name="getEmailSequenceFromList" />
+					<include name="getEmailSequenceToEnroll" />
+					<include name="getEmailSequenceFromMySeq" />
+					<include name="getEmailSequenceBrowseAll" />
+					<include name="searchEmailSequenceByTitle" />
+					<include name="getEmailSequenceFromListInvalidAuth" />
+					<include name="getEmailSequenceToEnrollInvalidAuth" />
+					<include name="getEmailSequenceFromMySeqInvalidAuth" />
+					<include name="getEmailSequenceBrowseAllInvalidAuth" />
+					<include name="getEmailSequenceEmptyParams" />
+					<include name="getEmailSequenceById" />
+					<include name="getEmailSequenceByInvalidId" />
+					<include name="getEmailSequenceByIdString" />
+					<include name="getEmailSequenceByIdInvalidAuth" />
+					<include name="getEmailSequenceStats" />
+					<include name="getEmailSequenceMyStats" />
+					<include name="getEmailSequenceStatsInvalidId" />
+					<include name="getEmailSequenceMyStatsInvalidId" />
+					<include name="getEmailSequenceStatsInvalidAuth" />
+					<include name="getEmailSequenceMyStatsInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Get Enrollments Endpoints Test-cases">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.GetEnrollmentsTest">
+				<methods>
+					<include name="getMyEnrollments" />
+					<include name="getAllEnrollments" />
+					<include name="getEnrollmentsInvalidId" />
+					<include name="getEnrollmentsInvalidParams" />
+					<include name="getEnrollmentsInvalidAuth" />
+					<include name="getEnrollmentDetails" />
+					<include name="getEnrollmentDetailsInvalidId" />
+					<include name="getEnrollmentDetails_422" />
+					<include name="getEnrollmentDetailsInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Un-Enroll to a Sequence Endpoints test">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.UnEnrollSequenceTest">
+				<methods>
+					<include name="unEnrollInSequence" />
+					<include name="unEnrollInSequenceInvalidSeqId" />
+					<include name="unEnrollInSequenceInvalidId" />
+					<include name="unEnrollInSequenceInvalidAuth" />
+					<include name="unEnrollAllInSequence" />
+					<include name="unEnrollAllInSequenceInvalidSeqId" />
+					<include name="unEnrollAllInSequenceInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+<test name="All email sequences api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.AllEndpointsOfEmailSequencesTest">
+				<methods>
+					<include name="enrollInSequence_POST" />
+					<include name="getAllEnrollmentStatuses_Test" />
+					<include name="searchEnrollmentByProspectSlug" />
+					<include name="searchSequenceBySequenceId" />
+					<include name="unenrollInSequence_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get all enrollments statuses api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.GetAllEnrollmentStatusesTest">
+				<methods>
+					<include name="getAllEnrollmentStatuses_Test" />
+					<include name="unauthorizedUserCannotGetGetAllEnrollmentStatuses_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enroll In Sequence api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.EnrollInSequenceTest">
+				<methods>
+					<include name="enrollInSequenceWithMandatoryFields_POST" />
+					<include name="enrollInSequenceWithAllFields_POST" />
+					<include name="enrollInSequenceWithInvalidEnrolledByFields_POST" />
+					<include name="enrollInSequenceWithInvalidSequenceIdFields_POST" />
+					<include name="enrollInSequenceWithInvalidProspectSlugFields_POST" />
+					<include name="unAuthorizedUserCannotAccessEnrollInSequence" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search in Sequences api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.SearchSequenceByFieldsTest">
+				<methods>
+					<include name="searchSequenceBySequenceId" />
+					<include name="searchSequenceBySequenceName" />
+					<include name="searchSequenceBySequenceType" />
+					<include name="searchSequenceByAdded_From" />
+					<include name="searchSequenceByAdded_To" />
+	                <include name="searchSequenceByUpdated_From" />
+					<include name="searchSequenceByUpdated_To" />
+                    <include name="searchSequenceByAllFields" />
+					<include name="searchSequenceBySortByAsc" />
+					<include name="searchSequenceBySortByDesc" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search in Enrollment api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.SearchEnrollmentByFieldsTest">
+				<methods>
+					<include name="searchEnrollmentById" />
+					<include name="searchEnrollmentBySequenceId" />
+					<include name="searchEnrollmentByProspectSlug" />
+					<include name="searchEnrollmentByProspectType" />
+					<include name="searchEnrollmentsByEnrollmentStatus" />
+					<include name="searchEnrollmentsByAllFields" />
+					<include name="searchEnrollmentBySortByAsc" />
+					<include name="searchEnrollmentBySortByDesc" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Unenroll In Sequence api Endpoints">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.UnenrollInSequenceTest">
+				<methods>
+					<include name="unenrollInSequenceWithMandatoryFields_POST" />
+					<include name="unenrollInSequenceWithInvaliUnenrolledByFields_POST" />
+					<include name="unenrollInSequenceWithInvalidProspectSlugFields_POST" />
+					<include name="unenrollInSequenceWithAllFields_POST" />
+					<include name="unAuthorizedUserCannotAccessUnenrollInSequence" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enroll In Sequence with first email step starting with zero day">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.EnrollInSequenceWithFirstEmailStepAtZeroDayTest">
+				<methods>
+					<include name="enrollInSequenceWithFirstEmailStepAtZeroDay" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enroll In Sequence with first email step starting with zero day POST">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.EnrollInSequenceWithFirstEmailStepAtZeroDayTest">
+				<methods>
+					<include name="enrollCandContactInSequenceFirstEmailStepAtZeroDay_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

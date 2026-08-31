@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Generate email template placeholder tests" verbose="1" parallel="tests"
+	thread-count="5">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener"/>
+    </listeners>
+
+	<test name="Neptune - Generate email template placeholder daily smoke">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.GenerateEmailTemplatePlaceholderTest">
+				<methods>
+					<include name="generateEmailTemplate_DailySmoke_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune - Generate email template placeholder validation">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.GenerateEmailTemplatePlaceholderTest">
+				<methods>
+					<include name="generateEmailTemplate_PlaceholderValidation_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune - Generate email template placeholder chaining">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.GenerateEmailTemplatePlaceholderTest">
+				<methods>
+					<include name="generateEmailTemplate_Chaining_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

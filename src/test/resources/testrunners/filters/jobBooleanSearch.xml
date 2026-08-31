@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Job Boolean Search Suite" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+
+    <!-- Job Boolean Search -->
+    <test name="Job Boolean Search">
+        <classes>
+            <class name="io.recruitcrm.BooleanSearch.BooleanSearchJobTest">
+                <methods>
+                    <include name="booleanSearchJobTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

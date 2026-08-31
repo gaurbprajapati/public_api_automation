@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Invoice not exists error response",
+	"type": "object",
+	"properties": {
+		"error": {
+			"type": "boolean",
+			"enum": [
+				true
+			]
+		},
+		"errorCode": {
+			"type": "integer",
+			"enum": [
+				404,
+				400
+			]
+		},
+		"errorMessage": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"error",
+		"errorCode",
+		"errorMessage"
+	],
+	"additionalProperties": false
+}

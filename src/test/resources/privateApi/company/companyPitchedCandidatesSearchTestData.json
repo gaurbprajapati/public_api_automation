@@ -1,0 +1,182 @@
+{
+  "searchTestCases": [
+    {
+      "testDescription": "Search by candidate name - exact match Alice",
+      "searchTerm": "Alice",
+      "searchType": "candidateName",
+      "expectedCount": 1,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "name"
+      ]
+    },
+    {
+      "testDescription": "Search by candidate name - exact match Bob",
+      "searchTerm": "Bob",
+      "searchType": "candidateName",
+      "expectedCount": 1,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "name"
+      ]
+    },
+    {
+      "testDescription": "Search by candidate name - case insensitive",
+      "searchTerm": "alice",
+      "searchType": "candidateName",
+      "expectedCount": 1,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "name"
+      ]
+    },
+    {
+      "testDescription": "Search by email - exact match",
+      "searchTerm": "alice.anderson@example.com",
+      "searchType": "email",
+      "expectedCount": 1,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "email"
+      ]
+    },
+    {
+      "testDescription": "Search by email - partial match domain",
+      "searchTerm": "@example.com",
+      "searchType": "email",
+      "expectedCount": 9,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "email"
+      ]
+    },
+    {
+      "testDescription": "Search by phone - exact match",
+      "searchTerm": "+1234567890",
+      "searchType": "phone",
+      "expectedCount": 1,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "phone",
+        "contactNumber"
+      ]
+    },
+    {
+      "testDescription": "Search by phone - partial match",
+      "searchTerm": "123456",
+      "searchType": "phone",
+      "expectedCount": 4,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "phone",
+        "contactNumber"
+      ]
+    },
+    {
+      "testDescription": "Search by contact name - Contact 1 last name only",
+      "searchTerm": "Johnson",
+      "searchType": "contactName",
+      "expectedCount": 6,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "contactName"
+      ]
+    },
+    {
+      "testDescription": "Search by contact name - Contact 2 first name only",
+      "searchTerm": "Sarah",
+      "searchType": "contactName",
+      "expectedCount": 3,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "contactName"
+      ]
+    },
+    {
+      "testDescription": "Search by contact name - Contact 3 first name only",
+      "searchTerm": "Michael Williams",
+      "searchType": "contactName",
+      "expectedCount": 3,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "contactName"
+      ]
+    },
+    {
+      "testDescription": "Search by pitch stage - Pitched",
+      "searchTerm": "Pitched",
+      "searchType": "pitchStage",
+      "expectedCount": 9,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "pitchStage"
+      ]
+    },
+    {
+      "testDescription": "Search by pitch stage - Shortlisted",
+      "searchTerm": "Shortlisted",
+      "searchType": "pitchStage",
+      "expectedCount": 0,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "pitchStage"
+      ]
+    },
+    {
+      "testDescription": "Search by created by name",
+      "searchTerm": "{owner}",
+      "searchType": "createdByName",
+      "expectedCount": 9,
+      "expectedStatus": 200,
+      "validationType": "success_with_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": [
+        "createdByName"
+      ]
+    },
+    {
+      "testDescription": "No match - non-existent candidate",
+      "searchTerm": "NonExistentCandidateXYZ123",
+      "searchType": "candidateName",
+      "expectedCount": 0,
+      "expectedStatus": 200,
+      "validationType": "success_empty_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": []
+    },
+    {
+      "testDescription": "No match - non-existent email",
+      "searchTerm": "nonexistent@example.com",
+      "searchType": "email",
+      "expectedCount": 0,
+      "expectedStatus": 200,
+      "validationType": "success_empty_results",
+      "expectedMessage": "Pitch candidates fetched successfully.",
+      "fieldsToCheck": []
+    }
+  ]
+}

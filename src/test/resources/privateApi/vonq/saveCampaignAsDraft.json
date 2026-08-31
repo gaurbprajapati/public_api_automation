@@ -1,0 +1,65 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"message": {
+			"type": "string"
+		},
+		"data": {
+			"type": "object",
+			"properties": {
+				"draft campaign": {
+					"type": "object",
+					"properties": {
+						"campaign_name": {
+							"type": "string"
+						},
+						"job_id": {
+							"type": "integer"
+						},
+						"campaign_data": {
+							"type": "string"
+						},
+						"account_id": {
+							"type": "integer"
+						},
+						"created_by": {
+							"type": "integer"
+						},
+						"created_on": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"id": {
+							"type": "integer"
+						}
+					},
+					"required": [
+						"campaign_name",
+						"job_id",
+						"campaign_data",
+						"account_id",
+						"created_by",
+						"created_on",
+						"id"
+					]
+				}
+			},
+			"required": [
+				"draft campaign"
+			]
+		},
+		"status": {
+			"type": "string"
+		},
+		"message_type": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"message",
+		"data",
+		"status",
+		"message_type"
+	]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string"
+    },
+    "data": {
+      "type": "string"
+    },
+    "user": {
+      "type": "string"
+    },
+    "notifications": {
+      "type": "array",
+      "items": {}
+    },
+    "status": {
+      "type": "string"
+    },
+    "application_version": {
+      "type": "string"
+    },
+    "recaptcha_site_key": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "number"
+    },
+    "end_time": {
+      "type": "number"
+    },
+    "time_to_output": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "user",
+    "notifications",
+    "status",
+    "application_version",
+    "recaptcha_site_key",
+    "start_time",
+    "end_time",
+    "time_to_output"
+  ]
+}

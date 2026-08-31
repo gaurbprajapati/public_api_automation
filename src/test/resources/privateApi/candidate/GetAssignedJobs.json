@@ -1,0 +1,189 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "context",
+            "code"
+          ]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "remark": {
+              "type": "null"
+            },
+            "updatedOn": {
+              "type": "integer"
+            },
+            "updatedByUser": {
+              "type": "integer"
+            },
+            "stageDate": {
+              "type": "integer"
+            },
+            "candidateStatusId": {
+              "type": "integer"
+            },
+            "candidateId": {
+              "type": "integer"
+            },
+            "invoiceId": {
+              "type": "null"
+            },
+            "share": {
+              "type": "boolean"
+            },
+            "candidateStatus": {
+              "type": "string"
+            },
+            "jobName": {
+              "type": "string"
+            },
+            "jobSlug": {
+              "type": "string"
+            },
+            "jobId": {
+              "type": "integer"
+            },
+            "jobCity": {
+              "type": "string"
+            },
+            "jobArchived": {
+              "type": "integer"
+            },
+            "contactFirstName": {
+              "type": "string"
+            },
+            "contactLastName": {
+              "type": "string"
+            },
+            "formattedCv": {
+              "type": "null"
+            },
+            "coverLetter": {
+              "type": "null"
+            },
+            "portfolio": {
+              "type": "null"
+            },
+            "otherFile1": {
+              "type": "null"
+            },
+            "otherFile2": {
+              "type": "null"
+            },
+            "companyContactName": {
+              "type": "string"
+            },
+            "contactEmail": {
+              "type": "string"
+            },
+            "companyContact": {
+              "type": "string"
+            },
+            "contactSlug": {
+              "type": "string"
+            },
+            "companyName": {
+              "type": "string"
+            },
+            "companyCity": {
+              "type": "null"
+            },
+            "companyAddress": {
+              "type": "null"
+            },
+            "companySlug": {
+              "type": "string"
+            },
+            "companyLogo": {
+              "type": "null"
+            },
+            "clientName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "remark",
+            "updatedOn",
+            "updatedByUser",
+            "stageDate",
+            "candidateStatusId",
+            "candidateId",
+            "invoiceId",
+            "share",
+            "candidateStatus",
+            "jobName",
+            "jobSlug",
+            "jobId",
+            "jobCity",
+            "jobArchived",
+            "contactFirstName",
+            "contactLastName",
+            "formattedCv",
+            "coverLetter",
+            "portfolio",
+            "otherFile1",
+            "otherFile2",
+            "companyContactName",
+            "contactEmail",
+            "companyContact",
+            "contactSlug",
+            "companyName",
+            "companyCity",
+            "companyAddress",
+            "companySlug",
+            "companyLogo",
+            "clientName"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "meta",
+    "data"
+  ]
+}

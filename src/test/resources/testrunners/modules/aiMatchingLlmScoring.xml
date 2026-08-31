@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- Owner - Saastar - AI Matching LLM Scoring Feature (PW-6371) -->
+<suite name="Rest API Test Suite" verbose="1" parallel="tests" thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<!-- ===== Neptune ai-matching/llm-score ===== -->
+
+	<test name="LLM Score - C2C Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_C2C_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - J2C Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_J2C_HappyPath" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_ResponseStructure" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - Multiple Candidates">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_MultipleCandidates" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - Empty Candidates List">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_EmptyCandidatesList" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - Missing Source Text">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_MissingSourceText" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - Missing Candidates">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_MissingCandidates" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - Missing Candidate Id">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_MissingCandidateId" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - Empty Body">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_EmptyBody" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_InvalidToken" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - Wrong HTTP Method">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_WrongHttpMethod" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LLM Score - C2C And J2C Different Reasoning">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoreTest">
+				<methods><include name="verifyLlmScore_C2CAndJ2C_ProduceDifferentReasoning" /></methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ===== Albatross matching + LLM scoring integration (single block — shared @BeforeClass setup) ===== -->
+
+	<test name="LLM Scoring Integration Tests">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.AiMatchingLlmScoringIntegrationTest">
+				<methods>
+					<include name="verifyLlmScoringIntegration_C2C_LlmStatusFields" />
+					<include name="verifyLlmScoringIntegration_J2C_LlmStatusFields" />
+					<include name="verifyLlmScoringIntegration_C2C_SecondCallChecksCooldownOrSuccess" />
+					<include name="verifyLlmScoringIntegration_C2C_InvalidToken" />
+					<include name="verifyLlmScoringIntegration_J2C_InvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

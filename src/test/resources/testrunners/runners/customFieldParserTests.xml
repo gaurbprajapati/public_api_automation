@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Custom Field Parser Test Suite" verbose="1" parallel="tests" thread-count="5">
+
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+    </listeners>
+
+    <test name="Candidate Custom Fields Validation">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsValidation">
+                <methods>
+                    <include name="validateResumeParsingGroundTruth"/>
+                    <include name="validatePublicAPIResumeParser"/>
+                    <include name="validatePublicAPICreateCandidateWithResume"/>
+                    <include name="validateAlbatrossParseResumeWithCustomFields"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Create 10 Fields">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="createTenFieldsWithAIParsing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — 11th Field Exceeds Max Limit">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="createEleventhFieldShouldFailWithMaxLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Create 9 Then Update With AI Parsing">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="createNineFieldsThenUpdateWithAIParsing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Dropdown With 101 Options Blocked">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="dropdownWith101OptionsShouldNotAllowAIParsing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Multiselect With 101 Options Blocked">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="multiselectWith101OptionsShouldNotAllowAIParsing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Dropdown With 100 Options Allowed">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="dropdownWith100OptionsShouldAllowAIParsing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — DateTime Field Blocked">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="dateTimeFieldShouldNotAllowAIParsing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — File Field Blocked">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="fileFieldShouldNotAllowAIParsing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Entity Type Fields Blocked">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="entityTypeFieldsShouldNotAllowAIParsing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Description Below Minimum Fails">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="descriptionBelowMinimumShouldFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Description At Minimum Succeeds">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="descriptionAtMinimumShouldSucceed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Description At Maximum Succeeds">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="descriptionAtMaximumShouldSucceed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Description Above Maximum Fails">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="descriptionAboveMaximumShouldFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Empty Description Fails">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="emptyDescriptionShouldFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AI Parsing Limits — Null Description Fails">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.CandidateCustomFieldsAIParsingLimitsTest">
+                <methods>
+                    <include name="nullDescriptionShouldFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Nested Custom Fields Parsing">
+        <classes>
+            <class name="io.rcrm.api.customfieldparser.NestedCustomFieldsParsingTest">
+                <methods>
+                    <include name="validateNestedFieldsAlbatrossParseResume"/>
+                    <include name="validateNestedFieldsAlbatrossParseOnly"/>
+                    <include name="validateNestedFieldsPublicAPIResumeParser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

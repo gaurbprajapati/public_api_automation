@@ -1,0 +1,101 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": [
+              {
+                "type": "object",
+                "properties": {
+                  "context": {
+                    "type": "object",
+                    "properties": {
+                      "template": {
+                        "type": "object",
+                        "properties": {
+                          "candidate_name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "candidate_name"
+                        ]
+                      },
+                      "cta": {
+                        "type": "object",
+                        "properties": {
+                          "candidate_slug": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "candidate_slug"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "template",
+                      "cta"
+                    ]
+                  },
+                  "read_status": {
+                    "type": "boolean"
+                  },
+                  "click_status": {
+                    "type": "boolean"
+                  },
+                  "created_on": {
+                    "type": "integer"
+                  },
+                  "child_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "context",
+                  "read_status",
+                  "click_status",
+                  "created_on",
+                  "child_id"
+                ]
+              }
+            ]
+          },
+          "totalChildNotifications": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "records",
+          "totalChildNotifications"
+        ]
+      },
+      "meta": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "message_type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "message",
+          "message_type",
+          "status"
+        ]
+      }
+    },
+    "required": [
+      "data",
+      "meta"
+    ]
+  }

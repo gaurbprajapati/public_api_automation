@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multiple Time Entry Test Suite" thread-count="15" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+    </listeners>
+
+    <!-- Single Rule - Multiple Time Entry Weekly Calculations -->
+    <test name="Multiple_Time_Entry_Single_Rule_Weekly_Calculation">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.weeklyCalculations.testClass.SingleRuleTest">
+                <methods>
+                    <include name="verifySingleRuleMultipleTimeEntry" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Rest API Subscription Suite" verbose="1">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+	<test name="Get Entity Single Field Updated Test">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.receiveWebhook.GetSingleFieldUpdatedTest">
+				<methods>
+					<include name="updateFieldsOfCompany" />
+					<include name="updateFieldsOfContact" />
+					<include name="updateFieldsOfDeal" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Entity Created Test">
+		<classes>
+			<class
+				name="io.rcrm.api.subscriptions.receiveWebhook.GetEntityCreatedTest" />
+		</classes>
+	</test>
+	<test name="Get Entity Updated Test">
+		<classes>
+			<class
+				name="io.rcrm.api.subscriptions.receiveWebhook.GetEntityUpdatedTest" />
+		</classes>
+	</test>
+	<test name="Get Misc Test">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.receiveWebhook.GetMiscTest" />
+
+		</classes>
+	</test>
+	<test name="Get Entity Opted-out Test">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.receiveWebhook.GetEntityOptedOutTest" />
+		</classes>
+	</test>
+	<test name="Get Entity Opted-in Test">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.receiveWebhook.GetEntityOptedInTest" />
+		</classes>
+	</test>
+	<test name="Get Entity Enroll Unenroll Test">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.receiveWebhook.GetEntityEnrollUnenrollTest" />
+		</classes>
+	</test>
+	<test name="All Endpoints of Subscriptions">
+		<classes>
+			<class
+				name="io.rcrm.api.subscriptions.AllEndpointsOfSubscriptionsTest">
+				<methods>
+					<include name="createSubscription_POST" />
+					<include name="getSubscriptions_GET" />
+					<include name="searchSubscription_GET" />
+					<include name="editSubscription_POST" />
+					<include name="deleteSubscription_DELETE" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Subscriptions">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.CreateNewSubscriptionTest">
+				<methods>
+					<include name="createSubscription_POST" />
+					<include name="createSubscriptionWithInvalidData_POST" />
+					<include name="createSubscriptionWithoutAuthorization_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Subscriptions ">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.GetAllSubscriptionsTest">
+				<methods>
+					<include name="createSubscription_POST" />
+					<include name="getSubscriptions_GET" />
+					<include name="getSubscriptionsWithoutAuthorization_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Subscriptions">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.SearchSubscriptionByIDTest">
+				<methods>
+					<include name="createSubscription_POST" />
+					<include name="searchSubscriptionWithValidID_GET" />
+					<include name="searchSubscriptionWithInvalidID_GET" />
+					<include name="searchSubscriptionWithoutAuthorization_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Subscriptions">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.EditSubscriptionByIDTest">
+				<methods>
+					<include name="createSubscription_POST" />
+					<include name="editSubscriptionWithValidID_POST" />
+					<include name="editSubscriptionWithInvalidID_POST" />
+					<include name="editSubscriptionWithoutAuthorization_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Subscriptions">
+		<classes>
+			<class name="io.rcrm.api.subscriptions.DeleteSubscriptionByIDTest">
+				<methods>
+					<include name="createSubscription_POST" />
+					<include name="deleteSubscriptionWithValidID_DELETE" />
+					<include name="deleteSubscriptionWithInvalidID_DELETE" />
+					<include
+						name="deleteSubscriptionWithoutAuthorization_DELETE" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

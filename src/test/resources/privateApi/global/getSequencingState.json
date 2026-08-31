@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "account_id": {
+          "type": "integer"
+        },
+        "entity_name": {
+          "type": "string"
+        },
+        "entity_slug": {
+          "type": "string"
+        },
+        "sequencing_data": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "user_id",
+        "account_id",
+        "entity_name",
+        "entity_slug",
+        "sequencing_data"
+      ]
+    },
+    "user": {
+      "type": "string"
+    },
+    "notifications": {
+      "type": "array",
+      "items": {}
+    },
+    "status": {
+      "type": "integer"
+    },
+    "application_version": {
+      "type": "string"
+    },
+    "recaptcha_site_key": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "number"
+    },
+    "end_time": {
+      "type": "number"
+    },
+    "time_to_output": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "user",
+    "notifications",
+    "status",
+    "application_version",
+    "recaptcha_site_key",
+    "start_time",
+    "end_time",
+    "time_to_output"
+  ]
+}

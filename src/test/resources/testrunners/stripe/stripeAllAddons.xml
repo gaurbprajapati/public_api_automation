@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Stripe All Addons Renewal Test Suite" parallel="tests" thread-count="20">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener" />
+    </listeners>
+
+    <test name="Stripe Renewal Automation - 1">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 2">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 3">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 4">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 5">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 6">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 7">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 8">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 9">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 10">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 11">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessWithWorkatoAndLinkedInIntegrationAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 12">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessWithWorkatoAndLinkedInIntegrationAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 13">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 14">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 15">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseWithWorkatoAndAdvanceAnalyticsBlockedAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 16">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseWithWorkatoAndAdvanceAnalyticsBlockedAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 17">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToEnterpriseWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 18">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToEnterpriseWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 19">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToEnterpriseWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 20">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToEnterpriseWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 21">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToEnterpriseWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 22">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToEnterpriseWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 23">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToEnterpriseWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 24">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToEnterpriseWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 25">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToEnterpriseWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 26">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToEnterpriseWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 27">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToEnterpriseWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 28">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToEnterpriseWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 29">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToBusinessWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 30">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToBusinessWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 31">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToBusinessWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 32">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToBusinessWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 33">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToBusinessWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 34">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForProToBusinessWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 35">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToProWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 36">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToProWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 37">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToProWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 38">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToProWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 39">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToProWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 40">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessToProWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 41">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseToProWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 42">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseToProWithVONQAndDataEnrichmentAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 43">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseToProWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 44">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseToProWithVONQAndWorkatoAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 45">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseToProWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="month" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 46">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithAllAddons_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseToProWithWorkatoAndAdvanceAnalyticsAddons_Test">
+                        <parameter name="billingCycle" value="year" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

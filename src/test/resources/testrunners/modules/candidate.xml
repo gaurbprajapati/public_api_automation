@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- Owner - Saastar - Rahul Shibu, Sandeep Patil -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="10">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="All Endpoints of Candidate">
+		<classes>
+			<class name="io.rcrm.api.candidate.AllEndPointsOfCandidatesTest">
+				<methods>
+					<include name="createNewCandidate" />
+					<include name="verifyValidationOfCreateNewCandidate" />
+					<include name="searchCandidates_GET" />
+					<include name="showAllcandidates_GET" />
+					<include name="editCandidateBySlug_POST" />
+					<include name="assignCandidate_POST" />
+					<include name="unassignCandidate_POST" />
+					<include name="applyToJob_POST" />
+					<include name="searchCandidateBySlug_GET" />
+					<include name="hiringStagesOfCandidate_POST" />
+					<include name="hiringStagesOfCandidateForJob_POST" />
+					<include name="updateCandidateHiringStage_POST" />
+					<include name="requestUpdateProfile_GET" />
+					<include name="updateCandidateVisibility_POST" />
+					<include name="returnAllHiringStagesOfCandidateForJobs_GET" />
+					<include name="deleteCandidate_DELETE" />
+					<include name="addWorkExperience_POST" />
+					<include name="getCandidateWorkExperience_GET" />
+					<include name="editWorkExperience_POST" />
+					<include name="deleteWorkExperience_DELETE" />
+					<include name="addEducationHistory_POST" />
+					<include name="getCandidateEducationHistory" />
+					<include name="editEducationHistoryVerify_POST" />
+					<include name="deleteEducationHistory_Delete" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create New Candidate for POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.CreateNewCandidateTest">
+				<methods>
+					<include name="CreateNewCandidateWithAllFields" />
+					<include name="createNewCandidateWithResume_POST" />
+					<include name="createNewCandidateWithResume" />
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include
+						name="userCannotCreateNewCandidateWithEmptyMandatoryField" />
+					<include
+						name="verifyInvalidValidationsForEmailField_CreateNewCandidate" />
+					<include
+						name="verifyInvalidValidationsForContactNumberField_CreateNewCandidate" />
+					<include
+						name="verifyAllMandatoryFieldsOfCreateNewCandidate" />
+					<include
+						name="verifyInvalidValidationsForGenderField_CreateNewCandidate" />
+					<include
+						name="verifyInvalidValidationsForQualificationField_CreateNewCandidate" />
+					<include
+						name="verifyInvalidValidationsForSpecializationField_CreateNewCandidate" />
+					<include name="verifyInvalidCurrentOrganizationSlug_CreateNewCandidate"/>
+					<include name="verifyValidCurrentOrganizationSlug_CreateNewCandidate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Profile Update Form - GET">
+		<classes>
+			<class name="io.rcrm.api.candidate.GetCandidateProfileUpdateFormTest">
+				<methods>
+					<include name="getProfileUpdateForm_200"/>
+					<include name="getProfileUpdateForm_404_InvalidEndpoint"/>
+					<include name="getProfileUpdateForm_401_Unauthorized"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create New Candidate with invalid name lenth test">
+		<classes>
+			<class name="io.rcrm.api.candidate.CreateNewCandidateTest">
+				<methods>
+					<include name="invalidCandidateNameLengthTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Candidate for POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.DeleteCandidateTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="deleteCandidateBySlug_POST" />
+					<include name="deleteCandidateByInvalidSlug_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Candidate for POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.EditCandidateTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="CreateNewCandidateWithAllFields" />
+					<include name="editCandidateBySlug_POST" />
+					 <!-- Incorrect http status for same request body -->
+					 <!-- <include name="editCandidateAndVerify422" /> -->
+					<include name="editCandidateByInvalidSlugAndVerify404" />
+					<include name="editAllFieldsOfCandidateAndVerifyResponse" />
+					<include name="editCandidateByValidOrganizationSlug"/>
+					<include name="editCandidateByInvalidOrganizationSlug"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="UnauthorizedUserCandidate Candidate for POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.UnauthorizedUserCandidateTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="unauthorizedUserCannotCreateNewCandidate" />
+					<include name="unauthorizedUserCannotSearchCandidate" />
+					<include name="unauthorizedUserCannotGetAllCandidateslist" />
+					<include name="unauthorizedUserCannotEditCandidate" />
+					<include name="unauthorizedUserCannotDeleteCandidate" />
+					<include name="unathorizedUserCannotApplyToJob" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Candidate Question-Answers to Job - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="getCandQuesAndAnswersWithValidResponse200" />
+					<include name="getCandQuesAndAnswersWithInValidResponse404"/>
+					<include name="postCandQuesAndAnswersWithValidResponse200"/>
+					<include name="postCandQuesAndAnswersWithInValidResponse404"/>
+					<include name="getCandQuesAndAnswersAssociatedWithJobWithValidResponse200"/>
+					<include name="getCandQuesAndAnswersAssociatedWithJobWithInValidResponse404"/>
+					<include name="postCandQuesAndAnswersAssociatedWithJobWithValidResponse200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search candidate by fields - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.SearchCandidateTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="searchCandidateByEmail" />
+					<include name="searchCandidateByFirstName" />
+					<include name="searchCandidateByLastName" />
+					<include name="searchCandidateByLinkedin" />
+					<include name="searchCandidateBySlug" />
+					<include name="searchCandidateByAllFields" />
+					 <include name="searchCandidateByContactNumber" />
+					<include name="searchCandidateByCountry"/>
+					<include name="searchCandidateBySortByAsc"/>
+					<include name="searchCandidateBySortByDesc"/>
+					<include name="searchCandidateByState"/>
+					<include name="searchCandidateByCreatedFrom"/>
+					<include name="searchCandidateByCreatedTo"/>
+					<include name="searchCandidateByUpdatedFrom"/>
+					<include name="searchCandidateByUpdatedTo"/>
+					<include name="getSearchCandidateByCustomFields_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="SearchCandidate by Candidate Slug - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.SearchCandidateBySlugTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="searchCandidateByValidSlug" />
+					<include name="searchCandidateByInvalidSlug" />
+					<include name="searchCandidateBySlugWithExpandAll" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetAllCandidates by Candidate fields - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.GetAllCandidatesTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="showAllCandidates" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="All Endpoints for Add WorkExperience">
+		<classes>
+			<class name="io.rcrm.api.candidate.AddWorkExperienceTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="addWorkExpericencVerify200" />
+					<include name="addWorkExpericenceWithInvalidTokenVerify401" />
+					<include name="addWorkExpericenceWithInvalidSlugVerify404" />
+					<include name="addWorkExpericenceVerify429" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="All Endpoints for Get Candidate Work Experience">
+		<classes>
+			<class name="io.rcrm.api.candidate.GetCandidateWorkExperienceTest">
+				<methods>
+					<include name="addWorkExperienceWithValidFields" />
+					<include name="getCandidateWorkExperienceVerify200" />
+					<include name="getCandidateWorkExperienceVerify404" />
+					<include name="getCandidateWorkExperienceVerify401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="All Endpoints for Edit Candidate Work Experience">
+		<classes>
+			<class name="io.rcrm.api.candidate.EditWorkExperienceTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="addWorkExpericenceWithValidFields" />
+					<include name="getCandidateWorkExperience" />
+					<include name="editWorkExperienceVerify200" />
+					<include name="editWorkExperienceVerify401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="All Endpoints for Delete Candidate Work Experience">
+		<classes>
+			<class name="io.rcrm.api.candidate.DeleteWorkExperienceTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="addWorkExpericenceWithValidFields" />
+					<include name="getCandidateWorkExperience" />
+					<include name="deleteWorkExperienceVerify200" />
+					<include name="deleteWorkExperienceVerify401" />
+					<include name="deleteWorkExperienceVerify404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="All Endpoints for Add Education History">
+		<classes>
+			<class name="io.rcrm.api.candidate.AddEducationHistoryTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="addEducationHistoryWithValidFields" />
+					<include name="addEducationHistoryWithInvalidTokenVerify401" />
+					<include name="addEducationHistoryWithInvalidSlugVerify404" />
+					<include name="addEducationHistoryVerify429" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="All Endpoints for Edit Candidate Education History">
+		<classes>
+			<class name="io.rcrm.api.candidate.EditEducationHistoryTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="addEducationHistoryWithValidFields" />
+					<include name="getCandidateEducationHistory" />
+					<include name="editEducationHistoryVerify200" />
+					<include name="editEducationHistoryVerify401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="All Endpoints for Get Candidate Education History">
+		<classes>
+			<class name="io.rcrm.api.candidate.GetCandidateEducationHistoryTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="addEducationHistoryWithValidFields" />
+					<include name="getCandidateEducationHistoryVerify200" />
+					<include name="getCandidateEducationHistoryVerify404" />
+					<include name="getCandidateEducationHistoryVerify401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="All Endpoints for Delete Candidate Education History">
+		<classes>
+			<class name="io.rcrm.api.candidate.DeleteEducationHistoryTest">
+				<methods>
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="addEducationHistoryWithValidFields" />
+					<include name="getCandidateEducationHistory" />
+					<include name="deleteEducationHistoryVerify200" />
+					<include name="deleteEducationHistoryVerify401" />
+					<include name="deleteEducationHistoryVerify404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Apply To job - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.ApplyToJobTest">
+				<methods>
+					<include name="authorizedUserCanApplyToJobWithValidData" />
+					<include
+						name="authorizedUserCannotApplyToJobWithInvalidJobSlug" />
+					<include
+						name="authorizedUserCannotApplyToJobWithInvalidCandidateSlug" />
+					<include
+						name="authorizedUserCannotApplyToJobWithInvalidCandidateAndJobSlug" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Assign Candidate to Job - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.AssignCandidateToJobTest">
+				<methods>
+					<include
+						name="authorizedUserCanAssignCandidateToJobWithValidData" />
+					<include
+						name="authorizedUserCannotReAssignCandidateToJobSameJob" />
+					<include
+						name="authorizedUserCannotAssignCandidateToInvalidJob" />
+					<include
+						name="authorizedUserCannotAssignInvalidCandidateToValidJob" />
+					<include
+						name="authorizedUserCannotAssignInvalidCandidateToInvalidJob" />
+					<include
+						name="authorizedUserCannotAssignCandidateToJobWithEmptyQueryParameter" />
+					<include
+						name="authorizedUserCannotAssignCandidateToJobWithEmptyPathParameter" />
+					<include name="verifyAssignCandidateToJobOwnerAsAdmin" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Request Update Profile link of Candidate - GET">
+		<classes>
+			<class name="io.rcrm.api.candidate.RequestUpdateProfileLinkTest">
+				<methods>
+					<include
+						name="authorizedUserCanRequestUpdateprofileLink_GET" />
+					<include
+						name="authorizedUserCannotRequestUpdateprofileLinkForInvalidCandidate_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="unAssign Candidate to Job - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.UnAssignCandidateToJobTest">
+				<methods>
+					<include
+						name="authorizedUserCanUnAssignCandidateToJobWithValidData" />
+					<include name="verifyUserCanReUnAssignCandidateToJob" />
+					<include
+						name="authorizedUserCannotUnAssignCandidateToInvalidJob" />
+					<include
+						name="authorizedUserCannotUnAssignInvalidCandidateToValidJob" />
+					<include
+						name="authorizedUserCannotUnAssignInvalidCandidateToInvalidJob" />
+					<include
+						name="authorizedUserCannotUnAssignCandidateToJobWithEmptyQueryParameter" />
+					<include
+						name="authorizedUserCannotUnAssignCandidateToJobWithEmptyPathParameter" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Candidate Ques and Ans- Get And Post1">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="postCandQuesAndAnswersAssociatedWithJobWithValidResponse200"/>
+					<include name="getCandQuesAndAnswersWithValidResponse200" />
+					<include name="getCandQuesAndAnswersWithInValidResponse404"/>
+					<include name="postCandQuesAndAnswersWithValidResponse200"/>
+					<include name="postCandQuesAndAnswersWithInValidResponse404"/>
+					<include name="getCandQuesAndAnswersAssociatedWithJobWithValidResponse200"/>
+					<include name="getCandQuesAndAnswersAssociatedWithJobWithInValidResponse404"/>
+					<include name="postCandQuesAndAnswersAssociatedWithJobWithValidResponse404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Off Limit Apis Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.AllEndpointsOfOffLimitTest">
+				<methods>
+					<include name="getOffLimitStatus" />
+					<include name="markCandidateAsOffLimit" />
+					<include name="getCandidatesOffLimit" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark Candidate As Off Limit Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkCandidateAsOffLimitTest">
+				<methods>
+					<include name="markCandidateAsOffLimitWithInvalidData" />
+					<include name="markCandidateAsOffLimitWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Off Limit Candidates Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitCandidatesTest">
+				<methods>
+					<include name="getOffLimitCandidatesWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark As Available Candidate Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkCandidateAsAvailableTest">
+				<methods>
+					<include name="markAsAvailableCandidateWithInvalidSlug" />
+					<include name="markAsAvailableCandidateWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Pitch Candidate To Contact Test 1 Done">
+		<classes>
+			<class name="io.rcrm.api.candidate.PitchCandidateTest">
+				<methods>
+					<include name="pitchHistoryOfACandidateVerify200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Pitch Candidate To Contact Test 2 Done">
+		<classes>
+			<class name="io.rcrm.api.candidate.PitchCandidateTest">
+				<methods>
+					<include name="pitchHistoryOfACandidateWithUnauthorizedVerify401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+		<test name="Pitch Candidate To Contact Test 3 Done">
+		<classes>
+			<class name="io.rcrm.api.candidate.PitchCandidateTest">
+				<methods>
+					<include name="pitchHistoryOfANonExistentCandidateVerify404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Pitch Candidate To Contact Test 4 Done">
+		<classes>
+			<class name="io.rcrm.api.candidate.PitchCandidateTest">
+				<methods>
+					<include name="pitchHistoryOfAContactVerify200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Pitch Candidate To Contact Test 5 Done">
+		<classes>
+			<class name="io.rcrm.api.candidate.PitchCandidateTest">
+				<methods>
+					<include name="pitchHistoryOfANonExistentContactVerify404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Pitch Candidate To Contact Test 6 Done">
+		<classes>
+			<class name="io.rcrm.api.candidate.PitchCandidateTest">
+				<methods>
+					<include name="pitchHistoryOfACandidateAndContactVerify200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Pitch Candidate To Contact Test 7 Done">
+		<classes>
+			<class name="io.rcrm.api.candidate.PitchCandidateTest">
+				<methods>
+					<include name="pitchHistoryOfNonExistentCandidateOrContactVerify404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Candidates - Verify Custom Field in All Candidates">
+		<classes>
+			<class name="io.rcrm.api.candidate.GetAllCandidatesTest">
+				<methods>
+					<include
+						name="verifyCustomFieldValueInShowAllCandidates_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Off Limit Candidate History - Empty Record Check">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include name="getEmptyOffLimitHistoryOfCandidate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Candidate History - Valid History Fetch">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfCandidate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Candidate History - Re-Available Candidate">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfAvailableCandidate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Candidate History - Invalid Slug">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include
+						name="getOffLimitHistoryOfCandidateWithInvalidSlug_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Candidate History - Unauthorized Access">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include
+						name="getOffLimitHistoryOfCandidateWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

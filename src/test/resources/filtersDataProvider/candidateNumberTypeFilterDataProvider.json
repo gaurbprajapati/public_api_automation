@@ -1,0 +1,3220 @@
+{
+    "Id": [
+        {
+            "dbField": "srno",
+            "filterType": "is",
+            "filterValue": "9",
+            "description": "Exact match, standard",
+            "expectedResult": "9",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0001-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is",
+            "filterValue": "0",
+            "description": "Exact match, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0002-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is",
+            "filterValue": "-882",
+            "description": "Exact match, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0003-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is",
+            "filterValue": "8",
+            "description": "Exact match, standard",
+            "expectedResult": "15",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0004-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_not",
+            "filterValue": "9",
+            "description": "Exact match, standard",
+            "expectedResult": "Result except 9",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0005-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "description": "Exact match, standard",
+            "expectedResult": "Result except 0",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0006-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_not",
+            "filterValue": "-882",
+            "description": "Exact match, standard",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0007-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_not",
+            "filterValue": "8",
+            "description": "Exact match, standard",
+            "expectedResult": "Result except 8",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0008-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "begins_with",
+            "filterValue": "9",
+            "description": "Begins with, standard",
+            "expectedResult": "9",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0009-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "begins_with",
+            "filterValue": "0",
+            "description": "Begins with, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0010-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "begins_with",
+            "filterValue": "-88",
+            "description": "Begins with, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0011-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "ends_with",
+            "filterValue": "2",
+            "description": "Ends with, standard",
+            "expectedResult": "2",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0012-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "description": "Ends with, standard",
+            "expectedResult": "Ends with 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0013-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "ends_with",
+            "filterValue": "-88",
+            "description": "Ends with, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0014-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "ends_with",
+            "filterValue": "1",
+            "description": "Ends with, standard",
+            "expectedResult": "Ends with 1",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0015-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "description": "Has any value, standard",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0016-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "description": "Is empty, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0017-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_between",
+            "filterValue": "1,10",
+            "description": "Is between, standard",
+            "expectedResult": "Between 0 and 10",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0018-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_between",
+            "filterValue": "-882,0",
+            "description": "Is between, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0019-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_between",
+            "filterValue": "-882,1000",
+            "description": "Is between, standard",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0020-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_between",
+            "filterValue": "-882,-1000",
+            "description": "Is between, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0021-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_between",
+            "filterValue": "0,12",
+            "description": "Is between, standard",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0022-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_between",
+            "filterValue": "2,2",
+            "description": "Is between, standard",
+            "expectedResult": "2",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0023-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_mt",
+            "filterValue": "1",
+            "description": "is more than, standard",
+            "expectedResult": "more than 1",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0024-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "description": "is more than, standard",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0025-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_mt",
+            "filterValue": "-882",
+            "description": "is more than, standard",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0026-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_mt",
+            "filterValue": "1",
+            "description": "is more than, standard",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0027-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_mt",
+            "filterValue": "-2",
+            "description": "is more than, standard",
+            "expectedResult": "All results greater than -2",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0028-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_lt",
+            "filterValue": "1",
+            "description": "is less than, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0029-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "description": "is less than, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0030-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_lt",
+            "filterValue": "-882",
+            "description": "is less than, standard",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0031-ID"
+        },
+        {
+            "dbField": "srno",
+            "filterType": "is_lt",
+            "filterValue": "15",
+            "description": "is less than, standard",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0032-ID"
+        }
+    ],
+    "Age": [
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "22",
+            "description": "Six candidates (DOB March 2004)",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0033-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "24",
+            "description": "candidate6",
+            "expectedResult": "Records with age 24",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0034-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "26",
+            "description": "candidate1 and candidate3",
+            "expectedResult": "Records with age 26",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0035-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "30",
+            "description": "candidate2",
+            "expectedResult": "Records with age 30",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0036-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "32",
+            "description": "candidate5 and candidate8",
+            "expectedResult": "Records with age 32",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0037-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "56",
+            "description": "candidate7",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0038-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "59",
+            "description": "candidate4",
+            "expectedResult": "Records with age 59",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0039-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "21",
+            "description": "Not in dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0040-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "25",
+            "description": "Age 25 not in dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0041-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "0",
+            "description": "Missing or invalid DOB (stored as age 0)",
+            "expectedResult": "Records with age 0",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0042-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "-5",
+            "description": "Negative age",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0043-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is",
+            "filterValue": "-3",
+            "description": "Negative age",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0044-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_not",
+            "filterValue": "22",
+            "description": "Exclude six youngest",
+            "expectedResult": "All records except age 22",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0045-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_not",
+            "filterValue": "26",
+            "description": "Exclude two at 26",
+            "expectedResult": "All records except age 26",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0046-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_not",
+            "filterValue": "30",
+            "description": "Exclude single 30",
+            "expectedResult": "Matched Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0047-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "description": "Exclude missing-DOB (age 0) cohort",
+            "expectedResult": "All except age 0",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0048-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_not",
+            "filterValue": "150",
+            "description": "Unrealistic age",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0049-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_not",
+            "filterValue": "-5",
+            "description": "Negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0050-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_not",
+            "filterValue": "-4",
+            "description": "Negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0051-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "begins_with",
+            "filterValue": "2",
+            "description": "Ages 22, 24, 26 (string prefix)",
+            "expectedResult": "Ages 20s in dataset",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0052-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "begins_with",
+            "filterValue": "3",
+            "description": "Ages 30, 32",
+            "expectedResult": "Ages 30s in dataset",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0053-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "begins_with",
+            "filterValue": "5",
+            "description": "Ages 56, 59",
+            "expectedResult": "Ages 50s in dataset",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0054-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "begins_with",
+            "filterValue": "0",
+            "description": "Age 0 (missing/invalid DOB)",
+            "expectedResult": "Ages starting with 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0055-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "begins_with",
+            "filterValue": "-88",
+            "description": "Negative prefix",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0056-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "begins_with",
+            "filterValue": "8",
+            "description": "Prefix with no match (no ages in 80s)",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0057-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "ends_with",
+            "filterValue": "2",
+            "description": "22 and 32 end in 2",
+            "expectedResult": "Ages ending in 2",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0058-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "ends_with",
+            "filterValue": "4",
+            "description": "24",
+            "expectedResult": "Ages ending in 4",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0059-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "ends_with",
+            "filterValue": "6",
+            "description": "26 and 56",
+            "expectedResult": "Ages ending in 6",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0060-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "description": "0 and 30",
+            "expectedResult": "Ages ending in 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0061-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "ends_with",
+            "filterValue": "9",
+            "description": "59",
+            "expectedResult": "Ages ending in 9",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0062-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "ends_with",
+            "filterValue": "5",
+            "description": "No dataset age ends in 5",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0063-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "ends_with",
+            "filterValue": "1",
+            "description": "Suffix 1 (no match)",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0064-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "ends_with",
+            "filterValue": "-8",
+            "description": "Invalid suffix",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0065-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "description": "Has computed age",
+            "expectedResult": "All records with age",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0066-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "description": "Missing DOB maps to age 0, not empty field",
+            "expectedResult": "age with 0 as age",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0067-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "21,30",
+            "description": "Covers 22-30 cohort",
+            "expectedResult": "Ages 21-30",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0068-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "25,26",
+            "description": "Band including 26",
+            "expectedResult": "Ages 25-26",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0070-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "22,29",
+            "description": "Young adult band without 30+",
+            "expectedResult": "Ages 22-29",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0071-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "55,60",
+            "description": "Senior band 56 and 59",
+            "expectedResult": "Ages 55-60",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0072-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "18,65",
+            "description": "Working-age superset (excludes age 0)",
+            "expectedResult": "Ages 18-65",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0073-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "0,18",
+            "description": "Includes missing-DOB (age 0)",
+            "expectedResult": "Ages 0-18",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0074-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "70,80",
+            "description": "Above dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0075-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "-10,5",
+            "description": "Includes age 0",
+            "expectedResult": "Ages -10 to 5",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0076-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "-25,-10",
+            "description": "Negative range",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0077-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "-5,-2",
+            "description": "Negative range",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0078-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "25,25",
+            "description": "No exact 25 in dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0079-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_between",
+            "filterValue": "31,31",
+            "description": "Single value not present",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0080-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_mt",
+            "filterValue": "50",
+            "description": "Seniors 56 and 59",
+            "expectedResult": "Ages > 50",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0081-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_mt",
+            "filterValue": "30",
+            "description": "32, 56, 59",
+            "expectedResult": "Ages > 30",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0082-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_mt",
+            "filterValue": "25",
+            "description": "Excludes 22,24 and 26",
+            "expectedResult": "Ages > 25",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0083-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_mt",
+            "filterValue": "31",
+            "description": "Above max non-senior",
+            "expectedResult": "Ages > 31",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0084-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_mt",
+            "filterValue": "59",
+            "description": "Above max age 59",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0085-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "description": "Nearly all ages",
+            "expectedResult": "All candidate ages",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0086-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_mt",
+            "filterValue": "-5",
+            "description": "More than negative",
+            "expectedResult": "All valid ages or All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0087-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_mt",
+            "filterValue": "-3",
+            "description": "More than negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0088-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_lt",
+            "filterValue": "25",
+            "description": "22 x6 and 24",
+            "expectedResult": "Ages < 25",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0089-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_lt",
+            "filterValue": "27",
+            "description": "Below 27 drops 30+",
+            "expectedResult": "Ages < 27",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0090-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_lt",
+            "filterValue": "23",
+            "description": "Only 22s",
+            "expectedResult": "Ages < 23",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0091-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_lt",
+            "filterValue": "22",
+            "description": "Age 0 (missing DOB) below 22",
+            "expectedResult": "Ages < 22 including 0",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0092-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_lt",
+            "filterValue": "60",
+            "description": "All ages present",
+            "expectedResult": "Ages < 60",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0093-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_lt",
+            "filterValue": "18",
+            "description": "Age 0 below 18",
+            "expectedResult": "Ages < 18 including 0",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0094-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_lt",
+            "filterValue": "1",
+            "description": "Age 0 less than 1",
+            "expectedResult": "Ages < 1",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0095-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_lt",
+            "filterValue": "-10",
+            "description": "Less than negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0096-AGE"
+        },
+        {
+            "dbField": "age",
+            "filterType": "is_lt",
+            "filterValue": "-5",
+            "description": "Less than negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0097-AGE"
+        }
+    ],
+    "Total Experience": [
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "0",
+            "description": "Zero total exp (candidate7, candidate10)",
+            "expectedResult": "Records with zero total exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0098-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "2",
+            "description": "Seven candidates with 2 years",
+            "expectedResult": "Records with 2 years total exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0099-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "4",
+            "description": "candidate4 and candidate9",
+            "expectedResult": "Records with 4 years total exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0100-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "5",
+            "description": "candidate2",
+            "expectedResult": "Records with 5 years total exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0101-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "6",
+            "description": "candidate5",
+            "expectedResult": "Records with 6 years total exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0102-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "7",
+            "description": "candidate8",
+            "expectedResult": "Records with 7 years total exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0103-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "15",
+            "description": "candidate3",
+            "expectedResult": "Records with 15 years total exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0104-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "11",
+            "description": "Total years not in dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0105-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "25",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0106-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is",
+            "filterValue": "-2",
+            "description": "Negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0107-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_not",
+            "filterValue": "2",
+            "description": "Exclude most common",
+            "expectedResult": "All except 2 years exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0108-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_not",
+            "filterValue": "4",
+            "description": "Exclude pair at 4",
+            "expectedResult": "All except 4 years exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0109-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_not",
+            "filterValue": "25",
+            "description": "Absent value",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0110-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "description": "Exclude zeros",
+            "expectedResult": "All except zero total exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0111-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_not",
+            "filterValue": "-5",
+            "description": "Negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0112-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "begins_with",
+            "filterValue": "1",
+            "description": "Only 15 starts with 1",
+            "expectedResult": "Total exp 15 years",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0113-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "begins_with",
+            "filterValue": "2",
+            "description": "String prefix on 2",
+            "expectedResult": "Total exp starting with 2",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0114-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "begins_with",
+            "filterValue": "4",
+            "description": "4 and 40+ if any",
+            "expectedResult": "Total exp starting with 4",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0115-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "begins_with",
+            "filterValue": "0",
+            "description": "Zero values",
+            "expectedResult": "Total exp starting with 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0116-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "begins_with",
+            "filterValue": "9",
+            "description": "No 90+ years",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0117-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "ends_with",
+            "filterValue": "5",
+            "description": "15 ends with 5",
+            "expectedResult": "Total exp ending in 5",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0118-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "ends_with",
+            "filterValue": "4",
+            "description": "4 only (not 14)",
+            "expectedResult": "Total exp ending in 4",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0119-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "ends_with",
+            "filterValue": "2",
+            "description": "2 years cohort",
+            "expectedResult": "Total exp ending in 2",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0120-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "description": "Zero only",
+            "expectedResult": "Total exp ending in 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0121-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "ends_with",
+            "filterValue": "9",
+            "description": "No match",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0122-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "description": "Has experience",
+            "expectedResult": "All records with experience",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0123-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "description": "Unspecified",
+            "expectedResult": "Records without experience",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0124-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_between",
+            "filterValue": "0,15",
+            "description": "Full dataset span",
+            "expectedResult": "0-15 years experience",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0125-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_between",
+            "filterValue": "2,6",
+            "description": "Core mid range",
+            "expectedResult": "2-6 years experience",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0126-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_between",
+            "filterValue": "20,30",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0127-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_between",
+            "filterValue": "3,6",
+            "description": "Mid window over 4,5,6",
+            "expectedResult": "3-6 years experience",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0128-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_between",
+            "filterValue": "0,0",
+            "description": "Exact zero",
+            "expectedResult": "Zero total exp only",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0129-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_between",
+            "filterValue": "-5,1",
+            "description": "Includes zero only",
+            "expectedResult": "Total exp -5 to 1",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0130-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_mt",
+            "filterValue": "5",
+            "description": "6,7,15",
+            "expectedResult": "Experience > 5 years",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0131-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_mt",
+            "filterValue": "20",
+            "description": "Above dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0132-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_mt",
+            "filterValue": "4",
+            "description": "5,6,7,15",
+            "expectedResult": "Experience > 4 years",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0133-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "description": "Strictly positive",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0134-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_mt",
+            "filterValue": "-5",
+            "description": "More than negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0135-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_lt",
+            "filterValue": "5",
+            "description": "0,2,4",
+            "expectedResult": "Experience < 5 years",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0136-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_lt",
+            "filterValue": "1",
+            "description": "Zeros only",
+            "expectedResult": "Total exp less than 1",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0137-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "description": "Nothing below 0",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0138-TOTAL-EXPERIENCE"
+        },
+        {
+            "dbField": "workexpyr",
+            "filterType": "is_lt",
+            "filterValue": "-1",
+            "description": "Less than negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0139-TOTAL-EXPERIENCE"
+        }
+    ],
+    "Relevant Experience": [
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "0",
+            "description": "candidate7,10,11",
+            "expectedResult": "Records with zero relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0140-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "1",
+            "description": "Five candidates",
+            "expectedResult": "Records with 1 year relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0141-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "2",
+            "description": "candidate6",
+            "expectedResult": "Records with 2 years relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0142-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "3",
+            "description": "candidate4",
+            "expectedResult": "Records with 3 years relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0143-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "4",
+            "description": "candidate2 and candidate9",
+            "expectedResult": "Records with 4 years relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0144-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "5",
+            "description": "candidate5",
+            "expectedResult": "Records with 5 years relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0145-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "6",
+            "description": "candidate8",
+            "expectedResult": "Records with 6 years relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0146-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "13",
+            "description": "candidate3",
+            "expectedResult": "Records with 13 years relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0147-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "7",
+            "description": "Relevant years not in dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0148-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "25",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0149-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is",
+            "filterValue": "-3",
+            "description": "Negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0150-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_not",
+            "filterValue": "4",
+            "description": "Exclude two at 4",
+            "expectedResult": "All except 4 years relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0151-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_not",
+            "filterValue": "1",
+            "description": "Exclude five at 1",
+            "expectedResult": "All except 1 year relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0152-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_not",
+            "filterValue": "25",
+            "description": "Absent",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0153-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "description": "Exclude zeros",
+            "expectedResult": "All except zero relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0154-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_not",
+            "filterValue": "-5",
+            "description": "Negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0155-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "begins_with",
+            "filterValue": "1",
+            "description": "1 and 13",
+            "expectedResult": "Relevant exp 1x years",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0156-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "begins_with",
+            "filterValue": "4",
+            "description": "4 only",
+            "expectedResult": "Relevant exp starting with 4",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0157-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "begins_with",
+            "filterValue": "0",
+            "description": "Zeros",
+            "expectedResult": "Relevant exp starting with 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0158-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "begins_with",
+            "filterValue": "9",
+            "description": "No 90+",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0159-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "ends_with",
+            "filterValue": "3",
+            "description": "3 and 13",
+            "expectedResult": "Relevant exp ending in 3",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0160-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "ends_with",
+            "filterValue": "4",
+            "description": "4 only",
+            "expectedResult": "Relevant exp ending in 4",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0161-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "ends_with",
+            "filterValue": "1",
+            "description": "Values ending in 1",
+            "expectedResult": "Relevant exp ending in 1",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0162-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "description": "Zeros",
+            "expectedResult": "Relevant exp ending in 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0163-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "ends_with",
+            "filterValue": "8",
+            "description": "No match",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0164-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "description": "Has value",
+            "expectedResult": "All records with relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0165-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "description": "Unspecified",
+            "expectedResult": "Records without relevant exp",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0166-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_between",
+            "filterValue": "0,13",
+            "description": "Full span",
+            "expectedResult": "0-13 years relevant exp",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0167-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_between",
+            "filterValue": "1,5",
+            "description": "Mid band",
+            "expectedResult": "1-5 years relevant exp",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0168-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_between",
+            "filterValue": "20,30",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0169-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_between",
+            "filterValue": "3,5",
+            "description": "Band over 3,4,5",
+            "expectedResult": "3-5 years relevant exp",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0170-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_between",
+            "filterValue": "0,0",
+            "description": "Zeros only",
+            "expectedResult": "Zero relevant exp only",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0171-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_between",
+            "filterValue": "-5,3",
+            "description": "Includes 0,1,2,3",
+            "expectedResult": "Relevant exp -5 to 3",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0172-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_mt",
+            "filterValue": "3",
+            "description": "4,5,6,13",
+            "expectedResult": "Relevant exp > 3 years",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0173-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_mt",
+            "filterValue": "20",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0174-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "description": "Strictly positive",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0175-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_mt",
+            "filterValue": "-2",
+            "description": "More than negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0176-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_lt",
+            "filterValue": "4",
+            "description": "0,1,2,3",
+            "expectedResult": "Relevant exp < 4 years",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0177-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_lt",
+            "filterValue": "1",
+            "description": "Zeros only",
+            "expectedResult": "Relevant exp less than 1",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0178-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "description": "Nothing below 0",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0179-RELEVANT-EXPERIENCE"
+        },
+        {
+            "dbField": "relevantexperience",
+            "filterType": "is_lt",
+            "filterValue": "-1",
+            "description": "Less than negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0180-RELEVANT-EXPERIENCE"
+        }
+    ],
+    "Current Salary": [
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "75000.25",
+            "description": "candidate6 — lowest current",
+            "expectedResult": "Records with 75000.25 salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0181-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "89900",
+            "description": "candidate1",
+            "expectedResult": "Records with 89900 salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0182-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "95000.50",
+            "description": "candidate3",
+            "expectedResult": "Records with 95000.50 salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0183-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "99500.99",
+            "description": "candidate14",
+            "expectedResult": "Records with 99500.99 salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0184-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "100000",
+            "description": "candidate9",
+            "expectedResult": "Records with 100K salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0185-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "101250",
+            "description": "candidate15",
+            "expectedResult": "Records with 101250 salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0186-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "108500.50",
+            "description": "candidate11",
+            "expectedResult": "Records with 108500.50 salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0187-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "110000",
+            "description": "candidate4",
+            "expectedResult": "Records with 110K salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0188-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "115000",
+            "description": "candidate12",
+            "expectedResult": "Records with 115K salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0189-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "120000",
+            "description": "candidate2",
+            "expectedResult": "Records with 120K salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0190-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "132750",
+            "description": "candidate13",
+            "expectedResult": "Records with 132750 salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0191-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "140000",
+            "description": "candidate5",
+            "expectedResult": "Records with 140K salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0192-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "160000",
+            "description": "candidate8 — highest current",
+            "expectedResult": "Records with 160K salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0193-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "87500.75",
+            "description": "candidate10",
+            "expectedResult": "Records with 87500.75 salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0194-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "500000",
+            "description": "Above dataset max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0195-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "0",
+            "description": "No explicit zero stored",
+            "expectedResult": "arjun malhotra",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0196-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is",
+            "filterValue": "-5000",
+            "description": "Negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0197-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_not",
+            "filterValue": "100000",
+            "description": "Exclude candidate9",
+            "expectedResult": "All except 100K salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0198-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_not",
+            "filterValue": "120000",
+            "description": "Exclude candidate2",
+            "expectedResult": "All except 120K salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0199-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_not",
+            "filterValue": "500000",
+            "description": "Absent value",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0200-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_not",
+            "filterValue": "95000.50",
+            "description": "Exclude decimal salary",
+            "expectedResult": "All except 95000.50 salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0201-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "description": "Not zero",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0202-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_not",
+            "filterValue": "-25000",
+            "description": "Negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0203-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "begins_with",
+            "filterValue": "7",
+            "description": "75000.25",
+            "expectedResult": "Salaries starting with 7",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0204-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "begins_with",
+            "filterValue": "8",
+            "description": "87500.75, 89900",
+            "expectedResult": "Salaries starting with 8",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0205-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "begins_with",
+            "filterValue": "9",
+            "description": "95000.50, 99500.99",
+            "expectedResult": "Salaries starting with 9",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0206-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "begins_with",
+            "filterValue": "1",
+            "description": "100K–199K band",
+            "expectedResult": "1xx,xxx salary range",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0207-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "begins_with",
+            "filterValue": "13",
+            "description": "132750",
+            "expectedResult": "Salaries starting with 13",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0208-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "begins_with",
+            "filterValue": "3",
+            "description": "No salaries in 300Ks",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0209-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "begins_with",
+            "filterValue": "0",
+            "description": "No leading zero storage",
+            "expectedResult": "arjun malhotra",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0210-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "ends_with",
+            "filterValue": "000",
+            "description": "Round thousands in dataset",
+            "expectedResult": "Salaries ending in 000",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0211-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "ends_with",
+            "filterValue": "900",
+            "description": "89900",
+            "expectedResult": "Salaries ending in 900",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0212-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "ends_with",
+            "filterValue": "99",
+            "description": "99500.99",
+            "expectedResult": "Salaries ending in 99",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0213-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "ends_with",
+            "filterValue": "50",
+            "description": "108500.50, 95000.50",
+            "expectedResult": "Salaries ending in 50",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0214-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "ends_with",
+            "filterValue": "25",
+            "description": "75000.25",
+            "expectedResult": "Salaries ending in 25",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0215-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "ends_with",
+            "filterValue": "75",
+            "description": "87500.75",
+            "expectedResult": "Salaries ending in 75",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0216-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "ends_with",
+            "filterValue": "123",
+            "description": "No match",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0217-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "description": "Strings ending in 0",
+            "expectedResult": "Salaries ending in 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0218-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "description": "Has salary",
+            "expectedResult": "All records with salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0219-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "description": "candidate7 empty current",
+            "expectedResult": "Records without salary",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0220-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_between",
+            "filterValue": "75000,160000",
+            "description": "Observed min–max inclusive",
+            "expectedResult": "75K-160K salary range",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0221-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_between",
+            "filterValue": "90000.50,110000",
+            "description": "95000.50 through 110000 band",
+            "expectedResult": "90K–110K decimal band",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0222-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_between",
+            "filterValue": "200000,300000",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0223-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_between",
+            "filterValue": "90000.50,120000.75",
+            "description": "Decimal slice",
+            "expectedResult": "90K-120K decimal salary range",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0224-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_between",
+            "filterValue": "-10000,50000",
+            "description": "Below dataset minimum",
+            "expectedResult": "arjun malhotra",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0226-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_between",
+            "filterValue": "132750,132750",
+            "description": "Single distinct value",
+            "expectedResult": "Records with 132750 salary",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0227-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_mt",
+            "filterValue": "140000",
+            "description": "160000 only",
+            "expectedResult": "Salary > 140K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0228-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_mt",
+            "filterValue": "120000",
+            "description": "132750, 140000, 160000",
+            "expectedResult": "Salary > 120K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0229-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_mt",
+            "filterValue": "200000",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0230-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_mt",
+            "filterValue": "100000.50",
+            "description": "Above 100000.50",
+            "expectedResult": "Salary > 100000.50",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0231-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "description": "Strictly positive",
+            "expectedResult": "All Results",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0232-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_mt",
+            "filterValue": "-1000",
+            "description": "More than negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0233-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_lt",
+            "filterValue": "100000",
+            "description": "Strictly below 100K",
+            "expectedResult": "Salary < 100K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0234-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_lt",
+            "filterValue": "90000",
+            "description": "Strictly below 90000",
+            "expectedResult": "Salary < 90000",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0235-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_lt",
+            "filterValue": "95000.50",
+            "description": "Decimal threshold",
+            "expectedResult": "Salary < 95000.50",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0236-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "description": "Nothing below 0",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0237-CURRENT-SALARY"
+        },
+        {
+            "dbField": "currentsalary",
+            "filterType": "is_lt",
+            "filterValue": "-500",
+            "description": "Less than negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0238-CURRENT-SALARY"
+        }
+    ],
+    "Salary Expectation": [
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "90000.50",
+            "description": "candidate6 — lowest expectation",
+            "expectedResult": "Records expecting 90000.50",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0239-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "100000",
+            "description": "candidate1",
+            "expectedResult": "Records expecting 100K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0240-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "110000",
+            "description": "candidate3",
+            "expectedResult": "Records expecting 110K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0241-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "116000.25",
+            "description": "candidate13",
+            "expectedResult": "Records expecting 116000.25",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0242-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "118750.50",
+            "description": "candidate15",
+            "expectedResult": "Records expecting 118750.50",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0243-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "120000",
+            "description": "candidate7 and candidate9",
+            "expectedResult": "Records expecting 120K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0244-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "125000.50",
+            "description": "candidate10",
+            "expectedResult": "Records expecting 125000.50",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0245-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "130000",
+            "description": "candidate4",
+            "expectedResult": "Records expecting 130K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0246-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "135000.50",
+            "description": "candidate11",
+            "expectedResult": "Records expecting 135000.50",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0247-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "142500.75",
+            "description": "candidate12",
+            "expectedResult": "Records expecting 142500.75",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0248-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "148750.25",
+            "description": "candidate14",
+            "expectedResult": "Records expecting 148750.25",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0249-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "150000",
+            "description": "candidate2",
+            "expectedResult": "Records expecting 150K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0250-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "200000",
+            "description": "candidate5 — max expectation",
+            "expectedResult": "Records expecting 200K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0251-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "500000",
+            "description": "Above dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0252-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "0",
+            "description": "No zero stored",
+            "expectedResult": "@lbert_google candidate",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0253-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is",
+            "filterValue": "-8000",
+            "description": "Negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0254-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_not",
+            "filterValue": "120000",
+            "description": "Exclude two at 120K",
+            "expectedResult": "All except 120K expectation",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0255-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_not",
+            "filterValue": "90000",
+            "description": "Exact 90000 absent (90000.50 present)",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0256-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_not",
+            "filterValue": "200000",
+            "description": "Exclude max",
+            "expectedResult": "All except 200K expectation",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0257-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "description": "Has expectation",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0258-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_not",
+            "filterValue": "50000000",
+            "description": "Absent",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0259-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_not",
+            "filterValue": "-15000",
+            "description": "Negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0260-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "begins_with",
+            "filterValue": "9",
+            "description": "90000.50",
+            "expectedResult": "9x,xxx expectation range",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0261-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "begins_with",
+            "filterValue": "1",
+            "description": "100K–199K expectations",
+            "expectedResult": "1xx,xxx expectation range",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0262-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "begins_with",
+            "filterValue": "2",
+            "description": "200000",
+            "expectedResult": "2xx,xxx expectation range",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0263-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "begins_with",
+            "filterValue": "12",
+            "description": "120000, 125000.50",
+            "expectedResult": "12x,xxx expectation range",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0264-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "begins_with",
+            "filterValue": "14",
+            "description": "142500.75, 148750.25",
+            "expectedResult": "14x,xxx expectation range",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0265-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "begins_with",
+            "filterValue": "3",
+            "description": "No 300K+ expectations",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0266-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "ends_with",
+            "filterValue": "000",
+            "description": "Integer thousands in dataset",
+            "expectedResult": "Expectations ending in 000",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0267-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "ends_with",
+            "filterValue": "5",
+            "description": "90000.50, 125000.50, 135000.50, 118750.50",
+            "expectedResult": "Expectations ending in 50",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0268-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "ends_with",
+            "filterValue": "25",
+            "description": "116000.25, 148750.25",
+            "expectedResult": "Expectations ending in 25",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0269-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "ends_with",
+            "filterValue": "75",
+            "description": "142500.75",
+            "expectedResult": "Expectations ending in 75",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0270-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "description": "Strings ending in 0",
+            "expectedResult": "Expectations ending in 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0271-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "ends_with",
+            "filterValue": "500",
+            "description": "No expectation ends with 500",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0272-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "ends_with",
+            "filterValue": "200",
+            "description": "200000 ends 000 not 200",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0273-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "description": "Has expectation",
+            "expectedResult": "All records with expectation",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0274-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "description": "candidate8 empty expectation",
+            "expectedResult": "Records without expectation",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0275-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "90000,200000",
+            "description": "Full observed span (inclusive bounds)",
+            "expectedResult": "90K-200K expectation range",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0276-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "110000,150000",
+            "description": "Mid band",
+            "expectedResult": "110K-150K expectation range",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0277-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "120000,180000",
+            "description": "Upper mid",
+            "expectedResult": "120K-180K expectation range",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0278-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "115000.25,155000.75",
+            "description": "Decimal mid window",
+            "expectedResult": "115K-155K decimal expectation range",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0279-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "125000.50,145000.25",
+            "description": "125000.50, 135000.50, 142500.75",
+            "expectedResult": "125K-145K precise decimal range",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0280-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "50000,80000",
+            "description": "Below minimum expectation",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0281-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "250000,400000",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0282-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "0.01,10000.99",
+            "description": "Very low range",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0283-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "-20000,50000",
+            "description": "Still below min",
+            "expectedResult": "@albert_google candidate",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0284-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "-100000,-20000",
+            "description": "Negative only",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0285-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "-7500.50,-2500.25",
+            "description": "Negative decimals",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0286-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "130000,130000",
+            "description": "candidate4",
+            "expectedResult": "Records expecting 130K",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0287-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_between",
+            "filterValue": "135000.50,135000.50",
+            "description": "candidate11",
+            "expectedResult": "Records expecting 135000.50",
+            "filterValue_TYPE": "DOUBLE_START_END",
+            "testCaseId": "CAND-NUM-0288-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_mt",
+            "filterValue": "150000",
+            "description": "200000",
+            "expectedResult": "Expectation > 150K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0289-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_mt",
+            "filterValue": "120000",
+            "description": "Above 120K cohort",
+            "expectedResult": "Expectation > 120K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0290-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_mt",
+            "filterValue": "200000",
+            "description": "Strictly above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0291-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_mt",
+            "filterValue": "80000",
+            "description": "Above 80K",
+            "expectedResult": "Expectation > 80K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0292-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_mt",
+            "filterValue": "-2000",
+            "description": "More than negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0293-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_lt",
+            "filterValue": "120000",
+            "description": "90000.50, 100000, 110000",
+            "expectedResult": "Expectation < 120K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0294-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_lt",
+            "filterValue": "100000",
+            "description": "90000.50 only",
+            "expectedResult": "Expectation < 100K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0295-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_lt",
+            "filterValue": "90000",
+            "description": "Below minimum stored",
+            "expectedResult": "@albert_google candidate",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0296-SALARY-EXPECTATION"
+        },
+        {
+            "dbField": "salaryexpectation",
+            "filterType": "is_lt",
+            "filterValue": "250000",
+            "description": "All expectations",
+            "expectedResult": "Expectation < 250K",
+            "filterValue_TYPE": "DOUBLE",
+            "testCaseId": "CAND-NUM-0297-SALARY-EXPECTATION"
+        }
+    ],
+    "Notice ": [
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "12",
+            "description": "Shortest notice — six candidates",
+            "expectedResult": "Records with 12 days notice",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0299-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "30",
+            "description": "candidate2 and candidate6",
+            "expectedResult": "Records with 30 days notice",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0300-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "45",
+            "description": "candidate4 only",
+            "expectedResult": "Records with 45 days notice",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0301-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "60",
+            "description": "candidate3,7,9",
+            "expectedResult": "Records with 60 days notice",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0302-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "90",
+            "description": "candidate5 and candidate8",
+            "expectedResult": "Records with 90 days notice",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0303-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "31",
+            "description": "Notice days not in dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0304-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "46",
+            "description": "Notice days not in dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0305-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "14",
+            "description": "No 14 in dataset",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0306-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "0",
+            "description": "Three candidates with immediate (0) notice",
+            "expectedResult": "Records with 0 days notice",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0307-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "1",
+            "description": "No sub-12-day notice",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0308-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "-15",
+            "description": "Negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0309-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "-8",
+            "description": "Negative",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0310-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "180",
+            "description": "Above max 90",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0311-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is",
+            "filterValue": "366",
+            "description": "No year-long notice",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0312-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_not",
+            "filterValue": "60",
+            "description": "Exclude 60-day cohort",
+            "expectedResult": "All except 60 days notice",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0313-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_not",
+            "filterValue": "12",
+            "description": "Exclude 12-day cohort",
+            "expectedResult": "All except 12 days notice",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0314-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "description": "Exclude immediate (0) notice",
+            "expectedResult": "All except zero notice",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0315-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_not",
+            "filterValue": "365",
+            "description": "Absent",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0316-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_not",
+            "filterValue": "-20",
+            "description": "Negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0317-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "begins_with",
+            "filterValue": "1",
+            "description": "12",
+            "expectedResult": "Notice starting with 1",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0318-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "begins_with",
+            "filterValue": "3",
+            "description": "30",
+            "expectedResult": "Notice starting with 3",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0319-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "begins_with",
+            "filterValue": "4",
+            "description": "45",
+            "expectedResult": "Notice starting with 4",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0320-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "begins_with",
+            "filterValue": "6",
+            "description": "60",
+            "expectedResult": "Notice starting with 6",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0321-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "begins_with",
+            "filterValue": "9",
+            "description": "90",
+            "expectedResult": "Notice starting with 9",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0322-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "begins_with",
+            "filterValue": "2",
+            "description": "No 20–29 day values",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0323-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "description": "0, 30, 60, 90",
+            "expectedResult": "Notice ending in 0",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0324-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "ends_with",
+            "filterValue": "5",
+            "description": "45",
+            "expectedResult": "Notice ending in 5",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0325-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "ends_with",
+            "filterValue": "2",
+            "description": "12",
+            "expectedResult": "Notice ending in 2",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0326-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "ends_with",
+            "filterValue": "7",
+            "description": "No match",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "testCaseId": "CAND-NUM-0327-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "description": "Has notice",
+            "expectedResult": "All records with notice period",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0328-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "description": "Unspecified",
+            "expectedResult": "Records without notice period",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0329-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "12,90",
+            "description": "Full dataset span",
+            "expectedResult": "12-90 days notice",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0330-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "30,60",
+            "description": "30, 45, 60",
+            "expectedResult": "30-60 days notice",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0331-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "45,90",
+            "description": "45, 60, 90",
+            "expectedResult": "45-90 days notice",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0332-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "31,61",
+            "description": "45, 60 (30 excluded)",
+            "expectedResult": "31-61 days notice",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0333-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "15,45",
+            "description": "30, 45",
+            "expectedResult": "15-45 days notice",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0334-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "0,15",
+            "description": "0 and 12-day notice in range",
+            "expectedResult": "0-15 days notice",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0335-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "1,8",
+            "description": "No notice under 12",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0336-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "100,150",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0337-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "-10,15",
+            "description": "0 and 12 in range",
+            "expectedResult": "-10 to 15 days notice",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0338-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "-30,-10",
+            "description": "Negative only",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0339-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "-15,-5",
+            "description": "Negative range",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0340-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "45,45",
+            "description": "candidate4",
+            "expectedResult": "Records with 45 days notice",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0341-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_between",
+            "filterValue": "31,31",
+            "description": "No 31 stored",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER_START_END",
+            "testCaseId": "CAND-NUM-0342-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_mt",
+            "filterValue": "45",
+            "description": "60, 90",
+            "expectedResult": "Notice > 45 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0343-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_mt",
+            "filterValue": "44",
+            "description": "45, 60, 90",
+            "expectedResult": "Notice > 44 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0344-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_mt",
+            "filterValue": "60",
+            "description": "90 only",
+            "expectedResult": "Notice > 60 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0345-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_mt",
+            "filterValue": "90",
+            "description": "Nothing above 90",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0346-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_mt",
+            "filterValue": "91",
+            "description": "Above max",
+            "expectedResult": "Empty",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0347-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_mt",
+            "filterValue": "10",
+            "description": "All notices >=12",
+            "expectedResult": "Notice > 10 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0348-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "description": "Strictly positive notice",
+            "expectedResult": "All significant notice periods",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0349-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_mt",
+            "filterValue": "-5",
+            "description": "More than negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0350-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_mt",
+            "filterValue": "-4",
+            "description": "More than negative",
+            "expectedResult": "All Records",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0351-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_lt",
+            "filterValue": "45",
+            "description": "0, 12, 30 below 45",
+            "expectedResult": "Notice < 45 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0352-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_lt",
+            "filterValue": "30",
+            "description": "0, 12 below 30",
+            "expectedResult": "Notice < 30 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0353-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_lt",
+            "filterValue": "12",
+            "description": "Immediate (0) notice only",
+            "expectedResult": "Records with notice < 12 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0354-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_lt",
+            "filterValue": "11",
+            "description": "Immediate (0) notice only",
+            "expectedResult": "Records with notice < 11 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0355-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_lt",
+            "filterValue": "100",
+            "description": "All notices",
+            "expectedResult": "Notice < 100 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0356-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_lt",
+            "filterValue": "7",
+            "description": "Immediate (0) notice < 7",
+            "expectedResult": "Records with notice < 7 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0357-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_lt",
+            "filterValue": "4",
+            "description": "Immediate (0) notice < 4",
+            "expectedResult": "Records with notice < 4 days",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0358-NOTICE"
+        },
+        {
+            "dbField": "noticeperiod",
+            "filterType": "is_lt",
+            "filterValue": "1",
+            "description": "Immediate (0) notice < 1",
+            "expectedResult": "Records with notice < 1 day",
+            "filterValue_TYPE": "INTEGER",
+            "testCaseId": "CAND-NUM-0359-NOTICE"
+        }
+    ]
+}

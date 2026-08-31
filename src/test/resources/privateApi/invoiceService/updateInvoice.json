@@ -1,0 +1,130 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "type": "object",
+        "properties": {
+          "message": { "type": "string" },
+          "requestUuid": { "type": "string" },
+          "responseType": {
+            "type": "object",
+            "properties": {
+              "context": { "type": "string" },
+              "code": { "type": "integer" }
+            },
+            "required": ["context", "code"]
+          },
+          "timestamp": { "type": "string" },
+          "status": { "type": "integer" }
+        },
+        "required": ["message", "requestUuid", "responseType", "timestamp", "status"]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "invoicePrefix": { "type": "string" },
+          "invoiceNumber": { "type": "string" },
+          "invoiceId": { "type": ["string", "null"] },
+          "description": { "type": ["string", "null"] },
+          "templateId": { "type": "integer" },
+          "companyId": { "type": "integer" },
+          "contactId": { "type": ["integer", "null"] },
+          "statusId": { "type": "integer" },
+          "currencyId": { "type": "integer" },
+          "paidOn": { "type": [ "null", "integer", "string"] },
+          "dueDate": { "type": "integer" },
+          "issueDate": { "type": "integer" },
+          "email": { "type": ["string", "null"] },
+          "contactNumber": { "type": ["string", "null"] },
+          "totalAmount": { "type": "number" },
+          "invoicePdf": { "type": ["string", "null"] },
+          "invoiceItems": {
+            "type": ["string", "null"],
+            "items": { "type": "object" }
+          },
+          "statusLabel": { "type": "string" },
+          "createdOn": { "type": "integer" },
+          "updatedOn": { "type": "integer" },
+          "updatedByName": { "type": "string" },
+          "createdByName": { "type": "string" },
+          "createdByPhoto": { "type": ["string", "null"] },
+          "createdBy": { "type": "integer" },
+          "contactName": { "type": ["string", "null"] },
+          "companyName": { "type": "string" },
+          "companyLogo": { "type": ["string", "null"] },
+          "address": { "type": ["string", "null"] },
+          "companyWebsite": { "type": ["string", "null"] },
+          "companySerial": { "type": "integer" },
+          "contactPhoto": { "type": ["string", "null"] },
+          "contactSlug": { "type": ["string", "null"] },
+          "companySlug": { "type": "string" },
+          "templateName": { "type": "string" },
+          "invoiceText": { "type": ["string", "null"] },
+          "additionalNote": { "type": ["string", "null"] },
+          "currencyName": { "type": "string" },
+          "currencySymbol": { "type": "string" },
+          "currencyCode": { "type": "string" },
+          "invoiceCreatedByStatus": { "type": "integer" },
+          "associations": { "type": "object" },
+          "isTemplateEdited": { "type": "integer" },
+          "company": {
+            "type": "object",
+            "properties": {
+              "offLimitStatusId": { "type": ["integer", "null"] },
+              "offLimitReason": { "type": ["string", "null"] },
+              "offLimitEndDate": { "type": ["string", "null"] },
+              "offLimitStartDate": { "type": ["string", "null"] },
+              "statusLabel": { "type": ["string", "null"] },
+              "backgroundColorHex": { "type": ["string", "null"] },
+              "textColorHex": { "type": ["string", "null"] },
+              "markedByName": { "type": ["string", "null"] },
+              "name": { "type": "string" },
+              "website": { "type": ["string", "null"] },
+              "profilePic": { "type": ["string", "null"] },
+              "companyCity": { "type": ["string", "null"] },
+              "industryType": { "type": ["string", "null"] },
+              "initial": { "type": ["string", "null"] },
+              "slug": { "type": "string" },
+              "serialNumber": { "type": "integer" },
+              "companyId": { "type": "integer" }
+            },
+            "required": ["name", "companyCity", "industryType", "initial", "slug", "serialNumber", "companyId"]
+          },
+          "contact": { "type": ["object", "null"] }
+        },
+        "required": [
+          "id",
+          "invoicePrefix",
+          "invoiceNumber",
+          "templateId",
+          "companyId",
+          "statusId",
+          "currencyId",
+          "dueDate",
+          "issueDate",
+          "totalAmount",
+          "statusLabel",
+          "createdOn",
+          "updatedOn",
+          "updatedByName",
+          "createdByName",
+          "createdBy",
+          "companyName",
+          "companySerial",
+          "companySlug",
+          "templateName",
+          "currencyName",
+          "currencySymbol",
+          "currencyCode",
+          "invoiceCreatedByStatus",
+          "associations",
+          "isTemplateEdited",
+          "company"
+        ]
+      }
+    },
+    "required": ["meta", "data"]
+  }
+  

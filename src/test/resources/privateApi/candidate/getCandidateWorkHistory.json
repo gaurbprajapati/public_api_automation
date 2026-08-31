@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "context",
+            "code"
+          ]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": "string"
+          },
+          "workHistories": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "candidateId": {
+                  "type": "number"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "workCompanyName": {
+                  "type": "string"
+                },
+                "employmentType": {
+                  "type": "number"
+                },
+                "industryId": {
+                  "type": "number"
+                },
+                "workLocation": {
+                  "type": "string"
+                },
+                "salary": {
+                  "type": "number"
+                },
+                "isCurrentlyWorking": {
+                  "type": "boolean"
+                },
+                "workStartDate": {
+                  "type": "number"
+                },
+                "workEndDate": {
+                  "type": "number"
+                },
+                "workDescription": {
+                  "type": "string"
+                },
+                "candidateSlug": {
+                  "type": "string"
+                },
+                "isManuallyAdded": {
+                  "type": "boolean"
+                },
+                "updatedBy": {
+                  "type": "number"
+                },
+                "createdBy": {
+                  "type": "number"
+                },
+                "createdOn": {
+                  "type": "number"
+                },
+                "updatedOn": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "id",
+                "candidateId",
+                "title",
+                "workCompanyName",
+                "employmentType",
+                "industryId",
+                "workLocation",
+                "salary",
+                "isCurrentlyWorking",
+                "workStartDate",
+                "workEndDate",
+                "workDescription",
+                "candidateSlug",
+                "isManuallyAdded",
+                "updatedBy",
+                "createdBy",
+                "createdOn",
+                "updatedOn"
+              ]
+            }
+          }
+        },
+        "required": [
+          "companyName",
+          "workHistories"
+        ]
+      }
+    }
+  },
+  "required": [
+    "meta",
+    "data"
+  ]
+}

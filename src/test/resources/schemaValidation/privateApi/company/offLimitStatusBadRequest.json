@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Company Off-Limit Status Bad Request Response Schema",
+  "type": "object",
+  "required": ["meta", "data", "errors"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"],
+      "properties": {
+        "message": {
+          "type": ["string", "null"]
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "required": ["context", "code"],
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": ["Error while processing request", "Error", "Warning"]
+            },
+            "code": {
+              "type": "integer"
+            }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [400]
+        }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "null"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["message", "errorType"],
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "errorType": {
+            "type": "object",
+            "required": ["context", "code"],
+            "properties": {
+              "context": {
+                "type": "string",
+                "enum": ["Validation Error"]
+              },
+              "code": {
+                "type": "integer"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

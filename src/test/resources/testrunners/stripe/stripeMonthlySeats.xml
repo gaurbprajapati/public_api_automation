@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Stripe Monthly Seats Renewal Test Suite" parallel="tests" thread-count="20">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener" />
+    </listeners>
+
+    <test name="Stripe Renewal Automation - 1">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForProAnnualAddAndRemoveMonthlySeats_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 2">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessAnnualAddAndRemoveMonthlySeats_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 3">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseAnnualAddAndRemoveMonthlySeats_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 4">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForProAnnualWithMonthlySeatsToBusinessAnnualWithMonthlySeats_Test" invocation-numbers="0" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 5">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForProAnnualWithMonthlySeatsToBusinessAnnualWithMonthlySeats_Test" invocation-numbers="1" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 6">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForProAnnualWithMonthlySeatsToEnterpriseAnnualWithMonthlySeats_Test" invocation-numbers="0" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 7">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForProAnnualWithMonthlySeatsToEnterpriseAnnualWithMonthlySeats_Test" invocation-numbers="1" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 8">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessAnnualWithMonthlySeatsToEnterpriseAnnualWithMonthlySeats_Test" invocation-numbers="0" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 9">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessAnnualWithMonthlySeatsToEnterpriseAnnualWithMonthlySeats_Test" invocation-numbers="1" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 10">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForBusinessAnnualWithMonthlySeatsToProAnnualWithMonthlySeats_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 11">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseAnnualWithMonthlySeatsToProAnnualWithMonthlySeats_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 12">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithMonthlySeats_Test">
+                <methods>
+                    <include name="stripeRenewalForEnterpriseAnnualWithMonthlySeatsToBusinessAnnualWithMonthlySeats_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

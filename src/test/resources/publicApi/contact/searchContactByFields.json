@@ -1,0 +1,169 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						},
+						"contact_number": {
+							"type": "string"
+						},
+						"avatar": {
+							"type": "string"
+						},
+						"slug": {
+							"type": "string"
+						},
+						"company_slug": {
+							"type": [
+								"null",
+								"string"
+							]
+						},
+						"additional_company_slugs": {
+							"type": "array",
+							"items": [
+								{
+									"type": [
+										"null",
+										"string"
+									]
+								}
+							]
+						},
+						"facebook": {
+							"type": "string"
+						},
+						"twitter": {
+							"type": "string"
+						},
+						"linkedin": {
+							"type": "string"
+						},
+						"xing":{
+							"type": "string"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"locality": {
+							"type": "string"
+						},
+						"address": {
+							"type": "string"
+						},
+						"designation": {
+							"type": "string"
+						},
+						"stage_id": {
+							"type": "integer"
+						},
+						"custom_fields": {
+							"type": "array",
+							"items": {
+								
+							}
+						},
+						"created_by": {
+							"type": "integer"
+						},
+						"updated_by": {
+							"type": "integer"
+						},
+						"owner": {
+							"type": "integer"
+						},
+						"resource_url": {
+							"type": "string"
+						},
+						"contact_stage_remarks": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"stage_name": {
+										"type": "string"
+									},
+									"stage_id": {
+										"type": "integer"
+									},
+									"reason": {
+										"type": [
+											"string",
+											"null"
+										]
+									},
+									"updated_on": {
+										"type": "string",
+										"format": "date-time"
+									},
+									"updated_by": {
+										"type": "integer"
+									}
+								},
+								"required": [
+									"stage_name",
+									"stage_id",
+									"reason",
+									"updated_on",
+									"updated_by"
+								]
+							}
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar",
+						"slug",
+						"company_slug",
+						"facebook",
+						"twitter",
+						"linkedin",
+						"xing",
+						"created_on",
+						"updated_on",
+						"city",
+						"locality",
+						"address",
+						"designation",
+						"stage_id",
+						"custom_fields",
+						"created_by",
+						"updated_by",
+						"owner",
+						"resource_url",
+						"contact_stage_remarks"
+					]
+				}
+			]
+		}
+	},
+	"required": [
+		"data"
+	]
+}

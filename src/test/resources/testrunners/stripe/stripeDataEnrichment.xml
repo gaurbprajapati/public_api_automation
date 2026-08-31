@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Stripe Data Enrichment Renewal Test Suite" parallel="tests" thread-count="20">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener" />
+    </listeners>
+
+    <test name="Stripe Renewal Automation - 1">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichmentAddonAddOnsBlockedWithFreeAccount_Test">
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 2">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment250CreditsMonthlyBucketAcrossOneRenewal_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 3">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment250CreditsMonthlyBucketAcrossOneRenewal_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 4">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment250CreditsMonthlyBucketAcrossOneRenewal_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 5">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment1000CreditsMonthlyBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 6">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment1000CreditsMonthlyBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 7">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment1000CreditsMonthlyBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 8">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment3000CreditsAnnualBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 9">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment3000CreditsAnnualBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 10">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment3000CreditsAnnualBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 11">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment12000CreditsAnnualBucketAcrossThreeRenewals_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 12">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment12000CreditsAnnualBucketAcrossThreeRenewals_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 13">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment12000CreditsAnnualBucketAcrossThreeRenewals_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 14">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment250To500CreditsMonthlyBucketUpgrade_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 15">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment250To500CreditsMonthlyBucketUpgrade_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 16">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment250To500CreditsMonthlyBucketUpgrade_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 17">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment3000To6000CreditsAnnualBucketUpgrade_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 18">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment3000To6000CreditsAnnualBucketUpgrade_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 19">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment3000To6000CreditsAnnualBucketUpgrade_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 20">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment250CreditsMonthlyTo3000CreditsAnnualUpgrade_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 21">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment250CreditsMonthlyTo3000CreditsAnnualUpgrade_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 22">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichment250CreditsMonthlyTo3000CreditsAnnualUpgrade_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 23">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichmentAnnualBucketToMonthlyBucketUpgradeBlocked_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 24">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichmentAnnualBucketToMonthlyBucketUpgradeBlocked_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 25">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithDataEnrichmentAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForDataEnrichmentAnnualBucketToMonthlyBucketUpgradeBlocked_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

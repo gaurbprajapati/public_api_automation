@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Rest API Test Suite">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+		<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Neptune Service - Generate Note Summary-4">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateNoteSummaryTest">
+				<methods>
+					<include name="generateNoteSummary_Test" />
+					<include name="generateNoteSummaryWithInvalidKey_Test" />
+					<include name="generateNoteSummaryWithNullValues_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateNoteSummary_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Call Log Summary-4">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateCallLogSummaryTest">
+				<methods>
+					<include name="generateCallLogSummary_Test" />
+					<include name="generateCallLogSummaryWithInvalidKey_Test" />
+					<include name="generateCallLogSummaryWithNullValues_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateCallLogSummary_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate User Prompt-4">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateUserPromptTest">
+				<methods>
+					<include name="generateUserPromptForNoteSummary_Test" />
+					<include name="generateUserPromptForCallLogSummary_Test" />
+					<include name="generateUserPromptWillNullPrompt_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateUserPrompt_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Job Description Test - 6">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateJobDescriptionTest">
+				<methods>
+					<include
+						name="generateJobDescriptionWithMandatoryFields_Test" />
+					<include
+						name="generateJobDescriptionWithOptionalFields_Test" />
+					<include name="generateJobDescriptionWithInvalidKey_Test" />
+					<include name="generateJobDescriptionWithNullValues_Test" />
+					<include
+						name="generateJobDescriptionWithPartialNullValues_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateJobDescription_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Candidate Summary Test - 6">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateCandidateSummaryTest">
+				<methods>
+					<include
+						name="generateCandidateSummaryWithMandatoryFields_Test" />
+					<include
+						name="generateCandidateSummaryWithOptionalFields_Test" />
+					<include name="generateCandidateSummaryWithInvalidKey_Test" />
+					<include name="generateCandidateSummaryWithNullValues_Test" />
+					<include
+						name="generateCandidateSummaryWithPartialNullValues_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateCandidateSummary_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Email Template Test - 6">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateEmailTemplateTest">
+				<methods>
+					<include
+						name="generateEmailTemplateWithMandatoryFields_Test" />
+					<include
+						name="generateEmailTemplateWithOptionalFields_Test" />
+					<include name="generateEmailTemplateWithInvalidKey_Test" />
+					<include name="generateEmailTemplateWithNullValues_Test" />
+					<include name="generateEmailTemplateWithNullFields_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateEmailTemplate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Neptune Service - Generate Call Transcript - 3">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateCallTranscriptTest">
+				<methods>
+					<include name="generateCallTranscriptWithInvalidId_Test" />
+					<include name="generateCallTranscriptWithNullId_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateCallTranscript_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email Sequence With Mandatory Fields">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.GenerateSequenceTest">
+				<methods>
+					<include name="generateEmailSequenceWithMandatoryFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate/Regenerate Single Sequence Step">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.GenerateSequenceTest">
+				<methods>
+					<include name="generateEmailSequenceStep" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email Sequence Without Required Fields">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.GenerateSequenceTest">
+				<methods>
+					<include name="generateEmailSequenceWithoutRequiredFields" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Generate Email Sequence With Invalid Fields">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.GenerateSequenceTest">
+				<methods>
+					<include name="generateEmailSequenceWithInvalidFields" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Unauthorized User Cannot Generate Email Sequence">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.GenerateSequenceTest">
+				<methods>
+					<include name="unauthorizedUserCannotGenerateEmailSequence_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="GetUserGPTAccessToken_Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<!-- AlphaS AI feature suites -->
+	<suite-files>
+		<suite-file path="alphasai.xml" />
+	</suite-files>
+
+</suite>

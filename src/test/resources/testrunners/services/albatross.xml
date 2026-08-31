@@ -1,0 +1,4821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Rest API Test Suite">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Create New company">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.CreateNewCompanyTest">
+				<methods>
+					<include name="createNewCompany_albatross_test" />
+					<include
+						name="createNewCompanyWithInvalidData_albatross_test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create new company verify merge duplicate test">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.CreateNewCompanyTest">
+				<methods>
+					<include name="createCompanyAndVerifyDuplicateMergeByWebsite_Test" />
+					<include name="createCompanyAndVerifyDuplicateMergeByName_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Team Performance Report">
+		<classes>
+			<class name="io.recruitcrm.report.TeamPerformanceReport_Test">
+				<methods>
+					<include name="teamPerformanceReportPost_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Team Performance Report Sequence KPIs">
+		<classes>
+			<class name="io.recruitcrm.report.TeamPerformanceReportSeqKPI_Test">
+				<methods>
+					<include name="getSequenceReport" />
+					<include name="getTeamPerformanceReport_SeqKPI"/>
+					<include name="getSequenceReportWithoutRequiredFields"/>
+					<include name="getSequenceReportWithInvalidFields"/>
+					<include name="verifyExportCSVForSequenceKPIs"/>
+					<include name="verifyExportCSVForSequenceKPIsWithoutRequiredFields"/>
+					<include name="verifyExportCSVForSequenceKPIsWithInvalidFields"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Time to hire Report">
+		<classes>
+			<class name="io.recruitcrm.report.TimeToHireReport_Test">
+				<methods>
+					<include name="timeToHireReportPost_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Candidate Lifecycle Report">
+		<classes>
+			<class name="io.recruitcrm.report.CandidateLifecycleReport_Test">
+				<methods>
+					<include name="candidateLifecycleReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All endpoints of Save Perference Report">
+		<classes>
+			<class
+				name="io.recruitcrm.report.savePerferences.AllEndpointsOfSavePerferencesTest">
+				<methods>
+					<include name="saveReportPerferences_postReportTest" />
+					<include name="test_editSavedReportPerferencesByID" />
+					<include name="test_GetAllSavedReportPerferences" />
+					<include name="test_GetSavePerferencesByID" />
+					<include name="test_DeleteSavePerferencesByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Email Templates Albatross API endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.emailTemplate.getEmailTemplate_Test">
+				<methods>
+					<include name="createEmailTemplates_Test" />
+					<include name="getEmailTemplates_Test" />
+					<include name="getStandardEmailTemplates_Test" />
+					<include name="searchEmailTemplate_Test" />
+					<include name="deleteEmailTemplate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Sms Templates Albatross API endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.smsTemplate.AllEndpointsOfSmsTemplateTest">
+				<methods>
+					<include name="createSmsTemplates_Test" />
+					<include name="createSmsTemplatesInvalidParams_Test" />
+					<include name="createSmsTemplatesInvalidAuth_Test" />
+					<include name="getSmsTemplates_Test" />
+					<include name="getSmsTemplatesInvalidAuth_Test" />
+					<include name="searchSmsTemplate_Test" />
+					<include name="searchSmsTemplateInvalidAuth_Test" />
+					<include name="deleteSmsTemplate_Test" />
+					<include name="deleteSmsTemplateInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Activity Template Tests">
+		<classes>
+			<class name="io.recruitcrm.albatross.activityTemplate.CreateActivityTemplateTest">
+				<methods>
+					<include name="createActivityTemplate"/>
+					<include name="createActivityTemplate_422"/>
+					<include name="createActivityTemplateWithInvalidAuth"/>
+					<include name="createActivityTemplateWithEmptyFields"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Template Tests">
+		<classes>
+			<class name="io.recruitcrm.albatross.activityTemplate.GetActivityTemplateTest">
+				<methods>
+					<include name="getAllActivityTemplates"/>
+					<include name="getActivityTemplatesInvalidAuth"/>
+					<include name="getActivityTemplateById"/>
+					<include name="getActivityTemplateByInvalidId"/>
+					<include name="searchActivityTemplate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Activity Template Tests">
+		<classes>
+			<class name="io.recruitcrm.albatross.activityTemplate.EditActivityTemplateTest">
+				<methods>
+					<include name="editActivityTemplate"/>
+					<include name="editActivityTemplateInvalidId"/>
+					<include name="editActivityTemplateInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Activity Template Tests">
+		<classes>
+			<class name="io.recruitcrm.albatross.activityTemplate.DeleteActivityTemplateTest">
+				<methods>
+					<include name="deleteActivityTemplate"/>
+					<include name="deleteActivityTemplateInvalidId"/>
+					<include name="deleteActivityTemplateInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Call Type Customization Albatross API endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.callNoteTypeCustomization.AllEndPointsOfCallTypeTest">
+				<methods>
+					<include name="getCallTypes_Test" />
+					<include name="createCallType_Test" />
+					<include name="deleteCallType_Test" />
+					<include name="getCallTypesInvalidAuth_Test" />
+					<include name="createCallTypeInvalidAuth_Test" />
+					<include name="deleteCallTypeInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Note Type Customization Albatross API endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.callNoteTypeCustomization.AllEndPointsOfNoteTypeTest">
+				<methods>
+					<include name="getNoteTypes_Test" />
+					<include name="createNoteType_Test" />
+					<include name="deleteNoteType_Test" />
+					<include name="getNoteTypesInvalidAuth_Test" />
+					<include name="createNoteTypeInvalidAuth_Test" />
+					<include name="deleteNoteTypeInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Meeeting Type all Endpoints Test-cases">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.meetingTypeCustomization.AllEndPointsOfMeetingTypeTest">
+				<methods>
+					<include name="createMeetingType_Test" />
+					<include name="getMeetingTypes_Test" />
+					<include name="editMeetingType_Test" />
+					<include name="setDefaultMeetingType_Test" />
+					<include name="deleteMeetingType_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Get Meeting Type Endpoints Test-cases">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.meetingTypeCustomization.GetMeetingTypesTest">
+				<methods>
+					<include name="getMeetingTypes_Test" />
+					<include name="getMeetingTypesInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Meeting Type Endpoints Test-cases">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.meetingTypeCustomization.AddMeetingTypeTest">
+				<methods>
+					<include name="createMeetingType_Test" />
+					<include name="createMeetingTypeWithExistingLabel_Test" />
+					<include name="createMeetingType422_Test" />
+					<include name="createMeetingTypeCharLimitExceed_Test" />
+					<include name="createMeetingTypeInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Meeting Type endpoints Test-cases">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.meetingTypeCustomization.EditMeetingTypeTest">
+				<methods>
+					<include name="editMeetingType_Test" />
+					<include name="editMeetingTypeWithInvalidId_Test" />
+					<include name="editMeetingTypeWithInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Meeeting Type Endpoints Test-cases">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.meetingTypeCustomization.DeleteMeetingTypeTest">
+				<methods>
+					<include name="deleteMeetingType_Test" />
+					<include name="deleteMeetingTypeWithInvalidId_Test" />
+					<include name="deleteMeetingTypeWithInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Company Custom Industry Albatross endpoints">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetCompanyCustomIndustryTest">
+				<methods>
+					<include name="getAllCustomIndustries_Test" />
+					<include name="unauthorizedUserGetAllCustomIndustries_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Company Custom Industry Albatross endpoints">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.CreateCompanyCustomIndustryTest">
+				<methods>
+					<include name="createNewCompanyCustomIndustry_Test" />
+					<include name="createExistingCompanyCustomIndustry_Test" />
+					<include name="createEmptyCompanyCustomIndustry_Test" />
+					<include name="unauthorizedUserCreateNewCompanyCustomIndustry_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Company Custom Industry Albatross API endpoints">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.DeleteCompanyCustomIndustryTest">
+				<methods>
+					<include name="deleteCompanyCustomIndustry_Test" />
+					<include name="deleteInvalidCompanyCustomIndustry_Test" />
+					<include name="deleteNullCompanyCustomIndustry_Test" />
+					<include name="unauthorizedUserCreateNewCompanyCustomIndustry_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Off Limit Albatross 1 - Add Status">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.AllEndpointsOfOffLimitAlbatrossTest">
+				<methods>
+					<include name="addOffLimitStatusTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Albatross 2 - Get Status">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.AllEndpointsOfOffLimitAlbatrossTest">
+				<methods>
+					<include name="getOffLimitStatusTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Albatross 3 - Update Status">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.AllEndpointsOfOffLimitAlbatrossTest">
+				<methods>
+					<include name="updateOffLimitStatusTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Albatross 4 - Mark Off Limit">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.AllEndpointsOfOffLimitAlbatrossTest">
+				<methods>
+					<include name="markOffLimitTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Albatross 5 - Mark As Available">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.AllEndpointsOfOffLimitAlbatrossTest">
+				<methods>
+					<include name="markAsAvailableTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Albatross 6 - Get Status History">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.AllEndpointsOfOffLimitAlbatrossTest">
+				<methods>
+					<include name="getOffLimitStatusHistoryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Off Limit Status Curd Albatross Test">
+		<classes>
+			<class
+					name="io.recruitcrm.albatross.offlimit.OffLimitStatusCurdTest">
+				<methods>
+					<include name="addOffLimitStatusWithInvalidAuth"/>
+					<include name="getOffLimitStatusWithInvalidAuth"/>
+					<include name="updateOffLimitStatusWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Off Limit On An Entity Albatross Test">
+		<classes>
+			<class
+					name="io.recruitcrm.albatross.offlimit.OffLimitAnEntityTest">
+				<methods>
+					<include name="markOffLimitTestWithInvalidAuth"/>
+					<include name="markAsAvailableTestWithInvalidAuth"/>
+					<include name="getOffLimitStatusHistoryTestWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Team Mode - 3">
+		<classes>
+			<class
+				name="io.recruitcrm.report.GetTeamMode_Test">
+				<methods>
+					<include name="getTeamMode_Test" />
+					<include name="getTeamModeWithInvalidData_Test" />
+					<include name="unauthorizedUserCannotGetTeamMode_Test"/>
+          	</methods>
+			</class>
+		</classes>
+	</test>
+
+ 	<test name="Sign Up Account Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.SignUpAccountTest">
+				<methods>
+					<include name="signUpAccount_Test" />
+					<include name="signUpAccountWithSameEmailId_Test" />
+					<include name="signUpAccountWithInvalidToken_Test"/>
+					<include name="signUpAccountWithEmptyRequestBody_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Account Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.SignUpAccountTest">
+				<methods>
+					<include name="getIntercomSettingsWithoutAuthorization_Test" />
+					<include name="getIntercomSettingsWithAuthorization_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Intercom Settings Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.SignUpAccountTest">
+				<methods>
+					<include name="createAccount_Test"/>
+					<include name="createAccountWithEmptyRequestBody_Test"/>
+					<include name="unauthorizedUserCannotCreateAccount_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get User For Reports - 3">
+		<classes>
+			<class
+				name="io.recruitcrm.report.GetUserForReports_Test">
+				<methods>
+					<include name="getUserForReports_Test" />
+					<include name="getUserForReportsWithInvalidData_Test" />
+					<include name="unauthorizedUserCannotGetUserForReports_Test"/>
+  			</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="SSO configuration test">
+		<classes>
+			<class name="io.recruitcrm.albatross.sso.SSOConfigurationTest">
+				<methods>
+					<include name="updateSSOConfiguration_Test" />
+					<include name="updateSSOConfigurationWithEmptyRequestBody_Test" />
+					<include name="unauthorizedUserCannotUpdateSSOConfiguration_Test" />
+					<include name="getSSOConfiguration_Test" />
+					<include name="unauthorizedUserCannotGetSSOConfiguration_Test" />
+					<include name="disableSSOConfiguration_Test" />
+					<include name="unauthorizedUserCannotDisableSSOConfiguration_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="SSO reset mfa account test">
+		<classes>
+			<class name="io.recruitcrm.albatross.sso.ResetMFAAccountTest">
+				<methods>
+					<include name="resetMFAAccount_Test" />
+					<include name="unauthorizedUserCannotResetMFAAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="SSO login test">
+		<classes>
+			<class name="io.recruitcrm.albatross.sso.SSOLoginTest">
+				<methods>
+					<include name="ssoLoginWithValidEmailId_Test" />
+					<include name="ssoLoginWithInvalidEmailId_Test" />
+					<include name="ssoLoginWithEmptyRequestBody_Test" />
+					<include name="enableSSOLoginWithEmailIdPassword_Test" />
+					<include name="enableSSOLoginWithEmailIdPasswordWithEmptyRequestBody_Test" />
+					<include name="unauthorizedUserCannotEnableSSOLoginWithEmailIdPassword_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Teams Albatross Endpoints - Test Cases - 7">
+		<classes>
+			<class name="io.recruitcrm.albatross.userManagement.GetTeamsTest">
+				<methods>
+					<include name="getAllTeams_Test" />
+					<include name="getTeamsWithTeamNameFilter_Test" />
+					<include name="getTeamsWithTeamUsersFilter_Test" />
+					<include name="getTeamsWithTeamOwnersFilter_Test" />
+					<include name="getTeamsWithTeamUsersAndOwnersFilter_Test" />
+					<include name="getAllTeamsWithEmptyPageSize_Test" />
+					<include name="unauthorizedUserGetAllTeams_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invite User Test case - 1">
+		<classes>
+			<class name="io.recruitcrm.albatross.userManagement.InviteUserTest">
+				<methods>
+					<include name="inviteUser_Test" />
+					<include name="unauthorizedUserCannotInviteUser_Test" />
+					<include name="inviteUserWithEmptyRequestBody_Test" />
+					<include name="inviteUserWithEmptyEmailId_Test" />
+					<include name="getPendingUsersInvites_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invite User Test case - 2">
+		<classes>
+			<class name="io.recruitcrm.albatross.userManagement.InviteUserTest">
+				<methods>
+					<include name="unauthorizedUserCannotGetPendingUsersInvites_Test" />
+					<include name="getPendingUsersInvitesWithEmptyRequestBody_Test" />
+					<include name="getInvitedUser_Test" />
+					<include name="getInvitedUserWithInvalidId_Test" />
+					<include name="unauthorizedUserCannotGetInvitedUser_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Users and Teams">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GetAllUserAndTeamTest">
+				<methods>
+					<include name="getAllUsersAndTeams"/>
+					<include name="getAllUsersAndTeamsInvalidEndpoint"/>
+					<include name="getAllUsersAndTeamsUnauthorizedAccess"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="CSV File Operations">
+		<classes>
+			<class name="io.recruitcrm.albatross.prePopulatedFields.CSVFileOperationsTest">
+				<methods>
+					<include name="getImportTemplate"/>
+					<include name="unauthorizedAccessToImportTemplate"/>
+					<include name="createNewImportTemplate_POST"/>
+					<include name="createInvalidImportTemplate_POST"/>
+					<include name="createInvalidAuthTokenTemplate_POST"/>
+					<include name="editNewImportTemplateSpecific_POST"/>
+					<include name="editInvalidImportTemplateSpecific_POST"/>
+					<include name="editInvalidAuthTokenTemplateSpecific_POST"/>
+					<include name="deleteImportTemplateSpecific_DELETE"/>
+					<include name="deleteNonExistingImportTemplateSpecific_DELETE"/>
+					<include name="deleteImportTemplateInvalidAuthToken_DELETE"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Child Companies Albatross Endpoints - Test Cases - 2">
+		<classes>
+			<class name="io.rcrm.api.company.GetAllChildCompaniesTest">
+				<methods>
+					<include name="getAllChildCompanies_Test" />
+					<include name="unauthorizedUserCannotGetAllChildCompanies_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Company Mapping Template Albatross Endpoints - Test Cases - 5">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.CompanyMappingTemplateTest">
+				<methods>
+					<include name="createCompanyMappingTemplate_Test" />
+					<include name="createCompanyMappingTemplateWithEmptyData_Test" />
+					<include name="unauthorizedUserCannotCreateCompanyMappingTemplate_Test" />
+					<include name="getAllCompanyMappingTemplates_Test" />
+					<include name="unauthorizedUserCannotGetAllCompanyMappingTemplates_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Contact Mapping Template Albatross Endpoints - Test Cases - 5">
+		<classes>
+			<class name="io.recruitcrm.albatross.contact.ContactMappingTemplateTest">
+				<methods>
+					<include name="createContactMappingTemplate_Test" />
+					<include name="createContactMappingTemplateWithEmptyData_Test" />
+					<include name="unauthorizedUserCannotCreateContactMappingTemplate_Test" />
+					<include name="getAllContactMappingTemplates_Test" />
+					<include name="unauthorizedUserCannotGetAllContactMappingTemplates_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dashboard test case 1 ">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="getRecruiterAssigned_Test" />
+					<include name="getCandidatePipelineByOwner_Test" />
+					<include name="getCandidatePipelineByCompany_Test" />
+					<include name="getTotalDealStats_Test" />
+					<include name="getTotalDealStatsWithEmptyRequestBody_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Dashboard test case 2 ">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="getTotalJobStats_Test" />
+					<include name="getTotalCandidateStats_Test" />
+					<include name="verifyTotalJobStatistics_Test" />
+					<include name="verifyTotalDealStatistics_Test" />
+					<include name="verifyCandidatePipelineByCompany_Test" />
+					<include name="verifyCandidatePipelineByCompanyWithSingleOwner_Test" />
+					<include name="verifyJobStatusFilterOnCandidatePipelineByCompanyForTeam_Test" />
+					<include name="verifySearchTextFilterOnCandidatePipelineByCompany_Test" />
+					<include name="verifyDashboardShowsCompaniesRelatedToSpecificTeamMember_Test" />
+					<include name="getExportCompanyData_Test" />
+					<include name="exportRecruiterAsignedData_Test" />
+					<include name="exportOwnerData_Test" />
+					<include name="unautorizedUserCannotGetDashboardWidget_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Global Search Endpoints Test Case 1">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchTest">
+				<methods>
+					<include name="globalSearchDeal"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Endpoints Test Case - Company">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchTest">
+				<methods>
+					<include name="globalSearchCompany"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Global Search Endpoints Test Case - Contact">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchTest">
+				<methods>
+					<include name="globalSearchContact"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Global Search Endpoints Test Case - Candidate">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchTest">
+				<methods>
+					<include name="globalSearchCandidate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Global Search Endpoints Test Case - Job">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchTest">
+				<methods>
+					<include name="globalSearchJob"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Company">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Company"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Contact">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Contact"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Candidate">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Candidate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Job">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Job"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Deal">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Deal"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Company 401 Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Company_401_InvalidToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Company 401 Empty Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Company_401_EmptyToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Contact 401 Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Contact_401_InvalidToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Candidate 401 Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Candidate_401_InvalidToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Job 401 Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Job_401_InvalidToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Deal 401 Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Deal_401_InvalidToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Deal 401 Empty Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Deal_401_EmptyToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Search Entities - Company 200 Empty Search Returns Empty Data">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchEntitiesTest">
+				<methods>
+					<include name="searchEntities_Company_200_EmptySearchReturnsEmptyData"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Deal Albatross Endpoints Test Case 1">
+		<classes>
+			<class name="io.recruitcrm.albatross.deal.AlbatrossEndpointsDealTest">
+				<methods>
+					<include name="getDealRelatedEntityData"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Email Templates Albatross API endpoints - Lazy Load">
+		<classes>
+			<class name="io.recruitcrm.albatross.emailTemplate.getEmailTemplate_Test">
+				<methods>
+					<include name="getEmailTemplateLazyLoad_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Email Templates Albatross API endpoints - Lazy Load With Invalid Fields">
+		<classes>
+			<class name="io.recruitcrm.albatross.emailTemplate.getEmailTemplate_Test">
+				<methods>
+					<include name="getEmailTemplateLazyLoadWithInvalidFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Email Templates Albatross API endpoints - Lazy Load Mandatory Fields">
+		<classes>
+			<class name="io.recruitcrm.albatross.emailTemplate.getEmailTemplate_Test">
+				<methods>
+					<include name="getEmailTemplateLazyLoadMandatoryFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Email Templates Albatross API endpoints - Lazy Load Unauthorized">
+		<classes>
+			<class name="io.recruitcrm.albatross.emailTemplate.getEmailTemplate_Test">
+				<methods>
+					<include name="getEmailTemplateLazyLoadUnauthorized_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Company - Verify Duplicate Merge by LinkedIn URL test ">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.CreateNewCompanyTest">
+				<methods>
+					<include name="createCompanyAndVerifyDuplicateMergeByLinkedinUrl_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Contact - Verify Duplicate Merge by LinkedIn URL test ">
+		<classes>
+			<class name="io.recruitcrm.albatross.contact.CreateNewContactTest">
+				<methods>
+					<include name="createContactAndVerifyDuplicateMergeByLinkedinUrl_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Company - Verify Different Website in LinkedIn Field Does Not Merge Company as Duplicate">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.CreateNewCompanyTest">
+				<methods>
+					<include name="verifyLinkedInFieldDoesNotMergeDifferentCompAsDuplicate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Contact - Verify Hide And Show Columns">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.contact.HideAndShowColTest">
+	            <methods>
+	                <include name="verifyContactHideAndShowCol_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Contact - Verify Hide And Show Columns with Empty Request Body">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.contact.HideAndShowColTest">
+	            <methods>
+	                <include name="verifyContactHideAndShowColWithEmptyRequestBody_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Contact - Unauthorized User Cannot Get Hide And Show Columns">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.contact.HideAndShowColTest">
+	            <methods>
+	                <include name="unauthorizedUserCannotGetHideAndShowCol_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Contact - Verify Entity View Lock Settings">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.contact.HideAndShowColTest">
+	            <methods>
+	                <include name="verifyEntityViewLockSettings_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Contact - Unauthorized User Cannot View Lock Settings">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.contact.HideAndShowColTest">
+	            <methods>
+	                <include name="unauthorizedUserCannotViewLockSettings_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Contact - Verify Entity View Lock Settings with Empty Request Body">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.contact.HideAndShowColTest">
+	            <methods>
+	                <include name="verifyEntityViewLockSettingsWithEmptyRequestBody_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Candidate - Verify Hide And Show Columns">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.candidate.HideAndShowColTest">
+	            <methods>
+	                <include name="verifyCandidateHideAndShowCol_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Candidate - Verify Get Entity Columns">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.candidate.HideAndShowColTest">
+	            <methods>
+	                <include name="verifyGetEntityColumns_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Candidate - Verify Get Entity Columns with Empty Request Body">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.candidate.HideAndShowColTest">
+	            <methods>
+	                <include name="verifyGetEntityColumnsWithEmptyRequestBody_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Candidate - Unauthorized User Cannot Get Entity Columns">
+	    <classes>
+	        <class name="io.recruitcrm.albatross.candidate.HideAndShowColTest">
+	            <methods>
+	                <include name="unauthorizedUserCannotGetEntityColumn_Test" />
+	            </methods>
+	        </class>
+	    </classes>
+	</test>
+
+	<test name="Email Templates Albatross API endpoints - Get Email Templates By Templates Of">
+		<classes>
+			<class name="io.recruitcrm.albatross.emailTemplate.getEmailTemplate_Test">
+				<methods>
+					<include name="getEmailTemplateByTemplatesOf_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Existing Contacts - Create Company Albatross Endpoint">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.CreateNewCompanyTest">
+				<methods>
+					<include name="createNewCompanyWithExistingContactsAlb_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Existing Contacts - Edit Company Albatross Endpoint">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.EditCompanyTest">
+				<methods>
+					<include name="editExistingCompanyWithExistingContacts_Test" />
+					<include name="unauthorizedUserCannotEditCompany_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Existing Contacts - Bulk Update Company Albatross Endpoint">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.company.BulkUpdateCompanyTest">
+				<methods>
+					<include name="bulkUpdateContactFieldForCompanies_Test" />
+					<include name="bulkUpdateCompanyFieldForContacts_Test" />
+					<include name="bulkUpdateCompaniesWithEmptyData_Test" />
+					<include name="unauthorizedUserCannotBulkUpdateCompanies_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Social Profile Custom Links">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.SocialLinksCustomFieldsTest">
+				<methods>
+					<include name="createSocialLinksCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Social Profile Custom Links with Unauthorized access">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.SocialLinksCustomFieldsTest">
+				<methods>
+					<include name="unauthorizedUserCannotCreateSocialLinksCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Social Profile Custom Links">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.SocialLinksCustomFieldsTest">
+				<methods>
+					<include name="getSocialLinksCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Social Profile Custom Links with Unauthorized access">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.SocialLinksCustomFieldsTest">
+				<methods>
+					<include name="unauthorizedUserCannotGetSocialLinksCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Social Profile Custom Links">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.SocialLinksCustomFieldsTest">
+				<methods>
+					<include name="editSocialLinksCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Social Profile Custom Links with Unauthorized access">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.SocialLinksCustomFieldsTest">
+				<methods>
+					<include name="unauthorizedUserCannotEditSocialLinksCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Social Profile Custom Links">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.SocialLinksCustomFieldsTest">
+				<methods>
+					<include name="deleteSocialLinksCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="LinkedIn URL Reuse Does Not Merge Duplicate Contact Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.contact.CreateNewContactTest">
+				<methods>
+					<include name="verifyLinkedInUrlReuseDoesNotMergeDuplicateContact_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Social Profile Custom Links with Unauthorized access">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.SocialLinksCustomFieldsTest">
+				<methods>
+					<include name="unauthorizedUserCannotDeleteSocialLinksCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dropdown Multiselect Custom Fields Test - Create">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DropdownMultiselectCustomFieldsTest">
+				<methods>
+					<include name="createDropdownMultiselectCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dropdown Multiselect Custom Fields Test - Get">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DropdownMultiselectCustomFieldsTest">
+				<methods>
+					<include name="getDropdownMultiselectCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dropdown Multiselect Custom Fields Test - Edit">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DropdownMultiselectCustomFieldsTest">
+				<methods>
+					<include name="editDropdownMultiselectCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dropdown Multiselect Custom Fields Test - Delete">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DropdownMultiselectCustomFieldsTest">
+				<methods>
+					<include name="deleteDropdownMultiselectCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="login with valid creds test">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.LoginTest">
+				<methods>
+					<include name="loginWithValidCredentials_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="login with invalid creds test">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.LoginTest">
+				<methods>
+					<include name="loginWithInvalidCredentials_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="login with empty creds test">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.LoginTest">
+				<methods>
+					<include name="loginWithEmptyCredentials_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="resend verification email with valid creds test">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.ResendVerificationEmailTest">
+				<methods>
+					<include name="sendVerificationEmailWithValidCredentials_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="resend verification email with verfiied creds test">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.ResendVerificationEmailTest">
+				<methods>
+					<include name="sendVerificationEmailForVerifiedAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="resend verification email with empty creds test">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.ResendVerificationEmailTest">
+				<methods>
+					<include name="sendVerificationEmailWithEmptyCredentials_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="system verification test cases - verify account without email">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="verifyAccountWithoutEmail_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="system verification test cases - verify account with different domain">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="verifyAccountWithDifferentDomain_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="system verification test cases - verify account with same domain">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="verifyAccountWithSameDomain_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="system verification test cases - verify account for verfied account">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="verifyAccountForVerfiedAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="system verification test cases - unauthorized user cannot verify account">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="unauthorizedUserCannotVerifyAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="manual verification test cases - verify manual verification without email">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="verifyManualVerificationWithoutEmail_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="manual verification test cases - verify manual verification">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="verifyManualVerification_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="manual verification test cases - verify manual verification for verfied account">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="verifyManualVerificationForVerfiedAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="manual verification test cases - unauthorized user cannot verify manual verification">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="unauthorizedUserCannotVerifyManualVerification_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="retool verification test cases - verify company verification for unverified account">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="verifyCompanyVerificationForUnverifiedAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="retool verification test cases - verify company verification for verified account">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="verifyCompanyVerificationForVerifiedAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="retool verification test cases - unauthorized user cannot verify company verification">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.CompanyVerificationTest">
+				<methods>
+					<include name="unauthorizedUserCannotVerifyCompanyVerification_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Account Agreement Test - Save Account Agreement">
+		<classes>
+			<class name="io.recruitcrm.albatross.AccountAgreementTest">
+				<methods>
+					<include name="saveAccountAgreementTest" />
+					<include name="saveAccountAgreementWithEmptyRequestBody_Test" />
+					<include name="unauthorizedUserCannotSaveAccountAgreement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Account Agreement Test - Get Account Agreement Template">
+		<classes>
+			<class name="io.recruitcrm.albatross.AccountAgreementTest">
+				<methods>
+					<include name="getAccountAgreementTemplateTest"/>
+					<include name="unauthorizedUserCannotGetAccountAgreementTemplate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Account Agreement Test - Get Account Agreement">
+		<classes>
+			<class name="io.recruitcrm.albatross.AccountAgreementTest">
+				<methods>
+					<include name="getEmptyAccountAgreementTest" />
+					<include name="getAccountAgreementTest" />
+					<include name="unauthorizedUserCannotGetAccountAgreement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Create Nested Custom Fields - Positive Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="createNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Create Nested Custom Fields - Negative Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="createNestedCustomFieldsWithEmptyRequest_Test" />
+					<include name="unauthorizedUserCannotCreateNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Edit Nested Custom Fields - Positive Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="editNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Edit Nested Custom Fields - Negative Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="editNestedCustomFieldsWithEmptyRequest_Test" />
+					<include name="unauthorizedUserCannotEditNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Get Nested Custom Fields - Positive Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="getNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Get Nested Custom Fields - Negative Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="getNestedCustomFieldsWithEmptyRequest_Test" />
+					<include name="unauthorizedUserCannotGetNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Unlink Nested Custom Fields - Positive Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="unlinkNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Unlink Nested Custom Fields - Negative Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="unlinkNestedCustomFieldsWithEmptyRequest_Test" />
+					<include name="unauthorizedUserCannotUnlinkNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Get Default Options - Positive Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="getDefaultOptions_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Get Default Options - Negative Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="getDefaultOptionsWithEmptyRequest_Test" />
+					<include name="unauthorizedUserCannotGetDefaultOptions_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Can Delete Nested Custom Fields - Positive Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="canDeleteNestedCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Can Delete Nested Custom Fields - Negative Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="canDeleteNestedCustomFieldWithEmptyRequest_Test" />
+					<include name="unauthorizedUserCannotDeleteNestedCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Can Delete Nested Custom Fields Options - Positive Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="canDeleteNestedCustomFieldOption_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Can Delete Nested Custom Fields Options - Negative Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.NestedCustomFieldsTest">
+				<methods>
+					<include name="canDeleteNestedCustomFieldOptionWithEmptyRequest_Test" />
+					<include name="unauthorizedUserCannotDeleteNestedCustomFieldOptions_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Candidate Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateHotlist_Extension" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="Create Candidate Hotlist With Empty Request Body Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateHotlistWithEmptyRequestBody_Extension" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create Candidate Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="unauthorizedUserCannotCreateCandidateHotlist_Extension" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	    <test name="Create Candidate And Verify Duplicate Candidate Merge By Phone Number Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateAndVerifyDuplicateCandidateMergeByPhoneNumber_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Candidate And Verify Duplicate Candidate Merge By EmailId Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateAndVerifyDuplicateCandidateMergeByEmailId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="create New Candidate Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createNewCandidate_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="Create Candidate And Verify Duplicate Candidate Merge And Override Data By Phone Number Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateAndVerifyDuplicateCandidateMergeAndOverrideDataByPhoneNumber_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Candidate And Verify Duplicate Candidate Merge And Override Data By EmailId Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateAndVerifyDuplicateCandidateMergeAndOverrideDataByEmailId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Candidate With Empty Request Body Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createNewCandidateWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create New Candidate Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="unauthorizedUserCannotCreateNewCandidate_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="Saved Search 200 request">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.CreateSavedSearchTest">
+				<methods>
+					<include name="testCreateSavedSearch_ValidRequest_200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Saved Search 401 request">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.CreateSavedSearchTest">
+				<methods>
+					<include name="testCreateSavedSearch_UnauthorizedAccess_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Saved Search 500 request">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.CreateSavedSearchTest">
+				<methods>
+					<include name="testCreateSavedSearch_EmptyRequestBody_500" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Saved Search 405 request">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.CreateSavedSearchTest">
+				<methods>
+					<include name="testCreateSavedSearch_InvalidHttpMethod_405" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Target Report Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="createTargetReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Target Report with Empty Data Test - 422">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="createTargetReportWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Target Report with Random Data Test - 422">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="createTargetReportWithRandomData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Target Report with Invalid Start Date and End Date Test - 422">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="createTargetReportWithInvalidStartDateAndEndDate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Target Report with Invalid Assignee and Frequency Test - 422">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="createTargetReportWithInvalidAssigneeAndFrequency_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Target Report with Unauthorized Access Test - 401">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="createTargetReportWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Target Report Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="updateTargetReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Target Report with Invalid Id Test - 500">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="updateTargetReportWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Target Report with Empty Data Test - 422">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="updateTargetReportWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Target Report with Unauthorized Access Test - 401">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="updateTargetReportWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Target Report Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="deleteTargetReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Target Report with Invalid Id Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="deleteTargetReportWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Target Report with Empty Data Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="deleteTargetReportWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Target Report with Unauthorized Access Test - 401">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="deleteTargetReportWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Target Report Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="searchTargetReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Target Report with Invalid Page Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="searchTargetReportWithInvalidPage_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Target Report with Empty Data Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="searchTargetReportWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Target Report with Invalid Sort Filter Test - 500">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="searchTargetReportWithInvalidSort_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Target Report with Unauthorized Access Test - 401">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="searchTargetReportWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Target Report Entity Columns Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="getTargetReportEntityColumns_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Target Report Entity Columns with Empty Data Test - 500">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="getTargetReportEntityColumnsWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Target Report Entity Columns with Random Data Test - 500">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="getTargetReportEntityColumnsWithRandomData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Target Report Entity Columns with Unauthorized Access Test - 500">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="getTargetReportEntityColumnsWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Archive Target Report Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="archiveTargetReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Target Report with Invalid Id Test - 200">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="archiveTargetReportWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Target Report with Empty Data Test - 422">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="archiveTargetReportWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Archive Target Report with Unauthorized Access Test - 401">
+		<classes>
+			<class name="io.recruitcrm.albatross.account.TargetReportsCURDTest">
+				<methods>
+					<include name="archiveTargetReportWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Related Companies - Valid Contact">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedCompanies_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Related Companies - Invalid ID">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedCompaniesInvalidId_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Related Companies - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedCompaniesUnauthorizedAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Related Company Entity">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedCompanyEntityData_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Related Contact Entity">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedContactEntityData_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Related Deal Entity">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedDealEntityData_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Related Job Entity">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedJobEntityData_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Entity Data with Invalid Column">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedCandidateEntityDataWithInvalidColId_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Entity Data Unauthorized User">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedEntityDataWithUnauthorizedUser_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="Create Company Text Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company Number Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyNumberCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company Date Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyDateCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company DateTime Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyDateTimeCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company LongText Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyLongTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company Phone Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyPhoneCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company Dropdown Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyDropdownCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company Multiselect Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyMultiselectCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company Checkbox Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyCheckboxCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company File Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanyFileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Company Social Profile Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CompanyCustomFieldsTest">
+				<methods>
+					<include name="createCompanySocialProfileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Company Text Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company Number Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyNumberCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company Date Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyDateCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company DateTime Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyDateTimeCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company LongText Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyLongTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company Phone Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyPhoneCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company Dropdown Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyDropdownCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company Multiselect Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyMultiselectCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company Checkbox Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyCheckboxCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company File Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanyFileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Company Social Profile Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditCompanyCustomFieldsTest">
+				<methods>
+					<include name="editCompanySocialProfileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Company Text Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company Number Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyNumberCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company Date Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyDateCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company DateTime Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyDateTimeCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company LongText Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyLongTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company Phone Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyPhoneCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company Dropdown Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyDropdownCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company Multiselect Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyMultiselectCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company Checkbox Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyCheckboxCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company File Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanyFileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Company Social Profile Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteCompanyCustomFieldsTest">
+				<methods>
+					<include name="deleteCompanySocialProfileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Contact Text Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact Number Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactNumberCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact Date Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactDateCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact DateTime Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactDateTimeCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact LongText Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactLongTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact Phone Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactPhoneCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact Email Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactEmailCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact Dropdown Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactDropdownCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact Multiselect Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactMultiselectCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact Checkbox Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactCheckboxCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact File Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactFileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Contact Social Profile Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.CreateContactCustomFieldsTest">
+				<methods>
+					<include name="createContactSocialProfileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Contact Text Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact Number Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactNumberCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact Date Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactDateCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact DateTime Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactDateTimeCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact LongText Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactLongTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact Phone Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactPhoneCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact Email Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactEmailCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact Dropdown Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactDropdownCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact Multiselect Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactMultiselectCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact Checkbox Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactCheckboxCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact File Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactFileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Contact Social Profile Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.EditContactCustomFieldsTest">
+				<methods>
+					<include name="editContactSocialProfileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Contact Text Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact Number Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactNumberCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact Date Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactDateCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact DateTime Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactDateTimeCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact LongText Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactLongTextCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact Phone Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactPhoneCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact Email Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactEmailCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact Dropdown Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactDropdownCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact Multiselect Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactMultiselectCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact Checkbox Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactCheckboxCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact File Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactFileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Contact Social Profile Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DeleteContactCustomFieldsTest">
+				<methods>
+					<include name="deleteContactSocialProfileCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Entity Files Endpoint Test - 4">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetEntityFilesTest">
+				<methods>
+					<include name="getEntityFiles" />
+					<include name="crossAccountGetEntityFiles" />
+					<include name="getEntityFilesWithEmptyFolder" />
+					<include name="getEntityFilesInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Associate Count Endpoint Test-cases - 5">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetAssociateCountTest">
+				<methods>
+					<include name="getAssociateCountTest" />
+					<include name="getAssociateCountWithInvalidDataTest" />
+					<include name="getAssociateCountWithEmptyDataTest" />
+					<include name="getAssociateCountEmptyResponseTest" />
+					<include name="getAssociateCountInvalidTokenTest" />
+					<include name="crossAccountGetAssociateCountTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Enterprise Addons Limits Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseAddonsLimitsTest">
+                <methods>
+                    <include name="getEnterpriseAddonsLimits_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Addons Limits Test - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseAddonsLimitsTest">
+                <methods>
+                    <include name="getEnterpriseAddonsLimitsUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Addons Limits Test - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseAddonsLimitsTest">
+                <methods>
+                    <include name="getEnterpriseAddonsLimitsWithEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Addons Limits - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseAddonsLimitsTest">
+                <methods>
+                    <include name="crossAccountGetEnterpriseAddonsLimits_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Addons Limits - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseAddonsLimitsTest">
+                <methods>
+                    <include name="getEnterpriseAddonsLimitsWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Addons Limits - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseAddonsLimitsTest">
+                <methods>
+                    <include name="getEnterpriseAddonsLimitsWithTeamMemberToken_Test" />    
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Addons Limits - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseAddonsLimitsTest">
+                <methods>
+                    <include name="getEnterpriseAddonsLimitsWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Current Addons Limits Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetCurrentAddonsLimitsTest">
+                <methods>
+                    <include name="getCurrentAddonsLimitsForEnterprise_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Current Addons Limits Test - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetCurrentAddonsLimitsTest">
+                <methods>
+                    <include name="getCurrentAddonsLimitsForEnterpriseUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Current Addons Limits Test - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetCurrentAddonsLimitsTest">
+                <methods>
+                    <include name="getCurrentAddonsLimitsForEnterpriseWithEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Current Addons Limits - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetCurrentAddonsLimitsTest">
+                <methods>
+                    <include name="crossAccountGetCurrentAddonsLimitsForEnterprise_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Current Addons Limits - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetCurrentAddonsLimitsTest">
+                <methods>
+                    <include name="getCurrentAddonsLimitsForEnterpriseWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Current Addons Limits - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetCurrentAddonsLimitsTest">
+                <methods>
+                    <include name="getCurrentAddonsLimitsForEnterpriseWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Current Addons Limits - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetCurrentAddonsLimitsTest">
+                <methods>
+                    <include name="getCurrentAddonsLimitsForEnterpriseWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Enrichment Subscription Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseEnrichmentSubscriptionTest">
+                <methods>
+                    <include name="getEnterpriseEnrichmentSubscription_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Enrichment Subscription Test - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseEnrichmentSubscriptionTest">
+                <methods>
+                    <include name="getEnterpriseEnrichmentSubscriptionUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Enrichment Subscription Test - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseEnrichmentSubscriptionTest">
+                <methods>
+                    <include name="getEnterpriseEnrichmentSubscriptionWithEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+
+    <test name="Get Enterprise Enrichment Subscription Test - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseEnrichmentSubscriptionTest">
+                <methods>
+                    <include name="crossAccountGetEnterpriseEnrichmentSubscription_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Enrichment Subscription Test - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseEnrichmentSubscriptionTest">
+                <methods>
+                    <include name="getEnterpriseEnrichmentSubscriptionWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Enrichment Subscription Test - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseEnrichmentSubscriptionTest">
+                <methods>
+                    <include name="getEnterpriseEnrichmentSubscriptionWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Enterprise Enrichment Subscription Test - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.enterprise.GetEnterpriseEnrichmentSubscriptionTest">
+                <methods>
+                    <include name="getEnterpriseEnrichmentSubscriptionWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetAllUsersTest">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetAllUsersTest">
+                <methods>
+                    <include name="getAllUsers_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetAllUsersTest - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetAllUsersTest">
+                <methods>
+                    <include name="getAllUsersUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetAllUsersTest - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetAllUsersTest">
+                <methods>
+                    <include name="getAllUsersEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetAllUsersTest - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetAllUsersTest">
+                <methods>
+                    <include name="getAllUsersForCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetAllUsersTest - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetAllUsersTest">
+                <methods>
+                    <include name="getAllUsersWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetAllUsersTest - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetAllUsersTest">
+                <methods>
+                    <include name="getAllUsersWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetAllUsersTest - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetAllUsersTest">
+                <methods>
+                    <include name="getAllUsersWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetUsersWithTeamsTest">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersWithTeamsTest">
+                <methods>
+                    <include name="getUsersWithTeams_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetUsersWithTeamsTest - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersWithTeamsTest">
+                <methods>
+                    <include name="getUsersWithTeamsUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetUsersWithTeamsTest - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersWithTeamsTest">
+                <methods>
+                    <include name="getUsersWithTeamsEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetUsersWithTeamsTest - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersWithTeamsTest">
+                <methods>
+                    <include name="getUsersWithTeamsForCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetUsersWithTeamsTest - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersWithTeamsTest">
+                <methods>
+                    <include name="getUsersWithTeamsWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetUsersWithTeamsTest - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersWithTeamsTest">
+                <methods>
+                    <include name="getUsersWithTeamsWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetUsersWithTeamsTest - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersWithTeamsTest">
+                <methods>
+                    <include name="getUsersWithTeamsWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetTeams_Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetTeams_Test">
+                <methods>
+                    <include name="getTeams_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetTeams_Test - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetTeams_Test">
+                <methods>
+                    <include name="getTeamsUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="GetTeams_Test - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetTeams_Test">
+                <methods>
+                    <include name="getTeamsEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetTeams_Test - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetTeams_Test">
+                <methods>
+                    <include name="getTeamsForCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetTeams_Test - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetTeams_Test">
+                <methods>
+                    <include name="getTeamsWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetTeams_Test - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetTeams_Test">
+                <methods>
+                    <include name="getTeamsWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="GetTeams_Test - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetTeams_Test">
+                <methods>
+                    <include name="getTeamsWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="Get Industries Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Admin">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Team Member">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Restricted">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithRestrictedToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Create Custom Industry">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithCustomIndustry_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetUsers_Test - get users with valid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getUsers_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsers_Test - get users with invalid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getUsersUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsers_Test - get users with empty token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getUsersEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsers_Test - get users with empty user id">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getUsersEmptyUserId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsers_Test - get users with invalid user id">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getUsersForInvalidUserId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsers_Test - get users with cross account token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getUsersCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsers_Test - get users with admin token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getOwnerUserAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsers_Test - get restricted team member user with admin token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getRestrictedTeamMemberUserAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsers_Test - get users with team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getUsersTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsers_Test - get users with restricted team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsers_Test">
+                <methods>
+                    <include name="getUsersRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetIntercomSettings_Test - get intercom settings with valid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetIntercomSettings_Test">
+                <methods>
+                    <include name="getIntercomSettings_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetIntercomSettings_Test - get intercom settings with invalid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetIntercomSettings_Test">
+                <methods>
+                    <include name="getIntercomSettingsUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetIntercomSettings_Test - get intercom settings with empty token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetIntercomSettings_Test">
+                <methods>
+                    <include name="getIntercomSettingsEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetIntercomSettings_Test - get intercom settings with cross account token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetIntercomSettings_Test">
+                <methods>
+                    <include name="getIntercomSettingsCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetIntercomSettings_Test - get intercom settings with admin token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetIntercomSettings_Test">
+                <methods>
+                    <include name="getIntercomSettingsAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetIntercomSettings_Test - get intercom settings with team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetIntercomSettings_Test">
+                <methods>
+                    <include name="getIntercomSettingsTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetIntercomSettings_Test - get intercom settings with restricted team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetIntercomSettings_Test">
+                <methods>
+                    <include name="getIntercomSettingsRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetDefaultOptionsTest_Extension - get company default options with valid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getCompanyDefaultOptions_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get contact default options with valid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getContactDefaultOptions_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get candidate default options with valid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getCandidateDefaultOptions_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get default options unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get default options empty token">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get default options invalid entity type id">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsInvalidEntityTypeId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get default options empty entity type id">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsEmptyEntityTypeId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get default options cross account">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get default options admin">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsAdmin_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get default options team member">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsTeamMember_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetDefaultOptionsTest_Extension - get default options restricted team member">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsRestrictedTeamMember_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="GetNestedCustomFieldsTest_Extension - get candidate nested custom fields">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getCandidateNestedCustomFields_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetNestedCustomFieldsTest_Extension - get company nested custom fields">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getCompanyNestedCustomFields_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetNestedCustomFieldsTest_Extension - get contact nested custom fields">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getContactNestedCustomFields_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="GetNestedCustomFieldsTest_Extension - get candidate nested custom fields unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getCandidateNestedCustomFieldsUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetNestedCustomFieldsTest_Extension - get candidate nested custom fields empty token">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getCandidateNestedCustomFieldsEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="GetNestedCustomFieldsTest_Extension - get nested custom fields invalid entity type id">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getNestedCustomFieldsInvalidEntityTypeId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="GetNestedCustomFieldsTest_Extension - get nested custom fields empty entity type id">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getNestedCustomFieldsEmptyEntityTypeId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetNestedCustomFieldsTest_Extension - get nested custom fields cross account">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getCandidateNestedCustomFieldsCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetNestedCustomFieldsTest_Extension - get candidate nested custom fields admin">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getCandidateNestedCustomFieldsAdmin_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetNestedCustomFieldsTest_Extension - get company nested custom fields team member">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getCompanyNestedCustomFieldsTeamMember_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetNestedCustomFieldsTest_Extension - get contact nested custom fields team member">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getContactNestedCustomFieldsTeamMember_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetEntityColumns_Test - get entity columns">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumns_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEntityColumns_Test - get entity columns unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEntityColumns_Test - get entity columns empty token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEntityColumns_Test - get entity columns invalid entity">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsInvalidEntity_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEntityColumns_Test - get entity columns empty entity">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsEmptyEntity_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEntityColumns_Test - get entity columns cross account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEntityColumns_Test - get entity columns admin">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsAdmin_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEntityColumns_Test - get entity columns team member">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsTeamMember_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEntityColumns_Test - get entity columns restricted">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsRestricted_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetOnboardingVideos_Test - get onboarding videos">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetOnboardingVideos_Test">
+                <methods>
+                    <include name="getOnboardingVideos_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetOnboardingVideos_Test - get onboarding videos unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetOnboardingVideos_Test">
+                <methods>
+                    <include name="getOnboardingVideosUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetOnboardingVideos_Test - get onboarding videos empty token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetOnboardingVideos_Test">
+                <methods>
+                    <include name="getOnboardingVideosEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetOnboardingVideos_Test - get onboarding videos invalid page">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetOnboardingVideos_Test">
+                <methods>
+                    <include name="getOnboardingVideosInvalidPage_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetOnboardingVideos_Test - get onboarding videos empty page">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetOnboardingVideos_Test">
+                <methods>
+                    <include name="getOnboardingVideosEmptyPage_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetOnboardingVideos_Test - get onboarding videos cross account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetOnboardingVideos_Test">
+                <methods>
+                    <include name="getOnboardingVideosCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetOnboardingVideos_Test - get onboarding videos admin">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetOnboardingVideos_Test">
+                <methods>
+                    <include name="getOnboardingVideosAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetOnboardingVideos_Test - get onboarding videos team member">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetOnboardingVideos_Test">
+                <methods>
+                    <include name="getOnboardingVideosTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetOnboardingVideos_Test - get onboarding videos restricted">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetOnboardingVideos_Test">
+                <methods>
+                    <include name="getOnboardingVideosRestrictedToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Address With Actual Data Validation Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.externalPages.GetAddress_Test">
+                <methods>
+                    <include name="getAddressWithActualDataValidation_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Address With Valid Search Term Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.externalPages.GetAddress_Test">
+                <methods>
+                    <include name="getAddressWithValidSearchTerm_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Address With Empty Search Term Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.externalPages.GetAddress_Test">
+                <methods>
+                    <include name="getAddressWithEmptySearchTerm_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Address Without Search Term Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.externalPages.GetAddress_Test">
+                <methods>
+                    <include name="getAddressWithoutSearchTerm_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Address With Special Characters Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.externalPages.GetAddress_Test">
+                <methods>
+                    <include name="getAddressWithSpecialCharactersInSearchTerm_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Address With Numeric Search Term Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.externalPages.GetAddress_Test">
+                <methods>
+                    <include name="getAddressWithNumericSearchTerm_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Address Without CORS Headers Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.externalPages.GetAddress_Test">
+                <methods>
+                    <include name="getAddressWithoutCorsHeaders_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Assigned Job Count Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.GetAssignedJobCount_Test" >
+                <methods>
+                    <include name="getAssignedJobCountWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Assigned Job Count 404 - Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.GetAssignedJobCount_Test" >
+                <methods>
+                    <include name="getAssignedJobCountWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Assigned Job Count 404 - Empty Body">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.GetAssignedJobCount_Test" >
+                <methods>
+                    <include name="getAssignedJobCountEmptyBody_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Assigned Job Count 404 - Invalid Id">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.GetAssignedJobCount_Test" >
+                <methods>
+                    <include name="getAssignedJobCountInvalidId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Assigned Job Count 404 - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.GetAssignedJobCount_Test" >
+                <methods>
+                    <include name="getAssignedJobCountWithCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Assigned Job Count 404 - Admin">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.GetAssignedJobCount_Test" >
+                <methods>
+                    <include name="getAssignedJobCountWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Assigned Job Count 404 - Team Member">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.GetAssignedJobCount_Test" >
+                <methods>
+                    <include name="getAssignedJobCountWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Assigned Job Count 404 - Restricted">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.GetAssignedJobCount_Test" >
+                <methods>
+                    <include name="getAssignedJobCountWithRestrictedToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetEntityCustomFields_Test - Get Entity Custom Fields for Company">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsCompany_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="GetEntityCustomFields_Test - Get Entity Custom Fields for Company with Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsUnauthorizedUser_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="GetEntityCustomFields_Test - Get Entity Custom Fields for Company with Empty Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsEmptyToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="GetEntityCustomFields_Test - Get Entity Custom Fields for Company with Invalid Column ID">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsInvalidColId_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="GetEntityCustomFields_Test - Get Entity Custom Fields for Company with Cross Account Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsCompanyCrossAccount_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="GetEntityCustomFields_Test - Get Entity Custom Fields for Company with Admin Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsCompanyAdminToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="GetEntityCustomFields_Test - Get Entity Custom Fields for Company with Team Member Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsCompanyTeamMemberToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="GetEntityCustomFields_Test - Get Entity Custom Fields for Company with Restricted Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsCompanyRestrictedTeamMemberToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetUsersForRPR_Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersForRPR_Test">
+                <methods>
+                    <include name="getUsersForRPR_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsersForRPR_Test - Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersForRPR_Test">
+                <methods>
+                    <include name="getUsersForRPR_InvalidToken_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsersForRPR_Test - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersForRPR_Test">
+                <methods>
+                    <include name="getUsersForRPR_EmptyToken_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsersForRPR_Test - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersForRPR_Test">
+                <methods>
+                    <include name="getUsersForRPR_CrossAccount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsersForRPR_Test - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersForRPR_Test">
+                <methods>
+                    <include name="getUsersForRPR_AdminToken_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsersForRPR_Test - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersForRPR_Test">
+                <methods>
+                    <include name="getUsersForRPR_TeamMemberToken_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUsersForRPR_Test - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUsersForRPR_Test">
+                <methods>
+                    <include name="getUsersForRPR_RestrictedTeamMemberToken_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetUserGPTAccessToken_Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetUserGPTAccessToken_Test - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetUserGPTAccessToken_Test">
+                <methods>
+                    <include name="getUserGPTTokenRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="Get Candidate Education History Details Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateEducationHistory_Test">
+				<methods>
+					<include name="getCandidateEducationHistoryDetails_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Education History Empty Details Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateEducationHistory_Test">
+				<methods>
+					<include name="getCandidateEducationHistoryEmptyDetails_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Education History With Invalid Id Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateEducationHistory_Test">
+				<methods>
+					<include name="getCandidateEducationHistoryWithInvalidId_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Education History Unauthorized Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateEducationHistory_Test">
+				<methods>
+					<include name="getCandidateEducationHistoryUnauthorized_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Education History Admin Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateEducationHistory_Test">
+				<methods>
+					<include name="getCandidateEducationHistoryAdminToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Education History Team Member Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateEducationHistory_Test">
+				<methods>
+					<include name="getCandidateEducationHistoryTeamMemberToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Education History Restricted Team Member Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateEducationHistory_Test">
+				<methods>
+					<include name="getCandidateEducationHistoryRestrictedTeamMemberToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Education History Cross Account Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateEducationHistory_Test">
+				<methods>
+					<include name="getCandidateEducationHistoryCrossAccount_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Work History Details Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateWorkHistory_Test">
+				<methods>
+					<include name="getCandidateWorkHistoryDetails_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Work History Empty Details Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateWorkHistory_Test">
+				<methods>
+					<include name="getCandidateWorkHistoryEmptyDetails_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Work History With Invalid Id Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateWorkHistory_Test">
+				<methods>
+					<include name="getCandidateWorkHistoryWithInvalidId_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Work History Unauthorized Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateWorkHistory_Test">
+				<methods>
+					<include name="getCandidateWorkHistoryUnauthorized_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Work History Admin Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateWorkHistory_Test">
+				<methods>
+					<include name="getCandidateWorkHistoryAdminToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Work History Team Member Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateWorkHistory_Test">
+				<methods>
+					<include name="getCandidateWorkHistoryTeamMemberToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Work History Restricted Team Member Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateWorkHistory_Test">
+				<methods>
+					<include name="getCandidateWorkHistoryRestrictedTeamMemberToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Work History Cross Account Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.candidate.GetCandidateWorkHistory_Test">
+				<methods>
+					<include name="getCandidateWorkHistoryCrossAccount_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetJobStatusByAccount_Test - Valid Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetJobStatusByAccount_Test">
+                <methods>
+                    <include name="getJobStatusByAccount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetJobStatusByAccount_Test - Invalid Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetJobStatusByAccount_Test">
+                <methods>
+                    <include name="getJobStatusByAccountUnauthorized_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetJobStatusByAccount_Test - Empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetJobStatusByAccount_Test">
+                <methods>
+                    <include name="getJobStatusByAccountEmptyToken_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetJobStatusByAccount_Test - Cross Account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetJobStatusByAccount_Test">
+                <methods>
+                    <include name="getJobStatusByAccountCrossAccount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetJobStatusByAccount_Test - Admin Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetJobStatusByAccount_Test">
+                <methods>
+                    <include name="getJobStatusByAccountAdminToken_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetJobStatusByAccount_Test - Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetJobStatusByAccount_Test">
+                <methods>
+                    <include name="getJobStatusByAccountTeamMemberToken_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetJobStatusByAccount_Test - Restricted Team Member Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetJobStatusByAccount_Test">
+                <methods>
+                    <include name="getJobStatusByAccountRestrictedTeamMemberToken_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="GetEnrichmentToggleStatus_Test - valid Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEnrichmentToggleStatus_Test">
+                <methods>
+                    <include name="getEnrichmentToggleStatus_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEnrichmentToggleStatus_Test - invalid Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEnrichmentToggleStatus_Test">
+                <methods>
+                    <include name="getEnrichmentToggleStatusUnauthorized_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEnrichmentToggleStatus_Test - empty Token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEnrichmentToggleStatus_Test">
+                <methods>
+                    <include name="getEnrichmentToggleStatusEmptyToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEnrichmentToggleStatus_Test - empty User Id">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEnrichmentToggleStatus_Test">
+                <methods>
+                    <include name="getEnrichmentToggleStatusEmptyUserId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEnrichmentToggleStatus_Test - empty Account Id">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEnrichmentToggleStatus_Test">
+                <methods>
+                    <include name="getEnrichmentToggleStatusEmptyAccountId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEnrichmentToggleStatus_Test - cross account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEnrichmentToggleStatus_Test">
+                <methods>
+                    <include name="getEnrichmentToggleStatusCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEnrichmentToggleStatus_Test - admin token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEnrichmentToggleStatus_Test">
+                <methods>
+                    <include name="getEnrichmentToggleStatusAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEnrichmentToggleStatus_Test - team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEnrichmentToggleStatus_Test">
+                <methods>
+                    <include name="getEnrichmentToggleStatusTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="GetEnrichmentToggleStatus_Test - restricted team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetEnrichmentToggleStatus_Test">
+                <methods>
+                    <include name="getEnrichmentToggleStatusRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Presigned Url valid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetPresignedUrl_Test">
+                <methods>
+                    <include name="getPresignedUrlWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Presigned Url invalid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetPresignedUrl_Test">
+                <methods>
+                    <include name="getPresignedUrlWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Presigned Url missing parameters">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetPresignedUrl_Test">
+                <methods>
+                    <include name="getPresignedUrlWithMissingParameters_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Presigned Url cross account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetPresignedUrl_Test">
+                <methods>
+                    <include name="getPresignedUrlWithCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Presigned Url admin token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetPresignedUrl_Test">
+                <methods>
+                    <include name="getPresignedUrlWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Presigned Url team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetPresignedUrl_Test">
+                <methods>
+                    <include name="getPresignedUrlWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Presigned Url restricted team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetPresignedUrl_Test">
+                <methods>
+                    <include name="getPresignedUrlWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get External Pages Presigned Url valid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetExternalPagesPresignedUrl_Test">
+                <methods>
+                    <include name="getExternalPagesPresignedUrlWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get External Pages Presigned Url invalid token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetExternalPagesPresignedUrl_Test">
+                <methods>
+                    <include name="getExternalPagesPresignedUrlWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get External Pages Presigned Url missing parameters">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetExternalPagesPresignedUrl_Test">
+                <methods>
+                    <include name="getExternalPagesPresignedUrlWithMissingParameters_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get External Pages Presigned Url cross account">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetExternalPagesPresignedUrl_Test">
+                <methods>
+                    <include name="getExternalPagesPresignedUrlWithCrossAccount_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get External Pages Presigned Url admin token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetExternalPagesPresignedUrl_Test">
+                <methods>
+                    <include name="getExternalPagesPresignedUrlWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get External Pages Presigned Url team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetExternalPagesPresignedUrl_Test">
+                <methods>
+                    <include name="getExternalPagesPresignedUrlWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get External Pages Presigned Url restricted team member token">
+        <classes>
+            <class name="io.recruitcrm.albatross.GetExternalPagesPresignedUrl_Test">
+                <methods>
+                    <include name="getExternalPagesPresignedUrlWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="Get Off Limit Status Valid Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.GetOffLimitStatus_Test">
+				<methods>
+					<include name="getOffLimitStatus_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Off Limit Status Empty Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.GetOffLimitStatus_Test">
+				<methods>
+					<include name="getOffLimitStatusEmpty_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Off Limit Status With Invalid Id Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.GetOffLimitStatus_Test">
+				<methods>
+					<include name="getOffLimitStatusWithInvalidId_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Off Limit Status Unauthorized Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.GetOffLimitStatus_Test">
+				<methods>
+					<include name="getOffLimitStatusUnauthorized_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Off Limit Status With Admin Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.GetOffLimitStatus_Test">
+				<methods>
+					<include name="getOffLimitStatusWithAdminToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Off Limit Status With Team Member Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.GetOffLimitStatus_Test">
+				<methods>
+					<include name="getOffLimitStatusWithTeamMemberToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Off Limit Status With Restricted Team Member Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.GetOffLimitStatus_Test">
+				<methods>
+					<include name="getOffLimitStatusWithRestrictedTeamMemberToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Off Limit Status For Cross Account Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.offlimit.GetOffLimitStatus_Test">
+				<methods>
+					<include name="getOffLimitStatusForCrossAccount_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Call Log Data for all entities">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getCallLogData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Meetings Data for all entities">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getMeetingsData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Notes Data for all entities">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getNotesData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Tasks Data for all entities">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getTasksData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Activities Data for all entities">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getAllActivitiesData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Data with Invalid Token">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getActivityDataWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Data with Cross Account">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getActivityDataWithCrossAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Data with Admin Token">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getActivityDataWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Data with Team Member Token">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getActivityDataWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Count Data for all entities">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityCount_Test">
+				<methods>
+					<include name="getActivityCount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Count Data with Invalid Token">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityCount_Test">
+				<methods>
+					<include name="getActivityCountWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Get Activity Count Data with Admin Token">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityCount_Test">
+				<methods>
+					<include name="getActivityCountWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Count Data with Team Member Token">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityCount_Test">
+				<methods>
+					<include name="getActivityCountWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- commented out because it is a bug-->
+	<!--
+	<test name="Get Activity Data with Restricted Team Member Token">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityData_Test">
+				<methods>
+					<include name="getActivityDataWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Count Data with Restricted Team Member Token">	
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityCount_Test">
+				<methods>
+					<include name="getActivityCountWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Activity Count Data with Cross Account">
+		<classes>
+			<class name="io.recruitcrm.albatross.GetActivityCount_Test">
+				<methods>
+					<include name="getActivityCountWithCrossAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>  -->
+	<test name="Get SSO Refresh Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.sso.GetSSORefreshToken_Test">
+				<methods>
+					<include name="getSSORefreshToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get SSO Refresh Token Unauthorized Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.sso.GetSSORefreshToken_Test">
+				<methods>
+					<include name="getSSORefreshTokenUnauthorizedToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get SSO Refresh Token Empty Token Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.sso.GetSSORefreshToken_Test">
+				<methods>
+					<include name="getSSORefreshTokenEmptyToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="RBAC Get Company Industries Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.RBACGetCompanyIndustries_Test">
+				<methods>
+					<include name="getGetCompanyIndustriesWithRBACToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Hiring Stage History Remark - Edit Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.EditCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="editCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Hiring Stage History Remark - Cannot Edit Intial Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.EditCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="verifyUserCannotEditIntialCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Hiring Stage History Remark - Edit Candidate Hiring Stage History Remark With Invalid Data">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.EditCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="editCandidateHiringStageHistoryRemarkWithInvalidData_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Hiring Stage History Remark - Edit Candidate Hiring Stage History Remark With Default Data">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.EditCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="editCandidateHiringStageHistoryRemarkWithDefaultData_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Hiring Stage History Remark - Edit Candidate Hiring Stage History Remark With Empty Data">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.EditCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="editCandidateHiringStageHistoryRemarkWithEmptyData_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test> 
+    <test name="Edit Hiring Stage History Remark - Restricted Team Member Cannot Edit Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.EditCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="restrictedTeamMemberCannotEditCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Hiring Stage History Remark - Unauthorised User Cannot Edit Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.EditCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="unauthorisedUserCannotEditCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Hiring Stage History Remark - Cross Account User Cannot Edit Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.EditCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="crossAccountUserCannotEditCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="Delete Hiring Stage History Remark - Delete Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.DeleteCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="deleteCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Hiring Stage History Remark - Cannot Delete Intial Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.DeleteCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="verifyUserCannotDeleteIntialCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Hiring Stage History Remark - Delete Candidate Hiring Stage History Remark With Invalid Data">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.DeleteCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="deleteCandidateHiringStageHistoryRemarkWithInvalidData_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Hiring Stage History Remark - Delete Candidate Hiring Stage History Remark With Default Data">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.DeleteCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="deleteCandidateHiringStageHistoryRemarkWithDefaultData_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Hiring Stage History Remark - Delete Candidate Hiring Stage History Remark With Empty Data">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.DeleteCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="deleteCandidateHiringStageHistoryRemarkWithEmptyData_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Hiring Stage History Remark - Restricted Team Member Cannot Delete Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.DeleteCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="restrictedTeamMemberCannotDeleteCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Hiring Stage History Remark - Unauthorised User Cannot Delete Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.DeleteCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="unauthorisedUserCannotDeleteCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Hiring Stage History Remark - Cross Account User Cannot Delete Candidate Hiring Stage History Remark">
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.DeleteCandidateHiringStageHistoryRemarkTest">
+                <methods>
+                    <include name="crossAccountUserCannotDeleteCandidateHiringStageHistoryRemark_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="Call Log Albatross - Automated Call Log Restriction">
+		<classes>
+			<class name="io.recruitcrm.albatross.callLogs.AllEndpointsOfCallLogTest">
+				<methods>
+					<include name="userCannotDeleteAutomatedCallLog_Albatross_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Albatross Create Job - Margin and Markup">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AlbatrossCreateJobMarginMarkupTest">
+				<methods>
+					<include name="createJobInMarginModeTest" />
+					<include name="createJobInMarkupModeTest" />
+					<include name="createJobDefaultsToFixedRateWhenOmittedTest" />
+					<include name="marginOrMarkupOutOfRangeIsClampedNotRejectedTest" />
+					<include name="unauthorizedUserCannotCreateJobTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Albatross Update Job - Margin and Markup">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.AlbatrossUpdateJobMarginMarkupTest">
+				<methods>
+					<include name="updateJobSwitchesFromFixedRateToMarkupModeTest" />
+					<include name="updateJobClampsOutOfRangeMarginOrMarkupTest" />
+					<include name="unauthorizedUserCannotUpdateJobMarginMarkupTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

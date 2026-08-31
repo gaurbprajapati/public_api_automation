@@ -1,0 +1,90 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AI Advanced Search Test Suite" verbose="1" parallel="false" thread-count="5">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener"/>
+    </listeners>
+
+    <test name="Boolean - Validate Boolean Query Generation">
+        <classes>
+            <class name="io.recruitcrm.AIAdvanceSearch.AIAdvancedSearchValidBooleanQueriesTest">
+                <methods>
+                    <include name="validateBooleanQueryGeneration_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Boolean - Unauthorized User Cannot Access AI Search">
+        <classes>
+            <class name="io.recruitcrm.AIAdvanceSearch.AIAdvancedSearchValidBooleanQueriesTest">
+                <methods>
+                    <include name="unauthorizedUserCannotAccessAISearch_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Boolean - Missing User Query Field Returns Error">
+        <classes>
+            <class name="io.recruitcrm.AIAdvanceSearch.AIAdvancedSearchValidBooleanQueriesTest">
+                <methods>
+                    <include name="missingUserQueryField_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Boolean - Empty User Query Field Returns Error">
+        <classes>
+            <class name="io.recruitcrm.AIAdvanceSearch.AIAdvancedSearchValidBooleanQueriesTest">
+                <methods>
+                    <include name="emptyUserQueryField_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="NLP - Validate NLP Query Conversion to Boolean">
+        <classes>
+            <class name="io.recruitcrm.AIAdvanceSearch.AIAdvancedSearchNaturalLanguageTest">
+                <methods>
+                    <include name="validateNLPQueryConversion_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NLP - Unauthorized User Cannot Access NLP Search">
+        <classes>
+            <class name="io.recruitcrm.AIAdvanceSearch.AIAdvancedSearchNaturalLanguageTest">
+                <methods>
+                    <include name="unauthorizedUserCannotAccessNLPSearch_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NLP - Missing User Query Field Returns Error">
+        <classes>
+            <class name="io.recruitcrm.AIAdvanceSearch.AIAdvancedSearchNaturalLanguageTest">
+                <methods>
+                    <include name="missingUserQueryFieldForNLP_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NLP - Empty User Query Field Returns Error">
+        <classes>
+            <class name="io.recruitcrm.AIAdvanceSearch.AIAdvancedSearchNaturalLanguageTest">
+                <methods>
+                    <include name="emptyUserQueryFieldForNLP_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

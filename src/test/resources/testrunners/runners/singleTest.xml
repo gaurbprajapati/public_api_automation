@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!--For local use -->
+<suite name="Rest API Test Suite" verbose="1" parallel="tests"
+	thread-count="30">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+<!--	public api-->
+	<test name="Rest API regression Test">
+		<classes>
+			<class name="io.rcrm.api.candidate.AllEndPointsOfCandidates">
+				<methods>
+					<include name="createNewCandidate" />
+					<include name="searchCandidates_GET" />
+					<include name="showAllcandidates_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!--	job board-->
+	<test name="All EndPoints Of Broadbean Job Boards">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.broadbean.AllEndpointsOfBroadbeanExternalJobBoards">
+				<methods>
+					<include name="saveBroadbeanJobBoardSetting_POST" />
+					<include name="editBroadbeanJobBoardSetting_POST" />
+					<include name="getBroadbeanJobDetailsById_GET"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--	report-->
+	<test name="report  test case 1">
+		<classes>
+			<class name="io.recruitcrm.report.TeamPerformanceReport_Test">
+				<methods>
+					<include name="teamPerformanceReportPost_Test" />
+					<include name="teamPerformanceReportWithDefaultContactStage_Test" />
+					<include name="teamPerformanceReportWithCustomContactStage_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--	albatross-->
+	<test name="All Off Limit Albatross Test">
+		<classes>
+			<class
+					name="io.recruitcrm.albatross.offlimit.AllEndpointsOfOffLimitAlbatross">
+				<methods>
+					<include name="addOffLimitStatus"/>
+					<include name="getOffLimitStatus"/>
+					<include name="updateOffLimitStatus"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--	candidate service-->
+	<test name="Create a Education History Valid Request">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CreateEducationHistoryTest">
+				<methods>
+					<include name="addEducationHistoryVerify_200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create a Work History Valid Request">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CreateWorkHistoryTest">
+				<methods>
+					<include name="addWorkExpericencVerify_200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get a Education History Valid Request">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEducationHistoryTest">
+				<methods>
+					<include name="getCandidateEducationHistoryVerify_200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--	auditlog service-->
+	<test name="Schedule Audit Log Page Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.auditlog.ScheduleAuditLogPage">
+				<methods>
+					<include name="scheduleAuditLog_Test" />
+					<include name="scheduleAuditLogToMultipleRecipients_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!--	Executive Search Reports-->
+	<test name="All endpoints for Executive Search Templates Endpoints">
+		<classes>
+			<class name="io.recruitcrm.executiveSummary.AllEndpointsOfExecutiveSummaryTemplates">
+				<methods>
+					<include name="userShouldAbleToCreateNewTemplate_executiveSummaryTest" />
+					<exclude name="getTemplateByTemplateID_executiveSummaryTest" />
+					<include name="userShouldAbleToDeleteNewTemplate_executiveSummaryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!--	Hiring pipeline-->
+	<test name="Hiring Pipeline Service- All Endpoints">
+		<classes>
+			<class name="io.recruitcrm.hiringPipeline.AllEndpointsOfHiringPipelineService">
+				<methods>
+					<include name="getAllListOfHiringPipelineForDropdown_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--	nyma-->
+	<test name="Send emails and save update drafts Nyma Endpoints">
+		<classes>
+			<class name="io.rcrm.api.nyma.getEmails_Test">
+				<methods>
+					<include name="getEmailTokenStatus" />
+					<include name="getEmailSignature_Test" />
+					<include name="sendBulkEmailsWithCCBCC_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--	neptune-->
+	<test name="Neptune Service - Generate Call Log Summary-4">
+		<classes>
+			<class name="io.recruitcrm.albatross.neptune.GenerateCallLogSummaryTest">
+				<methods>
+					<include name="generateCallLogSummary_Test" />
+					<include name="generateCallLogSummaryWithInvalidKey_Test" />
+					<include name="generateCallLogSummaryWithNullValues_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--	Auth Service-->
+	<test name="Two factor authentication test case 1">
+		<classes>
+			<class name="io.recruitcrm.authservice.mfa.TwoFactorAuthenticationTest">
+				<methods>
+					<include name="generateQRCode_Test" />
+					<include name="unauthorizedUserCannotGenerateQRCode_Test" />
+					<include name="verifyMFASecurityWithValidOTP_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!--	Notification-->
+<!--	<test name="Fetch Notification Test - 6">-->
+<!--		<classes>-->
+<!--			<class name="io.recruitcrm.albatross.notification.NotificationsTest">-->
+<!--				<methods>-->
+<!--					<include name="postNotificationsForNewUserTest_200" />-->
+<!--					<include name="postNotificationsTestWithMandatoryFields_200" />-->
+<!--					<include name="postNotificationsTestWithOptionalFields_200" />-->
+<!--				</methods>-->
+<!--			</class>-->
+<!--		</classes>-->
+<!--	</test>-->
+
+<!--	Ostrich-->
+	<test name="Get Meeting By Id In Calendar Tests">
+		<classes>
+			<class name="io.recruitcrm.ostrich.GetMeetingById">
+				<methods>
+					<include name="getMeetingById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get List Meeting Tests">
+		<classes>
+			<class name="io.recruitcrm.ostrich.GetMeeting">
+				<methods>
+					<include name="getListOfMeetings" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get List of Task Tests">
+		<classes>
+			<class name="io.recruitcrm.ostrich.GetTask">
+				<methods>
+					<include name="getListOfTasks" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

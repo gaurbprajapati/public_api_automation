@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Company Contact Dropdown Fields Cross Entity Filter Search" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    
+    <test name="Contact Owner Dropdown Fields Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactDropdownFieldsCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactOwnerDropdownFieldsCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Contact CreatedBy Dropdown Fields Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactDropdownFieldsCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactCreatedByDropdownFieldsCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Contact UpdatedBy Dropdown Fields Cross Entity Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactDropdownFieldsCrossEntityCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactUpdatedByDropdownFieldsCrossEntityFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

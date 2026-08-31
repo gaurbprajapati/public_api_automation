@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "success",
+        "fail"
+      ]
+    },
+    "action_name": {
+      "type": "string"
+    },
+    "actionid": {
+      "type": "string"
+    },
+    "intercom": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "status",
+    "data",
+    "action_name",
+    "actionid",
+    "intercom"
+  ]
+}

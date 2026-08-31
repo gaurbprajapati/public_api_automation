@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "notifications",
+    "user",
+    "status",
+    "action_name",
+    "actionid",
+    "intercom",
+    "recaptcha_site_key"
+  ],
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string",
+      "enum": ["0", "Required data is missing in the request", "Field order and visibility has been set for other users successfully"]
+    },
+    "message_type": {
+      "type": "string",
+      "enum": ["is-success"]
+    },
+    "data": {
+      "type": "array",
+      "items": {}
+    },
+    "notifications": {
+      "type": "array",
+      "items": {}
+    },
+    "user": {
+      "type": "object"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success"]
+    },
+    "action_name": {
+      "type": "string",
+      "enum": ["State Saved"]
+    },
+    "actionid": {
+      "type": "integer"
+    },
+    "intercom": {
+      "type": ["string", "null"],
+      "enum": [null]
+    },
+    "recaptcha_site_key": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$"
+    }
+  },
+  "additionalProperties": false
+}

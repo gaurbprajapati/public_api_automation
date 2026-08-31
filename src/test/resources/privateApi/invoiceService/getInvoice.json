@@ -1,0 +1,308 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "requestUuid": {
+            "type": "string"
+          },
+          "responseType": {
+            "type": "object",
+            "properties": {
+              "context": {
+                "type": "string"
+              },
+              "code": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "context",
+              "code"
+            ]
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "message",
+          "requestUuid",
+          "responseType",
+          "timestamp",
+          "status"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "invoicePrefix": {
+            "type": "string"
+          },
+          "invoiceNumber": {
+            "type": "string"
+          },
+          "invoiceId": {
+            "type": "string"
+          },
+          "description": {
+            "type": ["string", "null"]
+          },
+          "templateId": {
+            "type": "integer"
+          },
+          "companyId": {
+            "type": "integer"
+          },
+          "contactId": {
+            "type": "null"
+          },
+          "statusId": {
+            "type": "integer"
+          },
+          "currencyId": {
+            "type": "integer"
+          },
+          "paidOn": {
+            "type": ["integer", "null"]
+          },
+          "dueDate": {
+            "type": "integer"
+          },
+          "issueDate": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "null"
+          },
+          "contactNumber": {
+            "type": "null"
+          },
+          "totalAmount": {
+            "type": "number"
+          },
+          "invoicePdf": {
+            "type": "string"
+          },
+          "invoiceItems": {
+            "type": ["string", "null"]
+          },
+          "statusLabel": {
+            "type": "string"
+          },
+          "createdOn": {
+            "type": "integer"
+          },
+          "updatedOn": {
+            "type": "integer"
+          },
+          "updatedByName": {
+            "type": "string"
+          },
+          "createdByName": {
+            "type": "string"
+          },
+          "createdByPhoto": {
+            "type": ["string", "null"]
+          },
+          "createdBy": {
+            "type": "integer"
+          },
+          "contactName": {
+            "type": "null"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "companyLogo": {
+            "type": ["string", "null"]
+          },
+          "address": {
+            "type": ["string", "null"]
+          },
+          "companyWebsite": {
+            "type": "string"
+          },
+          "companySerial": {
+            "type": "integer"
+          },
+          "contactPhoto": {
+            "type": "null"
+          },
+          "contactSlug": {
+            "type": "null"
+          },
+          "companySlug": {
+            "type": "string"
+          },
+          "templateName": {
+            "type": "string"
+          },
+          "invoiceText": {
+            "type": "string"
+          },
+          "additionalNote": {
+            "type": "null"
+          },
+          "currencyName": {
+            "type": "string"
+          },
+          "currencySymbol": {
+            "type": "string"
+          },
+          "currencyCode": {
+            "type": "string"
+          },
+          "invoiceCreatedByStatus": {
+            "type": "integer"
+          },
+          "associations": {
+            "type": "object"
+          },
+          "isTemplateEdited": {
+            "type": "integer"
+          },
+          "company": {
+            "type": "object",
+            "properties": {
+              "offLimitStatusId": {
+                "type": "null"
+              },
+              "offLimitReason": {
+                "type": "null"
+              },
+              "offLimitEndDate": {
+                "type": "null"
+              },
+              "offLimitStartDate": {
+                "type": "null"
+              },
+              "statusLabel": {
+                "type": "null"
+              },
+              "backgroundColorHex": {
+                "type": "null"
+              },
+              "textColorHex": {
+                "type": "null"
+              },
+              "markedByName": {
+                "type": "null"
+              },
+              "name": {
+                "type": "string"
+              },
+              "website": {
+                "type": "string"
+              },
+              "profilePic": {
+                "type": ["string", "null"]
+              },
+              "companyCity": {
+                "type": ["string", "null"]
+              },
+              "industryType": {
+                "type": "string"
+              },
+              "initial": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "serialNumber": {
+                "type": "integer"
+              },
+              "companyId": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "offLimitStatusId",
+              "offLimitReason",
+              "offLimitEndDate",
+              "offLimitStartDate",
+              "statusLabel",
+              "backgroundColorHex",
+              "textColorHex",
+              "markedByName",
+              "name",
+              "website",
+              "profilePic",
+              "companyCity",
+              "industryType",
+              "initial",
+              "slug",
+              "serialNumber",
+              "companyId"
+            ]
+          },
+          "contact": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "id",
+          "invoicePrefix",
+          "invoiceNumber",
+          "invoiceId",
+          "description",
+          "templateId",
+          "companyId",
+          "contactId",
+          "statusId",
+          "currencyId",
+          "paidOn",
+          "dueDate",
+          "issueDate",
+          "email",
+          "contactNumber",
+          "totalAmount",
+          "invoicePdf",
+          "invoiceItems",
+          "statusLabel",
+          "createdOn",
+          "updatedOn",
+          "updatedByName",
+          "createdByName",
+          "createdByPhoto",
+          "createdBy",
+          "contactName",
+          "companyName",
+          "companyLogo",
+          "address",
+          "companyWebsite",
+          "companySerial",
+          "contactPhoto",
+          "contactSlug",
+          "companySlug",
+          "templateName",
+          "invoiceText",
+          "additionalNote",
+          "currencyName",
+          "currencySymbol",
+          "currencyCode",
+          "invoiceCreatedByStatus",
+          "associations",
+          "isTemplateEdited",
+          "company",
+          "contact"
+        ]
+      }
+    },
+    "required": [
+      "meta",
+      "data"
+    ]
+  }

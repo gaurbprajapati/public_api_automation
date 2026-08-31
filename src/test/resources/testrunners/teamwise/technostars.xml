@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- Owner - Technostars - Harika Kurella, Priyanka Shinde -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="10">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Create Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.CreateNewNoteTest">
+				<methods>
+					<include name="createNewNote" />
+					<include name="createNoteWithDisableAutoTeamsPopulation" />
+					<include name="createNoteWithEnableAutoTeamsPopulation" />
+					<include name="createNoteWithCollaborators" />
+					<include name="createNoteWithInvalidCollaborators" />
+					<include name="createNoteWithInvalidCollaboratorsTeams" />
+					<include name="createNewNoteWithAllValidAssociates" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.AllEndpointsOfNotesTest">
+				<methods>
+					<include name="createNewNote" />
+					<include name="showAllNotes_GET" />
+					<include name="searchNoteByID" />
+					<include name="searchNoteByFields" />
+					<include name="editNoteById" />
+					<include name="DeleteNoteByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Note By ID Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.SearchNoteByIDTest">
+				<methods>
+					<include name="searchNoteByID" />
+					<include
+						name="unauthorizedUserShouldNotBeAbleToSearchNoteByID_noteTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Note By ID Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.DeleteNoteByIDTest">
+				<methods>
+					<include name="deleteNoteByID_noteTest" />
+					<include
+						name="unauthorizedUserShouldNotBeAbleToDeleteNoteByID_noteTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.GetAllNotesTest">
+				<methods>
+					<include name="getAllNotes_noteTest" />
+					<include
+						name="unauthorizedCannotAccessgGetAllNotes_noteTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search by all fields Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.SearchNoteByAllFieldsTest">
+				<methods>
+
+					<include name="searchNoteByAllFields_noteTest" />
+					<include name="searchNoteByAllByInvalidFields_noteTest" />
+					<include
+						name="unauthorizedUserCannotAccessSearchNoteByAllFields_noteTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.EditNoteByIDTest">
+				<methods>
+
+					<include name="editNoteById_notesTest" />
+					<include name="unauthorizedCannoteEditNoteById_notesTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="All Endpoints of Task Endpoint">
+		<classes>
+			<class name="io.rcrm.api.tasks.AllEndpointsOfTasksTest">
+				<methods>
+					<include name="createNewTask" />
+					<include name="showAllTasks" />
+					<include name="searchTaskByID" />
+					<include name="searchTaskByFields" />
+					<include name="deleteTaskByID" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create New Task Endpoint">
+		<classes>
+			<class name="io.rcrm.api.tasks.CreateNewTaskTest">
+				<methods>
+					<include name="createNewTask" />
+					<include name="createTaskWithDisableAutoTeamsPopulation" />
+					<include name="createTaskWithEnableAutoTeamsPopulation" />
+					<include name="createNewTaskWithCollaborators" />
+					<include name="createNewTaskWithInvalidCollaborators" />
+					<include name="createNewTaskWithInvalidCollaboratorTeams" />
+					<include name="createNewTaskPastDate" />
+					<include name="createNewTaskWithAllReminder" />
+					<include name="createNewTaskWithEmptyBody" />
+					<include name="createNewTaskWithInvalidMandatoryValue" />
+					<include name="createNewTaskWithLimitExceeds" />
+					<include name="createNewTaskWithAssociates" />
+					<include name="unauthorizedUserCannotCreateNewTask" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Edit Task Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.EditTaskTest">
+				<methods>
+					<include name="editTaskById_POST" />
+					<include name="editTaskByInvalidId404_POST" />
+					<include name="editTaskByInvalidFieldsValues422_POST" />
+					<include name="unauthorizedUserCannotEditTask" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Show All Tasks Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.GetAllTasksTest">
+				<methods>
+					<include name="showAllTasks_GET" />
+					<include name="unauthorizedUserCannotGetAllTasks" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Task By ID Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.SearchTaskByIdTest">
+				<methods>
+					<include name="searchTaskById_GET" />
+					<include name="searchTaskByInvalidId_GET" />
+					<include name="unauthorizedUserCannotSearchTaskById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Task By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.SearchTaskByFieldsTest">
+				<methods>
+					<include name="searchTaskByTitle_GET" />
+					<include name="searchTaskByAllFields_GET" />
+					<include name="searchTaskByInvalidTitle_GET" />
+					<include name="unauthorizedUserCannotSearchTaskByFields" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Task Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.DeleteTaskTest">
+				<methods>
+					<include name="deleteTaskById_GET" />
+					<include name="deleteTaskByInvalidID_GET" />
+					<include name="unauthorizedUserCannotDeleteTask" />
+					<include name="deleteTaskCreatedByUsers" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Call Logs Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithFields" />
+					<include name="createCallLogWithDisableAutoTeamsPopulation" />
+					<include name="createCallLogWithEnableAutoTeamsPopulation" />
+					<include name="createCallLogWithCollaborators" />
+					<include name="createCallLogWithInvalidCollaborators" />
+					<include name="createCallLogWithInvalidCollaboratorTeams" />
+					<include name="userShouldNotBeAbleToCreateCallLogWithInvalidData" />
+					<include name="createNewCallLogWithMandatoryValue" />
+					<include name="createNewCallLogWithLimitExceeds" />
+					<include name="unauthorizedUserCannotCreateNewCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ALL Call Log By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.AllEndpointsOfCallLogsTest">
+				<methods>
+					<include name="createNewCallLog" />
+					<include name="showAllCalLogs" />
+					<include name="searchCallLogByFields" />
+					<include name="searchCallLogByID" />
+					<include name="editCallLogByID" />
+					<include name="deleteCallLogByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Call Logs Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.EditCallLogTest">
+				<methods>
+					<include name="editCallLogById_POST" />
+					<include name="editCallLogByInvalidId404_POST" />
+					<include name="editCallLogByInvalidFieldsValues422_POST" />
+					<include name="unauthorizedUserCannotEditCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Show All Call Logs Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.GetAllCallLogsTest">
+				<methods>
+					<include name="showAllCallLogs_GET" />
+					<include name="unauthorizedUserCannotGetAllCallLogs" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Call Log By Id Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.SearchCallLogByIdTest">
+				<methods>
+					<include name="searchCallLogById_GET" />
+					<include name="searchCallLogWithRecordingById_GET" />
+					<include name="searchCallLogByInvalidId_GET" />
+					<include name="unauthorizedUserCannotSearchCallLogById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Call Log By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.SearchCallLogByFieldsTest">
+				<methods>
+					<include name="searchCallLogByCallType_GET" />
+					<include name="searchTaskByInvalidCallType_GET" />
+					<include name="unauthorizedUserCannotSearchCallLogByFields" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Call Log By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.DeleteCallLogTest">
+				<methods>
+					<include name="deleteCallLogById_GET" />
+					<include name="deleteCallLogByInvalidID_GET" />
+					<include name="unauthorizedUserCannotDeleteCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create New Meeting Endpoint">
+		<classes>
+			<class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+				<methods>
+					<include name="createNewMeetings" />
+					<include name="createMeetingsWithDisableAutoTeamsPopulation" />
+					<include name="createMeetingsWithEnableAutoTeamsPopulation" />
+					<include name="createMeetingsWithCollaborators" />
+					<include name="createMeetingsWithInvalidCollaborators" />
+					<include name="createMeetingsWithInvalidCollaboratorsTeams" />
+					<include name="createMeetingsWithInvalidCalendarInviteValue" />
+					<include name="createNewMeetingsWithAssociates" />
+					<include name="userShouldNotBeAbleToCreateNewMeetingWithEmptyFieldsData" />
+					<include name="verifyMeetingDescriptionWithMaxChars" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of Meeting Endpoint">
+		<classes>
+			<class name="io.rcrm.api.meeting.AllEndPointsOfMeetingTest">
+				<methods>
+					<include name="createNewMeeting" />
+					<include name="showAllMeeting" />
+					<include name="editMeetingByID" />
+					<include name="searchMeetingByFields" />
+					<include name="searchMeetingByID" />
+					<include name="deleteMeetingByID" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Meeting type Test-cases -6-Done">
+		<classes>
+			<class name="io.rcrm.api.meeting.MeetingTypeTest">
+				<methods>
+					<include name="getMeetingTypes" />
+					<include name="createMeetingWithMeetingType" />
+					<include name="verifyMeetingTypeInShowAllMeeting" />
+					<include name="verifyMeetingTypeInSearchMeetingByID" />
+					<include name="editMeetingType" />
+					<include name="createMeetingWithInvalidMeetingType" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="delete Meeting Endpoint">
+		<classes>
+			<class name="io.rcrm.api.meeting.DeleteMeetingTest">
+				<methods>
+					<include name="deleteMeetingByID" />
+					<include name="deleteMeetingByInvalidID" />
+					<include name="unauthorizedUserShouldNotAbleToDeleteMeetingByID" />
+					<include name="deleteMeetingCreatedByUsers" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Meeting by ID Endpoint">
+		<classes>
+			<class name="io.rcrm.api.meeting.SearchMeetingByIdTest">
+				<methods>
+					<include name="searchMeetingByID" />
+					<include
+						name="unauthorizedUserShouldNotBeAbleToSearchMeetingByID_MeetingTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Meeting ">
+		<classes>
+			<class name="io.rcrm.api.meeting.GetAllMeetingTest">
+				<methods>
+					<include name="getAllMeeting_Test" />
+					<include name="unauthorizedUserCannotGetAllMeeting_Test" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Meeting by fields">
+		<classes>
+			<class name="io.rcrm.api.meeting.SearchMeetingByFieldsTest">
+				<methods>
+					<include name="searchMeetingByFields_Test" />
+					<include
+						name="unauthorizedUserCannotSearchMeetingByFields_Test" />
+					<include name="searchMeetingByInvalidFields_Test" />
+
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="edit Meeting by fields">
+		<classes>
+			<class name="io.rcrm.api.meeting.EditMeetingTest">
+				<methods>
+					<include name="editMeetingByID" />
+					<include name="editMeetingCalendarInviteOption" />
+					<include name="unauthorizedUserCannotEditMeetingByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- All Lists -->
+
+	<test name="Get All Note Types of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetNoteTypesTest">
+				<methods>
+					<include name="getAllNoteTypes_Test" />
+					<include name="unauthorizedUserCannotGetAllNoteTypes_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Collaborators of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCollaboratorsTest">
+				<methods>
+					<include name="getAllCollaborators_Test" />
+					<include
+						name="unauthorizedUserShouldNotAccessCollaborators_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Call Types of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCallTypesTest">
+				<methods>
+					<include name="getAllCallTypes_Test" />
+					<include name="unauthorizedUserCannotGetAllCallTypes_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Send emails and save update drafts Nyma Endpoints">
+		<classes>
+			<class name="io.rcrm.api.nyma.getEmails_Test">
+				<methods>
+					<include name="getEmailTokenStatus" />
+					<include name="getEmailSignature_Test" />
+					<include name="sendBulkEmailsWithCCBCC_Test" />
+					<include name="sendBulkEmailsWithoutCCBCC_Test" />
+					<include name="saveDrafts_Test" />
+					<include name="updateDrafts_Test" />
+					<include name="getDraftById" />
+					<include name="getEmailSettings" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get emails Thread Nyma Endpoints Test">
+		<classes>
+			<class name="io.rcrm.api.nyma.getEmailThread_Test">
+				<methods>
+					<include name="getThread_Test" />
+					<include name="getThreadById_Test" />
+					<include name="getThreadByIdInvalid_Test" />
+					<include name="getThreadInvalidAuth_Test" />
+					<include name="getThreadByIdInvalidAuth_Test" />
+					<include name="getThreadInvalidParams_Test" />
+					<include name="getThreadFailed_Test" />
+					<include name="getThreadOpened_Test" />
+					<include name="getThreadFailedInvalid_Test" />
+					<include name="getThreadOpenedInvalid_Test" />
+					<include name="getThreadFailedInvalidAuth_Test" />
+					<include name="getThreadOpenedInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get email Folder Nyma Endpoints Test">
+		<classes>
+			<class name="io.rcrm.api.nyma.getEmailFolders_Test">
+				<methods>
+					<include name="getFolder_Test" />
+					<include name="getFolderWithFolderView_Test" />
+					<include name="getFolderInvalidAuth_Test" />
+					<include name="getFolderWithFolderViewInvalidAuth_Test" />
+					<include name="getFolderInvalidParamsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of Blocked emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.rcrm.nyma.blockedEmails.AllEndpointsOfBlockedEmailsTest">
+				<methods>
+					<include name="blockedEmailsPOST_Test" />
+					<include name="searchBlockedEmailsGET_Test" />
+					<include name="blockedEmailsDELETE_Test" />
+					<include name="blockedDomainPOST_Test" />
+					<include name="searchBlockedDomainGET_Test" />
+					<include name="blockedDomainDELETE_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Add To Blocked emails Nyma Endpoints">
+		<classes>
+			<class name="io.rcrm.nyma.blockedEmails.AddToBlockedEmailsTest">
+				<methods>
+					<include name="blockedEmailsPOST_Test" />
+					<include name="blockedInvalidEmailsPOST_Test" />
+					<include name="blockedEmailsInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Blocked emails Nyma Endpoints">
+		<classes>
+			<class name="io.rcrm.nyma.blockedEmails.SearchBlockedEmailsTest">
+				<methods>
+					<include name="searchBlockedEmailsGET_Test" />
+					<include name="searchBlockedEmailsInvalidAuth_Test" />
+					<include name="searchBlockedDomainGET_Test" />
+					<include name="searchBlockedDomainInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Blocked emails Nyma Endpoints">
+		<classes>
+			<class name="io.rcrm.nyma.blockedEmails.DeleteBlockedEmailsTest">
+				<methods>
+					<include name="blockedEmailsDELETE_Test" />
+					<include name="deleteBlockedEmailsInvalidAuth_Test" />
+					<include name="blockedDomainDELETE_Test" />
+					<include name="deleteBlockedDomainInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of scheduled Emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.AllEndpointsOfScheduledEmailsTest">
+				<methods>
+					<include name="createScheduledEmailsPOST_Test" />
+					<include name="createScheduledEmailsPOSTWithDraftId_Test" />
+					<include
+						name="createScheduledEmailsPOSTWithInvalidEmail_Test" />
+					<include
+						name="createScheduledEmailsPOSTWithDeleteEntity_Test" />
+					<include name="getScheduledEmailsList_Test" />
+					<include name="getScheduledEmailsListWithScheduledID_Test" />
+					<include name="getScheduledEmailsListWithAttachment_Test" />
+					<include name="cancelScheduledEmailsPOST_Test" />
+					<include name="rescheduleFailedScheduledEmailTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create scheduled Emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.CreateScheduledEmailsTest">
+				<methods>
+					<include name="createScheduledEmailsPOST_Test" />
+					<include name="createScheduledEmailsPOSTWithDraftId_Test" />
+					<include
+						name="createScheduledEmailsPOSTWithInvalidEmail_Test" />
+					<include
+						name="createScheduledEmailsPOSTWithDeleteEntity_Test" />
+					<include
+						name="unAuthorizedUserCannotPostCreateScheduledEmails_test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get scheduled Emails List Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.GetAllScheduledEmailsTest">
+				<methods>
+					<include name="getScheduledEmailsList_Test" />
+					<include name="getScheduledEmailsListWithScheduledID_Test" />
+					<include name="getScheduledEmailsListWithAttachment_Test" />
+					<include name="getScheduledEmailsListInvalidParamsTest" />
+					<include name="unAuthorizedUserCannotGetScheduledEmailsList_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rescheduled Emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.UpdateScheduleEmailsTest">
+				<methods>
+					<include name="reScheduledEmailsPOST_Test" />
+					<include name="sendScheduledEmailsPOST_Test" />
+					<include
+						name="unAuthorizedUserCannotReScheduledEmails_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Cancel scheduled Emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.CancelScheduledEmailsTest">
+				<methods>
+					<include name="cancelScheduledEmailsPOST_Test" />
+					<include
+						name="unAuthorizedUserCannotCancelScheduledEmails_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Email Settings Endpoints">
+		<classes>
+			<class name="io.rcrm.api.nyma.EmailSettingsTest">
+				<methods>
+					<include name="connectEmail" />
+					<include name="getConnectedEmails" />
+					<include name="verifyHideEmailAndToggleDefault" />
+					<include name="disconnectEmail" />
+					<include name="verifyNotifyWhenEmailAutoDisconnected" />
+					<include name="connectEmailWithoutLinkedEmailType" />
+					<include name="connectEmailWithInvalidLinkedEmailType" />
+					<include name="connectEmailInvalidAuthTest" />
+					<include name="disconnectEmailWithInvalidId" />
+					<include name="disconnectEmailInvalidAuthTest" />
+					<include name="getConnectedEmailsInvalidAuthTest" />
+					<include name="verifyUpdateFieldsWithoutRequiredFields" />
+					<include name="verifyUpdateFieldsWithInvalidFields" />
+					<include name="updateFieldsInvalidAuthTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Upload Call Log Recording Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="uploadCallLogRecording" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Upload Call Log Recording 422 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="uploadCallLogRecording_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Upload Call Log Recording 401 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="uploadCallLogRecording_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Call Recording Upload Status Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchCallRecordingUploadStatus" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Status For Call Recording Not Uploaded Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchStatusForCallRecordingNotUploaded" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Status For Call Recording 404 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchStatusForCallRecording_404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Status For Call Recording 401 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchStatusForCallRecording_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enroll In Sequence with first email step starting with zero day">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.EnrollInSequenceWithFirstEmailStepAtZeroDayTest">
+				<methods>
+					<include name="enrollInSequenceWithFirstEmailStepAtZeroDay" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enroll In Sequence with first email step starting with zero day POST">
+		<classes>
+			<class name="io.rcrm.api.emailsequence.EnrollInSequenceWithFirstEmailStepAtZeroDayTest">
+				<methods>
+					<include name="enrollCandContactInSequenceFirstEmailStepAtZeroDay_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search meeting by owner fields - GET">
+		<classes>
+			<class name="io.rcrm.api.meeting.SearchMeetingByFieldsTest">
+				<methods>
+					<include name="searchMeetingByOwnerParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search task by owner fields - GET">
+		<classes>
+			<class name="io.rcrm.api.tasks.SearchTaskByFieldsTest">
+				<methods>
+					<include name="searchTaskByOwnerParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

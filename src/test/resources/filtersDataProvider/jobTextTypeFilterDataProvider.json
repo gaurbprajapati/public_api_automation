@@ -1,0 +1,5021 @@
+{
+  "Name": [
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "Sales Manager",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "Senior Software Engineer 😀",
+      "description": "Exact match, emoji",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "senior software engineer 😀",
+      "description": "Exact match, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "   Sales Manager   ",
+      "description": "Exact match, leading and trailing spaces trimmed",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "Data Scientist_123",
+      "description": "Exact match, underscores",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "Security Director O'Malley",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "CTO [Technologies] (Inc.)",
+      "description": "Exact match, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "首席执行官",
+      "description": "Exact match, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "Operations Manager + Division",
+      "description": "Exact match, plus sign",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "Minimal Data Entry",
+      "description": "Exact match, minimal",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "CEO 💼",
+      "description": "Exact match, emoji briefcase",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "Executive Director XVII",
+      "description": "Exact match, Roman numerals",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is",
+      "filterValue": "NonExistent Job Name",
+      "description": "Exact match, no match",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is_not",
+      "filterValue": "Sales Manager",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is_not",
+      "filterValue": "senior software engineer 😀",
+      "description": "Is not, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is_not",
+      "filterValue": "Security Director O'Malley",
+      "description": "Is not, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is_not",
+      "filterValue": "CTO [Technologies] (Inc.)",
+      "description": "Is not, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains",
+      "filterValue": "Sales",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains",
+      "filterValue": "senior software engineer 😀",
+      "description": "Contains, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains",
+      "filterValue": "  Sales  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains",
+      "filterValue": "Manager",
+      "description": "Contains, infix",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains",
+      "filterValue": "[",
+      "description": "Contains, bracket",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains",
+      "filterValue": "首席",
+      "description": "Contains, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "begins_with",
+      "filterValue": "Sale",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "begins_with",
+      "filterValue": "  Sale",
+      "description": "Begins with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "begins_with",
+      "filterValue": "Data S",
+      "description": "Begins with, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "begins_with",
+      "filterValue": "首席",
+      "description": "Begins with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "ends_with",
+      "filterValue": "ager",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "ends_with",
+      "filterValue": " ager",
+      "description": "Ends with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "ends_with",
+      "filterValue": "ager",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "ends_with",
+      "filterValue": "行官",
+      "description": "Ends with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "does_not_contain",
+      "filterValue": "Sale",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "does_not_contain",
+      "filterValue": "senior software engineer 😀",
+      "description": "Does not contain, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains_exact_word",
+      "filterValue": "Manager",
+      "description": "Contains exact word, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains_exact_word",
+      "filterValue": "首席执行官",
+      "description": "Contains exact word, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Sale,ager",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Sale,Non Existent Job Title",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains_at_least_one",
+      "filterValue": "首席,行官",
+      "description": "Contains at least one, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Sale, ager, Non Existent Job Title",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Sales,Manager",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Sale, ager, , Non Existent Job Title ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "name",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "name",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "name",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Company": [
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "Tech Solutions Inc.",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "tech solutions inc.",
+      "description": "Exact match, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "   Tech Solutions Inc.   ",
+      "description": "Exact match, leading and trailing spaces trimmed",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "Innovate GmbH",
+      "description": "Exact match, international",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "Under_Score_Analytics_Corp",
+      "description": "Exact match, underscores",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "O'Malley's Security Solutions",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "Bracket [Technologies] (Inc.)",
+      "description": "Exact match, brackets",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "Microsoft Corporation",
+      "description": "Exact match, standard company",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "NonExistent Company Name",
+      "description": "Exact match, no match",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "Tech Solutions Inc.",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "tech solutions inc.",
+      "description": "Is not, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "Innovate GmbH",
+      "description": "Is not, international",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "O'Malley's Security Solutions",
+      "description": "Is not, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "Bracket [Technologies] (Inc.)",
+      "description": "Is not, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "Tech",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "tech solutions inc.",
+      "description": "Contains, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "  Tech  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "Innovate GmbH",
+      "description": "Contains, international",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "Solutions",
+      "description": "Contains, infix",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "[",
+      "description": "Contains, bracket",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "Tech",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "  Tech",
+      "description": "Begins with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "Innova",
+      "description": "Begins with, international",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "Under_",
+      "description": "Begins with, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": "Inc.",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": " Inc.",
+      "description": "Ends with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": "GmbH",
+      "description": "Ends with, international",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": "Inc.",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "does_not_contain",
+      "filterValue": "Tech",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "does_not_contain",
+      "filterValue": "tech solutions inc.",
+      "description": "Does not contain, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "does_not_contain",
+      "filterValue": "Innovate GmbH",
+      "description": "Does not contain, international",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "Solutions",
+      "description": "Contains exact word, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "Innovate GmbH",
+      "description": "Contains exact word, international",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,Inc.",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,Innovate GmbH",
+      "description": "Contains at least one, international",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,Non Existent Company",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech, Inc., Non Existent Company",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Inno,GmbH,Unde",
+      "description": "Contains at least one, three values no spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,Solutions,Inc.",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,Inc.,Inno,GmbH,Non Existent Company",
+      "description": "Contains at least one, eight values no spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Tech, Inc., Inno, Non Existent Company ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Note for Candidates": [
+    {
+      "dbField": "description",
+      "filterType": "is",
+      "filterValue": "Hello For candidate",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is",
+      "filterValue": "   Hello For candidate   ",
+      "description": "Exact match, leading and trailing spaces trimmed",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is",
+      "filterValue": "Background_Verification",
+      "description": "Exact match, underscores",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is",
+      "filterValue": "O'Brien's Security team needs experienced director",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is",
+      "filterValue": "Background_Verification [Q1]",
+      "description": "Exact match, brackets",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is",
+      "filterValue": "Secret operations role at top secret agency",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is",
+      "filterValue": "NonExistent description text",
+      "description": "Exact match, no match",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is_not",
+      "filterValue": "Hello For candidate",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is_not",
+      "filterValue": "O'Brien's Security team needs experienced director",
+      "description": "Is not, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is_not",
+      "filterValue": "Background_Verification [Q1]",
+      "description": "Is not, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains",
+      "filterValue": "Hello",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains",
+      "filterValue": "  Hello  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains",
+      "filterValue": "For",
+      "description": "Contains, infix",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains",
+      "filterValue": "[",
+      "description": "Contains, bracket",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "begins_with",
+      "filterValue": "Hell",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "begins_with",
+      "filterValue": "  Hell",
+      "description": "Begins with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "begins_with",
+      "filterValue": "Backgr",
+      "description": "Begins with, underscore",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "ends_with",
+      "filterValue": "date",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "ends_with",
+      "filterValue": " date",
+      "description": "Ends with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "ends_with",
+      "filterValue": "date",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "does_not_contain",
+      "filterValue": "Hell",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains_exact_word",
+      "filterValue": "For",
+      "description": "Contains exact word, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Hell,date",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Hell,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Hell, date, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Hello,For,candidate",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Hell, date, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "description",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "description",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "description",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Full Address": [
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "123 Market Street, Suite 400, San Francisco, CA 94105",
+      "description": "Exact match, full address",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "O'Connell Street Upper, Dub'lin, Dub'lin, Ireland, D01' F5P2",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "123 (Main) Street [Suite 100], [Bracket] City, (California) State, United [States], [94105]",
+      "description": "Exact match, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "San Francisco",
+      "description": "Exact match, substring (no match)",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "NonExistent Address",
+      "description": "Exact match, no match",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "San Francisco",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "O'Connell",
+      "description": "Is not, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "[Suite",
+      "description": "Is not, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "San",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "  San  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "Francisco",
+      "description": "Contains, infix",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "[",
+      "description": "Contains, bracket",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "begins_with",
+      "filterValue": "San ",
+      "description": "Begins with, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "begins_with",
+      "filterValue": "  San ",
+      "description": "Begins with, whitespace",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "begins_with",
+      "filterValue": "_Washi",
+      "description": "Begins with, underscore",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "ends_with",
+      "filterValue": "isco",
+      "description": "Ends with, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "ends_with",
+      "filterValue": " isco",
+      "description": "Ends with, whitespace",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "ends_with",
+      "filterValue": "isco",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "does_not_contain",
+      "filterValue": "San ",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_exact_word",
+      "filterValue": "Francisco",
+      "description": "Contains exact word, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San ,isco",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San ,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San , isco, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San,Francisco",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": " San , isco, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Locality": [
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "Financial District",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "Stadtzentrum",
+      "description": "Exact match, international",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "stadtzentrum",
+      "description": "Exact match, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "_P@lo Alto",
+      "description": "Exact match, underscore and at sign",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "[Downtown] District",
+      "description": "Exact match, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "Distrito de Chamberí",
+      "description": "Exact match, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "_P@lo",
+      "description": "Exact match, partial (no match)",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "[Downtown]",
+      "description": "Exact match, brackets partial (no match)",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "Chamberí",
+      "description": "Exact match, unicode partial (no match)",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "NonExistent Locality",
+      "description": "Exact match, no match",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "Financial District",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "stadtzentrum",
+      "description": "Is not, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "[Downtown]",
+      "description": "Is not, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "Financial",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "stadtzentrum",
+      "description": "Contains, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "District",
+      "description": "Contains, infix",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "[",
+      "description": "Contains, bracket",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "Ch",
+      "description": "Contains, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "begins_with",
+      "filterValue": "Fina",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "begins_with",
+      "filterValue": "_P@lo",
+      "description": "Begins with, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "begins_with",
+      "filterValue": "Ch",
+      "description": "Begins with, unicode",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "ends_with",
+      "filterValue": "rict",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "ends_with",
+      "filterValue": "rict",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "ends_with",
+      "filterValue": "rí",
+      "description": "Ends with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "does_not_contain",
+      "filterValue": "Fina",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "does_not_contain",
+      "filterValue": "stadtzentrum",
+      "description": "Does not contain, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_exact_word",
+      "filterValue": "District",
+      "description": "Contains exact word, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_exact_word",
+      "filterValue": "Chamberí",
+      "description": "Contains exact word, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Fina,rict",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Fina,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Ch,rí",
+      "description": "Contains at least one, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Fina, rict, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Financial,District",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Fina, rict, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "City": [
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "San Francisco",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "   San Francisco   ",
+      "description": "Exact match, leading and trailing spaces trimmed",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "Dub'lin",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "[Bracket] City",
+      "description": "Exact match, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "北京市",
+      "description": "Exact match, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "M@drid",
+      "description": "Exact match, at sign",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "WASHINGTON D.C.",
+      "description": "Exact match, uppercase",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "[Bracket]",
+      "description": "Exact match, brackets partial (no match)",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "NonExistent City",
+      "description": "Exact match, no match",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "San Francisco",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "Dub'lin",
+      "description": "Is not, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "[Bracket]",
+      "description": "Is not, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "San",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "  San  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "Francisco",
+      "description": "Contains, infix",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "[",
+      "description": "Contains, bracket",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "北京",
+      "description": "Contains, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "begins_with",
+      "filterValue": "San ",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "begins_with",
+      "filterValue": "  San ",
+      "description": "Begins with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "begins_with",
+      "filterValue": "北京",
+      "description": "Begins with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "ends_with",
+      "filterValue": "isco",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "ends_with",
+      "filterValue": " isco",
+      "description": "Ends with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "ends_with",
+      "filterValue": "isco",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "ends_with",
+      "filterValue": "京市",
+      "description": "Ends with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "does_not_contain",
+      "filterValue": "San ",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_exact_word",
+      "filterValue": "Francisco",
+      "description": "Contains exact word, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_exact_word",
+      "filterValue": "北京市",
+      "description": "Contains exact word, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San ,isco",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San ,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "北京,京市",
+      "description": "Contains at least one, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San , isco, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San,Francisco",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": " San , isco, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Job Descritpion": [
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is",
+      "filterValue": "React",
+      "description": "Exact match, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is_not",
+      "filterValue": "React",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains",
+      "filterValue": "Re",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "begins_with",
+      "filterValue": "Reac",
+      "description": "Begins with, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "ends_with",
+      "filterValue": "eact",
+      "description": "Ends with, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "ends_with",
+      "filterValue": "eact",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "does_not_contain",
+      "filterValue": "Reac",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Reac,eact",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Reac,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Reac, eact, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Reac,eact",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Reac, eact, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is",
+      "filterValue": "Lead B2B sales pipeline; revenue growth & team coaching.",
+      "description": "Exact match, job1 jdtext",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is",
+      "filterValue": "Full stack development with React and Node.js",
+      "description": "Exact match, job2 jdtext",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is",
+      "filterValue": "Machine learning, SQL, and TensorFlow for predictive analytics.",
+      "description": "Exact match, job3 jdtext",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is",
+      "filterValue": "Agile/Scrum delivery for global projects; PMP preferred.",
+      "description": "Exact match, job4 jdtext",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is",
+      "filterValue": "Bracket [Technologies] CTO role; Chief Technology Officer.",
+      "description": "Exact match, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is",
+      "filterValue": "阿里巴巴集团技术招聘首席执行官",
+      "description": "Exact match, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is",
+      "filterValue": "Microsoft CEO role; leadership 🚀",
+      "description": "Exact match, emoji",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is",
+      "filterValue": "Noble Technologies XVII; Executive Director role.",
+      "description": "Exact match, Roman numerals",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains",
+      "filterValue": "React",
+      "description": "Contains, React",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains",
+      "filterValue": "TensorFlow",
+      "description": "Contains, TensorFlow",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains",
+      "filterValue": "Agile",
+      "description": "Contains, Agile",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains",
+      "filterValue": "阿里",
+      "description": "Contains, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains",
+      "filterValue": "Blockchain",
+      "description": "Contains, Blockchain",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains",
+      "filterValue": "DevOps",
+      "description": "Contains, DevOps",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains",
+      "filterValue": "[Technologies]",
+      "description": "Contains, bracket literal",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "begins_with",
+      "filterValue": "Lead",
+      "description": "Begins with, Lead",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "begins_with",
+      "filterValue": "Full",
+      "description": "Begins with, Full",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "begins_with",
+      "filterValue": "Machine",
+      "description": "Begins with, Machine",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "begins_with",
+      "filterValue": "Microsoft",
+      "description": "Begins with, Microsoft",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "begins_with",
+      "filterValue": "阿里巴巴",
+      "description": "Begins with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "ends_with",
+      "filterValue": "coaching.",
+      "description": "Ends with, coaching",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "ends_with",
+      "filterValue": "Node.js",
+      "description": "Ends with, Node.js",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "ends_with",
+      "filterValue": "analytics.",
+      "description": "Ends with, analytics",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "ends_with",
+      "filterValue": "🚀",
+      "description": "Ends with, emoji",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "does_not_contain",
+      "filterValue": "xyznonexistent",
+      "description": "Does not contain, no match",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains_exact_word",
+      "filterValue": "TensorFlow",
+      "description": "Contains exact word, TensorFlow",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains_exact_word",
+      "filterValue": "Technologies",
+      "description": "Contains exact word, Technologies",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "contains_at_least_one",
+      "filterValue": "React,TensorFlow,阿里巴巴",
+      "description": "Contains at least one, multiple jdtext",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is_not",
+      "filterValue": "Full stack development with React and Node.js",
+      "description": "Is not, job2 jdtext",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "jdtextdetails",
+      "filterType": "is_not",
+      "filterValue": "NonExistent JD text",
+      "description": "Is not, no match",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Contact Name": [
+    {
+      "dbField": "contactname",
+      "filterType": "is",
+      "filterValue": "John 😀 Smith",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "is",
+      "filterValue": "  John 😀 Smith",
+      "description": "Exact match, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "is",
+      "filterValue": "Seán O'Malley",
+      "description": "Exact match, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "is",
+      "filterValue": "Hans Müller",
+      "description": "Exact match, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "is",
+      "filterValue": "Analytics Expert_123",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+
+    {
+      "dbField": "contactname",
+      "filterType": "is_not",
+      "filterValue": "John",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "is_not",
+      "filterValue": "Hans Müller",
+      "description": "Is not, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "is_not",
+      "filterValue": "Analytics Expert_123",
+      "description": "Is not, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains",
+      "filterValue": "Jo",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains",
+      "filterValue": "  John  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains",
+      "filterValue": "Expert_123",
+      "description": "Contains, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains",
+      "filterValue": "Müller",
+      "description": "Contains, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains",
+      "filterValue": "O'Malley",
+      "description": "Contains, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains",
+      "filterValue": "Se",
+      "description": "Contains, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "begins_with",
+      "filterValue": "John",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "begins_with",
+      "filterValue": "José",
+      "description": "Begins with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "begins_with",
+      "filterValue": "Seán",
+      "description": "Begins with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "begins_with",
+      "filterValue": "  John",
+      "description": "Begins with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "begins_with",
+      "filterValue": "Se",
+      "description": "Begins with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "ends_with",
+      "filterValue": "John",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "ends_with",
+      "filterValue": " John",
+      "description": "Ends with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "ends_with",
+      "filterValue": "_123",
+      "description": "Ends with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "ends_with",
+      "filterValue": "Müller",
+      "description": "Ends with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "ends_with",
+      "filterValue": "án",
+      "description": "Ends with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "does_not_contain",
+      "filterValue": "John",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains_exact_word",
+      "filterValue": "Seán",
+      "description": "Contains exact word, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "John,John",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "John,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Se,án",
+      "description": "Contains at least one, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "John, John, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "John,José",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains_at_least_one",
+      "filterValue": " John, Müller, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains_at_least_one",
+      "filterValue": " John, Müller, O'Malley, Analytics Expert_123, Alpha β Systems ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "is",
+      "filterValue": "O'Malley",
+      "description": "Last name exact match, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactname",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Last name contains underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Contact Email": [
+    {
+      "dbField": "contactemail",
+      "filterType": "is",
+      "filterValue": "john.smith@techsolutions.com",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "is",
+      "filterValue": "  john.smith@techsolutions.com  ",
+      "description": "Exact match, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "is_not",
+      "filterValue": "john.smith@techsolutions.com",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "contains",
+      "filterValue": "john.smith@tec",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "contains",
+      "filterValue": "  john.smith@techsolutions.com  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "begins_with",
+      "filterValue": "john",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "begins_with",
+      "filterValue": "  john",
+      "description": "Begins with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "ends_with",
+      "filterValue": ".com",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "ends_with",
+      "filterValue": " .com",
+      "description": "Ends with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "ends_with",
+      "filterValue": ".com",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "does_not_contain",
+      "filterValue": "john",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "contains_at_least_one",
+      "filterValue": "john,.com",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "contains_at_least_one",
+      "filterValue": "john,nonexistent.domain",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "contains_at_least_one",
+      "filterValue": "john, .com, nonexistent.domain",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "contains_at_least_one",
+      "filterValue": "john,.com",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "contains_at_least_one",
+      "filterValue": " john, .com, , nonexistent.domain ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactemail",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Contact Number": [
+    {
+      "dbField": "contactnumber",
+      "filterType": "is",
+      "filterValue": "415-555-0101",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "is",
+      "filterValue": "_",
+      "description": "Exact match, underscore (no match)",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "is_not",
+      "filterValue": "415-555-0101",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "contains",
+      "filterValue": "415-55",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "begins_with",
+      "filterValue": "415-",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "begins_with",
+      "filterValue": "_",
+      "description": "Begins with, underscore (no match)",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "ends_with",
+      "filterValue": "0101",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "ends_with",
+      "filterValue": "0101",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "does_not_contain",
+      "filterValue": "415-",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "contains_at_least_one",
+      "filterValue": "415-,0101",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "contains_at_least_one",
+      "filterValue": "415-,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "contains_at_least_one",
+      "filterValue": "415-, 0101, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "contains_at_least_one",
+      "filterValue": "415-,0101",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "contains_at_least_one",
+      "filterValue": " 415-, 0101, NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "contactnumber",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Job Category": [
+    {
+      "dbField": "job_category",
+      "filterType": "is",
+      "filterValue": "Technology",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "is",
+      "filterValue": "   Technology   ",
+      "description": "Exact match, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "is_not",
+      "filterValue": "Technology",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "contains",
+      "filterValue": "Techn",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "contains",
+      "filterValue": "  Technology  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "begins_with",
+      "filterValue": "Tech",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "begins_with",
+      "filterValue": "  Tech",
+      "description": "Begins with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "ends_with",
+      "filterValue": "logy",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "ends_with",
+      "filterValue": " logy",
+      "description": "Ends with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "ends_with",
+      "filterValue": "logy",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "does_not_contain",
+      "filterValue": "Tech",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,logy",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech, logy, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,logy",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Tech, logy, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_category",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Postal Code": [
+    {
+      "dbField": "postalcode",
+      "filterType": "is",
+      "filterValue": "94105",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "is",
+      "filterValue": "D01' F5P2",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "is_not",
+      "filterValue": "94105",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "is_not",
+      "filterValue": "D01' F5P2",
+      "description": "Is not, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "contains",
+      "filterValue": "94",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "contains",
+      "filterValue": "[",
+      "description": "Contains, bracket",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "begins_with",
+      "filterValue": "9410",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "ends_with",
+      "filterValue": "4105",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "ends_with",
+      "filterValue": "4105",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "does_not_contain",
+      "filterValue": "9410",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "contains_at_least_one",
+      "filterValue": "9410,4105",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "contains_at_least_one",
+      "filterValue": "9410,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "contains_at_least_one",
+      "filterValue": "9410, 4105, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "contains_at_least_one",
+      "filterValue": "9410,4105",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "contains_at_least_one",
+      "filterValue": " 9410, 4105, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postalcode",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "State": [
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "California",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "   California   ",
+      "description": "Exact match, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "Dub'lin",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "California",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "Dub'lin",
+      "description": "Is not, apostrophe",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains",
+      "filterValue": "Calif",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains",
+      "filterValue": "  California  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "begins_with",
+      "filterValue": "Cali",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "begins_with",
+      "filterValue": "  Cali",
+      "description": "Begins with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "ends_with",
+      "filterValue": "rnia",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "ends_with",
+      "filterValue": " rnia",
+      "description": "Ends with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "ends_with",
+      "filterValue": "rnia",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "does_not_contain",
+      "filterValue": "Cali",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Cali,rnia",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Cali,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Cali, rnia, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Cali,rnia",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Cali, rnia, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Country": [
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "United States",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "united states",
+      "description": "Exact match, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "[States]",
+      "description": "Exact match, brackets",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "Espa",
+      "description": "Exact match, unicode",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "united st@tes",
+      "description": "Exact match, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "_united states",
+      "description": "Exact match, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "united states",
+      "description": "Exact match, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "United States",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "united states",
+      "description": "Is not, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "[States]",
+      "description": "Is not, brackets",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "United",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "united states",
+      "description": "Contains, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "States",
+      "description": "Contains, infix",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "[",
+      "description": "Contains, bracket",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "Es",
+      "description": "Contains, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "begins_with",
+      "filterValue": "Unit",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "begins_with",
+      "filterValue": "_",
+      "description": "Begins with, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "begins_with",
+      "filterValue": "Es",
+      "description": "Begins with, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "ends_with",
+      "filterValue": "ates",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "ends_with",
+      "filterValue": "ates",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "ends_with",
+      "filterValue": "pa",
+      "description": "Ends with, unicode",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "does_not_contain",
+      "filterValue": "Unit",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "does_not_contain",
+      "filterValue": "united states",
+      "description": "Does not contain, case variation",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain, underscore",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_exact_word",
+      "filterValue": "States",
+      "description": "Contains exact word, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_exact_word",
+      "filterValue": "Espa",
+      "description": "Contains exact word, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Unit,ates",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Unit,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Es,pa",
+      "description": "Contains at least one, unicode",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Unit, ates, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "United,States",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Unit, ates, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Specialization": [
+    {
+      "dbField": "specialization",
+      "filterType": "is",
+      "filterValue": "Computer Science",
+      "description": "Exact match, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "is",
+      "filterValue": "   Computer Science   ",
+      "description": "Exact match, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "is_not",
+      "filterValue": "Computer Science",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains",
+      "filterValue": "Computer",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains",
+      "filterValue": "  Computer  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains",
+      "filterValue": "Science",
+      "description": "Contains, infix",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "begins_with",
+      "filterValue": "Comp",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "begins_with",
+      "filterValue": "  Comp",
+      "description": "Begins with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "ends_with",
+      "filterValue": "ence",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "ends_with",
+      "filterValue": " ence",
+      "description": "Ends with, whitespace",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "ends_with",
+      "filterValue": "ence",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "does_not_contain",
+      "filterValue": "Comp",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains_exact_word",
+      "filterValue": "Science",
+      "description": "Contains exact word, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Comp,ence",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Comp,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Comp, ence, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Computer,Science",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Comp, ence, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "specialization",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ],
+  "Skills": [
+    {
+      "dbField": "job_skill",
+      "filterType": "is",
+      "filterValue": "Docker",
+      "description": "Exact match, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "is_not",
+      "filterValue": "Docker",
+      "description": "Is not, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "contains",
+      "filterValue": "Doc",
+      "description": "Contains, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "begins_with",
+      "filterValue": "Dock",
+      "description": "Begins with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Begins with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "ends_with",
+      "filterValue": "cker",
+      "description": "Ends with, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "ends_with",
+      "filterValue": "cker",
+      "description": "Ends with, standard (different)",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Ends with, empty",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "does_not_contain",
+      "filterValue": "Dock",
+      "description": "Does not contain, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Dock,cker",
+      "description": "Contains at least one, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Dock,NonExistentSubstring",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Dock, cker, NonExistentSubstring",
+      "description": "Contains at least one, three values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Dock,cker",
+      "description": "Contains at least one, five values",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "contains_at_least_one",
+      "filterValue": " Dock, cker, , NonExistentSubstring ",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "job_skill",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any value, standard",
+      "expectedResult": "records present",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    }
+  ]
+}

@@ -1,0 +1,868 @@
+{
+  "Owner": [
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_OWNER_TC001"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember owner",
+      "expectedResult": "candidate3,candidate4,candidate12,candidate15",
+      "testCaseId": "CAND_OWNER_TC002"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember owner",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_OWNER_TC003"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for account owner",
+      "expectedResult": "candidate6,candidate7,candidate8,candidate9,candidate13,candidate14",
+      "testCaseId": "CAND_OWNER_TC004"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team owner",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC005"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty owner",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_OWNER_TC006"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin owner",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC007"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate13,candidate14",
+      "testCaseId": "CAND_OWNER_TC008"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember owner",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC009"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude account owner",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate10,candidate11,candidate12,candidate15",
+      "testCaseId": "CAND_OWNER_TC010"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_OWNER_TC011"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty owner (should return all with values)",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC012"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_OWNER_TC013"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember owner",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate10,candidate11,candidate12,candidate15",
+      "testCaseId": "CAND_OWNER_TC014"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_OWNER_TC015"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or account owner",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC016"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team owner",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC017"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team owner",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC018"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or team owner",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC019"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - owner or team owner",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC020"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - restrictedTeamMember or team owner",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC021"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, teamMember, or restrictedTeamMember owner",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate10,candidate11,candidate12,candidate15",
+      "testCaseId": "CAND_OWNER_TC022"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, restrictedTeamMember, or account owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate13,candidate14",
+      "testCaseId": "CAND_OWNER_TC023"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any owner value",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC024"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude team owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_OWNER_TC025"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin owner",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC026"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate13,candidate14",
+      "testCaseId": "CAND_OWNER_TC027"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember owner",
+      "expectedResult": "candidate6,candidate7,candidate8,candidate9,candidate13,candidate14",
+      "testCaseId": "CAND_OWNER_TC028"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or team owner",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_OWNER_TC029"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember or team owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_OWNER_TC030"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude owner or team owner",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_OWNER_TC031"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude restrictedTeamMember or account owner",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate10,candidate11,candidate12,candidate15",
+      "testCaseId": "CAND_OWNER_TC032"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude any owner value",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_OWNER_TC033"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_empty",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - owner field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_OWNER_TC034"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "has_any_value",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - owner field has any value",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_OWNER_TC035"
+    }
+  ],
+  "Created By": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_CREATED_BY_TC001"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember createdBy",
+      "expectedResult": "candidate3,candidate4,candidate12,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC002"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember createdBy",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_CREATED_BY_TC003"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner createdBy",
+      "expectedResult": "candidate6,candidate7,candidate8,candidate9,candidate13,candidate14",
+      "testCaseId": "CAND_CREATED_BY_TC004"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team createdBy",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC005"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty createdBy",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_CREATED_BY_TC006"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin createdBy",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC007"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate13,candidate14",
+      "testCaseId": "CAND_CREATED_BY_TC008"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember createdBy",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC009"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner createdBy",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate10,candidate11,candidate12,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC010"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_CREATED_BY_TC011"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty createdBy (should return all with values)",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC012"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_CREATED_BY_TC013"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember createdBy",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate10,candidate11,candidate12,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC014"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_CREATED_BY_TC015"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner createdBy",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC016"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team createdBy",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC017"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team createdBy",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC018"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or team createdBy",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC019"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - owner or team createdBy",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC020"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - restrictedTeamMember or team createdBy",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC021"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, teamMember, or restrictedTeamMember createdBy",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate10,candidate11,candidate12,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC022"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, restrictedTeamMember, or owner createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate13,candidate14",
+      "testCaseId": "CAND_CREATED_BY_TC023"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any createdBy value",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC024"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude team createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_CREATED_BY_TC025"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin createdBy",
+      "expectedResult": "candidate3,candidate4,candidate6,candidate7,candidate8,candidate9,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC026"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate13,candidate14",
+      "testCaseId": "CAND_CREATED_BY_TC027"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember createdBy",
+      "expectedResult": "candidate6,candidate7,candidate8,candidate9,candidate13,candidate14",
+      "testCaseId": "CAND_CREATED_BY_TC028"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or team createdBy",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_CREATED_BY_TC029"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember or team createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_CREATED_BY_TC030"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude owner or team createdBy",
+      "expectedResult": "candidate1,candidate2,candidate5,candidate10,candidate11",
+      "testCaseId": "CAND_CREATED_BY_TC031"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude restrictedTeamMember or owner createdBy",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate10,candidate11,candidate12,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC032"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude any createdBy value",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_CREATED_BY_TC033"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - createdBy field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_CREATED_BY_TC034"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - createdBy field has any value",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_CREATED_BY_TC035"
+    }
+  ],
+  "Gender": [
+    {
+      "dbField": "genderid",
+      "filterType": "is",
+      "filterValue": "{Male}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - Male ({Male} -> id 1)",
+      "expectedResult": "candidate1,candidate3,candidate5,candidate7,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_GENDER_TC001"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "is",
+      "filterValue": "{Female}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - Female ({Female} -> id 2)",
+      "expectedResult": "candidate2,candidate4,candidate6,candidate8",
+      "testCaseId": "CAND_GENDER_TC002"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "is",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - empty gender id list",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_GENDER_TC003"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "is_not",
+      "filterValue": "{Male}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Male",
+      "expectedResult": "candidate2,candidate4,candidate6,candidate8",
+      "testCaseId": "CAND_GENDER_TC004"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "is_not",
+      "filterValue": "{Female}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Female",
+      "expectedResult": "candidate1,candidate3,candidate5,candidate7,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_GENDER_TC005"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Male}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One - Male",
+      "expectedResult": "candidate1,candidate3,candidate5,candidate7,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_GENDER_TC007"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Female}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One - Female",
+      "expectedResult": "candidate2,candidate4,candidate6,candidate8",
+      "testCaseId": "CAND_GENDER_TC008"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Male},{Female}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One - Male or Female",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_GENDER_TC009"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Male}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain - exclude Male",
+      "expectedResult": "candidate2,candidate4,candidate6,candidate8",
+      "testCaseId": "CAND_GENDER_TC010"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Female}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain - exclude Female",
+      "expectedResult": "candidate1,candidate3,candidate5,candidate7,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_GENDER_TC011"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Male},{Female}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain - exclude Male and Female",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_GENDER_TC012"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value - gender is set",
+      "expectedResult": "candidate1,candidate2,candidate3,candidate4,candidate5,candidate6,candidate7,candidate8,candidate9,candidate10,candidate11,candidate12,candidate13,candidate14,candidate15",
+      "testCaseId": "CAND_GENDER_TC013"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty - no gender set",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_GENDER_TC014"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "is",
+      "filterValue": "{Unknown}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - Unknown (id 0); no seed candidates",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_GENDER_TC015"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "is",
+      "filterValue": "{Non binary}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - Non binary (id 3); no seed candidates",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_GENDER_TC016"
+    },
+    {
+      "dbField": "genderid",
+      "filterType": "is",
+      "filterValue": "{Prefer Not to Say}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - Prefer Not to Say (id 4); no seed candidates",
+      "expectedResult": "Empty",
+      "testCaseId": "CAND_GENDER_TC017"
+    }
+  ]
+}

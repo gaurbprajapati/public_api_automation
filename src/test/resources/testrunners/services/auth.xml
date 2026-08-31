@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Rest API Test Suite"  parallel="methods" thread-count="1">
+	
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+	
+	<test name="Two factor authentication test case 1">
+		<classes>
+			<class name="io.recruitcrm.authservice.mfa.TwoFactorAuthenticationTest">
+				<methods>
+					<include name="generateQRCode_Test" />
+					<include name="unauthorizedUserCannotGenerateQRCode_Test" />
+					<include name="verifyMFASecurityWithValidOTP_Test" />
+					<include name="verifyTwoFactorAuthenticationWithValidOTP_Test" />
+					<include name="verifyTwoFactorAuthenticationWithInvalidOTP_Test" />
+					<include name="verifyTwoFactorAuthenticationWithEmptyRequestBody_Test" />
+					<include name="unauthorizedUserCannotVerifyTwoFactorAuthentication_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Two factor authentication test case 2">
+		<classes>
+			<class name="io.recruitcrm.authservice.mfa.TwoFactorAuthenticationTest">
+				<methods>
+				    <include name="enforceTwoFactorAuthenticationForAllUsers_Test" />
+					<include name="enforceTwoFactorAuthenticationForSpecificUsers_Test" />
+					<include name="enforceTwoFactorAuthenticationWithEmptyRequestBody_Test" />
+					<include name="unauthorizedUserCannotEnforceTwoFactorAuthentication_Test" />
+					<include name="disableTwoFactorAuthenticationWithvalidPassword_Test" />
+					<include name="disableTwoFactorAuthenticationWithInvalidPassword_Test" />
+					<include name="disableTwoFactorAuthenticationWithEmptyRequestBody_Test" />
+					<include name="unauthorizedUserCannotDisableTwoFactorAuthentication_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Two factor authentication test case 3">
+		<classes>
+			<class name="io.recruitcrm.authservice.mfa.TwoFactorAuthenticationTest">
+				<methods>
+					<include name="disableMFAAccount_Test" />
+					<include name="unauthorizedUserCannotDisableMFAAccount_Test" />
+					<include name="verifyMFASecurityWithEmptyRquestBody_Test" />
+					<include name="verifyMFASecurityWithInvalidOTP_Test" />
+					<include name="unauthorizedUserCannotVerifyMFASecurity_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="SSO reset mfa account test">
+		<classes>
+			<class name="io.recruitcrm.albatross.sso.ResetMFAAccountTest">
+				<methods>
+					<include name="resetMFAAccount_Test" />
+					<include name="unauthorizedUserCannotResetMFAAccount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+</suite>

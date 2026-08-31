@@ -1,0 +1,2691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest API Test Suite" thread-count="30" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+		<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Get User View Bulk Customization">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetBulkCustomizationTest">
+				<methods>
+					<include name="testGetBulkCustomization_UserView_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Account View Bulk Customization">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetBulkCustomizationTest">
+				<methods>
+					<include name="testGetBulkCustomization_AccountView_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update User View Bulk Customization">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetBulkCustomizationTest">
+				<methods>
+					<include name="updateBulkCustomization_UserView_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Account View Bulk Customization">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetBulkCustomizationTest">
+				<methods>
+					<include name="updateBulkCustomization_AccountView_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update User View Bulk Customization for Locked Modification">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetBulkCustomizationTest">
+				<methods>
+					<include name="updateBulkCustomizationAccountLockedUnauthorizedModification_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test Unauthorised GET for User View Of Bulk Customization">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetBulkCustomizationTest">
+				<methods>
+					<include name="updateBulkCustomizationUserViewUnauthorized_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test Unauthorised GET for Account View Of Bulk Customization">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetBulkCustomizationTest">
+				<methods>
+					<include name="updateBulkCustomizationAccountViewUnauthorized_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Entity Columns Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getEntityColumnsTest_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Unauthorized Entity Columns Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getEntityColumnsUnauthorizedTest_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Entity Columns 404 Not Found Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getEntityColumnsTest_404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Entity Columns 400 bad Request Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getEntityColumnsTest_400"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Entity Columns 405 Method not Allowed Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getEntityColumnsTest_405"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Entity Columns 400 for Incorrect Entites Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getEntityColumnsTestInvalidEntityTypes_400"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Account View Entity Columns Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetAccountCustomViewPageTest">
+				<methods>
+					<include name="getAccountViewForColumns_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Account View Entity Columns Test - Method Not Found">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetAccountCustomViewPageTest">
+				<methods>
+					<include name="getAccountViewForColumns_405"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Account View Entity Columns Test - Unauthorized Access">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetAccountCustomViewPageTest">
+				<methods>
+					<include name="getAccountViewForColumns_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Account View Entity Columns Test - Not Found">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetAccountCustomViewPageTest">
+				<methods>
+					<include name="getAccountViewForColumns_404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Quick View Count with 0 Candidates">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateQuickViewCountTest">
+				<methods>
+					<include name="testGetCountOfCandidatesInQuickViewWithNoCandidates_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Quick View Count with 1 Candidate">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateQuickViewCountTest">
+				<methods>
+					<include name="testGetCountOfCandidatesInQuickViewWithCandidates_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Quick View Count with 1 Offlimit Candidate">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateQuickViewCountTest">
+				<methods>
+					<include name="testGetCountOfCandidatesInQuickViewWithOffLimitMarkedCandidates_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Quick View Count with 1 in Hotlist Candidate">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateQuickViewCountTest">
+				<methods>
+					<include name="testGetCountOfCandidatesInQuickViewInHotlist_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Quick View Count - Wrong Method Type">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateQuickViewCountTest">
+				<methods>
+					<include name="testGetCountOfCandidatesInQuickViewWithWrongMethod_405"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Quick View Count - Wrong URL">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateQuickViewCountTest">
+				<methods>
+					<include name="testGetCountOfCandidatesInQuickViewWithWrongURL_404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Quick View Count - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateQuickViewCountTest">
+				<methods>
+					<include name="testGetCountOfCandidatesInQuickViewWithInvalidToken_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="FilterTests - Text Type Fields">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.Filters.TextFieldFilterCandidateTest">
+				<methods>
+					<include name="testTextFieldFilterCandidate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="FilterTests - Number Type Fields">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.Filters.NumberFieldFilterCandidateTest">
+				<methods>
+					<include name="testNumberFieldFilterCandidate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+    <test name="Candidate Related Hotlists Search - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsSearch_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Search - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsSearch_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Search - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsSearch_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Search - Invalid Entity Name">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsSearch_InvalidEntityName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Search - Invalid Record ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsSearch_InvalidRecordId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Search - Missing Entity Name">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsSearch_MissingEntityName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Search - Missing Record ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsSearch_MissingRecordId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Hotlist Delete Tests -->
+    <test name="Candidate Related Hotlists Delete - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsDelete_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Delete - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsDelete_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Delete - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsDelete_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Delete - Invalid Record ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsDelete_InvalidRecordId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists Delete - Missing Fields">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsDelete_MissingFields"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists - Sort Order">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsWithSortOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Hotlists - Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateRelatedHotlistsTest">
+                <methods>
+                    <include name="testCandidateRelatedHotlistsSearch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistTest">
+                <methods>
+                    <include name="getCandidateHotlist_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist - Sort By Name">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistTest">
+                <methods>
+                    <include name="verifyCandidateHotlist_sortByName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist - Sort By Created On">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistTest">
+                <methods>
+                    <include name="verifyCandidateHotlist_sortByCreatedOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist - Sort By Updated On">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistTest">
+                <methods>
+                    <include name="verifyCandidateHotlist_sortByUpdatedOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist - Filters">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistTest">
+                <methods>
+                    <include name="verifyCandidateHotlistFilters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistTest">
+                <methods>
+                    <include name="getCandidateHotlist_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistTest">
+                <methods>
+                    <include name="getCandidateHotlist_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist Count - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistCountTest">
+                <methods>
+                    <include name="getCandidateHotlistCountTest_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist Count - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistCountTest">
+                <methods>
+                    <include name="getCandidateHotlistCountTest_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist Count - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistCountTest">
+                <methods>
+                    <include name="getCandidateHotlistCountTest_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidate Hotlist Count - Data Provider">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateHotlistCountTest">
+                <methods>
+                    <include name="getCandidateHotlistCountTest_DataProvider"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Widget Count Tests -->
+    <test name="Candidate Widget Count - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateWidgetCountTest">
+                <methods>
+                    <include name="testCandidateWidgetCount_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Widget Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateWidgetCountTest">
+                <methods>
+                    <include name="testCandidateWidgetCount_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Widget Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateWidgetCountTest">
+                <methods>
+                    <include name="testCandidateWidgetCount_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Widget Count - Invalid Candidate ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateWidgetCountTest">
+                <methods>
+                    <include name="testCandidateWidgetCount_InvalidCandidateId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Widget Count - Missing Candidate ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateWidgetCountTest">
+                <methods>
+                    <include name="testCandidateWidgetCount_MissingCandidateId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Widget Count - Missing Candidate Slug">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateWidgetCountTest">
+                <methods>
+                    <include name="testCandidateWidgetCount_MissingCandidateSlug"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Widget Count - Invalid Candidate Slug">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateWidgetCountTest">
+                <methods>
+                    <include name="testCandidateWidgetCount_InvalidCandidateSlug"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Get Candidates Tests -->
+    <test name="Get Candidates - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidatesTest">
+                <methods>
+                    <include name="testGetCandidatesSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidates - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidatesTest">
+                <methods>
+                    <include name="testGetCandidatesWithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidates - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidatesTest">
+                <methods>
+                    <include name="testGetCandidatesInvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidates - Invalid Slug">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidatesTest">
+                <methods>
+                    <include name="testGetCandidatesInvalidSlug"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Candidates - Missing Slug">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidatesTest">
+                <methods>
+                    <include name="testGetCandidatesMissingSlug"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Details Page Fields Count Tests -->
+    <test name="Details Page Fields Count - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testGetDetailsPageFieldsCountSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Details Page Fields Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testGetDetailsPageFieldsCountWithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Details Page Fields Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testGetDetailsPageFieldsCountInvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Details Page Fields Count - Missing User ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testGetDetailsPageFieldsCountMissingUserId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Details Page Fields Count - Missing Account ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testGetDetailsPageFieldsCountMissingAccountId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Details Page Fields Count - Invalid User ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testGetDetailsPageFieldsCountInvalidUserId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Details Page Fields Count - Invalid Account ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testGetDetailsPageFieldsCountInvalidAccountId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Off Limit Status Tests -->
+    <test name="Cross Account Off Limit Status Security Tests">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CrossAccountGetOffLimitStatusTest">
+                <methods>
+                    <include name="crossAccountOffLimitStatusOperations_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Off Limit Status - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetOffLimitStatusTest">
+                <methods>
+                    <include name="testGetOffLimitStatusSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Off Limit Status - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetOffLimitStatusTest">
+                <methods>
+                    <include name="testGetOffLimitStatusWithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Off Limit Status - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetOffLimitStatusTest">
+                <methods>
+                    <include name="testGetOffLimitStatusInvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Off Limit Status - Invalid Entity Type">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetOffLimitStatusTest">
+                <methods>
+                    <include name="testGetOffLimitStatusInvalidEntityType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Off Limit Status - Invalid Candidate ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetOffLimitStatusTest">
+                <methods>
+                    <include name="testGetOffLimitStatusInvalidCandidateId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Answers - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+                <methods>
+                    <include name="testGetCandidateAnswersSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Answers - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+                <methods>
+                    <include name="testGetCandidateAnswersWithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Answers - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+                <methods>
+                    <include name="testGetCandidateAnswersInvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Answers - Invalid Candidate ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+                <methods>
+                    <include name="testGetCandidateAnswersInvalidCandidateId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Answers - Invalid Job ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+                <methods>
+                    <include name="testGetCandidateAnswersInvalidJobId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Answers - Missing Job ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+                <methods>
+                    <include name="testGetCandidateAnswersMissingJobId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Answers - Missing Candidate ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+                <methods>
+                    <include name="testGetCandidateAnswersMissingCandidateId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Deals - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateRelatedDealsTest">
+                <methods>
+                    <include name="testGetCandidateRelatedDealsSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Deals - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateRelatedDealsTest">
+                <methods>
+                    <include name="testGetCandidateRelatedDealsWithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Deals - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateRelatedDealsTest">
+                <methods>
+                    <include name="testGetCandidateRelatedDealsInvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Deals - Invalid Candidate Slug">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateRelatedDealsTest">
+                <methods>
+                    <include name="testGetCandidateRelatedDealsInvalidCandidateSlug"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Deals - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateRelatedDealsTest">
+                <methods>
+                    <include name="testGetCandidateRelatedDealsEmptyRequestBody"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Deals - Sort Order">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateRelatedDealsTest">
+                <methods>
+                    <include name="testGetCandidateRelatedDealsWithSortOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Candidate Related Deals - Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetCandidateRelatedDealsTest">
+                <methods>
+                    <include name="testGetCandidateRelatedDealsSearch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Details Page Fields Count - PUT Tests -->
+    <test name="Update Details Page Fields Count - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testUpdateDetailsPageFieldsCountSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Details Page Fields Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testUpdateDetailsPageFieldsCountWithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Details Page Fields Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testUpdateDetailsPageFieldsCountInvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Details Page Fields Count - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testUpdateDetailsPageFieldsCountEmptyRequestBody"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Details Page Fields Count - Invalid My View Fields Count">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testUpdateDetailsPageFieldsCountInvalidMyViewFieldsCount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Details Page Fields Count - Invalid Other View Fields Count">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testUpdateDetailsPageFieldsCountInvalidOtherViewFieldsCount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Details Page Fields Count - Negative Values">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testUpdateDetailsPageFieldsCountNegativeValues"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Details Page Fields Count - Owner Updates For Other User And Restricted User Access">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetDetailsPageFieldsCountTest">
+                <methods>
+                    <include name="testUpdateDetailsPageFieldsCountForOtherUserAndVerifyRestrictedUserAccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Pitch Candidate Stage History Tests -->
+    <test name="Pitch Candidate Stage History - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateStageHistoryTest">
+                <methods>
+                    <include name="testGetPitchCandidateStageHistorySuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Stage History - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateStageHistoryTest">
+                <methods>
+                    <include name="testGetPitchCandidateStageHistoryWithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Stage History - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateStageHistoryTest">
+                <methods>
+                    <include name="testGetPitchCandidateStageHistoryInvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Stage History - Invalid Record ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateStageHistoryTest">
+                <methods>
+                    <include name="testGetPitchCandidateStageHistoryInvalidRecordId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Pitch Candidate Contacts Tests -->
+    <test name="Pitch Candidate Contacts - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateContactsTest">
+                <methods>
+                    <include name="testGetPitchCandidateContactsSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Contacts - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateContactsTest">
+                <methods>
+                    <include name="testGetPitchCandidateContactsWithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Contacts - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateContactsTest">
+                <methods>
+                    <include name="testGetPitchCandidateContactsInvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Contacts - Invalid Candidate ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateContactsTest">
+                <methods>
+                    <include name="testGetPitchCandidateContactsInvalidCandidateId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Contacts - Sort Order">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateContactsTest">
+                <methods>
+                    <include name="testGetPitchCandidateContactsWithSortOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Contacts - Search">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateContactsTest">
+                <methods>
+                    <include name="testGetPitchCandidateContactsSearch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Contacts - Comprehensive Validation">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateContactsTest">
+                <methods>
+                    <include name="testGetPitchCandidateContactsComprehensiveValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Stage History - Missing Contact ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateStageHistoryTest">
+                <methods>
+                    <include name="testGetPitchCandidateStageHistoryMissingContactId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Stage History - Missing Candidate ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateStageHistoryTest">
+                <methods>
+                    <include name="testGetPitchCandidateStageHistoryMissingCandidateId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Pitch Candidate Stage History - Missing Record ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.GetPitchCandidateStageHistoryTest">
+                <methods>
+                    <include name="testGetPitchCandidateStageHistoryMissingRecordId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Update Default Social Links Tests -->
+    <test name="Update Default Social Links - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.UpdateDefaultSocialLinksTest">
+                <methods>
+                    <include name="testUpdateDefaultSocialLinks_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Default Social Links - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.UpdateDefaultSocialLinksTest">
+                <methods>
+                    <include name="testUpdateDefaultSocialLinks_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Default Social Links - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.UpdateDefaultSocialLinksTest">
+                <methods>
+                    <include name="testUpdateDefaultSocialLinks_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Default Social Links - Invalid Candidate ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.UpdateDefaultSocialLinksTest">
+                <methods>
+                    <include name="testUpdateDefaultSocialLinks_InvalidCandidateId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Default Social Links - Missing Candidate ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.UpdateDefaultSocialLinksTest">
+                <methods>
+                    <include name="testUpdateDefaultSocialLinks_MissingCandidateId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Default Social Links - Missing Entity ID">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.UpdateDefaultSocialLinksTest">
+                <methods>
+                    <include name="testUpdateDefaultSocialLinks_MissingEntityId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Default Social Links - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.UpdateDefaultSocialLinksTest">
+                <methods>
+                    <include name="testUpdateDefaultSocialLinks_EmptyRequestBody"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Save State Tests -->
+    <test name="Assigned Job Save State - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveState_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Assigned Job Save State - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveState_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Assigned Job Save State - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveState_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Assigned Job Save State - Missing Datatablekey">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveState_MissingDatatablekey"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Assigned Job Save State - Missing Columnstate">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveState_MissingColumnstate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Save State - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveState_EmptyRequestBody"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Save State Others View Tests -->
+    <test name="Save State Others View - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveStateOthersView_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Save State Others View - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveStateOthersView_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Save State Others View - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveStateOthersView_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Save State Others View - Missing Datatablekey">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveStateOthersView_MissingDatatablekey"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Save State Others View - Missing Columnstate">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveStateOthersView_MissingColumnstate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Save State Others View - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostSaveStateTest">
+                <methods>
+                    <include name="testCandidateAssignedJobSaveStateOthersView_EmptyRequestBody"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Update Fields Tests -->
+    <test name="Update Fields - Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostUpdateFieldsTest">
+                <methods>
+                    <include name="testEntityViewLockSettingsUpdateFields_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Fields - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostUpdateFieldsTest">
+                <methods>
+                    <include name="testEntityViewLockSettingsUpdateFields_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Fields - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostUpdateFieldsTest">
+                <methods>
+                    <include name="testEntityViewLockSettingsUpdateFields_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Fields - Missing Key">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostUpdateFieldsTest">
+                <methods>
+                    <include name="testEntityViewLockSettingsUpdateFields_MissingKey"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Fields - Missing Table Flag">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostUpdateFieldsTest">
+                <methods>
+                    <include name="testEntityViewLockSettingsUpdateFields_MissingTableFlag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Fields - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.PostUpdateFieldsTest">
+                <methods>
+                    <include name="testEntityViewLockSettingsUpdateFields_EmptyRequestBody"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+	<test name="Get Candidate Detail Order - Success">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateDetailOrderTest">
+				<methods>
+					<include name="testCandidateDetailOrderGet_Success"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Detail Order - Update Then Get Success">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateDetailOrderTest">
+				<methods>
+					<include name="testCandidateDetailOrderUpdate_ThenGet_Success"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Detail Order - Invalid UserId">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateDetailOrderTest">
+				<methods>
+					<include name="testCandidateDetailOrderGet_InvalidUserId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Detail Order - Missing UserId">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateDetailOrderTest">
+				<methods>
+					<include name="testCandidateDetailOrderGet_MissingUserId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Detail Order - Non-Existent UserId">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateDetailOrderTest">
+				<methods>
+					<include name="testCandidateDetailOrderGet_NonExistentUserId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Detail Order - Unauthorized Access">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateDetailOrderTest">
+				<methods>
+					<include name="testCandidateDetailOrderGet_UnauthorizedAccess"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Detail Order - Method Not Allowed">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateDetailOrderTest">
+				<methods>
+					<include name="testCandidateDetailOrderGet_MethodNotAllowed"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Candidate Detail Order - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateDetailOrderTest">
+				<methods>
+					<include name="testCrossAccountGetCandidateDetailOrder"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Global Save State - Success">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.CandidateWidgetsSaveStateTest">
+				<methods>
+					<include name="testGlobalSaveStateSuccess"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Save State - Without Auth">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.CandidateWidgetsSaveStateTest">
+				<methods>
+					<include name="testGlobalSaveStateWithoutAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Global Save State - Invalid Data">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.CandidateWidgetsSaveStateTest">
+				<methods>
+					<include name="testGlobalSaveStateEmptyData"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Candidate Assigned Job Account View Columns Tests -->
+	<test name="Get Candidate Assigned Job Account View Columns Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetAccountCustomViewPageTest">
+				<methods>
+					<include name="getCandidateAssignedJobAccountViewColumns_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Candidate Assigned Job Account View Columns Unauthorized Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetAccountCustomViewPageTest">
+				<methods>
+					<include name="getCandidateAssignedJobAccountViewColumns_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Candidate Assigned Job Account View Columns 404 Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetAccountCustomViewPageTest">
+				<methods>
+					<include name="getCandidateAssignedJobAccountViewColumns_404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Candidate Assigned Job Account View Columns 405 Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetAccountCustomViewPageTest">
+				<methods>
+					<include name="getCandidateAssignedJobAccountViewColumns_405"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Candidate Assigned Job Account View Columns 400 Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetAccountCustomViewPageTest">
+				<methods>
+					<include name="getCandidateAssignedJobAccountViewColumns_400"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Candidate Assigned Job Entity Columns Tests -->
+	<test name="Get Candidate Assigned Job Entity Columns Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getCandidateAssignedJobEntityColumnsTest_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Candidate Assigned Job Entity Columns Unauthorized Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getCandidateAssignedJobEntityColumnsUnauthorizedTest_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Candidate Assigned Job Entity Columns 404 Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getCandidateAssignedJobEntityColumnsTest_404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Candidate Assigned Job Entity Columns 405 Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityColumnsTest">
+				<methods>
+					<include name="getCandidateAssignedJobEntityColumnsTest_405"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="GetCandidateContactNumbers_200_Test">
+		<classes>
+			<class name="io.recruitcrm.ConversationService.GetCandidateContactNumbersTest">
+				<methods>
+					<include name="getCandidateContactNumbers_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetCandidateContactNumbers_404_Test">
+		<classes>
+			<class name="io.recruitcrm.ConversationService.GetCandidateContactNumbersTest">
+				<methods>
+					<include name="getCandidateContactNumbers_404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetCandidateContactNumbers_422_InvalidEntityType_Test">
+		<classes>
+			<class name="io.recruitcrm.ConversationService.GetCandidateContactNumbersTest">
+				<methods>
+					<include name="getCandidateContactNumbers_422_InvalidEntityType"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetCandidateContactNumbers_422_MissingEntityType_Test">
+		<classes>
+			<class name="io.recruitcrm.ConversationService.GetCandidateContactNumbersTest">
+				<methods>
+					<include name="getCandidateContactNumbers_422_MissingEntityType"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetCandidateContactNumbers_422_MissingEntitySlug_Test">
+		<classes>
+			<class name="io.recruitcrm.ConversationService.GetCandidateContactNumbersTest">
+				<methods>
+					<include name="getCandidateContactNumbers_422_MissingEntitySlug"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetCandidateContactNumbers_401_Test">
+		<classes>
+			<class name="io.recruitcrm.ConversationService.GetCandidateContactNumbersTest">
+				<methods>
+					<include name="getCandidateContactNumbers_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="getCandidateContactNumbers_CrossAccount">
+		<classes>
+			<class name="io.recruitcrm.ConversationService.GetCandidateContactNumbersTest">
+				<methods>
+					<include name="getCandidateContactNumbers_CrossAccount"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Fields - Success Cases">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.UpdateFieldWidgetCustomizationTest">
+				<methods>
+					<include name="testUpdateFieldsSuccess"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Fields Widget Customization - Invalid Auth">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.UpdateFieldWidgetCustomizationTest">
+				<methods>
+					<include name="testUpdateFieldsWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Fields - Invalid UserId">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.UpdateFieldWidgetCustomizationTest">
+				<methods>
+					<include name="testUpdateFieldsWithInvalidUserId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Fields - Data Validation">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.UpdateFieldWidgetCustomizationTest">
+				<methods>
+					<include name="testUpdateFieldsWithInvalidData"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Fields - Cross Account Security">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.UpdateFieldWidgetCustomizationTest">
+				<methods>
+					<include name="testCrossAccountUpdateFields"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Entity Widgets Customize User View - Success">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeUserViewTest">
+				<methods>
+					<include name="testEntityWidgetsCustomizeUserView_Success"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Entity Widgets Customize User View - Without Auth">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeUserViewTest">
+				<methods>
+					<include name="testEntityWidgetsCustomizeUserView_WithoutAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Entity Widgets Customize User View - Invalid Auth">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeUserViewTest">
+				<methods>
+					<include name="testEntityWidgetsCustomizeUserView_InvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Entity Widgets Customize User View - Missing ViewType">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeUserViewTest">
+				<methods>
+					<include name="testEntityWidgetsCustomizeUserView_MissingViewType"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Entity Widgets Customize User View - Empty ViewType">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeUserViewTest">
+				<methods>
+					<include name="testEntityWidgetsCustomizeUserView_EmptyViewType"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Entity Widgets Customize User View - Invalid ViewType">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeUserViewTest">
+				<methods>
+					<include name="testEntityWidgetsCustomizeUserView_InvalidViewType"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Entity Widgets Customize User View - Invalid Endpoint">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeUserViewTest">
+				<methods>
+					<include name="testEntityWidgetsCustomizeUserView_InvalidEndpoint"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Entity Widgets Customize User View - Wrong Method">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeUserViewTest">
+				<methods>
+					<include name="testEntityWidgetsCustomizeUserView_WrongMethod"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+		<test name="Get Entity Widgets Customize Account View - Success">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeAccountViewTest">
+					<methods>
+						<include name="testEntityWidgetsCustomizeAccountView_Success"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Entity Widgets Customize Account View - Without Auth">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeAccountViewTest">
+					<methods>
+						<include name="testEntityWidgetsCustomizeAccountView_WithoutAuth"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Entity Widgets Customize Account View - Invalid Auth">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeAccountViewTest">
+					<methods>
+						<include name="testEntityWidgetsCustomizeAccountView_InvalidAuth"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Entity Widgets Customize Account View - Missing ViewType">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeAccountViewTest">
+					<methods>
+						<include name="testEntityWidgetsCustomizeAccountView_MissingViewType"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Entity Widgets Customize Account View - Empty ViewType">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeAccountViewTest">
+					<methods>
+						<include name="testEntityWidgetsCustomizeAccountView_EmptyViewType"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Entity Widgets Customize Account View - Invalid ViewType">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeAccountViewTest">
+					<methods>
+						<include name="testEntityWidgetsCustomizeAccountView_InvalidViewType"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Entity Widgets Customize Account View - Invalid Endpoint">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeAccountViewTest">
+					<methods>
+						<include name="testEntityWidgetsCustomizeAccountView_InvalidEndpoint"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Entity Widgets Customize Account View - Wrong Method">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeAccountViewTest">
+					<methods>
+						<include name="testEntityWidgetsCustomizeAccountView_WrongMethod"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Entity Widgets Customize Account View - Unauthorized user">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetEntityWidgetsCustomizeAccountViewTest">
+					<methods>
+						<include name="verifyOtherUserCannotGetWidgetsCustomizeAccountView"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Candidate Assigned Jobs - Success">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetCandidateAssignedJobsTest">
+					<methods>
+						<include name="getCandidateAssignedJobs_200"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Candidate Assigned Jobs - Invalid Candidate ID">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetCandidateAssignedJobsTest">
+					<methods>
+						<include name="getCandidateAssignedJobs_InvalidCandidateId_404"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Candidate Assigned Jobs - Invalid Page Parameters">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetCandidateAssignedJobsTest">
+					<methods>
+						<include name="getCandidateAssignedJobs_InvalidPageParameters_400"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Candidate Assigned Jobs - Invalid Size Parameters">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetCandidateAssignedJobsTest">
+					<methods>
+						<include name="getCandidateAssignedJobs_InvalidSizeParameters_400"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Candidate Assigned Jobs - Unauthorized Access">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetCandidateAssignedJobsTest">
+					<methods>
+						<include name="getCandidateAssignedJobs_UnauthorizedAccess_401"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Candidate Assigned Jobs - Missing Auth">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetCandidateAssignedJobsTest">
+					<methods>
+						<include name="getCandidateAssignedJobs_MissingAuth_401"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Candidate Assigned Jobs - Malformed Payload">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetCandidateAssignedJobsTest">
+					<methods>
+						<include name="getCandidateAssignedJobs_MalformedPayload_400"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Candidate Assigned Jobs - Missing Required Fields">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetCandidateAssignedJobsTest">
+					<methods>
+						<include name="getCandidateAssignedJobs_MissingRequiredFields_400"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Get Candidate Assigned Jobs - Null Candidate ID">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.GetCandidateAssignedJobsTest">
+					<methods>
+						<include name="getCandidateAssignedJobs_NullCandidateId_400"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+		<test name="RBACCandidateAssignedJobsSecurityTest">
+			<classes>
+				<class name="io.recruitcrm.albatross.candidate.RBACCandidateAssignedJobsSecurityTest">
+					<methods>
+						<include name="viewCandidateAssignedJobs_Test" />
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Search Candidate Assigned Jobs - Search">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.CandidateAssignedJobSearchAndSortingTest">
+					<methods>
+						<include name="searchCandidateAssignedJobs_ComprehensiveSearch"/>
+						<include name="searchCandidateAssignedJobs_CompanyNameSearch"/>
+						<include name="searchCandidateAssignedJobs_UserNameSearch"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Search Candidate Assigned Jobs - Field Sorting">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.CandidateAssignedJobSearchAndSortingTest">
+					<methods>
+						<include name="searchCandidateAssignedJobs_SortByTextField"/>
+						<include name="searchCandidateAssignedJobs_SortByNumericField"/>
+						<include name="searchCandidateAssignedJobs_SortByDateField"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+		<test name="Cross Account Candidate Assigned Job Search - Valid Operations">
+			<classes>
+				<class name="io.recruitcrm.CandidateService.CrossAccountCandidateAssignedJobSearchTest">
+					<methods>
+						<include name="crossAccountCandidateAssignedJobSearchOperations_Test"/>
+					</methods>
+				</class>
+			</classes>
+		</test>
+
+
+	<!-- Candidate Answers Without Job Tests -->
+	<test name="Candidate Answers Without Job - Success">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+				<methods>
+					<include name="testGetCandidateAnswersWithoutJobSuccess"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Candidate Answers Without Job - Without Auth">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+				<methods>
+					<include name="testGetCandidateAnswersWithoutJobWithoutAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Candidate Answers Without Job - Invalid Auth">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+				<methods>
+					<include name="testGetCandidateAnswersWithoutJobInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Candidate Answers Without Job - Invalid Candidate ID">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+				<methods>
+					<include name="testGetCandidateAnswersWithoutJobInvalidCandidateId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Candidate Answers Without Job - Missing Candidate ID">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+				<methods>
+					<include name="testGetCandidateAnswersWithoutJobMissingCandidateId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Candidate Answers Without Job - Empty Request Body">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateAnswersTest">
+				<methods>
+					<include name="testGetCandidateAnswersWithoutJobEmptyRequestBody"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Cross Account Work History Security Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CrossAccountWorkHistorySecurityTest">
+				<methods>
+					<include name="crossAccountWorkHistoryOperations_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Cross Account Education History Security Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CrossAccountEducationHistorySecurityTest">
+				<methods>
+					<include name="crossAccountEducationHistoryOperations_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Work History Success Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateWorkHistoryTest">
+				<methods>
+					<include name="getCandidateWorkHistory_Success" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Work History Without Auth Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateWorkHistoryTest">
+				<methods>
+					<include name="getCandidateWorkHistory_WithoutAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Work History Invalid Auth Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateWorkHistoryTest">
+				<methods>
+					<include name="getCandidateWorkHistory_InvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Work History Invalid Candidate ID Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateWorkHistoryTest">
+				<methods>
+					<include name="getCandidateWorkHistory_InvalidCandidateId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test Work History Sorting Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateWorkHistoryTest">
+				<methods>
+					<include name="testWorkHistorySorting" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test Work History Grouping Logic Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateWorkHistoryTest">
+				<methods>
+					<include name="testWorkHistoryGroupingLogic" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test Dynamic Work History Updates Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateWorkHistoryTest">
+				<methods>
+					<include name="testDynamicWorkHistoryUpdates" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Education History Success Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateEducationHistoryTest">
+				<methods>
+					<include name="getCandidateEducationHistory_Success" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Education History Without Auth Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateEducationHistoryTest">
+				<methods>
+					<include name="getCandidateEducationHistory_WithoutAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Education History Invalid Auth Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateEducationHistoryTest">
+				<methods>
+					<include name="getCandidateEducationHistory_InvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Education History Invalid Candidate ID Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateEducationHistoryTest">
+				<methods>
+					<include name="getCandidateEducationHistory_InvalidCandidateId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test Education History Sorting Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateEducationHistoryTest">
+				<methods>
+					<include name="testEducationHistorySorting" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test Education History Grouping Logic Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateEducationHistoryTest">
+				<methods>
+					<include name="testEducationHistoryGroupingLogic" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test Dynamic Education History Updates Test">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetCandidateEducationHistoryTest">
+				<methods>
+					<include name="testDynamicEducationHistoryUpdates" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View Account View">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+				<methods>
+					<include name="updateCustomViewAccountView"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+				<methods>
+					<include name="updateCustomViewUserView"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View Account View with Incorrect Token">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+				<methods>
+					<include name="updateCustomViewAccountViewWithIncorrectToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View with Empty Body">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+				<methods>
+					<include name="updateCustomViewUserViewWithEmptyBody"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View Account View with Empty Body">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+				<methods>
+					<include name="updateCustomViewAccountViewWithEmptyBody"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View with Incorrect Token">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+				<methods>
+					<include name="updateCustomViewUserViewWithIncorrectToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View with DataProvider">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+				<methods>
+					<include name="getCustomView"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View with Invalid Auth Token">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+				<methods>
+					<include name="getCustomViewInvalidAuthToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="updateCandidateDetailActionUserView_Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="updateCandidateDetailActionUserView_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="updateCandidateDetailActionUserView_WithoutAuth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="updateCandidateDetailActionUserView_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="updateCandidateDetailActionUserView_InvalidAuth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="updateCandidateDetailActionUserView_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="updateCandidateDetailActionUserView_RestrictedForLockedUser">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="updateCandidateDetailActionUserView_RestrictedForLockedUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="updateCandidateDetailActionAccountView_Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="updateCandidateDetailActionAccountView_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="updateCandidateDetailActionAccountView_WithoutAuth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="updateCandidateDetailActionAccountView_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="updateCandidateDetailActionAccountView_InvalidAuth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="updateCandidateDetailActionAccountView_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="verifyOtherUserCannotUpdateAccountView">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="verifyOtherUserCannotUpdateAccountView"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="getCandidateDetailActionUserView_Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="getCandidateDetailActionUserView_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="getCandidateDetailActionUserView_WithoutAuth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="getCandidateDetailActionUserView_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="getCandidateDetailActionUserView_InvalidAuth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="getCandidateDetailActionUserView_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="getCandidateDetailActionAccountView_Success">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="getCandidateDetailActionAccountView_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="getCandidateDetailActionAccountView_WithoutAuth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="getCandidateDetailActionAccountView_WithoutAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="getCandidateDetailActionAccountView_InvalidAuth">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.CandidateCustomViewTest">
+                <methods>
+                    <include name="getCandidateDetailActionAccountView_InvalidAuth"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="Get Social Links - Success">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetSocialLinksTest">
+				<methods>
+					<include name="getSocialLinksTest_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Social Links - Unauthorized Access">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetSocialLinksTest">
+				<methods>
+					<include name="getSocialLinksUnauthorizedTest_401"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Social Links - Not Found">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetSocialLinksTest">
+				<methods>
+					<include name="getSocialLinksTest_404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get System Information - Success">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetSystemInformationTest">
+				<methods>
+					<include name="getSystemInformation_Success"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get System Information - Cross Account Access">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetSystemInformationTest">
+				<methods>
+					<include name="getSystemInformation_WithoutAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get System Information - Invalid Auth">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetSystemInformationTest">
+				<methods>
+					<include name="getSystemInformation_InvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get System Information - Invalid Candidate Slug">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetSystemInformationTest">
+				<methods>
+					<include name="getSystemInformation_InvalidCandidateSlug"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get System Information - Missing Candidate Slug">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetSystemInformationTest">
+				<methods>
+					<include name="getSystemInformation_MissingCandidateSlug"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get System Information - Empty Candidate Slug">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.GetSystemInformationTest">
+				<methods>
+					<include name="getSystemInformation_EmptyCandidateSlug"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Reset Entity Columns - Success">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="resetEntityColumns_Success"/>
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	 <test name="Reset Entity Columns - Without Auth">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="resetEntityColumns_WithoutAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Reset Entity Columns - Invalid Auth">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="resetEntityColumns_InvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Reset Entity Columns - Missing Entity">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="resetEntityColumns_MissingEntity"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Reset Entity Columns - Missing View Type">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="resetEntityColumns_MissingViewType"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Save State - Success">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="saveState_Success"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Save State - Without Auth">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="saveState_WithoutAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Save State - Invalid Auth">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="saveState_InvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Save State - Missing Datatablekey">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="saveState_MissingDatatablekey"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Save State - Missing Columnstate">
+		<classes>
+			<class name="io.recruitcrm.CandidateService.ResetEntityColumnsTest">
+				<methods>
+					<include name="saveState_MissingColumnstate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	  <test name="RBAC Get Candidates V2 Security Test">
+    <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCandidateV2_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Widget Count Security Test">
+       <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCandidateWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Contact Numbers Security Test">
+        <parameter name="role" value="AccountOwner-AccountOwner"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateContactNumbers_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Activity Data Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateActivityData_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Education History Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateEducationHistory_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Work Experience Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateWorkExperience_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Update Default Social Links Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="updateDefaultSocialLinks_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Related Hotlists Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateRelatedHotlists_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<test name="RBACGetPitchCandidateContactsSecurityTest">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.RBACGetPitchCandidateContactsSecurityTest">
+                <methods>
+                    <include name="getPitchCandidateContacts_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+	<!-- ==================== Role Based Access Control Security Test ==================== -->
+    <test name="RBAC Candidate Related Deals View Security Test">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.RBACGetCandidateRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getCandidateRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

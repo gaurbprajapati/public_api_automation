@@ -1,0 +1,3377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Invoice API Test Suite" verbose="1" parallel="methods" thread-count="8">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+    <test name="Create Invoice">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.CreateInvoice_Test">
+                <methods>
+                    <include name="createInvoiceWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create Invoice 400">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.CreateInvoice_Test">
+                <methods>
+                    <include name="createInvoiceWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create Invoice 404 - AccountB">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.CreateInvoice_Test">
+                <methods>
+                    <include name="createInvoiceWithCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create Invoice 404 - Admin">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.CreateInvoice_Test">
+                <methods>
+                    <include name="createInvoiceWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create Invoice 404 - TeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.CreateInvoice_Test">
+                <methods>
+                    <include name="createInvoiceWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create Invoice 404 - RestrictedTeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.CreateInvoice_Test">
+                <methods>
+                    <include name="createInvoiceWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Invoice">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetInvoice_Test">
+                <methods>
+                    <include name="getInvoiceWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Invoice 404">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetInvoice_Test">
+                <methods>
+                    <include name="getInvoiceWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Invoice 404 - AccountB">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetInvoice_Test">
+                <methods>
+                    <include name="getInvoiceWithCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Invoice 404 - Admin">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetInvoice_Test">
+                <methods>
+                    <include name="getInvoiceWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Invoice 404 - TeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetInvoice_Test">
+                <methods>
+                    <include name="getInvoiceWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Invoice 404 - RestrictedTeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetInvoice_Test">
+                <methods>
+                    <include name="getInvoiceWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Invoice 404 - Invalid Invoice ID">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.GetInvoice_Test">
+                <methods>
+                    <include name="getInvoiceWithInvalidId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Invoice">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.DeleteInvoice_Test">
+                <methods>
+                    <include name="deleteInvoiceWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Invoice 404">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.DeleteInvoice_Test">
+                <methods>
+                    <include name="deleteInvoiceWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Invoice 404 - AccountB">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.DeleteInvoice_Test">
+                <methods>
+                    <include name="deleteInvoiceWithCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Invoice 404 - Admin">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.DeleteInvoice_Test">
+                <methods>
+                    <include name="deleteInvoiceWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Invoice 404 - TeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.DeleteInvoice_Test">
+                <methods>
+                    <include name="deleteInvoiceWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Invoice 404 - RestrictedTeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.DeleteInvoice_Test">
+                <methods>
+                    <include name="deleteInvoiceWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Invoice 404 - Invalid Invoice ID">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.DeleteInvoice_Test">
+                <methods>
+                    <include name="deleteInvoiceWithInvalidId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Update Invoice">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.UpdateInvoice_Test">
+                <methods>
+                    <include name="updateInvoiceWithValidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Update Invoice 404">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.UpdateInvoice_Test">
+                <methods>
+                    <include name="updateInvoiceWithInvalidToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Update Invoice 404 - AccountB">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.UpdateInvoice_Test">
+                <methods>
+                    <include name="updateInvoiceWithCrossAccountToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Update Invoice 404 - Admin">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.UpdateInvoice_Test">
+                <methods>
+                    <include name="updateInvoiceWithAdminToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Update Invoice 404 - TeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.UpdateInvoice_Test">
+                <methods>
+                    <include name="updateInvoiceWithTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Update Invoice 404 - RestrictedTeamMember">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.UpdateInvoice_Test">
+                <methods>
+                    <include name="updateInvoiceWithRestrictedTeamMemberToken_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Update Invoice 404 - Invalid Invoice ID">
+        <classes>
+            <class name="io.recruitcrm.invoiceService.UpdateInvoice_Test">
+                <methods>
+                    <include name="updateInvoiceWithInvalidId_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name = "Invoice Count">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceCount_Test">
+				<methods>
+					<include name = "getInvoiceCountWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	 <test name = "Invoice Count 404">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceCount_Test">
+				<methods>
+					<include name = "getInvoiceCountWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Count 404 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceCount_Test">
+				<methods>
+					<include name = "getInvoiceCountWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Count 404 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceCount_Test">
+				<methods>
+					<include name = "getInvoiceCountWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Count 404 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceCount_Test">
+				<methods>
+					<include name = "getInvoiceCountWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Count 404 - RestrictedTeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceCount_Test">
+				<methods>
+					<include name = "getInvoiceCountWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search Get">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchGet_Test">
+				<methods>
+					<include name = "invoiceSearchGetWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name = "Invoice Search Get 404">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchGet_Test">
+				<methods>
+					<include name = "invoiceSearchGetWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search Get 404 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchGet_Test">
+				<methods>
+					<include name = "invoiceSearchGetWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search Get 404 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchGet_Test">
+				<methods>
+					<include name = "invoiceSearchGetWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search Get 404 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchGet_Test">
+				<methods>
+					<include name = "invoiceSearchGetWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search Get 404 - RestrictedTeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchGet_Test">
+				<methods>
+					<include name = "invoiceSearchGetWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	 <test name = "Invoice Search count">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchCount_Test">
+				<methods>
+					<include name = "getInvoiceSearchCountWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search count 404">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchCount_Test">
+				<methods>
+					<include name = "getInvoiceSearchCountWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search count 404 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchCount_Test">
+				<methods>
+					<include name = "getInvoiceSearchCountWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search count 404 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchCount_Test">
+				<methods>
+					<include name = "getInvoiceSearchCountWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search count 404 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchCount_Test">
+				<methods>
+					<include name = "getInvoiceSearchCountWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search count 404 - RestrictedTeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchCount_Test">
+				<methods>
+					<include name = "getInvoiceSearchCountWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Invoice Search count 404 - Empty Filters">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.InvoiceSearchCount_Test">
+				<methods>
+					<include name = "getInvoiceSearchCountWithEmptyFilters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	 <test name = "get Invoice custom fields">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceCustomFields_Test">
+				<methods>
+					<include name = "getInvoiceTextTypeCustomField_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "get Invoice custom fields by admin token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceCustomFields_Test">
+				<methods>
+					<include name = "getInvoiceTextTypeCustomFieldByAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "get Invoice custom fields by team member token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceCustomFields_Test">
+				<methods>
+					<include name = "getInvoiceTextTypeCustomFieldByTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "get Invoice custom fields by restricted token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceCustomFields_Test">
+				<methods>
+					<include name = "getInvoiceTextTypeCustomFieldByRestrictedToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "get Invoice custom fields with invalid token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceCustomFields_Test">
+				<methods>
+					<include name = "getInvoiceTextTypeCustomFieldWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name = "unarchive invoice">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UnarchiveInvoice_Test">
+				<methods>
+					<include name = "unarchiveInvoiceWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "unarchive invoice 404">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UnarchiveInvoice_Test">
+				<methods>
+					<include name = "unarchiveInvoiceWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "unarchive invoice 404 - Invalid Invoice ID">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UnarchiveInvoice_Test">
+				<methods>
+					<include name = "unarchiveInvoiceWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "unarchive invoice 404 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UnarchiveInvoice_Test">
+				<methods>
+					<include name = "unarchiveInvoiceWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "unarchive invoice 404 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UnarchiveInvoice_Test">
+				<methods>
+					<include name = "unarchiveInvoiceWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "unarchive invoice 404 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UnarchiveInvoice_Test">
+				<methods>
+					<include name = "unarchiveInvoiceWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "unarchive invoice 404 - RestrictedTeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UnarchiveInvoice_Test">
+				<methods>
+					<include name = "unarchiveInvoiceWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+		<test name = "Archive Invoice">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ArchiveInvoice_Test">
+				<methods>
+					<include name = "archiveInvoiceWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Archive Invoice 404">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ArchiveInvoice_Test">
+				<methods>
+					<include name = "archiveInvoiceWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name = "Archive Invoice 404 - Invalid Invoice ID">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ArchiveInvoice_Test">
+				<methods>
+					<include name = "archiveInvoiceWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	 <test name = "Archive Invoice 404 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ArchiveInvoice_Test">
+				<methods>
+					<include name = "archiveInvoiceWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name = "Archive Invoice 404 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ArchiveInvoice_Test">
+				<methods>
+					<include name = "archiveInvoiceWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name = "Archive Invoice 404 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ArchiveInvoice_Test">
+				<methods>
+					<include name = "archiveInvoiceWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	 <test name = "Archive Invoice 404 - RestrictedTeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ArchiveInvoice_Test">
+				<methods>
+					<include name = "archiveInvoiceWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	<test name = "Update invoice status">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UpdateInvoiceStatus_Test">
+				<methods>
+					<include name = "updateInvoiceStatusWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name = "Update invoice status 404">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UpdateInvoiceStatus_Test">
+				<methods>
+					<include name = "updateInvoiceStatusWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Update invoice status 404 - Invalid Invoice ID">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UpdateInvoiceStatus_Test">
+				<methods>
+					<include name = "updateInvoiceStatusWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Update invoice status 404 - Invalid Status ID">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UpdateInvoiceStatus_Test">
+				<methods>
+					<include name = "updateInvoiceStatusWithInvalidStatusId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Update invoice status 404 - Missing Status ID">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UpdateInvoiceStatus_Test">
+				<methods>
+					<include name = "updateInvoiceStatusWithMissingStatusId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Update invoice status 404 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UpdateInvoiceStatus_Test">
+				<methods>
+					<include name = "updateInvoiceStatusWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Update invoice status 404 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UpdateInvoiceStatus_Test">
+				<methods>
+					<include name = "updateInvoiceStatusWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name = "Update invoice status 404 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UpdateInvoiceStatus_Test">
+				<methods>
+					<include name = "updateInvoiceStatusWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	 <test name = "Update invoice status 404 - RestrictedTeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.UpdateInvoiceStatus_Test">
+				<methods>
+					<include name = "updateInvoiceStatusWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name = "Get Invoice History valid token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceHistory_Test">
+				<methods>
+					<include name = "getInvoiceHistoryWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Get Invoice History 404">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceHistory_Test">
+				<methods>
+					<include name = "getInvoiceHistoryWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Get Invoice History 404 invalid token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceHistory_Test">
+				<methods>
+					<include name = "getInvoiceHistoryWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Get Invoice History 404 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceHistory_Test">
+				<methods>
+					<include name = "getInvoiceHistoryWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Get Invoice History 200 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceHistory_Test">
+				<methods>
+					<include name = "getInvoiceHistoryWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Get Invoice History 200 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceHistory_Test">
+				<methods>
+					<include name = "getInvoiceHistoryWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Get Invoice History 200 - RestrictedTeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.GetInvoiceHistory_Test">
+				<methods>
+					<include name = "getInvoiceHistoryWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Set Invoice Default Fields valid token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.SetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "setInvoiceDefaultFieldsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Set Invoice Default Fields 404 invalid token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.SetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "setInvoiceDefaultFieldsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Set Invoice Default Fields 401 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.SetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "setInvoiceDefaultFieldsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Set Invoice Default Fields 200 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.SetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "setInvoiceDefaultFieldsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Set Invoice Default Fields 403 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.SetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "setInvoiceDefaultFieldsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Set Invoice Default Fields 403 - Restricted">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.SetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "setInvoiceDefaultFieldsWithRestrictedToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Reset Invoice Default Fields valid token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ResetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "resetInvoiceDefaultFieldsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Reset Invoice Default Fields 404 invalid token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ResetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "resetInvoiceDefaultFieldsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Reset Invoice Default Fields 200 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ResetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "resetInvoiceDefaultFieldsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Reset Invoice Default Fields 200 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ResetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "resetInvoiceDefaultFieldsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Reset Invoice Default Fields 403 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ResetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "resetInvoiceDefaultFieldsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Reset Invoice Default Fields 403 - Restricted">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.ResetInvoiceDefaultFields_Test">
+				<methods>
+					<include name = "resetInvoiceDefaultFieldsWithRestrictedToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Clone Invoice valid token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.CloneInvoice_Test">
+				<methods>
+					<include name = "cloneInvoiceWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Clone Invoice 404">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.CloneInvoice_Test">
+				<methods>
+					<include name = "cloneInvoiceWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Clone Invoice 404 invalid token">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.CloneInvoice_Test">
+				<methods>
+					<include name = "cloneInvoiceWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Clone Invoice 404 - AccountB">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.CloneInvoice_Test">
+				<methods>
+					<include name = "cloneInvoiceWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Clone Invoice 200 - Admin">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.CloneInvoice_Test">
+				<methods>
+					<include name = "cloneInvoiceWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Clone Invoice 200 - TeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.CloneInvoice_Test">
+				<methods>
+					<include name = "cloneInvoiceWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name = "Clone Invoice 404 - RestrictedTeamMember">
+		<classes>
+			<class name = "io.recruitcrm.invoiceService.CloneInvoice_Test">
+				<methods>
+					<include name = "cloneInvoiceWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Settings valid token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSettings_Test">
+				<methods>
+					<include name="createInvoiceSettingsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Settings 404">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSettings_Test">
+				<methods>
+					<include name="createInvoiceSettingsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Settings valid token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSettings_Test">
+				<methods>
+					<include name="getInvoiceSettingsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Settings 404">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSettings_Test">
+				<methods>
+					<include name="getInvoiceSettingsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists valid token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists 200 invalid prefix">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithInvalidPrefix_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists 404 invalid token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists 200 - AccountB">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists 200 - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists 200 - TeamMember">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists 200 - RestrictedTeamMember">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists 400 missing prefix">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithMissingPrefix_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists 400 missing number">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithMissingNumber_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Invoice Exists 400 empty parameters">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.VerifyInvoiceExists_Test">
+				<methods>
+					<include name="verifyInvoiceExistsWithEmptyParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Settings invalid userId">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSettings_Test">
+				<methods>
+					<include name="createInvoiceSettingsWithInvalidUserId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Template Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreateInvoiceTemplate_Test" >
+			<methods>
+				<include name="createInvoiceTemplateWithValidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Template 400">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreateInvoiceTemplate_Test" >
+			<methods>
+				<include name="createInvoiceTemplateWithInvalidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Template 404 - AccountB">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreateInvoiceTemplate_Test" >
+			<methods>
+				<include name="createInvoiceTemplateWithCrossAccountToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Template 404 - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreateInvoiceTemplate_Test" >
+			<methods>
+				<include name="createInvoiceTemplateWithAdminToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Template 404 - TeamMember">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreateInvoiceTemplate_Test" >
+			<methods>
+				<include name="createInvoiceTemplateWithTeamMemberToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Template 404 - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreateInvoiceTemplate_Test" >
+			<methods>
+				<include name="createInvoiceTemplateWithRestrictedTeamMemberToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Clone Invoice Template Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CloneInvoiceTemplate_Test" >
+			<methods>
+				<include name="cloneInvoiceTemplateWithValidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Clone Invoice Template 404 invalid id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CloneInvoiceTemplate_Test" >
+			<methods>
+				<include name="cloneInvoiceTemplateWithInvalidId_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Clone Invoice Template 404">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CloneInvoiceTemplate_Test" >
+			<methods>
+				<include name="cloneInvoiceTemplateWithInvalidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Clone Invoice Template 404 - AccountB">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CloneInvoiceTemplate_Test" >
+			<methods>
+				<include name="cloneInvoiceTemplateWithCrossAccountToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Clone Invoice Template 404 - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CloneInvoiceTemplate_Test" >
+			<methods>
+				<include name="cloneInvoiceTemplateWithAdminToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Clone Invoice Template 404 - TeamMember">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CloneInvoiceTemplate_Test" >
+			<methods>
+				<include name="cloneInvoiceTemplateWithTeamMemberToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Clone Invoice Template 404 - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CloneInvoiceTemplate_Test" >
+			<methods>
+				<include name="cloneInvoiceTemplateWithRestrictedTeamMemberToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Template 400 - Invalid Data">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreateInvoiceTemplate_Test" >
+			<methods>
+				<include name="createInvoiceTemplateWithInvalidData_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Invoice Template 500 - Empty Template Items">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CreateInvoiceTemplate_Test" >
+			<methods>
+				<include name="createInvoiceTemplateWithEmptyTemplateItems_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Clone Invoice Template 400 - Null Template Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CloneInvoiceTemplate_Test" >
+			<methods>
+				<include name="cloneInvoiceTemplateWithNullTemplateId_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Invoice Template Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.SearchInvoiceTemplate_Test" >
+			<methods>
+				<include name="searchInvoiceTemplateWithValidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	 <test name="Search Invoice Template 404">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.SearchInvoiceTemplate_Test" >
+			<methods>
+				<include name="searchInvoiceTemplateWithInvalidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Invoice Template 404 - AccountB">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.SearchInvoiceTemplate_Test" >
+			<methods>
+				<include name="searchInvoiceTemplateWithCrossAccountToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Invoice Template 404 - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.SearchInvoiceTemplate_Test" >
+			<methods>
+				<include name="searchInvoiceTemplateWithAdminToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Invoice Template 404 - TeamMember">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.SearchInvoiceTemplate_Test" >
+			<methods>
+				<include name="searchInvoiceTemplateWithTeamMemberToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Invoice Template 404 - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.SearchInvoiceTemplate_Test" >
+			<methods>
+				<include name="searchInvoiceTemplateWithRestrictedToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>  
+	<test name="Search Invoice Template 200 - Valid Text">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.SearchInvoiceTemplate_Test" >
+			<methods>
+				<include name="searchInvoiceTemplateWithValidText_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Invoice Template 400 - Null Template Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.SearchInvoiceTemplate_Test" >
+			<methods>
+				<include name="searchInvoiceTemplate_400" />
+			</methods>
+			</class>
+		</classes>
+	</test>  
+	<test name="Search Invoice Template 500 - Null Pay And Bill">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.SearchInvoiceTemplate_Test" >
+			<methods>
+				<include name="searchInvoiceTemplateWithNullPayAndBill_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Delete Invoice Template Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeleteInvoiceTemplate_Test" >
+			<methods>
+				<include name="deleteInvoiceTemplateWithValidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Invoice Template 404 invalid id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeleteInvoiceTemplate_Test" >
+			<methods>
+				<include name="deleteInvoiceTemplateWithInvalidId_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Invoice Template 404 invalid token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeleteInvoiceTemplate_Test" >
+			<methods>
+				<include name="deleteInvoiceTemplateWithInvalidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Invoice Template 404 - AccountB">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeleteInvoiceTemplate_Test" >
+			<methods>
+				<include name="deleteInvoiceTemplateWithCrossAccountToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Invoice Template 404 - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeleteInvoiceTemplate_Test" >
+			<methods>
+				<include name="deleteInvoiceTemplateWithAdminToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Invoice Template 404 - TeamMember">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeleteInvoiceTemplate_Test" >
+			<methods>
+				<include name="deleteInvoiceTemplateWithTeamMemberToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Invoice Template 404 - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeleteInvoiceTemplate_Test" >
+			<methods>
+				<include name="deleteInvoiceTemplateWithRestrictedToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Invoice Template 404 - Default Template">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeleteInvoiceTemplate_Test" >
+			<methods>
+				<include name="deleteInvoiceTemplateWithDefaultTemplate_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Invoice Template 400 - Null Template Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.DeleteInvoiceTemplate_Test" >
+			<methods>
+				<include name="deleteInvoiceTemplateWithNoId_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Template Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetInvoiceTemplate_Test" >
+			<methods>
+				<include name="getInvoiceTemplateWithValidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Template 404 - Invalid Id">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetInvoiceTemplate_Test" >
+			<methods>
+				<include name="getInvoiceTemplateWithInvalidId_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Template 404 - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetInvoiceTemplate_Test" >
+			<methods>
+				<include name="getInvoiceTemplateWithInvalidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Template 404 - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetInvoiceTemplate_Test" >
+			<methods>
+				<include name="getInvoiceTemplateWithCrossAccountToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Template 404 - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetInvoiceTemplate_Test" >
+			<methods>
+				<include name="getInvoiceTemplateWithAdminToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Template 404 - Team Member">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetInvoiceTemplate_Test" >
+			<methods>
+				<include name="getInvoiceTemplateWithTeamMemberToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Template 404 - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetInvoiceTemplate_Test" >
+			<methods>
+				<include name="getInvoiceTemplateWithRestrictedToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Template 200 - Custom Template">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetInvoiceTemplate_Test" >
+			<methods>
+				<include name="getCustomInvoiceTemplateWithValidToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Invoice Template 200 - Custom Template With Restricted Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.GetInvoiceTemplate_Test" >
+			<methods>
+				<include name="getCustomInvoiceTemplateWithRestrictedToken_Test" />
+			</methods>
+			</class>
+		</classes>
+	</test>
+	
+
+    <test name="Get_Invoice_Template_Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetinvoice.InvoiceTemplateTest">
+                <methods>
+                    <include name="getInvoiceTemplateTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate_Invoice_Timesheets_Id_Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetinvoice.TimesheetInvoiceValidationTest">
+                <methods>
+                    <include name="validateInvoiceTimesheetsIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate_Invoice_Approved_Timesheets_Id_Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetinvoice.TimesheetInvoiceValidationTest">
+                <methods>
+                    <include name="validateInvoiceApprovedTimesheetsIdTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate_Invoice_Timesheets_Id_With_Different_Company_Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.timesheetinvoice.TimesheetInvoiceValidationTest">
+                <methods>
+                    <include name="validateInvoiceTimesheetsIdWithDifferentCompanyTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithValidToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithInvalidToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithoutToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithCrossAccountToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithAdminToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithTeamMemberToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithRestrictedTeamMemberToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithoutEntityParam_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithoutEntityParam_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithInvalidEntity_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithInvalidEntity_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsInvoices_Test - getAccountViewColumnsWithEmptyEntity_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsInvoices_Test">
+				<methods>
+					<include name="getAccountViewColumnsWithEmptyEntity_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithValidToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithInvalidToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithoutToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithCrossAccountToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithAdminToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithTeamMemberToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithRestrictedTeamMemberToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithoutEntityParam_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithoutEntityParam_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithInvalidEntity_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithInvalidEntity_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="AccountViewColumnsPlacements_Test - getAccountViewColumnsPlacementsWithEmptyEntity_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.AccountViewColumnsPlacements_Test">
+				<methods>
+					<include name="getAccountViewColumnsPlacementsWithEmptyEntity_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithValidToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithInvalidToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithoutToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithCrossAccountToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithAdminToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithTeamMemberToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithRestrictedTeamMemberToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithEmptyArray_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithEmptyArray_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithNullPlacements_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithNullPlacements_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithInvalidCandidateId_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithInvalidCandidateId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithInvalidJobId_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithInvalidJobId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithNullCandidateId_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithNullCandidateId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsWithNullJobId_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsWithNullJobId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithValidToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithInvalidToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithoutToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithCrossAccountToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithAdminToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithTeamMemberToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithRestrictedTeamMemberToken_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithEmptyEntityIds_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithEmptyEntityIds_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithEmptyColumnKeys_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithEmptyColumnKeys_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithEmptyEntityName_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithEmptyEntityName_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithNullEntityName_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithNullEntityName_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithInvalidEntityName_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithInvalidEntityName_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithInvalidColumnKeys_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithInvalidColumnKeys_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ExportFiles_Test - exportFilesWithNonExistentEntityId_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.ExportFiles_Test">
+				<methods>
+					<include name="exportFilesWithNonExistentEntityId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="BulkCreatePlacements_Test - bulkCreatePlacementsSkipDuplicatePlacements_Test">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.BulkCreatePlacements_Test">
+				<methods>
+					<include name="bulkCreatePlacementsSkipDuplicatePlacements_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Get Invoice Status With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceStatusAPI_Test">
+				<methods>
+					<include name="getInvoiceStatusWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Status With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceStatusAPI_Test">
+				<methods>
+					<include name="getInvoiceStatusWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Status With Invalid Request Type">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceStatusAPI_Test">
+				<methods>
+					<include name="getInvoiceStatusWithInvalidRequestType_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Status With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceStatusAPI_Test">
+				<methods>
+					<include name="getInvoiceStatusWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Get Invoice Custom Fields With Valid Token">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Fields With Deleted Custom Fields">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithDeletedCustomFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Fields With Empty Data">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithEmptyData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Fields With Invalid Token">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Fields With Cross Account Token">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Get Invoice Standard Templates With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceStandardTemplatesWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Templates With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomTemplatesWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Templates With Invalid Request Type">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceTemplatesWithInvalidRequestType_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Templates With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceTemplatesWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Templates With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceTemplatesWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Get Invoice By Id With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceByIdAPI_Test">
+				<methods>
+					<include name="getInvoiceByIdWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice By Id With Invalid Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceByIdAPI_Test">
+				<methods>
+					<include name="getInvoiceByIdWithInvalidId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice By Id With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceByIdAPI_Test">
+				<methods>
+					<include name="getInvoiceByIdWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice By Id With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceByIdAPI_Test">
+				<methods>
+					<include name="getInvoiceByIdWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Delete Invoice By Id With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteInvoiceByIdWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Delete Already Deleted Invoice">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteAlreadyDeletedInvoice_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Delete Invoice By Id With Invalid Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteInvoiceByIdWithInvalidId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Delete Invoice By Id With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteInvoiceByIdWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Delete Invoice By Id With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteInvoiceByIdWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Get All Invoices With Created On And Updated On Sorting Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithCreatedOnAndUpdatedOnSortingParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Issue Date And Due Date Sorting Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithIssueDateAndDueDateSortingParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Invalid Page Number">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithInvalidPageNumber_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Limit Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithLimitParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Missing Sort Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithMissingSortParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Invalid Sort Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithInvalidSortParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Search Invoice By Invoice Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByInvoiceId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Associated Slugs">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByAssociatedSlugs_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Owner Created By">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByOwnerCreatedBy_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Admin Created By">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByAdminCreatedBy_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Valid Issue Date Range">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByValidIssueDateRange_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Invalid Issue Date Range">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByInvalidIssueDateRange_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Valid Due Date Range">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByValidDueDateRange_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Invalid Due Date Range">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByInvalidDueDateRange_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Status Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByStatusId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Invalid Status Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByInvalidStatusId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Limit And Page Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithLimitAndPageParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Sort Order Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithSortOrderParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Multiple Associated Slugs Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithMultipleAssociatedSlugsParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Invalid Search Param">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithInvalidSearchParam_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Create Invoice With Standard Template">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithStandardTemplate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Standard Entity Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithStandardEntityFieldsData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Custom Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCustomFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Entity Type Custom Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithEntityTypeCustomFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With All Standard Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithAllStandardFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With All Associations Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithAllAssociationsFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Empty Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithEmptyData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Random Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithRandomData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Invalid Invoice Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithWithInvalidInvoiceFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Invalid Amount Type">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithWithInvalidAmountType_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Invalid Due Date">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithInvalidDueDate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With More Than 500 Characters Description">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithDescriptionMoreThan500Characters_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Cross Account Template">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountTemplate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Cross Account Company">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountCompany_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+    
+	<test name="Invoice Public API - Edit Invoice With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Standard Entity Fields Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceWithStandardEntityFieldsData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Associations Fields Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceWithAssociationsFieldsData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice Without Changes">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithoutChanges_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice By Invalid Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Invalid Invoice Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidInvoiceFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Invalid Amount Value">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidAmountValue_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Invalid Due Date">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidDueDate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Description More Than 500 Characters">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithDescriptionMoreThan500Characters_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Empty Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithEmptyData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Cross Account Invoice">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountInvoice_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Cross Account Company">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountCompany_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Cross Account Template">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountTemplate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Entity Custom Fields - Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceEntityCustomFields_Test">
+				<methods>
+					<include name="getInvoiceEntityCustomFieldsWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Entity Custom Fields 404 - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceEntityCustomFields_Test">
+				<methods>
+					<include name="getInvoiceEntityCustomFieldsWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Entity Custom Fields 404 - Without Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceEntityCustomFields_Test">
+				<methods>
+					<include name="getInvoiceEntityCustomFieldsWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Entity Custom Fields 404 - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceEntityCustomFields_Test">
+				<methods>
+					<include name="getInvoiceEntityCustomFieldsWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Entity Custom Fields 404 - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceEntityCustomFields_Test">
+				<methods>
+					<include name="getInvoiceEntityCustomFieldsWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+
+	<test name="Get Invoice Entity Custom Fields 404 - Team Member">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceEntityCustomFields_Test">
+				<methods>
+					<include name="getInvoiceEntityCustomFieldsWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Entity Custom Fields 404 - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceEntityCustomFields_Test">
+				<methods>
+					<include name="getInvoiceEntityCustomFieldsWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Entity Custom Fields 404 - Invalid Invoice ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceEntityCustomFields_Test">
+				<methods>
+					<include name="getInvoiceEntityCustomFieldsWithInvalidInvoiceId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Entity Custom Fields 404 - Non Numeric Invoice ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceEntityCustomFields_Test">
+				<methods>
+					<include name="getInvoiceEntityCustomFieldsWithNonNumericInvoiceId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>   
+
+	<test name="Get Invoice Summary - Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSummary_Test">
+				<methods>
+					<include name="getInvoiceSummaryWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	 <test name="Get Invoice Summary - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSummary_Test">
+				<methods>
+					<include name="getInvoiceSummaryWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Summary - Without Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSummary_Test">
+				<methods>
+					<include name="getInvoiceSummaryWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Summary - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSummary_Test">
+				<methods>
+					<include name="getInvoiceSummaryWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Summary - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSummary_Test">
+				<methods>
+					<include name="getInvoiceSummaryWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Invoice Summary - Team Member">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSummary_Test">
+				<methods>
+					<include name="getInvoiceSummaryWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>		
+
+	<test name="Get Invoice Summary - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSummary_Test">
+				<methods>
+					<include name="getInvoiceSummaryWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>		
+
+	<test name="Get Invoice Summary - Empty Filters">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSummary_Test">
+				<methods>
+					<include name="getInvoiceSummaryWithEmptyFilters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+
+	<test name="Get Invoice Summary - Categories Validation">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.InvoiceSummary_Test">
+				<methods>
+					<include name="getInvoiceSummaryCategoriesValidation_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+ 	<test name="Update Grouped By - Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Grouped By - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Grouped By - Without Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Grouped By - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Grouped By - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Grouped By - Team Member">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+
+	<test name="Update Grouped By - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Grouped By - Invalid Entity ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithInvalidEntityId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Grouped By - Null Entity ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithNullEntityId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Grouped By - Null Grouped By">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateGroupedBy_Test">
+				<methods>
+					<include name="updateGroupedByWithNullGroupedBy_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Get Custom View User View - Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View User View - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View User View - Without Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View User View - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View User View - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View User View - Team Member">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+
+	<test name="Get Custom View User View - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View User View - Invalid Entity ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithInvalidEntityId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View User View - Empty Entity ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithEmptyEntityId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View User View - Non Numeric Entity ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithNonNumericEntityId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Custom View User View - Without Entity ID Param">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.CustomViewUserView_Test">
+				<methods>
+					<include name="getCustomViewUserViewWithoutEntityIdParam_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+
+	 <test name="Update Custom View User View - Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View - Without Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View - Team Member">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Update Custom View User View - Invalid Entity ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithInvalidEntityId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View - Null Entity ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithNullEntityId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View - Null List Actions">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithNullListActions_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Custom View User View - Empty List Actions">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UpdateCustomViewUserView_Test">
+				<methods>
+					<include name="updateCustomViewUserViewWithEmptyListActions_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+
+
+	<test name="Link Invoices - Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>		
+
+	<test name="Link Invoices - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+
+	<test name="Link Invoices - Without Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>			
+
+	<test name="Link Invoices - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>		
+
+	<test name="Link Invoices - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>		
+
+	<test name="Link Invoices - Team Member">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>		
+
+	<test name="Link Invoices - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>		
+
+	<test name="Link Invoices - Empty Placement IDs">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithEmptyPlacementIds_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Link Invoices - Empty Invoice IDs">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithEmptyInvoiceIds_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Link Invoices - Invalid Placement ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithInvalidPlacementId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Link Invoices - Invalid Invoice ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.LinkInvoices_Test">
+				<methods>
+					<include name="linkInvoicesWithInvalidInvoiceId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+
+
+	<test name="Unlink Invoice - Valid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Unlink Invoice - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+
+	<test name="Unlink Invoice - Without Token">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithoutToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Unlink Invoice - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Unlink Invoice - Admin">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+
+	<test name="Unlink Invoice - Team Member">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Unlink Invoice - Restricted">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithRestrictedTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>	
+
+	<test name="Unlink Invoice - Null Placement ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithNullPlacementId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>		
+
+	<test name="Unlink Invoice - Null Invoice ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithNullInvoiceId_Test" />
+				</methods>
+			</class>
+		</classes>	
+	</test>
+
+	<test name="Unlink Invoice - Invalid Placement ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithInvalidPlacementId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Unlink Invoice - Invalid Invoice ID">
+		<classes>
+			<class name="io.recruitcrm.invoiceService.UnlinkInvoice_Test">
+				<methods>
+					<include name="unlinkInvoiceWithInvalidInvoiceId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

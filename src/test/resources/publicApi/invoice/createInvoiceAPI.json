@@ -1,0 +1,18 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Create invoice API response",
+	"type": "object",
+	"properties": {
+		"message": {
+			"type": "string"
+		},
+		"invoice_id": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"message",
+		"invoice_id"
+	],
+	"additionalProperties": true
+}

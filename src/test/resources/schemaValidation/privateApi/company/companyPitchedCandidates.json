@@ -1,0 +1,473 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "meta",
+    "data"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": [
+            "Pitch candidates fetched successfully."
+          ]
+        },
+        "requestUuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "responseType": {
+          "type": "object",
+          "required": [
+            "context",
+            "code"
+          ],
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": [
+                "Request is successful"
+              ]
+            },
+            "code": {
+              "type": "integer",
+              "enum": [
+                103
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [
+            200
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "remark",
+          "stageDate",
+          "pitchStage",
+          "contactId",
+          "contactSlug",
+          "contactName",
+          "contact",
+          "candidateId",
+          "candidateSlug",
+          "name",
+          "phone",
+          "email",
+          "contactNumber",
+          "candidate",
+          "createdBy",
+          "createdByName",
+          "createdOn",
+          "updatedBy",
+          "updatedOn",
+          "candidateEmailOptOut",
+          "entityType",
+          "offLimitContact",
+          "offLimitCandidate",
+          "entityId",
+          "statusId",
+          "pitchedByAvatar",
+          "count",
+          "pitchHistory"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "remark": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "stageDate": {
+            "type": "integer"
+          },
+          "pitchStage": {
+            "type": "string",
+            "enum": [
+              "Pitched",
+              "Shortlisted",
+              "Interviewed",
+              "Offered",
+              "Hired",
+              "Rejected",
+              "On Hold"
+            ]
+          },
+          "contactId": {
+            "type": "integer"
+          },
+          "contactSlug": {
+            "type": "string"
+          },
+          "contactTitle": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contactName": {
+            "type": "string"
+          },
+          "contact": {
+            "type": "object",
+            "required": [
+              "name",
+              "slug",
+              "contactId"
+            ],
+            "properties": {
+              "offLimitStatusId": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "offLimitReason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "offLimitEndDate": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "offLimitStartDate": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "statusLabel": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "backgroundColorHex": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "textColorHex": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "markedBy": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "name": {
+                "type": "string"
+              },
+              "title": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "slug": {
+                "type": "string"
+              },
+              "contactId": {
+                "type": "integer"
+              },
+              "profilePic": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "candidateId": {
+            "type": "integer"
+          },
+          "candidateSlug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "contactNumber": {
+            "type": "string"
+          },
+          "candidate": {
+            "type": "object",
+            "required": [
+              "name",
+              "slug",
+              "candidateId"
+            ],
+            "properties": {
+              "offLimitStatusId": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "offLimitReason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "offLimitEndDate": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "offLimitStartDate": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "statusLabel": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "backgroundColorHex": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "textColorHex": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "markedBy": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "name": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "candidateId": {
+                "type": "integer"
+              },
+              "profilePic": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "resume": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "resumefilename": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "resumeaddedon": {
+                "type": "integer"
+              },
+              "resumeupdatedon": {
+                "type": "integer"
+              },
+              "resumeupdaterequestedon": {
+                "type": "integer"
+              }
+            },
+            "additionalProperties": false
+          },
+          "createdBy": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "createdByName": {
+            "type": "string"
+          },
+          "createdOn": {
+            "type": "integer"
+          },
+          "updatedBy": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "updatedOn": {
+            "type": "integer"
+          },
+          "candidateEmailOptOut": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1"
+            ]
+          },
+          "entityType": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "offLimitContact": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "offLimitCandidate": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "entityId": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "statusId": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "pitchedByAvatar": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "count": {
+            "type": "integer"
+          },
+          "pitchHistory": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "remark": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "stageDate": {
+                  "type": "integer"
+                },
+                "pitchStage": {
+                  "type": "string"
+                },
+                "statusId": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "contactId": {
+                  "type": "integer"
+                },
+                "candidateId": {
+                  "type": "integer"
+                },
+                "createdBy": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "createdByName": {
+                  "type": "string"
+                },
+                "createdOn": {
+                  "type": "integer"
+                },
+                "updatedBy": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "updatedOn": {
+                  "type": "integer"
+                },
+                "pitchedByAvatar": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
+
+

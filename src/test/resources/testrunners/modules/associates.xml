@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Technostars - Harika Kurella, Priyanka Shinde -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="4">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Create Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.CreateNewNoteTest">
+				<methods>
+					<include name="createNewNoteWithAllValidAssociates" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create New Call Logs Endpoint">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<!-- <include name="createnewCallLogWithFields" /> -->
+					<include name="createnewCallLogWithAssociates" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create New Meeting Endpoint">
+		<classes>
+			<class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+				<methods>
+					<include name="createNewMeetings" />
+					<include name="createNewMeetingsWithAssociates" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create New Task with Associates Endpoint">
+		<classes>
+			<class name="io.rcrm.api.tasks.CreateNewTaskTest">
+				<methods>
+					<include name="createNewTaskWithAssociates" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

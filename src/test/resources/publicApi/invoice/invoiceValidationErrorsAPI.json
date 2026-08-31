@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Invoice validation errors response (422)",
+	"type": "object",
+	"properties": {
+		"template_id": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"company_slug": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"associcated_contact_slugs": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	},
+	"additionalProperties": true
+}

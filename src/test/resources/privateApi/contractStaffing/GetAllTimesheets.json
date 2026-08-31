@@ -1,0 +1,522 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "meta": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "requestUuid": {
+                    "type": "string"
+                },
+                "responseType": {
+                    "type": "object",
+                    "properties": {
+                        "context": {
+                            "type": "string"
+                        },
+                        "code": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "context",
+                        "code"
+                    ]
+                },
+                "timestamp": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "message",
+                "requestUuid",
+                "responseType",
+                "timestamp",
+                "status"
+            ]
+        },
+        "data": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "timesheetPeriod": {
+                        "type": "object",
+                        "properties": {
+                            "timesheetStartDate": {
+                                "type": "integer"
+                            },
+                            "timesheetEndDate": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "timesheetStartDate",
+                            "timesheetEndDate"
+                        ]
+                    },
+                    "timesheetStatusId": {
+                        "type": "integer"
+                    },
+                    "jobDuration": {
+                        "type": "object",
+                        "properties": {
+                            "jobStartDate": {
+                                "type": "integer"
+                            },
+                            "jobEndDate": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "jobStartDate",
+                            "jobEndDate"
+                        ]
+                    },
+                    "payCurrencySymbol": {
+                        "type": "string"
+                    },
+                    "billCurrencySymbol": {
+                        "type": "string"
+                    },
+                    "payRate": {
+                        "type": "number"
+                    },
+                    "billRate": {
+                        "type": "number"
+                    },
+                    "payData": {
+                        "type": "number"
+                    },
+                    "billData": {
+                        "type": "number"
+                    },
+                    "approvedBy": {
+                        "type": [
+                            "object",
+                            "null"
+                        ]
+                    },
+                    "addedOn": {
+                        "type": "integer"
+                    },
+                    "updatedOn": {
+                        "type": "integer"
+                    },
+                    "contractor": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "photo": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "slug": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "position": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "ownerId": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "assignmentId": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "offLimitStatusId": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "offLimitReason": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "offLimitEndDate": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "offLimitStartDate": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "statusLabel": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "backgroundColorHex": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "textColorHex": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "markedByName": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name"
+                        ]
+                    },
+                    "contractorName": {
+                        "type": "string"
+                    },
+                    "job": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "slug": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "isUnassigned": {
+                                "type": "boolean"
+                            },
+                            "companyName": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "companySlug": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "status": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "jobType": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "srno": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name",
+                            "isUnassigned"
+                        ]
+                    },
+                    "jobName": {
+                        "type": "string"
+                    },
+                    "payStatusId": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "payoutPaidOn": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "payoutNumber": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "payoutFile": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "billStatusId": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "invoiceNumber": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "invoiceCreatedOn": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "companyName": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "companyLogo": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "company": {
+                        "type": [
+                            "object",
+                            "null"
+                        ],
+                        "properties": {
+                            "offLimitStatusId": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "offLimitReason": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "offLimitEndDate": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "offLimitStartDate": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "statusLabel": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "backgroundColorHex": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "textColorHex": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "markedByName": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "name": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "profilePic": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "slug": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            }
+                        }
+                    },
+                    "serialNumber": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "canCreate": {
+                        "type": [
+                            "boolean",
+                            "null"
+                        ]
+                    },
+                    "canEdit": {
+                        "type": [
+                            "boolean",
+                            "null"
+                        ]
+                    },
+                    "canDelete": {
+                        "type": [
+                            "boolean",
+                            "null"
+                        ]
+                    },
+                    "approvers": {
+                        "type": [
+                            "object",
+                            "null"
+                        ]
+                    },
+                    "deals": {
+                        "type": [
+                            "array",
+                            "null"
+                        ]
+                    },
+                    "addedBy": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "photo": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "userTypeId": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name",
+                            "userTypeId"
+                        ]
+                    },
+                    "updatedBy": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "photo": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "userTypeId": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name",
+                            "userTypeId"
+                        ]
+                    },
+                    "totalWorkTime": {
+                        "type": "integer"
+                    },
+                    "totalOvertime": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    },
+                    "totalTime": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    }
+                },
+                "required": [
+                    "id",
+                    "timesheetPeriod",
+                    "timesheetStatusId",
+                    "jobDuration",
+                    "payCurrencySymbol",
+                    "billCurrencySymbol",
+                    "payRate",
+                    "billRate",
+                    "addedOn",
+                    "updatedOn",
+                    "contractor",
+                    "addedBy",
+                    "updatedBy",
+                    "totalWorkTime"
+                ]
+            }
+        }
+    },
+    "required": [
+        "meta",
+        "data"
+    ]
+}

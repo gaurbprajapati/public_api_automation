@@ -1,0 +1,4487 @@
+{
+    "candidateCF": [
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_not",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude single value",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_not",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_not",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Single value absent",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Multiple values absent",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Multiple values absent",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{candidate1,candidate2}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{candidate2,candidate1}",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{candidateCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "candidate",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        }
+    ],
+    "companyCF": [
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_not",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_not",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_not",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company1,company2}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{company2,company1}",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{companyCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "company",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        }
+    ],
+    "contactCF": [
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_not",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_not",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_not",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1,contact2}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact2,contact1}",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{contactCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "contact",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        }
+    ],
+    "jobCF": [
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_not",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_not",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_not",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{job1,job2}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{job2,job1}",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{jobCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "job",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        }
+    ],
+    "dealsCF": [
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_not",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_not",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_not",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{deal1,deal2}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{deal2,deal1}",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{dealsCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "deals",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        }
+    ],
+    "userCF": [
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match owner value",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_not",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact owner value",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Owner value present",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude owner value",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{admin,restricted}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{restricted,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{admin,owner}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Admin or Owner",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{owner,admin}",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Admin or Owner (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{userCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "user",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        }
+    ],
+    "teamCF": [
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match single value",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is - Exact match multiple values (reversed order)",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is_not",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact single value",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is_not",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is_not",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Not - Exclude exact multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Single value present",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains - Multiple values present (reversed order)",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude single value anywhere",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Does Not Contain - Exclude when both values present (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Single value",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{team1,team2}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{team2,team1}",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Contains At Least One - Multiple values (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Has Any Value - Non-empty values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{teamCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "team",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "description": "Is Empty - Empty values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        }
+    ],
+    "textCF": [
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Tech Solutions Inc. \ud83d\ude80",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard name with emoji",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Innovate GmbH \ud83d\udca1",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international name with emoji",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Tecnolog\u00eda Ib\u00e9rica S.L.",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with accents",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "O'Malley's Security Solutions",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with apostrophe",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Sigma Technologies Inc. \u03a3",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Greek letters",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Alpha \u03b2 Systems Corp",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Greek beta",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Salt/Pepper Technologies",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with special characters",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is_not",
+            "filterValue": "Tech Solutions Inc. \ud83d\ude80",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude standard name with emoji",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Company name search",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Solutions",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Common word search",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "\u03a3",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Greek letter search",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "\u03b2",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Greek beta search",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude tech companies",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Tech prefix",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Innovate",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Innovate prefix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Microsoft",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Microsoft prefix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Inc.",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Inc. suffix",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Corporation",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Corporation suffix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Tech,Microsoft",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple company names",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty text fields",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty text fields",
+            "expectedResult": "entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Tech word",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Solutions",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Solutions word",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "\ud83d\ude80",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Rocket emoji search",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "\ud83d\udca1",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Light bulb emoji search",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "\ud83d\ude80",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude rocket emoji",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "\ud83d\udca1",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude light bulb emoji",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "\ud83d\ude80",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Rocket emoji suffix",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "\ud83d\udca1",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Light bulb emoji suffix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "\ud83d\ude80,\ud83d\udca1",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple emojis",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Under_Score_Analytics_Corp",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with underscores",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Top Secret Agency + Division",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with plus sign",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Minimal Data Corp",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match minimal data company",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Bracket [Technologies] (Inc.)",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with brackets",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "\u963f\u91cc\u5df4\u5df4\u96c6\u56e2",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Chinese characters",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Analytics Corporation",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Analytics Corporation",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is",
+            "filterValue": "Noble Technologies XVII Inc.",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Roman numerals",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is_not",
+            "filterValue": "Under_Score_Analytics_Corp",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude underscore company",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "is_not",
+            "filterValue": "Microsoft Corporation",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude Microsoft",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "_",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Underscore character",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "+",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Plus sign character",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "[",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Opening square bracket",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "]",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Closing square bracket",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "(",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Opening parenthesis",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": ")",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Closing parenthesis",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "/",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Forward slash",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Analytics",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Analytics keyword",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Corp",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Corp suffix",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Systems",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Systems keyword",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Noble",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Noble keyword",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "XVII",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Roman numerals",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Secret",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Secret keyword",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Minimal",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Minimal keyword",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains",
+            "filterValue": "Bracket",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Bracket keyword",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "_",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude underscore",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "+",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude plus sign",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "[",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude square brackets",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "/",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude forward slash",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Under",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Under prefix",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Top",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Top prefix",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Minimal",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Minimal prefix",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Bracket",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Bracket prefix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "\u963f\u91cc\u5df4\u5df4",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Chinese characters prefix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Alpha",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Alpha prefix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Salt",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Salt prefix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Analytics",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Analytics prefix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "begins_with",
+            "filterValue": "Noble",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Noble prefix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "_Corp",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Underscore Corp suffix",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "+ Division",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Plus Division suffix",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "Corp",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Corp suffix",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "(Inc.)",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Parentheses Inc. suffix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "\u96c6\u56e2",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Chinese characters suffix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "S.L.",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - S.L. suffix",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "GmbH \ud83d\udca1",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - GmbH suffix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "ends_with",
+            "filterValue": "XVII Inc.",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Roman numerals Inc. suffix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Analytics",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Analytics word",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Corp",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Corp word",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Systems",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Systems word",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Noble",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Noble word",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Secret",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Secret word",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Minimal",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Minimal word",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "Bracket",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Bracket word",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Analytics,Corp",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Analytics or Corp",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Secret,Noble",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Secret or Noble",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "_,+",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Underscore or plus sign",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "[,(,)",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Bracket characters",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "\u963f\u91cc\u5df4\u5df4,Microsoft",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Chinese characters or Microsoft",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{textCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "XVII,\u03a3,\u03b2",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Special characters and symbols",
+            "expectedResult": "Contact2"
+        }
+    ],
+    "phonenumberCF": [
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "415-555-0100",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard phone",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "+49 89 12345678",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international phone",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "555_123_4567",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with underscores",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "+34 91 123 45 67",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with spaces",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "+353 1 234 5678",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Irish phone",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "555 123 4567 ext. 789",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with extension",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "321-098-7654",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with dashes",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "010-12345678",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Chinese phone",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "425-882-8080",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Microsoft phone",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "415-555-0200",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Sigma phone",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "650-555-0300",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Alpha phone",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "503-555-0400",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Salt phone",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "617-555-0500",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Analytics phone",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is",
+            "filterValue": "212-555-0600",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Noble phone",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is_not",
+            "filterValue": "415-555-0100",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude standard phone",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "415",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Area code search",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains",
+            "filterValue": "555",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Common number sequence",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "555",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude 555 sequence",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "begins_with",
+            "filterValue": "415",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - 415 prefix",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "begins_with",
+            "filterValue": "+49",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - International prefix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "ends_with",
+            "filterValue": "0100",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - 0100 suffix",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "ends_with",
+            "filterValue": "ext. 789",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Extension suffix",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "415,425",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple area codes",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty phone fields",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{phonenumberCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "phonenumber",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty phone fields",
+            "expectedResult": "Contact1,Contact3"
+        }
+    ],
+    "longtextCF": [
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "Tech Solutions Inc. is a leading technology solutions provider with over 20 years of experience in enterprise software development. We specialize in cloud computing, digital transformation, and innovative software solutions for Fortune 500 companies. Our team of expert developers and consultants deliver cutting-edge technology solutions that drive business growth and operational efficiency.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match for Company1's profile",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Empty long text field",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is_not",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Non-empty long text fields",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "technology",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Technology keyword",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "cloud computing",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Cloud computing phrase",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "cybersecurity",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Security expertise",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "\u03a3",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Greek letter",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "blockchain",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Blockchain keyword",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains",
+            "filterValue": "DevOps",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - DevOps expertise",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "technology",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Technology not present",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "begins_with",
+            "filterValue": "Tech Solutions Inc.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Company name at start",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "begins_with",
+            "filterValue": "Innovate GmbH",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - German name at start",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "begins_with",
+            "filterValue": "Microsoft Corporation",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Microsoft name at start",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "operational efficiency.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Period ending",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "ends_with",
+            "filterValue": "L\u00f6sungen.",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - German period ending",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "cloud,blockchain",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Technology keywords",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty long text fields",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty long text fields",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "technology",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Technology word",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{longtextCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "cloud",
+            "fieldType": "longtext",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Cloud word",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        }
+    ],
+    "numberCF": [
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for single digit value 5",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for two-digit negative value -25",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-150",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for three-digit negative value -150",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for zero value",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-8000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for four-digit negative value -8000",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "12",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for two-digit value 12",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-500",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - No exact match for integer -500 (changed to -500.01)",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "200.99",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for two-digit value 12",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "200.990",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for two-digit value 12",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-500.010",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for two-digit value 12",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for four-digit negative value -1000",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for two-digit negative value -50",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for three-digit value 100",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "999999999",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for non-existent value",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude single digit value 5",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "-25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude two-digit negative value -25",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude zero value",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "12",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude two-digit value 12",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "200",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude three-digit value 200",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "-50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude two-digit negative value -50",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "1",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 1 prefix",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 5 prefix",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-1",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -1 prefix",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-2",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -2 prefix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -5 prefix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-8",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - -8 prefix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 10 prefix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "12",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 12 prefix",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - 100 prefix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "999",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - Non-existent prefix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 0 suffix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "00",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 00 suffix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 000 suffix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 5 suffix",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "-25",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - -25 suffix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "-150",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - -150 suffix",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "-8000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - -8000 suffix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "12",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 12 suffix",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "-500",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - -500 suffix (no match, value changed to -500.01)",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - -1000 suffix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "-50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - -50 suffix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - 100 suffix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": "999",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - Non-existent suffix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "has_any_value",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Has Any Value - Non-empty number fields",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_empty",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Empty - Empty number fields",
+            "expectedResult": "entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "1,10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - 1 to 10 range",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "10,20",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - 10 to 20 range",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-600,-400",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - -600 to -400 range",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "50,150",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - 50 to 150 range",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "100,300",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - 100 to 300 range",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "150,250",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - 150 to 250 range",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-1000,1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - -1000 to 1000 range including zero",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "0,200",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - 0 to 200 range",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-100,100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - -100 to 100 range",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-60,-40",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - -60 to -40 range",
+            "expectedResult": "contact with number -60 and contact with number -40"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-1000,-500",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - -1000 to -500 range",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "999999999,9999999999",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Non-existent range",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than 50",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "20",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than 20",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than 10",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than 5",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than zero",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than -10",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than -50",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than -100",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "200",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than 200",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "200",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than 200",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than 100",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than 50",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "20",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than 20",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than 10",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than 5",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than zero",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-10",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than -10",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-50",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than -50",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-100",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than -100",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-500",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than -500",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-1000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than -1000",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-8000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than -8000",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "999999999",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than 999999999",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-1",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - Negative 1 prefix",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-2",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - Negative 2 prefix",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - Negative 5 prefix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-8",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - Negative 8 prefix",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-10000000,0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Negative range to zero",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-6000000,-4000000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Negative range",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-1000000,1000000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - Negative to positive range including zero",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-10000000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than -10000000",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-5000000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than -5000000",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-1000000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than -1000000",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than zero",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-10000000",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than -10000000",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than zero",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "12.33",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - No match for decimal 12.33 (value is integer 12)",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is",
+            "filterValue": "-500.01",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is - Exact match for negative decimal -500.01",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "5.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude decimal value 5.75",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "-50.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude negative decimal -50.5",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "12.33",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude decimal value 12.33",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_not",
+            "filterValue": "-500.01",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Not - Exclude negative decimal -500.01",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "5.",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - decimal prefix 5. (no match, value is integer 5)",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "begins_with",
+            "filterValue": "-500.",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Begins With - negative decimal prefix -500.",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": ".75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - .75 decimal suffix (no match, value is integer 5)",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "ends_with",
+            "filterValue": ".01",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Ends With - .01 decimal suffix (-500.01)",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "5.5,6.0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - tight range 5.5 to 6.0 (5 not in range)",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-26.0,-25.0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - tight range around decimal -25.99",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "12.0,13.0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - tight range around decimal 12.33",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-51.0,-50.0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - tight range around decimal -50.5",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-501.0,-499.0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - tight range around decimal -500.01",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "200.0,201.0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - tight range around decimal 200.99 (no contacts)",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_between",
+            "filterValue": "-151.0,-150.0",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING_START_END",
+            "description": "Is Between - tight range around decimal -150.5",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "5.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than decimal 5.75",
+            "expectedResult": "Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "12.33",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than decimal 12.33",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-50.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than decimal -50.5",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_mt",
+            "filterValue": "-25.99",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is More Than - Greater than decimal -25.99",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "5.75",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than decimal 5.75",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-50.5",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than decimal -50.5",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "-500.01",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than decimal -500.01",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{numberCF}",
+            "filterType": "is_lt",
+            "filterValue": "12.33",
+            "fieldType": "number",
+            "filterValue_TYPE": "NUMERIC_STRING",
+            "description": "Is Less Than - Less than decimal 12.33",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        }
+    ],
+    "dateCF": [
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "today",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is today",
+            "expectedResult": "Contacts with dateCF on today"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "yesterday",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is yesterday",
+            "expectedResult": "Contacts with dateCF on yesterday"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_week",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is this week",
+            "expectedResult": "Contacts with dateCF on this week"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_week",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last week",
+            "expectedResult": "Contacts with dateCF on last week"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_month",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is this month",
+            "expectedResult": "Contacts with dateCF on this month"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_month",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last month",
+            "expectedResult": "Contacts with dateCF on last month"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_quarter",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is this quarter",
+            "expectedResult": "Contacts with dateCF on this quarter"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_quarter",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last quarter",
+            "expectedResult": "Contacts with dateCF on last quarter"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "this_year",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is this year",
+            "expectedResult": "Contacts with dateCF on this year"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_year",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last year",
+            "expectedResult": "Contacts with dateCF on last year"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_30",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last 30 days",
+            "expectedResult": "Contacts with dateCF on last 30 days"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_60",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last 60 days",
+            "expectedResult": "Contacts with dateCF on last 60 days"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_90",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last 90 days",
+            "expectedResult": "Contacts with dateCF on last 90 days"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "last_365",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is last 365 days",
+            "expectedResult": "Contacts with dateCF on last 365 days"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is",
+            "filterValue": "all_time",
+            "fieldType": "date",
+            "filterValue_TYPE": "DATE_IS",
+            "description": "Date CF is all time",
+            "expectedResult": "contact1,contact2,contact3"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_equal_to",
+            "filterValue": "2022-06-15",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is equal to 2022-06-15",
+            "expectedResult": "contact1"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_equal_to",
+            "filterValue": "2023-03-10",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is equal to 2023-03-10",
+            "expectedResult": "contact with date 2023-03-10"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_equal_to",
+            "filterValue": "2024-06-06",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is equal to 2024-06-06",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_equal_to",
+            "filterValue": "2025-02-14",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is equal to 2025-02-14",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_before",
+            "filterValue": "2025-02-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is before 2025-02-01",
+            "expectedResult": "contact1,contact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_before",
+            "filterValue": "2025-02-14",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is before 2025-02-01",
+            "expectedResult": "contact1,contact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_before",
+            "filterValue": "2025-03-18",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is before 2025-02-01",
+            "expectedResult": "contact1,contact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_after",
+            "filterValue": "2024-06-06",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is after 2025-07-01",
+            "expectedResult": "contact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_after",
+            "filterValue": "2024-06-05",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is after 2025-07-01",
+            "expectedResult": "contact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_after",
+            "filterValue": "2025-07-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG",
+            "description": "Date CF is after 2025-07-01",
+            "expectedResult": "contact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_between",
+            "filterValue": "2022-01-01,2025-03-01",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG_START_END",
+            "description": "Date CF is between 2025-01-01 and 2025-03-01",
+            "expectedResult": "contact1,contact2,contact3"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_between",
+            "filterValue": "1990-06-06,2026-06-07",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG_START_END",
+            "description": "Date CF is between 2024-06-06 and 2024-06-07",
+            "expectedResult": "contact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_between",
+            "filterValue": "2024-06-05,2029-06-06",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG_START_END",
+            "description": "Date CF is between 2024-06-06 and 2024-06-07",
+            "expectedResult": "contact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_between",
+            "filterValue": "2020-06-05,2030-06-06",
+            "fieldType": "date",
+            "filterValue_TYPE": "LONG_START_END",
+            "description": "Date CF is between 2024-06-06 and 2024-06-07",
+            "expectedResult": "contact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_lt",
+            "filterValue": "30",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is less than 30 days ago",
+            "expectedResult": "Contacts with dateCF within last 30 days"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_lt",
+            "filterValue": "1",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is less than 30 days ago",
+            "expectedResult": "Contacts with dateCF within last 30 days"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_lt",
+            "filterValue": "5",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is less than 0 days ago",
+            "expectedResult": "Today"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_lt",
+            "filterValue": "0",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is less than 0 days ago",
+            "expectedResult": "Today"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_mt",
+            "filterValue": "30",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is more than 30 days ago",
+            "expectedResult": "Contacts with dateCF more than 30 days ago"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_mt",
+            "filterValue": "1",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is more than 1 day ago",
+            "expectedResult": "Contacts with dateCF more than 1 day ago"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_mt",
+            "filterValue": "0",
+            "fieldType": "date",
+            "filterValue_TYPE": "INTEGER",
+            "description": "Date CF is more than 0 days ago",
+            "expectedResult": "Contacts with dateCF more than 0 days ago"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "is_empty",
+            "filterValue": "0",
+            "filterValue_TYPE": "LONG",
+            "fieldType": "date",
+            "description": "Date CF is empty",
+            "expectedResult": "entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{dateCF}",
+            "filterType": "has_any_value",
+            "filterValue": "0",
+            "filterValue_TYPE": "LONG",
+            "fieldType": "date",
+            "description": "Date CF has any value",
+            "expectedResult": "contact1,contact2,contact3"
+        }
+    ],
+    "social_profileCF": [
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/company/techsolutions",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match standard LinkedIn URL",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/company/innovate-gmbh",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match international LinkedIn URL",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/company/tecnologia-iberica",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match accented LinkedIn URL",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/company/o'malley-security",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with apostrophe",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/company/microsoft",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Microsoft URL",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/company/sigma-tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Sigma URL",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/company/alpha-beta-systems",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Alpha URL",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/company/salt-pepper-tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match Salt URL",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "https://www.linkedin.com/company/\u963f\u91cc\u5df4\u5df4",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match with Chinese characters",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is - Exact match empty",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is_not",
+            "filterValue": "https://www.linkedin.com/company/techsolutions",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Not - Exclude standard LinkedIn URL",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains",
+            "filterValue": "linkedin.com/company/tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Tech LinkedIn URLs",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains",
+            "filterValue": "linkedin.com/company/microsoft",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains - Microsoft LinkedIn URL",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "linkedin.com/company/tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Does Not Contain - Exclude tech LinkedIn URLs",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "begins_with",
+            "filterValue": "https://www.linkedin.com/company/tech",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Begins With - Tech LinkedIn URL prefix",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "ends_with",
+            "filterValue": "techsolutions",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Standard LinkedIn URL suffix",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "ends_with",
+            "filterValue": "microsoft",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Ends With - Microsoft LinkedIn URL suffix",
+            "expectedResult": "Empty"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "tech,microsoft",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Multiple LinkedIn URLs",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Has Any Value - Non-empty social profile URLs",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Is Empty - Empty social profile URLs",
+            "expectedResult": "Contact1,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "linkedin",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - LinkedIn domain",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{social_profileCF}",
+            "filterType": "contains_exact_word",
+            "filterValue": "microsoft",
+            "fieldType": "text",
+            "filterValue_TYPE": "STRING",
+            "description": "Contains Exact Word - Microsoft word",
+            "expectedResult": "Empty"
+        }
+    ],
+    "dropdownCF": [
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "Option B",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is",
+            "filterValue": "Option C",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option C",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option A",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty dropdown values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{dropdownCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "dropdown",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty dropdown values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        }
+    ],
+    "multiselectCF": [
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A",
+            "expectedResult": "Contact1"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A and Option B",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B and Option A (reversed order)",
+            "expectedResult": "Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B",
+            "expectedResult": "Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A, Option B, and Option C",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B,Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B, Option A, and Option C (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option C, Option B, and Option A (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option A,Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option A, Option C, and Option B (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option B and Option C",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is - Exact match Option C and Option B (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C (exact match only)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A and Option B",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B and Option A (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option A, Option B, and Option C",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C, Option B, and Option A (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option B and Option C",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_not",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Not - Exclude Option C and Option B (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Option A value present",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Option B value present",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Option C value present",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option A and Option B present",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option B and Option A present (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option B and Option C present",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option C and Option B present (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - Both Option A and Option C present",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - All three values present",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains - All three values present (reversed order)",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option A",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option B",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude Option C",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option A and Option B present together",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option B and Option A present together (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option B and Option C present together",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option C and Option B present together (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option A and Option C present together",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "does_not_contain",
+            "filterValue": "Option C,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Does Not Contain - Exclude when both Option C and Option A present together (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A",
+            "expectedResult": "Contact1,Contact2"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A or Option B",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B or Option A (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option B or Option C",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C,Option B",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C or Option B (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A or Option C",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C or Option A (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option A,Option B,Option C",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option A, Option B, or Option C",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "contains_at_least_one",
+            "filterValue": "Option C,Option B,Option A",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Contains At Least One - Option C, Option B, or Option A (reversed order)",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Has Any Value - Non-empty multiselect values",
+            "expectedResult": "Contact1,Contact2,Contact3"
+        },
+        {
+            "dbField": "custcolumn{multiselectCF}",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "STRING_LIST",
+            "description": "Is Empty - Empty multiselect values",
+            "expectedResult": "Contact1,Contact2,Contact3,entityContact1,entityContact2"
+        }
+    ]
+}

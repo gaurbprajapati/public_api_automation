@@ -1,0 +1,2769 @@
+{
+  "Note Associated With": [
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}",
+          "{{company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple companys - company1 has both company1 and company2",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_001"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple companies - company2 has both company1 and company2",
+      "expectedResult": "Company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_002"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{company3}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - company3 has contact1",
+      "expectedResult": "Company3",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_003"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{company4}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple jobs - company4 has both job1 and job2",
+      "expectedResult": "Company4",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_004"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single company - company5 has company2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_005"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single company - company5 has company2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_006"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - company5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_007"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single job - company5 has job2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_008"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{company6}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple deals - company6 has both deal1 and deal2",
+      "expectedResult": "Company6",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_009"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single deal - company7 has deal2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_010"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{company11}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return company11",
+      "expectedResult": "Company11",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_011"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [
+          "{{associated_companies_company2}}",
+          "{{company5}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return company5",
+      "expectedResult": "Company5,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_012"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All companys",
+      "expectedResult": "All",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_013"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All companys",
+      "expectedResult": "All",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_014"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{company3}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return companys 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Company1, Company2, Company4, Company5, Company6, Company7, Company8, Company9, Company10,Company11 ,Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_015"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{company4}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude jobs with job1 - should return companys 1,2,3,5,6,7,8,9,10,11",
+      "expectedResult": "Company1, Company2, Company3, Company5, Company6, Company7, Company8, Company9, Company10, Company11,Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_016"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{company6}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All companys",
+      "expectedResult": "All",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_017"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{company11}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + company1 - should return companys 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_018"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: company1 + company2 - should return companys 1,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Company1, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_019"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{company4}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: job1 + job2 - should return companys 1,2,3,5,6,7,8,9,10,11,12",
+      "expectedResult": "Company1, Company2, Company3, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_020"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}",
+          "{{company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: company1 + company2 - should return companys 2,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_021"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{company6}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: deal1 + deal2 - should return companys 1,2,3,4,5,7,8,9,10,11,12",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_022"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return company3 and company11 (both have contact1)",
+      "expectedResult": "Company3, Company11",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_023"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains company1 - should return company2 and company11 (both have company1)",
+      "expectedResult": "Company2, Company11",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_024"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains company2 - should return company2 and company5 (both have company2)",
+      "expectedResult": "Company2, Company5,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_025"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job1 - should return company4 and company12 (both have job1)",
+      "expectedResult": "Company4, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_026"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job2 - should return company4 and company5 (both have job2)",
+      "expectedResult": "Company4, Company5,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_027"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains company1 - should return company1 and company12 (both have company1)",
+      "expectedResult": "Company1, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_028"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains company2 - should return company5 and company7 (both have company2)",
+      "expectedResult": "Company1, Company5, Company7,associated_companies_company2,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_029"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal1 - should return company5 and company6 (both have deal1)",
+      "expectedResult": "Company5, Company6,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_030"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal2 - should return company6 and company7 (both have deal2)",
+      "expectedResult": "Company6, Company7,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_031"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact1 AND company1 - should return company11 only (has both)",
+      "expectedResult": "Company11",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_032"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact2 AND company2 - should return company5 only (has both)",
+      "expectedResult": "Company5,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_033"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH job1 AND job2 - should return company4 only (has both)",
+      "expectedResult": "Company4",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_034"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH company1 AND company2 - should return company1 only (has both)",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_035"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH deal1 AND deal2 - should return company6 only (has both)",
+      "expectedResult": "Company6",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_036"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 AND company1 AND job1 - should return empty (no company has all three)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_037"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 AND company1 AND company1 - should return empty (no company has all three)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_038"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR company1 (OR logic) - should return company2, company3, company11",
+      "expectedResult": "Company2, Company3, Company11",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_039"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return company3, company5, company11",
+      "expectedResult": "Company3, Company5, Company11,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_040"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains company1 OR company2 - should return company2, company5, company11",
+      "expectedResult": "Company2, Company5, Company11,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_041"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job1 OR job2 - should return company4, company5, company12",
+      "expectedResult": "Company4, Company5, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_042"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains company1 OR company2 - should return company1, company5, company7, company12",
+      "expectedResult": "Company1, Company5, Company7, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_043"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal1 OR deal2 - should return company5, company6, company7",
+      "expectedResult": "Company5, Company6, Company7,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_044"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR company1 OR job1 OR company1 OR deal1 - should return company1, company2, company3, company4, company5, company6, company11, company12",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_045"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR company1 (OR logic) - should return company2, company3, company11",
+      "expectedResult": "Company2, Company3, Company11",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_046"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - should return companys 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Company1, Company2, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_047"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain company1 - should return companys 1,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Company1, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_048"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain job1 - returns companies with at least one note that doesn't include job1. associated_companies_company1 is included because it has Company1's note (no job1) even though it also has Company12's note (has job1)",
+      "expectedResult": "Company1, Company2, Company3, Company5, Company6, Company7, Company8, Company9, Company10, Company11,Company13,Company14,Company15,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_049"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain company1 - returns companies with at least one note that doesn't include company1. associated_companies_company2 is included because it has Company5's note (no company1) and Company7's note (no company1) even though it also has Company1's note (has company1)",
+      "expectedResult": "Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11,Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_050"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain deal1 - returns companies with at least one note that doesn't include deal1. associated_companies_company2 is included because it has Company1's note (no deal1) and Company7's note (no deal1) even though it also has Company5's note (has deal1)",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_051"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 AND company1 - should return companys 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_052"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Company apart from 8, 9, 10 should be returned",
+      "expectedResult": "company1, company2, company3, company4, company5, company6, company7,company 8,company 9,company 10, company 11, company 12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_053"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Company 13, 14, 15 should be returned",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ASSOCIATED_WITH_054"
+    }
+  ],
+  "Note Collaborated With": [
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only team collaboration, no users",
+      "expectedResult": "Company3",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_001"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only owner user collaboration, no teams",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_002"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only admin user collaboration, no teams",
+      "expectedResult": "Company4",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_003"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - team and admin user collaboration",
+      "expectedResult": "Company8",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_004"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - owner and admin user collaboration, no teams",
+      "expectedResult": "Company5,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_005"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only teamMember user collaboration, no teams",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_006"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - owner and teamMember user collaboration, no teams",
+      "expectedResult": "Company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_007"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly team collaboration only",
+      "expectedResult": "Company1, Company2, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company2,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_008"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly owner user collaboration only",
+      "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company7,Company8,Company9,Company10,Company11,Company12,Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_009"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly team and admin collaboration",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company2,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_010"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly owner and teamMember collaboration",
+      "expectedResult": "Company1, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company2,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_011"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains team collaboration (may have additional collaborators)",
+      "expectedResult": "Company3, Company8",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_012"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains admin user collaboration (may have additional collaborators)",
+      "expectedResult": "Company4, Company5, Company8,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_013"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains both team and admin collaboration (may have additional collaborators)",
+      "expectedResult": "Company8",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_014"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains both owner and admin user collaboration (may have additional collaborators)",
+      "expectedResult": "Company5,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_015"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team or admin collaboration",
+      "expectedResult": "Company3, Company4, Company5, Company8,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_016"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team, owner, or teamMember collaboration",
+      "expectedResult": "Company1,Company2, Company3, Company5, Company8,associated_companies_company2,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_017"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}",
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team, admin, owner, or teamMember collaboration",
+      "expectedResult": "Company1,Company2, Company3, Company4, Company5, Company8,associated_companies_company2,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_018"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain team collaboration",
+      "expectedResult": "Company1, Company2, Company4, Company5, Company6, Company7, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_019"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain admin user collaboration",
+      "expectedResult": "Company1, Company2, Company3, Company6, Company7, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_020"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain team OR admin collaboration",
+      "expectedResult": "Company1, Company2,Company3,Company4,Company5,Company6, Company7, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_021"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{admin}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain any of team, owner, admin, or teamMember collaboration",
+      "expectedResult": "All",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_022"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has any collaboration (users or teams)",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company8,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_023"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has no collaboration (empty users and teams)",
+      "expectedResult": "Company6, Company7, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_COLLABORATED_WITH_024"
+    }
+  ],
+  "Note Type": [
+    {
+      "dbField": "notetype",
+      "filterType": "is",
+      "filterValue": [
+        "{{Call}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Exact match - Call note type",
+      "expectedResult": "Company1, Company3, Company4, Company5, Company8, Company10, Company11,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_001"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is",
+      "filterValue": [
+        "{{Custom Note Type}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Exact match - Custom Note Type",
+      "expectedResult": "Company2, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_002"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is",
+      "filterValue": [
+        "{{To Do}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Exact match - To Do note type",
+      "expectedResult": "Company6, Company7, Company9,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_003"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{Call}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Exclude candidates with Call note type",
+      "expectedResult": "Company2, Company6, Company7, Company9, Company12,Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_004"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{Custom Note Type}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Exclude candidates with Custom Note Type",
+      "expectedResult": "Company1, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11,Company13,Company14,Company15,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_005"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{To Do}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Exclude candidates with To Do note type",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company8, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_006"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "does_not_contain",
+      "filterValue": [
+        "{{Call}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does not contain Call note type",
+      "expectedResult": "Company2, Company6, Company7, Company9, Company12,Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_007"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "does_not_contain",
+      "filterValue": [
+        "{{Custom Note Type}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does not contain Custom Note Type",
+      "expectedResult": "Company1, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11,Company13,Company14,Company15,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_008"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "does_not_contain",
+      "filterValue": [
+        "{{To Do}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does not contain To Do note type",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company8, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_009"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has any note type (all candidates should have notes)",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_010"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has no note type (should return empty as all candidates have notes)",
+      "expectedResult": "Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_TYPE_011"
+    }
+  ],
+  "Note Added By": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - notes from users who are members of the specified team",
+      "expectedResult": "Company1, Company2, Company3, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_001"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - notes from owner user (who is a team member)",
+      "expectedResult": "Company1, Company2, Company3, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_002"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - notes from teamMember user (who is a team member)",
+      "expectedResult": "Company5,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_003"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude candidates with notes from owner user",
+      "expectedResult": "Company4, Company5,Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_004"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude candidates with notes from admin user",
+      "expectedResult": "Company1, Company2, Company3, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_005"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude candidates with notes from teamMember user",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_006"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain notes from owner user",
+      "expectedResult": "Company4, Company5,Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_007"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain notes from admin user",
+      "expectedResult": "Company1, Company2, Company3, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_008"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain notes from teamMember user",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_009"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has any user who added the note",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_010"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has no user who added the note",
+      "expectedResult": "Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_BY_011"
+    }
+  ],
+  "Note Updated By": [
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - notes updated by users who are members of the specified team",
+      "expectedResult": "Company1, Company2, Company3, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_001"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - notes updated by owner user (who is a team member)",
+      "expectedResult": "Company1, Company2, Company3, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_002"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - notes updated by teamMember user (who is a team member)",
+      "expectedResult": "Company5,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_003"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude candidates with notes updated by owner user",
+      "expectedResult": "Company4, Company5, Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_004"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude candidates with notes updated by admin user",
+      "expectedResult": "Company1, Company2, Company3, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_005"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude candidates with notes updated by teamMember user",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_006"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain notes updated by owner user",
+      "expectedResult": "Company4, Company5, Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_007"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain notes updated by admin user",
+      "expectedResult": "Company1, Company2, Company3, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_008"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain notes updated by teamMember user",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company6, Company7, Company8, Company9, Company10, Company11, Company12,Company13,Company14,Company15,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_009"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has any user who updated the note",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_010"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has no user who updated the note",
+      "expectedResult": "Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_BY_011"
+    }
+  ],
+  "Added On": [
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "all_time",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Notes added on all time",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_001"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "description": "Notes added today",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_002"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "description": "Notes added yesterday",
+      "expectedResult": "Company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_003"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "description": "Notes added this week",
+      "expectedResult": "Company1, Company3,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_004"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "description": "Notes added last week",
+      "expectedResult": "Company2, Company4",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_005"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "description": "Notes added this month",
+      "expectedResult": "Company1, Company2, Company3, Company4,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_006"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "description": "Notes added last month",
+      "expectedResult": "Company5, Company6,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_007"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "description": "Notes added this quarter",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_008"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "description": "Notes added last quarter",
+      "expectedResult": "Company7, Company8,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_009"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "description": "Notes added this year",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_010"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "description": "Notes added last year",
+      "expectedResult": "Company9, Company10",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_011"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "description": "Notes added in last 30 days",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_012"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "description": "Notes added in last 60 days",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_013"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "description": "Notes added in last 90 days",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_014"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "description": "Notes added in last 365 days",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_015"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "2024-01-15",
+      "fieldType": "date",
+      "description": "Notes added on specific date 2024-01-15",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_016"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added on specific date 22-06-15",
+      "expectedResult": "Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_017"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added on specific date 23-03-10",
+      "expectedResult": "Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_018"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added on specific date 24-06-06",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_019"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "20-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added on specific date 20-01-01 (non-existent date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_020"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Notes added before 2024-01-01",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_021"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added before 22-06-15",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_022"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added before 23-03-10",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_023"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added before 24-06-06",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_024"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Notes added after 2024-01-01",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_025"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added after 22-06-15",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_026"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added after 23-03-10",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_027"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added after 24-06-06",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_028"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "30-12-31",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added after 30-12-31 (future date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_029"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "2024-01-01, 2024-01-31",
+      "fieldType": "date",
+      "description": "Notes added between 2024-01-01 and 2024-01-31",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_030"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "22-06-14,25-02-25",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added between 22-06-14 and 25-02-25",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_031"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "22-06-16,23-03-09",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes added between 22-06-16 and 23-03-09 (range between static dates with no data)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_032"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Notes added more than 30 days ago",
+      "expectedResult": "Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_033"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes added more than 1 day ago",
+      "expectedResult": "Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_034"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes added more than 0 days ago",
+      "expectedResult": "Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_035"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes added more than 365 days ago",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_036"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "10000",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes added more than 10000 days ago (very old date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_037"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Notes added less than 30 days ago",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_038"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes added less than 1 day ago",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_039"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes added less than 0 days ago",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_040"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes added less than 365 days ago",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_041"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "-1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes added less than -1 days ago (invalid filter)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_042"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has any creation date",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_043"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has no creation date",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_ADDED_ON_044"
+    }
+  ],
+  "Updated On": [
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "all_time",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Notes updated on all time",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_001"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "description": "Notes updated today",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_002"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "description": "Notes updated yesterday",
+      "expectedResult": "Company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_003"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "description": "Notes updated this week",
+      "expectedResult": "Company1, Company3,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_004"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "description": "Notes updated last week",
+      "expectedResult": "Company2, Company4",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_005"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "description": "Notes updated this month",
+      "expectedResult": "Company1, Company2, Company3, Company4,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_006"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "description": "Notes updated last month",
+      "expectedResult": "Company5, Company6,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_007"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "description": "Notes updated this quarter",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_008"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "description": "Notes updated last quarter",
+      "expectedResult": "Company7, Company8,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_009"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "description": "Notes updated this year",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_010"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "description": "Notes updated last year",
+      "expectedResult": "Company9, Company10",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_011"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "description": "Notes updated in last 30 days",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_012"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "description": "Notes updated in last 60 days",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_013"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "description": "Notes updated in last 90 days",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_014"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "description": "Notes updated in last 365 days",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_015"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "2024-01-15",
+      "fieldType": "date",
+      "description": "Notes updated on specific date 2024-01-15",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_016"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated on specific date 22-06-15",
+      "expectedResult": "Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_017"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated on specific date 23-03-10",
+      "expectedResult": "Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_018"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated on specific date 24-06-06",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_019"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "20-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated on specific date 20-01-01 (non-existent date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_020"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Notes updated before 2024-01-01",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_021"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated before 22-06-15",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_022"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated before 23-03-10",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_023"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated before 24-06-06",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_024"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Notes updated after 2024-01-01",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_025"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated after 22-06-15",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_026"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated after 23-03-10",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_027"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated after 24-06-06",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_028"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "30-12-31",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated after 30-12-31 (future date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_029"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "2024-01-01, 2024-01-31",
+      "fieldType": "date",
+      "description": "Notes updated between 2024-01-01 and 2024-01-31",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_030"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "22-06-14,25-02-25",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated between 22-06-14 and 25-02-25",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_031"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "22-06-16,23-03-09",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Notes updated between 22-06-16 and 23-03-09 (range between static dates with no data)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_032"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Notes updated more than 30 days ago",
+      "expectedResult": "Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_033"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes updated more than 1 day ago",
+      "expectedResult": "Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_034"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes updated more than 0 days ago",
+      "expectedResult": "Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_035"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes updated more than 365 days ago",
+      "expectedResult": "Company9, Company10, Company11, Company12,associated_companies_company1",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_036"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "10000",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes updated more than 10000 days ago (very old date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_037"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Notes updated less than 30 days ago",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_038"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes updated less than 1 day ago",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_039"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes updated less than 0 days ago",
+      "expectedResult": "Company1,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_040"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes updated less than 365 days ago",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_041"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "-1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Notes updated less than -1 days ago (invalid filter)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_042"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has any update date",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_043"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has no update date",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_COMPANY_NOTES_UPDATED_ON_044"
+    }
+  ],
+  "Note Exists": [
+    {
+      "dbField": "note_exists",
+      "filterType": "yes",
+      "filterValue": "1",
+      "fieldType": "checkbox",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Yes - Return companies associated with at least one note",
+      "expectedResult": "Company1, Company2, Company3, Company4, Company5, Company6, Company7, Company8, Company9, Company10, Company11, Company12,associated_companies_company1,associated_companies_company2",
+      "testCaseId": "TC_COMPANY_NOTES_NOTE_EXISTS_001"
+    },
+    {
+      "dbField": "note_exists",
+      "filterType": "no",
+      "filterValue": "0",
+      "fieldType": "checkbox",
+      "filterValue_TYPE": "INTEGER",
+      "description": "No - Return companies with no associated notes",
+      "expectedResult": "Company13,Company14,Company15",
+      "testCaseId": "TC_COMPANY_NOTES_NOTE_EXISTS_002"
+    }
+  ]
+}

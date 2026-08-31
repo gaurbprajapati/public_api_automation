@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "requestUuid": {
+            "type": "string"
+          },
+          "responseType": {
+            "type": "object",
+            "properties": {
+              "context": {
+                "type": "string"
+              },
+              "code": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "context",
+              "code"
+            ]
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "message",
+          "requestUuid",
+          "responseType",
+          "timestamp",
+          "status"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "templateName": {
+            "type": "string"
+          },
+          "shareWith": {
+            "type": ["null", "string"]
+          },
+          "dueIn": {
+            "type": "string"
+          },
+          "templateTableFields": {
+            "type": "string"
+          },
+          "templateTheme": {
+            "type": "string"
+          },
+          "isPayBill": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "templateName",
+          "shareWith",
+          "dueIn",
+          "templateTableFields",
+          "templateTheme",
+          "isPayBill"
+        ]
+      }
+    },
+    "required": [
+      "meta",
+      "data"
+    ]
+  }

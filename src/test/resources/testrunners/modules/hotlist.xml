@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Rest API Test Suite" verbose="1" parallel="tests"
+	thread-count="20">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Create New hotlist">
+		<classes>
+			<class name="io.rcrm.api.hotlists.CreateNewHotlistTest">
+				<methods>
+					<include name="createNewhotlists" />
+					<include
+						name="userShouldNotAbleToCreateHotlistWithInvalidSharedTeammmatesData" />
+					<include
+						name="userShouldNotAbleToCreateHotlistWithInvalidRelateToType" />
+					<include
+						name="userShouldNotAbleToCreateHotlistWithNameLengthMoreThan191Characters" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of Hotlist">
+		<classes>
+			<class name="io.rcrm.api.hotlists.AllEndpointsOfHotlistTest">
+				<methods>
+					<include name="createNewhotlists" />
+					<include name="searchHotlistByID" />
+					<include name="searchHotlistByFields" />
+					<include name="editHotlistByFields" />
+					<include name="showAllHotlistByID" />
+					<include name="deleteHotlistByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Records To Hotlist">
+		<classes>
+			<class name="io.rcrm.api.hotlists.AddRecordsToHotlistTest">
+				<methods>
+					<include name="addEntityInHotlist" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Remove Records From Hotlist">
+		<classes>
+			<class name="io.rcrm.api.hotlists.RemoveRecordsFromHotlistTest">
+				<methods>
+					<include name="removeEntityFromHotlist" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+
+	<test name="Unauthorized user cannot access any hotlist endpoint ">
+		<classes>
+			<class
+				name="io.rcrm.api.hotlists.unAuthorizedCannotDoActionsOnHotlistendpoints_hotlistTest">
+				<methods>
+					<include
+						name="unathorizedUserCannotCreateNewhotlists_HotlistTest" />
+					<include
+						name="unathorizedUserCannotGetAllHotlistByID_HotlistTest" />
+					<include
+						name="unathorizedUserCannotSearchHotlistByID_HotlistTest" />
+					<include
+						name="unathorizedUserCannotSearchHotlistByFields_hotlistTest" />
+					<include
+						name="unathorizedUserCannotEditHotlistByFields_HotlistTest" />
+					<include
+						name="unathorizedUserCannotDeleteHotlistByID_HotlistTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Hotlist by ID">
+		<classes>
+			<class name="io.rcrm.api.hotlists.DeleteHotlistByIDTest">
+				<methods>
+
+					<include name="deleteHotlistByID_HotlistTest" />
+					<include
+						name="userShouldNotBeAbleToDeleteHotlistByInvalidID_HotlistTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Hotlist by ID">
+		<classes>
+			<class name="io.rcrm.api.hotlists.SeachHotlistByIDTest">
+				<methods>
+
+					<include name="searchHotlistByID_HotlistTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="edit Records To Hotlist">
+		<classes>
+			<class name="io.rcrm.api.hotlists.EditHotlistTest">
+				<methods>
+					<include name="editHotlistByName_HotlistTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

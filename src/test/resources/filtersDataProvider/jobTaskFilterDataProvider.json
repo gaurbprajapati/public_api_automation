@@ -1,0 +1,3779 @@
+{
+  "Task Added By": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks from owner user",
+      "expectedResult": "job9,job7,job8,job6,job1,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_001"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks from admin user",
+      "expectedResult": "job2,job4",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_002"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks from teamMember user",
+      "expectedResult": "job5,job3,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_003"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks from restricted user",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_004"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks from owner user",
+      "expectedResult": "job5,job3,job4,job2,job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_005"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks from admin user",
+      "expectedResult": "job1,job3,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_006"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks from teamMember user",
+      "expectedResult": "job1,job2,job4,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_007"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks from restricted user",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_008"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task from owner user",
+      "expectedResult": "job9,job7,job8,job6,job1,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_009"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task from admin user",
+      "expectedResult": "job2,job4",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_010"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task from teamMember user",
+      "expectedResult": "job5,job3,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_011"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task from restricted user",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_012"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks from owner user",
+      "expectedResult": "job2,job4,job3,job5,job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_013"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks from admin user",
+      "expectedResult": "job9,job7,job8,job5,job6,job3,job1,job13,job14,job15,job11,job10,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_014"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks from teamMember user",
+      "expectedResult": "job9,job7,job8,job6,job4,job1,job2,job13,job14,job15,job11,job12,job10,associated_jobs_job1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_015"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks from restricted user",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_016"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any user who added the task",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_017"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no user who added the task",
+      "expectedResult": "job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_BY_018"
+    }
+  ],
+  "Task Added On": [
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added today",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_001"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added yesterday",
+      "expectedResult": "job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_002"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added this week",
+      "expectedResult": "job1,job3,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_003"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added last week",
+      "expectedResult": "job2,job4",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_004"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added this month",
+      "expectedResult": "job1,job2,job3,job4,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_005"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added last month",
+      "expectedResult": "job5,job6,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_006"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added this quarter",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_007"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added last quarter",
+      "expectedResult": "job7,job8,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_008"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added this year",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_009"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added last year",
+      "expectedResult": "job9,job10",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_010"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added in last 30 days",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_011"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added in last 60 days",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_012"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added in last 90 days",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_013"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks added in last 365 days",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_014"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "2023-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks added on specific date 2023-03-10",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_015"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "2024-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks added before 2022-06-15",
+      "expectedResult": "job9,job10,job11,job12,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_016"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks added after 2024-01-01",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_017"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "2022-01-01, 2024-01-31",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks added between 2022-01-01 and 2024-01-31",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_018"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Tasks added more than 30 days ago",
+      "expectedResult": "job7,job8,job9,job10,job11,job12,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_019"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Tasks added less than 30 days ago",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_020"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Has any creation date",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_021"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Has no creation date",
+      "expectedResult": "job13,job14,job15",
+      "testCaseId": "TC_JOB_TASK_TASK_ADDED_ON_022"
+    }
+  ],
+  "Task Associated With": [
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}",
+          "{{job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple contacts - contact1 has both contact1 and contact2",
+      "expectedResult": "Job1, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_001"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{job2}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple companies - contact2 has both contact1 and contact2",
+      "expectedResult": "Job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_002"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{job3}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact3 has contact1",
+      "expectedResult": "Job3",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_003"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [
+          "{{job4}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple jobs - contact4 has both job1 and job2",
+      "expectedResult": "Job4",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_004"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_005"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_006"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_007"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single job - contact5 has job2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_008"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{job6}}"
+        ],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple deals - contact6 has both deal1 and deal2",
+      "expectedResult": "Job6",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_009"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single deal - contact7 has deal2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_010"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{job11}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return contact11",
+      "expectedResult": "Job11",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_011"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job2}}",
+          "{{job5}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return contact5",
+      "expectedResult": "Job5, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_012"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All contacts",
+      "expectedResult": "All",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_013"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All contacts",
+      "expectedResult": "All",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_014"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{job3}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return contacts 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Job1, Job2, Job4, Job5, Job6, Job7, Job8, Job9, Job10, Job11, Job12, Job13, Job14, Job15, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_015"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [
+          "{{job4}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude jobs with job1 - should return contacts 1,2,3,5,6,7,8,9,10,11",
+      "expectedResult": "Job1, Job2, Job3, Job5, Job6, Job7, Job8, Job9, Job10, Job11, Job12, Job13, Job14, Job15, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_016"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{job6}}"
+        ],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All contacts",
+      "expectedResult": "All",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_017"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{job11}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + contact1 - should return contacts 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Job1, Job2, Job3, Job4, Job5, Job6, Job7, Job8, Job9, Job10, Job12, Job13, Job14, Job15, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_018"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{job2}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + contact2 - should return contacts 1,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Job1, Job3, Job4, Job5, Job6, Job7, Job8, Job9, Job10, Job11, Job12, Job13, Job14, Job15, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_019"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [
+          "{{job4}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: job1 + job2 - should return contacts 1,2,3,5,6,7,8,9,10,11,12",
+      "expectedResult": "Job1, Job2, Job3, Job5, Job6, Job7, Job8, Job9, Job10, Job11, Job12, Job13, Job14, Job15, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_020"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}",
+          "{{job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + contact2 - should return contacts 2,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Job2, Job3, Job4, Job5, Job6, Job7, Job8, Job9, Job10, Job11, Job12, Job13, Job14, Job15",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_021"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{job6}}"
+        ],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: deal1 + deal2 - should return contacts 1,2,3,4,5,7,8,9,10,11,12",
+      "expectedResult": "Job1, Job2, Job3, Job4, Job5, Job7, Job8, Job9, Job10, Job11, Job12, Job13, Job14, Job15, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_022"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return contact3 and contact11 (both have contact1)",
+      "expectedResult": "Job3, Job11",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_023"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return contact2 and contact11 (both have contact1)",
+      "expectedResult": "Job2, Job11",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_024"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact2 - should return contact2 and contact5 (both have contact2)",
+      "expectedResult": "Job2, Job5, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_025"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job1 - should return contact4 and contact12 (both have job1)",
+      "expectedResult": "Job4, Job12, associated_jobs_job1",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_026"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job2 - should return contact4 and contact5 (both have job2)",
+      "expectedResult": "Job4, Job5, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_027"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return contact1 and contact12 (both have contact1)",
+      "expectedResult": "Job1, Job12, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_028"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact2 - should return contact5 and contact7 (both have contact2)",
+      "expectedResult": "Job1, Job5, Job7, associated_jobs_job2, associated_jobs_job1",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_029"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal1 - should return contact5 and contact6 (both have deal1)",
+      "expectedResult": "Job5, Job6, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_030"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal2 - should return contact6 and contact7 (both have deal2)",
+      "expectedResult": "Job6, Job7, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_031"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact1 AND contact1 - should return contact11 only (has both)",
+      "expectedResult": "Job11",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_032"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact2 AND contact2 - should return contact5 only (has both)",
+      "expectedResult": "Job5, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_033"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH job1 AND job2 - should return contact4 only (has both)",
+      "expectedResult": "Job4",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_034"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact1 AND contact2 - should return contact1 only (has both)",
+      "expectedResult": "Job1, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_035"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH deal1 AND deal2 - should return contact6 only (has both)",
+      "expectedResult": "Job6",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_036"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 AND contact1 AND job1 - should return empty (no contact has all three)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_037"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 AND contact1 AND contact1 - should return empty (no contact has all three)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_038"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact1 (OR logic) - should return contact2, contact3, contact11",
+      "expectedResult": "Job2, Job3, Job11",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_039"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return contact3, contact5, contact11",
+      "expectedResult": "Job3, Job5, Job11, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_040"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return contact2, contact5, contact11",
+      "expectedResult": "Job2, Job5, Job11, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_041"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job1 OR job2 - should return contact4, contact5, contact12",
+      "expectedResult": "Job4, Job5, Job12, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_042"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return contact1, contact5, contact7, contact12",
+      "expectedResult": "Job1, Job5, Job7, Job12, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_043"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal1 OR deal2 - should return contact5, contact6, contact7",
+      "expectedResult": "Job5, Job6, Job7, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_044"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact1 OR job1 OR contact1 OR deal1 - should return contact1, contact2, contact3, contact4, contact5, contact6, contact11, contact12",
+      "expectedResult": "Job1, Job2, Job3, Job4, Job5, Job6, Job11, Job12, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_045"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact1 (OR logic) - should return contact2, contact3, contact11",
+      "expectedResult": "Job2, Job3, Job11",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_046"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - should return contacts 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Job1, Job2, Job4, Job5, Job6, Job7, Job8, Job9, Job10, Job12, Job13, Job14, Job15, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_047"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - should return contacts 1,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Job1, Job3, Job4, Job5, Job6, Job7, Job8, Job9, Job10, Job12, Job13, Job14, Job15, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_048"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain job1 - returns companies with at least one note that doesn't include job1. associated_companies_contact1 is included because it has Contact1's note (no job1) even though it also has Contact12's note (has job1)",
+      "expectedResult": "Job1, Job2, Job3, Job5, Job6, Job7, Job8, Job9, Job10, Job11, Job13, Job14, Job15, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_049"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - returns companies with at least one note that doesn't include contact1. associated_companies_contact2 is included because it has Contact5's note (no contact1) and Contact7's note (no contact1) even though it also has Contact1's note (has contact1)",
+      "expectedResult": "Job2, Job3, Job4, Job5, Job6, Job7, Job8, Job9, Job10, Job11, Job13, Job14, Job15",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_050"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain deal1 - returns companies with at least one note that doesn't include deal1. associated_companies_contact2 is included because it has Contact1's note (no deal1) and Contact7's note (no deal1) even though it also has Contact5's note (has deal1)",
+      "expectedResult": "Job1, Job2, Job3, Job4, Job7, Job8, Job9, Job10, Job11, Job12, Job13, Job14, Job15, associated_jobs_job1",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_051"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 AND contact1 - should return contacts 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Job1, Job2, Job3, Job4, Job5, Job6, Job7, Job8, Job9, Job10, Job12, Job13, Job14, Job15, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_052"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contact apart from 8, 9, 10 should be returned",
+      "expectedResult": "job1, job2, job3, job4, job5, job6, job7, job8, job9, job10, job11, job12, associated_jobs_job1, associated_jobs_job2",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_053"
+    },
+    {
+      "dbField": "task_associated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contact 13, 14, 15 should be returned",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_NOTES_ASSOCIATED_WITH_054"
+    }
+  ],
+  "Task Collaborated With": [
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only team collaboration, no users",
+      "expectedResult": "job3",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_001"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only owner user collaboration, no teams",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_002"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only admin user collaboration, no teams",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_003"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - team and admin user collaboration",
+      "expectedResult": "job8",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_004"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - owner and admin user collaboration, no teams",
+      "expectedResult": "job5,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_005"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only teamMember user collaboration, no teams",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_006"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - owner and teamMember user collaboration, no teams",
+      "expectedResult": "job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_007"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly team collaboration only",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job2,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_008"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly owner user collaboration only",
+      "expectedResult": "job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_009"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly team and admin collaboration",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job2,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_010"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly owner and teamMember collaboration",
+      "expectedResult": "job1,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job2,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_011"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains team collaboration (may have additional collaborators)",
+      "expectedResult": "job3,job8",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_012"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains admin user collaboration (may have additional collaborators)",
+      "expectedResult": "job4,job5,job8,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_013"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains both team and admin collaboration (may have additional collaborators)",
+      "expectedResult": "job8",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_014"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains both owner and admin user collaboration (may have additional collaborators)",
+      "expectedResult": "job5,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_015"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team or admin collaboration",
+      "expectedResult": "job3,job4,job5,job8,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_016"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team, owner, or teamMember collaboration",
+      "expectedResult": "job1,job2,job3,job5,job8,associated_jobs_job2,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_017"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}",
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team, admin, owner, or teamMember collaboration",
+      "expectedResult": "job1,job2,job3,job4,job5,job8,associated_jobs_job2,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_018"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain team collaboration",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_019"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain admin user collaboration",
+      "expectedResult": "job1,job2,job3,job6,job7,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_020"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain team OR admin collaboration",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_021"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{admin}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain any of team, owner, admin, or teamMember collaboration",
+      "expectedResult": "All",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_022"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has any collaboration (users or teams)",
+      "expectedResult": "job1,job2,job3,job4,job5,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_023"
+    },
+    {
+      "dbField": "task_collaborated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has no collaboration (empty users and teams)",
+      "expectedResult": "job6,job7,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_COLLABORATED_WITH_024"
+    }
+  ],
+  "Task Due On": [
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due today",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_001"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due yesterday",
+      "expectedResult": "job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_002"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due this week",
+      "expectedResult": "job1,job2,job3,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_003"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due last week",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_004"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due this month",
+      "expectedResult": "job1,job2,job3,job4,job5,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_005"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due last month",
+      "expectedResult": "job6",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_006"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due this quarter",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_007"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due last quarter",
+      "expectedResult": "job8",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_008"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due this year",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_009"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks due last year",
+      "expectedResult": "job10,job12",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_010"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is_before",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks due before 2024-01-01",
+      "expectedResult": "job11,job12",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_011"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is_after",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks due after 2024-01-01",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_012"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks with any due date",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_013"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks with no due date",
+      "expectedResult": "job13,job14,job15",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_014"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is_equal_to",
+      "filterValue": "2023-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks due exactly on 2023-03-10",
+      "expectedResult": "job12",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_015"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is_equal_to",
+      "filterValue": "2022-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks due exactly on 2022-06-15",
+      "expectedResult": "job11",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_016"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is_between",
+      "filterValue": "2022-01-01,2023-12-31",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks due between 2022-01-01 and 2023-12-31",
+      "expectedResult": "job11,job12",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_017"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is_between",
+      "filterValue": "2020-01-01,2024-12-31",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks due between 2024-01-01 and 2024-12-31",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_018"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is_mt",
+      "filterValue": "90",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Tasks due more than 90 days ago",
+      "expectedResult": "job11,job12",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_019"
+    },
+    {
+      "dbField": "taskdueon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Tasks due less than 30 days ago",
+      "expectedResult": "job1,job2,job3,job4,job5,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_DUE_ON_020"
+    }
+  ],
+  "Task Owner": [
+    {
+      "dbField": "taskowner",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks owned by owner user",
+      "expectedResult": "job1,job5,job9,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_001"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks owned by admin user",
+      "expectedResult": "job2,job6,job10",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_002"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks owned by teamMember user",
+      "expectedResult": "job3,job7,job12,associated_jobs_job2,associated_jobs_job1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_003"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks owned by restricted user",
+      "expectedResult": "job4,job8,job11",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_004"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks owned by owner user",
+      "expectedResult": "job2,job3,job4,job6,job7,job8,job10,job11,job12,job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_005"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks owned by admin user",
+      "expectedResult": "job1,job3,job4,job5,job7,job8,job9,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_006"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks owned by teamMember user",
+      "expectedResult": "job1,job2,job4,job5,job6,job8,job9,job10,job11,job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_007"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks owned by restricted user",
+      "expectedResult": "job1,job2,job3,job5,job6,job7,job9,job10,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_008"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task owned by owner user",
+      "expectedResult": "job1,job5,job9,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_009"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task owned by admin user",
+      "expectedResult": "job2,job6,job10",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_010"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task owned by teamMember user",
+      "expectedResult": "job3,job7,job12,associated_jobs_job2,associated_jobs_job1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_011"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task owned by restricted user",
+      "expectedResult": "job4,job8,job11",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_012"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks owned by owner user",
+      "expectedResult": "job2,job3,job4,job6,job7,job8,job10,job11,job12,job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_013"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks owned by admin user",
+      "expectedResult": "job1,job3,job4,job5,job7,job8,job9,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_014"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks owned by teamMember user",
+      "expectedResult": "job1,job2,job4,job5,job6,job8,job9,job10,job11,job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_015"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks owned by restricted user",
+      "expectedResult": "job1,job2,job3,job5,job6,job7,job9,job10,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_016"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any user who owns the task",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_017"
+    },
+    {
+      "dbField": "taskowner",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no user who owns the task",
+      "expectedResult": "job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_OWNER_018"
+    }
+  ],
+  "Task Title": [
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Follow up call for company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Follow up call for company1",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_001"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Review company profile for company2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Review company profile for company2",
+      "expectedResult": "job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_002"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Interview preparation for company3",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Interview preparation for company3",
+      "expectedResult": "job3",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_003"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Background_Verification [Q1] for company4",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Background_Verification [Q1] for company4",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_004"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "O'Brien's Offer preparation for company5",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for O'Brien's Offer preparation for company5",
+      "expectedResult": "job5",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_005"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Contract finalization for company6",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Contract finalization for company6",
+      "expectedResult": "job6",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_006"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Reference check for company7",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Reference check for company7",
+      "expectedResult": "job7",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_007"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Follow up (2024) for company8",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Follow up (2024) for company8",
+      "expectedResult": "job8",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_008"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Document collection for company9",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Document collection for company9",
+      "expectedResult": "job9",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_009"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Schedule interview for company10",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Schedule interview for company10",
+      "expectedResult": "job10",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_010"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Client introduction for company11",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Client introduction for company11",
+      "expectedResult": "job11",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_011"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "Skills assessment for company12",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match for Skills assessment for company12",
+      "expectedResult": "job12",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_012"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "follow up call for company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match, case variation",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_013"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "   Follow up call for company1   ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match, whitespace",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_014"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match, empty",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_015"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is_not",
+      "filterValue": "Follow up call for company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exclude Follow up call for company1",
+      "expectedResult": "job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_016"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is_not",
+      "filterValue": "Review company profile for company2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exclude Review company profile for company2",
+      "expectedResult": "job1,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_017"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is_not",
+      "filterValue": "Interview preparation for company3",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exclude Interview preparation for company3",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_018"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is_not",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exclude empty title",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_019"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "Follow",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains Follow",
+      "expectedResult": "job1,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_020"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "interview",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains interview (case insensitive)",
+      "expectedResult": "job3,job10",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_021"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "for",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains for (all tasks contain 'for')",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_022"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains Review",
+      "expectedResult": "job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_023"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "Background",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains Background",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_024"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "Document",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains Document",
+      "expectedResult": "job9",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_025"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "preparation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains preparation (case variation)",
+      "expectedResult": "job3,job5",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_026"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "  Follow  ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains Follow with whitespace",
+      "expectedResult": "job1,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_027"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains empty string",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_028"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "does_not_contain",
+      "filterValue": "Follow",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Does not contain Follow",
+      "expectedResult": "job2,job3,job4,job5,job6,job7,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_029"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "does_not_contain",
+      "filterValue": "xyz",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Does not contain xyz (no titles contain xyz)",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_030"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "does_not_contain",
+      "filterValue": "Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Does not contain Review",
+      "expectedResult": "job1,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_031"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "does_not_contain",
+      "filterValue": "interview",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Does not contain interview",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_032"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "Follow",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with Follow",
+      "expectedResult": "job1,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_033"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "Interview",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with Interview",
+      "expectedResult": "job3",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_034"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with Review",
+      "expectedResult": "job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_035"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "Background",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with Background",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_036"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "O'Brien's",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with O'Brien's",
+      "expectedResult": "job5",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_037"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "Contract",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with Contract",
+      "expectedResult": "job6",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_038"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "Client",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with Client",
+      "expectedResult": "job11",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_039"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "Skills",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with Skills",
+      "expectedResult": "job12",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_040"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "  Follow  ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with Follow with whitespace",
+      "expectedResult": "job1,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_041"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with empty string",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_042"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with company1",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_043"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "company2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with company2",
+      "expectedResult": "job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_044"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "company3",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with company3",
+      "expectedResult": "job3",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_045"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "company4",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with company4",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_046"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "company8",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with company8",
+      "expectedResult": "job8",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_047"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "company9",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with company9",
+      "expectedResult": "job9",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_048"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "company10",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with company10",
+      "expectedResult": "job10",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_049"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "  company1  ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with company1 with whitespace",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_050"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with empty string",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_051"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Has any task title value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_052"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Has empty task title",
+      "expectedResult": "job13,job14,job15",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_053"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Follow",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Follow",
+      "expectedResult": "job1,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_054"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "for",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word for",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_055"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Review",
+      "expectedResult": "job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_056"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "preparation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word preparation",
+      "expectedResult": "job3,job5",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_057"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Background_Verification",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Background_Verification",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_058"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Offer",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Offer",
+      "expectedResult": "job5",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_059"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Contract",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Contract",
+      "expectedResult": "job6",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_060"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Reference",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Reference",
+      "expectedResult": "job7",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_061"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Document",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Document",
+      "expectedResult": "job9",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_062"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Schedule",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Schedule",
+      "expectedResult": "job10",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_063"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Client",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Client",
+      "expectedResult": "job11",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_064"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Skills",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains exact word Skills",
+      "expectedResult": "job12",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_065"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Follow,Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains at least one of: Follow, Review",
+      "expectedResult": "job1,job2,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_066"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "interview,preparation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains at least one of: interview, preparation",
+      "expectedResult": "job3,job5,job10",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_067"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Background,Offer,Contract",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains at least one of: Background, Offer, Contract",
+      "expectedResult": "job4,job5,job6",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_068"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Reference,Document,Schedule",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains at least one of: Reference, Document, Schedule",
+      "expectedResult": "job7,job9,job10",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_069"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Client,Skills,Follow",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains at least one of: Client, Skills, Follow",
+      "expectedResult": "job1,job8,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_070"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Follow,Review,Interview,Background,Offer,Contract,Reference,Document,Schedule,Client,Skills",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains at least one of multiple words",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_071"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1,NonExistent2,NonExistent3",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains at least one of non-existent values",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_072"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Follow,NonExistent,Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains at least one of: Follow, NonExistent, Review",
+      "expectedResult": "job1,job2,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_073"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "_",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains underscore character",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_074"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "[",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains opening bracket",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_075"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains closing bracket",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_076"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "'",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains apostrophe",
+      "expectedResult": "job5",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_077"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "(",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains opening parenthesis",
+      "expectedResult": "job8",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_078"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": ")",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains closing parenthesis",
+      "expectedResult": "job8",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_079"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "Background_Verification",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains text with underscore",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_080"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "[Q1]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains text with brackets",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_081"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "O'Brien's",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains text with apostrophe",
+      "expectedResult": "job5",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_082"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "contains",
+      "filterValue": "(2024)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains text with parentheses",
+      "expectedResult": "job8",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_083"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "Background_",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with Background_ (text with underscore)",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_084"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "begins_with",
+      "filterValue": "O'Brien's",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Begins with apostrophe",
+      "expectedResult": "job5",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_085"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "[Q1]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Contains bracket in middle (not end)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_086"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "ends_with",
+      "filterValue": "(2024)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Ends with parentheses (not at end, should be empty)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_087"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "background_verification [q1] for company4",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match, case variation with special characters",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_088"
+    },
+    {
+      "dbField": "tasktitle",
+      "filterType": "is",
+      "filterValue": "   Background_Verification [Q1] for company4   ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Exact match, whitespace with special characters",
+      "expectedResult": "job4",
+      "testCaseId": "TC_JOB_TASK_TASK_TITLE_089"
+    }
+  ],
+  "Task Updated By": [
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks updated by owner user",
+      "expectedResult": "job1,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_001"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks updated by admin user",
+      "expectedResult": "job2,job4",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_002"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks updated by teamMember user",
+      "expectedResult": "job3,job5,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_003"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - tasks updated by restricted user",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_004"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks updated by owner user",
+      "expectedResult": "job2,job3,job4,job5,job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_005"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks updated by admin user",
+      "expectedResult": "job1,job3,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_006"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks updated by teamMember user",
+      "expectedResult": "job9,job7,job8,job6,job4,job1,job2,job13,job11,job15,job14,job12,job10,associated_jobs_job1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_007"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with tasks updated by restricted user",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_008"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task updated by owner user",
+      "expectedResult": "job1,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_009"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task updated by admin user",
+      "expectedResult": "job2,job4",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_010"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task updated by teamMember user",
+      "expectedResult": "job3,job5,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_011"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Contains at least one task updated by restricted user",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_012"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks updated by owner user",
+      "expectedResult": "job2,job3,job4,job5,job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_013"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks updated by admin user",
+      "expectedResult": "job1,job3,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_014"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks updated by teamMember user",
+      "expectedResult": "job9,job7,job8,job6,job4,job1,job2,job13,job11,job15,job14,job12,job10,associated_jobs_job1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_015"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{restricted}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain tasks updated by restricted user",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_016"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any user who updated the task",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_017"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no user who updated the task",
+      "expectedResult": "job13,job14,job15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_BY_018"
+    }
+  ],
+  "Task Updated On": [
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated today",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_001"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated yesterday",
+      "expectedResult": "job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_002"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated this week",
+      "expectedResult": "job1,job3,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_003"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated last week",
+      "expectedResult": "job2,job4",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_004"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated this month",
+      "expectedResult": "job1,job2,job3,job4,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_005"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated last month",
+      "expectedResult": "job5,job6,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_006"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated this quarter",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_007"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated last quarter",
+      "expectedResult": "job7,job8,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_008"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated this year",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_009"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated last year",
+      "expectedResult": "job9,job10",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_010"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated in last 30 days",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_011"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated in last 60 days",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_012"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated in last 90 days",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_013"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Tasks updated in last 365 days",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_014"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "2023-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks updated on specific date 2023-03-10",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_015"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "2022-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks updated on specific date 2022-06-15",
+      "expectedResult": "job1,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_016"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks updated before 2024-01-01",
+      "expectedResult": "job9,job10,job11,job12,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_017"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks updated after 2024-01-01",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_018"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "2022-01-01, 2024-01-31",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Tasks updated between 2024-01-01 and 2024-01-31",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_019"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Tasks updated more than 30 days ago",
+      "expectedResult": "job7,job8,job9,job10,job11,job12,associated_jobs_job1",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_020"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Tasks updated less than 30 days ago",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_021"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Has any update date",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_022"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Has no update date",
+      "expectedResult": "job13,job14,job15",
+      "testCaseId": "TC_JOB_TASK_TASK_UPDATED_ON_023"
+    }
+  ],
+  "Task Type": [
+    {
+      "dbField": "task_type",
+      "filterType": "is",
+      "filterValue": "{{task_type_follow_up}}",
+      "fieldType": "dropdown",
+      "description": "Tasks with Follow up type",
+      "expectedResult": "job1,job4,job6,job8,job11,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_001"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "is",
+      "filterValue": "[{{task_type_interview_scheduling}}]",
+      "fieldType": "dropdown",
+      "description": "Tasks with Interview scheduling type",
+      "expectedResult": "job2,job3,job5,job7,job9,job10,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_002"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "is_not",
+      "filterValue": "[{{task_type_follow_up}}]",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with Follow up task type",
+      "expectedResult": "job2,job3,job5,job7,job9,job10,job12,job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_003"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "is_not",
+      "filterValue": "[{{task_type_interview_scheduling}}]",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with Interview scheduling task type",
+      "expectedResult": "job1,job4,job6,job8,job11,job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_004"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "[{{task_type_follow_up}}]",
+      "fieldType": "dropdown",
+      "description": "Contains at least one Follow up task type",
+      "expectedResult": "job1,job4,job6,job8,job11,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_005"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "[{{task_type_interview_scheduling}}]",
+      "fieldType": "dropdown",
+      "description": "Contains at least one Interview scheduling task type",
+      "expectedResult": "job2,job3,job5,job7,job9,job10,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_006"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "[{{task_type_follow_up}},{{task_type_interview_scheduling}}]",
+      "fieldType": "dropdown",
+      "description": "Contains at least one Follow up OR Interview scheduling task type",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_007"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "does_not_contain",
+      "filterValue": "[{{task_type_follow_up}}]",
+      "fieldType": "dropdown",
+      "description": "Does not contain Follow up task type",
+      "expectedResult": "job2,job3,job5,job7,job9,job10,job12,job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_008"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "does_not_contain",
+      "filterValue": "[{{task_type_interview_scheduling}}]",
+      "fieldType": "dropdown",
+      "description": "Does not contain Interview scheduling task type",
+      "expectedResult": "job1,job4,job6,job8,job11,job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_009"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "does_not_contain",
+      "filterValue": "[{{task_type_follow_up}},{{task_type_interview_scheduling}}]",
+      "fieldType": "dropdown",
+      "description": "Does not contain Follow up AND Interview scheduling task types",
+      "expectedResult": "job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_010"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any task type",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_011"
+    },
+    {
+      "dbField": "task_type",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no task type",
+      "expectedResult": "job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_TYPE_012"
+    }
+  ],
+  "Task Status": [
+    {
+      "dbField": "taskstatus",
+      "filterType": "is",
+      "filterValue": "[0]",
+      "fieldType": "dropdown",
+      "description": "Tasks with Incomplete status",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_001"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "is",
+      "filterValue": "[1]",
+      "fieldType": "dropdown",
+      "description": "Tasks with Complete status",
+      "expectedResult": "job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_002"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "is_not",
+      "filterValue": "[0]",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with Incomplete tasks",
+      "expectedResult": "job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_003"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "is_not",
+      "filterValue": "[1]",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with Complete tasks",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_004"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "[0]",
+      "fieldType": "dropdown",
+      "description": "Contains at least one Incomplete task",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_005"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "[1]",
+      "fieldType": "dropdown",
+      "description": "Contains at least one Complete task",
+      "expectedResult": "job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_006"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "[0,1]",
+      "fieldType": "dropdown",
+      "description": "Contains at least one Incomplete OR Complete task",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_007"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "[0]",
+      "fieldType": "dropdown",
+      "description": "Does not contain Incomplete tasks",
+      "expectedResult": "job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_008"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "[1]",
+      "fieldType": "dropdown",
+      "description": "Does not contain Complete tasks",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_009"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "[0,1]",
+      "fieldType": "dropdown",
+      "description": "Does not contain Incomplete AND Complete tasks",
+      "expectedResult": "job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_010"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any task status",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_011"
+    },
+    {
+      "dbField": "taskstatus",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no task status",
+      "expectedResult": "job13,job14,job15",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "testCaseId": "TC_JOB_TASK_TASK_STATUS_012"
+    }
+  ],
+  "Task Exists": [
+    {
+      "dbField": "task_exists",
+      "filterType": "yes",
+      "filterValue": "1",
+      "fieldType": "checkbox",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Yes - Return jobs associated with at least one task",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,associated_jobs_job1,associated_jobs_job2",
+      "testCaseId": "TC_JOB_TASK_TASK_EXISTS_001"
+    },
+    {
+      "dbField": "task_exists",
+      "filterType": "no",
+      "filterValue": "0",
+      "fieldType": "checkbox",
+      "filterValue_TYPE": "INTEGER",
+      "description": "No - Return jobs with no associated tasks",
+      "expectedResult": "job13,job14,job15",
+      "testCaseId": "TC_JOB_TASK_TASK_EXISTS_002"
+    }
+  ]
+}

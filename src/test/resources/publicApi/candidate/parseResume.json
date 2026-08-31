@@ -1,0 +1,379 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"status": {
+			"type": "string"
+		},
+		"message": {
+			"type": "string"
+		},
+		"candidate": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"first_name": {
+					"type": "string"
+				},
+				"last_name": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"contact_number": {
+					"type": "string"
+				},
+				"gender_id": {
+					"type": "integer"
+				},
+				"qualification_id": {
+					"type": "integer"
+				},
+				"specialization": {
+					"type": "string"
+				},
+				"work_ex_year": {
+					"type": "integer"
+				},
+				"candidate_dob": {
+					"type": ["null", "string"]
+				},
+				"current_salary": {
+					"type": "integer"
+				},
+				"salary_expectation": {
+					"type": "integer"
+				},
+				"resume": {
+					"type": "object",
+					"properties": {
+						"filename": {
+							"type": "string"
+						},
+						"file_link": {
+							"type": "string"
+						}
+					},
+					"required": ["filename", "file_link"]
+				},
+				"willing_to_relocate": {
+					"type": "integer"
+				},
+				"current_organization": {
+					"type": "string"
+				},
+				"current_status": {
+					"type": ["null", "string"]
+				},
+				"notice_period": {
+					"type": "integer"
+				},
+				"currency_id": {
+					"type": "integer"
+				},
+				"slug": {
+					"type": "string"
+				},
+				"profile_update_link_status": {
+					"type": "integer"
+				},
+				"profile_update_requested_on": {
+					"type": ["null", "string"]
+				},
+				"profile_updated_on": {
+					"type": ["null", "string"]
+				},
+				"avatar": {
+					"type": ["null", "string"]
+				},
+				"facebook": {
+					"type": "string"
+				},
+				"twitter": {
+					"type": "string"
+				},
+				"linkedin": {
+					"type": "string"
+				},
+				"github": {
+					"type": "string"
+				},
+				"xing": {
+					"type": "string"
+				},
+				"created_on": {
+					"type": "string"
+				},
+				"updated_on": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"locality": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"country": {
+					"type": "string"
+				},
+				"address": {
+					"type": "string"
+				},
+				"relevant_experience": {
+					"type": ["null", "integer"]
+				},
+				"position": {
+					"type": "string"
+				},
+				"available_from": {
+					"type": ["null", "string"]
+				},
+				"salary_type": {
+					"type": ["null", "string"]
+				},
+				"source": {
+					"type": ["null", "string"]
+				},
+				"language_skills": {
+					"type": ["null", "string"]
+				},
+				"skill": {
+					"type": "string"
+				},
+				"custom_fields": {
+					"type": "array",
+					"items": {}
+				},
+				"created_by": {
+					"type": "integer"
+				},
+				"updated_by": {
+					"type": "integer"
+				},
+				"owner": {
+					"type": "integer"
+				},
+				"resource_url": {
+					"type": "string"
+				},
+				"is_email_opted_out": {
+					"type": "string"
+				},
+				"email_opt_out_source": {
+					"type": ["null", "string"]
+				},
+				"candidate_summary": {
+					"type": ["null", "string"]
+				},
+				"current_organization_slug": {
+					"type": ["null", "string"]
+				},
+				"last_calllog_added_on": {
+					"type": ["null", "string"]
+				},
+				"last_calllog_added_by": {
+					"type": ["null", "integer"]
+				},
+				"last_email_sent_on": {
+					"type": ["null", "string"]
+				},
+				"last_email_sent_by": {
+					"type": ["null", "integer"]
+				},
+				"last_sms_sent_on": {
+					"type": ["null", "string"]
+				},
+				"last_sms_sent_by": {
+					"type": ["null", "integer"]
+				},
+				"last_meeting_created_on": {
+					"type": ["null", "string"]
+				},
+				"last_meeting_created_by": {
+					"type": ["null", "integer"]
+				},
+				"last_linkedin_message_sent_on": {
+					"type": ["null", "string"]
+				},
+				"last_linkedin_message_sent_by": {
+					"type": ["null", "integer"]
+				},
+				"last_communication": {
+					"type": ["null", "string"]
+				},
+				"last_note_created_on": {
+					"type": ["null", "string"]
+				},
+				"last_note_created_by": {
+					"type": ["null", "integer"]
+				},
+				"postal_code": {
+					"type": ["null", "string"]
+				},
+				"work_history": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "integer"
+							},
+							"title": {
+								"type": "string"
+							},
+							"work_company_name": {
+								"type": "string"
+							},
+							"employment_type": {
+								"type": "integer"
+							},
+							"industry_id": {
+								"type": "integer"
+							},
+							"work_location": {
+								"type": "string"
+							},
+							"salary": {
+								"type": "integer"
+							},
+							"is_currently_working": {
+								"type": "integer"
+							},
+							"work_start_date": {
+								"type": ["null", "integer"]
+							},
+							"work_end_date": {
+								"type": ["null", "integer"]
+							},
+							"work_description": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"id",
+							"title",
+							"work_company_name",
+							"employment_type",
+							"industry_id",
+							"work_location",
+							"salary",
+							"is_currently_working",
+							"work_start_date",
+							"work_end_date",
+							"work_description"
+						]
+					}
+				},
+				"education_history": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "integer"
+							},
+							"institute_name": {
+								"type": "string"
+							},
+							"educational_qualification": {
+								"type": "string"
+							},
+							"educational_specialization": {
+								"type": "string"
+							},
+							"grade": {
+								"type": "string"
+							},
+							"education_location": {
+								"type": "string"
+							},
+							"education_start_date": {
+								"type": ["null", "integer"]
+							},
+							"education_end_date": {
+								"type": ["null", "integer"]
+							},
+							"education_description": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"id",
+							"institute_name",
+							"educational_qualification",
+							"educational_specialization",
+							"grade",
+							"education_location",
+							"education_start_date",
+							"education_end_date",
+							"education_description"
+						]
+					}
+				}
+			},
+			"required": [
+				"id",
+				"first_name",
+				"last_name",
+				"email",
+				"contact_number",
+				"gender_id",
+				"qualification_id",
+				"specialization",
+				"work_ex_year",
+				"candidate_dob",
+				"current_salary",
+				"salary_expectation",
+				"resume",
+				"willing_to_relocate",
+				"current_organization",
+				"current_status",
+				"notice_period",
+				"currency_id",
+				"slug",
+				"profile_update_link_status",
+				"profile_update_requested_on",
+				"profile_updated_on",
+				"avatar",
+				"facebook",
+				"twitter",
+				"linkedin",
+				"github",
+				"xing",
+				"created_on",
+				"updated_on",
+				"city",
+				"locality",
+				"state",
+				"country",
+				"address",
+				"relevant_experience",
+				"position",
+				"available_from",
+				"salary_type",
+				"source",
+				"language_skills",
+				"skill",
+				"custom_fields",
+				"created_by",
+				"updated_by",
+				"owner",
+				"resource_url",
+				"is_email_opted_out",
+				"email_opt_out_source",
+				"candidate_summary",
+				"current_organization_slug",
+				"work_history",
+				"education_history",
+				"postal_code"
+			]
+		}
+	},
+	"required": ["status", "message", "candidate"]
+}

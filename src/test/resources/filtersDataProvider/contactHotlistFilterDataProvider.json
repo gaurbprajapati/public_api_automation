@@ -1,0 +1,589 @@
+{
+    "Hotlist": [
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1",
+            "description": "Is filter with single value - exact match for hotlist1 only"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact4",
+            "description": "Is filter with multiple values - exact match for hotlist1,hotlist2 combination"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2,Contact15",
+            "description": "Is filter with single value - exact match for hotlist2 only"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact3",
+            "description": "Is filter with single value - exact match for hotlist3 only"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact7",
+            "description": "Is filter with multiple values - exact match for hotlist1,hotlist3 combination"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact6",
+            "description": "Is filter with multiple values - exact match for hotlist2,hotlist3 combination"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact5,Contact9",
+            "description": "Is filter with all three values - exact match for hotlist1,hotlist2,hotlist3 combination"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist4 only - empty hotlist should return no contacts"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist1 and hotlist4 combination - should return empty since no contact has both"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist2 and hotlist4 combination - should return empty since no contact has both"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist3 and hotlist4 combination - should return empty since no contact has both"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist1, hotlist2, and hotlist4 combination - should return empty since no contact has all three"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist1, hotlist3, and hotlist4 combination - should return empty since no contact has all three"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist2, hotlist3, and hotlist4 combination - should return empty since no contact has all three"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with all four hotlists combination - should return empty since no contact has all four hotlists"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Is Not filter with single value - excludes contacts with exact match hotlist1 only"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact9,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Is Not filter with multiple values - excludes contacts with exact match hotlist1,hotlist2 combination"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact7,Contact9,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Is Not filter with single value - excludes contacts with exact match hotlist3 only"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Is Not filter with single value - excludes contacts with exact match hotlist2 only"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact9,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Is Not filter with multiple values - excludes contacts with exact match hotlist1,hotlist3 combination"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact7,Contact9,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Is Not filter with multiple values - excludes contacts with exact match hotlist2,hotlist3 combination"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact6,Contact7,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Is Not filter with all three values - excludes contacts with exact match hotlist1,hotlist2,hotlist3 combination"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist4 - all contacts should be returned since no contact has hotlist4"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist1 and hotlist4 combination - all contacts should be returned"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist2 and hotlist4 combination - all contacts should be returned"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist3 and hotlist4 combination - all contacts should be returned"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist1, hotlist2, and hotlist4 combination - all contacts should be returned"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist1, hotlist3, and hotlist4 combination - all contacts should be returned"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist2, hotlist3, and hotlist4 combination - all contacts should be returned"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with all four hotlists combination - all contacts should be returned"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact4,Contact5,Contact7,Contact9",
+            "description": "Contains filter with single value - contacts that have hotlist1 (may have other hotlists too)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact4,Contact5,Contact9",
+            "description": "Contains filter with multiple values - contacts that have both hotlist1 and hotlist2 (may have additional hotlists)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact5,Contact6,Contact9",
+            "description": "Contains filter with multiple values - contacts that have both hotlist2 and hotlist3"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2,Contact4,Contact5,Contact6,Contact9,Contact15",
+            "description": "Contains filter with single value - contacts that have hotlist2"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact3,Contact5,Contact6,Contact7,Contact9",
+            "description": "Contains filter with single value - contacts that have hotlist3 (may have other hotlists too)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact5,Contact7,Contact9",
+            "description": "Contains filter with multiple values - contacts that have both hotlist1 and hotlist3 (may have additional hotlists)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact5,Contact9",
+            "description": "Contains filter with all three values - contacts that have all three hotlists (hotlist1, hotlist2, and hotlist3)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist4 - empty hotlist should return no contacts"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist1 and hotlist4 - should return empty since no contact has both"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist2 and hotlist4 - should return empty since no contact has both"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist3 and hotlist4 - should return empty since no contact has both"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist1, hotlist2, and hotlist4 - should return empty since no contact has all three"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact7,Contact9,Contact15",
+            "description": "Contains at Least One filter - contacts that have at least one of hotlist1 or hotlist2"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9",
+            "description": "Contains at Least One filter - contacts that have at least one of hotlist1 or hotlist3"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9,Contact15",
+            "description": "Contains at Least One filter - contacts that have at least one of hotlist2 or hotlist3"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9,Contact15",
+            "description": "Contains at Least One filter - contacts that have at least one of hotlist1, hotlist2, or hotlist3"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact4,Contact5,Contact7,Contact9",
+            "description": "Contains at Least One filter with hotlist1 and hotlist4 - returns contacts with hotlist1 (hotlist4 has no contacts)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2,Contact4,Contact5,Contact6,Contact9,Contact15",
+            "description": "Contains at Least One filter with hotlist2 and hotlist4 - returns contacts with hotlist2 (hotlist4 has no contacts)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact3,Contact5,Contact6,Contact7,Contact9",
+            "description": "Contains at Least One filter with hotlist3 and hotlist4 - returns contacts with hotlist3 (hotlist4 has no contacts)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9,Contact15",
+            "description": "Contains at Least One filter with all four hotlists - returns contacts with any of hotlist1, hotlist2, or hotlist3 (hotlist4 has no contacts)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2,Contact3,Contact6,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Does Not Contain filter with single value - excludes contacts that have hotlist1 anywhere"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact6,Contact7,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Does Not Contain filter with multiple values - excludes contacts that have both hotlist1 and hotlist2 together"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact3,Contact7,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Does Not Contain filter with single value - excludes contacts that have hotlist2 anywhere"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact4,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Does Not Contain filter with single value - excludes contacts that have hotlist3 anywhere"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact6,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Does Not Contain filter with multiple values - excludes contacts that have both hotlist1 and hotlist3 together"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact7,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Does Not Contain filter with multiple values - excludes contacts that have both hotlist2 and hotlist3 together"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact6,Contact7,Contact15,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Does Not Contain filter with all three values - excludes contacts that have all three hotlists together"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist4 - all contacts should be returned since no contact has hotlist4"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist1 and hotlist4 - excludes contacts that have both hotlist1 and hotlist4 together (since hotlist4 has no contacts, no contact can have both, so all are included)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist2 and hotlist4 - excludes contacts that have both hotlist2 and hotlist4 together (since hotlist4 has no contacts, no contact can have both, so all are included)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist3 and hotlist4 - excludes contacts that have both hotlist3 and hotlist4 together (since hotlist4 has no contacts, no contact can have both, so all are included)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist1, hotlist2, and hotlist4 - excludes contacts that have all three hotlist1, hotlist2, and hotlist4 together (since hotlist4 has no contacts, no contact can have all three together, so all are included)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with all four hotlists - excludes contacts that have all four hotlist1, hotlist2, hotlist3, and hotlist4 together (since hotlist4 has no contacts, no contact can have all four together, so all are included)"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact8,Contact10,Contact11,Contact12,Contact13,Contact14",
+            "description": "Is Empty filter - contacts with no hotlist assigned"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9,Contact15",
+            "description": "Has Any Value filter - contacts with at least one hotlist assigned"
+        }
+    ]
+}

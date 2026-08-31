@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Company Task Activity Fields Filter Search" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    <test name="Task Date Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TaskActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="tasksDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Multiselect Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TaskActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="tasksMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Text Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TaskActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="tasksTextFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Exists (checkbox) Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TaskActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="tasksTaskExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

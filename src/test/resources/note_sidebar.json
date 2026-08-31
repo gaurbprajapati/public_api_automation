@@ -1,0 +1,230 @@
+{
+  "note1": {
+    "notes": [
+      {
+        "note_type_id": "{To Do}",
+        "description": "To Do note created by owner with admin collaborator note1 — English text, numbers 12345, UPPERCASE, lowercase, MixedCase, accents (café, naïve), emojis 😀🔥, special chars !@#$%^&*()_+=-{}[]|:;'<>,.?/`~, multilingual: こんにちは (Japanese), Привет (Russian), مرحبا (Arabic), हिन्दी (Hindi)",
+        "related_to": "{candidate1}",
+        "related_to_type": "candidate",
+        "created_by": "{owner}",
+        "collaborator_user_ids": "{admin}",
+        "collaborator_team_ids": "",
+        "associated_candidates": "{associated_candidates_candidate1,associated_candidates_candidate2}",
+        "associated_companies": "",
+        "associated_contacts": "",
+        "associated_jobs": "",
+        "associated_deals": "",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note2": {
+    "notes": [
+      {
+        "note_type_id": "{Call}",
+        "description": "Call note created by admin with teamMember collaborator note2 — Includes misspellings (descreption/desc), extra spaces   between   words, hyphenated-words, camelCaseWords, snake_case_text, quotes 'single' \"double\"",
+        "related_to": "{candidate2}",
+        "related_to_type": "candidate",
+        "created_by": "{admin}",
+        "collaborator_user_ids": "{teamMember}",
+        "collaborator_team_ids": "",
+        "associated_candidates": "",
+        "associated_companies": "{associated_companies_company1,associated_companies_company2}",
+        "associated_contacts": "",
+        "associated_jobs": "",
+        "associated_deals": "",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note3": {
+    "notes": [
+      {
+        "note_type_id": "{Custom Note Type}",
+        "description": "Custom note created by teamMember with restricted collaborator note3 — Text with diacritics: résumé, jalapeño, smörgåsbord, Greek letters αβγ, currency symbols $€¥£₹, math ∑√∞≈≠, binary 010101, hexadecimal 0xFF",
+        "related_to": "{candidate3}",
+        "related_to_type": "candidate",
+        "created_by": "{teamMember}",
+        "collaborator_user_ids": "{restricted}",
+        "collaborator_team_ids": "",
+        "associated_candidates": "",
+        "associated_companies": "",
+        "associated_contacts": "{associated_contacts_contact1,associated_contacts_contact2}",
+        "associated_jobs": "",
+        "associated_deals": "",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note4": {
+    "notes": [
+      {
+        "note_type_id": "{To Do}",
+        "description": "To Do note created by restricted with team1 collaborator note4 — Text with escape sequences \\n newline, \\t tab, JSON-like {key:value}, HTML <b>bold</b> &amp; entities, SQL injection test: ' OR 1=1 --",
+        "related_to": "{candidate4}",
+        "related_to_type": "candidate",
+        "created_by": "{restricted}",
+        "collaborator_user_ids": "",
+        "collaborator_team_ids": "{team1}",
+        "associated_candidates": "",
+        "associated_companies": "",
+        "associated_contacts": "",
+        "associated_jobs": "{associated_jobs_job1,associated_jobs_job2}",
+        "associated_deals": "",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note5": {
+    "notes": [
+      {
+        "note_type_id": "{Call}",
+        "description": "Call note created by owner with team2 collaborator note5 — Long text search scenario: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Repeated repeated repeated words to test frequency search.",
+        "related_to": "{candidate5}",
+        "related_to_type": "candidate",
+        "created_by": "{owner}",
+        "collaborator_user_ids": "",
+        "collaborator_team_ids": "{team2}",
+        "associated_candidates": "",
+        "associated_companies": "",
+        "associated_contacts": "",
+        "associated_jobs": "",
+        "associated_deals": "{associated_deals_deal1,associated_deals_deal2}",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note6": {
+    "notes": [
+      {
+        "note_type_id": "",
+        "description": "Custom note created by admin with both team1 and team2 collaborators note6 — Mixed alphanumeric search abc123, special unicode 🔥💡⚡, hashtags #TagSearch #CaseSensitive, mentions @user, URLs https://example.com, email test@example.com",
+        "related_to": "{candidate6}",
+        "related_to_type": "candidate",
+        "created_by": "{admin}",
+        "collaborator_user_ids": "",
+        "collaborator_team_ids": "{team1,team2}",
+        "associated_candidates": "{associated_candidates_candidate1}",
+        "associated_companies": "{associated_companies_company1}",
+        "associated_contacts": "{associated_contacts_contact1}",
+        "associated_jobs": "{associated_jobs_job1}",
+        "associated_deals": "{associated_deals_deal1}",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note7": {
+    "notes": [
+      {
+        "note_type_id": "{To Do}",
+        "description": "To Do note created by teamMember with multiple user collaborators note7 — Text with palindrome racecar, reversed text ʇxǝʇ, whitespace variations   , line-break \n test, multilingual: 中文测试, Français, Español, Türkçe",
+        "related_to": "{candidate7}",
+        "related_to_type": "candidate",
+        "created_by": "{teamMember}",
+        "collaborator_user_ids": "{owner,admin,teamMember,restricted}",
+        "collaborator_team_ids": "",
+        "associated_candidates": "",
+        "associated_companies": "",
+        "associated_contacts": "",
+        "associated_jobs": "",
+        "associated_deals": "",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note8": {
+    "notes": [
+      {
+        "note_type_id": "",
+        "description": "Call note created by restricted with mixed collaborators note8 — Edge cases: empty '', null, very looooooooooooooooooooooooooooooooooooooong string, mixed encoding UTF-8 vs ASCII, zero-width space​test",
+        "related_to": "{candidate8}",
+        "related_to_type": "candidate",
+        "created_by": "{restricted}",
+        "collaborator_user_ids": "{owner,admin}",
+        "collaborator_team_ids": "{team1,team2}",
+        "associated_candidates": "{associated_candidates_candidate1,associated_candidates_candidate2}",
+        "associated_companies": "{associated_companies_company1,associated_companies_company2}",
+        "associated_contacts": "{associated_contacts_contact1,associated_contacts_contact2}",
+        "associated_jobs": "{associated_jobs_job1,associated_jobs_job2}",
+        "associated_deals": "{associated_deals_deal1,associated_deals_deal2}",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note9": {
+    "notes": [
+      {
+        "note_type_id": "{Custom Note Type}",
+        "description": "Custom note created by owner with no collaborators note9 — Boolean values true/false, Yes/No, Y/N, date formats 2025-09-17, 17/09/2025, time 12:34:56, keywords search AND OR NOT",
+        "related_to": "{candidate9}",
+        "related_to_type": "candidate",
+        "created_by": "{owner}",
+        "collaborator_user_ids": "",
+        "collaborator_team_ids": "",
+        "associated_candidates": "",
+        "associated_companies": "",
+        "associated_contacts": "",
+        "associated_jobs": "",
+        "associated_deals": "",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note10": {
+    "notes": [
+      {
+        "note_type_id": "{To Do}",
+        "description": "To Do note created by admin with team1 collaborator and all associations note10 — Mixed script searching: EnglishabcРусский文字हिन्दी, regex-like patterns .* ?+[], wildcard *search?, duplicate lines \nline1\nline1",
+        "related_to": "{candidate10}",
+        "related_to_type": "candidate",
+        "created_by": "{admin}",
+        "collaborator_user_ids": "",
+        "collaborator_team_ids": "{team1}",
+        "associated_candidates": "{associated_candidates_candidate1,associated_candidates_candidate2}",
+        "associated_companies": "{associated_companies_company1,associated_companies_company2}",
+        "associated_contacts": "{associated_contacts_contact1,associated_contacts_contact2}",
+        "associated_jobs": "{associated_jobs_job1,associated_jobs_job2}",
+        "associated_deals": "{associated_deals_deal1,associated_deals_deal2}",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note11": {
+    "notes": [
+      {
+        "note_type_id": "{Call}",
+        "description": "Call note created by teamMember with team2 collaborator note11 — Text with numbers in words (one, two, three) vs digits (1,2,3), ordinal 1st, 2nd, 3rd, fractions ½ ⅓ ¾, Roman numerals I II III IV",
+        "related_to": "{candidate11}",
+        "related_to_type": "candidate",
+        "created_by": "{teamMember}",
+        "collaborator_user_ids": "",
+        "collaborator_team_ids": "{team2}",
+        "associated_candidates": "",
+        "associated_companies": "",
+        "associated_contacts": "",
+        "associated_jobs": "",
+        "associated_deals": "",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  },
+  "note12": {
+    "notes": [
+      {
+        "note_type_id": "{Custom Note Type}",
+        "description": "Custom note created by restricted with mixed user and team collaborators note12 — Keyword stemming: run, running, ran; pluralization: cat, cats; homophones: to/too/two, case-insensitive vs CASE-SENSITIVE search",
+        "related_to": "{candidate12}",
+        "related_to_type": "candidate",
+        "created_by": "{restricted}",
+        "collaborator_user_ids": "{teamMember,restricted}",
+        "collaborator_team_ids": "{team1}",
+        "associated_candidates": "{associated_candidates_candidate1}",
+        "associated_companies": "{associated_companies_company1}",
+        "associated_contacts": "",
+        "associated_jobs": "",
+        "associated_deals": "",
+        "enable_auto_populate_teams": "0"
+      }
+    ]
+  }
+}

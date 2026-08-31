@@ -1,0 +1,284 @@
+{
+  "taskSearchTestCases": [
+    {
+      "testCaseId": "basic_text_search",
+      "description": "Basic text search patterns",
+      "searchTerms": [
+        {
+          "term": "Follow up",
+          "expectedResults": ["task1", "task2", "task5", "task8", "task11"]
+        },
+        {
+          "term": "candidate",
+          "expectedResults": ["task1", "task2", "task3", "task4", "task5", "task6", "task7", "task8", "task9", "task10", "task11", "task12"]
+        },
+        {
+          "term": "created by",
+          "expectedResults": ["task1", "task2", "task3", "task4", "task5", "task6", "task7", "task8", "task9", "task10", "task11", "task12"]
+        },
+        {
+          "term": "collaborator",
+          "expectedResults": ["task1", "task2", "task3", "task4", "task5", "task6", "task7", "task8", "task9", "task10", "task11", "task12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "title_specific_search",
+      "description": "Title-specific search terms",
+      "searchTerms": [
+        {
+          "term": "Follow up call",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "Review resume",
+          "expectedResults": ["task2"]
+        },
+        {
+          "term": "Interview prep",
+          "expectedResults": ["task3"]
+        },
+        {
+          "term": "Background verification",
+          "expectedResults": ["task4"]
+        },
+        {
+          "term": "Offer preparation",
+          "expectedResults": ["task5"]
+        },
+        {
+          "term": "Contract finalization",
+          "expectedResults": ["task6"]
+        },
+        {
+          "term": "Reference check",
+          "expectedResults": ["task7"]
+        },
+        {
+          "term": "Document collection",
+          "expectedResults": ["task9"]
+        },
+        {
+          "term": "Schedule interview",
+          "expectedResults": ["task10"]
+        },
+        {
+          "term": "Client introduction",
+          "expectedResults": ["task11"]
+        },
+        {
+          "term": "Skills assessment",
+          "expectedResults": ["task12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "common_title_description_terms",
+      "description": "Common terms found in both title and description",
+      "searchTerms": [
+        {
+          "term": "English text",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "misspellings",
+          "expectedResults": ["task2"]
+        },
+        {
+          "term": "diacritics",
+          "expectedResults": ["task3"]
+        },
+        {
+          "term": "SQL test",
+          "expectedResults": ["task4"]
+        },
+        {
+          "term": "Lorem ipsum",
+          "expectedResults": ["task5"]
+        },
+        {
+          "term": "Unicode test",
+          "expectedResults": ["task6"]
+        },
+        {
+          "term": "palindrome test",
+          "expectedResults": ["task7"]
+        },
+        {
+          "term": "edge cases test",
+          "expectedResults": ["task8"]
+        },
+        {
+          "term": "boolean test",
+          "expectedResults": ["task9"]
+        },
+        {
+          "term": "regex test",
+          "expectedResults": ["task10"]
+        },
+        {
+          "term": "numbers test",
+          "expectedResults": ["task11"]
+        },
+        {
+          "term": "stemming test",
+          "expectedResults": ["task12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "case_sensitivity",
+      "description": "Case sensitivity testing",
+      "searchTerms": [
+        {
+          "term": "UPPERCASE",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "lowercase",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "MixedCase",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "CASE-SENSITIVE",
+          "expectedResults": ["task12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "numbers_and_digits",
+      "description": "Numbers and digits search",
+      "searchTerms": [
+        {
+          "term": "12345",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "abc123",
+          "expectedResults": ["task6"]
+        },
+        {
+          "term": "0xFF",
+          "expectedResults": ["task3"]
+        },
+        {
+          "term": "one, two, three",
+          "expectedResults": ["task11"]
+        },
+        {
+          "term": "1st, 2nd, 3rd",
+          "expectedResults": ["task11"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "special_characters",
+      "description": "Special characters and symbols",
+      "searchTerms": [
+        {
+          "term": "!@#$%^&*()_+=-{}[]|:;'<>,.?/`~",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "$€¥£₹",
+          "expectedResults": ["task3"]
+        },
+        {
+          "term": "½ ⅓ ¾",
+          "expectedResults": ["task11"]
+        },
+        {
+          "term": "I II III IV",
+          "expectedResults": ["task11"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "unicode_and_emojis",
+      "description": "Unicode characters and emojis",
+      "searchTerms": [
+        {
+          "term": "😀🔥",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "🔥💡⚡",
+          "expectedResults": ["task6"]
+        },
+        {
+          "term": "résumé",
+          "expectedResults": ["task2", "task3"]
+        },
+        {
+          "term": "jalapeño",
+          "expectedResults": ["task3"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "multilingual_text",
+      "description": "Multilingual text search",
+      "searchTerms": [
+        {
+          "term": "こんにちは",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "Привет",
+          "expectedResults": ["task1"]
+        },
+        {
+          "term": "हिन्दी",
+          "expectedResults": ["task1", "task10"]
+        },
+        {
+          "term": "中文测试",
+          "expectedResults": ["task7"]
+        },
+        {
+          "term": "Français",
+          "expectedResults": ["task7"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "lorem_ipsum",
+      "description": "Lorem ipsum text",
+      "searchTerms": [
+        {
+          "term": "Lorem ipsum",
+          "expectedResults": ["task5"]
+        },
+        {
+          "term": "dolor sit amet",
+          "expectedResults": ["task5"]
+        },
+        {
+          "term": "consectetur adipiscing elit",
+          "expectedResults": ["task5"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "partial_word_search",
+      "description": "Partial word matching",
+      "searchTerms": [
+        {
+          "term": "collabor",
+          "expectedResults": ["task1", "task2", "task3", "task4", "task5", "task6", "task7", "task8", "task9", "task10", "task11", "task12"]
+        },
+        {
+          "term": "admin",
+          "expectedResults": ["task1", "task2", "task6", "task10"]
+        },
+        {
+          "term": "team",
+          "expectedResults": ["task2", "task3", "task4", "task5", "task6", "task7", "task10", "task11", "task12"]
+        }
+      ]
+    }
+  ]
+}

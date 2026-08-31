@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Technostars - Harika Kurella, Priyanka Shinde -->
+<suite name="Rest API Test Suite">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Send emails and save update drafts Nyma Endpoints">
+		<classes>
+			<class name="io.rcrm.api.nyma.getEmails_Test">
+				<methods>
+					<include name="getEmailTokenStatus" />
+					<include name="getEmailSignature_Test" />
+					<include name="sendBulkEmailsWithCCBCC_Test" />
+					<include name="sendBulkEmailsWithoutCCBCC_Test" />
+					<include name="saveDrafts_Test" />
+					<include name="updateDrafts_Test" />
+					<include name="getDraftById" />
+					<include name="getEmailSettings" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get emails Thread Nyma Endpoints Test">
+		<classes>
+			<class name="io.rcrm.api.nyma.getEmailThread_Test">
+				<methods>
+					<include name="getThread_Test" />
+					<include name="getThreadById_Test" />
+					<include name="getThreadByIdInvalid_Test" />
+					<include name="getThreadInvalidAuth_Test" />
+					<include name="getThreadByIdInvalidAuth_Test" />
+					<include name="getThreadInvalidParams_Test" />
+					<include name="getThreadFailed_Test" />
+					<include name="getThreadOpened_Test" />
+					<include name="getThreadFailedInvalid_Test" />
+					<include name="getThreadOpenedInvalid_Test" />
+					<include name="getThreadFailedInvalidAuth_Test" />
+					<include name="getThreadOpenedInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get email Folder Nyma Endpoints Test">
+		<classes>
+			<class name="io.rcrm.api.nyma.getEmailFolders_Test">
+				<methods>
+					<include name="getFolder_Test" />
+					<include name="getFolderWithFolderView_Test" />
+					<include name="getFolderInvalidAuth_Test" />
+					<include name="getFolderWithFolderViewInvalidAuth_Test" />
+					<include name="getFolderInvalidParamsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of Blocked emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.rcrm.nyma.blockedEmails.AllEndpointsOfBlockedEmailsTest">
+				<methods>
+					<include name="blockedEmailsPOST_Test" />
+					<include name="searchBlockedEmailsGET_Test" />
+					<include name="blockedEmailsDELETE_Test" />
+					<include name="blockedDomainPOST_Test" />
+					<include name="searchBlockedDomainGET_Test" />
+					<include name="blockedDomainDELETE_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Add To Blocked emails Nyma Endpoints">
+		<classes>
+			<class name="io.rcrm.nyma.blockedEmails.AddToBlockedEmailsTest">
+				<methods>
+					<include name="blockedEmailsPOST_Test" />
+					<include name="blockedInvalidEmailsPOST_Test" />
+					<include name="blockedEmailsInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Blocked emails Nyma Endpoints">
+		<classes>
+			<class name="io.rcrm.nyma.blockedEmails.SearchBlockedEmailsTest">
+				<methods>
+					<include name="searchBlockedEmailsGET_Test" />
+					<include name="searchBlockedEmailsInvalidAuth_Test" />
+					<include name="searchBlockedDomainGET_Test" />
+					<include name="searchBlockedDomainInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Blocked emails Nyma Endpoints">
+		<classes>
+			<class name="io.rcrm.nyma.blockedEmails.DeleteBlockedEmailsTest">
+				<methods>
+					<include name="blockedEmailsDELETE_Test" />
+					<include name="deleteBlockedEmailsInvalidAuth_Test" />
+					<include name="blockedDomainDELETE_Test" />
+					<include name="deleteBlockedDomainInvalidAuth_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of scheduled Emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.AllEndpointsOfScheduledEmailsTest">
+				<methods>
+					<include name="createScheduledEmailsPOST_Test" />
+					<include name="createScheduledEmailsPOSTWithDraftId_Test" />
+					<include
+						name="createScheduledEmailsPOSTWithInvalidEmail_Test" />
+					<include
+						name="createScheduledEmailsPOSTWithDeleteEntity_Test" />
+					<include name="getScheduledEmailsList_Test" />
+					<include name="getScheduledEmailsListWithScheduledID_Test" />
+					<include name="getScheduledEmailsListWithAttachment_Test" />
+					<include name="cancelScheduledEmailsPOST_Test" />
+					<include name="rescheduleFailedScheduledEmailTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create scheduled Emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.CreateScheduledEmailsTest">
+				<methods>
+					<include name="createScheduledEmailsPOST_Test" />
+					<include name="createScheduledEmailsPOSTWithDraftId_Test" />
+					<include
+						name="createScheduledEmailsPOSTWithInvalidEmail_Test" />
+					<include
+						name="createScheduledEmailsPOSTWithDeleteEntity_Test" />
+					<include
+						name="unAuthorizedUserCannotPostCreateScheduledEmails_test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get scheduled Emails List Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.GetAllScheduledEmailsTest">
+				<methods>
+					<include name="getScheduledEmailsList_Test" />
+					<include name="getScheduledEmailsListWithScheduledID_Test" />
+					<include name="getScheduledEmailsListWithAttachment_Test" />
+					<include name="getScheduledEmailsListInvalidParamsTest" />
+					<include name="unAuthorizedUserCannotGetScheduledEmailsList_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Rescheduled Emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.UpdateScheduleEmailsTest">
+				<methods>
+					<include name="reScheduledEmailsPOST_Test" />
+					<include name="sendScheduledEmailsPOST_Test" />
+					<include
+						name="unAuthorizedUserCannotReScheduledEmails_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Cancel scheduled Emails Nyma Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.nyma.scheduledEmail.CancelScheduledEmailsTest">
+				<methods>
+					<include name="cancelScheduledEmailsPOST_Test" />
+					<include
+						name="unAuthorizedUserCannotCancelScheduledEmails_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Email Settings Endpoints">
+		<classes>
+			<class name="io.rcrm.api.nyma.EmailSettingsTest">
+				<methods>
+					<include name="connectEmail" />
+					<include name="getConnectedEmails" />
+					<include name="verifyHideEmailAndToggleDefault" />
+					<include name="disconnectEmail" />
+					<include name="verifyNotifyWhenEmailAutoDisconnected" />
+					<include name="connectEmailWithoutLinkedEmailType" />
+					<include name="connectEmailWithInvalidLinkedEmailType" />
+					<include name="connectEmailInvalidAuthTest" />
+					<include name="disconnectEmailWithInvalidId" />
+					<include name="disconnectEmailInvalidAuthTest" />
+					<include name="getConnectedEmailsInvalidAuthTest" />
+					<include name="verifyUpdateFieldsWithoutRequiredFields" />
+					<include name="verifyUpdateFieldsWithInvalidFields" />
+					<include name="updateFieldsInvalidAuthTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Search invoices API response",
+	"type": "object",
+	"properties": {
+		"current_page": {
+			"type": "integer"
+		},
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object"
+			}
+		},
+		"first_page_url": {
+			"type": "string"
+		},
+		"from": {
+			"type": "integer"
+		},
+		"next_page_url": {},
+		"path": {
+			"type": "string"
+		},
+		"per_page": {},
+		"prev_page_url": {},
+		"to": {
+			"type": "integer"
+		}
+	},
+	"required": [
+		"data"
+	],
+	"additionalProperties": true
+}

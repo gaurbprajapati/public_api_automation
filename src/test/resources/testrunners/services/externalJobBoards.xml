@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Titans - Varun Vishwakarma, Shivam Singh -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="10">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="All EndPoints Of External Job Boards">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.AllEndpointsOfExternalJobBoardsTest">
+				<methods>
+					<include name="saveJobBoardSettings_POST" />
+					<include name="editJobBoardSettings_POST" />
+					<include name="getJobBoardDetailsById_GET" />
+					<include name="getAllJobBoardsList_GET" />
+					<include name="deleteJobBoard_DELETE" />
+					<include name="addCandidateFromAJobBoard" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Candidate From Job Boards">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.AddCandidateFromJobBoardsTest">
+				<methods>
+					<include name="addCandidateFromJobBoardsWithInvalidAuth" />
+					<include name="addCandidateFromJobBoardsWithInvalidBody" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save External Job Boards Settings">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.SaveJobBoardSettingTest">
+				<methods>
+					<include name="saveJobBoardSettings" />
+					<include
+						name="nullResponseInAnyFieldAfterSavingJobBoardSettings" />
+					<include
+						name="unAuthorizedUserCannotAccessSaveJobBoardSettings" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Edit External Job Boards Settings">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.EditJobBoardTest">
+				<methods>
+					<include name="editCredentialsOfJobBoard_POST" />
+					<include
+						name="unAuthorizedUserCannoteditCredentialsOfJobBoard_POST" />
+					<include name="deleteCredentialsOfJobBoardById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Get External Job Boards List">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.GetJobBoardsListTest">
+				<methods>
+					<include name="getAllJobBoardsList_GET" />
+					<include
+						name="unAuthorizedUserCannotAccessGetJobBoardslist" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get External Job Boards List by Id">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.GetJobBoardByIdTest">
+				<methods>
+					<include name="getJobBoardDetailsByValidId_GET" />
+					<include name="getJobBoardDetailsByInvalidId_GET" />
+					<include name="getJobBoardDetailsByEmptyId_GET" />
+					<include name="unAuthorizedUserCannotAccessGetJobBoardByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete External Job Boards Settings">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.DeleteJobBoardSettingsTest">
+				<methods>
+					<include name="deleteCredentialsOfJobBoardById" />
+					<include name="deleteCredentialsOfJobBoardByInvalidId" />
+					<include name="deleteCredentialsOfJobBoardByEmptyId" />
+					<include
+						name="unAuthorizedUserCannotdeleteCredentialsOfJobBoardById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All EndPoints Of Logicmelon Job Boards">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.logicmelon.AllEndpointsOfLogicmelonJobBoardsTest">
+				<methods>
+					<include name="saveLogicmelonJobBoardSetting_POST" />
+					<include name="editLogicmelonJobBoardSetting_POST" />
+					<include name="getLogicmelonJobDetailsById_GET" />
+					<include name="deleteLogicmelonJobBoard_DELETE" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Logicmelon Job Boards Settings">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.logicmelon.SaveLogicmelonJobBoardsSettingTest">
+				<methods>
+					<include name="saveLogicmelonJobBoardSettings" />
+					<include name="nullResponseInAnyFieldAfterSavingLogicmelonJobBoardSettings" />
+					<include name="unAuthorizedUserCannotAccessSaveLogicmelonJobBoardSettings" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Logicmelon Job Boards Settings">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.logicmelon.EditLogicmelonJobboardTest">
+				<methods>
+					<include name="editLogicmelonJobBoardSetting" />
+					<include name="unAuthorizedLogicmelonJobBoard" />
+					<include name="deleteLogicmelonJobBoard" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Logicmelon get Job List By Id">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.logicmelon.GetLogicmelonJobBoardByIdTest">
+				<methods>
+					<include name="getLogicmelonJobBoardDetailsByValidId" />
+					<include name="getLogicmelonJobBoardDetailsByInvalidId" />
+					<include name="unAuthorizedUserCannotAccessGetLogicmelonJobBoardByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Logicmelon delete Job Board Settings">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.logicmelon.DeleteLogicmelonJobBoardSettingsTest">
+				<methods>
+					<include name="deleteLogicmelonCredentialsOfJobBoardById" />
+					<include name="unAuthorizedUserCannotdeleteCredentialsOfLogicmelonJobBoardById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Advert for Logicmelon External Job Boards">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.logicmelon.AddAdvertTest">
+				<methods>
+					<include name="postingJobUsingAddAdvertLogicmelonTest" />
+					<include
+							name="nullResponseInAnyFieldAfterJobPostedUsingAddAdvertLogicmelonTest" />
+					<include name="postJobOnlyWithSlugLogicmelonTest" />
+					<include name="postJobOnlyWithIdLogicmelonTest" />
+					<include name="unAuthorizedUserCannotAccessLogicmelonTest" />
+					<include
+							name="postingJobUsingAddAdvertWithInvalidSlugLogicmelonTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Track Advert for Logicmelon External Job Boards">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.logicmelon.TrackAdvertTest">
+				<methods>
+					<include
+							name="trackingJobStatusUsingTrackAdvertLogicmelonTest" />
+					<include name="unAuthorizedUserCannotAccessLogicmelonTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints Of Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.AllEndpointsOfVonqTest">
+				<methods>
+					<include name="fetchTokenFromVonqTest"/>
+					<include name="saveCampaignAsDraftTest"/>
+					<include name="getAllDraftCampaignTest"/>
+					<include name="getSavedCampaignDraftByIdTest"/>
+					<include name="editCampaignDraftTest"/>
+					<include name="saveCampaignTest"/>
+					<include name="getAllSavedCampaignTest"/>
+					<include name="fetchCampaignAnalyticsVonqTest"/>
+					<include name="fetchCampaignLineChartAnalyticsVonqTest"/>
+					<include name="fetchCampaignAnalyticsPieChartVonqTest"/>
+					<include name="incrementNameCampaignVonqTest"/>
+					<include name="refreshCampaignAnalyticsVonqTest"/>
+					<include name="takeCampaignOfflineTest"/>
+					<include name="deleteCampaignTest"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Token From Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.FetchTokenFromVonqTest">
+				<methods>
+					<include name="fetchTokenFromVonqWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Campaign As Draft Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.SaveCampaignAsDraftVonqTest">
+				<methods>
+					<include name="saveCampaignAsDraftWithInvalidJobId"/>
+					<include name="saveCampaignAsDraftWithInvalidAuth"/>
+					<include name="saveCampaignAsDraftWithEmptyFields"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Campaign Draft Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.GetAllDraftVonqTest">
+				<methods>
+					<include name="getAllDraftCampaignWithInvalidBody"/>
+					<include name="getAllDraftCampaignWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Campaign Draft By Id Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.GetDraftByIdVonqTest">
+				<methods>
+					<include name="getSavedCampaignDraftByIdWihInvalidAuth"/>
+					<include name="getSavedCampaignDraftByInvalidId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Campaign Draft By Id Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.EditCampaignDraftVonqTest">
+				<methods>
+					<include name="editCampaignDraftByIdWithInvalidAuth"/>
+					<include name="editCampaignDraftWithInvalidId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Save Campaign Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.SaveCampaignVonqTest">
+				<methods>
+					<include name="saveCampaignWithInvalidAuth"/>
+					<include name="saveCampaignWithInvalidJobId"/>
+					<include name="saveCampaignWithInvalidFields"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Saved Campaign Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.GetAllSavedCampaignVonqTest">
+				<methods>
+					<include name="getAllSavedCampaignWithInvalidAuth"/>
+					<include name="getAllSavedCampaignWithInvalidFields"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Campaign Analytics Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.FetchCampaignAnalyticsVonqTest">
+				<methods>
+					<include name="fetchCampaignAnalyticsWithInvalidAuth"/>
+					<include name="fetchCampaignAnalyticsWithInvalidCampaignId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Campaign Line Chart Analytics Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.FetchCampaignLineChartAnalyticsVonqTest">
+				<methods>
+					<include name="fetchCampaignLineChartAnalyticsWithInvalidCampaignId"/>
+					<include name="fetchCampaignLineChartAnalyticsWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Campaign Pie Chart Analytics Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.FetchCampaignPieChartAnalyticsVonqTest">
+				<methods>
+					<include name="fetchCampaignPieChartAnalyticsWithInvalidCampaignId"/>
+					<include name="fetchCampaignPieChartAnalyticsWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Refresh Campaign Analytics Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.RefreshCampaignAnalyticsVonqTest">
+				<methods>
+					<include name="refreshCampaignAnalyticsWithInvalidId"/>
+					<include name="refreshCampaignAnalyticsWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Increment Campaign Name Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.IncrementCampaignNameVonqTest">
+				<methods>
+					<include name="incrementCampaignNameWithInvalidId"/>
+					<include name="incrementCampaignNameWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Take Campaign Offline Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.TakeCampaignOfflineVonqTest">
+				<methods>
+					<include name="takeCampaignOfflineWithInvalidAuth"/>
+					<include name="takeCampaignOfflineWithInvalidCampaignId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Campaign Offline Vonq Test">
+		<classes>
+			<class name="io.recruitcrm.premiumJobBoard.DeleteCampaignVonqTest">
+				<methods>
+					<include name="deleteCampaignWithInvalidAuth"/>
+					<include name="deleteCampaignWithInvalidCampaignId"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All EndPoints Of Broadbean Job Boards">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.broadbean.AllEndpointsOfBroadbeanExternalJobBoardsTest">
+				<methods>
+					<include name="saveBroadbeanJobBoardSetting_POST" />
+					<include name="editBroadbeanJobBoardSetting_POST" />
+					<include name="getBroadbeanJobDetailsById_GET"/>
+					<include name="addBroadbeanJobBoardPermission_POST" />
+					<include name="getBroadbeanJobBoardPermission_GET" />
+					<include name="getBroadbeanConnectedId_GET" />
+					<include name="mapAdcUsernameFromBroadbeanAccount_POST" />
+					<include name="removeAdcUsernameFromBroadbeanAccount_POST" />
+					<include name="getBroadbeanJobBoardDetails_GET" />
+					<include name="deleteBroadbeanJobBoard_DELETE" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Broadbean Job Board Permission">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.broadbean.AddBroadbeanJobBoardPermissionTest">
+				<methods>
+					<include name="addBroadbeanJobBoardPermissionWithInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Broadbean Job Board Permission">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.broadbean.GetBroadbeanJobBoardPermissionTest">
+				<methods>
+					<include name="getBroadbeanJobBoardPermissionWithInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Broadbean Job Board Connected Id">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.broadbean.GetBroadbeanJobBoardConnectedIdTest">
+				<methods>
+					<include name="getBroadbeanConnectedIdWithInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Map Adc Username Broadbean Job Board">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.broadbean.MapAdcUsernameBroadbeanJobBoardTest">
+				<methods>
+					<include name="mapAdcUsernameFromBroadbeanAccountWithInvalidId" />
+					<include name="mapAdcUsernameFromBroadbeanAccountWithInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Remove Adc Username Broadbean Job Board">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.broadbean.RemoveAdcUsernameBroadbeanJobBoardTest">
+				<methods>
+					<include name="removeAdcUsernameFromBroadbeanAccountWithInvalidId" />
+					<include name="removeAdcUsernameFromBroadbeanAccountWithInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Broadbean Job Board Details">
+		<classes>
+			<class name="io.rcrm.api.externalJobBoards.broadbean.GetBroadbeanJobBoardDetailsTest">
+				<methods>
+					<include name="getBroadbeanJobBoardDetailsWithInvalidAuth" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

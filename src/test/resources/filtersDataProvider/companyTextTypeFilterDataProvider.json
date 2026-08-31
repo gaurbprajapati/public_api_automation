@@ -1,0 +1,4751 @@
+{
+  "Company Name": [
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "Tech Solutions Inc.",
+      "description": "Exact match, standard",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "expectedResult": "Tech Solutions Inc."
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "tech solutions inc.",
+      "description": "Exact match, case variation",
+      "expectedResult": "Depends on collation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "   Tech Solutions Inc.   ",
+      "description": "Exact match, whitespace",
+      "expectedResult": "Tech Solutions Inc.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "Innovate GmbH",
+      "description": "Exact match, international",
+      "expectedResult": "Innovate GmbH",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "Under_Score_Analytics_Corp",
+      "description": "Exact match, underscores",
+      "expectedResult": "Under_Score_Analytics_Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "O'Malley's Security Solutions",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "O'Malley's Security Solutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "Bracket [Technologies] (Inc.)",
+      "description": "Exact match, brackets",
+      "expectedResult": "Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "阿里巴巴集团",
+      "description": "Exact match, unicode",
+      "expectedResult": "阿里巴巴集团",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "Tech Solutions Inc.",
+      "description": "Is not, standard",
+      "expectedResult": "All except Tech Solutions Inc.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "innovate gmbh",
+      "description": "Is not, case variation",
+      "expectedResult": "Depends on collation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "Innovate GmbH",
+      "description": "Is not, international",
+      "expectedResult": "All except Innovate GmbH",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "O'Malley's Security Solutions",
+      "description": "Is not, apostrophe",
+      "expectedResult": "All except O'Malley's Security Solutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "Bracket [Technologies] (Inc.)",
+      "description": "Is not, brackets",
+      "expectedResult": "All except Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "All non-empty names",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "Tech",
+      "description": "Contains, standard",
+      "expectedResult": "Tech Solutions Inc., Microsoft Corporation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "tech",
+      "description": "Contains, case variation",
+      "expectedResult": "Depends on collation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "  Tech  ",
+      "description": "Contains, whitespace",
+      "expectedResult": "Tech Solutions Inc., Microsoft Corporation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "GmbH",
+      "description": "Contains, international",
+      "expectedResult": "Innovate GmbH",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "Under_Score_Analytics_Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "Solutions",
+      "description": "Contains, infix",
+      "expectedResult": "Tech Solutions Inc., O'Malley's Security Solutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "[",
+      "description": "Contains, bracket",
+      "expectedResult": "Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains",
+      "filterValue": "阿里",
+      "description": "Contains, unicode",
+      "expectedResult": "阿里巴巴集团",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "Tech",
+      "description": "Prefix, standard",
+      "expectedResult": "Tech Solutions Inc.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "  Tech",
+      "description": "Prefix, whitespace",
+      "expectedResult": "Tech Solutions Inc.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "Innovate",
+      "description": "Prefix, international",
+      "expectedResult": "Innovate GmbH",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "Under",
+      "description": "Prefix, underscore",
+      "expectedResult": "Under_Score_Analytics_Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "begins_with",
+      "filterValue": "阿里",
+      "description": "Prefix, unicode",
+      "expectedResult": "阿里巴巴集团",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": "Inc.",
+      "description": "Suffix, standard",
+      "expectedResult": "Tech Solutions Inc., Sigma Technologies Inc. Σ, Noble Technologies XVII Inc.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": " Inc.",
+      "description": "Suffix, whitespace",
+      "expectedResult": "Tech Solutions Inc., Sigma Technologies Inc. Σ, Noble Technologies XVII Inc.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": "GmbH",
+      "description": "Suffix, international",
+      "expectedResult": "Innovate GmbH",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": "Corp",
+      "description": "Suffix, standard",
+      "expectedResult": "Under_Score_Analytics_Corp, Alpha β Systems Corp, Analytics Corporation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "ends_with",
+      "filterValue": "集团",
+      "description": "Suffix, unicode",
+      "expectedResult": "阿里巴巴集团",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "does_not_contain",
+      "filterValue": "Tech",
+      "description": "Does not contain, standard",
+      "expectedResult": "All except Tech Solutions Inc., Microsoft Corporation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "does_not_contain",
+      "filterValue": "tech",
+      "description": "Does not contain, case variation",
+      "expectedResult": "Depends on collation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "does_not_contain",
+      "filterValue": "GmbH",
+      "description": "Does not contain, international",
+      "expectedResult": "All except Innovate GmbH",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain, underscore",
+      "expectedResult": "All except Under_Score_Analytics_Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Not empty, standard",
+      "expectedResult": "All non-empty names",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "Solutions",
+      "description": "Contains exact word, standard",
+      "expectedResult": "Tech Solutions Inc., O'Malley's Security Solutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "GmbH",
+      "description": "Contains exact word, international",
+      "expectedResult": "Innovate GmbH",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "阿里巴巴",
+      "description": "Contains exact word, unicode",
+      "expectedResult": "阿里巴巴集团",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,Solutions",
+      "description": "Contains at least one, standard",
+      "expectedResult": "Tech Solutions Inc., Microsoft Corporation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Innovate,GmbH",
+      "description": "Contains at least one, international",
+      "expectedResult": "Innovate GmbH",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,Microsoft",
+      "description": "Contains at least one, multiple matches",
+      "expectedResult": "Tech Solutions Inc., Microsoft Corporation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "阿里,集团",
+      "description": "Contains at least one, unicode",
+      "expectedResult": "阿里巴巴集团",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech, Solutions, Microsoft",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Tech Solutions Inc., Microsoft Corporation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Innovate,GmbH,Under",
+      "description": "Contains at least one, three values no spaces",
+      "expectedResult": "Innovate GmbH, Under_Score_Analytics_Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech, Solutions, Microsoft, Corporation, Inc",
+      "description": "Contains at least one, five values",
+      "expectedResult": "Tech Solutions Inc., Microsoft Corporation",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech,Solutions,Microsoft,Corporation,Inc,Innovate,GmbH,Under",
+      "description": "Contains at least one, eight values no spaces",
+      "expectedResult": "Tech Solutions Inc., Microsoft Corporation, Innovate GmbH, Under_Score_Analytics_Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Tech, Solutions, Microsoft, Corporation, Inc, Innovate, GmbH, Under, Score, Analytics",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "Tech Solutions Inc., Microsoft Corporation, Innovate GmbH, Under_Score_Analytics_Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "companyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "Facebook Profile": [
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is",
+      "filterValue": "https://facebook.com/techsolutions",
+      "description": "Exact match, standard",
+      "expectedResult": "https://facebook.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is",
+      "filterValue": "https://facebook.com/innovate.gmbh",
+      "description": "Exact match, international",
+      "expectedResult": "https://facebook.com/innovate.gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is",
+      "filterValue": "https://facebook.com/Under_Score_Analytics",
+      "description": "Exact match, special char",
+      "expectedResult": "https://facebook.com/Under_Score_Analytics",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Company with empty facebook profile",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is",
+      "filterValue": "https://facebook.com/@lbert@Google@",
+      "description": "Exact match, special char/injection",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is_not",
+      "filterValue": "https://facebook.com/techsolutions",
+      "description": "Is not, standard",
+      "expectedResult": "All except company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is_not",
+      "filterValue": "https://facebook.com/innovate.gmbh",
+      "description": "Is not, international",
+      "expectedResult": "All except company2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains",
+      "filterValue": "facebook.com",
+      "description": "Contains, standard",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains",
+      "filterValue": "techsolutions",
+      "description": "Contains, case-insensitive",
+      "expectedResult": "https://facebook.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains",
+      "filterValue": "innovate",
+      "description": "Contains, international",
+      "expectedResult": "https://facebook.com/innovate.gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "https://facebook.com/Under_Score_Analytics",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "begins_with",
+      "filterValue": "https://",
+      "description": "Prefix, standard",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "begins_with",
+      "filterValue": "https://facebook.com/tech",
+      "description": "Prefix, specific",
+      "expectedResult": "https://facebook.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "ends_with",
+      "filterValue": "techsolutions",
+      "description": "Suffix, standard",
+      "expectedResult": "https://facebook.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "ends_with",
+      "filterValue": ".gmbh",
+      "description": "Suffix, international",
+      "expectedResult": "https://facebook.com/innovate.gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "does_not_contain",
+      "filterValue": "linkedin.com",
+      "description": "Does not contain, standard",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "does_not_contain",
+      "filterValue": "techsolutions",
+      "description": "Does not contain, specific",
+      "expectedResult": "All except company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Not empty, standard",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_exact_word",
+      "filterValue": "techsolutions",
+      "description": "Contains exact word, standard",
+      "expectedResult": "https://facebook.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_exact_word",
+      "filterValue": "innovate.gmbh",
+      "description": "Contains exact word, international",
+      "expectedResult": "https://facebook.com/innovate.gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions,facebook",
+      "description": "Contains at least one, standard",
+      "expectedResult": "All facebook profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "innovate,gmbh",
+      "description": "Contains at least one, international",
+      "expectedResult": "https://facebook.com/innovate.gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Under,Score",
+      "description": "Contains at least one, special char",
+      "expectedResult": "https://facebook.com/Under_Score_Analytics",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "facebook,linkedin",
+      "description": "Contains at least one, domain names",
+      "expectedResult": "All facebook profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions, innovate, gmbh",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions,innovate,gmbh,Under,Score",
+      "description": "Contains at least one, five values no spaces",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "facebook,linkedin,twitter,github,xing,techsolutions,innovate,gmbh",
+      "description": "Contains at least one, eight values no spaces",
+      "expectedResult": "All facebook profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions, innovate, gmbh, Under, Score, Analytics, tecnologia, Ibérica, microsoft, corporation",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is",
+      "filterValue": "https://facebook.com/tecnologia.Ibérica",
+      "description": "Exact match, international",
+      "expectedResult": "https://facebook.com/tecnologia.Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is",
+      "filterValue": "https://facebook.com/O'Malley's.Security",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "https://facebook.com/O'Malley's.Security",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is_not",
+      "filterValue": "https://facebook.com/tecnologia.Ibérica",
+      "description": "Is not, international",
+      "expectedResult": "All except company4",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "is_not",
+      "filterValue": "https://facebook.com/O'Malley's.Security",
+      "description": "Is not, apostrophe",
+      "expectedResult": "All except company5",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains",
+      "filterValue": "tecnologia",
+      "description": "Contains, international",
+      "expectedResult": "https://facebook.com/tecnologia.Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains",
+      "filterValue": "O'Malley",
+      "description": "Contains, apostrophe",
+      "expectedResult": "https://facebook.com/O'Malley's.Security",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "begins_with",
+      "filterValue": "https://facebook.com/tecnologia",
+      "description": "Prefix, international",
+      "expectedResult": "https://facebook.com/tecnologia.Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "ends_with",
+      "filterValue": ".Ibérica",
+      "description": "Suffix, international",
+      "expectedResult": "https://facebook.com/tecnologia.Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_exact_word",
+      "filterValue": "tecnologia.Ibérica",
+      "description": "Contains exact word, international",
+      "expectedResult": "https://facebook.com/tecnologia.Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilefacebook",
+      "filterType": "contains_at_least_one",
+      "filterValue": "tecnologia,Ibérica",
+      "description": "Contains at least one, international",
+      "expectedResult": "https://facebook.com/tecnologia.Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "Twitter Profile": [
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is",
+      "filterValue": "https://twitter.com/techsolutions",
+      "description": "Exact match, standard",
+      "expectedResult": "https://twitter.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is",
+      "filterValue": "https://twitter.com/innovate_gmbh",
+      "description": "Exact match, international",
+      "expectedResult": "https://twitter.com/innovate_gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is",
+      "filterValue": "https://twitter.com/Under_Score_Analytics",
+      "description": "Exact match, special char",
+      "expectedResult": "https://twitter.com/Under_Score_Analytics",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Company with empty twitter profile",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is",
+      "filterValue": "https://twitter.com/@lbert@Google@",
+      "description": "Exact match, special char/injection",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is_not",
+      "filterValue": "https://twitter.com/techsolutions",
+      "description": "Is not, standard",
+      "expectedResult": "All except company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is_not",
+      "filterValue": "https://twitter.com/innovate_gmbh",
+      "description": "Is not, international",
+      "expectedResult": "All except company2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains",
+      "filterValue": "twitter.com",
+      "description": "Contains, standard",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains",
+      "filterValue": "techsolutions",
+      "description": "Contains, case-insensitive",
+      "expectedResult": "https://twitter.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains",
+      "filterValue": "innovate",
+      "description": "Contains, international",
+      "expectedResult": "https://twitter.com/innovate_gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "https://twitter.com/Under_Score_Analytics",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "begins_with",
+      "filterValue": "https://",
+      "description": "Prefix, standard",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "begins_with",
+      "filterValue": "https://twitter.com/tech",
+      "description": "Prefix, specific",
+      "expectedResult": "https://twitter.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "ends_with",
+      "filterValue": "techsolutions",
+      "description": "Suffix, standard",
+      "expectedResult": "https://twitter.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "ends_with",
+      "filterValue": "_gmbh",
+      "description": "Suffix, international",
+      "expectedResult": "https://twitter.com/innovate_gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "does_not_contain",
+      "filterValue": "facebook.com",
+      "description": "Does not contain, standard",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "does_not_contain",
+      "filterValue": "techsolutions",
+      "description": "Does not contain, specific",
+      "expectedResult": "All except company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Not empty, standard",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_exact_word",
+      "filterValue": "techsolutions",
+      "description": "Contains exact word, standard",
+      "expectedResult": "https://twitter.com/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_exact_word",
+      "filterValue": "innovate_gmbh",
+      "description": "Contains exact word, international",
+      "expectedResult": "https://twitter.com/innovate_gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions,twitter",
+      "description": "Contains at least one, standard",
+      "expectedResult": "All twitter profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "innovate,gmbh",
+      "description": "Contains at least one, international",
+      "expectedResult": "https://twitter.com/innovate_gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Under,Score",
+      "description": "Contains at least one, special char",
+      "expectedResult": "https://twitter.com/Under_Score_Analytics",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "twitter,linkedin",
+      "description": "Contains at least one, domain names",
+      "expectedResult": "All twitter profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions, innovate, gmbh",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions,innovate,gmbh,Under,Score",
+      "description": "Contains at least one, five values no spaces",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "twitter,linkedin,twitter,github,xing,techsolutions,innovate,gmbh",
+      "description": "Contains at least one, eight values no spaces",
+      "expectedResult": "All twitter profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions, innovate, gmbh, Under, Score, Analytics, tecnologia, Ibérica, microsoft, corporation",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is",
+      "filterValue": "https://twitter.com/tecnologia_Ibérica",
+      "description": "Exact match, international",
+      "expectedResult": "https://twitter.com/tecnologia_Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is",
+      "filterValue": "https://twitter.com/O_Malley's_Security",
+      "description": "Exact match, underscore",
+      "expectedResult": "https://twitter.com/O_Malley's_Security",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is_not",
+      "filterValue": "https://twitter.com/tecnologia_Ibérica",
+      "description": "Is not, international",
+      "expectedResult": "All except company4",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "is_not",
+      "filterValue": "https://twitter.com/O_Malley's_Security",
+      "description": "Is not, underscore",
+      "expectedResult": "All except company5",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains",
+      "filterValue": "tecnologia",
+      "description": "Contains, international",
+      "expectedResult": "https://twitter.com/tecnologia_Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains",
+      "filterValue": "_malley",
+      "description": "Contains, underscore pattern",
+      "expectedResult": "https://twitter.com/O_Malley's_Security",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "begins_with",
+      "filterValue": "https://twitter.com/tecnologia",
+      "description": "Prefix, international",
+      "expectedResult": "https://twitter.com/tecnologia_Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "ends_with",
+      "filterValue": "_Ibérica",
+      "description": "Suffix, international",
+      "expectedResult": "https://twitter.com/tecnologia_Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_exact_word",
+      "filterValue": "tecnologia_Ibérica",
+      "description": "Contains exact word, international",
+      "expectedResult": "https://twitter.com/tecnologia_Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profiletwitter",
+      "filterType": "contains_at_least_one",
+      "filterValue": "tecnologia,Ibérica",
+      "description": "Contains at least one, international",
+      "expectedResult": "https://twitter.com/tecnologia_Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "Linkedin Profile": [
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is",
+      "filterValue": "https://linkedin.com/company/techsolutions",
+      "description": "Exact match, standard",
+      "expectedResult": "https://linkedin.com/company/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is",
+      "filterValue": "https://linkedin.com/company/innovate-gmbh",
+      "description": "Exact match, international",
+      "expectedResult": "https://linkedin.com/company/innovate-gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is",
+      "filterValue": "https://linkedin.com/company/under-score-analytics",
+      "description": "Exact match, special char",
+      "expectedResult": "https://linkedin.com/company/under-score-analytics",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is",
+      "filterValue": "https://linkedin.com/company/tecnologia-Ibérica",
+      "description": "Exact match, international",
+      "expectedResult": "https://linkedin.com/company/tecnologia-Ibérica",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is",
+      "filterValue": "https://linkedin.com/company/O'Malley's-Security",
+      "description": "Exact match, special char",
+      "expectedResult": "https://linkedin.com/company/O'Malley's-Security",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Company with empty linkedin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is",
+      "filterValue": "https://linkedin.com/company/@lbert@Google@",
+      "description": "Exact match, special char/injection",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is",
+      "filterValue": "https://linkedin.com/company/阿里巴巴",
+      "description": "Exact match, unicode",
+      "expectedResult": "https://linkedin.com/company/阿里巴巴",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is_not",
+      "filterValue": "https://linkedin.com/company/techsolutions",
+      "description": "Is not, standard",
+      "expectedResult": "All except company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is_not",
+      "filterValue": "https://linkedin.com/company/innovate-gmbh",
+      "description": "Is not, international",
+      "expectedResult": "All except company2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is_not",
+      "filterValue": "https://linkedin.com/company/under-score-analytics",
+      "description": "Is not, special char",
+      "expectedResult": "All except company3",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is_not",
+      "filterValue": "https://linkedin.com/company/@lbert@Google@",
+      "description": "Is not, special char/injection",
+      "expectedResult": "All except injection attempt",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is_not",
+      "filterValue": "https://linkedin.com/company/阿里巴巴",
+      "description": "Is not, unicode",
+      "expectedResult": "All except 阿里巴巴",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains",
+      "filterValue": "linkedin.com",
+      "description": "Contains, standard",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains",
+      "filterValue": "techsolutions",
+      "description": "Contains, case-insensitive",
+      "expectedResult": "https://linkedin.com/company/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains",
+      "filterValue": "innovate",
+      "description": "Contains, international",
+      "expectedResult": "https://linkedin.com/company/innovate-gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains",
+      "filterValue": "-",
+      "description": "Contains, hyphen",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains",
+      "filterValue": "阿里",
+      "description": "Contains, unicode",
+      "expectedResult": "https://linkedin.com/company/阿里巴巴",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "begins_with",
+      "filterValue": "https://",
+      "description": "Prefix, standard",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "begins_with",
+      "filterValue": "https://linkedin.com/company/tech",
+      "description": "Prefix, specific",
+      "expectedResult": "https://linkedin.com/company/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "ends_with",
+      "filterValue": "techsolutions",
+      "description": "Suffix, standard",
+      "expectedResult": "https://linkedin.com/company/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "ends_with",
+      "filterValue": "-gmbh",
+      "description": "Suffix, international",
+      "expectedResult": "https://linkedin.com/company/innovate-gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "ends_with",
+      "filterValue": "阿里巴巴",
+      "description": "Suffix, unicode",
+      "expectedResult": "https://linkedin.com/company/阿里巴巴",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "does_not_contain",
+      "filterValue": "facebook.com",
+      "description": "Does not contain, standard",
+      "expectedResult": "All profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "does_not_contain",
+      "filterValue": "techsolutions",
+      "description": "Does not contain, specific",
+      "expectedResult": "All except company1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty, standard",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Not empty, standard",
+      "expectedResult": "All non-empty profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_exact_word",
+      "filterValue": "techsolutions",
+      "description": "Contains exact word, standard",
+      "expectedResult": "https://linkedin.com/company/techsolutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_exact_word",
+      "filterValue": "innovate-gmbh",
+      "description": "Contains exact word, international",
+      "expectedResult": "https://linkedin.com/company/innovate-gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_exact_word",
+      "filterValue": "阿里巴巴",
+      "description": "Contains exact word, unicode",
+      "expectedResult": "https://linkedin.com/company/阿里巴巴",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions,linkedin",
+      "description": "Contains at least one, standard",
+      "expectedResult": "All linkedin profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_at_least_one",
+      "filterValue": "innovate,gmbh",
+      "description": "Contains at least one, international",
+      "expectedResult": "https://linkedin.com/company/innovate-gmbh",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_at_least_one",
+      "filterValue": "under,score",
+      "description": "Contains at least one, special char",
+      "expectedResult": "https://linkedin.com/company/under-score-analytics",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_at_least_one",
+      "filterValue": "linkedin,facebook",
+      "description": "Contains at least one, domain names",
+      "expectedResult": "All linkedin profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions, innovate, gmbh",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions,innovate,gmbh,under,score",
+      "description": "Contains at least one, five values no spaces",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_at_least_one",
+      "filterValue": "linkedin,facebook,twitter,github,xing,techsolutions,innovate,gmbh",
+      "description": "Contains at least one, eight values no spaces",
+      "expectedResult": "All linkedin profiles",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_at_least_one",
+      "filterValue": "techsolutions, innovate, gmbh, under, score, analytics, tecnologia, Ibérica, microsoft, corporation",
+      "description": "Contains at least one, ten values with spaces",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "profilelinkedin",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "City": [
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "San Francisco",
+      "description": "Is, standard",
+      "expectedResult": "San Francisco",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "München",
+      "description": "Is, international",
+      "expectedResult": "München",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "_City_With_Underscores",
+      "description": "Is, with underscores",
+      "expectedResult": "_City_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "M@drid",
+      "description": "Is, with special char",
+      "expectedResult": "M@drid",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "[Bracket] City",
+      "description": "Is, with brackets",
+      "expectedResult": "[Bracket] City",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "Dub'lin",
+      "description": "Is, with apostrophe",
+      "expectedResult": "Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "WASHINGTON D.C.",
+      "description": "Is, abbreviation",
+      "expectedResult": "WASHINGTON D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Is, empty",
+      "expectedResult": "Company with empty city",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is",
+      "filterValue": "北京市",
+      "description": "Is, unicode",
+      "expectedResult": "北京市",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "San Francisco",
+      "description": "Is not, standard",
+      "expectedResult": "All except San Francisco",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "München",
+      "description": "Is not, international",
+      "expectedResult": "All except München",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "_City_With_Underscores",
+      "description": "Is not, with underscores",
+      "expectedResult": "All except _City_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "M@drid",
+      "description": "Is not, with special char",
+      "expectedResult": "All except M@drid",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "Dub'lin",
+      "description": "Is not, with apostrophe",
+      "expectedResult": "All except Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "WASHINGTON D.C.",
+      "description": "Is not, abbreviation",
+      "expectedResult": "All except WASHINGTON D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "All non-empty cities",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_not",
+      "filterValue": "北京市",
+      "description": "Is not, unicode",
+      "expectedResult": "All except 北京市",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "Francisco",
+      "description": "Contains, standard",
+      "expectedResult": "San Francisco",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "München",
+      "description": "Contains, international",
+      "expectedResult": "München",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "@",
+      "description": "Contains, special char",
+      "expectedResult": "M@drid",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "D.C.",
+      "description": "Contains, with period",
+      "expectedResult": "WASHINGTON D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All cities",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "begins_with",
+      "filterValue": "San",
+      "description": "Prefix, standard",
+      "expectedResult": "San Francisco",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "begins_with",
+      "filterValue": "_City",
+      "description": "Prefix, with underscore",
+      "expectedResult": "_City_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All cities",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "ends_with",
+      "filterValue": "Francisco",
+      "description": "Suffix, standard",
+      "expectedResult": "San Francisco",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "ends_with",
+      "filterValue": "lin",
+      "description": "Suffix, standard",
+      "expectedResult": "Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "ends_with",
+      "filterValue": "D.C.",
+      "description": "Suffix, with abbreviation",
+      "expectedResult": "WASHINGTON D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All cities",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "does_not_contain",
+      "filterValue": "o",
+      "description": "Does not contain letter 'o'",
+      "expectedResult": "Cities without 'o'",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain underscore",
+      "expectedResult": "All except _City_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "does_not_contain",
+      "filterValue": "Francisco",
+      "description": "Does not contain, standard",
+      "expectedResult": "All except San Francisco",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Is not empty",
+      "expectedResult": "All non-empty cities",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_exact_word",
+      "filterValue": "San Francisco",
+      "description": "Contains exact word, standard",
+      "expectedResult": "San Francisco",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_exact_word",
+      "filterValue": "München",
+      "description": "Contains exact word, international",
+      "expectedResult": "München",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_exact_word",
+      "filterValue": "_City_With_Underscores",
+      "description": "Contains exact word, with underscores",
+      "expectedResult": "_City_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_exact_word",
+      "filterValue": "M@drid",
+      "description": "Contains exact word, with special char",
+      "expectedResult": "M@drid",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_exact_word",
+      "filterValue": "Dub'lin",
+      "description": "Contains exact word, with apostrophe",
+      "expectedResult": "Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_exact_word",
+      "filterValue": "WASHINGTON D.C.",
+      "description": "Contains exact word, abbreviation",
+      "expectedResult": "WASHINGTON D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_exact_word",
+      "filterValue": "北京市",
+      "description": "Contains exact word, unicode",
+      "expectedResult": "北京市",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San,Francisco",
+      "description": "Contains at least one, standard words",
+      "expectedResult": "San Francisco",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "München,lin",
+      "description": "Contains at least one, international",
+      "expectedResult": "München, Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "City,Underscores",
+      "description": "Contains at least one, special char",
+      "expectedResult": "_City_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "M@drid,Madrid",
+      "description": "Contains at least one, special char",
+      "expectedResult": "M@drid",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Dub,lin",
+      "description": "Contains at least one, apostrophe",
+      "expectedResult": "Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "WASHINGTON,D.C.",
+      "description": "Contains at least one, abbreviation",
+      "expectedResult": "WASHINGTON D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "北京,市",
+      "description": "Contains at least one, unicode",
+      "expectedResult": "北京市",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent,Another",
+      "description": "Contains at least one, no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San, Francisco, München, lin, Madrid",
+      "description": "Contains at least one, five city parts with spaces",
+      "expectedResult": "San Francisco, München, Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "SanFrancisco,München,Madrid,Dublin,WASHINGTON,drop,table,cities",
+      "description": "Contains at least one, eight city parts no spaces",
+      "expectedResult": "San Francisco, München, M@drid, Dub'lin, WASHINGTON D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "San, Francisco, München, lin, Madrid, Dublin, WASHINGTON, D.C., drop, table",
+      "description": "Contains at least one, ten city parts with spaces",
+      "expectedResult": "San Francisco, München, M@drid, Dub'lin, WASHINGTON D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "city",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "Website": [
+    {
+      "dbField": "website",
+      "filterType": "is",
+      "filterValue": "https://www.techsolutions.com",
+      "description": "Exact match, standard",
+      "expectedResult": "https://www.techsolutions.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is",
+      "filterValue": "https://www.innovate-gmbh.de",
+      "description": "Exact match, international",
+      "expectedResult": "https://www.innovate-gmbh.de",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is",
+      "filterValue": "https://www.under_score_analytics.com",
+      "description": "Exact match, underscore",
+      "expectedResult": "https://www.under_score_analytics.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is",
+      "filterValue": "https://www.tecnologia-Ibérica.es",
+      "description": "Exact match, special char",
+      "expectedResult": "https://www.tecnologia-Ibérica.es",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is",
+      "filterValue": "https://www.bracket-tech.com",
+      "description": "Exact match, brackets",
+      "expectedResult": "https://www.bracket-tech.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is",
+      "filterValue": "https://www.O'Malley's-Security.com",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "https://www.O'Malley's-Security.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is",
+      "filterValue": "https://www.alibaba.com",
+      "description": "Exact match, abbreviation",
+      "expectedResult": "https://www.alibaba.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Company with empty website",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is_not",
+      "filterValue": "https://www.techsolutions.com",
+      "description": "Is not, standard",
+      "expectedResult": "All except https://www.techsolutions.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is_not",
+      "filterValue": "https://www.innovate-gmbh.de",
+      "description": "Is not, international",
+      "expectedResult": "All except https://www.innovate-gmbh.de",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is_not",
+      "filterValue": "https://www.under_score_analytics.com",
+      "description": "Is not, underscore",
+      "expectedResult": "All except https://www.under_score_analytics.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is_not",
+      "filterValue": "https://www.tecnologia-Ibérica.es",
+      "description": "Is not, special char",
+      "expectedResult": "All except https://www.tecnologia-Ibérica.es",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is_not",
+      "filterValue": "https://www.bracket-tech.com",
+      "description": "Is not, brackets",
+      "expectedResult": "All except https://www.bracket-tech.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is_not",
+      "filterValue": "https://www.omalley-security.com",
+      "description": "Is not, apostrophe",
+      "expectedResult": "All except https://www.omalley-security.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is_not",
+      "filterValue": "https://www.alibaba.com",
+      "description": "Is not, abbreviation",
+      "expectedResult": "All except https://www.alibaba.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains",
+      "filterValue": "https",
+      "description": "Contains, standard",
+      "expectedResult": "https://www.techsolutions.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains",
+      "filterValue": "https",
+      "description": "Contains, international",
+      "expectedResult": "https://www.innovate-gmbh.de",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "https://www.under_score_analytics.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains",
+      "filterValue": "@",
+      "description": "Contains, special char",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "begins_with",
+      "filterValue": "http",
+      "description": "Prefix, standard",
+      "expectedResult": "https://www.techsolutions.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "begins_with",
+      "filterValue": "_",
+      "description": "Prefix, with underscore",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "ends_with",
+      "filterValue": ".com",
+      "description": "Suffix, standard",
+      "expectedResult": "https://www.techsolutions.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "ends_with",
+      "filterValue": "D.C.",
+      "description": "Suffix, with abbreviation",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "does_not_contain",
+      "filterValue": "https",
+      "description": "Does not contain, standard",
+      "expectedResult": "All except https://www.techsolutions.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain underscore",
+      "expectedResult": "All except underscore values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Is not empty",
+      "expectedResult": "All non-empty values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_exact_word",
+      "filterValue": "https://www.techsolutions.com",
+      "description": "Contains exact word, standard",
+      "expectedResult": "https://www.techsolutions.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_exact_word",
+      "filterValue": "https://www.innovate-gmbh.de",
+      "description": "Contains exact word, international",
+      "expectedResult": "https://www.innovate-gmbh.de",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_exact_word",
+      "filterValue": "https://www.under_score_analytics.com",
+      "description": "Contains exact word, with underscores",
+      "expectedResult": "https://www.under_score_analytics.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_exact_word",
+      "filterValue": "https://www.tecnologia-Ibérica.es",
+      "description": "Contains exact word, with special char",
+      "expectedResult": "https://www.tecnologia-Ibérica.es",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_exact_word",
+      "filterValue": "https://www.bracket-tech.com",
+      "description": "Contains exact word, with brackets",
+      "expectedResult": "https://www.bracket-tech.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_exact_word",
+      "filterValue": "https://www.O'Malley's-Security.com",
+      "description": "Contains exact word, with apostrophe",
+      "expectedResult": "https://www.O'Malley's-Security.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_exact_word",
+      "filterValue": "https://www.alibaba.com",
+      "description": "Contains exact word, abbreviation",
+      "expectedResult": "https://www.alibaba.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_at_least_one",
+      "filterValue": "https,s.com",
+      "description": "Contains at least one, standard words",
+      "expectedResult": "https://www.techsolutions.com",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_at_least_one",
+      "filterValue": "https, s.com, https",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_at_least_one",
+      "filterValue": "https,s.com,https,https,https",
+      "description": "Contains at least one, five values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "website",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "Full Address": [
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "123 Market Street, Suite 400",
+      "description": "Exact match, standard",
+      "expectedResult": "123 Market Street, Suite 400",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "Müllerstraße 15",
+      "description": "Exact match, international",
+      "expectedResult": "Müllerstraße 15",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "_123_Main_St",
+      "description": "Exact match, underscore",
+      "expectedResult": "_123_Main_St",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "123 (Main) Street [Suite 100]",
+      "description": "Exact match, special char",
+      "expectedResult": "123 (Main) Street [Suite 100]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "Calle José Abascal, 56",
+      "description": "Exact match, brackets",
+      "expectedResult": "Calle José Abascal, 56",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "O'Connell Street Upper",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "O'Connell Street Upper",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "1600 Pennsylvania Avenue NW _Washington D.C.",
+      "description": "Exact match, abbreviation",
+      "expectedResult": "1600 Pennsylvania Avenue NW _Washington D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is",
+      "filterValue": "北京市东城区长安街",
+      "description": "Exact match, unicode",
+      "expectedResult": "北京市东城区长安街",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "123 Market Street, Suite 400",
+      "description": "Is not, standard",
+      "expectedResult": "All except 123 Market Street, Suite 400",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "Müllerstraße 15",
+      "description": "Is not, international",
+      "expectedResult": "All except Müllerstraße 15",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "_123_Main_St",
+      "description": "Is not, underscore",
+      "expectedResult": "All except _123_Main_St",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "123 (Main) Street [Suite 100]",
+      "description": "Is not, special char",
+      "expectedResult": "All except 123 (Main) Street [Suite 100]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "Calle José Abascal, 56",
+      "description": "Is not, brackets",
+      "expectedResult": "All except Calle José Abascal, 56",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "O'Connell Street Upper",
+      "description": "Is not, apostrophe",
+      "expectedResult": "All except O'Connell Street Upper",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_not",
+      "filterValue": "1600 Pennsylvania Avenue NW",
+      "description": "Is not, abbreviation",
+      "expectedResult": "All except 1600 Pennsylvania Avenue NW",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "123",
+      "description": "Contains, standard",
+      "expectedResult": "123 Market Street, Suite 400",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "Mülle",
+      "description": "Contains, international",
+      "expectedResult": "Müllerstraße 15",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "_123_Main_St",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "@",
+      "description": "Contains, special char",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "begins_with",
+      "filterValue": "123",
+      "description": "Prefix, standard",
+      "expectedResult": "123 Market Street, Suite 400",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "begins_with",
+      "filterValue": "_",
+      "description": "Prefix, with underscore",
+      "expectedResult": "_123_Main_St",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "ends_with",
+      "filterValue": "400",
+      "description": "Suffix, standard",
+      "expectedResult": "123 Market Street, Suite 400",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "ends_with",
+      "filterValue": "D.C.",
+      "description": "Suffix, with abbreviation",
+      "expectedResult": "1600 Pennsylvania Avenue NW",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "does_not_contain",
+      "filterValue": "123",
+      "description": "Does not contain, standard",
+      "expectedResult": "All except 123 Market Street, Suite 400",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain underscore",
+      "expectedResult": "All except underscore values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Is not empty",
+      "expectedResult": "All non-empty values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_exact_word",
+      "filterValue": "123 Market Street, Suite 400",
+      "description": "Contains exact word, standard",
+      "expectedResult": "123 Market Street, Suite 400",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_exact_word",
+      "filterValue": "Müllerstraße 15",
+      "description": "Contains exact word, international",
+      "expectedResult": "Müllerstraße 15",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_exact_word",
+      "filterValue": "_123_Main_St",
+      "description": "Contains exact word, with underscores",
+      "expectedResult": "_123_Main_St",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_exact_word",
+      "filterValue": "123 (Main) Street [Suite 100]",
+      "description": "Contains exact word, with special char",
+      "expectedResult": "123 (Main) Street [Suite 100]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_exact_word",
+      "filterValue": "Calle José Abascal, 56",
+      "description": "Contains exact word, with brackets",
+      "expectedResult": "Calle José Abascal, 56",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_exact_word",
+      "filterValue": "O'Connell Street Upper",
+      "description": "Contains exact word, with apostrophe",
+      "expectedResult": "O'Connell Street Upper",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_exact_word",
+      "filterValue": "1600 Pennsylvania Avenue NW",
+      "description": "Contains exact word, abbreviation",
+      "expectedResult": "1600 Pennsylvania Avenue NW",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": "123,400",
+      "description": "Contains at least one, standard words",
+      "expectedResult": "123 Market Street, Suite 400",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": "123, 400, Mülle",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": "123,400,Mülle,_123_,123 (",
+      "description": "Contains at least one, five values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "address",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "Locality": [
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "Financial District",
+      "description": "Exact match, standard",
+      "expectedResult": "Financial District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "Stadtzentrum",
+      "description": "Exact match, international",
+      "expectedResult": "Stadtzentrum",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "Locality_With_Underscores",
+      "description": "Exact match, underscore",
+      "expectedResult": "Locality_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "[Downtown] District",
+      "description": "Exact match, special char",
+      "expectedResult": "[Downtown] District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "Distrito de Chamberí",
+      "description": "Exact match, brackets",
+      "expectedResult": "Distrito de Chamberí",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "City Centre North",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "City Centre North",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "Federal Triangle",
+      "description": "Exact match, abbreviation",
+      "expectedResult": "Federal Triangle",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "_P@lo Alto",
+      "description": "Exact match, abbreviation",
+      "expectedResult": "_P@lo Alto",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is",
+      "filterValue": "东城区",
+      "description": "Exact match, unicode",
+      "expectedResult": "东城区",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "Financial District",
+      "description": "Is not, standard",
+      "expectedResult": "All except Financial District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "Stadtzentrum",
+      "description": "Is not, international",
+      "expectedResult": "All except Stadtzentrum",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "Locality_With_Underscores",
+      "description": "Is not, underscore",
+      "expectedResult": "All except Locality_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "[Downtown] District",
+      "description": "Is not, special char",
+      "expectedResult": "All except [Downtown] District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "Distrito de Chamberí",
+      "description": "Is not, brackets",
+      "expectedResult": "All except Distrito de Chamberí",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "_P@lo Alto",
+      "description": "Is not, abbreviation",
+      "expectedResult": "All except _P@lo Alto",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "City Centre North",
+      "description": "Is not, apostrophe",
+      "expectedResult": "All except City Centre North",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_not",
+      "filterValue": "Federal Triangle",
+      "description": "Is not, abbreviation",
+      "expectedResult": "All except Federal Triangle",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "Financial",
+      "description": "Contains, standard",
+      "expectedResult": "Financial District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "Stadt",
+      "description": "Contains, international",
+      "expectedResult": "Stadtzentrum",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "Locality_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "@",
+      "description": "Contains, special char",
+      "expectedResult": "[Downtown] District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "begins_with",
+      "filterValue": "Financial",
+      "description": "Prefix, standard",
+      "expectedResult": "Financial District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "begins_with",
+      "filterValue": "_",
+      "description": "Prefix, with underscore",
+      "expectedResult": "Locality_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "ends_with",
+      "filterValue": "District",
+      "description": "Suffix, standard",
+      "expectedResult": "Financial District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "ends_with",
+      "filterValue": "D.C.",
+      "description": "Suffix, with abbreviation",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "does_not_contain",
+      "filterValue": "Financial",
+      "description": "Does not contain, standard",
+      "expectedResult": "All except Financial District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain underscore",
+      "expectedResult": "All except underscore values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "expectedResult": "Tech Solutions Inc.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Is not empty",
+      "expectedResult": "All non-empty values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_exact_word",
+      "filterValue": "Financial District",
+      "description": "Contains exact word, standard",
+      "expectedResult": "Financial District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_exact_word",
+      "filterValue": "Stadtzentrum",
+      "description": "Contains exact word, international",
+      "expectedResult": "Stadtzentrum",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_exact_word",
+      "filterValue": "Locality_With_Underscores",
+      "description": "Contains exact word, with underscores",
+      "expectedResult": "Locality_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_exact_word",
+      "filterValue": "[Downtown] District",
+      "description": "Contains exact word, with special char",
+      "expectedResult": "[Downtown] District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_exact_word",
+      "filterValue": "Distrito de Chamberí",
+      "description": "Contains exact word, with brackets",
+      "expectedResult": "Distrito de Chamberí",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_exact_word",
+      "filterValue": "City Centre North",
+      "description": "Contains exact word, with apostrophe",
+      "expectedResult": "City Centre North",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_exact_word",
+      "filterValue": "Federal Triangle",
+      "description": "Contains exact word, abbreviation",
+      "expectedResult": "Federal Triangle",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Financial,District",
+      "description": "Contains at least one, standard words",
+      "expectedResult": "Financial District",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Financial, District, Stadt",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Financial,District,Stadt,Local,[Down",
+      "description": "Contains at least one, five values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "locality",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "State": [
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "California",
+      "description": "Exact match, standard",
+      "expectedResult": "California",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "Bayern",
+      "description": "Exact match, international",
+      "expectedResult": "Bayern",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "_State_With_Underscores",
+      "description": "Exact match, underscore",
+      "expectedResult": "_State_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "Ćomunid@d de M@drid",
+      "description": "Exact match, special char",
+      "expectedResult": "Ćomunid@d de M@drid",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "(California) State",
+      "description": "Exact match, brackets",
+      "expectedResult": "(California) State",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "Dub'lin",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "Washington + D.C.",
+      "description": "Exact match, abbreviation",
+      "expectedResult": "Washington + D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is",
+      "filterValue": "北京市",
+      "description": "Exact match, unicode",
+      "expectedResult": "北京市",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "California",
+      "description": "Is not, standard",
+      "expectedResult": "All except California",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "Bayern",
+      "description": "Is not, international",
+      "expectedResult": "All except Bayern",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "_State_With_Underscores",
+      "description": "Is not, underscore",
+      "expectedResult": "All except _State_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "Ćomunid@d de M@drid",
+      "description": "Is not, special char",
+      "expectedResult": "All except Ćomunid@d de M@drid",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "(California) State",
+      "description": "Is not, brackets",
+      "expectedResult": "All except (California) State",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "Dub'lin",
+      "description": "Is not, apostrophe",
+      "expectedResult": "All except Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_not",
+      "filterValue": "Washington + D.C.",
+      "description": "Is not, abbreviation",
+      "expectedResult": "All except Washington + D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains",
+      "filterValue": "Calif",
+      "description": "Contains, standard",
+      "expectedResult": "California",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains",
+      "filterValue": "Bayer",
+      "description": "Contains, international",
+      "expectedResult": "Bayern",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "_State_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains",
+      "filterValue": "@",
+      "description": "Contains, special char",
+      "expectedResult": "Ćomunid@d de M@drid",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "begins_with",
+      "filterValue": "Cali",
+      "description": "Prefix, standard",
+      "expectedResult": "California",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "begins_with",
+      "filterValue": "_",
+      "description": "Prefix, with underscore",
+      "expectedResult": "_State_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "ends_with",
+      "filterValue": "rnia",
+      "description": "Suffix, standard",
+      "expectedResult": "California",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "ends_with",
+      "filterValue": "D.C.",
+      "description": "Suffix, with abbreviation",
+      "expectedResult": "Washington + D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "does_not_contain",
+      "filterValue": "Calif",
+      "description": "Does not contain, standard",
+      "expectedResult": "All except California",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain underscore",
+      "expectedResult": "All except underscore values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Is not empty",
+      "expectedResult": "All non-empty values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_exact_word",
+      "filterValue": "California",
+      "description": "Contains exact word, standard",
+      "expectedResult": "California",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_exact_word",
+      "filterValue": "Bayern",
+      "description": "Contains exact word, international",
+      "expectedResult": "Bayern",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_exact_word",
+      "filterValue": "_State_With_Underscores",
+      "description": "Contains exact word, with underscores",
+      "expectedResult": "_State_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_exact_word",
+      "filterValue": "Ćomunid@d de M@drid",
+      "description": "Contains exact word, with special char",
+      "expectedResult": "Ćomunid@d de M@drid",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_exact_word",
+      "filterValue": "(California) State",
+      "description": "Contains exact word, with brackets",
+      "expectedResult": "(California) State",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_exact_word",
+      "filterValue": "Dub'lin",
+      "description": "Contains exact word, with apostrophe",
+      "expectedResult": "Dub'lin",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_exact_word",
+      "filterValue": "Washington + D.C.",
+      "description": "Contains exact word, abbreviation",
+      "expectedResult": "Washington + D.C.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Calif,ornia",
+      "description": "Contains at least one, standard words",
+      "expectedResult": "California",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Calif, ornia, Bayer",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Calif,ornia,Bayer,_Stat,Ćomun",
+      "description": "Contains at least one, five values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "state",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "Country": [
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "United States",
+      "description": "Exact match, standard",
+      "expectedResult": "United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "United St@tes",
+      "description": "Exact match, standard",
+      "expectedResult": "United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "united states",
+      "description": "Exact match, standard",
+      "expectedResult": "United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "Deutschland",
+      "description": "Exact match, international",
+      "expectedResult": "Deutschland",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "Country_With_Underscores",
+      "description": "Exact match, underscore",
+      "expectedResult": "Country_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "United [States]",
+      "description": "Exact match, special char",
+      "expectedResult": "United [States]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "España",
+      "description": "Exact match, brackets",
+      "expectedResult": "España",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "Ireland",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "Ireland",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Company with empty country",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is",
+      "filterValue": "中国",
+      "description": "Exact match, unicode",
+      "expectedResult": "中国",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "United States",
+      "description": "Is not, standard",
+      "expectedResult": "All except United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "Deutschland",
+      "description": "Is not, international",
+      "expectedResult": "All except Deutschland",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "Country_With_Underscores",
+      "description": "Is not, underscore",
+      "expectedResult": "All except Country_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "United [States]",
+      "description": "Is not, special char",
+      "expectedResult": "All except United [States]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "united states",
+      "description": "Is not, special char",
+      "expectedResult": "All except United [States]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "España",
+      "description": "Is not, brackets",
+      "expectedResult": "All except España",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "Ireland",
+      "description": "Is not, apostrophe",
+      "expectedResult": "All except Ireland",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_not",
+      "filterValue": "",
+      "description": "Is not, empty",
+      "expectedResult": "All non-empty values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "United",
+      "description": "Contains, standard",
+      "expectedResult": "United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "Deuts",
+      "description": "Contains, international",
+      "expectedResult": "Deutschland",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "Country_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "@",
+      "description": "Contains, special char",
+      "expectedResult": "United [States]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "begins_with",
+      "filterValue": "United",
+      "description": "Prefix, standard",
+      "expectedResult": "United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "begins_with",
+      "filterValue": "_",
+      "description": "Prefix, with underscore",
+      "expectedResult": "Country_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "ends_with",
+      "filterValue": "States",
+      "description": "Suffix, standard",
+      "expectedResult": "United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "does_not_contain",
+      "filterValue": "United",
+      "description": "Does not contain, standard",
+      "expectedResult": "All except United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain underscore",
+      "expectedResult": "All except underscore values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Is not empty",
+      "expectedResult": "All non-empty values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_exact_word",
+      "filterValue": "United States",
+      "description": "Contains exact word, standard",
+      "expectedResult": "United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_exact_word",
+      "filterValue": "Deutschland",
+      "description": "Contains exact word, international",
+      "expectedResult": "Deutschland",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_exact_word",
+      "filterValue": "Country_With_Underscores",
+      "description": "Contains exact word, with underscores",
+      "expectedResult": "Country_With_Underscores",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_exact_word",
+      "filterValue": "United [States]",
+      "description": "Contains exact word, with special char",
+      "expectedResult": "United [States]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_exact_word",
+      "filterValue": "España",
+      "description": "Contains exact word, with brackets",
+      "expectedResult": "España",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_exact_word",
+      "filterValue": "Ireland",
+      "description": "Contains exact word, with apostrophe",
+      "expectedResult": "Ireland",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "United,States",
+      "description": "Contains at least one, standard words",
+      "expectedResult": "United States",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "United, States, Deuts",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "United,States,Deuts,Count,Unite",
+      "description": "Contains at least one, five values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "country",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "Postal Code": [
+    {
+      "dbField": "postal_code",
+      "filterType": "is",
+      "filterValue": "94105",
+      "description": "Exact match, standard",
+      "expectedResult": "94105",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is",
+      "filterValue": "80331",
+      "description": "Exact match, international",
+      "expectedResult": "80331",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is",
+      "filterValue": "SW1A_0AA",
+      "description": "Exact match, underscore",
+      "expectedResult": "SW1A_0AA",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is",
+      "filterValue": "[94105]",
+      "description": "Exact match, special char",
+      "expectedResult": "[94105]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is",
+      "filterValue": "28003",
+      "description": "Exact match, brackets",
+      "expectedResult": "28003",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is",
+      "filterValue": "D01' F5P2",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "D01' F5P2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is",
+      "filterValue": "20500",
+      "description": "Exact match, abbreviation",
+      "expectedResult": "20500",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is",
+      "filterValue": "100010",
+      "description": "Exact match, unicode",
+      "expectedResult": "100010",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is_not",
+      "filterValue": "94105",
+      "description": "Is not, standard",
+      "expectedResult": "All except 94105",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is_not",
+      "filterValue": "80331",
+      "description": "Is not, international",
+      "expectedResult": "All except 80331",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is_not",
+      "filterValue": "SW1A_0AA",
+      "description": "Is not, underscore",
+      "expectedResult": "All except SW1A_0AA",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is_not",
+      "filterValue": "[94105]",
+      "description": "Is not, special char",
+      "expectedResult": "All except [94105]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is_not",
+      "filterValue": "28003",
+      "description": "Is not, brackets",
+      "expectedResult": "All except 28003",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is_not",
+      "filterValue": "D01' F5P2",
+      "description": "Is not, apostrophe",
+      "expectedResult": "All except D01' F5P2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is_not",
+      "filterValue": "20500",
+      "description": "Is not, abbreviation",
+      "expectedResult": "All except 20500",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains",
+      "filterValue": "94105",
+      "description": "Contains, standard",
+      "expectedResult": "94105",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains",
+      "filterValue": "80331",
+      "description": "Contains, international",
+      "expectedResult": "80331",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "SW1A_0AA",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains",
+      "filterValue": "@",
+      "description": "Contains, special char",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "begins_with",
+      "filterValue": "9410",
+      "description": "Prefix, standard",
+      "expectedResult": "94105",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "begins_with",
+      "filterValue": "_",
+      "description": "Prefix, with underscore",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "ends_with",
+      "filterValue": "4105",
+      "description": "Suffix, standard",
+      "expectedResult": "94105",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "ends_with",
+      "filterValue": "D.C.",
+      "description": "Suffix, with abbreviation",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "does_not_contain",
+      "filterValue": "94105",
+      "description": "Does not contain, standard",
+      "expectedResult": "All except 94105",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain underscore",
+      "expectedResult": "All except underscore values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Is not empty",
+      "expectedResult": "All non-empty values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_exact_word",
+      "filterValue": "94105",
+      "description": "Contains exact word, standard",
+      "expectedResult": "94105",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_exact_word",
+      "filterValue": "80331",
+      "description": "Contains exact word, international",
+      "expectedResult": "80331",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_exact_word",
+      "filterValue": "SW1A_0AA",
+      "description": "Contains exact word, with underscores",
+      "expectedResult": "SW1A_0AA",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_exact_word",
+      "filterValue": "[94105]",
+      "description": "Contains exact word, with special char",
+      "expectedResult": "[94105]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_exact_word",
+      "filterValue": "28003",
+      "description": "Contains exact word, with brackets",
+      "expectedResult": "28003",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_exact_word",
+      "filterValue": "D01' F5P2",
+      "description": "Contains exact word, with apostrophe",
+      "expectedResult": "D01' F5P2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_exact_word",
+      "filterValue": "20500",
+      "description": "Contains exact word, abbreviation",
+      "expectedResult": "20500",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_at_least_one",
+      "filterValue": "94105,94105",
+      "description": "Contains at least one, standard words",
+      "expectedResult": "94105",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_at_least_one",
+      "filterValue": "94105, 94105, 80331",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_at_least_one",
+      "filterValue": "94105,94105,80331,SW1A_,[9410",
+      "description": "Contains at least one, five values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "postal_code",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ],
+  "Parent Company": [
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is",
+      "filterValue": "Bracket [Technologies] (Inc.)",
+      "description": "Exact match, standard",
+      "expectedResult": "Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is",
+      "filterValue": "Tecnología Ibérica S.L.",
+      "description": "Exact match, international",
+      "expectedResult": "Tecnología Ibérica S.L.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is",
+      "filterValue": "O'Malley's Security Solutions",
+      "description": "Exact match, underscore",
+      "expectedResult": "O'Malley's Security Solutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is",
+      "filterValue": "Minimal Data Corp",
+      "description": "Exact match, special char",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is",
+      "filterValue": "Sigma Technologies Inc. Σ",
+      "description": "Exact match, brackets",
+      "expectedResult": "Sigma Technologies Inc. Σ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is",
+      "filterValue": "Top Secret Agency + Division",
+      "description": "Exact match, apostrophe",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is",
+      "filterValue": "",
+      "description": "Exact match, empty",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is_not",
+      "filterValue": "Bracket [Technologies] (Inc.)",
+      "description": "Is not, standard",
+      "expectedResult": "All except Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is_not",
+      "filterValue": "Tecnología Ibérica S.L.",
+      "description": "Is not, international",
+      "expectedResult": "All except Tecnología Ibérica S.L.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is_not",
+      "filterValue": "O'Malley's Security Solutions",
+      "description": "Is not, underscore",
+      "expectedResult": "All except O'Malley's Security Solutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is_not",
+      "filterValue": "Minimal Data Corp",
+      "description": "Is not, special char",
+      "expectedResult": "All except Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is_not",
+      "filterValue": "Sigma Technologies Inc. Σ",
+      "description": "Is not, brackets",
+      "expectedResult": "All except Sigma Technologies Inc. Σ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is_not",
+      "filterValue": "Top Secret Agency + Division",
+      "description": "Is not, apostrophe",
+      "expectedResult": "All parent companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains",
+      "filterValue": "Bracket",
+      "description": "Contains, standard",
+      "expectedResult": "Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains",
+      "filterValue": "Tecno",
+      "description": "Contains, international",
+      "expectedResult": "Tecnología Ibérica S.L.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains",
+      "filterValue": "_",
+      "description": "Contains, underscore",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains",
+      "filterValue": "@",
+      "description": "Contains, special char",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains",
+      "filterValue": "",
+      "description": "Contains, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "begins_with",
+      "filterValue": "Bracket",
+      "description": "Prefix, standard",
+      "expectedResult": "Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "begins_with",
+      "filterValue": "_",
+      "description": "Prefix, with underscore",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "description": "Prefix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "ends_with",
+      "filterValue": "(Inc.)",
+      "description": "Suffix, standard",
+      "expectedResult": "Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "description": "Suffix, empty",
+      "expectedResult": "All values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "does_not_contain",
+      "filterValue": "Bracket",
+      "description": "Does not contain, standard",
+      "expectedResult": "All except Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "description": "Does not contain underscore",
+      "expectedResult": "All except underscore values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Is empty",
+      "expectedResult": "Company with empty parent company",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Is not empty",
+      "expectedResult": "All non-empty values",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "Bracket [Technologies] (Inc.)",
+      "description": "Contains exact word, standard",
+      "expectedResult": "Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "Tecnología Ibérica S.L.",
+      "description": "Contains exact word, international",
+      "expectedResult": "Tecnología Ibérica S.L.",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "O'Malley's Security Solutions",
+      "description": "Contains exact word, with underscores",
+      "expectedResult": "O'Malley's Security Solutions",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "Minimal Data Corp",
+      "description": "Contains exact word, with special char",
+      "expectedResult": "Minimal Data Corp",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "Sigma Technologies Inc. Σ",
+      "description": "Contains exact word, with brackets",
+      "expectedResult": "Sigma Technologies Inc. Σ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_exact_word",
+      "filterValue": "Top Secret Agency + Division",
+      "description": "Contains exact word, with apostrophe",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Bracket,(Inc.)",
+      "description": "Contains at least one, standard words",
+      "expectedResult": "Bracket [Technologies] (Inc.)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Bracket, (Inc.), Tecno",
+      "description": "Contains at least one, three values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Bracket,(Inc.),Tecno,O'Mal,Minim",
+      "description": "Contains at least one, five values",
+      "expectedResult": "Multiple companies",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    },
+    {
+      "dbField": "parentcompanyname",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1, NonExistent2, NonExistent3, NonExistent4, NonExistent5",
+      "description": "Contains at least one, five values no matches",
+      "expectedResult": "Empty",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST"
+    }
+  ]
+}

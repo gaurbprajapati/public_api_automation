@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "allUsers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "id": {
+                "type": "number"
+              },
+              "photo": {},
+              "userstatus": {
+                "type": "number"
+              },
+              "checked": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name",
+              "slug",
+              "email",
+              "id",
+              "photo",
+              "userstatus",
+              "checked"
+            ]
+          }
+        },
+        "allTeams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "isTeam": {
+                "type": "boolean"
+              },
+              "checked": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name",
+              "slug",
+              "id",
+              "isTeam",
+              "checked"
+            ]
+          }
+        }
+      },
+      "required": [
+        "allUsers",
+        "allTeams"
+      ]
+    },
+    "user": {
+      "type": "string"
+    },
+    "notifications": {
+      "type": "array",
+      "items": {}
+    },
+    "status": {
+      "type": "string"
+    },
+    "application_version": {
+      "type": "string"
+    },
+    "recaptcha_site_key": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "number"
+    },
+    "end_time": {
+      "type": "number"
+    },
+    "time_to_output": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "user",
+    "notifications",
+    "status",
+    "application_version",
+    "recaptcha_site_key",
+    "start_time",
+    "end_time",
+    "time_to_output"
+  ]
+}

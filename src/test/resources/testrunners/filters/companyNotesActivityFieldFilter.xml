@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Company Notes Activity Field Filter Search" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    <test name="Notes Date Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.NotesActivityFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="notesDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Notes Multiselect Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.NotesActivityFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="notesMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Notes Note Exists (checkbox) Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.NotesActivityFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="notesNoteExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

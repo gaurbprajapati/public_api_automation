@@ -1,0 +1,4809 @@
+{
+  "Meeting Added on": [
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "all_time",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added all time",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_001"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added today",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_002"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added yesterday",
+      "expectedResult": "Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_003"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added this week",
+      "expectedResult": "Contact11,Contact10,Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_004"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added last week",
+      "expectedResult": "Contact12,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_005"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added this month",
+      "expectedResult": "Contact1,Contact2,Contact11,Contact12,Contact10,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_006"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added last month",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_007"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added this quarter",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact11,Contact12,Contact10,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_008"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added last quarter",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_009"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added this year",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_010"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added last year",
+      "expectedResult": "Contact7,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_011"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added in last 30 days",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact11,Contact12,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_012"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added in last 60 days",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact10,Contact11,Contact12,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_013"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added in last 90 days",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_014"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings added in last 365 days",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_015"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added on specific date",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_016"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added on 23-03-10",
+      "expectedResult": "Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_017"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added on 24-06-06",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_018"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "25-02-14",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added on 25-02-14",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_019"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "20-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added on 20-01-01 (non-existent date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_020"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added before 22-06-15",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_021"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "23-01-02",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added before specific date",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_022"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added before 24-06-06",
+      "expectedResult": "Contact8,Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_023"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "25-02-14",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added before 25-02-14",
+      "expectedResult": "Contact8,Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_024"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added after 22-06-15",
+      "expectedResult": "Contact9,Contact7,Contact5,Contact6,Contact3,Contact4,Contact1,Contact2,Contact11,Contact10,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_025"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "23-01-02",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added after specific date",
+      "expectedResult": "Contact9,Contact7,Contact5,Contact6,Contact3,Contact4,Contact1,Contact2,Contact11,Contact10,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_026"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added after 24-06-06",
+      "expectedResult": "Contact7,Contact5,Contact6,Contact3,Contact4,Contact1,Contact2,Contact11,Contact10,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_027"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "25-02-14",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added after 25-02-14",
+      "expectedResult": "Contact7,Contact5,Contact6,Contact3,Contact4,Contact1,Contact2,Contact11,Contact10,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_028"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "30-12-31",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added after 30-12-31 (future date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_029"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "22-01-01,23-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added between specific dates",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_030"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "22-06-14,25-02-25",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added between 22-06-14 and 25-02-25",
+      "expectedResult": "Contact8,Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_031"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "23-03-10,24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added between 23-03-10 and 24-06-06",
+      "expectedResult": "Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_032"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "22-06-16,23-03-09",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings added between 22-06-16 and 23-03-09 (range between static dates with no data)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_033"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings that have any creation date",
+      "expectedResult": "14",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_034"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings with empty creation date",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_035"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added more than 30 days ago",
+      "expectedResult": "Contact5,Contact6,Contact7,Contact8,Contact9,Contact3,Contact4,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_036"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added more than 1 day ago",
+      "expectedResult": "Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact3,Contact4,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_037"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added more than 0 days ago",
+      "expectedResult": "Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact3,Contact4,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_038"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added more than 365 days ago",
+      "expectedResult": "Contact7,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_039"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "10000",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added more than 10000 days ago (very old date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_040"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added less than 30 days ago",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact11,Contact12,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_041"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added less than 1 day ago",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_042"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added less than 0 days ago",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_043"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added less than 365 days ago",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_044"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "-1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings added less than -1 days ago (invalid filter)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_ON_045"
+    }
+  ],
+  "Meeting Updated on": [
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "all_time",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated all time",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_001"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated today",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_002"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated yesterday",
+      "expectedResult": "Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_003"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated this week",
+      "expectedResult": "Contact1,Contact10,Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_004"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated last week",
+      "expectedResult": "Contact12,,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_005"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated this month",
+      "expectedResult": "Contact1,Contact2,Contact11,Contact12,Contact10,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_006"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated last month",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_007"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated this quarter",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_008"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated last quarter",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_009"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated this year",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_010"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated last year",
+      "expectedResult": "Contact7,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_011"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated in last 30 days",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact11,Contact12,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_012"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated in last 60 days",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact10,Contact11,Contact12,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_013"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated in last 90 days",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_014"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings updated in last 365 days",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_015"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated on specific date",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_016"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated on 23-03-10",
+      "expectedResult": "Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_017"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated on 24-06-06",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_018"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "25-02-14",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated on 25-02-14",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_019"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "20-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated on 20-01-01 (non-existent date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_020"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated before 22-06-15",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_021"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "23-01-02",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated before specific date",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_022"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated before 24-06-06",
+      "expectedResult": "Contact8,Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_023"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "25-02-14",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated before 25-02-14",
+      "expectedResult": "Contact8,Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_024"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated after 22-06-15",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_025"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "23-01-02",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated after specific date",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_026"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated after 24-06-06",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_027"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "25-02-14",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated after 25-02-14",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_028"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "30-12-31",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated after 30-12-31 (future date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_029"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "22-01-01,23-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated between specific dates",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_030"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "22-06-14,25-02-25",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated between 22-06-14 and 25-02-25",
+      "expectedResult": "Contact8,Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_031"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "23-03-10,24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated between 23-03-10 and 24-06-06",
+      "expectedResult": "Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_032"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "22-06-16,23-03-09",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings updated between 22-06-16 and 23-03-09 (range between static dates with no data)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_033"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings that have any update date",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_034"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings with empty update date",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_035"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated more than 30 days ago",
+      "expectedResult": "Contact5,Contact6,Contact7,Contact8,Contact9,Contact3,Contact4,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_036"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated more than 1 day ago",
+      "expectedResult": "Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact3,Contact4,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_037"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated more than 0 days ago",
+      "expectedResult": "Contact2,Contact5,Contact6,Contact7,Contact8,Contact9,Contact3,Contact4,Contact10,Contact11,Contact12,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_038"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated more than 365 days ago",
+      "expectedResult": "Contact7,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_039"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "10000",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated more than 10000 days ago (very old date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_040"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated less than 30 days ago",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact11,Contact12,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_041"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated less than 1 day ago",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_042"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated less than 0 days ago",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_043"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated less than 365 days ago",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_044"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "-1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings updated less than -1 days ago (invalid filter)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_ON_045"
+    }
+  ],
+  "Meeting Scheduled on": [
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "all_time",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled all past time",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact4,Contact6,Contact7,Contact8,Contact5,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_001"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled today",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_002"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled yesterday",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_003"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled this week",
+      "expectedResult": "Contact1,Contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_004"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled last week",
+      "expectedResult": "Contact4,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_005"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled this month",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_006"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled last month",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_007"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled this quarter",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_008"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled last quarter",
+      "expectedResult": "Contact7,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_009"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled this year",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_010"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled last year",
+      "expectedResult": "Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_011"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled in last 30 days",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact4,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_012"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled in last 60 days",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact4,Contact6,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_013"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled in last 90 days",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact4,Contact6,Contact7,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_014"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "filterValue_TYPE": "DATE_IS",
+      "description": "Meetings scheduled in last 365 days",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact4,Contact5,Contact6,Contact7,Contact8,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_015"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_equal_to",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled on 22-06-15",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_016"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_equal_to",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled on 23-03-10",
+      "expectedResult": "One company",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_017"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_equal_to",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled on 24-06-06",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_018"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_equal_to",
+      "filterValue": "25-02-14",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled on 25-02-14",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_019"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_equal_to",
+      "filterValue": "20-01-01",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled on 20-01-01 (non-existent date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_020"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_before",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled before 22-06-15",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_021"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_before",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled before 23-03-10",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_022"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_before",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled before 24-06-06",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_023"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_before",
+      "filterValue": "25-02-14",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled before 25-02-14",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_024"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_after",
+      "filterValue": "22-06-15",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled after 22-06-15",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact4,Contact6,Contact7,Contact5,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_025"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_after",
+      "filterValue": "23-03-10",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled after 23-03-10",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact4,Contact6,Contact7,Contact5,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_026"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_after",
+      "filterValue": "24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled after 24-06-06",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact4,Contact6,Contact7,Contact5,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_027"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_after",
+      "filterValue": "25-02-14",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled after 25-02-14",
+      "expectedResult": "Contact1,Contact2,Contact10,Contact4,Contact6,Contact7,Contact5,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_028"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_after",
+      "filterValue": "30-12-31",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled after 30-12-31 (future date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_029"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_between",
+      "filterValue": "22-06-14,25-02-25",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled between 22-06-14 and 25-02-25",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_030"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_between",
+      "filterValue": "23-03-10,24-06-06",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled between 23-03-10 and 24-06-06",
+      "expectedResult": "One company",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_031"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_between",
+      "filterValue": "22-06-16,23-03-09",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings scheduled between 22-06-16 and 23-03-09 (range between static dates with no data)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_032"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings that have any scheduled date",
+      "expectedResult": "14",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_033"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "filterValue_TYPE": "LONG",
+      "description": "Meetings with empty scheduled date",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_034"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled more than 30 days ago",
+      "expectedResult": "Contact6,Contact7,Contact8,Contact10,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_035"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_mt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled more than 1 day ago",
+      "expectedResult": "Contact2,Contact6,Contact7,Contact8,Contact10,Contact4,Contact5,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_036"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled more than 0 days ago",
+      "expectedResult": "Contact2,Contact6,Contact7,Contact8,Contact10,Contact4,Contact5,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_037"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_mt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled more than 365 days ago",
+      "expectedResult": "Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_038"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_mt",
+      "filterValue": "10000",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled more than 10000 days ago (very old date)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_039"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled less than 30 days ago",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_040"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled less than 1 day ago",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_041"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled less than 0 days ago",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_042"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_lt",
+      "filterValue": "365",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled less than 365 days ago",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_043"
+    },
+    {
+      "dbField": "meetingscheduledon",
+      "filterType": "is_lt",
+      "filterValue": "-1",
+      "fieldType": "date",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Meetings scheduled less than -1 days ago (invalid filter)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_SCHEDULED_ON_044"
+    }
+  ],
+  "Meeting Added By": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings added by users who are members of the specified team",
+      "expectedResult": "Contact1,Contact4,Contact5,Contact8,Contact9,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_001"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings added by owner",
+      "expectedResult": "Contact1,Contact5,Contact9,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_002"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings added by admin",
+      "expectedResult": "Contact2,Contact6,Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_003"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings added by restricted user",
+      "expectedResult": "Contact3,Contact7,Contact11,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_004"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings added by team member",
+      "expectedResult": "Contact4,Contact8,Contact12,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_005"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not added by owner",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact6,Contact7,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_006"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not added by admin",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact7,Contact8,Contact9,Contact11,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_007"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not added by restricted user",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact8,Contact9,Contact10,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_008"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not added by team member",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_009"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings added by owner or admin",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact9,Contact10,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_010"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings added by restricted or team member",
+      "expectedResult": "Contact3,Contact4,Contact7,Contact8,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_011"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not added by owner or admin",
+      "expectedResult": "Contact3,Contact4,Contact7,Contact8,Contact11,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_012"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not added by restricted or team member",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact9,Contact10,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_013"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not added by restricted user",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact8,Contact9,Contact10,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_014"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not added by team member",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_015"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings that have any creator",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_016"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings with no creator",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_ADDED_BY_017"
+    }
+  ],
+  "Meeting Updated By": [
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings updated by users who are members of the specified team",
+      "expectedResult": "Contact1,Contact4,Contact5,Contact8,Contact9,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_001"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings updated by owner",
+      "expectedResult": "Contact1,Contact5,Contact9,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_002"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings updated by admin",
+      "expectedResult": "Contact2,Contact6,Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_003"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings updated by restricted user",
+      "expectedResult": "Contact3,Contact7,Contact11,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_004"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings updated by team member",
+      "expectedResult": "Contact4,Contact8,Contact12,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_005"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not updated by owner",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact6,Contact7,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_006"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not updated by admin",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact7,Contact8,Contact9,Contact11,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_007"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not updated by restricted user",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact8,Contact9,Contact10,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_008"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not updated by team member",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_009"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings updated by owner or admin",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact9,Contact10,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_010"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings updated by restricted or team member",
+      "expectedResult": "Contact3,Contact4,Contact7,Contact8,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_011"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not updated by owner or admin",
+      "expectedResult": "Contact3,Contact4,Contact7,Contact8,Contact11,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_012"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not updated by restricted or team member",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact9,Contact10,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_013"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not updated by restricted user",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact8,Contact9,Contact10,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_014"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not updated by team member",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_015"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings that have any updater",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_016"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings with no updater",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_UPDATED_BY_017"
+    }
+  ],
+  "Meeting Type": [
+    {
+      "dbField": "meetingtype",
+      "filterType": "is",
+      "filterValue": [
+        "{{meeting_type_business_development}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings with Business Development Meeting type",
+      "expectedResult": "Contact1,Contact4,Contact5,Contact7,Contact9,Contact11,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_001"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "is",
+      "filterValue": [
+        "{{meeting_type_candidate_internal_interview}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings with Company Internal Interview type",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_002"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{meeting_type_business_development}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings not with Business Development Meeting type",
+      "expectedResult": "Contact2,Contact3,Contact6,Contact8,Contact10,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_003"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{meeting_type_candidate_internal_interview}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings not with Company Internal Interview type",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_004"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{meeting_type_client_meeting}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings not with Client Meeting type",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact7,Contact8,Contact9,Contact11,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_005"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{meeting_type_internal_meeting}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings not with Internal Meeting type",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_006"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "is",
+      "filterValue": [
+        "{{meeting_type_candidate_external_interview}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings with Company External Interview type",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_007"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "is",
+      "filterValue": [
+        "{{meeting_type_client_meeting}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings with Client Meeting type",
+      "expectedResult": "Contact2,Contact6,Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_008"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "is",
+      "filterValue": [
+        "{{meeting_type_internal_meeting}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings with Internal Meeting type",
+      "expectedResult": "Contact3,Contact8,Contact12,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_009"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "contains_at_least_one",
+      "filterValue": [
+        "{{meeting_type_business_development}}",
+        "{{meeting_type_candidate_internal_interview}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings with Business Development or Internal Interview type",
+      "expectedResult": "Contact1,Contact4,Contact5,Contact7,Contact9,Contact11,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_010"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "contains_at_least_one",
+      "filterValue": [
+        "{{meeting_type_client_meeting}}",
+        "{{meeting_type_internal_meeting}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings with Client Meeting or Internal Meeting type",
+      "expectedResult": "Contact2,Contact3,Contact6,Contact8,Contact10,Contact12,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_011"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "does_not_contain",
+      "filterValue": [
+        "{{meeting_type_business_development}}",
+        "{{meeting_type_candidate_internal_interview}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings not with Business Development or Internal Interview type",
+      "expectedResult": "Contact2,Contact3,Contact6,Contact8,Contact10,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_012"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "does_not_contain",
+      "filterValue": [
+        "{{meeting_type_client_meeting}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings not with Client Meeting type",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact7,Contact8,Contact9,Contact11,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_013"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "does_not_contain",
+      "filterValue": [
+        "{{meeting_type_internal_meeting}}"
+      ],
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings not with Internal Meeting type",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_014"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings that have any meeting type",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_015"
+    },
+    {
+      "dbField": "meetingtype",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Meetings with no meeting type",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TYPE_016"
+    }
+  ],
+  "Meeting Owner": [
+    {
+      "dbField": "meetingowner",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings owned by users who are members of the specified team",
+      "expectedResult": "Contact1,Contact4,Contact5,Contact8,Contact9,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_001"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings owned by owner",
+      "expectedResult": "Contact1,Contact5,Contact9,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_002"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings owned by admin",
+      "expectedResult": "Contact2,Contact6,Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_003"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings owned by restricted user",
+      "expectedResult": "Contact3,Contact7,Contact11,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_004"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings owned by team member",
+      "expectedResult": "Contact4,Contact8,Contact12,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_005"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not owned by owner",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact6,Contact7,Contact8,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_006"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not owned by admin",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact7,Contact8,Contact9,Contact11,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_007"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not owned by restricted user",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact8,Contact9,Contact10,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_008"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not owned by team member",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_009"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings owned by owner or admin",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact9,Contact10,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_010"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings owned by restricted or team member",
+      "expectedResult": "Contact3,Contact4,Contact7,Contact8,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_011"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not owned by owner or admin",
+      "expectedResult": "Contact3,Contact4,Contact7,Contact8,Contact11,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_012"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not owned by restricted or team member",
+      "expectedResult": "Contact1,Contact2,Contact5,Contact6,Contact9,Contact10,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_013"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{restricted}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not owned by restricted user",
+      "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact8,Contact9,Contact10,Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_014"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings not owned by team member",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact9,Contact10,Contact11,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_015"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings that have any owner",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_016"
+    },
+    {
+      "dbField": "meetingowner",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Meetings with no owner",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_OWNER_017"
+    }
+  ],
+  "Meeting Associated with": [
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}",
+          "{{contact1}}"
+        ],
+        "Company": [
+          "{{company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple contacts - contact1 has both contact1 and contact2",
+      "expectedResult": "Contact1, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_001"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact2}}"
+        ],
+        "Company": [
+          "{{company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple companies - contact2 has both contact1 and contact2",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_002"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact3}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact3 has contact1",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_003"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact4}}"
+        ],
+        "Company": [
+          "{{company4}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple jobs - contact4 has both job1 and job2",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_004"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_005"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_006"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_007"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single job - contact5 has job2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_008"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact6}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple deals - contact6 has both deal1 and deal2",
+      "expectedResult": "Contact6",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_009"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single deal - contact7 has deal2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_010"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact11}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return contact11",
+      "expectedResult": "Contact11",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_011"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}",
+          "{{contact5}}"
+        ],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return contact5",
+      "expectedResult": "Contact5, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_012"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All contacts",
+      "expectedResult": "All",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_013"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All contacts",
+      "expectedResult": "All",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_014"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact3}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return contacts 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact2, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_015"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact4}}"
+        ],
+        "Company": [
+          "{{company4}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude jobs with job1 - should return contacts 1,2,3,5,6,7,8,9,10,11",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_016"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact6}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All contacts",
+      "expectedResult": "All",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_017"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact11}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + contact1 - should return contacts 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_018"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact2}}"
+        ],
+        "Company": [
+          "{{company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + contact2 - should return contacts 1,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Contact1, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_019"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact4}}"
+        ],
+        "Company": [
+          "{{company4}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: job1 + job2 - should return contacts 1,2,3,5,6,7,8,9,10,11,12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_020"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}",
+          "{{contact1}}"
+        ],
+        "Company": [
+          "{{company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + contact2 - should return contacts 2,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_021"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact6}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: deal1 + deal2 - should return contacts 1,2,3,4,5,7,8,9,10,11,12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_022"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return contact3 and contact11 (both have contact1)",
+      "expectedResult": "Contact3, Contact11",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_023"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return contact2 and contact11 (both have contact1)",
+      "expectedResult": "Contact2, Contact11",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_024"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact2 - should return contact2 and contact5 (both have contact2)",
+      "expectedResult": "Contact2, Contact5, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_025"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job1 - should return contact4 and contact12 (both have job1)",
+      "expectedResult": "Contact4, Contact12, associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_026"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job2 - should return contact4 and contact5 (both have job2)",
+      "expectedResult": "Contact4, Contact5, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_027"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return contact1 and contact12 (both have contact1)",
+      "expectedResult": "Contact1, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_028"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact2 - should return contact5 and contact7 (both have contact2)",
+      "expectedResult": "Contact1, Contact5, Contact7, associated_contacts_contact2, associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_029"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal1 - should return contact5 and contact6 (both have deal1)",
+      "expectedResult": "Contact5, Contact6, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_030"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal2 - should return contact6 and contact7 (both have deal2)",
+      "expectedResult": "Contact6, Contact7, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_031"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact1 AND contact1 - should return contact11 only (has both)",
+      "expectedResult": "Contact11",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_032"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact2 AND contact2 - should return contact5 only (has both)",
+      "expectedResult": "Contact5, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_033"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH job1 AND job2 - should return contact4 only (has both)",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_034"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact1 AND contact2 - should return contact1 only (has both)",
+      "expectedResult": "Contact1, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_035"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH deal1 AND deal2 - should return contact6 only (has both)",
+      "expectedResult": "Contact6",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_036"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 AND contact1 AND job1 - should return empty (no contact has all three)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_037"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 AND contact1 AND contact1 - should return empty (no contact has all three)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_038"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact1 (OR logic) - should return contact2, contact3, contact11",
+      "expectedResult": "Contact2, Contact3, Contact11",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_039"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return contact3, contact5, contact11",
+      "expectedResult": "Contact3, Contact5, Contact11, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_040"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return contact2, contact5, contact11",
+      "expectedResult": "Contact2, Contact5, Contact11, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_041"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job1 OR job2 - should return contact4, contact5, contact12",
+      "expectedResult": "Contact4, Contact5, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_042"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return contact1, contact5, contact7, contact12",
+      "expectedResult": "Contact1, Contact5, Contact7, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_043"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal1 OR deal2 - should return contact5, contact6, contact7",
+      "expectedResult": "Contact5, Contact6, Contact7, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_044"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact1 OR job1 OR contact1 OR deal1 - should return contact1, contact2, contact3, contact4, contact5, contact6, contact11, contact12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact11, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_045"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact1 (OR logic) - should return contact2, contact3, contact11",
+      "expectedResult": "Contact2, Contact3, Contact11",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_046"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - should return contacts 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact2, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_047"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - should return contacts 1,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_048"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain job1 - returns companies with at least one note that doesn't include job1. associated_companies_contact1 is included because it has Contact1's note (no job1) even though it also has Contact12's note (has job1)",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact13, Contact14, Contact15, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_049"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - returns companies with at least one note that doesn't include contact1. associated_companies_contact2 is included because it has Contact5's note (no contact1) and Contact7's note (no contact1) even though it also has Contact1's note (has contact1)",
+      "expectedResult": "Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact13, Contact14, Contact15",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_050"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain deal1 - returns companies with at least one note that doesn't include deal1. associated_companies_contact2 is included because it has Contact1's note (no deal1) and Contact7's note (no deal1) even though it also has Contact5's note (has deal1)",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_051"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 AND contact1 - should return contacts 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_052"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contact apart from 8, 9, 10 should be returned",
+      "expectedResult": "contact1, contact2, contact3, contact4, contact5, contact6, contact7, contact 8, contact 9, contact 10, contact 11, contact 12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_053"
+    },
+    {
+      "dbField": "meeting_associated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contact 13, 14, 15 should be returned",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_NOTES_ASSOCIATED_WITH_054"
+    }
+  ],
+  "Meeting Collaborated with": [
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only team collaboration, no users",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_001"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only owner user collaboration, no teams",
+      "expectedResult": "Contact1,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_002"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only admin user collaboration, no teams",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_003"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - team and admin user collaboration",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_004"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - owner and admin user collaboration, no teams",
+      "expectedResult": "Contact5,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_005"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only teamMember user collaboration, no teams",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_006"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - owner and teamMember user collaboration, no teams",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_007"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly team collaboration only",
+      "expectedResult": "Contact1, Contact2, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_008"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly owner user collaboration only",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_009"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly team and admin collaboration",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_010"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude companys with exactly owner and teamMember collaboration",
+      "expectedResult": "Contact1, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_011"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains team collaboration (may have additional collaborators)",
+      "expectedResult": "Contact3, Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_012"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains admin user collaboration (may have additional collaborators)",
+      "expectedResult": "Contact4, Contact5, Contact8,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_013"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains both team and admin collaboration (may have additional collaborators)",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_014"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains both owner and admin user collaboration (may have additional collaborators)",
+      "expectedResult": "Contact5,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_015"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team or admin collaboration",
+      "expectedResult": "Contact3, Contact4, Contact5, Contact8,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_016"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team, owner, or teamMember collaboration",
+      "expectedResult": "Contact1,Contact2, Contact3, Contact5, Contact8,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_017"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}",
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team, admin, owner, or teamMember collaboration",
+      "expectedResult": "Contact1,Contact2, Contact3, Contact4, Contact5, Contact8,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_018"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain team collaboration",
+      "expectedResult": "Contact1, Contact2, Contact4, Contact5, Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_019"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain admin user collaboration",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_020"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain team OR admin collaboration",
+      "expectedResult": "Contact1, Contact2,Contact3,Contact4,Contact5,Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_021"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{admin}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain any of team, owner, admin, or teamMember collaboration",
+      "expectedResult": "All",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_022"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has any collaboration (users or teams)",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact8,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_023"
+    },
+    {
+      "dbField": "meeting_collaborated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has no collaboration (empty users and teams)",
+      "expectedResult": "Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_COLLABORATED_WITH_024"
+    }
+  ],
+  "Meeting Title": [
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Business Development Meeting - Company 1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_001"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Client Meeting - Company 2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_002"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Internal Meeting - Company 3",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_003"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Follow_Up Meeting [Q1] - Company 4",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_004"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "O'Brien's Strategy Meeting - Company 5",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_005"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Review Meeting - Company 6",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact6",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_006"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Quarterly Review - Company 7",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact7",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_007"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Project Discussion (2024) - Company 8",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_008"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Annual Planning - Company 9",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_009"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Budget Review - Company 10",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_010"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Historical Meeting - Company 11",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_011"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Future Planning - Company 12",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match",
+      "expectedResult": "Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_012"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "business development meeting - company 1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match, case variation",
+      "expectedResult": "company1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_013"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "   Business Development Meeting - Company 1   ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match, whitespace",
+      "expectedResult": "company1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_014"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with empty title",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_015"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is_not",
+      "filterValue": "Business Development Meeting - Company 1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not with exact title",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_016"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is_not",
+      "filterValue": "Client Meeting - Company 2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not with exact title",
+      "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_017"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is_not",
+      "filterValue": "Review Meeting - Company 6",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not with exact title",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_018"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is_not",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not with empty title",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_019"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Business Development",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Business Development' in title",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_020"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Meeting",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Meeting' in title",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_021"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Review' in title",
+      "expectedResult": "Contact6,Contact7,Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_022"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Planning",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Planning' in title",
+      "expectedResult": "Contact9,Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_023"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Discussion",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Discussion' in title",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_024"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Client",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Client' in title",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_025"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Internal",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Internal' in title",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_026"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Follow_Up",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Follow_Up' in title",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_027"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Follow-up",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Follow-up' in title",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_028"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Strategy",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Strategy' in title",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_029"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Quarterly",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Quarterly' in title",
+      "expectedResult": "Contact7",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_030"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Project",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Project' in title",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_031"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Annual",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Annual' in title",
+      "expectedResult": "Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_032"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Budget",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Budget' in title",
+      "expectedResult": "Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_033"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Historical",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Historical' in title",
+      "expectedResult": "Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_034"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Future",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Future' in title",
+      "expectedResult": "Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_035"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "Company",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Company' in title",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_036"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "meeting",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'meeting' in title (case variation)",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_037"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "  Meeting  ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing 'Meeting' with whitespace",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_038"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing empty string",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_039"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "does_not_contain",
+      "filterValue": "Business Development",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not containing 'Business Development' in title",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_040"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "does_not_contain",
+      "filterValue": "Meeting",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not containing 'Meeting' in title",
+      "expectedResult": "Contact7,Contact8,Contact9,Contact10,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_041"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "does_not_contain",
+      "filterValue": "Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not containing 'Review' in title",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact8,Contact9,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_042"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "does_not_contain",
+      "filterValue": "Planning",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not containing 'Planning' in title",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact10,Contact11,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_043"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "does_not_contain",
+      "filterValue": "NonExistent",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not containing non-existent text",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_044"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Business",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Business'",
+      "expectedResult": "Contact1,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_045"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Client",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Client'",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_046"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Internal",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Internal'",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_047"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Follow_Up",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Follow_Up'",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_048"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Follow-up",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Follow-up'",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_049"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Strategy",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Strategy'",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_050"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Review'",
+      "expectedResult": "Contact6",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_051"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Quarterly",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Quarterly'",
+      "expectedResult": "Contact7",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_052"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Project",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Project'",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_053"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Annual",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Annual'",
+      "expectedResult": "Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_054"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Budget",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Budget'",
+      "expectedResult": "Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_055"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Historical",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Historical'",
+      "expectedResult": "Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_056"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Future",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Future'",
+      "expectedResult": "Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_057"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "  Business  ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Business' with whitespace",
+      "expectedResult": "Contact1,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_058"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with empty string",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_059"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "ends_with",
+      "filterValue": "Company 1",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings ending with 'Company 1'",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_060"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "ends_with",
+      "filterValue": "Company 2",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings ending with 'Company 2'",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_061"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "ends_with",
+      "filterValue": "  Company 1  ",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings ending with 'Company 1' with whitespace",
+      "expectedResult": "company",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_062"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "ends_with",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings ending with empty string",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_063"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings that have any title",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_064"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with empty title",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_065"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Planning",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Planning' in title",
+      "expectedResult": "Contact9,Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_066"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Review' in title",
+      "expectedResult": "Contact6,Contact7,Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_067"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Meeting",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Meeting' in title",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_068"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Discussion",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Discussion' in title",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_069"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Development",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Development' in title",
+      "expectedResult": "Contact1",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_070"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Client",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Client' in title",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_071"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Internal",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Internal' in title",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_072"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Strategy",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Strategy' in title",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_073"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "O'Brien's",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'O'Brien's' in title",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_074"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Quarterly",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Quarterly' in title",
+      "expectedResult": "Contact7",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_075"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Annual",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Annual' in title",
+      "expectedResult": "Contact9",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_076"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Budget",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Budget' in title",
+      "expectedResult": "Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_077"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Historical",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Historical' in title",
+      "expectedResult": "Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_078"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Future",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Future' in title",
+      "expectedResult": "Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_079"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Planning,Meeting",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: Planning, Meeting",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact9,Contact11,Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_080"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Review,Planning",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: Review, Planning",
+      "expectedResult": "Contact6,Contact7,Contact9,Contact10,Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_081"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Business,Client,Internal",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: Business, Client, Internal",
+      "expectedResult": "Contact1,Contact2,Contact3",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_082"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Follow-up,Strategy,Review",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: Follow-up, Strategy, Review",
+      "expectedResult": "Contact4,Contact5,Contact6,Contact7,Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_083"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Project,Annual,Budget",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: Project, Annual, Budget",
+      "expectedResult": "Contact8,Contact9,Contact10",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_084"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Historical,Future,Quarterly",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: Historical, Future, Quarterly",
+      "expectedResult": "Contact7,Contact11,Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_085"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Meeting,Review,Planning,Discussion",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: Meeting, Review, Planning, Discussion",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_086"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "NonExistent1,NonExistent2,NonExistent3",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of non-existent values",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_087"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Business,NonExistent,Meeting",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: Business, NonExistent, Meeting",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact11",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_088"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Follow_Up Meeting [Q1] - Company 4",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match containing underscores and brackets",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_089"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "_",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing underscore",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_090"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "[Q1]",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing brackets",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_091"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "Follow_Up",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'Follow_Up'",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_092"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "O'Brien's Strategy Meeting - Company 5",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match containing apostrophe",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_093"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "O'Brien's",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing apostrophe",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_094"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "'",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing apostrophe character",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_095"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "begins_with",
+      "filterValue": "O'Brien's",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings starting with 'O'Brien's'",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_096"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "is",
+      "filterValue": "Project Discussion (2024) - Company 8",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings with exact title match containing parentheses and numbers",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_097"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "(2024)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing parentheses with numbers",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_098"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains",
+      "filterValue": "2024",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing numbers",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_099"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "Follow_Up",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'Follow_Up'",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_100"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "O'Brien's",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word 'O'Brien's'",
+      "expectedResult": "Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_101"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_exact_word",
+      "filterValue": "(2024)",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings containing exact word '2024'",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_102"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "_,['",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: underscore, bracket, apostrophe",
+      "expectedResult": "Contact4,Contact5",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_103"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "contains_at_least_one",
+      "filterValue": "(,2024",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Meetings containing at least one of: parenthesis, number",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_104"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "does_not_contain",
+      "filterValue": "_",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not containing underscore",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_105"
+    },
+    {
+      "dbField": "meetingtitle",
+      "filterType": "does_not_contain",
+      "filterValue": "'",
+      "fieldType": "text",
+      "filterValue_TYPE": "STRING",
+      "description": "Meetings not containing apostrophe",
+      "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_TITLE_106"
+    }
+  ],
+  "Meeting Exists": [
+    {
+      "dbField": "meeting_exists",
+      "filterType": "yes",
+      "filterValue": "1",
+      "fieldType": "checkbox",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Yes - Return contacts associated with at least one meeting",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_EXISTS_001"
+    },
+    {
+      "dbField": "meeting_exists",
+      "filterType": "no",
+      "filterValue": "0",
+      "fieldType": "checkbox",
+      "filterValue_TYPE": "INTEGER",
+      "description": "No - Return contacts with no associated meetings",
+      "expectedResult": "Contact13, Contact14, Contact15",
+      "testCaseId": "TC_CONTACT_MEETING_MEETING_EXISTS_002"
+    }
+  ]
+}

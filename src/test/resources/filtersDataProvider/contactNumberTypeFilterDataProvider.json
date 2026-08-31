@@ -1,0 +1,394 @@
+{
+  "Id": [
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match, standard ID",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "expectedResult": "Contact with ID 1",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_001"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "15",
+      "description": "Exact match, highest ID",
+      "expectedResult": "Contact with ID 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_002"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero ID",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_003"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "-100",
+      "description": "Exact match, negative ID",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_004"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "15.0",
+      "description": "Exact match, decimal format ID",
+      "expectedResult": "Contact with ID 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_005"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "100",
+      "description": "Exact match, invalid high ID",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_006"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "1",
+      "description": "Not equal to 1 (excludes exact match, includes empty)",
+      "expectedResult": "All contacts except ID 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_007"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "15",
+      "description": "Not equal to 15 (excludes exact match, includes empty)",
+      "expectedResult": "All contacts except ID 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_008"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero (excludes exact match, includes empty)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_009"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "-100",
+      "description": "Not equal to negative (excludes exact match, includes empty)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_010"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "15.0",
+      "description": "Not equal to decimal format (excludes exact match, includes empty)",
+      "expectedResult": "All contacts except ID 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_011"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "100",
+      "description": "Not equal to invalid ID (excludes exact match, includes empty)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_012"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Begins with 1",
+      "expectedResult": "Contacts with ID 1, 10-19",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_013"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "0",
+      "description": "Begins with 0",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_014"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "-10",
+      "description": "Begins with negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_015"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5",
+      "expectedResult": "Contacts with ID 5, 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_016"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0",
+      "expectedResult": "Contact with ID 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_017"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "-10",
+      "description": "Ends with negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_018"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "1.0",
+      "description": "Ends with decimal",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_019"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_020"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_021"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "1,15",
+      "description": "Is between 1-15",
+      "expectedResult": "Contacts with ID between 1 and 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_022"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "-100,0",
+      "description": "Is between negative and zero",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_023"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "-100,100",
+      "description": "Is between wide range",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_024"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "-100,-50",
+      "description": "Is between negative range",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_025"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "0,15.0",
+      "description": "Is between with decimal",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_026"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "5,5",
+      "description": "Is between single value",
+      "expectedResult": "Contact with ID 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_027"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "1,10",
+      "description": "Is between 1-10",
+      "expectedResult": "Contacts with ID between 1 and 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_028"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "10,15",
+      "description": "Is between 10-15",
+      "expectedResult": "Contacts with ID between 10 and 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_029"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "1",
+      "description": "is more than 1",
+      "expectedResult": "Contacts with ID more than 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_030"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "is more than 0",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_031"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "-100",
+      "description": "is more than negative",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_032"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "1.0",
+      "description": "is more than decimal",
+      "expectedResult": "Contacts with ID more than 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_033"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "is more than 10",
+      "expectedResult": "Contacts with ID more than 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_035"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "description": "is less than 1",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_036"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "is less than 0",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_037"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "-100",
+      "description": "is less than negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_038"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "15.0",
+      "description": "is less than decimal",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_039"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "is less than 10",
+      "expectedResult": "Contacts with ID less than 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_NUMBER_ID_040"
+    }
+  ]
+}

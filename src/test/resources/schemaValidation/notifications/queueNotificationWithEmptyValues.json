@@ -1,0 +1,172 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "null"
+      },
+      "meta": {
+        "type": "object",
+        "properties": {
+          "request_UUID": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "message_type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "request_UUID",
+          "message",
+          "message_type",
+          "status"
+        ]
+      },
+      "errors": {
+        "type": "object",
+        "properties": {
+          "errorMessage": {
+            "type": "string"
+          },
+          "errorCode": {
+            "type": "integer"
+          },
+          "errors": {
+            "type": "object",
+            "properties": {
+              "action_name": {
+                "type": "object",
+                "properties": {
+                  "errorMessage": {
+                    "type": "string"
+                  },
+                  "errorCode": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "errorMessage",
+                  "errorCode"
+                ]
+              },
+              "sender": {
+                "type": "object",
+                "properties": {
+                  "errorMessage": {
+                    "type": "string"
+                  },
+                  "errorCode": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "errorMessage",
+                  "errorCode"
+                ]
+              },
+              "receiver": {
+                "type": "object",
+                "properties": {
+                  "errorMessage": {
+                    "type": "string"
+                  },
+                  "errorCode": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "errorMessage",
+                  "errorCode"
+                ]
+              },
+              "source": {
+                "type": "object",
+                "properties": {
+                  "errorMessage": {
+                    "type": "string"
+                  },
+                  "errorCode": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "errorMessage",
+                  "errorCode"
+                ]
+              },
+              "destination": {
+                "type": "object",
+                "properties": {
+                  "errorMessage": {
+                    "type": "string"
+                  },
+                  "errorCode": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "errorMessage",
+                  "errorCode"
+                ]
+              },
+              "template_id": {
+                "type": "object",
+                "properties": {
+                  "errorMessage": {
+                    "type": "string"
+                  },
+                  "errorCode": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "errorMessage",
+                  "errorCode"
+                ]
+              },
+              "cta_id": {
+                "type": "object",
+                "properties": {
+                  "errorMessage": {
+                    "type": "string"
+                  },
+                  "errorCode": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "errorMessage",
+                  "errorCode"
+                ]
+              }
+            },
+            "required": [
+              "action_name",
+              "sender",
+              "receiver",
+              "source",
+              "destination",
+              "template_id",
+              "cta_id"
+            ]
+          }
+        },
+        "required": [
+          "errorMessage",
+          "errorCode",
+          "errors"
+        ]
+      }
+    },
+    "required": [
+      "data",
+      "meta",
+      "errors"
+    ]
+  }

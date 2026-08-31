@@ -1,0 +1,161 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "sucess": {
+        "type": "boolean"
+      },
+      "statusCode": {
+        "type": "integer"
+      },
+      "message": {
+        "type": "string"
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "formatted_cv": {
+            "type": "object",
+            "properties": {
+              "columnid": {
+                "type": "integer"
+              },
+              "label": {
+                "type": "string"
+              },
+              "default_label": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "value": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "columnid",
+              "label",
+              "default_label",
+              "type",
+              "value"
+            ]
+          },
+          "coverletter": {
+            "type": "object",
+            "properties": {
+              "columnid": {
+                "type": "integer"
+              },
+              "label": {
+                "type": "string"
+              },
+              "default_label": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "value": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "columnid",
+              "label",
+              "default_label",
+              "type",
+              "value"
+            ]
+          },
+          "portfolio": {
+            "type": "object",
+            "properties": {
+              "columnid": {
+                "type": "integer"
+              },
+              "label": {
+                "type": "string"
+              },
+              "default_label": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "value": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "columnid",
+              "label",
+              "default_label",
+              "type",
+              "value"
+            ]
+          },
+          "other_file_1": {
+            "type": "object",
+            "properties": {
+              "columnid": {
+                "type": "integer"
+              },
+              "label": {
+                "type": "string"
+              },
+              "default_label": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "value": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "columnid",
+              "label",
+              "default_label",
+              "type",
+              "value"
+            ]
+          },
+          "other_file_2": {
+            "type": "object",
+            "properties": {
+              "columnid": {
+                "type": "integer"
+              },
+              "label": {
+                "type": "string"
+              },
+              "default_label": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "value": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "columnid",
+              "label",
+              "default_label",
+              "type",
+              "value"
+            ]
+          }
+        }
+      }
+    },
+    "required": [
+      "sucess",
+      "statusCode",
+      "message",
+      "data"
+    ]
+  }

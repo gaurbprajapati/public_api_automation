@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Rest API Test Suite" thread-count="34" parallel="tests">
+
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.ExecutionTimeListener" />
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+    <test name="Create Call Logs Endpoints 1">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithFields" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 2">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="verifyValidationOnDurationFieldPost_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 3">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createCallLogWithEnableDisableAutoTeamsPopulation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 4">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createCallLogWithInvalidCollaborators" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 5">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="userShouldNotBeAbleToCreateCallLogWithInvalidData" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 6">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithMandatoryValue" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 7">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithLimitExceeds" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 8">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="unauthorizedUserCannotCreateNewCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+    <test name="Create New Task Endpoint 1">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTask" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 2">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createTaskWithDisableAutoTeamsPopulation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 3">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createTaskWithEnableAutoTeamsPopulation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 4">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTaskWithCollaborators" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 5">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTaskWithInvalidCollaborators" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 6">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTaskWithInvalidCollaboratorTeams" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 7">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTaskPastDate" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 8">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTaskWithAllReminder" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 9">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTaskWithEmptyBody" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 10">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTaskWithInvalidMandatoryValue" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 11">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTaskWithLimitExceeds" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 12">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="createNewTaskWithAssociates" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Task Endpoint 13">
+        <classes>
+            <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+                <methods>
+                    <include name="unauthorizedUserCannotCreateNewTask" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 1">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="createNewMeetings" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 2">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="createMeetingsWithDisableAutoTeamsPopulation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 3">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="createMeetingsWithEnableAutoTeamsPopulation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 4">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="createMeetingsWithCollaborators" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 5">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="createMeetingsWithInvalidCollaborators" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 6">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="createMeetingsWithInvalidCollaboratorsTeams" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 7">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="createMeetingsWithInvalidCalendarInviteValue" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 8">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="createNewMeetingsWithAssociates" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 9">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="userShouldNotBeAbleToCreateNewMeetingWithEmptyFieldsData" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Meeting Endpoint 10">
+        <classes>
+            <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+                <methods>
+                    <include name="verifyMeetingDescriptionWithMaxChars" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

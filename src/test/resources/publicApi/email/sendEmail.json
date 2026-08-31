@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Email Status Response",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "example": "We are currently processing your request"
+    },
+    "email_status_id": {
+      "type": "integer",
+      "example": 78
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "failure", "pending"],
+      "example": "success"
+    }
+  },
+  "required": ["message", "email_status_id", "status"],
+  "additionalProperties": false
+}

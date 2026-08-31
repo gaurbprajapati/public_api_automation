@@ -1,0 +1,162 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"properties": {
+		"campaign_data": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"campaign_name": {
+					"type": "string"
+				},
+				"job_id": {
+					"type": "integer"
+				},
+				"campaign_id": {
+					"type": "string",
+					"format": "uuid"
+				},
+				"status": {
+					"type": "string"
+				},
+				"currency": {
+					"type": "string"
+				},
+				"total_price": {
+					"type": "integer"
+				},
+				"account_id": {
+					"type": "integer"
+				},
+				"created_on": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"created_by": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"id",
+				"campaign_name",
+				"job_id",
+				"campaign_id",
+				"status",
+				"currency",
+				"total_price",
+				"account_id",
+				"created_on",
+				"created_by"
+			]
+		},
+		"channel_data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer"
+					},
+					"channel_id": {
+						"type": "string"
+					},
+					"channel_name": {
+						"type": "string"
+					},
+					"status": {
+						"type": "string"
+					},
+					"currency": {
+						"type": "string"
+					},
+					"total_price": {
+						"type": "integer"
+					},
+					"account_id": {
+						"type": "integer"
+					},
+					"campaign_id": {
+						"type": "integer"
+					},
+					"job_board_link": {
+						"type": "string"
+					},
+					"start_date": {
+						"type": "integer"
+					},
+					"end_date": {
+						"type": "integer"
+					},
+					"is_product": {
+						"type": "integer"
+					},
+					"created_on": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"created_by": {
+						"type": "integer"
+					}
+				},
+				"required": [
+					"id",
+					"channel_id",
+					"channel_name",
+					"status",
+					"currency",
+					"total_price",
+					"account_id",
+					"campaign_id",
+					"job_board_link",
+					"start_date",
+					"end_date",
+					"is_product",
+					"created_on",
+					"created_by"
+				]
+			}
+		},
+		"total_data": {
+			"type": ["object", "null"]
+		},
+		"job_details": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"slug": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"name",
+				"slug"
+			]
+		},
+		"next_and_previous_campagin": {
+			"type": "object",
+			"properties": {
+				"next": {
+					"type": ["object", "null"]
+				},
+				"previous": {
+					"type": ["object", "null"]
+				}
+			},
+			"required": [
+				"next",
+				"previous"
+			]
+		}
+	},
+	"required": [
+		"campaign_data",
+		"channel_data",
+		"total_data",
+		"job_details",
+		"next_and_previous_campagin"
+	]
+}

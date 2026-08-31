@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Titans - Varun Vishwakarma, Shivam Singh -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="7">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+		<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Contact Endpoints">
+		<classes>
+			<class name="io.rcrm.api.contact.AllEndpointsOfContactTest">
+				<methods>
+					<include name="createNewContact_POST" />
+					<include name="editContactBySlug_POST" />
+					<include name="verifyValidationOfCreateNewContact" />
+					<include name="showAllContacts_GET" />
+					<include name="searchContactByName_GET" />
+					<include name="searchContactBySlug_GET" />
+					<include name="getContactStageHistory"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create new Contact Endpoints">
+		<classes>
+			<class name="io.rcrm.api.contact.CreateNewContactTest">
+				<methods>
+					<include name="createNewCompanyWithMandatoryFields_POST" />
+					<include name="createNewContactWithMandatoryFields_POST" />
+					<include name="createNewContactWithEmptyRequestBody" />
+					<include name="createNewContactWithAllFields" />
+					<include name="createNewContactWithInvalidEmailId" />
+					<include name="createNewContactWithInvalidContactNumber" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit a Contact by Valid Slug - 200">
+		<classes>
+			<class name="io.rcrm.api.contact.EditContactTest">
+				<methods>
+					<include name="editContactByValidSlug_200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit a Contact by Invalid Slug - 404">
+		<classes>
+			<class name="io.rcrm.api.contact.EditContactTest">
+				<methods>
+					<include name="editContactByInvalidSlug_404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit a Contact with Empty Request - 422">
+		<classes>
+			<class name="io.rcrm.api.contact.EditContactTest">
+				<methods>
+					<include name="editContactWithEmptyRequest_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit a Contact with Unauthorized Access - 401">
+		<classes>
+			<class name="io.rcrm.api.contact.EditContactTest">
+				<methods>
+					<include name="unauthorizedUserCannotEditContact_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Contact">
+		<classes>
+			<class name="io.rcrm.api.contact.DeleteContactTest">
+				<methods>
+					<include name="deleteContactBySlug_Test" />
+					<include name="deleteContactByInvalidSlug_Test" />
+					<include name="unauthorizedUserCannotDeleteContact_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get all Contact Endpoints">
+		<classes>
+			<class name="io.rcrm.api.contact.GetAllContactsTest">
+				<methods>
+					<include name="showAllContacts_GET" />
+					<include
+						name="unauthorizedUserCannotAccessShowAllContacts_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search contact by Slug">
+		<classes>
+			<class name="io.rcrm.api.contact.SearchByContactSlugTest">
+				<methods>
+					<include name="searchContactBySlug_GET" />
+					<include name="searchContactByInvalidSlug_GET" />
+					<include name="searchContactWithUnauthorizedAccess_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search contact by Contact fields">
+		<classes>
+			<class name="io.rcrm.api.contact.SearchByContactFieldsTest">
+				<methods>
+					<include name="createNewContactWithAllFields" />
+					<include name="searchContactByAllFields_GET" />
+					<include name="searchContactByFirstName_GET" />
+					<include name="searchContactByLastName_GET" />
+					<include name="searchContactByEmail_GET" />
+					<include name="searchContactByLinkedin_GET" />
+					<include name="searchContactByContactNumber_GET" />
+					<include name="searchContactByCompanySlug_GET" />
+					<include name="searchContactByContactSlug_GET" />
+					<include name="searchContactByInvalidFieldValues_GET" />
+					<include name="searchContactByCreatedFrom" />
+					<include name="searchContactByCreatedTo" />
+					<include name="searchContactByUpdatedFrom" />
+					<include name="searchContactByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Off Limit Apis Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.AllEndpointsOfOffLimitTest">
+				<methods>
+					<include name="getOffLimitStatus" />
+					<include name="markContactAsOffLimit" />
+					<include name="getContactsOffLimit" />
+					<include name="markAsAvailableContact" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark Contact As Off Limit Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkContactAsOffLimitTest">
+				<methods>
+					<include name="markContactAsOffLimitWithInvalidData" />
+					<include name="markContactAsOffLimitWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Off Limit Contacts Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitContactsTest">
+				<methods>
+					<include name="getOffLimitContactsWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark As Available Contact Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkContactAsAvailableTest">
+				<methods>
+					<include name="markAsAvailableContactWithInvalidSlug" />
+					<include name="markAsAvailableContactWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Albatross Endpoints Contact Test Cases-3-Done">
+		<classes>
+			<class name="io.recruitcrm.albatross.contact.AlbatrossEndpointsContactTest">
+				<methods>
+					<include name="updateContactStage"/>
+					<include name="getContactStageHistory"/>
+					<include name="bulkUpdateContactStage"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Contact Update Fields Test Case-2-Done">
+		<classes>
+			<class name="io.recruitcrm.albatross.contact.ContactUpdateFieldsTest">
+				<methods>
+					<include name="updateContactStageWithInvalidAuth"/>
+					<include name="bulkUpdateContactStageWithInvalidAuth"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Contact Stage History Endpoint Test Cases">
+		<classes>
+			<class name="io.rcrm.api.contact.GetContactStageHistoryTest">
+				<methods>
+					<include name="getContactStageHistoryWithInvalidAuth"/>
+					<include name="getContactStageWithInvalidContactSlug"/>
+					<include name="getContactStageWithInvalidEntityType"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="LinkedIn URL Reuse Does Not Merge Duplicate Contact Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.contact.CreateNewContactTest">
+				<methods>
+					<include name="verifyLinkedInUrlReuseDoesNotMergeDuplicateContact_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Contacts - Verify Custom Field in All Contacts">
+		<classes>
+			<class name="io.rcrm.api.contact.GetAllContactsTest">
+				<methods>
+					<include name="verifyCustomFieldValueInShowAllContacts_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Off Limit Contact History - Empty Record Check">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getEmptyOffLimitHistoryOfContact_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Contact History - Valid History Fetch">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfContact_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Contact History - Re-Available Contact">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfAvailableContact_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Contact History - Invalid Slug">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfContactWithInvalidSlug_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Contact History - Unauthorized Access">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfContactWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Updating Social URL Custom Field With Null - 200">
+		<classes>
+			<class name="io.rcrm.api.contact.EditContactTest">
+				<methods>
+					<include name="verifyUpdatingSocialURLCustomFieldWithNull_200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

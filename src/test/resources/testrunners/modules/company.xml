@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Titans - Varun Vishwakarma, Shivam Singh -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="8">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="AllEndpointsOfCompany Company Endpoints">
+		<classes>
+			<class name="io.rcrm.api.company.AllEndpointsOfCompanyTest">
+				<methods>
+
+					<include name="createNewCompany_POST" />
+					<include name="editCompanyBySlug_POST" />
+					<include name="verifyValidationOfCreateNewCompany" />
+					<include name="showAllCompanies_GET" />
+					<include name="searchCompanyByName_GET" />
+					<include name="searchCompanyBySlug_GET" />
+					<include name="deleteCompanyBySlug_GET" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create New Endpoints">
+		<classes>
+			<class name="io.rcrm.api.company.CreateNewCompanyTest">
+				<methods>
+
+					<include name="createNewCompanyWithMandatoryFields_POST" />
+					<include name="createNewCompanyWithEmptyRequestBody_POST" />
+					<include name="createNewCompanyWithAllFields_POST" />
+					<include name="verifyInvalidCompanyName" />
+					<include name="verifyEmptyCompanyName" />
+					<include
+						name="verifyCreateNewCompanyWithInvalidFieldsValue_POST" />
+					<include name="verifyInvalidCompanyLogo" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="Search Company by Slug">
+		<classes>
+			<class name="io.rcrm.api.company.SearchCompanyBySlugTest">
+				<methods>
+
+					<include name="createNewCompanyWithAllFields_POST" />
+					<include name="searchCompanyBySlug_GET" />
+					<include name="searchCompanyByInvalidSlug_GET" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Edit company ">
+		<classes>
+			<class name="io.rcrm.api.company.EditCompanyTest">
+				<methods>
+
+					<include name="createNewCompany_POST" />
+					<include name="editCompanyBySlug_POST" />
+					<include name="editCompanyBySlugWithEachField_POST" />
+					<include name="editCompanyBySlugWithoutCompanyName422_POST" />
+					<include name="editCompanyByInvalidSlug404_POST" />
+					<include name="editCompanyByInvalidFieldsValues422_POST" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Company by fields">
+		<classes>
+			<class name="io.rcrm.api.company.SearchCompanyByFieldsTest">
+				<methods>
+					<include name="createNewCompanyWithAllFields_POST" />
+					<include name="searchCompanyByAllFields_GET" />
+					<include name="searchCompanyByName_GET" />
+					<include name="searchCompanyBySlug_GET" />
+					<include name="searchCompanyByInvalidName_GET" />
+					<include name="searchCompanyByCreatedFrom" />
+					<include name="searchCompanyByCreatedTo" />
+					<include name="searchCompanyByUpdatedFrom" />
+					<include name="searchCompanyByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Company">
+		<classes>
+			<class name="io.rcrm.api.company.DeleteCompanyTest">
+				<methods>
+					<include name="deleteCompanyBySlug_Test" />
+					<include name="deleteCompanyByInvalidSlug_Test" />
+					<include name="deleteCompanyWithUnauthorizedAccess_Test" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Unauthorized User can not access API">
+		<classes>
+			<class
+				name="io.rcrm.api.company.UnauthorizedUserCompanyEndpointsTest">
+				<methods>
+					<include name="unauthrizedUserCanntCreateNewCompany" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="GetAllCompanies">
+		<classes>
+			<class name="io.rcrm.api.company.GetAllCompaniesTest">
+				<methods>
+					<include name="createNewCompanyWithAllFields_POST" />
+					<include name="showAllCompanies_GET" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Company Custom Industry Public API endpoints">
+        <classes>
+            <class name="io.rcrm.api.company.CompanyCustomIndustryTest">
+                <methods>
+                    <include name="createNewCustomIndustry_POST"/>
+                    <include name="editNewCustomIndustry_POST"/>
+                    <include name="getAllCustomIndustries_GET"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Get Company Custom Industry Albatross endpoints">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetCompanyCustomIndustryTest">
+				<methods>
+					<include name="getAllCustomIndustries_Test" />
+					<include name="unauthorizedUserGetAllCustomIndustries_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Company Custom Industry Albatross endpoints">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.CreateCompanyCustomIndustryTest">
+				<methods>
+					<include name="createNewCompanyCustomIndustry_Test" />
+					<include name="createExistingCompanyCustomIndustry_Test" />
+					<include name="createEmptyCompanyCustomIndustry_Test" />
+					<include name="unauthorizedUserCreateNewCompanyCustomIndustry_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Company Custom Industry Albatross API endpoints">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.DeleteCompanyCustomIndustryTest">
+				<methods>
+					<include name="deleteCompanyCustomIndustry_Test" />
+					<include name="deleteInvalidCompanyCustomIndustry_Test" />
+					<include name="deleteNullCompanyCustomIndustry_Test" />
+					<include name="unauthorizedUserCreateNewCompanyCustomIndustry_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Off Limit Apis Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.AllEndpointsOfOffLimitTest">
+				<methods>
+					<include name="getOffLimitStatus" />
+					<include name="markCompanyAsOffLimit" />
+					<include name="getCompaniesOffLimit" />
+					<include name="markAsAvailableCompany" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark Company As Off Limit Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkCompanyAsOffLimitTest">
+				<methods>
+					<include name="markCompanyAsOffLimitWithInvalidData" />
+					<include name="markCompanyAsOffLimitWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Off Limit Companies Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitCompaniesTest">
+				<methods>
+					<include name="getOffLimitCompaniesWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark As Available Company Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkCompanyAsAvailableTest">
+				<methods>
+					<include name="markAsAvailableCompanyWithInvalidSlug" />
+					<include name="markAsAvailableCompanyWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Get Child Companies Albatross Endpoints - Test Cases - 2">
+		<classes>
+			<class name="io.rcrm.api.company.GetAllChildCompaniesTest">
+				<methods>
+					<include name="getAllChildCompanies_Test" />
+					<include name="unauthorizedUserCannotGetAllChildCompanies_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Get Related Companies - Valid Contact">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedCompanies_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Related Companies - Invalid ID">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedCompaniesInvalidId_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Related Companies - Unauthorized">
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.EntityTypeCustomFieldsTest">
+                <methods>
+                    <include name="getRelatedCompaniesUnauthorizedAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Companies - Verify Custom Field in All Companies">
+		<classes>
+			<class name="io.rcrm.api.company.GetAllCompaniesTest">
+				<methods>
+					<include
+						name="verifyCustomFieldValueInShowAllCompanies_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Off Limit Company History - Empty Record Check">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include name="getEmptyOffLimitHistoryOfCompany_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Company History - Valid History Fetch">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfCompany_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Company History - Re-Available Company">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfAvailableCompany_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Company History - Invalid Slug">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include
+						name="getOffLimitHistoryOfCompanyWithInvalidSlug_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Company History - Unauthorized Access">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include
+						name="getOffLimitHistoryOfCompanyWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithValidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Cross Account">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithCrossAccountToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Admin">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithAdminToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Team Member">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithTeamMemberToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Restricted">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithRestrictedToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithInvalidToken_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Industries Test - Create Custom Industry">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.GetIndustries_Test">
+				<methods>
+					<include name="getAllIndustriesWithCustomIndustry_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

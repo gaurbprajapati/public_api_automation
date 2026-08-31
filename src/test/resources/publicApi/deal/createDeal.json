@@ -1,0 +1,3307 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"name": {
+			"type": "string"
+		},
+		"created_on": {
+			"type": "string"
+		},
+		"updated_on": {
+			"type": "string"
+		},
+		"archived": {
+			"type": "integer"
+		},
+		"deal_stage": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"label": {
+					"type": "string"
+				},
+				"percentage": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id",
+				"label",
+				"percentage"
+			]
+		},
+		"deal_value": {
+			"type": "integer"
+		},
+		"deal_precentage_value": {
+			"type": "integer"
+		},
+		"close_date": {
+			"type": "string"
+		},
+		"deal_type": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"label": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id",
+				"label"
+			]
+		},
+		"slug": {
+			"type": "string"
+		},
+		"company_slug": {
+			"type": "string"
+		},
+		"additional_company_slugs": {
+			"type": "array",
+			"items": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		"contact_slugs": {
+			"type": "array",
+			"items": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "string"
+				}
+			]
+		},
+		"job_slug": {
+			"type": "string"
+		},
+		"additional_job_slugs": {
+			"type": "array",
+			"items": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "string"
+				}
+			]
+		},
+		"candidate_slug": {
+			"type": "string"
+		},
+		"additional_candidate_slugs": {
+			"type": "array",
+			"items": [
+				{
+					"type": "string"
+				},
+				{
+					"type": "string"
+				}
+			]
+		},
+		"custom_fields": {
+			"type": "array",
+			"items": {}
+		},
+		"created_by": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"first_name": {
+					"type": "string"
+				},
+				"last_name": {
+					"type": "string"
+				},
+				"email": {
+					"type": ["null", "string"]
+				},
+				"contact_number": {
+					"type": ["null", "string"]
+				},
+				"avatar": {
+					"type": "null"
+				}
+			},
+			"required": [
+				"id",
+				"first_name",
+				"last_name",
+				"email",
+				"contact_number",
+				"avatar"
+			]
+		},
+		"updated_by": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"first_name": {
+					"type": "string"
+				},
+				"last_name": {
+					"type": "string"
+				},
+				"email": {
+					"type": ["null", "string"]
+				},
+				"contact_number": {
+					"type": ["null", "string"]
+				},
+				"avatar": {
+					"type": "null"
+				}
+			},
+			"required": [
+				"id",
+				"first_name",
+				"last_name",
+				"email",
+				"contact_number",
+				"avatar"
+			]
+		},
+		"owner": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"first_name": {
+					"type": "string"
+				},
+				"last_name": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"contact_number": {
+					"type": "string"
+				},
+				"avatar": {
+					"type": "null"
+				}
+			},
+			"required": [
+				"id",
+				"first_name",
+				"last_name",
+				"email",
+				"contact_number",
+				"avatar"
+			]
+		},
+		"resource_url": {
+			"type": "string"
+		},
+		"company": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"industry_id": {
+					"type": "integer"
+				},
+				"company_name": {
+					"type": "string"
+				},
+				"about_company": {
+					"type": ["null", "string"]
+				},
+				"logo": {
+					"type": ["null", "string"]
+				},
+				"slug": {
+					"type": "string"
+				},
+				"created_on": {
+					"type": "string"
+				},
+				"updated_on": {
+					"type": "string"
+				},
+				"website": {
+					"type": "string"
+				},
+				"city": {
+					"type": ["null", "string"]
+				},
+				"address": {
+					"type": ["null", "string"]
+				},
+				"facebook": {
+					"type": "string"
+				},
+				"twitter": {
+					"type": "string"
+				},
+				"linkedin": {
+					"type": "string"
+				},
+				"custom_fields": {
+					"type": "array",
+					"items": {}
+				},
+				"created_by": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": ["null", "string"]
+						},
+						"contact_number": {
+							"type": ["null", "string"]
+						},
+						"avatar": {
+							"type": "null"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar"
+					]
+				},
+				"updated_by": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": ["null", "string"]
+						},
+						"contact_number": {
+							"type": ["null", "string"]
+						},
+						"avatar": {
+							"type": "null"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar"
+					]
+				},
+				"owner": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						},
+						"contact_number": {
+							"type": "string"
+						},
+						"avatar": {
+							"type": "null"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar"
+					]
+				},
+				"resource_url": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id",
+				"industry_id",
+				"company_name",
+				"about_company",
+				"logo",
+				"slug",
+				"created_on",
+				"updated_on",
+				"website",
+				"city",
+				"address",
+				"facebook",
+				"twitter",
+				"linkedin",
+				"custom_fields",
+				"created_by",
+				"updated_by",
+				"owner",
+				"resource_url"
+			]
+		},
+		"additional_companies": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"industry_id": {
+							"type": "integer"
+						},
+						"company_name": {
+							"type": "string"
+						},
+						"about_company": {
+							"type": ["null", "string"]
+						},
+						"logo": {
+							"type": ["null", "string"]
+						},
+						"slug": {
+							"type": "string"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"website": {
+							"type": "string"
+						},
+						"city": {
+							"type": ["null", "string"]
+						},
+						"address": {
+							"type": ["null", "string"]
+						},
+						"facebook": {
+							"type": "string"
+						},
+						"twitter": {
+							"type": "string"
+						},
+						"linkedin": {
+							"type": "string"
+						},
+						"custom_fields": {
+							"type": "array",
+							"items": {}
+						},
+						"created_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": ["null", "string"]
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"updated_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"owner": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"resource_url": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"id",
+						"industry_id",
+						"company_name",
+						"about_company",
+						"logo",
+						"slug",
+						"created_on",
+						"updated_on",
+						"website",
+						"city",
+						"address",
+						"facebook",
+						"twitter",
+						"linkedin",
+						"custom_fields",
+						"created_by",
+						"updated_by",
+						"owner",
+						"resource_url"
+					]
+				}
+			]
+		},
+		"contacts": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						},
+						"contact_number": {
+							"type": "string"
+						},
+						"avatar": {
+							"type": "null"
+						},
+						"slug": {
+							"type": "string"
+						},
+						"company_slug": {
+							"type": "string"
+						},
+						"additional_company_slugs": {
+							"type": "array",
+							"items": [
+								{
+									"type": "string"
+								}
+							]
+						},
+						"facebook": {
+							"type": "string"
+						},
+						"twitter": {
+							"type": "string"
+						},
+						"linkedin": {
+							"type": "string"
+						},
+						"xing": {
+							"type": "string"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"city": {
+							"type": "null"
+						},
+						"locality": {
+							"type": "null"
+						},
+						"address": {
+							"type": "null"
+						},
+						"designation": {
+							"type": "null"
+						},
+						"stage_id": {
+							"type": "integer"
+						},
+						"custom_fields": {
+							"type": "array",
+							"items": {}
+						},
+						"created_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"updated_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"owner": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"resource_url": {
+							"type": "string"
+						},
+						"is_email_opted_out": {
+							"type": "string"
+						},
+						"email_opt_out_source": {
+							"type": "null"
+						},
+						"stage": {
+							"type": "object",
+							"properties": {
+								"stage_id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"stage_id",
+								"label"
+							]
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar",
+						"slug",
+						"company_slug",
+						"additional_company_slugs",
+						"facebook",
+						"twitter",
+						"linkedin",
+						"xing",
+						"created_on",
+						"updated_on",
+						"city",
+						"locality",
+						"address",
+						"designation",
+						"stage_id",
+						"custom_fields",
+						"created_by",
+						"updated_by",
+						"owner",
+						"resource_url",
+						"is_email_opted_out",
+						"email_opt_out_source",
+						"stage"
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						},
+						"contact_number": {
+							"type": "string"
+						},
+						"avatar": {
+							"type": "null"
+						},
+						"slug": {
+							"type": "string"
+						},
+						"company_slug": {
+							"type": "string"
+						},
+						"additional_company_slugs": {
+							"type": "array",
+							"items": [
+								{
+									"type": "string"
+								}
+							]
+						},
+						"facebook": {
+							"type": "string"
+						},
+						"twitter": {
+							"type": "string"
+						},
+						"linkedin": {
+							"type": "string"
+						},
+						"xing": {
+							"type": "string"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"city": {
+							"type": "null"
+						},
+						"locality": {
+							"type": "null"
+						},
+						"address": {
+							"type": "null"
+						},
+						"designation": {
+							"type": "null"
+						},
+						"stage_id": {
+							"type": "integer"
+						},
+						"custom_fields": {
+							"type": "array",
+							"items": {}
+						},
+						"created_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"updated_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"owner": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"resource_url": {
+							"type": "string"
+						},
+						"is_email_opted_out": {
+							"type": "string"
+						},
+						"email_opt_out_source": {
+							"type": "null"
+						},
+						"stage": {
+							"type": "object",
+							"properties": {
+								"stage_id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"stage_id",
+								"label"
+							]
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar",
+						"slug",
+						"company_slug",
+						"additional_company_slugs",
+						"facebook",
+						"twitter",
+						"linkedin",
+						"xing",
+						"created_on",
+						"updated_on",
+						"city",
+						"locality",
+						"address",
+						"designation",
+						"stage_id",
+						"custom_fields",
+						"created_by",
+						"updated_by",
+						"owner",
+						"resource_url",
+						"is_email_opted_out",
+						"email_opt_out_source",
+						"stage"
+					]
+				}
+			]
+		},
+		"job": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"slug": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"company_slug": {
+					"type": "string"
+				},
+				"contact_slug": {
+					"type": "string"
+				},
+				"secondary_contact_slugs": {
+					"type": "null"
+				},
+				"note_for_candidates": {
+					"type": "string"
+				},
+				"number_of_openings": {
+					"type": "integer"
+				},
+				"minimum_experience": {
+					"type": "integer"
+				},
+				"maximum_experience": {
+					"type": "integer"
+				},
+				"min_annual_salary": {
+					"type": "integer"
+				},
+				"max_annual_salary": {
+					"type": "integer"
+				},
+				"salary_type": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"label": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"id",
+						"label"
+					]
+				},
+				"job_status": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"label": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"id",
+						"label"
+					]
+				},
+				"job_status_comment": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"locality": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"country": {
+					"type": "string"
+				},
+				"address": {
+					"type": "string"
+				},
+				"created_on": {
+					"type": "string"
+				},
+				"created_by": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": ["null", "string"]
+						},
+						"contact_number": {
+							"type": ["null", "string"]
+						},
+						"avatar": {
+							"type": "null"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar"
+					]
+				},
+				"updated_on": {
+					"type": "string"
+				},
+				"updated_by": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": ["null", "string"]
+						},
+						"contact_number": {
+							"type": ["null", "string"]
+						},
+						"avatar": {
+							"type": "null"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar"
+					]
+				},
+				"owner": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": ["null", "string"]
+						},
+						"contact_number": {
+							"type": ["null", "string"]
+						},
+						"avatar": {
+							"type": "null"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar"
+					]
+				},
+				"enable_job_application_form": {
+					"type": "integer"
+				},
+				"job_posting_status": {
+					"type": "integer"
+				},
+				"job_code": {
+					"type": "null"
+				},
+				"show_company_logo": {
+					"type": "integer"
+				},
+				"specialization": {
+					"type": "string"
+				},
+				"qualification_id": {
+					"type": "integer"
+				},
+				"currency_id": {
+					"type": "integer"
+				},
+				"job_description_text": {
+					"type": "string"
+				},
+				"job_description_file": {
+					"type": "string"
+				},
+				"job_questions": {
+					"type": "array",
+					"items": {}
+				},
+				"custom_fields": {
+					"type": "array",
+					"items": {}
+				},
+				"resource_url": {
+					"type": "string"
+				},
+				"application_form_url": {
+					"type": "string"
+				},
+				"shared_job_image": {
+					"type": "string"
+				},
+				"job_skill": {
+					"type": "string"
+				},
+				"job_type": {
+					"type": "string"
+				},
+				"job_category": {
+					"type": "string"
+				},
+				"hiring_pipeline_id": {
+					"type": "integer"
+				},
+				"collaborator_users": {
+					"type": "array",
+					"items": {}
+				},
+				"collaborator_teams": {
+					"type": "array",
+					"items": {}
+				},
+				"currency": {
+					"type": "object",
+					"properties": {
+						"currency_id": {
+							"type": "integer"
+						},
+						"code": {
+							"type": "string"
+						},
+						"country": {
+							"type": "string"
+						},
+						"currency": {
+							"type": "string"
+						},
+						"symbol": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"currency_id",
+						"code",
+						"country",
+						"currency",
+						"symbol"
+					]
+				},
+				"qualification": {
+					"type": "object",
+					"properties": {
+						"qualification_id": {
+							"type": "integer"
+						},
+						"label": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"qualification_id",
+						"label"
+					]
+				}
+			},
+			"required": [
+				"id",
+				"slug",
+				"name",
+				"company_slug",
+				"contact_slug",
+				"secondary_contact_slugs",
+				"note_for_candidates",
+				"number_of_openings",
+				"minimum_experience",
+				"maximum_experience",
+				"min_annual_salary",
+				"max_annual_salary",
+				"salary_type",
+				"job_status",
+				"job_status_comment",
+				"city",
+				"locality",
+				"state",
+				"country",
+				"address",
+				"created_on",
+				"created_by",
+				"updated_on",
+				"updated_by",
+				"owner",
+				"enable_job_application_form",
+				"job_posting_status",
+				"job_code",
+				"show_company_logo",
+				"specialization",
+				"qualification_id",
+				"currency_id",
+				"job_description_text",
+				"job_description_file",
+				"job_questions",
+				"custom_fields",
+				"resource_url",
+				"application_form_url",
+				"shared_job_image",
+				"job_skill",
+				"job_type",
+				"job_category",
+				"hiring_pipeline_id",
+				"collaborator_users",
+				"collaborator_teams",
+				"currency",
+				"qualification"
+			]
+		},
+		"additional_jobs": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"slug": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						},
+						"company_slug": {
+							"type": "string"
+						},
+						"contact_slug": {
+							"type": "string"
+						},
+						"secondary_contact_slugs": {
+							"type": "null"
+						},
+						"note_for_candidates": {
+							"type": "string"
+						},
+						"number_of_openings": {
+							"type": "integer"
+						},
+						"minimum_experience": {
+							"type": "integer"
+						},
+						"maximum_experience": {
+							"type": "integer"
+						},
+						"min_annual_salary": {
+							"type": "integer"
+						},
+						"max_annual_salary": {
+							"type": "integer"
+						},
+						"salary_type": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"id",
+								"label"
+							]
+						},
+						"job_status": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"id",
+								"label"
+							]
+						},
+						"job_status_comment": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"locality": {
+							"type": "string"
+						},
+						"state": {
+							"type": "string"
+						},
+						"country": {
+							"type": "string"
+						},
+						"address": {
+							"type": "string"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"created_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": ["null", "string"]
+								},
+								"contact_number": {
+									"type": ["null", "string"]
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"updated_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": ["null", "string"]
+								},
+								"contact_number": {
+									"type": ["null", "string"]
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"owner": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": ["null", "string"]
+								},
+								"contact_number": {
+									"type": ["null", "string"]
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"enable_job_application_form": {
+							"type": "integer"
+						},
+						"job_posting_status": {
+							"type": "integer"
+						},
+						"job_code": {
+							"type": "null"
+						},
+						"show_company_logo": {
+							"type": "integer"
+						},
+						"specialization": {
+							"type": "string"
+						},
+						"qualification_id": {
+							"type": "integer"
+						},
+						"currency_id": {
+							"type": "integer"
+						},
+						"job_description_text": {
+							"type": "string"
+						},
+						"job_description_file": {
+							"type": "string"
+						},
+						"job_questions": {
+							"type": "array",
+							"items": {}
+						},
+						"custom_fields": {
+							"type": "array",
+							"items": {}
+						},
+						"resource_url": {
+							"type": "string"
+						},
+						"application_form_url": {
+							"type": "string"
+						},
+						"shared_job_image": {
+							"type": "string"
+						},
+						"job_skill": {
+							"type": "string"
+						},
+						"job_type": {
+							"type": "string"
+						},
+						"job_category": {
+							"type": "string"
+						},
+						"hiring_pipeline_id": {
+							"type": "integer"
+						},
+						"collaborator_users": {
+							"type": "array",
+							"items": {}
+						},
+						"collaborator_teams": {
+							"type": "array",
+							"items": {}
+						},
+						"currency": {
+							"type": "object",
+							"properties": {
+								"currency_id": {
+									"type": "integer"
+								},
+								"code": {
+									"type": "string"
+								},
+								"country": {
+									"type": "string"
+								},
+								"currency": {
+									"type": "string"
+								},
+								"symbol": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"currency_id",
+								"code",
+								"country",
+								"currency",
+								"symbol"
+							]
+						},
+						"qualification": {
+							"type": "object",
+							"properties": {
+								"qualification_id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"qualification_id",
+								"label"
+							]
+						}
+					},
+					"required": [
+						"id",
+						"slug",
+						"name",
+						"company_slug",
+						"contact_slug",
+						"secondary_contact_slugs",
+						"note_for_candidates",
+						"number_of_openings",
+						"minimum_experience",
+						"maximum_experience",
+						"min_annual_salary",
+						"max_annual_salary",
+						"salary_type",
+						"job_status",
+						"job_status_comment",
+						"city",
+						"locality",
+						"state",
+						"country",
+						"address",
+						"created_on",
+						"created_by",
+						"updated_on",
+						"updated_by",
+						"owner",
+						"enable_job_application_form",
+						"job_posting_status",
+						"job_code",
+						"show_company_logo",
+						"specialization",
+						"qualification_id",
+						"currency_id",
+						"job_description_text",
+						"job_description_file",
+						"job_questions",
+						"custom_fields",
+						"resource_url",
+						"application_form_url",
+						"shared_job_image",
+						"job_skill",
+						"job_type",
+						"job_category",
+						"hiring_pipeline_id",
+						"collaborator_users",
+						"collaborator_teams",
+						"currency",
+						"qualification"
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"slug": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						},
+						"company_slug": {
+							"type": "string"
+						},
+						"contact_slug": {
+							"type": "string"
+						},
+						"secondary_contact_slugs": {
+							"type": "null"
+						},
+						"note_for_candidates": {
+							"type": "string"
+						},
+						"number_of_openings": {
+							"type": "integer"
+						},
+						"minimum_experience": {
+							"type": "integer"
+						},
+						"maximum_experience": {
+							"type": "integer"
+						},
+						"min_annual_salary": {
+							"type": "integer"
+						},
+						"max_annual_salary": {
+							"type": "integer"
+						},
+						"salary_type": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"id",
+								"label"
+							]
+						},
+						"job_status": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"id",
+								"label"
+							]
+						},
+						"job_status_comment": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"locality": {
+							"type": "string"
+						},
+						"state": {
+							"type": "string"
+						},
+						"country": {
+							"type": "string"
+						},
+						"address": {
+							"type": "string"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"created_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": ["null", "string"]
+								},
+								"contact_number": {
+									"type": ["null", "string"]
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"updated_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": ["null", "string"]
+								},
+								"contact_number": {
+									"type": ["null", "string"]
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"owner": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": ["null", "string"]
+								},
+								"contact_number": {
+									"type": ["null", "string"]
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"enable_job_application_form": {
+							"type": "integer"
+						},
+						"job_posting_status": {
+							"type": "integer"
+						},
+						"job_code": {
+							"type": "null"
+						},
+						"show_company_logo": {
+							"type": "integer"
+						},
+						"specialization": {
+							"type": "string"
+						},
+						"qualification_id": {
+							"type": "integer"
+						},
+						"currency_id": {
+							"type": "integer"
+						},
+						"job_description_text": {
+							"type": "string"
+						},
+						"job_description_file": {
+							"type": "string"
+						},
+						"job_questions": {
+							"type": "array",
+							"items": {}
+						},
+						"custom_fields": {
+							"type": "array",
+							"items": {}
+						},
+						"resource_url": {
+							"type": "string"
+						},
+						"application_form_url": {
+							"type": "string"
+						},
+						"shared_job_image": {
+							"type": "string"
+						},
+						"job_skill": {
+							"type": "string"
+						},
+						"job_type": {
+							"type": "string"
+						},
+						"job_category": {
+							"type": "string"
+						},
+						"hiring_pipeline_id": {
+							"type": "integer"
+						},
+						"collaborator_users": {
+							"type": "array",
+							"items": {}
+						},
+						"collaborator_teams": {
+							"type": "array",
+							"items": {}
+						},
+						"currency": {
+							"type": "object",
+							"properties": {
+								"currency_id": {
+									"type": "integer"
+								},
+								"code": {
+									"type": "string"
+								},
+								"country": {
+									"type": "string"
+								},
+								"currency": {
+									"type": "string"
+								},
+								"symbol": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"currency_id",
+								"code",
+								"country",
+								"currency",
+								"symbol"
+							]
+						},
+						"qualification": {
+							"type": "object",
+							"properties": {
+								"qualification_id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"qualification_id",
+								"label"
+							]
+						}
+					},
+					"required": [
+						"id",
+						"slug",
+						"name",
+						"company_slug",
+						"contact_slug",
+						"secondary_contact_slugs",
+						"note_for_candidates",
+						"number_of_openings",
+						"minimum_experience",
+						"maximum_experience",
+						"min_annual_salary",
+						"max_annual_salary",
+						"salary_type",
+						"job_status",
+						"job_status_comment",
+						"city",
+						"locality",
+						"state",
+						"country",
+						"address",
+						"created_on",
+						"created_by",
+						"updated_on",
+						"updated_by",
+						"owner",
+						"enable_job_application_form",
+						"job_posting_status",
+						"job_code",
+						"show_company_logo",
+						"specialization",
+						"qualification_id",
+						"currency_id",
+						"job_description_text",
+						"job_description_file",
+						"job_questions",
+						"custom_fields",
+						"resource_url",
+						"application_form_url",
+						"shared_job_image",
+						"job_skill",
+						"job_type",
+						"job_category",
+						"hiring_pipeline_id",
+						"collaborator_users",
+						"collaborator_teams",
+						"currency",
+						"qualification"
+					]
+				}
+			]
+		},
+		"candidate": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"first_name": {
+					"type": "string"
+				},
+				"last_name": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"contact_number": {
+					"type": "string"
+				},
+				"gender_id": {
+					"type": "integer"
+				},
+				"qualification_id": {
+					"type": "integer"
+				},
+				"specialization": {
+					"type": "string"
+				},
+				"work_ex_year": {
+					"type": "integer"
+				},
+				"candidate_dob": {
+					"type": "string"
+				},
+				"current_salary": {
+					"type": "integer"
+				},
+				"salary_expectation": {
+					"type": "integer"
+				},
+				"resume": {
+					"type": "object",
+					"properties": {
+						"filename": {
+							"type": "string"
+						},
+						"file_link": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"filename",
+						"file_link"
+					]
+				},
+				"willing_to_relocate": {
+					"type": "integer"
+				},
+				"current_organization": {
+					"type": "string"
+				},
+				"current_status": {
+					"type": "string"
+				},
+				"notice_period": {
+					"type": "integer"
+				},
+				"currency_id": {
+					"type": "integer"
+				},
+				"slug": {
+					"type": "string"
+				},
+				"profile_update_link_status": {
+					"type": "integer"
+				},
+				"profile_update_requested_on": {
+					"type": "null"
+				},
+				"profile_updated_on": {
+					"type": "null"
+				},
+				"avatar": {
+					"type": "string"
+				},
+				"facebook": {
+					"type": "string"
+				},
+				"twitter": {
+					"type": "string"
+				},
+				"linkedin": {
+					"type": "string"
+				},
+				"github": {
+					"type": "string"
+				},
+				"xing": {
+					"type": "string"
+				},
+				"created_on": {
+					"type": "string"
+				},
+				"updated_on": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"locality": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"country": {
+					"type": "string"
+				},
+				"address": {
+					"type": "string"
+				},
+				"relevant_experience": {
+					"type": "integer"
+				},
+				"position": {
+					"type": "string"
+				},
+				"available_from": {
+					"type": "string"
+				},
+				"salary_type": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"label": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"id",
+						"label"
+					]
+				},
+				"source": {
+					"type": "string"
+				},
+				"language_skills": {
+					"type": ["null", "string"]
+				},
+				"skill": {
+					"type": "string"
+				},
+				"custom_fields": {
+					"type": "array",
+					"items": {}
+				},
+				"created_by": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": ["null", "string"]
+						},
+						"contact_number": {
+							"type": ["null", "string"]
+						},
+						"avatar": {
+							"type": "null"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar"
+					]
+				},
+				"updated_by": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": ["null", "string"]
+						},
+						"contact_number": {
+							"type": ["null", "string"]
+						},
+						"avatar": {
+							"type": "null"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar"
+					]
+				},
+				"owner": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						},
+						"contact_number": {
+							"type": "string"
+						},
+						"avatar": {
+							"type": "null"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"avatar"
+					]
+				},
+				"resource_url": {
+					"type": "string"
+				},
+				"is_email_opted_out": {
+					"type": "string"
+				},
+				"email_opt_out_source": {
+					"type": "null"
+				},
+				"qualification": {
+					"type": "object",
+					"properties": {
+						"qualification_id": {
+							"type": "integer"
+						},
+						"label": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"qualification_id",
+						"label"
+					]
+				},
+				"currency": {
+					"type": "object",
+					"properties": {
+						"currency_id": {
+							"type": "integer"
+						},
+						"code": {
+							"type": "string"
+						},
+						"country": {
+							"type": "string"
+						},
+						"currency": {
+							"type": "string"
+						},
+						"symbol": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"currency_id",
+						"code",
+						"country",
+						"currency",
+						"symbol"
+					]
+				}
+			},
+			"required": [
+				"id",
+				"first_name",
+				"last_name",
+				"email",
+				"contact_number",
+				"gender_id",
+				"qualification_id",
+				"specialization",
+				"work_ex_year",
+				"candidate_dob",
+				"current_salary",
+				"salary_expectation",
+				"resume",
+				"willing_to_relocate",
+				"current_organization",
+				"current_status",
+				"notice_period",
+				"currency_id",
+				"slug",
+				"profile_update_link_status",
+				"profile_update_requested_on",
+				"profile_updated_on",
+				"avatar",
+				"facebook",
+				"twitter",
+				"linkedin",
+				"github",
+				"xing",
+				"created_on",
+				"updated_on",
+				"city",
+				"locality",
+				"state",
+				"country",
+				"address",
+				"relevant_experience",
+				"position",
+				"available_from",
+				"salary_type",
+				"source",
+				"language_skills",
+				"skill",
+				"custom_fields",
+				"created_by",
+				"updated_by",
+				"owner",
+				"resource_url",
+				"is_email_opted_out",
+				"email_opt_out_source",
+				"qualification",
+				"currency"
+			]
+		},
+		"additional_candidates": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						},
+						"contact_number": {
+							"type": "string"
+						},
+						"gender_id": {
+							"type": "integer"
+						},
+						"qualification_id": {
+							"type": "integer"
+						},
+						"specialization": {
+							"type": "string"
+						},
+						"work_ex_year": {
+							"type": "integer"
+						},
+						"candidate_dob": {
+							"type": "string"
+						},
+						"current_salary": {
+							"type": "integer"
+						},
+						"salary_expectation": {
+							"type": "integer"
+						},
+						"resume": {
+							"type": "object",
+							"properties": {
+								"filename": {
+									"type": "string"
+								},
+								"file_link": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"filename",
+								"file_link"
+							]
+						},
+						"willing_to_relocate": {
+							"type": "integer"
+						},
+						"current_organization": {
+							"type": "string"
+						},
+						"current_status": {
+							"type": "string"
+						},
+						"notice_period": {
+							"type": "integer"
+						},
+						"currency_id": {
+							"type": "integer"
+						},
+						"slug": {
+							"type": "string"
+						},
+						"profile_update_link_status": {
+							"type": "integer"
+						},
+						"profile_update_requested_on": {
+							"type": "null"
+						},
+						"profile_updated_on": {
+							"type": "null"
+						},
+						"avatar": {
+							"type": "string"
+						},
+						"facebook": {
+							"type": "string"
+						},
+						"twitter": {
+							"type": "string"
+						},
+						"linkedin": {
+							"type": "string"
+						},
+						"github": {
+							"type": "string"
+						},
+						"xing": {
+							"type": "string"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"locality": {
+							"type": "string"
+						},
+						"state": {
+							"type": "string"
+						},
+						"country": {
+							"type": "string"
+						},
+						"address": {
+							"type": "string"
+						},
+						"relevant_experience": {
+							"type": "integer"
+						},
+						"position": {
+							"type": "string"
+						},
+						"available_from": {
+							"type": "string"
+						},
+						"salary_type": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"id",
+								"label"
+							]
+						},
+						"source": {
+							"type": "string"
+						},
+						"language_skills": {
+							"type": ["null", "string"]
+						},
+						"skill": {
+							"type": "string"
+						},
+						"custom_fields": {
+							"type": "array",
+							"items": {}
+						},
+						"created_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"updated_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"owner": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"resource_url": {
+							"type": "string"
+						},
+						"is_email_opted_out": {
+							"type": "string"
+						},
+						"email_opt_out_source": {
+							"type": "null"
+						},
+						"qualification": {
+							"type": "object",
+							"properties": {
+								"qualification_id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"qualification_id",
+								"label"
+							]
+						},
+						"currency": {
+							"type": "object",
+							"properties": {
+								"currency_id": {
+									"type": "integer"
+								},
+								"code": {
+									"type": "string"
+								},
+								"country": {
+									"type": "string"
+								},
+								"currency": {
+									"type": "string"
+								},
+								"symbol": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"currency_id",
+								"code",
+								"country",
+								"currency",
+								"symbol"
+							]
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"gender_id",
+						"qualification_id",
+						"specialization",
+						"work_ex_year",
+						"candidate_dob",
+						"current_salary",
+						"salary_expectation",
+						"resume",
+						"willing_to_relocate",
+						"current_organization",
+						"current_status",
+						"notice_period",
+						"currency_id",
+						"slug",
+						"profile_update_link_status",
+						"profile_update_requested_on",
+						"profile_updated_on",
+						"avatar",
+						"facebook",
+						"twitter",
+						"linkedin",
+						"github",
+						"xing",
+						"created_on",
+						"updated_on",
+						"city",
+						"locality",
+						"state",
+						"country",
+						"address",
+						"relevant_experience",
+						"position",
+						"available_from",
+						"salary_type",
+						"source",
+						"language_skills",
+						"skill",
+						"custom_fields",
+						"created_by",
+						"updated_by",
+						"owner",
+						"resource_url",
+						"is_email_opted_out",
+						"email_opt_out_source",
+						"qualification",
+						"currency"
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"email": {
+							"type": "string"
+						},
+						"contact_number": {
+							"type": "string"
+						},
+						"gender_id": {
+							"type": "integer"
+						},
+						"qualification_id": {
+							"type": "integer"
+						},
+						"specialization": {
+							"type": "string"
+						},
+						"work_ex_year": {
+							"type": "integer"
+						},
+						"candidate_dob": {
+							"type": "string"
+						},
+						"current_salary": {
+							"type": "integer"
+						},
+						"salary_expectation": {
+							"type": "integer"
+						},
+						"resume": {
+							"type": "object",
+							"properties": {
+								"filename": {
+									"type": "string"
+								},
+								"file_link": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"filename",
+								"file_link"
+							]
+						},
+						"willing_to_relocate": {
+							"type": "integer"
+						},
+						"current_organization": {
+							"type": "string"
+						},
+						"current_status": {
+							"type": "string"
+						},
+						"notice_period": {
+							"type": "integer"
+						},
+						"currency_id": {
+							"type": "integer"
+						},
+						"slug": {
+							"type": "string"
+						},
+						"profile_update_link_status": {
+							"type": "integer"
+						},
+						"profile_update_requested_on": {
+							"type": "null"
+						},
+						"profile_updated_on": {
+							"type": "null"
+						},
+						"avatar": {
+							"type": "string"
+						},
+						"facebook": {
+							"type": "string"
+						},
+						"twitter": {
+							"type": "string"
+						},
+						"linkedin": {
+							"type": "string"
+						},
+						"github": {
+							"type": "string"
+						},
+						"xing": {
+							"type": "string"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"locality": {
+							"type": "string"
+						},
+						"state": {
+							"type": "string"
+						},
+						"country": {
+							"type": "string"
+						},
+						"address": {
+							"type": "string"
+						},
+						"relevant_experience": {
+							"type": "integer"
+						},
+						"position": {
+							"type": "string"
+						},
+						"available_from": {
+							"type": "string"
+						},
+						"salary_type": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"id",
+								"label"
+							]
+						},
+						"source": {
+							"type": "string"
+						},
+						"language_skills": {
+							"type": "null"
+						},
+						"skill": {
+							"type": "string"
+						},
+						"custom_fields": {
+							"type": "array",
+							"items": {}
+						},
+						"created_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"updated_by": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"owner": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"first_name": {
+									"type": "string"
+								},
+								"last_name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"contact_number": {
+									"type": "string"
+								},
+								"avatar": {
+									"type": "null"
+								}
+							},
+							"required": [
+								"id",
+								"first_name",
+								"last_name",
+								"email",
+								"contact_number",
+								"avatar"
+							]
+						},
+						"resource_url": {
+							"type": "string"
+						},
+						"is_email_opted_out": {
+							"type": "string"
+						},
+						"email_opt_out_source": {
+							"type": "null"
+						},
+						"qualification": {
+							"type": "object",
+							"properties": {
+								"qualification_id": {
+									"type": "integer"
+								},
+								"label": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"qualification_id",
+								"label"
+							]
+						},
+						"currency": {
+							"type": "object",
+							"properties": {
+								"currency_id": {
+									"type": "integer"
+								},
+								"code": {
+									"type": "string"
+								},
+								"country": {
+									"type": "string"
+								},
+								"currency": {
+									"type": "string"
+								},
+								"symbol": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"currency_id",
+								"code",
+								"country",
+								"currency",
+								"symbol"
+							]
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"email",
+						"contact_number",
+						"gender_id",
+						"qualification_id",
+						"specialization",
+						"work_ex_year",
+						"candidate_dob",
+						"current_salary",
+						"salary_expectation",
+						"resume",
+						"willing_to_relocate",
+						"current_organization",
+						"current_status",
+						"notice_period",
+						"currency_id",
+						"slug",
+						"profile_update_link_status",
+						"profile_update_requested_on",
+						"profile_updated_on",
+						"avatar",
+						"facebook",
+						"twitter",
+						"linkedin",
+						"github",
+						"xing",
+						"created_on",
+						"updated_on",
+						"city",
+						"locality",
+						"state",
+						"country",
+						"address",
+						"relevant_experience",
+						"position",
+						"available_from",
+						"salary_type",
+						"source",
+						"language_skills",
+						"skill",
+						"custom_fields",
+						"created_by",
+						"updated_by",
+						"owner",
+						"resource_url",
+						"is_email_opted_out",
+						"email_opt_out_source",
+						"qualification",
+						"currency"
+					]
+				}
+			]
+		},
+		"deal_split": {
+			"type": "object",
+			"properties": {
+				"teammates_collaborator": {
+					"type": "array",
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"teammate_id": {
+									"type": "integer"
+								},
+								"teammate_name": {
+									"type": "string"
+								},
+								"split_deal_amount": {
+									"type": [
+										"number",
+										"integer"
+									]
+								},
+								"split_deal_weighted_amount": {
+									"type": [
+										"number",
+										"integer"
+									]
+								},
+								"split_percentage": {
+									"type": "integer"
+								}
+							},
+							"required": [
+								"teammate_id",
+								"teammate_name",
+								"split_deal_amount",
+								"split_deal_weighted_amount",
+								"split_percentage"
+							]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"teammate_id": {
+									"type": "integer"
+								},
+								"teammate_name": {
+									"type": "string"
+								},
+								"split_deal_amount": {
+									"type": [
+										"number",
+										"integer"
+									]
+								},
+								"split_deal_weighted_amount": {
+									"type": [
+										"number",
+										"integer"
+									]
+								},
+								"split_percentage": {
+									"type": "integer"
+								}
+							},
+							"required": [
+								"teammate_id",
+								"teammate_name",
+								"split_deal_amount",
+								"split_deal_weighted_amount",
+								"split_percentage"
+							]
+						}
+					]
+				},
+				"teams_collaborator": {
+					"type": "array",
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"team_id": {
+									"type": "integer"
+								},
+								"team_name": {
+									"type": "string"
+								},
+								"split_deal_amount": {
+									"type": [
+										"number",
+										"integer"
+									]
+								},
+								"split_deal_weighted_amount": {
+									"type": [
+										"number",
+										"integer"
+									]
+								},
+								"split_percentage": {
+									"type": "integer"
+								}
+							},
+							"required": [
+								"team_id",
+								"team_name",
+								"split_deal_amount",
+								"split_deal_weighted_amount",
+								"split_percentage"
+							]
+						}
+					]
+				},
+				"teammates_unallocated_split_percentage": {
+					"type": "integer"
+				},
+				"teams_unallocated_split_percentage": {
+					"type": "integer"
+				},
+				"split_type": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"teammates_collaborator",
+				"teams_collaborator",
+				"teammates_unallocated_split_percentage",
+				"teams_unallocated_split_percentage",
+				"split_type"
+			]
+		},
+		"deal_stage_remarks": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"stage_name": {
+						"type": "string"
+					},
+					"stage_id": {
+						"type": "integer"
+					},
+					"reason": {
+						"type": ["string", "null"]
+					},
+					"updated_on": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updated_by": {
+						"type": "integer"
+					}
+				},
+				"required": [
+					"stage_name",
+					"stage_id",
+					"reason",
+					"updated_on",
+					"updated_by"
+				]
+			}
+		}
+	},
+	"required": [
+		"id",
+		"name",
+		"created_on",
+		"updated_on",
+		"archived",
+		"deal_stage",
+		"deal_value",
+		"deal_precentage_value",
+		"close_date",
+		"deal_type",
+		"slug",
+		"company_slug",
+		"additional_company_slugs",
+		"contact_slugs",
+		"job_slug",
+		"additional_job_slugs",
+		"candidate_slug",
+		"additional_candidate_slugs",
+		"custom_fields",
+		"created_by",
+		"updated_by",
+		"owner",
+		"resource_url",
+		"company",
+		"additional_companies",
+		"contacts",
+		"job",
+		"additional_jobs",
+		"candidate",
+		"additional_candidates",
+		"deal_split",
+		"deal_stage_remarks"
+	]
+}

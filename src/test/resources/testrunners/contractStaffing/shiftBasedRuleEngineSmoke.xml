@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Shift Based Rule Engine Smoke Suite" thread-count="10" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<test name="Shift_Rule_Engine_Smoke_Single_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifySingleRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Double_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyDoubleRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Three_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyThreeRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Four_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyFourRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Five_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyFiveRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_No_Rule">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyNoRuleMultipleTimeEntry" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Biweekly">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyBiweeklyCalculations" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Shift_Rule_Engine_Smoke_Monthly">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyMonthlyCalculations" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Shift_Rule_Engine_Smoke_Unallocated_hours">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.smoke.ShiftBasedRuleEngineSmokeTest">
+				<methods>
+					<include name="smokeVerifyUnallocatedHoursCalculations" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

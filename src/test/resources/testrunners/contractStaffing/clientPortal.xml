@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contract Staffing Export Timesheets Suite" thread-count="10" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - updateReimbursementStatusWithInvalidId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="updateReimbursementStatusWithInvalidId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetStatusHistoryInClientPortalTest - getStatusHistoryWithInvalidReimbursementId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetStatusHistoryInClientPortalTest">
+				<methods>
+					<include name="getStatusHistoryWithInvalidReimbursementId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - updateReimbursementStatusWithInvalidTimesheetId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="updateReimbursementStatusWithInvalidTimesheetId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetReimbursementInClientPortalTest - getReimbursementWithClientkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementInClientPortalTest">
+				<methods>
+					<include name="getReimbursementWithClientkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - updateReimbursementStatusWithInvoiceLinkedId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="updateReimbursementStatusWithInvoiceLinkedId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ClientPortal - GetReimbursementInClientPortalTest - getReimbursementsWithReopenedReimbursement_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementInClientPortalTest">
+				<methods>
+					<include name="getReimbursementsWithReopenedReimbursement_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - updateStatusWithClientTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="updateStatusWithClientTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetReimbursementCountInClientPortalTest - getReimbursementCountWithoutReimbursements_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementCountInClientPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithoutReimbursements_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetReimbursementInClientPortalTest - getReimbursementListWithoutReimbursement_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementInClientPortalTest">
+				<methods>
+					<include name="getReimbursementListWithoutReimbursement_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetReimbursementInClientPortalTest - getReimbursementsWithInvalidTimesheetId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementInClientPortalTest">
+				<methods>
+					<include name="getReimbursementsWithInvalidTimesheetId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetReimbursementCountInClientPortalTest - getReimbursementCountWithClientTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementCountInClientPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithClientTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - DeleteReimbursementInClientPortalTest - deleteReimbursementWithClientTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.DeleteReimbursementInClientPortalTest">
+				<methods>
+					<include name="deleteReimbursementWithClientTkn" /> 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetReimbursementCountInClientPortalTest - getReimbursementCountWithInvalidTimesheetId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementCountInClientPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithInvalidTimesheetId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetStatusHistoryInClientPortalTest - getStatusHistoryWithInvalidTimesheetId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetStatusHistoryInClientPortalTest">
+				<methods>
+					<include name="getStatusHistoryWithInvalidTimesheetId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - approveAlreadyApprovedReimbursement_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="approveAlreadyApprovedReimbursement_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - rejectAlreadyRejectedReimbursement_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="rejectAlreadyRejectedReimbursement_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - rejectApprovedReimbursement_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="rejectApprovedReimbursement_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - approveRejectedReimbursement_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="approveRejectedReimbursement_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ClientPortal - UpdatePayableBillableForReimbursementInClientPortalTest - UpdatePayableBillableFlagsWithClientTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdatePayableBillableForReimbursementInClientPortalTest">
+				<methods>
+					<include name="UpdatePayableBillableFlagsWithClientTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetReimbursementCountInClientPortalTest - getReimbursementCountWithNegativeTimesheetId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementCountInClientPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithNegativeTimesheetId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - rejectReimbursement_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="rejectReimbursement_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - rejectReimbursementWithNoRemark_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="rejectReimbursementWithNoRemark_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetStatusHistoryInClientPortalTest - getReimbursementStatusHistoryAfterApprove_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetStatusHistoryInClientPortalTest">
+				<methods>
+					<include name="getReimbursementStatusHistoryAfterApprove_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementInClientPortalTest - updateReimbursementWithClientTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementInClientPortalTest">
+				<methods>
+					<include name="updateReimbursementWithClientTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - CreateReimbursementInClientPortalTest - createReimbursementWithClientTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.CreateReimbursementInClientPortalTest">
+				<methods>
+					<include name="createReimbursementWithClientTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - ReopenReimbursementInClientPortalTest - reopenReimbursementWithClientTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.ReopenReimbursementInClientPortalTest">
+				<methods>
+					<include name="reopenReimbursementWithClientTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - updateReimbursementWithInvalidStatus_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="updateReimbursementWithInvalidStatus_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ClientPortal - GetStatusHistoryInClientPortalTest - getStatusHistoryWithClientTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetStatusHistoryInClientPortalTest">
+				<methods>
+					<include name="getStatusHistoryWithClientTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- ignoring these cases -->
+	<!-- <test name="ClientPortal - UpdateReimbursementStatusInClientPortalTest - updateReimbursementWithCrossAccountToken_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.UpdateReimbursementStatusInClientPortalTest">
+				<methods>
+					<include name="updateReimbursementWithCrossAccountToken_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ClientPortal - GetStatusHistoryInClientPortalTest - getStatusHistoryWithCrossAccountToken_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetStatusHistoryInClientPortalTest">
+				<methods>
+					<include name="getStatusHistoryWithCrossAccountToken_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	 <test name="ClientPortal - GetReimbursementCountInClientPortalTest - getReimbursementCountWithAnotherClientId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementCountInClientPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithAnotherClientId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ClientPortal - GetReimbursementInClientPortalTest - getReimbursementWithAnotherClientId_Client">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ClientPortal.GetReimbursementInClientPortalTest">
+				<methods>
+					<include name="getReimbursementWithAnotherClientId_Client" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	</suite>

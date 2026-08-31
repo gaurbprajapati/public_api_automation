@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- Owner - Saastar - AI Job Parser Feature -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<test name="Parse Job - English JD Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobEndpoint_EnglishJD_HappyPath" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - Multilingual Spanish JD Happy Path">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobEndpoint_MultilingualSpanishJD_HappyPath" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - Invalid Token">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - GET Method Not Allowed">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobWithGetMethod" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - Empty Body">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobWithEmptyBody" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - Missing Key">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobWithMissingKey" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - Missing File Name">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobWithMissingFileName" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - Missing Resume Parser Data">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobWithMissingResumeParserData" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - Missing Detail Filename">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobWithMissingDetailFilename" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - Invalid Key Format">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobWithInvalidKeyFormat" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - OnlyParserData False">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobWithOnlyParserDataFalse" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Parse Job - Response Structure">
+		<classes>
+			<class name="io.recruitcrm.albatross.job.ParseJobTest">
+				<methods>
+					<include name="verifyParseJobResponseStructure" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

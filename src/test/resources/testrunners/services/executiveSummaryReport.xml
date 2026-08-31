@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- Owner - Technostars - Harika Kurella, Priyanka Shinde -->
+<suite name="Rest API Test Suite">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test
+		name="All endpoints for Executive Search Templates Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.AllEndpointsOfExecutiveSummaryTemplatesTest">
+				<methods>
+					<include
+						name="userShouldAbleToCreateNewTemplate_executiveSummaryTest" />
+					<include name="editTemplate_executiveSummaryTest" />
+					<include name="getAllTemplate_executiveSummaryTest" />
+					<exclude
+						name="getTemplateByTemplateID_executiveSummaryTest" />
+					<include
+						name="userShouldAbleToDeleteNewTemplate_executiveSummaryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create template Endpoint for Executive Search">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.CreateTemplateExecutiveSummaryTest">
+				<methods>
+					<include
+						name="userShouldAbleToCreateNewTemplate_executiveSummaryTest" />
+					<include
+						name="userCannotCreateNewTemplateWithInvalidData_executiveSummaryTest" />
+					<include
+						name="userCannotCreateNewTemplateWithInvalidTemplateName_executiveSummaryTest" />
+					<include
+						name="unAuthorizedCannotCreateNewTemplateValidData_executiveSummaryTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit template Endpoint for Executive summary">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.EditTemplateExecutiveSummaryTest">
+				<methods>
+					<include name="editTemplate_executiveSummaryTest" />
+					<include
+						name="editTemplateWithInvalidTemplateID_executiveSummaryTest" />
+					<include
+						name="unAuthorizedUserCannotEditTemplate_executiveSummaryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All template Endpoint for Executive summary">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.GetAllTemplateExecutiveSummaryTest">
+				<methods>
+					<include name="getAllTemplate_executiveSummaryTest" />
+					<include name="getAllTemplateByType_executiveSummaryTest" />
+					<include
+						name="getAllTemplateByInvalidType_executiveSummaryTest" />
+					<include
+						name="unAuthorizedUserCannotGetAllTemplate_executiveSummaryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete template Endpoint for Executive Search">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.DeleteTemplateByIDExecutiveSummaryTest">
+				<methods>
+					<include
+						name="userShouldAbleToDeleteNewTemplate_executiveSummaryTest" />
+					<include
+						name="unauthorizedUserCannotDeleteNewTemplate_executiveSummaryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints for Executive Search Endpoint">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.SearchReport.AllEndpointsOfExecSearchReportTest">
+				<methods>
+					<include name="createExecutiveSearchReport_Test" />
+					<include name="editExecutiveSearchReportByReportID_Test" />
+					<include name="GenerateExecutiveSearchReportTest" />
+
+					<include name="getAllExecutiveSearchReportsByJobID_Test" />
+					<include name="deleteExecutiveSearchReportByReportID_Test" />
+					<include name="getExecutiveSearchReportWithAllPlaceHolders_Test_200" />
+					<include name="getExecutiveSearchReport_UnauthorizedTest_401" />
+					<include name="getExecutiveSearchReport_MissingFieldsTest_422" />
+					<include name="getExecutiveSearchReport_InvalidJobIDTest_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Executive Search Report">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.SearchReport.CreateExecutiveSearchReportTest">
+				<methods>
+					<include
+						name="createExecutiveSearchReport_executiveSummaryTest" />
+					<include
+						name="userCannotCreateNewSearchReportWithInvalidData_executiveSummaryTest" />
+					<include
+						name="unAuthorizedCannotCreateNewTemplateValidData_executiveSummaryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Exevutive Search Report ">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.SearchReport.EditExecutiveSearchReportTest">
+				<methods>
+					<include name="editExecutiveSearchReportByReportID_Test" />
+					<include
+						name="editExecutiveSearchReportByInvalidReportID_Test" />
+					<include
+						name="unauthorizedUserCannotEditExecutiveSearchReportByReportID_Test" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get  Endpoint for Executive summary">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.SearchReport.GetExecutiveSearchReportByIdTest">
+				<methods>
+					<include name="getExecutiveSearchReportByReportID_Test" />
+					<include
+						name="getExecutiveSearchReportByInvalidReportID_Test" />
+					<include
+						name="unauthorizedCannotGetExecutiveSearchReportByReportID_Test" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Executive Search Report ">
+		<classes>
+			<class
+				name="io.recruitcrm.executiveSummary.SearchReport.DeleteExecutiveSearchReportTest">
+				<methods>
+					<include
+						name="userShouldAbleToDeleteSearchReport_executiveSummaryTest" />
+					<include
+						name="userCannotDeleteSearchReportByInvalidID_executiveSummaryTest" />
+					<include
+						name="unAuthorizedUserCannotDeleteReportSearch_executiveSummaryTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+</suite>

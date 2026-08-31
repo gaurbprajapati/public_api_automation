@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Job Activity Filters Group" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    
+    <!-- Notes Activity Filters -->
+    <test name="Notes Date Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.NotesActivityFieldJobFilterSearchTest">
+                <methods>
+                    <include name="notesDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Notes Multiselect Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.NotesActivityFieldJobFilterSearchTest">
+                <methods>
+                    <include name="notesMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Notes Note Exists (checkbox) Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.NotesActivityFieldJobFilterSearchTest">
+                <methods>
+                    <include name="notesNoteExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Task Activity Filters -->
+    <test name="Task Date Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TaskActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="tasksDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Task Multiselect Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TaskActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="tasksMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Task Text Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TaskActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="tasksTextFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Task Exists (checkbox) Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TaskActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="tasksTaskExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Meeting Activity Filters -->
+    <test name="Meeting Date Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.MeetingActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="meetingsDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Meeting Multiselect Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.MeetingActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="meetingsMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Meeting Text Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.MeetingActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="meetingsTextFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Meeting Exists (checkbox) Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.MeetingActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="meetingsMeetingExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

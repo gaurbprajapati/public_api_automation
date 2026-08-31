@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Stripe Job Advertising Renewal Test Suite" parallel="tests" thread-count="20">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener" />
+    </listeners>
+
+    <test name="Stripe Renewal Automation - 1">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQAddonEmptyDataWithFreeAccount_Test">
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 2">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQAddonEmptyDataWithPaidMainSubscription_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 3">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQAddonEmptyDataWithPaidMainSubscription_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 4">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQAddonEmptyDataWithPaidMainSubscription_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 5">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7MonthlyBucketAcrossOneRenewal_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 6">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7MonthlyBucketAcrossOneRenewal_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 7">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7MonthlyBucketAcrossOneRenewal_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 8">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7AnnualBucketAcrossOneRenewal_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 9">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7AnnualBucketAcrossOneRenewal_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 10">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7AnnualBucketAcrossOneRenewal_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 11">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15MonthlyBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 12">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15MonthlyBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 13">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15MonthlyBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 14">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15AnnualBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 15">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15AnnualBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 16">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15AnnualBucketAcrossTwoRenewals_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 17">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ30MonthlyBucketAcrossThreeRenewals_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 18">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ30MonthlyBucketAcrossThreeRenewals_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 19">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ30MonthlyBucketAcrossThreeRenewals_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 20">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ30AnnualBucketAcrossThreeRenewals_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 21">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ30AnnualBucketAcrossThreeRenewals_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 22">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ30AnnualBucketAcrossThreeRenewals_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 23">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7BucketTo15BucketMonthly_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 24">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7BucketTo15BucketMonthly_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 25">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7BucketTo15BucketMonthly_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 26">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15BucketTo30BucketAnnual_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 27">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15BucketTo30BucketAnnual_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 28">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15BucketTo30BucketAnnual_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 29">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7BucketMonthlyToAnnualUpgrade_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 30">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7BucketMonthlyToAnnualUpgrade_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 31">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ7BucketMonthlyToAnnualUpgrade_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 32">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15BucketMonthlyTo30BucketAnnualUpgrade_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 33">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15BucketMonthlyTo30BucketAnnualUpgrade_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 34">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15BucketMonthlyTo30BucketAnnualUpgrade_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 35">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15BucketMonthlyTo7BucketMonthlyDowngrade_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 36">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15BucketMonthlyTo7BucketMonthlyDowngrade_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 37">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ15BucketMonthlyTo7BucketMonthlyDowngrade_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 38">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ30BucketAnnualTo15BucketAnnualDowngrade_Test">
+                        <parameter name="plan" value="Pro" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 39">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ30BucketAnnualTo15BucketAnnualDowngrade_Test">
+                        <parameter name="plan" value="Business" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stripe Renewal Automation - 40">
+        <classes>
+            <class name="io.recruitcrm.albatross.stripe.StripeRenewalForMainSubscriptionsWithVONQAddon_Test">
+                <methods>
+                    <include name="stripeRenewalForVONQ30BucketAnnualTo15BucketAnnualDowngrade_Test">
+                        <parameter name="plan" value="Enterprise" />
+                    </include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

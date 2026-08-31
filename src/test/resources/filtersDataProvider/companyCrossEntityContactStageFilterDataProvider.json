@@ -1,0 +1,202 @@
+{
+  "Contact Stage": [
+    {
+      "dbField": "stageid",
+      "filterType": "is",
+      "filterValue": "{Follow Up}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Follow Up stage",
+      "expectedResult": "Company1,Company4,Company6,Company10"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is",
+      "filterValue": "{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Client stage",
+      "expectedResult": "Company2,Company5,Company8,Company11"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is",
+      "filterValue": "{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Lead stage",
+      "expectedResult": "Company3,Company4,Company6,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is_not",
+      "filterValue": "{Follow Up}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Follow Up stage",
+      "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is_not",
+      "filterValue": "{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Client stage",
+      "expectedResult": "Company1,Company3,Company4,Company6,Company9,Company10,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is_not",
+      "filterValue": "{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Lead stage",
+      "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company10,Company11"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Follow Up}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Follow Up stage",
+      "expectedResult": "Company1,Company4,Company6,Company10"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Client stage",
+      "expectedResult": "Company2,Company5,Company8,Company11"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Lead stage",
+      "expectedResult": "Company3,Company4,Company6,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Follow Up},{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Follow Up or Client stage",
+      "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company10,Company11"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Follow Up},{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Follow Up or Lead stage",
+      "expectedResult": "Company1,Company3,Company4,Company6,Company9,Company10,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Client},{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Client or Lead stage",
+      "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Follow Up},{Client},{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - any stage value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Follow Up}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Follow Up stage",
+      "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Client stage",
+      "expectedResult": "Company1,Company3,Company4,Company6,Company9,Company10,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Lead stage",
+      "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company8,Company10,Company11"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Follow Up},{Client}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Follow Up or Client stage",
+      "expectedResult": "Company3,Company4,Company6,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Follow Up},{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Follow Up or Lead stage",
+      "expectedResult": "Company2,Company5,Company8,Company11"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Client},{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Client or Lead stage",
+      "expectedResult": "Company1,Company4,Company6,Company10"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Follow Up},{Client},{Lead}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude any stage value",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - stage field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "stageid",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - stage field has any value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    }
+  ]
+}

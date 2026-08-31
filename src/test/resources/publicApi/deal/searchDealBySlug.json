@@ -1,0 +1,222 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"name": {
+			"type": "string"
+		},
+		"created_on": {
+			"type": "string"
+		},
+		"updated_on": {
+			"type": "string"
+		},
+		"archived": {
+			"type": "integer"
+		},
+		"deal_stage": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"label": {
+					"type": "string"
+				},
+				"percentage": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id",
+				"label",
+				"percentage"
+			]
+		},
+		"deal_value": {
+			"type": "integer"
+		},
+		"deal_precentage_value": {
+			"type": "integer"
+		},
+		"close_date": {
+			"type": "string"
+		},
+		"deal_type": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"label": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id",
+				"label"
+			]
+		},
+		"slug": {
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		"company_slug": {
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		"additional_company_slugs": {
+			"type": "array",
+			"items": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		"contact_slugs": {
+			"type": "array",
+			"items": [
+				{
+					"type": [
+						"null",
+						"string"
+					]
+				}
+			]
+		},
+		"job_slug": {
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		"additional_job_slugs": {
+			"type": "array",
+			"items": [
+				{
+					"type": "string"
+				}
+			]
+		},
+		"candidate_slug": {
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		"additional_candidate_slugs": {
+			"type": "array",
+			"items": {}
+		},
+		"custom_fields": {
+			"type": "array",
+			"items": {}
+		},
+		"created_by": {
+			"type": "integer"
+		},
+		"updated_by": {
+			"type": "integer"
+		},
+		"owner": {
+			"type": "integer"
+		},
+		"resource_url": {
+			"type": "string"
+		},
+		"deal_split": {
+			"type": "object",
+			"properties": {
+				"teammates_collaborator": {
+					"type": "array",
+					"items": {}
+				},
+				"teams_collaborator": {
+					"type": "array",
+					"items": {}
+				},
+				"teammates_unallocated_split_percentage": {
+					"type": "number"
+				},
+				"teams_unallocated_split_percentage": {
+					"type": "number"
+				},
+				"split_type": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"teammates_collaborator",
+				"teams_collaborator",
+				"teammates_unallocated_split_percentage",
+				"teams_unallocated_split_percentage",
+				"split_type"
+			]
+		},
+		"deal_stage_remarks": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"stage_name": {
+						"type": "string"
+					},
+					"stage_id": {
+						"type": "integer"
+					},
+					"reason": {
+						"type": ["string","null"]
+					},
+					"updated_on": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"updated_by": {
+						"type": "integer"
+					}
+				},
+				"required": [
+					"stage_name",
+					"stage_id",
+					"reason",
+					"updated_on",
+					"updated_by"
+				]
+			}
+		}
+	},
+	"required": [
+		"id",
+		"name",
+		"created_on",
+		"updated_on",
+		"archived",
+		"deal_stage",
+		"deal_value",
+		"deal_precentage_value",
+		"close_date",
+		"deal_type",
+		"slug",
+		"company_slug",
+		"additional_company_slugs",
+		"contact_slugs",
+		"job_slug",
+		"additional_job_slugs",
+		"candidate_slug",
+		"additional_candidate_slugs",
+		"custom_fields",
+		"created_by",
+		"updated_by",
+		"owner",
+		"resource_url",
+		"deal_split",
+		"deal_stage_remarks"
+	]
+}

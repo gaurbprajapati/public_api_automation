@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RBAC Job Security Test Suite" thread-count="8" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+    <test name="RBAC Job Create Security - all">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.job.RBACJobCreateSecurityTest">
+                <methods>
+                    <include name="createJobSecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Job View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.job.RBACJobViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewJob_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Job Edit Security Test AccountOwner">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.job.RBACJobViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editJob_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Job Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.job.RBACJobViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteJob_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Job Widget Count Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACGetJobWidgetCountSecurityTest">
+                <methods>
+                    <include name="getJobWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Job Related Deals Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACGetJobRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getJobRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Job Related Hotlists Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACGetJobRelatedHotlistsSecurityTest">
+                <methods>
+                    <include name="getJobRelatedHotlists_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

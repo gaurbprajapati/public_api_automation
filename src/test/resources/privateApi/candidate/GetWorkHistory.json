@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer"
+            }
+          },
+          "required": ["context", "code"]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "array",
+          "items": {}
+        },
+        "pageable": {
+          "type": "object",
+          "properties": {
+            "pageNumber": {
+              "type": "integer"
+            },
+            "pageSize": {
+              "type": "integer"
+            },
+            "sort": {
+              "type": "object",
+              "properties": {
+                "empty": {
+                  "type": "boolean"
+                },
+                "sorted": {
+                  "type": "boolean"
+                },
+                "unsorted": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["empty", "sorted", "unsorted"]
+            },
+            "offset": {
+              "type": "integer"
+            },
+            "paged": {
+              "type": "boolean"
+            },
+            "unpaged": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "pageNumber",
+            "pageSize",
+            "sort",
+            "offset",
+            "paged",
+            "unpaged"
+          ]
+        },
+        "totalElements": {
+          "type": "integer"
+        },
+        "totalPages": {
+          "type": "integer"
+        },
+        "last": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "number": {
+          "type": "integer"
+        },
+        "sort": {
+          "type": "object",
+          "properties": {
+            "empty": {
+              "type": "boolean"
+            },
+            "sorted": {
+              "type": "boolean"
+            },
+            "unsorted": {
+              "type": "boolean"
+            }
+          },
+          "required": ["empty", "sorted", "unsorted"]
+        },
+        "numberOfElements": {
+          "type": "integer"
+        },
+        "first": {
+          "type": "boolean"
+        },
+        "empty": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "content",
+        "pageable",
+        "totalElements",
+        "totalPages",
+        "last",
+        "size",
+        "number",
+        "sort",
+        "numberOfElements",
+        "first",
+        "empty"
+      ]
+    }
+  },
+  "required": ["meta", "data"]
+}

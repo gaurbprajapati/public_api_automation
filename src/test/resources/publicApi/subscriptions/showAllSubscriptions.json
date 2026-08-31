@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "current_page": {
+      "type": "integer"
+    },
+    "first_page_url": {
+      "type": "string"
+    },
+    "from": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "next_page_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "path": {
+      "type": "string"
+    },
+    "per_page": {
+      "type": "integer"
+    },
+    "prev_page_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "to": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "event": {
+              "type": "string"
+            },
+            "target_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "event",
+            "target_url"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "current_page",
+    "first_page_url",
+    "from",
+    "next_page_url",
+    "path",
+    "per_page",
+    "prev_page_url",
+    "to",
+    "data"
+  ]
+}

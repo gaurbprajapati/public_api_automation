@@ -1,0 +1,96 @@
+{
+  "entity_placeholder_allowlists": {
+    "candidates": [
+      "{candidate_full_name}", "{candidate_first_name}", "{candidate_last_name}", "{candidate_email_id}",
+      "{candidate_contact_number}", "{candidate_city}", "{candidate_locality}", "{candidate_state}",
+      "{candidate_country}", "{candidate_address}", "{candidate_position}", "{candidate_willing_to_relocate}",
+      "{candidate_last_organisation}", "{candidate_id}", "{candidate_facebook_url}", "{candidate_twitter_url}",
+      "{candidate_linkedin_url}", "{candidate_github_url}", "{candidate_xing_url}",
+      "{candidate_total_experience_years}", "{candidate_relevant_experience_years}", "{candidate_salary_type}",
+      "{candidate_currency_type}", "{candidate_current_salary}", "{candidate_salary_expectation}",
+      "{candidate_current_employment_status}", "{candidate_notice_period_days}", "{candidate_available_from}",
+      "{candidate_technical_skills_and_language}", "{candidate_language_skills_and_proficiency}", "{candidate_source}"
+    ],
+    "contacts": [
+      "{contact_full_name}", "{contact_first_name}", "{contact_last_name}", "{contact_contact_number}",
+      "{contact_company_name}", "{contact_city}", "{contact_locality}", "{contact_designation}"
+    ],
+    "candidate_job": [
+      "{candidate_address}", "{candidate_available_from}", "{candidate_age}", "{candidate_city}",
+      "{candidate_contact_number}", "{candidate_country}", "{candidate_currency_type}",
+      "{candidate_current_employment_status}", "{candidate_current_salary}", "{candidate_dob}",
+      "{candidate_email_id}", "{candidate_facebook_url}", "{candidate_first_name}", "{candidate_full_name}",
+      "{candidate_gender}", "{candidate_github_url}", "{candidate_id}", "{candidate_language_skills_and_proficiency}",
+      "{candidate_last_name}", "{candidate_last_organisation}", "{candidate_linkedin_url}", "{candidate_locality}",
+      "{candidate_notice_period_days}", "{candidate_position}", "{candidate_relevant_experience_years}",
+      "{candidate_salary_expectation}", "{candidate_salary_type}", "{candidate_source}", "{candidate_state}",
+      "{candidate_technical_skills_and_language}", "{candidate_total_experience_years}", "{candidate_twitter_url}",
+      "{candidate_willing_to_relocate}", "{candidate_xing_url}", "{jd_text}", "{job_application_url}",
+      "{job_category}", "{job_city}", "{job_company_name}", "{job_company_website}", "{job_contact_name}",
+      "{job_country}", "{job_currency}", "{job_educational_qualification}", "{job_educational_specialization}",
+      "{job_full_address}", "{job_locality}", "{job_location_type}", "{job_max_salary}",
+      "{job_maximum_experience_years}", "{job_min_salary}", "{job_minimum_experience_years}", "{job_name}",
+      "{job_no_of_openings}", "{job_postal_code}", "{job_salary_type}", "{job_skill}", "{job_state}", "{job_type}"
+    ]
+  },
+  "test_cases": [
+    { "id": "TT001", "related_to": "5", "entity": "candidates", "prompt": "Write a casual intro email. Include the candidate's name, their current position, and their technical skills.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{candidate_position}", "{candidate_technical_skills_and_language}"], "smoke": true },
+    { "id": "TT002", "related_to": "5", "entity": "candidates", "prompt": "Draft a friendly follow-up email. Include the candidate's name, their total years of experience, and their last organization.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{candidate_total_experience_years}", "{candidate_last_organisation}"] },
+    { "id": "TT003", "related_to": "5", "entity": "candidates", "prompt": "Compose a formal offer email. Include the candidate's name, their salary expectation, and notice period in days.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{candidate_salary_expectation}", "{candidate_notice_period_days}"] },
+    { "id": "TT004", "related_to": "5", "entity": "candidates", "prompt": "Write a status update email. Include the candidate's name, their city, when they are available from, and their current employment status.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{candidate_city}", "{candidate_available_from}", "{candidate_current_employment_status}"] },
+    { "id": "TT005", "related_to": "5", "entity": "candidates", "prompt": "Write a short check-in email about their job search. Include the candidate's name, their preferred salary type, and salary expectation.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{candidate_salary_type}", "{candidate_salary_expectation}"] },
+    { "id": "TT006", "related_to": "5", "entity": "candidates", "prompt": "Send a profile summary email. Include the candidate's name, their relevant experience in years, and whether they are willing to relocate.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{candidate_relevant_experience_years}", "{candidate_willing_to_relocate}"] },
+
+    { "id": "TT007", "related_to": "2", "entity": "contacts", "prompt": "Write a casual email to a hiring manager about our recruitment services. Include the contact's name, their designation, and their company name.", "expected_min_placeholders": ["{contact_first_name}", "{contact_last_name}", "{contact_full_name}", "{contact_designation}", "{contact_company_name}"], "smoke": true },
+    { "id": "TT008", "related_to": "2", "entity": "contacts", "prompt": "Draft a friendly note about our recruitment services. Include the contact's name, their company name, and their city.", "expected_min_placeholders": ["{contact_first_name}", "{contact_last_name}", "{contact_full_name}", "{contact_company_name}", "{contact_city}"] },
+    { "id": "TT009", "related_to": "2", "entity": "contacts", "prompt": "Compose a formal proposal about recruitment partnership. Include the contact's name, their designation, and their company name.", "expected_min_placeholders": ["{contact_first_name}", "{contact_last_name}", "{contact_full_name}", "{contact_designation}", "{contact_company_name}"] },
+    { "id": "TT010", "related_to": "2", "entity": "contacts", "prompt": "Write a neutral outreach about an upcoming talent review session. Include the contact's name and company name.", "expected_min_placeholders": ["{contact_first_name}", "{contact_last_name}", "{contact_full_name}", "{contact_company_name}"] },
+
+    { "comment": "=== MANUAL PROMPT — candidate_job (related_to: 9) ===" },
+
+    { "id": "TT011", "related_to": "9", "entity": "candidate_job", "prompt": "Write a casual outreach about a job opening. Include the candidate's name, the job title, the company name, and the candidate's technical skills.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{job_name}", "{job_company_name}", "{candidate_technical_skills_and_language}"], "smoke": true },
+    { "id": "TT012", "related_to": "9", "entity": "candidate_job", "prompt": "Draft a friendly job invite. Include the candidate's name, the job title, the job city, and the candidate's total years of experience.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{job_name}", "{job_city}", "{candidate_total_experience_years}"] },
+    { "id": "TT013", "related_to": "9", "entity": "candidate_job", "prompt": "Compose a formal offer letter for a position. Include the candidate's name, the job title, the company name, and the salary range with min and max salary.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{job_name}", "{job_company_name}", "{job_min_salary}", "{job_max_salary}"] },
+    { "id": "TT014", "related_to": "9", "entity": "candidate_job", "prompt": "Write an acknowledgement email about a job role. Include the candidate's name, the job title, required skills, job type, and the job city.", "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{job_name}", "{job_skill}", "{job_type}", "{job_city}"] },
+
+    {
+      "id": "TT015",
+      "related_to": "5",
+      "entity": "candidates",
+      "prompt": "Write a casual intro email. Include the candidate's name and their current position.",
+      "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{candidate_position}"],
+      "chaining": {
+        "enabled": true,
+        "follow_up_prompt": "Rewrite the same email shorter. Also include the candidate's notice period in days and their availability date.",
+        "follow_up_expected_min_placeholders": ["{candidate_notice_period_days}", "{candidate_available_from}"]
+      }
+    },
+
+    {
+      "id": "TT016",
+      "related_to": "2",
+      "entity": "contacts",
+      "prompt": "Write a casual outreach about a senior role we are hiring for. Include the contact's name, their company name, and their designation.",
+      "expected_min_placeholders": ["{contact_first_name}", "{contact_last_name}", "{contact_full_name}", "{contact_company_name}", "{contact_designation}"],
+      "chaining": {
+        "enabled": true,
+        "follow_up_prompt": "Now make the same email more formal. Also include the contact's city and locality.",
+        "follow_up_expected_min_placeholders": ["{contact_city}", "{contact_locality}"]
+      }
+    },
+
+    {
+      "id": "TT017",
+      "related_to": "9",
+      "entity": "candidate_job",
+      "prompt": "Compose a formal offer for a position. Include the candidate's name, the job title, the company name, and the minimum salary.",
+      "expected_min_placeholders": ["{candidate_first_name}", "{candidate_last_name}", "{candidate_full_name}", "{job_name}", "{job_company_name}", "{job_min_salary}"],
+      "chaining": {
+        "enabled": true,
+        "follow_up_prompt": "Add a paragraph to the email. Include the candidate's notice period in days and their relevant experience in years.",
+        "follow_up_expected_min_placeholders": ["{candidate_notice_period_days}", "{candidate_relevant_experience_years}"]
+      }
+    }
+
+  ]
+}

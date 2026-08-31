@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!--For local use -->
+<suite name="Rest API Test Suite" parallel="methods"
+	thread-count="2">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="report  test case 1">
+		<classes>
+			<class name="io.recruitcrm.report.TeamPerformanceReport_Test">
+				<methods>
+					<include name="teamPerformanceReportWithDefaultContactStage_Test" />
+					<include name="teamPerformanceReportWithCustomContactStage_Test" />
+					<include name="teamPerformanceReportWithInvalidRecruiterId_Test" />
+					<include name="teamPerformanceReportWithEmptyRecruiterIds_Test" />
+					<include name="teamPerformanceReportWithEmptyKPIsList_Test" />
+					<include name="unauthorizedUserCannotGenerateTeamPerformanceReport_Test" />
+					<include name="getTeamPerformanceReportKPIs_Test" />
+					<include name="unauthorizedUserCannotGetTeamPerformanceReportKPIs_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="report test case 2">
+		<classes>
+			<class name="io.recruitcrm.report.ClientPerformanceReport_Test">
+				<methods>
+					<include name="ClientPerformanceReportKPIsWithEmptyQueryParameters_Test" />
+					<include name="getClientPerformanceReportKPIs_Test" />
+					<include name="unauthorizedUserCannotGetClientPerformanceReportKPIs_Test" />
+					<include name="clientPerformanceReportWithDefaultContactStage_Test" />
+					<include name="clientPerformanceReportWithCustomContactStage_Test" />
+					<include name="clientPerformanceReportWithInvalidCompanySlug_Test" />
+					<include name="clientPerformanceReportWithEmptyCompanySlugAndKPIsList_Test" />
+					<include name="unauthorizedUserCannotGenerateClientPerformanceReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Albatross Endpoints Report">
+		<classes>
+			<class name="io.recruitcrm.albatross.report.AlbatrossEndpointsReportTest">
+				<methods>
+					<include name="exportReportData"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Fetch Target Title Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="fetchTargetTitle_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Fetch Target Title with Empty Data Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="fetchTargetTitleWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Fetch Target Title with Invalid Request Type Test - 405">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="fetchTargetTitleWithInvalidRequestType_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Fetch Target Title with Unauthorized Access Test - 500">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="fetchTargetTitleWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Get Target Report Data Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="getTargetReportData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Target Report Data with Invalid Id Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="getTargetReportDataWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Target Report Data with Empty Data Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="getTargetReportDataWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Target Report Data with Unauthorized Access Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="getTargetReportDataWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Target Report Data Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="targetReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Target Report Data with Invalid Id Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="targetReportWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Target Report Data with Empty Data Test - 500">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="targetReportWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Target Report Data with Unauthorized Access Test - 500">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="targetReportWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Share Target Report Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="shareTargetReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Share Target Report with Invalid Id Test - 401">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="shareTargetReportWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Share Target Report with Empty Data Test - 500">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="shareTargetReportWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Share Target Report with Unauthorized Access Test - 401">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="shareTargetReportWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Target Report Table Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="targetReportTable_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Target Report Table with Invalid Data Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="targetReportTableWithInvalidInterval_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Target Report Table with Empty Data Test - 500">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="targetReportTableWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Target Report Table with Unauthorized Access Test - 401">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="targetReportTableWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test name="Update Target Report Email Notfication Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="updateTargetReportEmailNotification_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Target Report Email Notfication with Invalid Id Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="updateTargetReportEmailNotificationWithInvalidId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Target Report Email Notfication with Empty Data Test - 200">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="updateTargetReportEmailNotificationWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Update Target Report Email Notfication with Unauthorized Access Test - 401">
+		<classes>
+			<class name="io.recruitcrm.report.TargetReportsTest">
+				<methods>
+					<include name="updateTargetReportEmailNotificationWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Verify Create Schedule Report">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyCreateScheduleReportAPITest">
+				<methods>
+					<include name="verifyCreateScheduleReportAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Create Schedule Report - Unauthorized">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyCreateScheduleReportAPITest">
+				<methods>
+					<include name="verifyCreateScheduleReportAPI_Unauthorized" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Create Schedule Report - Invalid Report ID">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyCreateScheduleReportAPITest">
+				<methods>
+					<include name="verifyCreateScheduleReportAPI_InvalidReportId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Create Schedule Report - Empty Payload">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyCreateScheduleReportAPITest">
+				<methods>
+					<include name="verifyCreateScheduleReportAPI_EmptyPayload" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Get Schedule Report">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyGetScheduleReportAPITest">
+				<methods>
+					<include name="verifyGetAllScheduleReportsAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Get Schedule Report - Unauthorized">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyGetScheduleReportAPITest">
+				<methods>
+					<include name="verifyGetAllScheduleReportsAPI_Unauthorized" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Get Schedule Report - Invalid Report ID">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyGetScheduleReportAPITest">
+				<methods>
+					<include name="verifyGetAllScheduleReportsAPI_InvalidReportId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Get Schedule Report - Empty Report ID">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyGetScheduleReportAPITest">
+				<methods>
+					<include name="verifyGetAllScheduleReportsAPI_EmptyReportId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Delete Schedule Report">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyDeleteScheduleReportAPITest">
+				<methods>
+					<include name="verifyDeleteScheduleReportAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Delete Schedule Report - Unauthorized">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyDeleteScheduleReportAPITest">
+				<methods>
+					<include name="verifyDeleteScheduleReportAPI_Unauthorized" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Delete Schedule Report - Invalid Schedule ID">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyDeleteScheduleReportAPITest">
+				<methods>
+					<include name="verifyDeleteScheduleReportAPI_InvalidScheduleId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Delete Schedule Report - Empty Schedule ID">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyDeleteScheduleReportAPITest">
+				<methods>
+					<include name="verifyDeleteScheduleReportAPI_EmptyScheduleId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Verify Delete Schedule Report - Already Deleted">
+		<classes>
+			<class name="io.recruitcrm.report.schedule_report.VerifyDeleteScheduleReportAPITest">
+				<methods>
+					<include name="verifyDeleteScheduleReportAPI_AlreadyDeleted" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

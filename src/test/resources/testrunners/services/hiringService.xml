@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- Owner - Saastar - Rahul Shibu, Sandeep Patil -->
+<suite name="Rest API Test Suite">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Hiring Pipeline Service- All Endpoints">
+		<classes>
+			<class
+				name="io.recruitcrm.hiringPipeline.AllEndpointsOfHiringPipelineServiceTest">
+				<methods>
+					<include name="createCustomHiringPipeline_Test" />
+					<include name="editCustomHiringPipeline_Test" />
+					<include name="getAllCustomHiringPipeline_Test" />
+					<include name="getCustomHiringPipelineByID_Test" />
+					<include name="getAllListOfHiringPipelineForDropdown_Test" />
+					<include name="deleteCustomHiringPipeline_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Hiring Pipeline Service ">
+		<classes>
+			<class
+				name="io.recruitcrm.hiringPipeline.DeleteHiringPipelineByID_Test">
+				<methods>
+					<include name="deleteCustomHiringPipelineByID_Test" />
+					<include
+						name="unAuthorizedUserCannotdeleteCustomHiringPipelineByID_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+
+	<test name="Create New Custom Hiring Pipeline Service Endpoint ">
+		<classes>
+			<class
+				name="io.recruitcrm.hiringPipeline.CreateCustomHiringPipelineTest">
+				<methods>
+					<include
+						name="createCustomHiringPipelineWithRequiredFields_test" />
+					<include
+						name="userShouldNotBeAbleToAddCustomHiringPipelineNameWithMoreThan150Chars_test" />
+					<include
+						name="unauthroizedUserCannotCreateCustomHiringPipeline_test" />
+					<include name="deleteCustomHiringPipeline_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+
+	<test name="Get Hiring Pipeline By ID Service Endpoint ">
+		<classes>
+			<class
+				name="io.recruitcrm.hiringPipeline.GetHiringPipelineByIDTest">
+				<methods>
+					<include name="getHiringPipelineByID_test" />
+					<include
+						name="getHiringPipelineStagesButNotIncludedInPipeline_test" />
+					<include name="getHiringPipelineByInvalidID_test" />
+					<include
+						name="unAuthorizedUserCannotGetHiringPipelineByID_test" />
+					<include name="deleteCustomHiringPipeline_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="Get All Hiring Pipeline Service Endpoint ">
+		<classes>
+			<class
+				name="io.recruitcrm.hiringPipeline.GetAllHiringPipelinesTest">
+				<methods>
+					<include name="getAllCustomHiringPipeline_Test" />
+					<include
+						name="getAllCustomHiringPipelineWithNameAndID_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllCustomHiringPipeline_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+
+	<test name="Edit Hiring Pipeline Service Endpoint ">
+		<classes>
+			<class
+				name="io.recruitcrm.hiringPipeline.EditHiringPipelineByIDTest">
+				<methods>
+					<include name="editCustomHiringPipeline_Test" />
+					<include name="editCustomHiringPipelineByInvalidID_Test" />
+					<include
+						name="unAuthorizedUserCannotEditCustomHiringPipelineByInvalidID_Test" />
+					<include name="deleteCustomHiringPipeline_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="Get Candidate counts by hiring Stages ">
+		<classes>
+			<class
+				name="io.recruitcrm.hiringPipeline.GetCandidateStagesAndCandidateCountsTest">
+				<methods>
+					<include name="getCandidateStagesStagesWiseCounts" />
+					<include
+						name="unAuthorizedUserCannotAccessPipelineStagesCandidateCount" />
+					<include name="deleteCustomHiringPipeline_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

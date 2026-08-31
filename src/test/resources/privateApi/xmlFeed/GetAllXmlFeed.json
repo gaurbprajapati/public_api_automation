@@ -1,0 +1,186 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "data": {
+            "type": "object",
+            "properties": {
+                "records": {
+                    "type": "object",
+                    "properties": {
+                        "current_page": {
+                            "type": "integer"
+                        },
+                        "data": {
+                            "type": "array",
+                            "items": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "parent_xml": {
+                                            "type": "string"
+                                        },
+                                        "dynamic_job_xml": {
+                                            "type": "string"
+                                        },
+                                        "created_by": {
+                                            "type": "integer"
+                                        },
+                                        "created_on": {
+                                            "type": "integer"
+                                        },
+                                        "updated_by": {
+                                            "type": "integer"
+                                        },
+                                        "updated_on": {
+                                            "type": "integer"
+                                        },
+                                        "job_last_updatedon_limit": {
+                                            "type": "integer"
+                                        },
+                                        "account_id": {
+                                            "type": "integer"
+                                        },
+                                        "decode_xml_data": {
+                                            "type": "integer"
+                                        },
+                                        "created_by_name": {
+                                            "type": "string"
+                                        },
+                                        "feed_link": {
+                                            "type": "string"
+                                        },
+                                        "jobboard_type": {
+                                            "type": "integer"
+                                        },
+                                        "preselect": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "title",
+                                        "parent_xml",
+                                        "dynamic_job_xml",
+                                        "created_by",
+                                        "created_on",
+                                        "updated_by",
+                                        "updated_on",
+                                        "job_last_updatedon_limit",
+                                        "account_id",
+                                        "decode_xml_data",
+                                        "created_by_name",
+                                        "feed_link",
+                                        "jobboard_type",
+                                        "preselect"
+                                    ]
+                                }
+                            ]
+                        },
+                        "first_page_url": {
+                            "type": "string"
+                        },
+                        "from": {
+                            "type": "integer"
+                        },
+                        "next_page_url": {
+                            "type": "null"
+                        },
+                        "path": {
+                            "type": "string"
+                        },
+                        "per_page": {
+                            "type": "integer"
+                        },
+                        "prev_page_url": {
+                            "type": "null"
+                        },
+                        "to": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "current_page",
+                        "data",
+                        "first_page_url",
+                        "from",
+                        "next_page_url",
+                        "path",
+                        "per_page",
+                        "prev_page_url",
+                        "to"
+                    ]
+                },
+                "filter_count": {
+                    "type": "integer"
+                },
+                "can_add": {
+                    "type": "boolean"
+                },
+                "default_job_boards": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "jobboard_type": {
+                                    "type": "integer"
+                                },
+                                "preselect": {
+                                    "type": "null"
+                                },
+                                "accountid": {
+                                    "type": "null"
+                                },
+                                "created_by_name": {
+                                    "type": "string"
+                                },
+                                "accountcreatedon": {
+                                    "type": "integer"
+                                },
+                                "created_on": {
+                                    "type": "integer"
+                                },
+                                "updated_on": {
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "title",
+                                "jobboard_type",
+                                "preselect",
+                                "accountid",
+                                "created_by_name",
+                                "accountcreatedon",
+                                "created_on",
+                                "updated_on"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "records",
+                "filter_count",
+                "can_add",
+                "default_job_boards"
+            ]
+        }
+    },
+    "required": [
+        "data"
+    ]
+}

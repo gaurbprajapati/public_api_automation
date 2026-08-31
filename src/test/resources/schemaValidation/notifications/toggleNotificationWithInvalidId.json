@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "data": {
+        "type": "null"
+      },
+      "meta": {
+        "type": "object",
+        "properties": {
+          "request_UUID": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "message_type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "request_UUID",
+          "message",
+          "message_type",
+          "status"
+        ]
+      },
+      "errors": {
+        "type": "object",
+        "properties": {
+          "errorMessage": {
+            "type": "string"
+          },
+          "errorCode": {
+            "type": "integer"
+          },
+          "errors": {
+            "type": "object",
+            "properties": {
+              "notificationIds": {
+                "type": "array",
+                "items": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "errorMessage": {
+                        "type": "string"
+                      },
+                      "errorCode": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "errorMessage",
+                      "errorCode"
+                    ]
+                  }
+                ]
+              }
+            },
+            "required": [
+              "notificationIds"
+            ]
+          }
+        },
+        "required": [
+          "errorMessage",
+          "errorCode",
+          "errors"
+        ]
+      }
+    },
+    "required": [
+      "data",
+      "meta",
+      "errors"
+    ]
+  }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ContractStaffing Contractor Page Filters" thread-count="10" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+    </listeners>
+
+    <test name="Contractor Status Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allContractorPage.statusFilter.ContractorStatusFilterTest">
+                <methods>
+                    <include name="contractorStatusFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contractor Job Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allContractorPage.jobNameFilter.ContractorJobNameFilterTest">
+                <methods>
+                    <include name="contractorJobNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contractor Deal Name Filter Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.Filters.allContractorPage.dealNameFilter.ContractorDealNameFilterTest">
+                <methods>
+                    <include name="contractorDealNameFilterTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

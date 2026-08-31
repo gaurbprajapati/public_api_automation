@@ -1,0 +1,2379 @@
+{
+  "Id": [
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "15",
+      "description": "Exact match, highest ID",
+      "expectedResult": "15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero ID",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "-100",
+      "description": "Exact match, negative ID",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "15.0",
+      "description": "Exact match, decimal format ID",
+      "expectedResult": "15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is",
+      "filterValue": "100",
+      "description": "Exact match, invalid high ID",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "1",
+      "description": "Not equal to 1 (excludes exact match, includes empty)",
+      "expectedResult": "Result except 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "15",
+      "description": "Not equal to 15 (excludes exact match, includes empty)",
+      "expectedResult": "Result except 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero (excludes exact match, includes empty)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "-100",
+      "description": "Not equal to negative (excludes exact match, includes empty)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "15.0",
+      "description": "Not equal to decimal format (excludes exact match, includes empty)",
+      "expectedResult": "Result except 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_not",
+      "filterValue": "100",
+      "description": "Not equal to invalid ID (excludes exact match, includes empty)",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Begins with 1",
+      "expectedResult": "1, 10-19",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "0",
+      "description": "Begins with 0",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "begins_with",
+      "filterValue": "-10",
+      "description": "Begins with negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5",
+      "expectedResult": "5, 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0",
+      "expectedResult": "10",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "-10",
+      "description": "Ends with negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "ends_with",
+      "filterValue": "1.0",
+      "description": "Ends with decimal",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "has_any_value",
+      "filterValue": "0",
+      "description": "Has any value",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_empty",
+      "filterValue": "0",
+      "description": "Is empty",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "1,15",
+      "description": "Is between 1-15",
+      "expectedResult": "Between 1 and 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "-100,0",
+      "description": "Is between negative and zero",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "-100,100",
+      "description": "Is between wide range",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "-100,-50",
+      "description": "Is between negative range",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "0,15.0",
+      "description": "Is between with decimal",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "1,10",
+      "description": "Is between 1-10",
+      "expectedResult": "Between 1 and 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_between",
+      "filterValue": "10,15",
+      "description": "Is between 10-15",
+      "expectedResult": "Between 10 and 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "1",
+      "description": "is more than 1",
+      "expectedResult": "more than 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "is more than 0",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "-100",
+      "description": "is more than negative",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "1.0",
+      "description": "is more than decimal",
+      "expectedResult": "More than 1.0",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "-1",
+      "description": "is more than negative decimal",
+      "expectedResult": "All results greater than -1.5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "is more than 10",
+      "expectedResult": "more than 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "1",
+      "description": "is less than 1",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "is less than 0",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "-100",
+      "description": "is less than negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "15.0",
+      "description": "is less than decimal",
+      "expectedResult": "All Results",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "srno",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "is less than 10",
+      "expectedResult": "less than 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ],
+  "Open Jobs": [
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero open jobs",
+      "expectedResult": "Records with 0 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "3",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 3 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "8",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 8 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "12",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 12 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "15",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 15 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "20",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 20 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "25",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 25 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "30",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 30 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "35",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 35 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "40",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 40 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "15.0",
+      "description": "Exact match, decimal format",
+      "expectedResult": "Records with 15 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "-5",
+      "description": "Negative open jobs",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is",
+      "filterValue": "100",
+      "description": "Invalid high value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero (excludes exact match, includes empty)",
+      "expectedResult": "All records except 0 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "12",
+      "description": "Not equal to valid value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 12 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "25",
+      "description": "Not equal to valid value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 25 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "50",
+      "description": "Not equal to highest value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 50 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "15.0",
+      "description": "Not equal to decimal format (excludes exact match, includes empty)",
+      "expectedResult": "All records except 15 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "100",
+      "description": "Not equal to invalid value (excludes exact match, includes empty)",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_not",
+      "filterValue": "-10",
+      "description": "Not equal to negative (excludes exact match, includes empty)",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Begins with 1 (10-19 from company data)",
+      "expectedResult": "Open jobs 10-19",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "2",
+      "description": "Begins with 2 (20-29 from company data)",
+      "expectedResult": "Open jobs 20-29",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "3",
+      "description": "Begins with 3 (30-39 from company data)",
+      "expectedResult": "Open jobs 30-39",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "4",
+      "description": "Begins with 4 (40-49 from company data)",
+      "expectedResult": "Open jobs 40-49",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "0",
+      "description": "Begins with 0",
+      "expectedResult": "0 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "begins_with",
+      "filterValue": "-10",
+      "description": "Begins with negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (0, 20, 30, 40, 50 from company data)",
+      "expectedResult": "Open jobs ending in 0",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "ends_with",
+      "filterValue": "2",
+      "description": "Ends with 2 (12, 22 from company data)",
+      "expectedResult": "Open jobs ending in 2",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "ends_with",
+      "filterValue": "3",
+      "description": "Ends with 3 (3 from company data)",
+      "expectedResult": "Open jobs ending in 3",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (15, 25, 35, 45 from company data)",
+      "expectedResult": "Open jobs ending in 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "ends_with",
+      "filterValue": "8",
+      "description": "Ends with 8 (8, 28 from company data)",
+      "expectedResult": "Open jobs ending in 8",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "ends_with",
+      "filterValue": "1.0",
+      "description": "Ends with decimal",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any open jobs value",
+      "expectedResult": "All records with open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Open jobs not specified",
+      "expectedResult": "Records without open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "0,10",
+      "description": "Is between 0-10 (covers 0, 3, 8 from company data)",
+      "expectedResult": "Open jobs 0-10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "0,20",
+      "description": "Is between 0-20 (covers 0, 3, 8, 12, 15, 20 from company data)",
+      "expectedResult": "Open jobs 0-20",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "10,20",
+      "description": "Is between 10-20 (covers 12, 15, 20 from company data)",
+      "expectedResult": "Open jobs 10-20",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "20,35",
+      "description": "Is between 20-35 (covers 20, 22, 25, 28, 30, 35 from company data)",
+      "expectedResult": "Open jobs 20-35",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "35,50",
+      "description": "Is between 35-50 (covers 40, 45, 50 from company data)",
+      "expectedResult": "Open jobs 35-50",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "15,25",
+      "description": "Decimal range",
+      "expectedResult": "Open jobs 15-25",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "0,0",
+      "description": "Zero range",
+      "expectedResult": "Records with 0 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "-10,5",
+      "description": "Range with negative start",
+      "expectedResult": "Open jobs 0-5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "60,100",
+      "description": "Above company data range",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "25,25",
+      "description": "Single value range",
+      "expectedResult": "Records with 25 open jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_between",
+      "filterValue": "12,15",
+      "description": "Is between 12-15",
+      "expectedResult": "Open jobs 12-15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "More than 10 (covers 12, 15, 20, 22, 25, 28, 30, 35, 40, 45, 50)",
+      "expectedResult": "Open jobs > 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "20",
+      "description": "More than 20 (covers 22, 25, 28, 30, 35, 40, 45, 50)",
+      "expectedResult": "Open jobs > 20",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "description": "More than 30 (covers 35, 40, 45, 50)",
+      "expectedResult": "Open jobs > 30",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "50",
+      "description": "More than max company value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "15",
+      "description": "More than decimal threshold",
+      "expectedResult": "Open jobs > 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "More than zero",
+      "expectedResult": "All records with open jobs > 0",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_mt",
+      "filterValue": "-5",
+      "description": "More than negative",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Less than 10 (covers 0, 3, 8)",
+      "expectedResult": "Open jobs < 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_lt",
+      "filterValue": "20",
+      "description": "Less than 20 (covers 0, 3, 8, 12, 15)",
+      "expectedResult": "Open jobs < 20",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_lt",
+      "filterValue": "15",
+      "description": "Less than 15 (covers 0, 3, 8, 12)",
+      "expectedResult": "Open jobs < 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "Less than zero",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_lt",
+      "filterValue": "15",
+      "description": "Less than decimal threshold",
+      "expectedResult": "Open jobs < 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalopenjob",
+      "filterType": "is_lt",
+      "filterValue": "100",
+      "description": "Less than high value",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ],
+  "Closed Jobs": [
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero closed jobs",
+      "expectedResult": "Records with 0 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "2",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 2 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "5",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 5 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "6",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 6 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "7",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 7 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "9",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 9 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "10",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 10 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "12",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 12 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "15",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 15 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "18",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 18 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "20",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 20 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "10.0",
+      "description": "Exact match, decimal format",
+      "expectedResult": "Records with 10 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "-3",
+      "description": "Negative closed jobs",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is",
+      "filterValue": "100",
+      "description": "Invalid high value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero (excludes exact match, includes empty)",
+      "expectedResult": "All records except 0 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "5",
+      "description": "Not equal to valid value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 5 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "12",
+      "description": "Not equal to valid value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 12 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "25",
+      "description": "Not equal to highest value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 25 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "10.0",
+      "description": "Not equal to decimal format (excludes exact match, includes empty)",
+      "expectedResult": "All records except 10 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "100",
+      "description": "Not equal to invalid value (excludes exact match, includes empty)",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_not",
+      "filterValue": "-5",
+      "description": "Not equal to negative (excludes exact match, includes empty)",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Begins with 1 (10-19 from company data)",
+      "expectedResult": "Closed jobs 10-19",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "begins_with",
+      "filterValue": "2",
+      "description": "Begins with 2 (20-29 from company data)",
+      "expectedResult": "Closed jobs 20-29",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "begins_with",
+      "filterValue": "0",
+      "description": "Begins with 0",
+      "expectedResult": "0 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "begins_with",
+      "filterValue": "-5",
+      "description": "Begins with negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (0, 10, 20 from company data)",
+      "expectedResult": "Closed jobs ending in 0",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "2",
+      "description": "Ends with 2 (2, 12, 22 from company data)",
+      "expectedResult": "Closed jobs ending in 2",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (5, 15, 25 from company data)",
+      "expectedResult": "Closed jobs ending in 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "6",
+      "description": "Ends with 6 (6, 16 from company data)",
+      "expectedResult": "Closed jobs ending in 6",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "7",
+      "description": "Ends with 7 (7 from company data)",
+      "expectedResult": "Closed jobs ending in 7",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "8",
+      "description": "Ends with 8 (18 from company data)",
+      "expectedResult": "Closed jobs ending in 8",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "9",
+      "description": "Ends with 9 (9 from company data)",
+      "expectedResult": "Closed jobs ending in 9",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "ends_with",
+      "filterValue": "1.0",
+      "description": "Ends with decimal",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any closed jobs value",
+      "expectedResult": "All records with closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Closed jobs not specified",
+      "expectedResult": "Records without closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "0,5",
+      "description": "Is between 0-5 (covers 0, 2, 5 from company data)",
+      "expectedResult": "Closed jobs 0-5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "0,10",
+      "description": "Is between 0-10 (covers 0, 2, 5, 6, 7, 9, 10 from company data)",
+      "expectedResult": "Closed jobs 0-10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "10,20",
+      "description": "Is between 10-20 (covers 12, 14, 15, 16, 18, 20 from company data)",
+      "expectedResult": "Closed jobs 10-20",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "20,25",
+      "description": "Is between 20-25 (covers 20, 22, 25 from company data)",
+      "expectedResult": "Closed jobs 20-25",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "10,20",
+      "description": "Decimal range",
+      "expectedResult": "Closed jobs 10-20",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "0,0",
+      "description": "Zero range",
+      "expectedResult": "Records with 0 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "-5,5",
+      "description": "Range with negative start",
+      "expectedResult": "Closed jobs 0-5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "30,50",
+      "description": "Above company data range",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "12,12",
+      "description": "Single value range",
+      "expectedResult": "Records with 12 closed jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_between",
+      "filterValue": "5,15",
+      "description": "Is between 5-15",
+      "expectedResult": "Closed jobs 5-15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "More than 10 (covers 12, 14, 15, 16, 18, 20, 22, 25)",
+      "expectedResult": "Closed jobs > 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "15",
+      "description": "More than 15 (covers 16, 18, 20, 22, 25)",
+      "expectedResult": "Closed jobs > 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "25",
+      "description": "More than max company value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "15",
+      "description": "More than decimal threshold",
+      "expectedResult": "Closed jobs > 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "More than zero",
+      "expectedResult": "All records with closed jobs > 0",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_mt",
+      "filterValue": "-3",
+      "description": "More than negative",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_lt",
+      "filterValue": "5",
+      "description": "Less than 5 (covers 0, 2)",
+      "expectedResult": "Closed jobs < 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Less than 10 (covers 0, 2, 5, 6, 7, 9)",
+      "expectedResult": "Closed jobs < 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_lt",
+      "filterValue": "15",
+      "description": "Less than 15 (covers 0, 2, 5, 6, 7, 9, 10, 12, 14)",
+      "expectedResult": "Closed jobs < 15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "Less than zero",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_lt",
+      "filterValue": "105",
+      "description": "Less than decimal threshold",
+      "expectedResult": "Closed jobs < 105",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalclosedjob",
+      "filterType": "is_lt",
+      "filterValue": "100",
+      "description": "Less than high value",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ],
+  "On Hold Jobs": [
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero on hold jobs",
+      "expectedResult": "Records with 0 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 1 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "2",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 2 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "3",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 3 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "4",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 4 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "5",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 5 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "6",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 6 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "7",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 7 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "8",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 8 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "10",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 10 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "5",
+      "description": "Exact match, decimal format",
+      "expectedResult": "Records with 5 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "-2",
+      "description": "Negative on hold jobs",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is",
+      "filterValue": "50",
+      "description": "Invalid high value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero (excludes exact match, includes empty)",
+      "expectedResult": "All records except 0 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "2",
+      "description": "Not equal to valid value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 2 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "7",
+      "description": "Not equal to valid value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 7 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "15",
+      "description": "Not equal to highest value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 15 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "5",
+      "description": "Not equal to decimal format (excludes exact match, includes empty)",
+      "expectedResult": "All records except 5 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "50",
+      "description": "Not equal to invalid value (excludes exact match, includes empty)",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_not",
+      "filterValue": "-5",
+      "description": "Not equal to negative (excludes exact match, includes empty)",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Begins with 1 (10-19 from company data)",
+      "expectedResult": "On hold jobs 10-19",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "begins_with",
+      "filterValue": "0",
+      "description": "Begins with 0",
+      "expectedResult": "0 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "begins_with",
+      "filterValue": "-5",
+      "description": "Begins with negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (0, 10 from company data)",
+      "expectedResult": "On hold jobs ending in 0",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "1",
+      "description": "Ends with 1 (1, 11 from company data)",
+      "expectedResult": "On hold jobs ending in 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "2",
+      "description": "Ends with 2 (2, 12 from company data)",
+      "expectedResult": "On hold jobs ending in 2",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "3",
+      "description": "Ends with 3 (3 from company data)",
+      "expectedResult": "On hold jobs ending in 3",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "4",
+      "description": "Ends with 4 (4 from company data)",
+      "expectedResult": "On hold jobs ending in 4",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (5, 15 from company data)",
+      "expectedResult": "On hold jobs ending in 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "6",
+      "description": "Ends with 6 (6 from company data)",
+      "expectedResult": "On hold jobs ending in 6",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "7",
+      "description": "Ends with 7 (7 from company data)",
+      "expectedResult": "On hold jobs ending in 7",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "8",
+      "description": "Ends with 8 (8 from company data)",
+      "expectedResult": "On hold jobs ending in 8",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "ends_with",
+      "filterValue": "1",
+      "description": "Ends with decimal",
+      "expectedResult": "totalonholdjob ending in 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any on hold jobs value",
+      "expectedResult": "All records with on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "On hold jobs not specified",
+      "expectedResult": "Records without on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "0,5",
+      "description": "Is between 0-5 (covers 0, 1, 2, 3, 4, 5 from company data)",
+      "expectedResult": "On hold jobs 0-5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "5,10",
+      "description": "Is between 5-10 (covers 5, 6, 7, 8, 9, 10 from company data)",
+      "expectedResult": "On hold jobs 5-10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "10,15",
+      "description": "Is between 10-15 (covers 10, 11, 12, 15 from company data)",
+      "expectedResult": "On hold jobs 10-15",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "5,105",
+      "description": "Decimal range",
+      "expectedResult": "On hold jobs 5-105",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "0,0",
+      "description": "Zero range",
+      "expectedResult": "Records with 0 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "-3,3",
+      "description": "Range with negative start",
+      "expectedResult": "On hold jobs 0-3",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "20,30",
+      "description": "Above company data range",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "7,7",
+      "description": "Single value range",
+      "expectedResult": "Records with 7 on hold jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_between",
+      "filterValue": "1,10",
+      "description": "Is between 1-10",
+      "expectedResult": "On hold jobs 1-10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_mt",
+      "filterValue": "5",
+      "description": "More than 5 (covers 6, 7, 8, 9, 10, 11, 12, 15)",
+      "expectedResult": "On hold jobs > 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_mt",
+      "filterValue": "15",
+      "description": "More than max company value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_mt",
+      "filterValue": "7",
+      "description": "More than decimal threshold",
+      "expectedResult": "On hold jobs > 7",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "More than zero",
+      "expectedResult": "All records with on hold jobs > 0",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_mt",
+      "filterValue": "-2",
+      "description": "More than negative",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_lt",
+      "filterValue": "5",
+      "description": "Less than 5 (covers 0, 1, 2, 3, 4)",
+      "expectedResult": "On hold jobs < 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Less than 10 (covers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9)",
+      "expectedResult": "On hold jobs < 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "Less than zero",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_lt",
+      "filterValue": "75",
+      "description": "Less than decimal threshold",
+      "expectedResult": "On hold jobs < 75",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalonholdjob",
+      "filterType": "is_lt",
+      "filterValue": "50",
+      "description": "Less than high value",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ],
+  "Cancelled Jobs": [
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "0",
+      "description": "Exact match, zero cancelled jobs",
+      "expectedResult": "Records with 0 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "1",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 1 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "2",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 2 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "3",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 3 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "4",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 4 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "5",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 5 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "6",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 6 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "8",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 8 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "9",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 9 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "11",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 11 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "12",
+      "description": "Exact match, valid from company data",
+      "expectedResult": "Records with 12 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "8.0",
+      "description": "Exact match, decimal format",
+      "expectedResult": "Records with 8 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "-3",
+      "description": "Negative cancelled jobs",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is",
+      "filterValue": "50",
+      "description": "Invalid high value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "description": "Not equal to zero (excludes exact match, includes empty)",
+      "expectedResult": "All records except 0 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "4",
+      "description": "Not equal to valid value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 4 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "9",
+      "description": "Not equal to valid value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 9 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "14",
+      "description": "Not equal to highest value (excludes exact match, includes empty)",
+      "expectedResult": "All records except 14 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "8.0",
+      "description": "Not equal to decimal format (excludes exact match, includes empty)",
+      "expectedResult": "All records except 8 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "50",
+      "description": "Not equal to invalid value (excludes exact match, includes empty)",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_not",
+      "filterValue": "-5",
+      "description": "Not equal to negative (excludes exact match, includes empty)",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "begins_with",
+      "filterValue": "1",
+      "description": "Begins with 1 (10-19 from company data)",
+      "expectedResult": "Cancelled jobs 10-19",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "begins_with",
+      "filterValue": "0",
+      "description": "Begins with 0",
+      "expectedResult": "0 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "begins_with",
+      "filterValue": "-5",
+      "description": "Begins with negative",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "0",
+      "description": "Ends with 0 (0, 10 from company data)",
+      "expectedResult": "Cancelled jobs ending in 0",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "1",
+      "description": "Ends with 1 (1, 11 from company data)",
+      "expectedResult": "Cancelled jobs ending in 1",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "2",
+      "description": "Ends with 2 (2, 12 from company data)",
+      "expectedResult": "Cancelled jobs ending in 2",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "3",
+      "description": "Ends with 3 (3, 13 from company data)",
+      "expectedResult": "Cancelled jobs ending in 3",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "4",
+      "description": "Ends with 4 (4, 14 from company data)",
+      "expectedResult": "Cancelled jobs ending in 4",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "5",
+      "description": "Ends with 5 (5 from company data)",
+      "expectedResult": "Cancelled jobs ending in 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "6",
+      "description": "Ends with 6 (6 from company data)",
+      "expectedResult": "Cancelled jobs ending in 6",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "8",
+      "description": "Ends with 8 (8 from company data)",
+      "expectedResult": "Cancelled jobs ending in 8",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "9",
+      "description": "Ends with 9 (9 from company data)",
+      "expectedResult": "Cancelled jobs ending in 9",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "ends_with",
+      "filterValue": "1.0",
+      "description": "Ends with decimal",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "NUMERIC_STRING"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "Has any cancelled jobs value",
+      "expectedResult": "All records with cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "Cancelled jobs not specified",
+      "expectedResult": "Records without cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "0,5",
+      "description": "Is between 0-5 (covers 0, 1, 2, 3, 4, 5 from company data)",
+      "expectedResult": "Cancelled jobs 0-5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "5,10",
+      "description": "Is between 5-10 (covers 5, 6, 7, 8, 9, 10 from company data)",
+      "expectedResult": "Cancelled jobs 5-10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "10,14",
+      "description": "Is between 10-14 (covers 10, 11, 12, 13, 14 from company data)",
+      "expectedResult": "Cancelled jobs 10-14",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "5,105",
+      "description": "Decimal range",
+      "expectedResult": "Cancelled jobs 5-105",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "0,0",
+      "description": "Zero range",
+      "expectedResult": "Records with 0 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "-3,3",
+      "description": "Range with negative start",
+      "expectedResult": "Cancelled jobs 0-3",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "20,30",
+      "description": "Above company data range",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "9,9",
+      "description": "Single value range",
+      "expectedResult": "Records with 9 cancelled jobs",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_between",
+      "filterValue": "1,7",
+      "description": "Is between 1-7",
+      "expectedResult": "Cancelled jobs 1-7",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "5",
+      "description": "More than 5 (covers 6, 7, 8, 9, 10, 11, 12, 13, 14)",
+      "expectedResult": "Cancelled jobs > 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "10",
+      "description": "More than 10 (covers 11, 12, 13, 14)",
+      "expectedResult": "Cancelled jobs > 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "14",
+      "description": "More than max company value",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "7",
+      "description": "More than decimal threshold",
+      "expectedResult": "Cancelled jobs > 7",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "0",
+      "description": "More than zero",
+      "expectedResult": "All records with cancelled jobs > 0",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_mt",
+      "filterValue": "-3",
+      "description": "More than negative",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_lt",
+      "filterValue": "5",
+      "description": "Less than 5 (covers 0, 1, 2, 3, 4)",
+      "expectedResult": "Cancelled jobs < 5",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_lt",
+      "filterValue": "10",
+      "description": "Less than 10 (covers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9)",
+      "expectedResult": "Cancelled jobs < 10",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_lt",
+      "filterValue": "0",
+      "description": "Less than zero",
+      "expectedResult": "Empty",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_lt",
+      "filterValue": "7",
+      "description": "Less than decimal threshold",
+      "expectedResult": "Cancelled jobs < 7",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "totalcanceledjob",
+      "filterType": "is_lt",
+      "filterValue": "100",
+      "description": "Less than high value",
+      "expectedResult": "All Records",
+      "fieldType": "number",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ]
+}

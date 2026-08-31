@@ -1,0 +1,309 @@
+{
+  "Filter By User - Tasks": [
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}}],\"userFilter\":[{{owner}},{{admin}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}}]}",
+      "description": "Filter tasks created by owner, admin OR collaborated with owner, admin OR collaborated with team1",
+      "expectedResult": "task1, task2, task4, task5, task6, task7, task8, task9, task10, task12"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[],\"userFilter\":[{{owner}}],\"userSlugs\":[{{userSlugOwner}}]}",
+      "description": "Filter tasks created by owner OR collaborated with owner",
+      "expectedResult": "task1, task5, task7, task9"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "description": "Filter tasks created by team1 members OR collaborated with team1",
+      "expectedResult": "task4, task6, task8"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}},{{team2}}],\"userFilter\":[{{owner}},{{admin}},{{teamMember}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}},{{userSlugTeamMember}}]}",
+      "description": "Filter tasks created by multiple users and teams OR collaborated with them",
+      "expectedResult": "task1, task2,task3, task4, task5, task6, task7, task8, task9, task10, task11, task12"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team2}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "description": "Filter tasks created by team2 members OR collaborated with team2",
+      "expectedResult": "task6, task8"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}},{{team2}}],\"userFilter\":[{{owner}},{{admin}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}}]}",
+      "description": "Filter tasks created by owner, admin OR team1, team2 OR collaborated with them",
+      "expectedResult": "task1, task2, task4, task5, task6, task7, task8, task9, task10, task12"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[],\"userFilter\":[{{owner}},{{admin}},{{teamMember}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}},{{userSlugTeamMember}}]}",
+      "description": "Filter tasks created by any of the specified users OR collaborated with them",
+      "expectedResult": "task1, task2, task3, task5, task6, task7, task8, task9, task10, task11, task12"
+    },
+    {
+      "filter": "userFilter",
+      "filterValue": "{\"teamFilter\":[{{team1}},{{team2}}],\"userFilter\":[],\"userSlugs\":[]}",
+      "description": "Filter tasks created by any of the specified teams OR collaborated with them",
+      "expectedResult": "task4, task6, task8"
+    }
+  ],
+  "Filter By Task Type - Tasks": [
+    {
+      "filter": "tasktype",
+      "filterValue": "[{{task_type_follow_up}},{{task_type_interview_scheduling}}]",
+      "description": "Filter tasks with type Follow Up or Interview Scheduling",
+      "expectedResult": "task1, task2, task3, task4, task5, task6, task7, task8, task9, task10, task11, task12"
+    },
+    {
+      "filter": "tasktype",
+      "filterValue": "[{{task_type_follow_up}}]",
+      "description": "Filter tasks with type Follow Up only",
+      "expectedResult": "task1, task4, task6, task8, task11"
+    },
+    {
+      "filter": "tasktype",
+      "filterValue": "[{{task_type_interview_scheduling}}]",
+      "description": "Filter tasks with type Interview Scheduling only",
+      "expectedResult": "task2, task3, task5, task7, task9, task10, task12"
+    },
+    {
+      "filter": "tasktype",
+      "filterValue": "[0]",
+      "description": "Filter tasks with no task type",
+      "expectedResult": ""
+    }
+  ],
+  "Filter By Status - Tasks": [
+    {
+      "filter": "status",
+      "filterValue": "All",
+      "description": "Filter tasks with any status",
+      "expectedResult": "task1, task2, task3, task4, task5, task6, task7, task8, task9, task10, task11, task12"
+    },
+    {
+      "filter": "status",
+      "filterValue": "Complete",
+      "description": "Filter tasks with PENDING status only",
+      "expectedResult": "task1, task4, task6, task8 , task11"
+    },
+    {
+      "filter": "status",
+      "filterValue": "Incomplete",
+      "description": "Filter tasks with IN_PROGRESS status only",
+      "expectedResult": "task2, task3, task5, task7, task9, task10, task12"
+    }
+  ],
+  "Filter By Created Date - Tasks": [
+    {
+      "filter": "createdon",
+      "filterValue": "1",
+      "description": "All Time - Show all tasks regardless of creation date",
+      "expectedResult": "task1, task2, task3, task4, task5, task6, task7, task8, task9, task10, task11, task12"
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "2",
+      "description": "Today - Show tasks created today",
+      "expectedResult": ""
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "4",
+      "description": "Yesterday - Show tasks created yesterday",
+      "expectedResult": ""
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "5",
+      "description": "This Week - Show tasks created this week",
+      "expectedResult": ""
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "6",
+      "description": "Last Week - Show tasks created last week",
+      "expectedResult": ""
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "7",
+      "description": "This Month - Show tasks created this month",
+      "expectedResult": ""
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "8",
+      "description": "Last Month - Show tasks created last month",
+      "expectedResult": ""
+    },
+    {
+      "filter": "createdon",
+      "filterValue": "9",
+      "description": "Custom Range - Show tasks created within custom date range",
+      "expectedResult": ""
+    }
+  ],
+  "Filter By Due Date - Tasks": [
+    {
+      "filter": "duedate",
+      "filterValue": "1",
+      "description": "All Time - Show all tasks regardless of due date",
+      "expectedResult": "task1, task2, task3, task4, task5, task6, task7, task8, task9, task10, task11, task12"
+    },
+    {
+      "filter": "duedate",
+      "filterValue": "2",
+      "description": "Today - Show tasks due today",
+      "expectedResult": ""
+    },
+    {
+      "filter": "duedate",
+      "filterValue": "4",
+      "description": "Yesterday - Show tasks due yesterday",
+      "expectedResult": ""
+    },
+    {
+      "filter": "duedate",
+      "filterValue": "5",
+      "description": "This Week - Show tasks due this week",
+      "expectedResult": ""
+    },
+    {
+      "filter": "duedate",
+      "filterValue": "6",
+      "description": "Last Week - Show tasks due last week",
+      "expectedResult": ""
+    },
+    {
+      "filter": "duedate",
+      "filterValue": "7",
+      "description": "This Month - Show tasks due this month",
+      "expectedResult": ""
+    },
+    {
+      "filter": "duedate",
+      "filterValue": "8",
+      "description": "Last Month - Show tasks due last month",
+      "expectedResult": ""
+    },
+    {
+      "filter": "duedate",
+      "filterValue": "9",
+      "description": "Custom Range - Show tasks due within custom date range",
+      "expectedResult": ""
+    }
+  ],
+  "Filter By Associations - Tasks": [
+    {
+      "filter": "task_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}}],\"3\":[{{associated_companies_company1}}],\"4\":[{{associated_jobs_job1}}],\"5\":[{{associated_candidates_candidate1}}],\"11\":[{{associated_deals_deal1}}]}",
+      "description": "Filter tasks associated with candidate1, contact1, deal1, job1, company1",
+      "expectedResult": "task1, task2, task3, task4, task5, task6, task11, task12"
+    },
+    {
+      "filter": "task_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}}],\"3\":[],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter tasks associated with contact1 only",
+      "expectedResult": "task3, task11"
+    },
+    {
+      "filter": "task_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[{{associated_companies_company1}}],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter tasks associated with company1 only",
+      "expectedResult": "task11, task2"
+    },
+    {
+      "filter": "task_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[],\"4\":[{{associated_jobs_job1}}],\"5\":[],\"11\":[]}",
+      "description": "Filter tasks associated with job1 only",
+      "expectedResult": "task4, task12"
+    },
+    {
+      "filter": "task_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[],\"4\":[],\"5\":[{{associated_candidates_candidate1}}],\"11\":[]}",
+      "description": "Filter tasks associated with candidate1 only",
+      "expectedResult": "task1, task12"
+    },
+    {
+      "filter": "task_associated_with",
+      "filterValue": "{\"2\":[],\"3\":[],\"4\":[],\"5\":[],\"11\":[{{associated_deals_deal1}}]}",
+      "description": "Filter tasks associated with deal1 only",
+      "expectedResult": "task5, task6"
+    },
+    {
+      "filter": "task_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}},{{associated_contacts_contact2}}],\"3\":[{{associated_companies_company1}},{{associated_companies_company2}}],\"4\":[{{associated_jobs_job1}},{{associated_jobs_job2}}],\"5\":[{{associated_candidates_candidate1}},{{associated_candidates_candidate2}}],\"11\":[{{associated_deals_deal1}},{{associated_deals_deal2}}]}",
+      "description": "Filter tasks associated with multiple entities across all types",
+      "expectedResult": "task1, task2, task3, task4, task5, task6, task7, task11, task12"
+    },
+    {
+      "filter": "task_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact1}}],\"3\":[{{associated_companies_company1}}],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter tasks associated with contact1 OR company1",
+      "expectedResult": "task3, task2, task11"
+    },
+    {
+      "filter": "task_associated_with",
+      "filterValue": "{\"2\":[{{associated_contacts_contact2}}],\"3\":[{{associated_companies_company2}}],\"4\":[],\"5\":[],\"11\":[]}",
+      "description": "Filter tasks associated with contact2 OR company2",
+      "expectedResult": "task2, task3, task5"
+    }
+  ],
+  "Combined Filter Scenarios": [
+    {
+      "description": "Show completed follow-up tasks for owner user",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[{{owner}}],\"userSlugs\":[{{userSlugOwner}}]}",
+      "task_types": "[{{task_type_follow_up}}]",
+      "taskStatus": "Complete",
+      "expectedResult": "task1"
+    },
+    {
+      "description": "Show incomplete interview scheduling tasks",
+      "task_types": "[{{task_type_interview_scheduling}}]",
+      "taskStatus": "Incomplete",
+      "dueDate": "1",
+      "expectedResult": "task5, task7, task9, task12, task10, task2, task3"
+    },
+    {
+      "description": "Admin user's interview tasks with incomplete status and candidate associations",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[{{admin}}],\"userSlugs\":[{{userSlugAdmin}}]}",
+      "task_types": "[{{task_type_interview_scheduling}}]",
+      "taskStatus": "Incomplete",
+      "createdDate": "1",
+      "dueDate": "1",
+      "associations": "{\"5\": [\"{{test_candidate_slug}}\"]}",
+      "expectedResult": "task5, task7, task12, task10, task2"
+    },
+    {
+      "description": "Multi-User Multi-Type: Owner and Admin users' all task types with any status",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[{{owner}},{{admin}}],\"userSlugs\":[{{userSlugOwner}},{{userSlugAdmin}}]}",
+      "task_types": "[{{task_type_follow_up}},{{task_type_interview_scheduling}}]",
+      "taskStatus": "All",
+      "createdDate": "1",
+      "dueDate": "1",
+      "associations": "{}",
+      "expectedResult": "task5, task6, task7, task8, task9, task12, task10, task1, task2"
+    },
+    {
+      "description": "TeamMember user's interview tasks with Company associations and incomplete status",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[{{teamMember}}],\"userSlugs\":[{{userSlugTeamMember}}]}",
+      "task_types": "[{{task_type_interview_scheduling}}]",
+      "taskStatus": "Incomplete",
+      "createdDate": "1",
+      "dueDate": "1",
+      "associations": "{\"3\": [\"{{associated_companies_company1}}\"]}",
+      "expectedResult": "task2"
+    },
+    {
+      "description": "All users' incomplete tasks with candidate associations",
+      "userFilter": "{\"teamFilter\":[],\"userFilter\":[],\"userSlugs\":[]}",
+      "taskStatus": "Incomplete",
+      "createdDate": "1",
+      "dueDate": "1",
+      "associations": "{\"5\": [\"{{associated_candidates_candidate1}}\", \"{{associated_candidates_candidate2}}\"]}",
+      "expectedResult": "task5, task7, task12"
+    }
+  ]
+}

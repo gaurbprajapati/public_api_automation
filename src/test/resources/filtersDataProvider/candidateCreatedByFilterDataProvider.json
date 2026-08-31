@@ -1,0 +1,249 @@
+{
+  "Created By": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\"]}",
+      "description": "IS: Single user exact match",
+      "expectedResult": "USER_ID_1"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_2\"]}",
+      "description": "IS: Different single user exact match",
+      "expectedResult": "USER_ID_2"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_3\"]}",
+      "description": "IS: Third user exact match",
+      "expectedResult": "USER_ID_3"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_4\"]}",
+      "description": "IS: Fourth user exact match",
+      "expectedResult": "USER_ID_4"
+    },
+    {
+      "dbField": "createdby", 
+      "filterType": "is",
+      "filterValue": "{\"Team\":[\"TEAM_ID_1\"],\"User\":[]}",
+      "description": "IS: Single team exact match",
+      "expectedResult": "USER_ID_1"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[\"TEAM_ID_1\"],\"User\":[\"USER_ID_1\"]}",
+      "description": "IS: Mixed user + team match",
+      "expectedResult": "USER_ID_1"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[]}",
+      "description": "IS: Empty arrays (should return no matches)",
+      "expectedResult": ""
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\"]}",
+      "description": "IS_NOT: Single user exclusion",
+      "expectedResult": "USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_2\"]}",
+      "description": "IS_NOT: Different single user exclusion",
+      "expectedResult": "USER_ID_1,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_3\"]}",
+      "description": "IS_NOT: Third user exclusion",
+      "expectedResult": "USER_ID_1,USER_ID_2,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_4\"]}",
+      "description": "IS_NOT: Fourth user exclusion",
+      "expectedResult": "USER_ID_1,USER_ID_2,USER_ID_3"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not", 
+      "filterValue": "{\"Team\":[\"TEAM_ID_1\"],\"User\":[]}",
+      "description": "IS_NOT: Single team exclusion",
+      "expectedResult": "USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[\"TEAM_ID_1\"],\"User\":[\"USER_ID_1\"]}",
+      "description": "IS_NOT: Mixed user + team exclusion", 
+      "expectedResult": "USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[]}",
+      "description": "IS_NOT: Empty arrays (should return all candidates)",
+      "expectedResult": "USER_ID_1,USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\"]}",
+      "description": "CONTAINS_AT_LEAST_ONE: Single user",
+      "expectedResult": "USER_ID_1"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\",\"USER_ID_2\"]}",
+      "description": "CONTAINS_AT_LEAST_ONE: Two users OR logic",
+      "expectedResult": "USER_ID_1,USER_ID_2"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\",\"USER_ID_3\"]}",
+      "description": "CONTAINS_AT_LEAST_ONE: Non-consecutive users",
+      "expectedResult": "USER_ID_1,USER_ID_3"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_2\",\"USER_ID_4\"]}",
+      "description": "CONTAINS_AT_LEAST_ONE: Even-numbered users",
+      "expectedResult": "USER_ID_2,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\",\"USER_ID_2\",\"USER_ID_3\"]}",
+      "description": "CONTAINS_AT_LEAST_ONE: Three users OR logic",
+      "expectedResult": "USER_ID_1,USER_ID_2,USER_ID_3"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\",\"USER_ID_2\",\"USER_ID_3\",\"USER_ID_4\"]}",
+      "description": "CONTAINS_AT_LEAST_ONE: All users (should return all)",
+      "expectedResult": "USER_ID_1,USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[\"TEAM_ID_1\"],\"User\":[]}",
+      "description": "CONTAINS_AT_LEAST_ONE: Single team only",
+      "expectedResult": "USER_ID_1"
+    },
+    {
+      "dbField": "createdby", 
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[\"TEAM_ID_1\"],\"User\":[\"USER_ID_1\",\"USER_ID_2\"]}",
+      "description": "CONTAINS_AT_LEAST_ONE: Mixed users + team",
+      "expectedResult": "USER_ID_1,USER_ID_2"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{\"Team\":[],\"User\":[]}",
+      "description": "CONTAINS_AT_LEAST_ONE: Empty arrays (should return no matches)",
+      "expectedResult": ""
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\"]}",
+      "description": "DOES_NOT_CONTAIN: Single user exclusion",
+      "expectedResult": "USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_2\"]}",
+      "description": "DOES_NOT_CONTAIN: Different single user exclusion",
+      "expectedResult": "USER_ID_1,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\",\"USER_ID_2\"]}",
+      "description": "DOES_NOT_CONTAIN: Two users exclusion",
+      "expectedResult": "USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\",\"USER_ID_3\"]}",
+      "description": "DOES_NOT_CONTAIN: Non-consecutive users exclusion",
+      "expectedResult": "USER_ID_2,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_2\",\"USER_ID_4\"]}",
+      "description": "DOES_NOT_CONTAIN: Even-numbered users exclusion",
+      "expectedResult": "USER_ID_1,USER_ID_3"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\",\"USER_ID_2\",\"USER_ID_3\"]}",
+      "description": "DOES_NOT_CONTAIN: Three users exclusion",
+      "expectedResult": "USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[\"USER_ID_1\",\"USER_ID_2\",\"USER_ID_3\",\"USER_ID_4\"]}",
+      "description": "DOES_NOT_CONTAIN: All users exclusion (should return empty)",
+      "expectedResult": ""
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[\"TEAM_ID_1\"],\"User\":[]}",
+      "description": "DOES_NOT_CONTAIN: Single team exclusion",
+      "expectedResult": "USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[\"TEAM_ID_1\"],\"User\":[\"USER_ID_1\"]}",
+      "description": "DOES_NOT_CONTAIN: Mixed user + team exclusion",
+      "expectedResult": "USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[]}",
+      "description": "DOES_NOT_CONTAIN: Empty arrays (should return all candidates)",
+      "expectedResult": "USER_ID_1,USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "description": "HAS_ANY_VALUE: All candidates with non-empty createdby",
+      "expectedResult": "USER_ID_1,USER_ID_2,USER_ID_3,USER_ID_4"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "description": "IS_EMPTY: No candidates (createdby never empty)",
+      "expectedResult": ""
+    }
+  ]
+}

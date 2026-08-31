@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": [
+        {
+            "type": "object",
+            "properties": {
+                "job_slug": {
+                    "type": "string"
+                },
+                "job_name": {
+                    "type": "string"
+                },
+                "company_slug": {
+                    "type": "string"
+                },
+                "company_name": {
+                    "type": "string"
+                },
+                "job_status_id": {
+                    "type": "integer"
+                },
+                "job_status_label": {
+                    "type": "string"
+                },
+                "candidate_status_id": {
+                    "type": "integer"
+                },
+                "candidate_status": {
+                    "type": "string"
+                },
+                "remark": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "updated_by": {
+                    "type": "integer"
+                },
+                "updated_on": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "job_slug",
+                "job_name",
+                "company_slug",
+                "company_name",
+                "job_status_id",
+                "job_status_label",
+                "candidate_status_id",
+                "candidate_status",
+                "remark",
+                "updated_by",
+                "updated_on"
+            ]
+        }
+    ]
+}

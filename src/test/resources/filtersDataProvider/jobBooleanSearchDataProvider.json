@@ -1,0 +1,938 @@
+[
+  {
+    "testCaseId": "TC_JBS_001",
+    "description": "Simple job name search - exact match",
+    "query": "Sales Manager",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1"],
+    "expectedResultReason": "Job1 has name 'Sales Manager' which contains both 'Sales' and 'Manager'. No other job contains both terms together in any searchable field.",
+    "expectedResultName": ["Sales Manager"]
+  },
+  {
+    "testCaseId": "TC_JBS_002",
+    "description": "Simple OR operation - job names",
+    "query": "\"Sales Manager\" OR \"Software Engineer\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1", "Job2"],
+    "expectedResultReason": "Job1 has name 'Sales Manager' matching the first phrase. Job2 has name 'Senior Software Engineer 😀' containing the phrase 'Software Engineer'.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀"]
+  },
+  {
+    "testCaseId": "TC_JBS_003",
+    "description": "Simple AND operation - city and locality",
+    "query": "San Francisco AND \"Financial District\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job11"],
+    "expectedResultReason": "Job2 has city 'San Francisco' and locality 'Financial District'. Job11 has city 'San Francisco' and locality 'Financial District'.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_004",
+    "description": "NOT operation - exclude specific term",
+    "query": "Engineer AND NOT Senior",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job13"],
+    "expectedResultReason": "Job13 has 'Engineer' in name 'DevOps Engineer /Pepper'. Job2 is excluded because name contains 'Senior Software Engineer'. No other jobs contain 'Engineer' in searchable fields.",
+    "expectedResultName": ["DevOps Engineer /Pepper"]
+  },
+  {
+    "testCaseId": "TC_JBS_005",
+    "description": "Phrase search with quotes - exact phrase matching in notes",
+    "query": "\"Will be open for offer after 2 months\"",
+    "entitiesInvolved": ["notes"],
+    "expectedResult": ["Job1", "Job2", "Job3", "Job4", "Job5", "Job6", "Job7", "Job8", "Job9", "Job10", "Job11", "Job12", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Jobs 1-12 each have a note with this phrase. Jobs 13-15 have no activities. Associated jobs come from notes of Job1 (job1+job2), Job5 (job2), Job7 (job2), Job12 (job1).",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "Data Scientist_123", "Project Manager 🌍", "Security Director O'Malley", "Operations Manager + Division", "Minimal Data Entry", "CTO [Technologies] (Inc.)", "首席执行官", "CEO 💼", "Blockchain Lead Σ", "QA Manager β", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_006",
+    "description": "Cross-entity search - job reference AND note description",
+    "query": "company1 AND \"Will be open for offer\"",
+    "entitiesInvolved": ["jobs", "notes"],
+    "expectedResult": ["Job1", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1 has note description containing both 'company1' and 'Will be open for offer'. Job1's note lists associated_jobs_job1 and associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_007",
+    "description": "Task search - find jobs with specific task titles",
+    "query": "Follow up",
+    "entitiesInvolved": ["tasks"],
+    "expectedResult": ["Job1", "Job8", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1 has task title 'Follow up call for company1'. Job8 has task title 'Follow up (2024) for company8'. Job1's task lists associated_jobs_job1 and associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "CTO [Technologies] (Inc.)", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_008",
+    "description": "Meeting search - find jobs with specific meeting titles",
+    "query": "Business Development",
+    "entitiesInvolved": ["meetings"],
+    "expectedResult": ["Job1", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1 has meeting title 'Business Development Meeting - Company 1' and description 'Initial business development discussion'. Job1's meeting lists associated_jobs_job1 and associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_009",
+    "description": "Complex AND with parentheses - city and specialization",
+    "query": "(San Francisco OR München) AND (\"Computer Science\" OR \"Data Science\")",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job3"],
+    "expectedResultReason": "Job2 has city 'San Francisco' and specialization 'Computer Science'. Job3 has city 'München' and specialization 'Data Science'. Job11 has city 'San Francisco' but specialization 'Blockchain'.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_010",
+    "description": "OR operation across multiple entities",
+    "query": "Follow-up OR \"Follow up\"",
+    "entitiesInvolved": ["jobs", "tasks", "meetings"],
+    "expectedResult": ["Job1", "Job4", "Job8", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1 has task 'Follow up call for company1'. Job8 has task 'Follow up (2024) for company8'. Job4 has meeting description 'Follow-up discussion'. Job1's task lists associated_jobs_job1 and associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "Project Manager 🌍", "CTO [Technologies] (Inc.)", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_011",
+    "description": "NOT with AND - exclude specific jobs",
+    "query": "Technologies AND NOT CTO",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job11", "Job13", "Job15"],
+    "expectedResultReason": "Job8 excluded (name contains 'CTO'). Job11 has 'Technologies' in description. Job13 has 'Technologies' in description. Job15 has 'Technologies' in description/jdtext.",
+    "expectedResultName": ["Blockchain Lead Σ", "DevOps Engineer /Pepper", "Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_012",
+    "description": "Phrase search in jdtext field",
+    "query": "\"B2B sales pipeline\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1"],
+    "expectedResultReason": "Job1 has jdtext containing 'Lead B2B sales pipeline; revenue growth & team coaching.' No other jobs contain this exact phrase.",
+    "expectedResultName": ["Sales Manager"]
+  },
+  {
+    "testCaseId": "TC_JBS_013",
+    "description": "Cross-entity search - job AND task",
+    "query": "company2 AND \"Review company profile\"",
+    "entitiesInvolved": ["jobs", "tasks"],
+    "expectedResult": ["Job2"],
+    "expectedResultReason": "Job2 has task title 'Review company profile for company2' containing both terms.",
+    "expectedResultName": ["Senior Software Engineer 😀"]
+  },
+  {
+    "testCaseId": "TC_JBS_014",
+    "description": "Multiple OR terms - find jobs in specific cities",
+    "query": "San Francisco OR München OR Redmond",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job3", "Job10", "Job11"],
+    "expectedResultReason": "Job2 has city 'San Francisco'. Job3 has city 'München'. Job10 has city 'Redmond'. Job11 has city 'San Francisco'.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Data Scientist_123", "CEO 💼", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_015",
+    "description": "Nested parentheses with AND and OR",
+    "query": "(Engineer OR Microsoft) AND (San Francisco OR Redmond)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job10"],
+    "expectedResultReason": "Job2 contains 'Engineer' in name and city 'San Francisco'. Job10 contains 'Microsoft' in description/jdtext and city 'Redmond'.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼"]
+  },
+  {
+    "testCaseId": "TC_JBS_016",
+    "description": "Cross-table company name search with city",
+    "query": "(\"Tech Solutions\" OR Microsoft) AND (San Francisco OR Redmond)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job10"],
+    "expectedResultReason": "Job2 matches via cross-table company name 'Tech Solutions Inc.' AND city 'San Francisco'. Job10 matches 'Microsoft' in description AND city 'Redmond'. Job1/Job3 have 'Tech Solutions' via company but wrong cities.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼"]
+  },
+  {
+    "testCaseId": "TC_JBS_017",
+    "description": "Search in LinkedIn profile URLs (custom field)",
+    "query": "linkedin.com/in/johnsmith",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1"],
+    "expectedResultReason": "Job1 has social_profileCF 'https://linkedin.com/in/johnsmith'. No other jobs have this exact LinkedIn URL.",
+    "expectedResultName": ["Sales Manager"]
+  },
+  {
+    "testCaseId": "TC_JBS_018",
+    "description": "Multiple NOT operations",
+    "query": "Director AND NOT Executive AND NOT Security",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job4"],
+    "expectedResultReason": "Job4 has 'Director' in description. Job5 excluded (name has 'Security'). Job15 excluded (name has 'Executive'). Cross-table: company5 has 'Security' but Job4 is not associated with company5.",
+    "expectedResultName": ["Project Manager 🌍"]
+  },
+  {
+    "testCaseId": "TC_JBS_019",
+    "description": "Task description search - exact phrase",
+    "query": "\"Schedule follow up call\"",
+    "entitiesInvolved": ["tasks"],
+    "expectedResult": ["Job1", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1 has task description 'Schedule follow up call after 2 weeks for company1'. That task lists associated_jobs_job1 and associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_020",
+    "description": "Meeting description search - exact phrase",
+    "query": "\"Initial business development discussion\"",
+    "entitiesInvolved": ["meetings"],
+    "expectedResult": ["Job1", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1 has meeting description 'Initial business development discussion'. That meeting lists associated_jobs_job1 and associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_021",
+    "description": "Complex query with city and specialization",
+    "query": "San Francisco AND (\"Computer Science\" OR Blockchain)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job11"],
+    "expectedResultReason": "Job2 has city 'San Francisco' and specialization 'Computer Science'. Job11 has city 'San Francisco' and specialization 'Blockchain' (also in name).",
+    "expectedResultName": ["Senior Software Engineer 😀", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_022",
+    "description": "Search with special characters - underscores",
+    "query": "Scientist_123",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job3"],
+    "expectedResultReason": "Job3 has name 'Data Scientist_123' containing 'Scientist_123'. Also textCF 'Analytics Expert_123' but that token is different.",
+    "expectedResultName": ["Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_023",
+    "description": "Search with special characters - apostrophes with cross-table match",
+    "query": "O'Malley*",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job5", "Job13", "Job14", "Job15"],
+    "expectedResultReason": "Job5 has 'O'Malley' in name and textCF. Jobs 13-15 match via cross-table: company5 'O'Malley's Security Solutions' contains 'O'Malley' and contact5 lastname 'O'Malley'.",
+    "expectedResultName": ["Security Director O'Malley", "DevOps Engineer /Pepper", "Data Scientist 📊", "Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_024",
+    "description": "Search with brackets in job name",
+    "query": "[Technologies]",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job8", "Job11", "Job13", "Job15"],
+    "expectedResultReason": "Brackets group the search term Technologies. Job8 name, Job11 description, Job13 description, Job15 description/jdtext all contain 'Technologies'.",
+    "expectedResultName": ["CTO [Technologies] (Inc.)", "Blockchain Lead Σ", "DevOps Engineer /Pepper", "Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_025",
+    "description": "Cross-entity search - notes AND tasks",
+    "query": "\"Will be open for offer\" AND \"Follow up\"",
+    "entitiesInvolved": ["notes", "tasks"],
+    "expectedResult": ["Job1", "Job8", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1: note + task both match. Job8: note + task both match. Job1's activities list associated_jobs_job1 and associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "CTO [Technologies] (Inc.)", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_026",
+    "description": "Search in LinkedIn profile URLs - second job",
+    "query": "linkedin.com/in/hansmueller",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2"],
+    "expectedResultReason": "Job2 has social_profileCF 'https://linkedin.com/in/hansmueller'.",
+    "expectedResultName": ["Senior Software Engineer 😀"]
+  },
+  {
+    "testCaseId": "TC_JBS_027",
+    "description": "Search with Chinese characters",
+    "query": "阿里巴巴",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job9"],
+    "expectedResultReason": "Job9 has description and jdtext containing '阿里巴巴'.",
+    "expectedResultName": ["首席执行官"]
+  },
+  {
+    "testCaseId": "TC_JBS_028",
+    "description": "Search with German characters",
+    "query": "München",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job3"],
+    "expectedResultReason": "Job3 has city 'München' with the German umlaut character.",
+    "expectedResultName": ["Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_029",
+    "description": "Search with Spanish text",
+    "query": "Proyectos",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job4"],
+    "expectedResultReason": "Job4 has description and longtextCF containing 'Proyectos'.",
+    "expectedResultName": ["Project Manager 🌍"]
+  },
+  {
+    "testCaseId": "TC_JBS_030",
+    "description": "Search with Greek beta character",
+    "query": "β",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job12"],
+    "expectedResultReason": "Job12 has name 'QA Manager β', description and jdtext containing 'β'.",
+    "expectedResultName": ["QA Manager β"]
+  },
+  {
+    "testCaseId": "TC_JBS_031",
+    "description": "Search with Greek sigma character",
+    "query": "Σ",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job11"],
+    "expectedResultReason": "Job11 has name 'Blockchain Lead Σ'.",
+    "expectedResultName": ["Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_032",
+    "description": "Empty result case - non-existent term",
+    "query": "NonExistentJob12345",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": "Empty",
+    "expectedResultReason": "No job contains 'NonExistentJob12345' in any searchable field.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_JBS_033",
+    "description": "AND with conflicting conditions - should return empty",
+    "query": "San Francisco AND München",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": "Empty",
+    "expectedResultReason": "No single job has both 'San Francisco' and 'München' in any searchable fields.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_JBS_034",
+    "description": "Wildcard search - prefix matching Engineer*",
+    "query": "Engineer*",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job13"],
+    "expectedResultReason": "Engineer* matches tokens starting with 'Engineer' in searchable fields. Job2: 'Engineer' in name. Job13: 'Engineer' in name and description. Note: job_function 'Engineering' is not a searchable field.",
+    "expectedResultName": ["Senior Software Engineer 😀", "DevOps Engineer /Pepper"]
+  },
+  {
+    "testCaseId": "TC_JBS_035",
+    "description": "Wildcard search - prefix matching Tech*",
+    "query": "Tech*",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1", "Job2", "Job3", "Job8", "Job11", "Job13", "Job15"],
+    "expectedResultReason": "Tech* matches via cross-table company name 'Tech Solutions Inc.' for Jobs 1,2,3. Job8: 'Technologies'/'Technology' in name/description/jdtext. Job11: 'Technologies' in description. Job13: 'Technologies' in description. Job15: 'Technologies' in description/jdtext.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "Data Scientist_123", "CTO [Technologies] (Inc.)", "Blockchain Lead Σ", "DevOps Engineer /Pepper", "Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_036",
+    "description": "Wildcard single character search in job description",
+    "query": "Micro?oft",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job10"],
+    "expectedResultReason": "Job10 has 'Microsoft' in description and jdtext. Micro?oft matches Microsoft (? = s).",
+    "expectedResultName": ["CEO 💼"]
+  },
+  {
+    "testCaseId": "TC_JBS_037",
+    "description": "Search in address field",
+    "query": "\"123 Market Street\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job11"],
+    "expectedResultReason": "Job2 and Job11 both have '123 Market Street' in their address field.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_038",
+    "description": "Search in locality field",
+    "query": "\"Financial District\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job11", "Job15"],
+    "expectedResultReason": "Job2, Job11, and Job15 all have locality 'Financial District'.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Blockchain Lead Σ", "Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_039",
+    "description": "Search in state field",
+    "query": "California",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job8", "Job11", "Job12"],
+    "expectedResultReason": "Job2/Job11/Job12 have state 'California'. Job8 has state '(California) State' which contains 'California'.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CTO [Technologies] (Inc.)", "Blockchain Lead Σ", "QA Manager β"]
+  },
+  {
+    "testCaseId": "TC_JBS_040",
+    "description": "Search in country field",
+    "query": "United States",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job6", "Job8", "Job11", "Job12", "Job13", "Job14"],
+    "expectedResultReason": "Multiple jobs have 'United States' in country. Job8 'United [States]' (brackets stripped). Job10 excluded ('United St@tes'). Job15 excluded ('_united states').",
+    "expectedResultName": ["Senior Software Engineer 😀", "Operations Manager + Division", "CTO [Technologies] (Inc.)", "Blockchain Lead Σ", "QA Manager β", "DevOps Engineer /Pepper", "Data Scientist 📊"]
+  },
+  {
+    "testCaseId": "TC_JBS_041",
+    "description": "Search in postal code field",
+    "query": "94105",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job8", "Job11"],
+    "expectedResultReason": "Job2 and Job11 have postalcode '94105'. Job8 has postalcode '[94105]' which contains '94105'.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CTO [Technologies] (Inc.)", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_042",
+    "description": "Search in specialization field",
+    "query": "Cybersecurity",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job5"],
+    "expectedResultReason": "Job5 has specialization 'Cybersecurity'. No other jobs contain 'Cybersecurity' in searchable fields.",
+    "expectedResultName": ["Security Director O'Malley"]
+  },
+  {
+    "testCaseId": "TC_JBS_043",
+    "description": "Search for term only in job name/description (not in non-searchable job_category)",
+    "query": "Executive",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job15"],
+    "expectedResultReason": "Job15 has 'Executive' in name 'Executive Director XVII' and description. Note: job_category 'Executive' is not a searchable field, so Job8/Job9/Job10 are excluded.",
+    "expectedResultName": ["Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_044",
+    "description": "Search for term in jdtext (not in non-searchable job_skill)",
+    "query": "Python",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job14"],
+    "expectedResultReason": "Job14 has 'Python' in jdtext 'Analytics 📊 Data Scientist 💡; Python and ML.' Note: job_skill is not a searchable field, so Job1/Job3 are excluded.",
+    "expectedResultName": ["Data Scientist 📊"]
+  },
+  {
+    "testCaseId": "TC_JBS_045",
+    "description": "Cross-table qualification label search",
+    "query": "\"Bachelor's Degree\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job4", "Job14"],
+    "expectedResultReason": "Jobs 2, 4, 14 are associated with qualification 'Bachelor's Degree' (tblqualifications.label is a searchable cross-table field).",
+    "expectedResultName": ["Senior Software Engineer 😀", "Project Manager 🌍", "Data Scientist 📊"]
+  },
+  {
+    "testCaseId": "TC_JBS_046",
+    "description": "Cross-table contact email search",
+    "query": "john.smith@techsolutions.com",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1", "Job2", "Job3"],
+    "expectedResultReason": "Contact1 (associated with Jobs 1,2,3) has email 'john.smith@techsolutions.com'. tblcontact.email is a searchable cross-table field.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_047",
+    "description": "Search for jobs with minimal data",
+    "query": "Minimal Data",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job7"],
+    "expectedResultReason": "Job7 has name 'Minimal Data Entry' which contains both 'Minimal' and 'Data'.",
+    "expectedResultName": ["Minimal Data Entry"]
+  },
+  {
+    "testCaseId": "TC_JBS_048",
+    "description": "Search in description field - exact phrase",
+    "query": "\"experienced developer\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2"],
+    "expectedResultReason": "Job2 has description containing 'experienced developer'.",
+    "expectedResultName": ["Senior Software Engineer 😀"]
+  },
+  {
+    "testCaseId": "TC_JBS_049",
+    "description": "Search in jdtext field - exact phrase",
+    "query": "\"revenue growth\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1"],
+    "expectedResultReason": "Job1 has jdtext containing 'revenue growth'.",
+    "expectedResultName": ["Sales Manager"]
+  },
+  {
+    "testCaseId": "TC_JBS_050",
+    "description": "Single-term search - Technology (only in description/jdtext, not non-searchable fields)",
+    "query": "Technology",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job8"],
+    "expectedResultReason": "Job8 has 'Technology' in description 'Chief Technology Officer' and jdtext. Note: job_category, job_industry, job_skill are not searchable fields, so other jobs are excluded.",
+    "expectedResultName": ["CTO [Technologies] (Inc.)"]
+  },
+  {
+    "testCaseId": "TC_JBS_051",
+    "description": "Meeting search with title containing brackets",
+    "query": "Follow_Up Meeting",
+    "entitiesInvolved": ["meetings"],
+    "expectedResult": ["Job4"],
+    "expectedResultReason": "Job4 has meeting title 'Follow_Up Meeting [Q1] - Company 4'.",
+    "expectedResultName": ["Project Manager 🌍"]
+  },
+  {
+    "testCaseId": "TC_JBS_052",
+    "description": "Task search with specific description phrase",
+    "query": "\"Prepare interview questions\"",
+    "entitiesInvolved": ["tasks"],
+    "expectedResult": ["Job3"],
+    "expectedResultReason": "Job3 has task description 'Prepare interview questions for company3'.",
+    "expectedResultName": ["Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_053",
+    "description": "Search across all entities - comprehensive search",
+    "query": "company1",
+    "entitiesInvolved": ["jobs", "notes", "tasks", "meetings"],
+    "expectedResult": ["Job1", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1 has 'company1' in notes and task data. Job1's activities list associated_jobs_job1 and associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_054",
+    "description": "Complex nested query with cross-table company name",
+    "query": "((San Francisco OR Redmond) AND \"Tech Solutions\") OR Microsoft",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job10"],
+    "expectedResultReason": "Job2 matches via cross-table company 'Tech Solutions Inc.' AND city 'San Francisco'. Job10 matches 'Microsoft' in description/jdtext. Job1/Job3 have 'Tech Solutions' but wrong cities.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼"]
+  },
+  {
+    "testCaseId": "TC_JBS_055",
+    "description": "Complex query with cross-table company names and job fields",
+    "query": "((\"Tech Solutions\" OR \"O'Malley's Security\") AND (San Francisco OR Portland)) OR (Microsoft AND CEO)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job10", "Job13"],
+    "expectedResultReason": "Job2: company 'Tech Solutions Inc.' + city SF. Job13: company 'O'Malley's Security Solutions' + city Portland. Job10: 'Microsoft' + 'CEO' in name/description.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼", "DevOps Engineer /Pepper"]
+  },
+  {
+    "testCaseId": "TC_JBS_056",
+    "description": "Cross-table qualification search with NOT",
+    "query": "Doctorate AND NOT \"San Francisco\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job8", "Job9"],
+    "expectedResultReason": "Jobs with qualification 'Doctorate': Job8 and Job9. Neither has 'San Francisco' in city (Job8: '[Bracket] City', Job9: '北京市').",
+    "expectedResultName": ["CTO [Technologies] (Inc.)", "首席执行官"]
+  },
+  {
+    "testCaseId": "TC_JBS_057",
+    "description": "Complex multi-field query with city, state, and postal code",
+    "query": "(San Francisco OR Redmond) AND (California OR Washington) AND (\"94105\" OR \"98052\")",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job10", "Job11"],
+    "expectedResultReason": "Job2: SF + California + 94105. Job11: SF + California + 94105. Job10: Redmond + Washington + 98052.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_058",
+    "description": "Complex multi-field query with state, city, and locality",
+    "query": "(San Francisco AND California AND \"94105\" AND \"Financial District\") OR (Redmond AND Washington AND \"98052\")",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job10", "Job11"],
+    "expectedResultReason": "Job2/Job11: all four conditions met. Job10: Redmond + Washington + 98052.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_059",
+    "description": "Complex multi-field query with specialization and NOT",
+    "query": "California AND \"Computer Science\" AND NOT CTO",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2"],
+    "expectedResultReason": "Job2: state 'California', specialization 'Computer Science', no 'CTO'. Job8 has 'Computer Science' and '(California)' but name contains 'CTO' so excluded.",
+    "expectedResultName": ["Senior Software Engineer 😀"]
+  },
+  {
+    "testCaseId": "TC_JBS_060",
+    "description": "Complex query combining address and activities",
+    "query": "(\"123 Market Street\" OR \"One Microsoft Way\") AND \"Will be open for offer\"",
+    "entitiesInvolved": ["jobs", "notes"],
+    "expectedResult": ["Job2", "Job10", "Job11"],
+    "expectedResultReason": "Job2/Job11 have '123 Market Street' in address AND note matches. Job10 has 'One Microsoft Way' in address AND note matches.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_061",
+    "description": "Complex query combining notes, tasks, and meetings",
+    "query": "\"Will be open for offer\" AND (\"Follow up\" OR \"Review company profile\") AND (\"Business Development\" OR \"Client discussion\")",
+    "entitiesInvolved": ["notes", "tasks", "meetings"],
+    "expectedResult": ["Job1", "Job2", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1: note + task 'Follow up' + meeting 'Business Development'. Job2: note + task 'Review company profile' + meeting 'Client discussion'. Job1's activities list associated_jobs_job1/job2.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_062",
+    "description": "Complex query combining all entity types",
+    "query": "company1 AND \"Will be open for offer\" AND \"Follow up\" AND \"Business Development Meeting\"",
+    "entitiesInvolved": ["jobs", "notes", "tasks", "meetings"],
+    "expectedResult": ["Job1", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Only Job1 satisfies all four conditions across all entity types. Job1's activities list associated_jobs_job1 and associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_063",
+    "description": "Cross-entity NOT - exclude jobs with specific notes",
+    "query": "Technologies AND NOT \"Will be open for offer\"",
+    "entitiesInvolved": ["jobs", "notes"],
+    "expectedResult": ["Job13", "Job15"],
+    "expectedResultReason": "Technologies in description: Job8, Job11, Job13, Job15. Jobs 1-12 have notes with the phrase and are excluded. Jobs 13 and 15 have no notes.",
+    "expectedResultName": ["DevOps Engineer /Pepper", "Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_064",
+    "description": "Complex query with LinkedIn, cross-table company, and notes",
+    "query": "(linkedin.com AND \"Tech Solutions\") AND \"Will be open for offer\"",
+    "entitiesInvolved": ["jobs", "notes"],
+    "expectedResult": ["Job1", "Job2", "Job3"],
+    "expectedResultReason": "Jobs 1,2,3 match via cross-table company 'Tech Solutions Inc.' AND linkedin.com in social_profileCF AND notes. Job1 note has associated_jobs_job1/job2.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "Data Scientist_123", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_065",
+    "description": "Complex query with terms in description/jdtext",
+    "query": "(React OR \"Machine Learning\") AND (\"Node.js\" OR SQL)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job3"],
+    "expectedResultReason": "Job2: 'React' and 'Node.js' in description/jdtext. Job3: 'Machine Learning' and 'SQL' in description/jdtext. These terms appear in searchable fields directly.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_066",
+    "description": "Complex specialization and qualification search",
+    "query": "(Cybersecurity OR Blockchain) AND (\"Master's Degree\" OR \"Associate Degree\")",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job5", "Job11"],
+    "expectedResultReason": "Job5: specialization 'Cybersecurity' + qualification 'Master's Degree'. Job11: specialization 'Blockchain' (and name) + qualification 'Associate Degree'.",
+    "expectedResultName": ["Security Director O'Malley", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_067",
+    "description": "Complex query with LinkedIn and job name",
+    "query": "linkedin.com AND (\"Sales Manager\" OR \"Software Engineer\")",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1", "Job2"],
+    "expectedResultReason": "Job1 has linkedin.com in CF AND name 'Sales Manager'. Job2 has linkedin.com in CF AND name contains 'Software Engineer'.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀"]
+  },
+  {
+    "testCaseId": "TC_JBS_068",
+    "description": "Complex query with LinkedIn and city",
+    "query": "linkedin.com AND (San Francisco OR München)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job3"],
+    "expectedResultReason": "Job2 has linkedin.com CF AND city SF. Job3 has linkedin.com CF AND city München. Job11 has SF but no linkedin CF.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_069",
+    "description": "Complex query with wildcard and LinkedIn",
+    "query": "Engineer* AND linkedin.com",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2"],
+    "expectedResultReason": "Engineer* in searchable fields: Job2 (name), Job13 (name/desc). linkedin.com in CF: Job1-6, Job8, Job9. Combined: only Job2 has both. Job13 has no linkedin CF.",
+    "expectedResultName": ["Senior Software Engineer 😀"]
+  },
+  {
+    "testCaseId": "TC_JBS_070",
+    "description": "Complex query with wildcard, LinkedIn, and activities",
+    "query": "Tech* AND linkedin.com AND \"Will be open for offer\"",
+    "entitiesInvolved": ["jobs", "notes"],
+    "expectedResult": ["Job1", "Job2", "Job3", "Job8"],
+    "expectedResultReason": "Tech* matches Jobs 1,2,3 (cross-table company 'Tech Solutions Inc.') and Job8 (description). linkedin.com matches Job1-6, Job8, Job9. Notes match Job1-12. Combined: Job1,2,3,8. Job1 note has associated_jobs_job1/job2.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "Data Scientist_123", "CTO [Technologies] (Inc.)", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_071",
+    "description": "Complex query with NOT excluding LinkedIn",
+    "query": "Tech* AND NOT linkedin.com",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job11", "Job13", "Job15"],
+    "expectedResultReason": "Tech* matches Jobs 1,2,3 (company), Job8,11,13,15 (description). NOT linkedin.com excludes Job1-6, Job8, Job9 (those with social_profileCF). Remaining: Job11, Job13, Job15.",
+    "expectedResultName": ["Blockchain Lead Σ", "DevOps Engineer /Pepper", "Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_072",
+    "description": "Custom field text search - name phrases",
+    "query": "\"John Smith\" OR \"Hans Müller\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1", "Job2", "Job4", "Job5", "Job6"],
+    "expectedResultReason": "Job1 has 'John Smith' in textCF/longtextCF. Job2 has 'Hans Müller' in textCF/longtextCF. Jobs 4,5,6 match 'Hans Müller' via cross-table contact2 (firstname 'Hans' + lastname 'Müller' are concatenated adjacently in resumetext). Job3 does NOT match because cross-table contact1 has emojis in name ('John 😀 Smith 📧') breaking the phrase.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "Project Manager 🌍", "Security Director O'Malley", "Operations Manager + Division"]
+  },
+  {
+    "testCaseId": "TC_JBS_073",
+    "description": "Custom field email search with German umlaut",
+    "query": "hansmüller@yopmail.com",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2"],
+    "expectedResultReason": "Job2 has emailCF 'hansmüller@yopmail.com'. Cross-table contact2 email is different: 'hans.mueller@innovate-gmbh.de'.",
+    "expectedResultName": ["Senior Software Engineer 😀"]
+  },
+  {
+    "testCaseId": "TC_JBS_074",
+    "description": "Phone number search - custom field and cross-table contact",
+    "query": "415-555-0101",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1", "Job2", "Job3"],
+    "expectedResultReason": "Job1 has phonenumberCF '415-555-0101'. Jobs 1,2,3 also match via cross-table contact1 contactnumber '415-555-0101'.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_075",
+    "description": "International phone number - custom field and cross-table contact",
+    "query": "+49 89",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job4", "Job5", "Job6"],
+    "expectedResultReason": "Job2 has phonenumberCF '+49 89 12345679'. Jobs 4,5,6 match via cross-table contact2 contactnumber '+49 89 12345679'.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Project Manager 🌍", "Security Director O'Malley", "Operations Manager + Division"]
+  },
+  {
+    "testCaseId": "TC_JBS_076",
+    "description": "Complex query with LinkedIn, address, and locality",
+    "query": "(linkedin.com AND \"123 Market Street\" AND \"Financial District\") OR (Microsoft AND \"One Microsoft Way\" AND Redmond)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job10"],
+    "expectedResultReason": "Job2: linkedin CF + address + locality. Job10: Microsoft in desc + address + city. Job11 has address/locality but no linkedin CF.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼"]
+  },
+  {
+    "testCaseId": "TC_JBS_077",
+    "description": "Complex query with phone number and country",
+    "query": "\"415-555\" AND India",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1"],
+    "expectedResultReason": "Job1 has phonenumberCF '415-555-0101' AND country 'India'. Jobs 2,3 also have '415-555' via contact but their countries are different.",
+    "expectedResultName": ["Sales Manager"]
+  },
+  {
+    "testCaseId": "TC_JBS_078",
+    "description": "Custom field search with underscore phone number",
+    "query": "\"Analytics Expert_123\" AND \"555_123_4568\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job3", "Job7", "Job8", "Job9"],
+    "expectedResultReason": "Job3 has textCF 'Analytics Expert_123' and phonenumberCF '555_123_4568'. Jobs 7,8,9 match both terms via cross-table contact3 (firstname 'Analytics' + lastname 'Expert_123' concatenated in resumetext, and contactnumber '555_123_4568').",
+    "expectedResultName": ["Data Scientist_123", "Minimal Data Entry", "CTO [Technologies] (Inc.)", "首席执行官"]
+  },
+  {
+    "testCaseId": "TC_JBS_079",
+    "description": "Custom field search with plus sign",
+    "query": "\"Agent Secret\" AND Division",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job6"],
+    "expectedResultReason": "Job6 has textCF 'Agent Secret + Division' and name 'Operations Manager + Division'.",
+    "expectedResultName": ["Operations Manager + Division"]
+  },
+  {
+    "testCaseId": "TC_JBS_080",
+    "description": "Complex query with multiple address combinations",
+    "query": "(Portland AND Oregon) OR (Boston AND Massachusetts) OR (\"New York\" AND \"Wall Street\")",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job13", "Job14", "Job15"],
+    "expectedResultReason": "Job13: Portland + Oregon. Job14: Boston + Massachusetts. Job15: New York + Wall Street in address.",
+    "expectedResultName": ["DevOps Engineer /Pepper", "Data Scientist 📊", "Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_081",
+    "description": "Complex query combining custom fields and activities",
+    "query": "(\"José García\" OR \"Seán O'Malley\") AND \"Will be open for offer\"",
+    "entitiesInvolved": ["jobs", "notes"],
+    "expectedResult": ["Job4", "Job5"],
+    "expectedResultReason": "Job4 has 'José García' in textCF/longtextCF + note. Job5 has 'Seán O'Malley' in textCF/longtextCF + note. Job5 note has associated_jobs_job2.",
+    "expectedResultName": ["Project Manager 🌍", "Security Director O'Malley", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_082",
+    "description": "Search for Roman numerals in job name",
+    "query": "XVII",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job15"],
+    "expectedResultReason": "Job15 has 'XVII' in name, description, and jdtext.",
+    "expectedResultName": ["Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_083",
+    "description": "Compound search with slash character",
+    "query": "Salt AND Pepper",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job13"],
+    "expectedResultReason": "Job13 has both 'Salt' and 'Pepper' in description and jdtext.",
+    "expectedResultName": ["DevOps Engineer /Pepper"]
+  },
+  {
+    "testCaseId": "TC_JBS_084",
+    "description": "DevOps-specific search in name and jdtext",
+    "query": "(Docker OR Kubernetes) AND DevOps",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job13"],
+    "expectedResultReason": "Job13 has Docker/Kubernetes in jdtext and 'DevOps' in name/description/specialization. Note: job_skill is not searchable, so only jdtext matches for Docker/Kubernetes.",
+    "expectedResultName": ["DevOps Engineer /Pepper"]
+  },
+  {
+    "testCaseId": "TC_JBS_085",
+    "description": "Complex activities combination",
+    "query": "\"Will be open for offer\" AND (\"Follow up\" OR \"Background_Verification\") AND (\"Business Development\" OR \"Follow_Up Meeting\")",
+    "entitiesInvolved": ["notes", "tasks", "meetings"],
+    "expectedResult": ["Job1", "Job4", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "Job1: note + task 'Follow up' + meeting 'Business Development'. Job4: note + task 'Background_Verification' + meeting 'Follow_Up Meeting'. Job1 activities have associated_jobs_job1/job2.",
+    "expectedResultName": ["Sales Manager", "Project Manager 🌍", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_086",
+    "description": "Complex query with qualification, state, NOT, and tasks",
+    "query": "(California OR Washington) AND (Doctorate OR Microsoft) AND NOT \"San Francisco\" AND (\"Follow up\" OR \"Schedule interview\")",
+    "entitiesInvolved": ["jobs", "tasks"],
+    "expectedResult": ["Job8", "Job10"],
+    "expectedResultReason": "Job8: state '(California)', qualification 'Doctorate', city '[Bracket] City' (not SF), task 'Follow up (2024)'. Job10: state 'Washington', 'Microsoft' in desc, city 'Redmond' (not SF), task 'Schedule interview'.",
+    "expectedResultName": ["CTO [Technologies] (Inc.)", "CEO 💼"]
+  },
+  {
+    "testCaseId": "TC_JBS_087",
+    "description": "NOT excluding multiple specific terms",
+    "query": "Executive AND NOT CEO AND NOT CTO",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job15"],
+    "expectedResultReason": "Job15 has 'Executive' in name/description. Note: job_category is not searchable, so only Job15 matches. Job15 does not contain 'CEO' or 'CTO' in any field.",
+    "expectedResultName": ["Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_088",
+    "description": "Complex multi-entity query with tasks and notes",
+    "query": "\"Will be open for offer\" AND (\"Interview\" OR \"Follow up\" OR \"Reference check\")",
+    "entitiesInvolved": ["notes", "tasks"],
+    "expectedResult": ["Job1", "Job3", "Job7", "Job8", "Job10", "associated_jobs_job1", "associated_jobs_job2"],
+    "expectedResultReason": "All jobs 1-12 have the note phrase. Task matches: Job1 'Follow up', Job3 'Interview preparation', Job7 'Reference check', Job8 'Follow up', Job10 'Schedule interview'. Associated jobs from Job1 and Job7 activities.",
+    "expectedResultName": ["Sales Manager", "Data Scientist_123", "Minimal Data Entry", "CTO [Technologies] (Inc.)", "CEO 💼", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_089",
+    "description": "Complex query combining LinkedIn, cross-table company, and geography",
+    "query": "(linkedin.com OR \"415-555\") AND (India OR \"San Francisco\") AND \"Tech Solutions\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1", "Job2"],
+    "expectedResultReason": "Job1: linkedin CF + '415-555' in phonenumberCF, country India, company 'Tech Solutions Inc.'. Job2: linkedin CF, city SF, company 'Tech Solutions Inc.'. Job3: linkedin but city München (not India/SF).",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀"]
+  },
+  {
+    "testCaseId": "TC_JBS_090",
+    "description": "Complex query with wildcard, phone, and LinkedIn",
+    "query": "Tech* AND (\"415-555\" OR \"+49 89\") AND linkedin.com",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1", "Job2", "Job3"],
+    "expectedResultReason": "Tech* matches Jobs 1,2,3 via company 'Tech Solutions Inc.'. '415-555' matches via contact1 phone for Jobs 1,2,3. '+49 89' matches Job2 phonenumberCF. linkedin.com matches Job1-3 via CF. All three satisfy all conditions.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_091",
+    "description": "Search with plus sign in job name",
+    "query": "Operations Manager +",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job6"],
+    "expectedResultReason": "Job6 has name 'Operations Manager + Division' containing all terms.",
+    "expectedResultName": ["Operations Manager + Division"]
+  },
+  {
+    "testCaseId": "TC_JBS_092",
+    "description": "Complex deep nesting with cross-table and job fields",
+    "query": "(((\"Tech Solutions\" OR Blockchain) AND (San Francisco OR Redmond)) AND (\"94105\" OR \"98052\")) OR ((Microsoft AND CEO) AND Redmond)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job10", "Job11"],
+    "expectedResultReason": "Job2: company 'Tech Solutions' + SF + 94105. Job11: 'Blockchain' in name + SF + 94105. Job10: Microsoft + CEO + Redmond (also matches postal 98052).",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼", "Blockchain Lead Σ"]
+  },
+  {
+    "testCaseId": "TC_JBS_093",
+    "description": "Complex query with custom fields, profile, and activities",
+    "query": "(\"John Smith\" OR \"Hans Müller\") AND (linkedin.com OR \"yopmail.com\") AND \"Will be open for offer\"",
+    "entitiesInvolved": ["jobs", "notes"],
+    "expectedResult": ["Job1", "Job2", "Job4", "Job5", "Job6"],
+    "expectedResultReason": "Job1: 'John Smith' in CFs + linkedin/yopmail CFs + note. Job2: 'Hans Müller' in CFs + linkedin/yopmail CFs + note. Jobs 4,5,6: 'Hans Müller' via cross-table contact2 (firstname+lastname concatenated in resumetext) + linkedin/yopmail in own CFs + notes. Job1 note has associated_jobs_job1/job2. Job5 note has associated_jobs_job2.",
+    "expectedResultName": ["Sales Manager", "Senior Software Engineer 😀", "Project Manager 🌍", "Security Director O'Malley", "Operations Manager + Division", "associated_jobs_job1", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_094",
+    "description": "Task search with associated jobs - OR query",
+    "query": "\"Reference check\" OR \"Offer preparation\"",
+    "entitiesInvolved": ["tasks"],
+    "expectedResult": ["Job5", "Job7", "associated_jobs_job2"],
+    "expectedResultReason": "Job7 task 'Reference check for company7'. Job5 task 'O'Brien's Offer preparation for company5'. Both have associated_jobs_job2 in tasks.",
+    "expectedResultName": ["Security Director O'Malley", "Minimal Data Entry", "associated_jobs_job2"]
+  },
+  {
+    "testCaseId": "TC_JBS_095",
+    "description": "Complex query combining multiple address fields",
+    "query": "(\"123 Market Street\" OR \"One Microsoft Way\" OR \"123 Innovation Drive\") AND (California OR Washington)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job10", "Job11", "Job12"],
+    "expectedResultReason": "Job2: '123 Market Street' + California. Job11: '123 Market Street' + California. Job10: 'One Microsoft Way' + Washington. Job12: '123 Innovation Drive' + California.",
+    "expectedResultName": ["Senior Software Engineer 😀", "CEO 💼", "Blockchain Lead Σ", "QA Manager β"]
+  },
+  {
+    "testCaseId": "TC_JBS_096",
+    "description": "Complex query with LinkedIn, specialization, and address",
+    "query": "(linkedin.com OR \"yopmail.com\") AND (\"Computer Science\" OR Cybersecurity) AND (\"123 Market Street\" OR \"O'Connell Street\")",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job5"],
+    "expectedResultReason": "Job2: linkedin CF + specialization 'Computer Science' + address '123 Market Street'. Job5: linkedin CF + specialization 'Cybersecurity' + address 'O'Connell Street Upper'.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Security Director O'Malley"]
+  },
+  {
+    "testCaseId": "TC_JBS_097",
+    "description": "Cross-table company name search - simple",
+    "query": "\"Innovate GmbH\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job4", "Job5", "Job6"],
+    "expectedResultReason": "Jobs 4, 5, 6 are associated with company2 'Innovate GmbH'. tblcompany.companyname is a searchable cross-table field.",
+    "expectedResultName": ["Project Manager 🌍", "Security Director O'Malley", "Operations Manager + Division"]
+  },
+  {
+    "testCaseId": "TC_JBS_098",
+    "description": "Cross-table contact firstname search",
+    "query": "Hans",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job2", "Job4", "Job5", "Job6"],
+    "expectedResultReason": "Job2 has 'Hans' in textCF/longtextCF 'Hans Müller'. Jobs 4,5,6 match via cross-table contact2 firstname 'Hans'. tblcontact.firstname is a searchable field.",
+    "expectedResultName": ["Senior Software Engineer 😀", "Project Manager 🌍", "Security Director O'Malley", "Operations Manager + Division"]
+  },
+  {
+    "testCaseId": "TC_JBS_099",
+    "description": "Cross-table company name + contact firstname combo",
+    "query": "Seán AND \"O'Malley's Security\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job13", "Job14", "Job15"],
+    "expectedResultReason": "Jobs 13-15 have contact5 firstname 'Seán' AND company5 'O'Malley's Security Solutions'. Job5 has 'Seán' in textCF but company2 is 'Innovate GmbH' (no match).",
+    "expectedResultName": ["DevOps Engineer /Pepper", "Data Scientist 📊", "Executive Director XVII"]
+  },
+  {
+    "testCaseId": "TC_JBS_100",
+    "description": "Cross-table qualification + job description search",
+    "query": "\"Master's Degree\" AND (Cybersecurity OR Microsoft)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job5", "Job10"],
+    "expectedResultReason": "Job5: qualification 'Master's Degree' + specialization 'Cybersecurity'. Job10: qualification 'Master's Degree' + 'Microsoft' in description/jdtext.",
+    "expectedResultName": ["Security Director O'Malley", "CEO 💼"]
+  },
+  {
+    "testCaseId": "TC_JBS_101",
+    "description": "Cross-table company name + specialization search",
+    "query": "\"Innovate GmbH\" AND (\"Project Management\" OR Cybersecurity)",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job4", "Job5"],
+    "expectedResultReason": "Job4: company2 'Innovate GmbH' + specialization 'Project Management'. Job5: company2 'Innovate GmbH' + specialization 'Cybersecurity'. Job6 has company2 but specialization 'Operations'.",
+    "expectedResultName": ["Project Manager 🌍", "Security Director O'Malley"]
+  },
+  {
+    "testCaseId": "TC_JBS_102",
+    "description": "Cross-table contact lastname with accent character",
+    "query": "García",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job4", "Job10", "Job11", "Job12"],
+    "expectedResultReason": "Job4 has 'García' in textCF/longtextCF. Jobs 10,11,12 match via cross-table contact4 lastname 'García 📱'. tblcontact.lastname is a searchable field.",
+    "expectedResultName": ["Project Manager 🌍", "CEO 💼", "Blockchain Lead Σ", "QA Manager β"]
+  },
+  {
+    "testCaseId": "TC_JBS_103",
+    "description": "Cross-table contact phone + qualification combo",
+    "query": "\"555_123_4568\" AND \"Master's Degree\"",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job3"],
+    "expectedResultReason": "Job3 has phonenumberCF '555_123_4568' AND qualification 'Master's Degree'. Jobs 7,8,9 match phone via cross-table contact3 but have qualifications N/A, Doctorate, Doctorate.",
+    "expectedResultName": ["Data Scientist_123"]
+  },
+  {
+    "testCaseId": "TC_JBS_104",
+    "description": "Cross-table contact name + job name combined search",
+    "query": "(Smith AND \"Sales Manager\") OR (Müller AND \"Project Manager\")",
+    "entitiesInvolved": ["jobs"],
+    "expectedResult": ["Job1", "Job4"],
+    "expectedResultReason": "Job1: contact1 lastname 'Smith' (also textCF) + name 'Sales Manager'. Job4: contact2 lastname 'Müller' + name 'Project Manager 🌍'. Job2 has 'Smith' via contact1 but no 'Sales Manager'. Job2 has 'Müller' in textCF but no 'Project Manager'.",
+    "expectedResultName": ["Sales Manager", "Project Manager 🌍"]
+  }
+]

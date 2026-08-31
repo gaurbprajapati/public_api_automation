@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["data", "meta"],
+  "properties": {
+    "data": {
+      "type": "array"
+    },
+    "meta": {
+      "type": "object",
+      "required": ["request_UUID", "message", "message_type", "status"],
+      "properties": {
+        "request_UUID": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string",
+          "enum": ["Prompt pinned successfully", "Prompt unpinned successfully"]
+        },
+        "message_type": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contract Staffing Export Timesheets Suite" thread-count="10" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<test name="ContractorPortal - CreateReimbursementInContractorPortalTest - createReimbursementWithContractorTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.CreateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="createReimbursementWithContractorTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - CreateReimbursementInContractorPortalTest - createReimbursementWithBlankDescription_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.CreateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="createReimbursementWithBlankDescription_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - GetReimbursementInContractorPortalTest - getReimbursementListWithoutReimbursement_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetReimbursementInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementListWithoutReimbursement_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - GetReimbursementInContractorPortalTest - getReimbursementsWithReopenedReimbursement_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetReimbursementInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementsWithReopenedReimbursement_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - CreateReimbursementInContractorPortalTest - createReimbursementWithBlankAmount_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.CreateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="createReimbursementWithBlankAmount_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - CreateReimbursementInContractorPortalTest - createReimbursementWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.CreateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="createReimbursementWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - DeleteReimbursementInContractorPortalTest - deleteReimbursementWithContractorTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.DeleteReimbursementInContractorPortalTest">
+				<methods>
+					<include name="deleteReimbursementWithContractorTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - GetReimbursementCountInContractorPortalTest - getReimbursementCountWithoutReimbursements_Test_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetReimbursementCountInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithoutReimbursements_Test_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - GetReimbursementCountInContractorPortalTest - getReimbursementCountWithContractorTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetReimbursementCountInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithContractorTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - GetReimbursementCountInContractorPortalTest - getReimbursementCountWithNegativeTimesheetId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetReimbursementCountInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithNegativeTimesheetId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - UpdateReimbursementInContractorPortalTest - updateReimbursementWithContractorTkn_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.UpdateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="updateReimbursementWithContractorTkn_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - GetStatusHistoryInContractorPortalTest - getStatusHistoryWithInvalidTimesheetId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetStatusHistoryInContractorPortalTest">
+				<methods>
+					<include name="getStatusHistoryWithInvalidTimesheetId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - UpdateReimbursementInContractorPortalTest - updateReimbursementWithBlankDescription_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.UpdateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="updateReimbursementWithBlankDescription_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - UpdateReimbursementInContractorPortalTest - updateReimbursementWithBlankAmount_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.UpdateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="updateReimbursementWithBlankAmount_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - GetReimbursementCountInContractorPortalTest - getReimbursementCountWithInvalidTimesheetId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetReimbursementCountInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithInvalidTimesheetId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="ContractorPortal - CreateReimbursementInContractorPortalTest - createReimbursementWithReimbursementDisabled_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.CreateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="createReimbursementWithReimbursementDisabled_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - GetStatusHistoryInContractorPortalTest - getReimbursementStatusHistoryAfterApprove_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetStatusHistoryInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementStatusHistoryAfterApprove_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - UpdatePayableBillableForReimbursementInContractorPortalTest - UpdatePayableBillableFlagsWithContractorTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.UpdatePayableBillableForReimbursementInContractorPortalTest">
+				<methods>
+					<include name="UpdatePayableBillableFlagsWithContractorTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - UpdateReimbursementInContractorPortalTest - updateReimbursementWithApprovedId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.UpdateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="updateReimbursementWithApprovedId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - CreateReimbursementInContractorPortalTest - createReimbursementWithInvalidTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.CreateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="createReimbursementWithInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - UpdateReimbursementStatusInContractorPortalTest - updateStatusWithContractorTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.UpdateReimbursementStatusInContractorPortalTest">
+				<methods>
+					<include name="updateStatusWithContractorTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - ReopenReimbursementInContractorPortalTest - reopenReimbursementWithContractorTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.ReopenReimbursementInContractorPortalTest">
+				<methods>
+					<include name="reopenReimbursementWithContractorTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - GetStatusHistoryInContractorPortalTest - getStatusHistoryWithContractorTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetStatusHistoryInContractorPortalTest">
+				<methods>
+					<include name="getStatusHistoryWithContractorTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+    <test name="ContractorPortal - CreateReimbursementInContractorPortalTest - createReimbursementWithEmptyBody_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.CreateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="createReimbursementWithEmptyBody_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	<test name="ContractorPortal - DeleteReimbursementInContractorPortalTest - deleteApprovedReimbursementFromContractorPortal">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.DeleteReimbursementInContractorPortalTest">
+				<methods>
+					<include name="deleteApprovedReimbursementFromContractorPortal" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - GetReimbursementInContractorPortalTest - getReimbursementWithContractorTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetReimbursementInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementWithContractorTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - GetStatusHistoryInContractorPortalTest - getStatusHistoryWithInvalidReimbursementId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetStatusHistoryInContractorPortalTest">
+				<methods>
+					<include name="getStatusHistoryWithInvalidReimbursementId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+    <!-- <test name="ContractorPortal - UpdateReimbursementInContractorPortalTest - updateReimbursementWithAnotherContractorReimbursementId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.UpdateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="updateReimbursementWithAnotherContractorReimbursementId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - CreateReimbursementInContractorPortalTest - createReimbursementWithAnotherContractorTimesheetId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.CreateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="createReimbursementWithAnotherContractorTimesheetId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - UpdateReimbursementInContractorPortalTest - updateReimbursementWithAnotherContractorTimesheetId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.UpdateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="updateReimbursementWithAnotherContractorTimesheetId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="ContractorPortal - DeleteReimbursementInContractorPortalTest - deleteReimbursementWithAnotherContractorId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.DeleteReimbursementInContractorPortalTest">
+				<methods>
+					<include name="deleteReimbursementWithAnotherContractorId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	 <test name="ContractorPortal - GetReimbursementCountInContractorPortalTest - getReimbursementCountWithAnotherContractorId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetReimbursementCountInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementCountWithAnotherContractorId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - GetReimbursementInContractorPortalTest - getReimbursementWithAnotherContractorId_Contractor">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetReimbursementInContractorPortalTest">
+				<methods>
+					<include name="getReimbursementWithAnotherContractorId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	 <test name="ContractorPortal - GetStatusHistoryInContractorPortalTest - getStatusHistoryWithAnotherContractorId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.GetStatusHistoryInContractorPortalTest">
+				<methods>
+					<include name="getStatusHistoryWithAnotherContractorId" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+    <test name="ContractorPortal - DeleteReimbursementInContractorPortalTest - deleteReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.DeleteReimbursementInContractorPortalTest">
+				<methods>
+					<include name="deleteReimbursementWithInvoiceLinkedId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - CreateReimbursementInContractorPortalTest - createReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.CreateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="createReimbursementWithInvoiceLinkedId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ContractorPortal - UpdateReimbursementInContractorPortalTest - updateReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.ContractorPortal.UpdateReimbursementInContractorPortalTest">
+				<methods>
+					<include name="updateReimbursementWithInvoiceLinkedId_Contractor" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+</suite>

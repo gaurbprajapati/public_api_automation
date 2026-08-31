@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RBAC Deal Security Test Suite" thread-count="8" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+    
+    <test name="RBAC Deal Create Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.deal.RBACDealCreateSecurityTest">
+                <methods>
+                    <include name="createDealSecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+     <test name="RBAC Deal View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.deal.RBACDealViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewDeal_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Deal Edit Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.deal.RBACDealViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editDeal_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Deal Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.deal.RBACDealViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteDeal_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test> 
+
+</suite>

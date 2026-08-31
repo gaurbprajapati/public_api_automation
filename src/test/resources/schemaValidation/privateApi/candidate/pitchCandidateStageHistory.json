@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": ["Pitch Candidate stage history fetched successfully."]
+        },
+        "requestUuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "responseType": {
+          "type": "object",
+          "required": ["context", "code"],
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": ["Request is successful"]
+            },
+            "code": {
+              "type": "integer",
+              "enum": [103]
+            }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [200]
+        }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statusId",
+          "candidateStatus",
+          "remark",
+          "stageDate",
+          "updatedBy",
+          "createdOn",
+          "updatedByName",
+          "updatedOn"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "statusId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "candidateStatus": {
+            "type": "string",
+            "minLength": 1
+          },
+          "remark": {
+            "type": "string"
+          },
+          "stageDate": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "updatedBy": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "createdOn": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "updatedByName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "updatedOn": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

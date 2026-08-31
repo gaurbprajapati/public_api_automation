@@ -1,0 +1,225 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"first_name": {
+			"type": "string"
+		},
+		"last_name": {
+			"type": "string"
+		},
+		"email": {
+			"type": "string"
+		},
+		"contact_number": {
+			"type": "string"
+		},
+		"avatar": {
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		"slug": {
+			"type": "string"
+		},
+		"company_slug": {
+			"type": "null"
+		},
+		"additional_company_slugs": {
+			"type": "array",
+			"items": {}
+		},
+		"facebook": {
+			"type": "string"
+		},
+		"twitter": {
+			"type": "string"
+		},
+		"linkedin": {
+			"type": "string"
+		},
+		"xing": {
+			"type": "string"
+		},
+		"created_on": {
+			"type": "string"
+		},
+		"updated_on": {
+			"type": "string"
+		},
+		"city": {
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		"locality": {
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		"address": {
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		"designation": {
+			"type": [
+				"null",
+				"string"
+			]
+		},
+		"stage_id": {
+			"type": "integer"
+		},
+		"custom_fields": {
+			"type": "array",
+			"items": {}
+		},
+		"created_by": {
+			"type": "integer"
+		},
+		"updated_by": {
+			"type": "integer"
+		},
+		"owner": {
+			"type": "integer"
+		},
+		"resource_url": {
+			"type": "string"
+		},
+		"is_email_opted_out": {
+			"type": "string"
+		},
+		"email_opt_out_source": {
+			"type": "null"
+		},
+		"state": {
+			"type": "null"
+		},
+		"country": {
+			"type": "null"
+		},
+		"postal_code": {
+			"type": "null"
+		},
+		"contact_stage_remarks": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"stage_name": {
+							"type": [
+								"null",
+								"string"
+							]
+						},
+						"stage_id": {
+							"type": "integer"
+						},
+						"reason": {
+							"type": "string"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"updated_by": {
+							"type": "integer"
+						}
+					},
+					"required": [
+						"stage_name",
+						"stage_id",
+						"reason",
+						"updated_on",
+						"updated_by"
+					]
+				}
+			]
+		},
+		"last_calllog_added_on": {
+			"type": "null"
+		},
+		"last_calllog_added_by": {
+			"type": "null"
+		},
+		"last_email_sent_on": {
+			"type": "null"
+		},
+		"last_email_sent_by": {
+			"type": "null"
+		},
+		"last_sms_sent_on": {
+			"type": "null"
+		},
+		"last_sms_sent_by": {
+			"type": "null"
+		},
+		"last_communication": {
+			"type": "null"
+		},
+		"last_meeting_created_on": {
+			"type": "null"
+		},
+		"last_meeting_created_by": {
+			"type": "null"
+		},
+		"last_linkedin_message_sent_on": {
+			"type": "null"
+		},
+		"last_linkedin_message_sent_by": {
+			"type": "null"
+		}
+	},
+	"required": [
+		"id",
+		"first_name",
+		"last_name",
+		"email",
+		"contact_number",
+		"avatar",
+		"slug",
+		"company_slug",
+		"additional_company_slugs",
+		"facebook",
+		"twitter",
+		"linkedin",
+		"xing",
+		"created_on",
+		"updated_on",
+		"city",
+		"locality",
+		"address",
+		"designation",
+		"stage_id",
+		"custom_fields",
+		"created_by",
+		"updated_by",
+		"owner",
+		"resource_url",
+		"is_email_opted_out",
+		"email_opt_out_source",
+		"state",
+		"country",
+		"postal_code",
+		"contact_stage_remarks",
+		"last_calllog_added_on",
+		"last_calllog_added_by",
+		"last_email_sent_on",
+		"last_email_sent_by",
+		"last_sms_sent_on",
+		"last_sms_sent_by",
+		"last_communication",
+		"last_meeting_created_on",
+		"last_meeting_created_by",
+		"last_linkedin_message_sent_on",
+		"last_linkedin_message_sent_by"
+	]
+}

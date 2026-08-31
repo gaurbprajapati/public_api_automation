@@ -1,0 +1,654 @@
+{
+    "Hotlist": [
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1",
+            "description": "Is filter with single value - exact match for hotlist1 only",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_001"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact4",
+            "description": "Is filter with multiple values - exact match for hotlist1,hotlist2 combination",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_002"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2",
+            "description": "Is filter with single value - exact match for hotlist2 only",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_003"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact3",
+            "description": "Is filter with single value - exact match for hotlist3 only",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_004"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact7",
+            "description": "Is filter with multiple values - exact match for hotlist1,hotlist3 combination",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_005"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact6",
+            "description": "Is filter with multiple values - exact match for hotlist2,hotlist3 combination",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_006"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact5,Contact8",
+            "description": "Is filter with all three values - exact match for hotlist1,hotlist2,hotlist3 combination",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_007"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist4 only - empty hotlist should return no companies",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_008"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist1 and hotlist4 combination - should return empty since no company has both",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_009"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist2 and hotlist4 combination - should return empty since no company has both",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_010"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist3 and hotlist4 combination - should return empty since no company has both",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_011"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist1, hotlist2, and hotlist4 combination - should return empty since no company has all three",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_012"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist1, hotlist3, and hotlist4 combination - should return empty since no company has all three",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_013"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with hotlist2, hotlist3, and hotlist4 combination - should return empty since no company has all three",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_014"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with all four hotlists combination - should return empty since no company has all four hotlists",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_IS_015"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9",
+            "description": "Is Not filter with single value - excludes companies with exact match hotlist1 only",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_016"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9",
+            "description": "Is Not filter with multiple values - excludes companies with exact match hotlist1,hotlist2 combination",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_017"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9",
+            "description": "Is Not filter with single value - excludes companies with exact match hotlist3 only",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_018"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9",
+            "description": "Is Not filter with single value - excludes companies with exact match hotlist2 only",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_019"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact8,Contact9",
+            "description": "Is Not filter with multiple values - excludes companies with exact match hotlist1,hotlist3 combination",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_020"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9",
+            "description": "Is Not filter with multiple values - excludes companies with exact match hotlist2,hotlist3 combination",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_021"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9",
+            "description": "Is Not filter with all three values - excludes companies with exact match hotlist1,hotlist2,hotlist3 combination",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_022"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist4 - all companies should be returned since no company has hotlist4",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_023"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist1 and hotlist4 combination - all companies should be returned",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_024"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist2 and hotlist4 combination - all companies should be returned",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_025"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist3 and hotlist4 combination - all companies should be returned",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_026"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist1, hotlist2, and hotlist4 combination - all companies should be returned",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_027"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist1, hotlist3, and hotlist4 combination - all companies should be returned",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_028"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with hotlist2, hotlist3, and hotlist4 combination - all companies should be returned",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_029"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_not",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with all four hotlists combination - all companies should be returned",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISNOT_030"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact4,Contact5,Contact7,Contact8",
+            "description": "Contains filter with single value - companies that have hotlist1 (may have other hotlists too)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_031"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact4,Contact5,Contact8",
+            "description": "Contains filter with multiple values - companies that have both hotlist1 and hotlist2 (may have additional hotlists)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_032"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact5,Contact6,Contact8",
+            "description": "Contains filter with multiple values - companies that have both hotlist2 and hotlist3",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_033"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2,Contact4,Contact5,Contact6,Contact8",
+            "description": "Contains filter with single value - companies that have hotlist2",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_034"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact3,Contact5,Contact6,Contact7,Contact8",
+            "description": "Contains filter with single value - companies that have hotlist3 (may have other hotlists too)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_035"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact5,Contact7,Contact8",
+            "description": "Contains filter with multiple values - companies that have both hotlist1 and hotlist3 (may have additional hotlists)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_036"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact5,Contact8",
+            "description": "Contains filter with all three values - companies that have all three hotlists (hotlist1, hotlist2, and hotlist3)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_037"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist4 - empty hotlist should return no companies",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_038"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist1 and hotlist4 - should return empty since no company has both",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_039"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist2 and hotlist4 - should return empty since no company has both",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_040"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist3 and hotlist4 - should return empty since no company has both",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_041"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with hotlist1, hotlist2, and hotlist4 - should return empty since no company has all three",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINS_042"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact4,Contact5,Contact6,Contact7,Contact8",
+            "description": "Contains at Least One filter - companies that have at least one of hotlist1 or hotlist2",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINSATLEASTONE_043"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8",
+            "description": "Contains at Least One filter - companies that have at least one of hotlist1 or hotlist3",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINSATLEASTONE_044"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8",
+            "description": "Contains at Least One filter - companies that have at least one of hotlist2 or hotlist3",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINSATLEASTONE_045"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8",
+            "description": "Contains at Least One filter - companies that have at least one of hotlist1, hotlist2, or hotlist3",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINSATLEASTONE_046"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact4,Contact5,Contact7,Contact8",
+            "description": "Contains at Least One filter with hotlist1 and hotlist4 - returns companies with hotlist1 (hotlist4 has no companies)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINSATLEASTONE_047"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact2,Contact4,Contact5,Contact6,Contact8",
+            "description": "Contains at Least One filter with hotlist2 and hotlist4 - returns companies with hotlist2 (hotlist4 has no companies)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINSATLEASTONE_048"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact3,Contact5,Contact6,Contact7,Contact8",
+            "description": "Contains at Least One filter with hotlist3 and hotlist4 - returns companies with hotlist3 (hotlist4 has no companies)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINSATLEASTONE_049"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8",
+            "description": "Contains at Least One filter with all four hotlists - returns companies with any of hotlist1, hotlist2, or hotlist3 (hotlist4 has no companies)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_CONTAINSATLEASTONE_050"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact9",
+            "description": "Does Not Contain filter with single value - excludes companies that have hotlist1 anywhere",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_051"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9",
+            "description": "Does Not Contain filter with multiple values - excludes companies that have both hotlist1 and hotlist2 together",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_052"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9",
+            "description": "Does Not Contain filter with single value - excludes companies that have hotlist2 anywhere",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_053"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact4,Contact5,Contact6,Contact9",
+            "description": "Does Not Contain filter with single value - excludes companies that have hotlist3 anywhere",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_054"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact9",
+            "description": "Does Not Contain filter with multiple values - excludes companies that have both hotlist1 and hotlist3 together",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_055"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9",
+            "description": "Does Not Contain filter with multiple values - excludes companies that have both hotlist2 and hotlist3 together",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_056"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact10,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact9",
+            "description": "Does Not Contain filter with all three values - excludes companies that have all three hotlists together",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_057"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist4 - all companies should be returned since no company has hotlist4",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_058"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist1 and hotlist4 - excludes companies that have both hotlist1 and hotlist4 together (since hotlist4 has no companies, no company can have both, so all are included)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_059"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist2 and hotlist4 - excludes companies that have both hotlist2 and hotlist4 together (since hotlist4 has no companies, no company can have both, so all are included)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_060"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist3 and hotlist4 - excludes companies that have both hotlist3 and hotlist4 together (since hotlist4 has no companies, no company can have both, so all are included)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_061"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with hotlist1, hotlist2, and hotlist4 - excludes companies that have all three hotlist1, hotlist2, and hotlist4 together (since hotlist4 has no companies, no company can have all three together, so all are included)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_062"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "does_not_contain",
+            "filterValue": "{hotlist1},{hotlist2},{hotlist3},{hotlist4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with all four hotlists - excludes companies that have all four hotlist1, hotlist2, hotlist3, and hotlist4 together (since hotlist4 has no companies, no company can have all four together, so all are included)",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_DOESNOTCONTAIN_063"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact10,Contact4,Contact5,Contact6,Contact9",
+            "description": "Is Empty filter - companies with no hotlist assigned",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_ISEMPTY_064"
+        },
+        {
+            "dbField": "hotlistid",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Contact1,Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8",
+            "description": "Has Any Value filter - companies with at least one hotlist assigned",
+            "testCaseId": "TC_CONTACT_COMPANY_HOTLIST_HASANYVALUE_065"
+        }
+    ]
+}

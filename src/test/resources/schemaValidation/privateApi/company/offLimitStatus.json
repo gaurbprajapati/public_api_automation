@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Company Off-Limit Status Response Schema",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": ["OffLimitStatus fetched successfully."]
+        },
+        "requestUuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "responseType": {
+          "type": "object",
+          "required": ["context", "code"],
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": ["Request is successful"]
+            },
+            "code": {
+              "type": "integer",
+              "enum": [103]
+            }
+          }
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [200]
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "required": ["id", "entityId", "entityType", "accountId", "offLimitStatusId", "offLimitReason", "createdOn", "createdBy", "statusLabel", "backgroundColorHex", "textColorHex"],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "entityId": {
+          "type": "integer"
+        },
+        "entityType": {
+          "type": "integer",
+          "enum": [3]
+        },
+        "accountId": {
+          "type": "integer"
+        },
+        "offLimitStatusId": {
+          "type": "integer"
+        },
+        "offLimitReason": {
+          "type": "string"
+        },
+        "offLimitEndDate": {
+          "type": "integer"
+        },
+        "createdOn": {
+          "type": "integer"
+        },
+        "createdBy": {
+          "type": "integer"
+        },
+        "offLimitContact": {
+          "type": "integer"
+        },
+        "offLimitCandidate": {
+          "type": "integer"
+        },
+        "migrationReserved": {
+          "type": "string"
+        },
+        "markedByName": {
+          "type": "string"
+        },
+        "markedByEmail": {
+          "type": "string",
+          "format": "email"
+        },
+        "markedByImage": {
+          "type": ["string", "null"]
+        },
+        "offLimitStartDate": {
+          "type": "integer"
+        },
+        "statusLabel": {
+          "type": "string"
+        },
+        "backgroundColorHex": {
+          "type": "string",
+          "pattern": "^#[A-Fa-f0-9]{6}$"
+        },
+        "textColorHex": {
+          "type": "string",
+          "pattern": "^#[A-Fa-f0-9]{6}$"
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,1001 @@
+---
+description: Comprehensive guide for Rule Engine test data generation — covers all 6 rule types, break handling, rule interactions, priority-based allocation, JSON test data format, and calculation formulas. Apply this rule when creating, reviewing, or debugging rule engine test data.
+alwaysApply: false
+---
+
+# Rule Engine — Test Data & Calculation Guide
+
+## 1. Rule Engine Overview
+
+The Rule Engine calculates pay and bill amounts for timesheets. It evaluates up to 6 rule types in strict priority order, allocating worked hours to the highest-priority applicable rule first.
+
+### Core Principles
+
+- **Unallocated hours paid (when enabled)**: Hours not covered by any rule are unallocated. When `isUnplannedHoursPayEnabled: 1`, these are paid at 1x rate.
+- **No overlap**: Range-based rules cannot overlap on the same day.
+- **Priority-based allocation**: Higher-priority rules claim hours first.
+- **Threshold-based OT**: Daily/Weekly OT use total-hours thresholds, not time ranges.
+- **Break applies everywhere**: Break logic applies across all range-based rules.
+
+### Rule Priority Order
+
+| Priority | Rule | Type | Claims |
+|----------|------|------|--------|
+| 1 (highest) | Regular Hours | Range-based | Scheduled time range (effective hours) |
+| 2 | Before Shift (BS) | Range-based | 12 AM → entered time |
+| 3 | After Shift (AS) | Range-based | Entered time → 12 AM |
+| 4 | Specific Hours Range (SR) | Range-based | User-defined start–end |
+| 5 | Daily Overtime (DOT) | Threshold-based | Unallocated hours (daily threshold) |
+| 6 (lowest) | Weekly Overtime (WOT) | Threshold-based | Remaining unallocated (weekly threshold) |
+
+### Rule Multiplicity Constraints
+
+| Rule | Instances Allowed | Notes |
+|------|-------------------|-------|
+| Regular Hours | Always 1 (system rule) | Cannot be removed |
+| Before Shift | **1 per day** | Cannot apply twice on same day |
+| After Shift | **1 per day** | Cannot apply twice on same day |
+| Specific Hours Range | **Multiple allowed** | Non-overlapping ranges, each with own multiplier |
+| Daily Overtime | **Multiple tiers allowed** | Each threshold must be unique per day |
+| Weekly Overtime | **Only 1 instance** | Single tier, applies to all 7 days |
+
+---
+
+## 2. Rule 1 — Regular Hours (Priority 1)
+
+### Behavior
+- Always present (system rule), pays at 1x multiplier.
+- Defines the standard daily schedule (e.g., 9:00 AM – 5:00 PM = 8h).
+- Work within schedule → paid at 1x. Work beyond → flows to other rules or is unallocated.
+
+### Effective Regular Hours (with BPN)
+```
+Effective Regular = Scheduled Regular − Anticipated Break
+```
+
+| Scheduled | Anticipated | Effective |
+|-----------|-------------|-----------|
+| 8h | 0h | 8h |
+| 8h | 1h | 7h |
+| 3h | 1h | 2h |
+
+### Regular Pay Calculation
+```
+reg_work = actual hours worked within the scheduled range
+reg_paid = min(reg_work, effective_regular)
+Regular Pay = reg_paid × payRate × 1
+Regular Bill = reg_paid × billRate × 1
+```
+
+### Day Off Behavior
+On non-working days (weekends when dayPattern excludes them):
+- `effective_regular = 0`
+- All hours are unallocated → eligible for DOT/WOT only
+
+---
+
+## 3. Rule 2 — Before Shift (Priority 2)
+
+### Configuration
+- User enters a single time value (e.g., 7:00 AM).
+- System calculates range: `12:00 AM → entered time`.
+
+### Constraints
+- **One per day** — cannot apply BS twice on same day.
+- Entered time must be > 00:00 and ≤ regular start time.
+- On day-off days, any time is allowed.
+
+### Gap Behavior
+If BS ends before regular starts, there is an **unallocated gap**:
+```
+BS: 12 AM → 7 AM | Gap: 7 AM – 9 AM (unpaid) | Regular: 9 AM – 5 PM
+```
+
+### Pay Calculation
+```
+BS_hours = hours worked within [12:00 AM, BS_time)
+BS Pay = BS_hours × payRate × BS_multiplier
+BS Bill = BS_hours × billRate × BS_multiplier
+```
+
+### rulesApplied Format
+```
+BeforeShift:[multiplier: 2, time: 7:00, appliedDay:[mon,tue,wed,thu,fri]]
+```
+
+### acceptedPayBillRate Format
+```
+Mon:[beforeShift:[pay, bill], regularHours:[pay, bill]]
+```
+
+---
+
+## 4. Rule 3 — After Shift (Priority 3)
+
+### Configuration
+- User enters a single time value (e.g., 6:00 PM / 18:00).
+- System calculates range: `entered time → 12:00 AM (midnight)`.
+
+### Constraints
+- **One per day**.
+- Entered time must be > 00:00 and ≥ regular end time.
+
+### Gap Behavior (mirror of BS)
+```
+Regular: 9 AM – 5 PM | Gap: 5 PM – 6 PM (unpaid) | AS: 6 PM → 12 AM
+```
+
+### rulesApplied Format
+```
+AfterShift:[multiplier: 2, time: 19:00, appliedDay:[mon,tue,wed,thu,fri]]
+```
+
+### acceptedPayBillRate Format
+```
+Mon:[regularHours:[pay, bill], afterShift:[pay, bill]]
+```
+
+---
+
+## 5. Rule 4 — Specific Hours Range (Priority 4)
+
+### Configuration
+- User enters start AND end time (e.g., 5:00 AM – 8:00 AM).
+- **Multiple instances allowed** per day (non-overlapping).
+- Each instance can have a different multiplier.
+
+### Constraints
+- Cannot overlap with regular hours, BS, AS, or other SR ranges.
+- Cannot overlap: error message displayed.
+
+### Multiple SR Rules
+When multiple SR rules exist, their hours are **combined** into a single `specificHoursRange` entry in the test data:
+```
+acceptedPayBillRate: "Mon:[specificHoursRange:[combined_pay, combined_bill], regularHours:[pay, bill]]"
+```
+
+### rulesApplied Format (single)
+```
+SpecificHoursRange:[multiplier: 1.5, range:17:00-19:00, appliedDay:[mon,tue,wed,thu,fri]]
+```
+
+### rulesApplied Format (multiple)
+```
+SpecificHoursRange:[multiplier: 1.5, range:7:00-9:00, appliedDay:[mon,tue,wed,thu,fri]], SpecificHoursRange:[multiplier: 2, range:17:00-19:00, appliedDay:[mon,tue,wed,thu,fri]]
+```
+
+---
+
+## 6. Rule 5 — Daily Overtime (Priority 5)
+
+### How DOT Works
+DOT is a **threshold-based** rule. It does NOT define a time window — it claims **unallocated hours** when total daily work exceeds the threshold.
+
+### The Gate Concept
+```
+Gate Check: toward > DOT_threshold ?
+
+If gate OPEN (toward > threshold):
+  excess = toward − threshold
+  DOT_hours = min(excess, unallocated_pool)
+
+If gate CLOSED (toward ≤ threshold):
+  DOT = 0 — excess hours are unallocated (UNPAID)
+```
+
+**CRITICAL**: The comparison is strictly greater than (`>`). Exactly equal does NOT open the gate.
+
+### What Counts Toward Threshold
+**ALL clocked hours** count, including BS, AS, SR, gap, and regular:
+```
+No Break / BPY:  toward = total_clocked
+BPN:             toward = total_clocked − actual_break_taken
+```
+
+### Unallocated Pool
+The pool that DOT can claim from:
+```
+unallocated_pool = gap_hours + freed_hours (from BPN anticipated > actual)
+```
+Gap hours = worked hours NOT claimed by any range-based rule (Reg, BS, AS, SR).
+
+### DOT Without WOT (standalone)
+All excess above effective regular becomes DOT:
+```
+DOT = min(toward − threshold, unallocated_pool)
+```
+The gap between effective regular and threshold is absorbed into DOT.
+
+### DOT With WOT (combined)
+DOT takes priority, WOT gets remainder:
+```
+DOT_hours = min(toward − DOT_threshold, unallocated_pool)
+remaining = unallocated_pool − DOT_hours
+WOT_hours = min(weekly_toward − WOT_threshold, remaining)
+```
+The "gap band" between effective_regular and DOT_threshold goes to WOT.
+
+### Multiple DOT Tiers
+Higher threshold tiers claim first from pool:
+```
+Tier 1: > 8h (1.5x)
+Tier 2: > 12h (2x)
+
+If toward = 15h:
+  Tier 2: min(15-12, pool) = 3h at 2x
+  Tier 1: min(15-8, pool-tier2_claimed) but capped to band = min(4, remaining) at 1.5x
+```
+
+### rulesApplied Format
+```
+DailyOT:[multiplier: 1.5, threshold:>10, appliedDay:[mon,tue,wed,thu,fri,sat,sun]]
+```
+
+### acceptedPayBillRate Format (DOT embedded in daily payBill)
+```
+Mon:[regularHours:[pay, bill], dailyOT:[pay, bill]]
+```
+
+---
+
+## 7. Rule 6 — Weekly Overtime (Priority 6)
+
+### How WOT Works
+WOT is the **lowest priority** threshold-based rule. It claims remaining unallocated hours after ALL other rules (including DOT) have claimed.
+
+### Key Constraints
+- **Only 1 instance** allowed (no tiered WOT).
+- Applies to **all 7 days** (auto-selected, cannot be changed).
+- Only for weekly and biweekly timesheets.
+- Threshold minimum = sum of all scheduled daily hours.
+
+### WOT Threshold Check
+```
+weekly_toward = sum of daily toward values across entire week
+WOT_hours = min(weekly_toward − WOT_threshold, total_weekly_unallocated)
+```
+
+### Day Off / Weekend Work
+On non-working days:
+- No regular hours → all work is unallocated.
+- DOT applies per-day (if configured for that day and threshold met).
+- WOT accumulates weekly — weekend unallocated hours flow to WOT if weekly threshold met.
+
+### Weekend-Specific Pattern
+```
+DOT can apply any day but checks per-day threshold.
+WOT must apply all 7 days and checks weekly total.
+
+Scenario: Mon-Fri 9-17(8h), DOT>10, WOT>40
+Weekend Sat 9-15(6h): DOT: 6 NOT>10 → CLOSED. All 6h → WOT pool.
+Weekend Sun 9-13(4h): DOT: 4 NOT>10 → CLOSED. All 4h → WOT pool.
+Weekly toward=50>40 → WOT claims min(10, 10) = 10h from weekend.
+```
+
+### rulesApplied Format
+```
+WeeklyOT:[multiplier: 2, threshold:>40, appliedDay:[mon,tue,wed,thu,fri,sat,sun]]
+```
+
+### weeklyOT Field Format (separate from acceptedPayBillRate)
+```
+"weeklyOT": "Week1:[pay, bill]"
+```
+
+---
+
+## 8. Unallocated Hours (New Enhancement)
+
+### Definition
+**Unallocated hours** are worked hours that are NOT claimed by any configured rule:
+- NOT within Regular Hours (or effective regular for BPN)
+- NOT within Before Shift range
+- NOT within After Shift range
+- NOT within Specific Hours Range
+- NOT claimed by Daily Overtime
+- NOT claimed by Weekly Overtime
+
+### When Unallocated Hours Occur
+
+| Scenario | Example | Unallocated |
+|----------|---------|-------------|
+| Gap between BS and Regular | BS ends 7:00, Reg starts 9:00, work 6:00-10:00 | 7:00-9:00 = 2h |
+| Gap between Regular and AS | Reg ends 17:00, AS starts 19:00, work 16:00-20:00 | 17:00-19:00 = 2h |
+| Work outside all ranges | Reg 9-17, no other rules, work 17:00-19:00 | 17:00-19:00 = 2h |
+| BPN freed hours (ant > actual break) | ant=2h, no break taken | 2h freed → unallocated |
+| Hours helping meet OT threshold | Work 10h, DOT>8, effective_reg=6 | 2h toward threshold = unallocated |
+| DOT gate closed | Work 8h, DOT>8 | 8 NOT > 8, all excess = unallocated |
+| Weekend/day-off (no reg hours) | dayPattern excludes Sat, work Sat 9-15, no DOT/WOT met | 6h unallocated |
+
+### isUnplannedHoursPayEnabled Flag
+
+| Value | Behavior |
+|-------|----------|
+| `0` (default) | Unallocated hours are **unpaid** (original behavior) |
+| `1` | Unallocated hours are **paid at 1x rate** (same as regular hours) |
+
+This flag is set in:
+- `/v1/rule-engine/rule-template` endpoint
+- `/v1/timesheet-settings` endpoint
+
+### Unallocated Hours Calculation
+
+```
+unallocated = total_worked − actual_break − regular_paid − BS_hours − AS_hours − SR_hours − DOT_hours − WOT_hours
+```
+
+Or equivalently:
+```
+unallocated = gap_hours + freed_hours − (hours claimed by DOT/WOT from pool)
+```
+
+### Pay Calculation (when enabled)
+```
+Unallocated Pay = unallocated_hours × payRate × 1
+Unallocated Bill = unallocated_hours × billRate × 1
+```
+
+### acceptedPayBillRate Format (with unallocatedHours)
+```
+"Mon:[regularHours:[8,16], unallocatedHours:[2,4]]"
+"Mon:[beforeShift:[3,6], regularHours:[6,12], unallocatedHours:[4,8]]"
+```
+
+**IMPORTANT**: Always include `unallocatedHours:[0,0]` even when zero for consistency in test data when `isUnplannedHoursPayEnabled: 1`.
+
+### Examples
+
+**Example 1: Gap between BS and Regular**
+```
+Regular: 9:00-17:00, BS: 7:00 (range 00:00-7:00)
+Work: 6:00-10:00 (4h)
+BS: 6:00-7:00 = 1h
+Gap (unallocated): 7:00-9:00 = 2h
+Regular: 9:00-10:00 = 1h
+Total: 1h BS + 2h unalloc + 1h reg = 4h
+```
+
+**Example 2: BPN freed hours become unallocated**
+```
+Regular: 9:00-17:00, anticipated=2h, no break taken
+Work: 9:00-19:00 (10h)
+effective_reg = 8-2 = 6h
+reg_paid = 6h
+freed = anticipated - actual_break = 2 - 0 = 2h
+Outside regular (17-19) = 2h
+unallocated = freed(2) + outside(2) = 4h
+```
+
+**Example 3: Hours helping meet DOT threshold**
+```
+Regular: 9:00-17:00, DOT>8, anticipated=2h
+Work: 9:00-19:00 (10h), no break
+effective_reg = 8-2 = 6h
+toward = 10 > 8 → DOT excess = 2h
+But DOT can only claim from outside-regular pool = 2h (17-19)
+DOT claims 2h
+freed = 2h (ant=2, no break)
+unallocated = freed = 2h (helps meet threshold but not paid as DOT)
+```
+
+---
+
+## 9. Overtime Hours Tracking Fields
+
+### Overview
+These fields track overtime hours for reporting purposes. They are derived from the `acceptedPayBillRate` values.
+
+### Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `overtimeHours` | string | Daily overtime hours per week (excludes WOT) |
+| `totalOvertimeHours` | number | Sum of all daily overtime hours (excludes WOT) |
+| `weeklyOvertimeHours` | string | Weekly overtime hours (WOT only) |
+
+### What Counts as Overtime Hours
+
+**Custom overtime rules** (hours displayed in OT column):
+- Before Shift (BS)
+- After Shift (AS)
+- Specific Hours Range (SR)
+- Daily Overtime (DOT)
+- Weekly Overtime (WOT) — tracked separately
+
+**NOT overtime** (not displayed in OT column):
+- Regular Hours (1x rate)
+- Unallocated Hours (even when paid at 1x)
+
+### Calculation Formula
+
+```
+overtimeHours = pay_value / (payRate × multiplier)
+```
+
+**Example:**
+```
+payRate = 1, BS multiplier = 2
+acceptedPayBillRate: "Mon:[beforeShift:[4,8], regularHours:[8,16]]"
+BS hours = 4 / (1 × 2) = 2 hours
+overtimeHours: "week1:[Mon:2]"
+```
+
+### overtimeHours Format
+
+**Weekly timesheet (single week):**
+```
+"overtimeHours": "week1:[Mon:2]"
+"overtimeHours": "week1:[Mon:2, Tue:3, Wed:1]"
+"overtimeHours": "week1:[Mon:2, Sat:4]"
+```
+
+**Biweekly/Monthly timesheet (multiple weeks):**
+```
+"overtimeHours": "week1:[Mon:2, Fri:3], week2:[Mon:1]"
+"overtimeHours": "week1:[Mon:2], week2:[Tue:3], week3:[Wed:1]"
+```
+
+### totalOvertimeHours
+
+Sum of all overtime hours from `overtimeHours` field (**excludes WOT**):
+```
+"overtimeHours": "week1:[Mon:2, Tue:3]"
+"totalOvertimeHours": 5
+```
+
+### weeklyOvertimeHours Format
+
+Separate tracking for Weekly Overtime (not included in `totalOvertimeHours`):
+
+**Weekly timesheet:**
+```
+"weeklyOvertimeHours": "week1:4"
+```
+
+**Biweekly timesheet:**
+```
+"weeklyOvertimeHours": "week1:4, week2:2"
+```
+
+### Important Notes
+
+1. **WOT tracked separately**: Weekly overtime hours are in `weeklyOvertimeHours`, NOT in `overtimeHours` or `totalOvertimeHours`.
+2. **Empty when no OT**: If no overtime rules apply or hours are 0, use empty string `""`.
+3. **Consistency**: All test data files should include these three fields.
+4. **Calculation verification**: `totalOvertimeHours` should equal sum of all values in `overtimeHours`.
+
+### Examples
+
+**Example 1: Single rule (Before Shift)**
+```json
+"rulesApplied": "BeforeShift:[multiplier: 2, time: 7:00, appliedDay:[mon]]",
+"acceptedPayBillRate": "Mon:[beforeShift:[4,8], regularHours:[8,16]]",
+"overtimeHours": "week1:[Mon:2]",
+"totalOvertimeHours": 2,
+"weeklyOvertimeHours": ""
+```
+
+**Example 2: DOT + WOT**
+```json
+"rulesApplied": "DailyOT:[multiplier: 1.5, threshold:8, appliedDay:[...]], WeeklyOT:[multiplier: 2, threshold:40, appliedDay:[...]]",
+"acceptedPayBillRate": "Mon:[regularHours:[8,16], dailyOT:[3,6]], Tue:[regularHours:[8,16], dailyOT:[3,6]]",
+"weeklyOT": "Week1:[8,16]",
+"overtimeHours": "week1:[Mon:2, Tue:2]",
+"totalOvertimeHours": 4,
+"weeklyOvertimeHours": "week1:4"
+```
+
+**Example 3: Multiple rules (BS + SR + DOT)**
+```json
+"acceptedPayBillRate": "Mon:[beforeShift:[3,6], regularHours:[8,16], specificHoursRange:[4,8], dailyOT:[2,4]]",
+"overtimeHours": "week1:[Mon:6]",
+"totalOvertimeHours": 6,
+"weeklyOvertimeHours": ""
+```
+(BS=1.5 gives 3/1.5=2h, SR=2 gives 4/2=2h, DOT=2 gives 2/1=2h → total=6h)
+
+---
+
+## 10. Break System
+
+### Three Break Modes
+
+| Mode | Code | Description |
+|------|------|-------------|
+| **No Break** | NoBrk | No break configured. `breakBillable: ""`, `breakTimeThreshold: 0` |
+| **Break Paid = YES** | BPY | Break paid at 1x rate. `breakBillable: "Yes"`, `breakTimeThreshold: 0` |
+| **Break Paid = NO** | BPN | Break unpaid, deducted from hours. `breakBillable: "No"`, `breakTimeThreshold: ant_in_seconds` |
+
+### BPN — Break Pay No (Most Complex)
+
+#### Anticipated Break
+```
+Effective Regular = Scheduled Regular − Anticipated Break
+breakTimeThreshold = anticipated_break_in_seconds (e.g., 1h = 3600)
+```
+
+#### Toward Threshold (BPN)
+```
+toward = total_clocked − actual_break_taken
+```
+
+#### Freed Hours
+When anticipated > actual break, excess regular hours are "freed" to the unallocated pool:
+```
+freed = max(0, anticipated − actual_break)
+unallocated_pool = gap_hours + freed_hours
+```
+
+#### Four BPN Scenarios
+
+| Scenario | actual vs ant | freed | reg_paid | toward |
+|----------|---------------|-------|----------|--------|
+| break = ant | equal | 0 | eff_reg | clocked − break |
+| no break, ant > 0 | 0 < ant | ant | eff_reg | clocked |
+| break < ant | actual < ant | ant − actual | eff_reg | clocked − actual |
+| break > ant | actual > ant | 0 | min(reg_work, eff_reg) | clocked − actual |
+
+#### BPN breakTime Format
+```
+"breakTime": "Week1: [Mon: 9:00-21:00:[12:00-13:00]]"
+```
+Format: `Week1: [Day: workStart-workEnd:[breakStart-breakEnd]]`
+
+Multi-day:
+```
+"breakTime": "Week1: [Mon: 9:00-21:00:[12:00-13:00], Tue: 9:00-21:00:[12:00-13:00]]"
+```
+
+### BPY — Break Paid Yes
+
+- Break paid at **1x regular rate** regardless of which rule zone it falls in.
+- If break in premium zone (BS/AS/SR at 2x): break portion at 1x, rest at 2x.
+- `toward = total_clocked` (break doesn't reduce toward).
+- No anticipated break concept.
+
+---
+
+## 11. Rule Interactions — Two-Rule Combinations
+
+### 9.1 Range + Range (BS+AS, BS+SR, AS+SR)
+Both rules claim their respective time windows independently. Gaps between windows are unallocated.
+
+### 9.2 Range + DOT (BS+DOT, AS+DOT, SR+DOT)
+- Range rule claims its window first (higher priority).
+- **All hours** (including range-claimed hours) count toward DOT threshold.
+- DOT claims from unallocated pool (gaps between ranges).
+
+```
+Example: BS=2h(7-9), Reg=8h(9-17), Gap=2h(5-7). toward=12.
+DOT>8: excess=4. unalloc=2(gap). DOT=min(4,2)=2.
+```
+
+### 9.3 Range + WOT (BS+WOT, AS+WOT, SR+WOT)
+- Same as Range+DOT but WOT is weekly threshold.
+- Range hours count toward weekly total.
+- WOT claims remaining unallocated after all higher-priority rules.
+
+### 9.4 DOT + WOT (CRITICAL INTERACTION)
+When both configured:
+```
+1. DOT claims first: min(toward − DOT_threshold, unallocated_pool)
+2. WOT gets remainder: min(weekly_toward − WOT_threshold, remaining_pool)
+```
+
+**Gap Band Concept**: The hours between effective_regular and DOT_threshold form a "gap band" that goes to WOT:
+```
+gap_band = min(toward, DOT_threshold) − effective_regular
+```
+
+**DOT Without WOT**: All excess → DOT (absorbs gap band).
+**DOT With WOT**: DOT = toward − threshold; gap band → WOT.
+
+**DOT Eats All**: If DOT claims all unallocated, WOT gets 0 ("starved").
+**DOT Gate Closed**: If toward ≤ DOT_threshold, DOT=0 and all unallocated → WOT.
+
+---
+
+## 12. Test Data JSON Format
+
+### File Organization
+
+| File | Contents |
+|------|----------|
+| `SingleRuleTest.json` | BS, AS, SR single-rule tests |
+| `DailyOvertimeRuleTest.json` | DOT single-rule tests |
+| `WeeklyOvertimeTest.json` | WOT single-rule tests |
+| `DoubleRuleTest.json` | All 2-rule combinations |
+| `SpecificRangeRuleTest.json` | SR single-rule tests |
+| `NoRuleTest.json` | No custom rules (regular hours only) |
+| `UnallocatedHoursCalculations/UnallocatedHoursTestData.json` | Unallocated hours tests (`isUnplannedHoursPayEnabled: 1`) |
+| `MonthlyCalculationsTest.json` | Monthly timesheet tests (`start_of_month` variations) |
+
+### JSON Structure
+```json
+{
+  "singleRule": [ ... ]     // or "doubleRule" for DoubleRuleTest.json
+}
+```
+
+### Test Object Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `testId` | string | Unique ID: `RULE_COMBO_NNN` or `RULE_COMBO_BPN_NNN` |
+| `method` | string | Always `"Shift"` |
+| `frequency` | string | Always `"Weekly"` |
+| `start of the week` | string | Always `"[mon]"` |
+| `dayPattern` | string | Days with regular hours: `"[mon,tue,wed,thu,fri]"` |
+| `regularHours` | string | Scheduled range: `"9:00-17:00"` |
+| `_comment` | string | Human-readable calculation breakdown |
+| `rulesApplied` | string | Rule configuration (see format per rule type) |
+| `actualWorkTime` | string | Work entries per day |
+| `breakTime` | string | Break entries (empty for NoBrk) |
+| `acceptedPayBillRate` | string | Daily pay/bill breakdown (includes `unallocatedHours` when enabled) |
+| `weeklyOT` | string | Weekly OT pay/bill (only when WOT rule present) |
+| `overtimeHours` | string | Daily overtime hours: `"week1:[Mon:2, Tue:3]"` (see Section 9) |
+| `totalOvertimeHours` | number | Sum of all daily OT hours (excludes WOT) |
+| `weeklyOvertimeHours` | string | Weekly OT hours: `"week1:4"` (WOT only, see Section 9) |
+| `breakBillable` | string | `""` (NoBrk), `"Yes"` (BPY), `"No"` (BPN) |
+| `breakTimeThreshold` | number | Anticipated break in seconds (0 for NoBrk/BPY) |
+| `payRate` | number | Base pay rate (typically 1) |
+| `billRate` | number | Base bill rate (typically 2) |
+| `expectedTotalPayRate` | number | Expected total pay across all days + WOT + unallocated |
+| `expectedTotalBillRate` | number | Expected total bill across all days + WOT + unallocated |
+| `jobStartDate` | number | Unix timestamp: `1751328000` |
+| `jobEndDate` | number | Unix timestamp: `1753920000` |
+| `timesheetFrequency` | number | `2` (biweekly) or `3` (weekly) |
+| `timesheetStartDay` | number | `1` (Monday) |
+| `payCurrencyId` | number | `53` |
+| `billCurrencyId` | number | `53` |
+| `isUnplannedHoursPayEnabled` | number | `0` (unallocated unpaid) or `1` (unallocated paid at 1x) |
+
+### actualWorkTime Format
+
+**Single entry, single day:**
+```
+"Week1: [Mon: 9:00-21:00]"
+```
+
+**Multiple entries same day (semicolon-separated):**
+```
+"Week1: [Mon: 9:00-17:00; 17:00-20:00]"
+```
+
+**Multiple days (comma-separated):**
+```
+"Week1: [Mon: 9:00-21:00, Tue: 9:00-17:00, Wed: 9:00-20:00]"
+```
+
+**7-day week including weekend:**
+```
+"Week1: [Mon: 9:00-17:00, Tue: 9:00-17:00, ..., Sat: 9:00-15:00, Sun: 9:00-13:00]"
+```
+
+### breakTime Format
+
+**Single break:**
+```
+"Week1: [Mon: 9:00-21:00:[12:00-13:00]]"
+```
+
+**Multi-day breaks:**
+```
+"Week1: [Mon: 9:00-21:00:[12:00-13:00], Tue: 9:00-21:00:[12:00-13:00]]"
+```
+
+**No break:** `""`
+
+### acceptedPayBillRate Format
+
+Each day lists its rule allocations. Pay/bill values are the final calculated amounts.
+
+**Range-based rules only (BS+AS):**
+```
+"Mon:[beforeShift:[pay,bill], regularHours:[pay,bill], afterShift:[pay,bill]]"
+```
+
+**With SR:**
+```
+"Mon:[regularHours:[pay,bill], specificHoursRange:[pay,bill]]"
+```
+
+**With DOT (embedded in daily payBill):**
+```
+"Mon:[regularHours:[pay,bill], dailyOT:[pay,bill]]"
+```
+
+**With unallocatedHours (when `isUnplannedHoursPayEnabled: 1`):**
+```
+"Mon:[regularHours:[pay,bill], unallocatedHours:[pay,bill]]"
+"Mon:[beforeShift:[pay,bill], regularHours:[pay,bill], unallocatedHours:[pay,bill]]"
+"Mon:[regularHours:[pay,bill], dailyOT:[pay,bill], unallocatedHours:[pay,bill]]"
+```
+
+**Multi-day:**
+```
+"Mon:[regularHours:[8,16], dailyOT:[3,6]], Tue:[regularHours:[8,16], dailyOT:[0,0]]"
+```
+
+**Multi-day with unallocatedHours:**
+```
+"Mon:[regularHours:[8,16], unallocatedHours:[2,4]], Tue:[regularHours:[8,16], unallocatedHours:[0,0]]"
+```
+
+**Weekend (day off, no regular):**
+```
+"Sat:[regularHours:[0,0], dailyOT:[0,0]]"
+"Sat:[regularHours:[0,0], unallocatedHours:[6,12]]"  // Weekend work, no rules
+```
+
+**With Break (BPN):**
+```
+"Mon:[regularHours:[6,12], Break:[0,0], unallocatedHours:[2,4]]"
+```
+
+### weeklyOT Format (separate field, only present when WOT rule exists)
+
+```
+"weeklyOT": "Week1:[pay, bill]"
+```
+
+When WOT=0: `"Week1:[0,0]"`
+
+### rulesApplied Format Reference
+
+| Rule | Format |
+|------|--------|
+| Before Shift | `BeforeShift:[multiplier: M, time: HH:MM, appliedDay:[days]]` |
+| After Shift | `AfterShift:[multiplier: M, time: HH:MM, appliedDay:[days]]` |
+| Specific Hours Range | `SpecificHoursRange:[multiplier: M, range:HH:MM-HH:MM, appliedDay:[days]]` |
+| Daily Overtime | `DailyOT:[multiplier: M, threshold:>N, appliedDay:[days]]` |
+| Weekly Overtime | `WeeklyOT:[multiplier: M, threshold:>N, appliedDay:[mon,tue,wed,thu,fri,sat,sun]]` |
+
+Multiple rules are comma-separated in `rulesApplied`.
+
+---
+
+## 13. Test ID Naming Convention
+
+### Pattern
+```
+{RULE_COMBO}_{NNN}           — NoBrk test
+{RULE_COMBO}_BPN_{NNN}       — Break Pay No test
+{RULE_COMBO}_BPY_{NNN}       — Break Pay Yes test
+```
+
+### Rule Combo Codes
+
+| Code | Combination |
+|------|-------------|
+| `BS_AS` | Before Shift + After Shift |
+| `BS_SR` | Before Shift + Specific Hours Range |
+| `BS_DOT` | Before Shift + Daily Overtime |
+| `BS_WOT` | Before Shift + Weekly Overtime |
+| `AS_SR` | After Shift + Specific Hours Range |
+| `AS_DOT` | After Shift + Daily Overtime |
+| `AS_WOT` | After Shift + Weekly Overtime |
+| `SR_DOT` | Specific Hours Range + Daily Overtime |
+| `SR_WOT` | Specific Hours Range + Weekly Overtime |
+| `DOT_WOT` | Daily Overtime + Weekly Overtime |
+| `MSR_DOT` | Multiple SR + Daily Overtime |
+| `MSR_WOT` | Multiple SR + Weekly Overtime |
+| `SR_MDOT` | SR + Multiple DOT tiers |
+| `MSR_MDOT` | Multiple SR + Multiple DOT tiers |
+| `UNALLOC_NORULE` | Unallocated hours with no custom rules |
+| `UNALLOC_BS` | Unallocated hours with Before Shift |
+| `UNALLOC_AS` | Unallocated hours with After Shift |
+| `UNALLOC_SR` | Unallocated hours with Specific Hours Range |
+| `UNALLOC_DOT` | Unallocated hours with Daily Overtime |
+| `UNALLOC_WOT` | Unallocated hours with Weekly Overtime |
+| `UNALLOC_USECASE` | Unallocated hours specific use case scenarios |
+
+### Comment Convention
+```
+"_comment": "NoBrk: 9-21(12h). reg=8, gap=4. toward=12>10, DOT=min(2,4)=2. 12>8, WOT=min(4,2)=2."
+"_comment": "UseCase1: BS(1.5x)+BPN ant=2h, no break taken. BS=2h, reg=6h, unalloc=4h."
+```
+Always include: break mode, work range, hours, key calculation steps. For unallocated hours tests, include the unallocated amount and source (gap, freed, etc.).
+
+---
+
+## 14. Calculation Formulas Reference
+
+### Pay and Bill
+```
+Pay = Hours × payRate × Pay_Multiplier
+Bill = Hours × billRate × Bill_Multiplier
+```
+
+### Regular Hours
+```
+effective_regular = scheduled_regular − anticipated_break
+reg_paid = min(actual_work_in_range, effective_regular)
+```
+
+### Before Shift / After Shift / Specific Range
+```
+hours = actual work within rule's time window
+Pay = hours × payRate × rule_multiplier
+Bill = hours × billRate × rule_multiplier
+```
+
+### BPN Break Impact
+```
+toward = total_clocked − actual_break
+freed = max(0, anticipated − actual_break)
+unallocated_pool = gap_hours + freed_hours
+```
+
+### Daily Overtime
+```
+Gate: toward > DOT_threshold?
+  YES → DOT = min(toward − threshold, unallocated_pool)
+  NO  → DOT = 0 (excess is unpaid)
+```
+
+### Weekly Overtime
+```
+weekly_toward = sum of daily toward values
+WOT = min(weekly_toward − WOT_threshold, total_weekly_remaining_unallocated)
+```
+
+### DOT + WOT Together
+```
+DOT = min(toward − DOT_threshold, unallocated_pool)
+remaining = unallocated_pool − DOT
+WOT = min(weekly_toward − WOT_threshold, remaining)
+gap_band = min(toward, DOT_threshold) − effective_regular  // → goes to WOT
+```
+
+### expectedTotalPayRate / expectedTotalBillRate
+```
+total_pay = sum of all daily (reg_pay + BS_pay + AS_pay + SR_pay + DOT_pay + unalloc_pay) + WOT_pay
+total_bill = sum of all daily (reg_bill + BS_bill + AS_bill + SR_bill + DOT_bill + unalloc_bill) + WOT_bill
+```
+
+**Note:** `unalloc_pay` and `unalloc_bill` are only included when `isUnplannedHoursPayEnabled: 1`.
+
+### Unallocated Hours
+```
+unallocated = total_worked − actual_break − regular_paid − BS_hours − AS_hours − SR_hours − DOT_hours − WOT_hours
+Unalloc Pay = unallocated × payRate × 1
+Unalloc Bill = unallocated × billRate × 1
+```
+
+### Overtime Hours Tracking
+```
+overtimeHours = pay_value / (payRate × multiplier)  // For each custom OT rule
+totalOvertimeHours = sum of overtimeHours values (excludes WOT)
+weeklyOvertimeHours = WOT_pay / (payRate × WOT_multiplier)
+```
+
+---
+
+## 15. Edge Case Checklist
+
+When generating test data, always consider:
+
+### Threshold Boundaries
+- [ ] Exactly AT threshold (gate closed: `N NOT > N`)
+- [ ] Just above threshold (gate opens: `N+0.01 > N`)
+- [ ] Well below threshold
+- [ ] Well above threshold
+
+### Work Patterns
+- [ ] Single entry covering all zones
+- [ ] Multiple entries no gap (back-to-back)
+- [ ] Multiple entries with gap (unworked time between entries)
+- [ ] Entries spanning (gap in regular zone)
+- [ ] 3+ entries (before + during + after regular)
+- [ ] Work only in gap zone (no regular covered)
+- [ ] Work only before regular hours
+- [ ] Work only after regular hours
+
+### Multi-Day / Weekly
+- [ ] Mon-Fri uniform (same hours each day)
+- [ ] Mon-Fri mixed (different hours per day)
+- [ ] Weekend only (day off, no regular hours)
+- [ ] Weekday + weekend (WOT accumulation)
+- [ ] Full 7-day work week
+- [ ] DOT met on some days but not others
+- [ ] DOT never met but WOT met (weekend contributes)
+
+### Break Scenarios (BPN)
+- [ ] break = anticipated (freed=0)
+- [ ] No break, anticipated > 0 (freed=ant)
+- [ ] break < anticipated (partial freed)
+- [ ] break > anticipated (no freed, reg reduced)
+- [ ] Break in gap zone (outside regular)
+- [ ] Break drops below all thresholds
+- [ ] Anticipated excess helps DOT/WOT
+- [ ] Multi-day with varying break patterns
+
+### DOT + WOT Specific
+- [ ] Both triggered
+- [ ] DOT only (WOT threshold too high)
+- [ ] WOT only (DOT threshold too high / gate closed)
+- [ ] Neither triggered (both thresholds too high)
+- [ ] DOT eats all unallocated (WOT starved)
+- [ ] DOT barely opens (WOT gets majority)
+- [ ] Weekend hours all→WOT (DOT not met per-day)
+- [ ] Short regular hours (e.g., 9-12 = 3h) creating large gaps
+
+### Unallocated Hours Scenarios (isUnplannedHoursPayEnabled: 1)
+- [ ] Gap between BS and Regular (BS ends before regular starts)
+- [ ] Gap between Regular and AS (AS starts after regular ends)
+- [ ] Work outside all configured ranges (no rule covers time)
+- [ ] BPN freed hours become unallocated (anticipated > actual break)
+- [ ] DOT gate closed (toward ≤ threshold) — excess becomes unallocated
+- [ ] Hours helping meet DOT/WOT threshold (counted but not OT-paid)
+- [ ] Weekend work with no DOT/WOT rules (all hours unallocated)
+- [ ] Full day unallocated (no regular hours, no rules match)
+- [ ] Partial unallocated (some hours claimed by rules, some not)
+- [ ] Zero unallocated (all worked hours claimed by rules)
+- [ ] Multiple days with varying unallocated amounts
+- [ ] Unallocated + DOT combination
+- [ ] Unallocated + WOT combination
+- [ ] Unallocated with complex rule combinations (BS+AS+SR+DOT+WOT)
+
+---
+
+## 16. Test Coverage Matrix — Double Rule Combinations
+
+All 10 unique two-rule combinations from 5 shift rules:
+
+| # | Combination | Status | File |
+|---|-------------|--------|------|
+| 1 | BS + AS | Done | DoubleRuleTest.json |
+| 2 | BS + SR | Done | DoubleRuleTest.json |
+| 3 | BS + DOT | Done | DoubleRuleTest.json |
+| 4 | BS + WOT | Done | DoubleRuleTest.json |
+| 5 | AS + SR | Done | DoubleRuleTest.json |
+| 6 | AS + DOT | Done | DoubleRuleTest.json |
+| 7 | AS + WOT | Done | DoubleRuleTest.json |
+| 8 | SR + DOT | Done | DoubleRuleTest.json |
+| 9 | SR + WOT | Done | DoubleRuleTest.json |
+| 10 | DOT + WOT | Done | DoubleRuleTest.json |
+
+### Multi-Same-Type Combinations (in DoubleRuleTest.json)
+| Combination | Description |
+|-------------|-------------|
+| MSR + DOT | Multiple Specific Range + Daily OT |
+| MSR + WOT | Multiple Specific Range + Weekly OT |
+| SR + MDOT | Specific Range + Multiple DOT tiers |
+| MSR + MDOT | Multiple SR + Multiple DOT tiers |
+
+### Break Variants Per Combination
+Each combination should have: **NoBrk** + **BPN** tests (minimum).
+BPY tests are optional (only for BS+AS, BS+SR, BS+DOT, AS+SR, AS+DOT, BS+WOT, AS+WOT, SR+DOT).
+
+---
+
+## 17. Common Pitfalls
+
+### Calculation Mistakes
+1. **Forgetting "strictly greater than"**: `8 NOT > 8` means gate is CLOSED.
+2. **DOT claims from unallocated only**: DOT cannot reclaim hours already assigned to BS/AS/SR.
+3. **All hours count toward threshold**: BS, AS, SR hours all count toward DOT/WOT threshold.
+4. **WOT gets remainder after DOT**: When both exist, DOT claims first from pool.
+5. **Weekend reg=0**: On day-off days, regular hours are 0, all work is unallocated.
+6. **Unallocated ≠ Regular**: Unallocated hours are paid at 1x but are NOT regular hours.
+7. **Freed hours from BPN**: When anticipated > actual break, freed hours go to unallocated pool.
+
+### Format Mistakes
+1. **Missing `weeklyOT` field**: Required when WOT rule is in `rulesApplied`.
+2. **Missing `dailyOT` in payBill**: Required when DOT rule is in `rulesApplied` (even if `[0,0]`).
+3. **`breakTimeThreshold` in seconds**: 1h=3600, 0.5h=1800, 2h=7200.
+4. **WOT appliedDay always all 7**: `[mon,tue,wed,thu,fri,sat,sun]`.
+5. **DOT appliedDay can vary**: Usually all 7 days but can be configured per-day.
+6. **Missing `overtimeHours`/`totalOvertimeHours`/`weeklyOvertimeHours`**: Required in all test data files.
+7. **Missing `isUnplannedHoursPayEnabled`**: Required in UnallocatedHoursTestData.json (set to `1`).
+8. **Missing `unallocatedHours` in payBill**: When `isUnplannedHoursPayEnabled: 1`, always include `unallocatedHours:[pay,bill]` (even if `[0,0]`).
+9. **WOT in wrong field**: Weekly OT hours go in `weeklyOvertimeHours`, NOT in `overtimeHours` or `totalOvertimeHours`.
+
+### Test Data Consistency
+- `expectedTotalPayRate` must equal sum of all pay components (reg + all rules + WOT + unallocated when enabled).
+- `expectedTotalBillRate` must equal sum of all bill components.
+- Multi-day `acceptedPayBillRate` must list every day that has work entries.
+- Days with 0 values should still be listed: `Sat:[regularHours:[0,0], dailyOT:[0,0]]`.
+- `totalOvertimeHours` must equal sum of all values in `overtimeHours` (excludes WOT).
+- `overtimeHours` calculation: `pay_value / (payRate × multiplier)` for each custom OT rule.

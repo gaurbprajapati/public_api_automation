@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "scenariq-dashboard",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "/Users/gauravprajapati/Developer/RCRM_WORK/coverage-dashboard"],
+      "port": 5173
+    },
+    {
+      "name": "scenariq-api",
+      "runtimeExecutable": "mvn",
+      "runtimeArgs": ["-f", "/Users/gauravprajapati/Developer/RCRM_WORK/scenariq-service/pom.xml", "spring-boot:run"],
+      "port": 8081
+    }
+  ]
+}

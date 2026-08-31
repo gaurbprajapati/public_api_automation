@@ -1,0 +1,2252 @@
+{
+  "Note Associated With": [
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}",
+          "{{candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Multiple candidates - candidate1 has both candidate1 and candidate2",
+      "expectedResult": "Candidate1,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Multiple companies - candidate2 has both company1 and company2",
+      "expectedResult": "Candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{candidate3}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Single contact - candidate3 has contact1",
+      "expectedResult": "Candidate3",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [
+          "{{candidate4}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Multiple jobs - candidate4 has both job1 and job2",
+      "expectedResult": "Candidate4",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Single candidate - candidate5 has candidate2",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Single company - candidate5 has company2",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Single contact - candidate5 has contact2",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Single job - candidate5 has job2",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{candidate6}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "Multiple deals - candidate6 has both deal1 and deal2",
+      "expectedResult": "Candidate6",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "Single deal - candidate7 has deal2",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{candidate11}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "should return candidate11",
+      "expectedResult": "Candidate11",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}",
+          "{{candidate5}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "should return candidate5",
+      "expectedResult": "Candidate5,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "All candidates",
+      "expectedResult": "All",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "All candidates",
+      "expectedResult": "All",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{candidate3}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "should return candidates 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Candidate1, Candidate2, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10,Candidate11 ,Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [
+          "{{candidate4}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude jobs with job1 - should return candidates 1,2,3,5,6,7,8,9,10,11",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11,Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{candidate6}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "All candidates",
+      "expectedResult": "All",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{candidate11}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude exact match: contact1 + company1 - should return candidates 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude exact match: company1 + company2 - should return candidates 1,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Candidate1, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [
+          "{{candidate4}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude exact match: job1 + job2 - should return candidates 1,2,3,5,6,7,8,9,10,11,12",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}",
+          "{{candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude exact match: candidate1 + candidate2 - should return candidates 2,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{candidate6}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude exact match: deal1 + deal2 - should return candidates 1,2,3,4,5,7,8,9,10,11,12",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains contact1 - should return candidate3 and candidate11 (both have contact1)",
+      "expectedResult": "Candidate3, Candidate11",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains company1 - should return candidate2 and candidate11 (both have company1)",
+      "expectedResult": "Candidate2, Candidate11",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains company2 - should return candidate2 and candidate5 (both have company2)",
+      "expectedResult": "Candidate2, Candidate5,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains job1 - should return candidate4 and candidate12 (both have job1)",
+      "expectedResult": "Candidate4, Candidate12,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains job2 - should return candidate4 and candidate5 (both have job2)",
+      "expectedResult": "Candidate4, Candidate5,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains candidate1 - should return candidate1 and candidate12 (both have candidate1)",
+      "expectedResult": "Candidate1, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains candidate2 - should return candidate5 and candidate7 (both have candidate2)",
+      "expectedResult": "Candidate1, Candidate5, Candidate7,associated_candidates_candidate2,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "Contains deal1 - should return candidate5 and candidate6 (both have deal1)",
+      "expectedResult": "Candidate5, Candidate6,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "Contains deal2 - should return candidate6 and candidate7 (both have deal2)",
+      "expectedResult": "Candidate6, Candidate7,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains BOTH contact1 AND company1 - should return candidate11 only (has both)",
+      "expectedResult": "Candidate11",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains BOTH contact2 AND company2 - should return candidate5 only (has both)",
+      "expectedResult": "Candidate5,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains BOTH job1 AND job2 - should return candidate4 only (has both)",
+      "expectedResult": "Candidate4",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains BOTH candidate1 AND candidate2 - should return candidate1 only (has both)",
+      "expectedResult": "Candidate1,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "Contains BOTH deal1 AND deal2 - should return candidate6 only (has both)",
+      "expectedResult": "Candidate6",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains contact1 AND company1 AND job1 - should return empty (no candidate has all three)",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains contact1 AND company1 AND candidate1 - should return empty (no candidate has all three)",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains contact1 OR company1 (OR logic) - should return candidate2, candidate3, candidate11",
+      "expectedResult": "Candidate2, Candidate3, Candidate11",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains contact1 OR contact2 - should return candidate3, candidate5, candidate11",
+      "expectedResult": "Candidate3, Candidate5, Candidate11,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains company1 OR company2 - should return candidate2, candidate5, candidate11",
+      "expectedResult": "Candidate2, Candidate5, Candidate11,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains job1 OR job2 - should return candidate4, candidate5, candidate12",
+      "expectedResult": "Candidate4, Candidate5, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains candidate1 OR candidate2 - should return candidate1, candidate5, candidate7, candidate12",
+      "expectedResult": "Candidate1, Candidate5, Candidate7, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "Contains deal1 OR deal2 - should return candidate5, candidate6, candidate7",
+      "expectedResult": "Candidate5, Candidate6, Candidate7,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "Contains contact1 OR company1 OR job1 OR candidate1 OR deal1 - should return candidate1, candidate2, candidate3, candidate4, candidate5, candidate6, candidate11, candidate12",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains contact1 OR company1 (OR logic) - should return candidate2, candidate3, candidate11",
+      "expectedResult": "Candidate2, Candidate3, Candidate11",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain contact1 - should return candidates 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Candidate1, Candidate2, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain company1 - should return candidates 1,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Candidate1, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain job1 - should return candidates 1,2,3,5,6,7,8,9,10,11",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11,Candidate13,Candidate14,Candidate15,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain candidate1 - should return candidates 2,3,4,5,6,7,8,9,10,11",
+      "expectedResult": "Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11,Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain deal1 - should return candidates 1,2,3,4,7,8,9,10,11,12",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain contact1 AND company1 - should return candidates 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "description": "Candidate apart from 8, 9, 10 should be returned",
+      "expectedResult": "candidate1, candidate2, candidate3, candidate4, candidate5, candidate6, candidate7,candidate 8,candidate 9,candidate 10, candidate 11, candidate 12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_associated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "description": "Candidate 13, 14, 15 should be returned",
+      "expectedResult": "Candidate13, candidate14, candidate15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    }
+  ],
+  "Note Collaborated With": [
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exact match - only team collaboration, no users",
+      "expectedResult": "Candidate3",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exact match - only owner user collaboration, no teams",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exact match - only admin user collaboration, no teams",
+      "expectedResult": "Candidate4",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exact match - team and admin user collaboration",
+      "expectedResult": "Candidate8",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exact match - owner and admin user collaboration, no teams",
+      "expectedResult": "Candidate5,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exact match - only teamMember user collaboration, no teams",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exact match - owner and teamMember user collaboration, no teams",
+      "expectedResult": "Candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude candidates with exactly team collaboration only",
+      "expectedResult": "Candidate1, Candidate2, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate2,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude candidates with exactly owner user collaboration only",
+      "expectedResult": "All",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude candidates with exactly team and admin collaboration",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate2,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Exclude candidates with exactly owner and teamMember collaboration",
+      "expectedResult": "Candidate1, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate2,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains team collaboration (may have additional collaborators)",
+      "expectedResult": "Candidate3, Candidate8",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains admin user collaboration (may have additional collaborators)",
+      "expectedResult": "Candidate4, Candidate5, Candidate8,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains both team and admin collaboration (may have additional collaborators)",
+      "expectedResult": "Candidate8",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains both owner and admin user collaboration (may have additional collaborators)",
+      "expectedResult": "Candidate5,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains at least one of team or admin collaboration",
+      "expectedResult": "Candidate3, Candidate4, Candidate5, Candidate8,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains at least one of team, owner, or teamMember collaboration",
+      "expectedResult": "Candidate2, Candidate3, Candidate5, Candidate8,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}",
+          "{{owner}}",
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Contains at least one of team, admin, owner, or teamMember collaboration",
+      "expectedResult": "Candidate2, Candidate3, Candidate4, Candidate5, Candidate8,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain team collaboration",
+      "expectedResult": "Candidate1, Candidate2, Candidate4, Candidate5, Candidate6, Candidate7, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain admin user collaboration",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate6, Candidate7, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain team OR admin collaboration",
+      "expectedResult": "Candidate1, Candidate2,Candidate3,Candidate4,Candidate5,Candidate6, Candidate7, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{admin}}",
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "multiselect",
+      "description": "Does not contain any of team, owner, admin, or teamMember collaboration",
+      "expectedResult": "All",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "description": "Has any collaboration (users or teams)",
+      "expectedResult": "Candidate2, Candidate3, Candidate4, Candidate5, Candidate8,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "note_collaborated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "description": "Has no collaboration (empty users and teams)",
+      "expectedResult": "Candidate1, Candidate6, Candidate7, Candidate9, Candidate10, Candidate11, Candidate12, Candidate13, Candidate14, Candidate15,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    }
+  ],
+  "Note Type": [
+    {
+      "dbField": "notetype",
+      "filterType": "is",
+      "filterValue": [
+        "{{Call}}"
+      ],
+      "fieldType": "dropdown",
+      "description": "Exact match - Call note type",
+      "expectedResult": "Candidate1, Candidate3, Candidate4, Candidate5, Candidate8, Candidate10, Candidate11,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is",
+      "filterValue": [
+        "{{Custom Note Type}}"
+      ],
+      "fieldType": "dropdown",
+      "description": "Exact match - Custom Note Type",
+      "expectedResult": "Candidate2, Candidate12,associated_candidates_candidate1",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is",
+      "filterValue": [
+        "{{To Do}}"
+      ],
+      "fieldType": "dropdown",
+      "description": "Exact match - To Do note type",
+      "expectedResult": "Candidate6, Candidate7, Candidate9,associated_candidates_candidate2",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{Call}}"
+      ],
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with Call note type",
+      "expectedResult": "Candidate2, Candidate6, Candidate7, Candidate9, Candidate12,Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{Custom Note Type}}"
+      ],
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with Custom Note Type",
+      "expectedResult": "Candidate1, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11,Candidate13,Candidate14,Candidate15,associated_candidates_candidate2",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is_not",
+      "filterValue": [
+        "{{To Do}}"
+      ],
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with To Do note type",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate8, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "does_not_contain",
+      "filterValue": [
+        "{{Call}}"
+      ],
+      "fieldType": "dropdown",
+      "description": "Does not contain Call note type",
+      "expectedResult": "Candidate2, Candidate6, Candidate7, Candidate9, Candidate12,Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "does_not_contain",
+      "filterValue": [
+        "{{Custom Note Type}}"
+      ],
+      "fieldType": "dropdown",
+      "description": "Does not contain Custom Note Type",
+      "expectedResult": "Candidate1, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11,Candidate13,Candidate14,Candidate15,associated_candidates_candidate2",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "does_not_contain",
+      "filterValue": [
+        "{{To Do}}"
+      ],
+      "fieldType": "dropdown",
+      "description": "Does not contain To Do note type",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate8, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any note type (all candidates should have notes)",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "INTEGER_LIST"
+    },
+    {
+      "dbField": "notetype",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no note type (candidates without notes)",
+      "expectedResult": "Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "INTEGER_LIST"
+    }
+  ],
+  "Note Added By": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exact match - notes from users who are members of the specified team",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exact match - notes from owner user (who is a team member)",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exact match - notes from teamMember user (who is a team member)",
+      "expectedResult": "Candidate5,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes from owner user",
+      "expectedResult": "Candidate4, Candidate5,Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes from admin user",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes from teamMember user",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Does not contain notes from owner user",
+      "expectedResult": "Candidate4, Candidate5,Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Does not contain notes from admin user",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Does not contain notes from teamMember user",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any user who added the note",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no user who added the note",
+      "expectedResult": "Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    }
+  ],
+  "Note Updated By": [
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exact match - notes updated by users who are members of the specified team",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exact match - notes updated by owner user (who is a team member)",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exact match - notes updated by teamMember user (who is a team member)",
+      "expectedResult": "Candidate5,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes updated by owner user",
+      "expectedResult": "Candidate4, Candidate5, Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes updated by admin user",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes updated by teamMember user",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Does not contain notes updated by owner user",
+      "expectedResult": "Candidate4, Candidate5, Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Does not contain notes updated by admin user",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ],
+        "Contact": [],
+        "Company": []
+      },
+      "fieldType": "dropdown",
+      "description": "Does not contain notes updated by teamMember user",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,Candidate13,Candidate14,Candidate15,associated_candidates_candidate1",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any user who updated the note",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no user who updated the note",
+      "expectedResult": "Candidate13,Candidate14,Candidate15",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION"
+    }
+  ],
+  "Added On": [
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "description": "Notes added today",
+      "expectedResult": "Candidate1,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "description": "Notes added yesterday",
+      "expectedResult": "Candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "description": "Notes added this week",
+      "expectedResult": "Candidate1, Candidate3,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "description": "Notes added last week",
+      "expectedResult": "Candidate2, Candidate4",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "description": "Notes added this month",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "description": "Notes added last month",
+      "expectedResult": "Candidate5, Candidate6,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "description": "Notes added this quarter",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "description": "Notes added last quarter",
+      "expectedResult": "Candidate7, Candidate8,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "description": "Notes added this year",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "description": "Notes added last year",
+      "expectedResult": "Candidate9, Candidate10",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "description": "Notes added in last 30 days",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "description": "Notes added in last 60 days",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "description": "Notes added in last 90 days",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "description": "Notes added in last 365 days",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "2024-01-15",
+      "fieldType": "date",
+      "description": "Notes added on specific date 2024-01-15",
+      "expectedResult": "Candidate1,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "LONG"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Notes added before 2024-01-01",
+      "expectedResult": "Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1",
+      "filterValue_TYPE": "LONG"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Notes added after 2024-01-01",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "LONG"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "2024-01-01, 2024-01-31",
+      "fieldType": "date",
+      "description": "Notes added between 2024-01-01 and 2024-01-31",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "LONG_START_END"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Notes added more than 30 days ago",
+      "expectedResult": "Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Notes added less than 30 days ago",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has any creation date",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "LONG"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has no creation date",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "LONG"
+    }
+  ],
+  "Updated On": [
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "description": "Notes updated today",
+      "expectedResult": "Candidate1,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "description": "Notes updated yesterday",
+      "expectedResult": "Candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "description": "Notes updated this week",
+      "expectedResult": "Candidate1, Candidate3,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "description": "Notes updated last week",
+      "expectedResult": "Candidate2, Candidate4",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "description": "Notes updated this month",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "description": "Notes updated last month",
+      "expectedResult": "Candidate5, Candidate6,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "description": "Notes updated this quarter",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "description": "Notes updated last quarter",
+      "expectedResult": "Candidate7, Candidate8,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "description": "Notes updated this year",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "description": "Notes updated last year",
+      "expectedResult": "Candidate9, Candidate10",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "description": "Notes updated in last 30 days",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "description": "Notes updated in last 60 days",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "description": "Notes updated in last 90 days",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "description": "Notes updated in last 365 days",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "DATE_IS"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "2024-01-15",
+      "fieldType": "date",
+      "description": "Notes updated on specific date 2024-01-15",
+      "expectedResult": "Candidate1,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "LONG"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Notes updated before 2024-01-01",
+      "expectedResult": "Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1",
+      "filterValue_TYPE": "LONG"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Notes updated after 2024-01-01",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "LONG"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "2024-01-01, 2024-01-31",
+      "fieldType": "date",
+      "description": "Notes updated between 2024-01-01 and 2024-01-31",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "LONG_START_END"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Notes updated more than 30 days ago",
+      "expectedResult": "Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Notes updated less than 30 days ago",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has any update date",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "LONG"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has no update date",
+      "expectedResult": "Empty",
+      "filterValue_TYPE": "LONG"
+    }
+  ],
+  "Note Exists": [
+    {
+      "dbField": "note_exists",
+      "filterType": "yes",
+      "filterValue": "1",
+      "fieldType": "checkbox",
+      "description": "Yes - Return candidates associated with at least one note",
+      "expectedResult": "Candidate1, Candidate2, Candidate3, Candidate4, Candidate5, Candidate6, Candidate7, Candidate8, Candidate9, Candidate10, Candidate11, Candidate12,associated_candidates_candidate1,associated_candidates_candidate2",
+      "filterValue_TYPE": "INTEGER"
+    },
+    {
+      "dbField": "note_exists",
+      "filterType": "no",
+      "filterValue": "0",
+      "fieldType": "checkbox",
+      "description": "No - Return candidates with no associated notes",
+      "expectedResult": "Candidate13, Candidate14, Candidate15",
+      "filterValue_TYPE": "INTEGER"
+    }
+  ]
+}

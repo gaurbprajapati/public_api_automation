@@ -1,0 +1,3456 @@
+{
+  "Owner": [
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner",
+      "expectedResult": "job1,job2,job5,job9,job13,job14",
+      "testCaseId": "OWNER_TC001"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin owner",
+      "expectedResult": "job6,job10",
+      "testCaseId": "OWNER_TC002"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember owner",
+      "expectedResult": "job3,job4,job7,job12,job15",
+      "testCaseId": "OWNER_TC003"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember owner",
+      "expectedResult": "job8,job11",
+      "testCaseId": "OWNER_TC004"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job9,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC005"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty owner",
+      "expectedResult": "Empty",
+      "testCaseId": "OWNER_TC006"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner",
+      "expectedResult": "job3,job4,job6,job7,job8,job10,job11,job12,job15",
+      "testCaseId": "OWNER_TC007"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC008"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember owner",
+      "expectedResult": "job1,job2,job5,job6,job8,job9,job10,job11,job13,job14",
+      "testCaseId": "OWNER_TC009"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job9,job10,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC010"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team owner",
+      "expectedResult": "job6,job8,job10,job11",
+      "testCaseId": "OWNER_TC011"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty owner (should return all with values)",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC012"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value owner",
+      "expectedResult": "job1,job2,job5,job9,job13,job14",
+      "testCaseId": "OWNER_TC013"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin owner",
+      "expectedResult": "job6,job10",
+      "testCaseId": "OWNER_TC014"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{owner},{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - owner or admin",
+      "expectedResult": "job1,job2,job5,job6,job9,job10,job13,job14",
+      "testCaseId": "OWNER_TC015"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember owner",
+      "expectedResult": "job3,job4,job6,job7,job10,job12,job15",
+      "testCaseId": "OWNER_TC016"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember owner",
+      "expectedResult": "job6,job8,job10,job11",
+      "testCaseId": "OWNER_TC017"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job9,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC018"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job9,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC019"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job9,job10,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC020"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or team owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job9,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC021"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - owner or team owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job9,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC022"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - restrictedTeamMember or team owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC023"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or restrictedTeamMember",
+      "expectedResult": "job3,job4,job7,job8,job11,job12,job15",
+      "testCaseId": "OWNER_TC024"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any owner value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC025"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude team owner",
+      "expectedResult": "job6,job8,job10,job11",
+      "testCaseId": "OWNER_TC026"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin owner",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC027"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember owner",
+      "expectedResult": "job1,job2,job5,job6,job8,job9,job10,job11,job13,job14",
+      "testCaseId": "OWNER_TC028"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude owner",
+      "expectedResult": "job3,job4,job6,job7,job8,job10,job11,job12,job15",
+      "testCaseId": "OWNER_TC029"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember owner",
+      "expectedResult": "job1,job2,job5,job8,job9,job11,job13,job14",
+      "testCaseId": "OWNER_TC030"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or team owner",
+      "expectedResult": "job8,job11",
+      "testCaseId": "OWNER_TC031"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember or team owner",
+      "expectedResult": "job6,job8,job10,job11",
+      "testCaseId": "OWNER_TC032"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude owner or team owner",
+      "expectedResult": "job6,job8,job10,job11",
+      "testCaseId": "OWNER_TC033"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude any owner value",
+      "expectedResult": "Empty",
+      "testCaseId": "OWNER_TC034"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "is_empty",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - owner field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "OWNER_TC035"
+    },
+    {
+      "dbField": "ownerid",
+      "filterType": "has_any_value",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - owner field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "OWNER_TC036"
+    }
+  ],
+  "Status": [
+    {
+      "dbField": "jobstatus",
+      "filterType": "is",
+      "filterValue": "{Open}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Open status",
+      "expectedResult": "job1,job2,job4,job5",
+      "testCaseId": "STATUS_TC001"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "is",
+      "filterValue": "{On Hold}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for On Hold status",
+      "expectedResult": "job3,job8,job10,job13",
+      "testCaseId": "STATUS_TC002"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "is",
+      "filterValue": "{Closed}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Closed status",
+      "expectedResult": "job6,job9,job14,job15",
+      "testCaseId": "STATUS_TC003"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "is",
+      "filterValue": "{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Canceled status",
+      "expectedResult": "job7,job11,job12",
+      "testCaseId": "STATUS_TC004"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "is_not",
+      "filterValue": "{Open}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Open status",
+      "expectedResult": "job3,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "STATUS_TC005"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "is_not",
+      "filterValue": "{On Hold}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude On Hold status",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job9,job11,job12,job14,job15",
+      "testCaseId": "STATUS_TC006"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "is_not",
+      "filterValue": "{Closed}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Closed status",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job8,job10,job11,job12,job13",
+      "testCaseId": "STATUS_TC007"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "is_not",
+      "filterValue": "{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Canceled status",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job8,job9,job10,job13,job14,job15",
+      "testCaseId": "STATUS_TC008"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Open}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Open status",
+      "expectedResult": "job1,job2,job4,job5",
+      "testCaseId": "STATUS_TC009"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Open},{On Hold}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Open or On Hold status",
+      "expectedResult": "job1,job2,job3,job4,job5,job8,job10,job13",
+      "testCaseId": "STATUS_TC010"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Closed},{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Closed or Canceled status",
+      "expectedResult": "job6,job7,job9,job11,job12,job14,job15",
+      "testCaseId": "STATUS_TC011"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Open},{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Open or Canceled status",
+      "expectedResult": "job1,job2,job4,job5,job7,job11,job12",
+      "testCaseId": "STATUS_TC012"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{On Hold},{Closed}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - On Hold or Closed status",
+      "expectedResult": "job3,job6,job8,job9,job10,job13,job14,job15",
+      "testCaseId": "STATUS_TC013"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Open},{Closed},{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Open, Closed, or Canceled status",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job9,job11,job12,job14,job15",
+      "testCaseId": "STATUS_TC014"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{On Hold},{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - On Hold or Canceled status",
+      "expectedResult": "job3,job7,job8,job10,job11,job12,job13",
+      "testCaseId": "STATUS_TC015"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Open},{On Hold},{Closed},{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - any status value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "STATUS_TC016"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{Open}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Open status",
+      "expectedResult": "job3,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "STATUS_TC017"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{On Hold}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude On Hold status",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job9,job11,job12,job14,job15",
+      "testCaseId": "STATUS_TC018"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{Closed}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Closed status",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job8,job10,job11,job12,job13",
+      "testCaseId": "STATUS_TC019"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Canceled status",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job8,job9,job10,job13,job14,job15",
+      "testCaseId": "STATUS_TC020"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{Open},{On Hold}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Open or On Hold status",
+      "expectedResult": "job6,job7,job9,job11,job12,job14,job15",
+      "testCaseId": "STATUS_TC021"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{Closed},{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Closed or Canceled status",
+      "expectedResult": "job1,job2,job3,job4,job5,job8,job10,job13",
+      "testCaseId": "STATUS_TC022"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{Open},{Closed},{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Open, Closed, or Canceled status",
+      "expectedResult": "job3,job8,job10,job13",
+      "testCaseId": "STATUS_TC023"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{On Hold},{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude On Hold or Canceled status",
+      "expectedResult": "job1,job2,job4,job5,job6,job9,job14,job15",
+      "testCaseId": "STATUS_TC024"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{Open},{Closed}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Open or Closed status",
+      "expectedResult": "job3,job7,job8,job10,job11,job12,job13",
+      "testCaseId": "STATUS_TC025"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "does_not_contain",
+      "filterValue": "{Open},{On Hold},{Closed},{Canceled}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude any status value",
+      "expectedResult": "Empty",
+      "testCaseId": "STATUS_TC026"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - status field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "STATUS_TC027"
+    },
+    {
+      "dbField": "jobstatus",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - status field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "STATUS_TC028"
+    }
+  ],
+  "Qualification": [
+    {
+      "dbField": "qualificationid",
+      "filterType": "is",
+      "filterValue": "{High School Diploma}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for High School Diploma",
+      "expectedResult": "job1,job13",
+      "testCaseId": "QUALIFICATION_TC001"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is",
+      "filterValue": "{Bachelor's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Bachelor's Degree",
+      "expectedResult": "job2,job4,job14",
+      "testCaseId": "QUALIFICATION_TC002"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is",
+      "filterValue": "{Master's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Master's Degree",
+      "expectedResult": "job3,job5,job10",
+      "testCaseId": "QUALIFICATION_TC003"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is",
+      "filterValue": "{Doctorate}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Doctorate",
+      "expectedResult": "job8,job9",
+      "testCaseId": "QUALIFICATION_TC004"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is",
+      "filterValue": "{Associate Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for Associate Degree",
+      "expectedResult": "job11,job12",
+      "testCaseId": "QUALIFICATION_TC005"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is",
+      "filterValue": "{High School Dropout}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for High School Dropout",
+      "expectedResult": "job6",
+      "testCaseId": "QUALIFICATION_TC006"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is_not",
+      "filterValue": "{High School Diploma}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude High School Diploma",
+      "expectedResult": "job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job14,job15",
+      "testCaseId": "QUALIFICATION_TC007"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is_not",
+      "filterValue": "{Bachelor's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Bachelor's Degree",
+      "expectedResult": "job1,job3,job5,job6,job7,job8,job9,job10,job11,job12,job13,job15",
+      "testCaseId": "QUALIFICATION_TC008"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is_not",
+      "filterValue": "{Master's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Master's Degree",
+      "expectedResult": "job1,job2,job4,job6,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "QUALIFICATION_TC009"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is_not",
+      "filterValue": "{Doctorate}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Doctorate",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "QUALIFICATION_TC010"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is_not",
+      "filterValue": "{Associate Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude Associate Degree",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job13,job14,job15",
+      "testCaseId": "QUALIFICATION_TC011"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is_not",
+      "filterValue": "{High School Dropout}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude High School Dropout",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "QUALIFICATION_TC012"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{High School Diploma}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value High School Diploma",
+      "expectedResult": "job1,job13",
+      "testCaseId": "QUALIFICATION_TC013"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Bachelor's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value Bachelor's Degree",
+      "expectedResult": "job2,job4,job14",
+      "testCaseId": "QUALIFICATION_TC014"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Bachelor's Degree},{Master's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Bachelor's or Master's Degree",
+      "expectedResult": "job2,job3,job4,job5,job10,job14",
+      "testCaseId": "QUALIFICATION_TC015"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{High School Diploma},{High School Dropout}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - High School Diploma or High School Dropout",
+      "expectedResult": "job1,job6,job13",
+      "testCaseId": "QUALIFICATION_TC016"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Doctorate},{Associate Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Doctorate or Associate Degree",
+      "expectedResult": "job8,job9,job11,job12",
+      "testCaseId": "QUALIFICATION_TC017"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Bachelor's Degree},{Doctorate}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Bachelor's Degree or Doctorate",
+      "expectedResult": "job2,job4,job8,job9,job14",
+      "testCaseId": "QUALIFICATION_TC018"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Master's Degree},{Associate Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Master's Degree or Associate Degree",
+      "expectedResult": "job3,job5,job10,job11,job12",
+      "testCaseId": "QUALIFICATION_TC019"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{High School Diploma},{Bachelor's Degree},{Master's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - High School Diploma, Bachelor's, or Master's Degree",
+      "expectedResult": "job1,job2,job3,job4,job5,job10,job13,job14",
+      "testCaseId": "QUALIFICATION_TC020"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Doctorate},{Associate Degree},{High School Dropout}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - Doctorate, Associate Degree, or High School Dropout",
+      "expectedResult": "job6,job8,job9,job11,job12",
+      "testCaseId": "QUALIFICATION_TC021"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{High School Diploma},{Bachelor's Degree},{Master's Degree},{Doctorate},{Associate Degree},{High School Dropout}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - any qualification value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job8,job9,job10,job11,job12,job13,job14",
+      "testCaseId": "QUALIFICATION_TC022"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "does_not_contain",
+      "filterValue": "{High School Diploma}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude High School Diploma",
+      "expectedResult": "job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job14,job15",
+      "testCaseId": "QUALIFICATION_TC023"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Bachelor's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Bachelor's Degree",
+      "expectedResult": "job1,job3,job5,job6,job7,job8,job9,job10,job11,job12,job13,job15",
+      "testCaseId": "QUALIFICATION_TC024"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Master's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Master's Degree",
+      "expectedResult": "job1,job2,job4,job6,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "QUALIFICATION_TC025"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Bachelor's Degree},{Master's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Bachelor's or Master's Degree",
+      "expectedResult": "job1,job6,job7,job8,job9,job11,job12,job13,job15",
+      "testCaseId": "QUALIFICATION_TC026"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "does_not_contain",
+      "filterValue": "{Doctorate},{Associate Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude Doctorate or Associate Degree",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job10,job13,job14,job15",
+      "testCaseId": "QUALIFICATION_TC027"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "does_not_contain",
+      "filterValue": "{High School Diploma},{High School Dropout}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude High School Diploma or High School Dropout",
+      "expectedResult": "job2,job3,job4,job5,job7,job8,job9,job10,job11,job12,job14,job15",
+      "testCaseId": "QUALIFICATION_TC028"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "does_not_contain",
+      "filterValue": "{High School Diploma},{Bachelor's Degree},{Master's Degree}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude High School Diploma, Bachelor's, or Master's Degree",
+      "expectedResult": "job6,job7,job8,job9,job11,job12,job15",
+      "testCaseId": "QUALIFICATION_TC029"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "does_not_contain",
+      "filterValue": "{High School Diploma},{Bachelor's Degree},{Master's Degree},{Doctorate},{Associate Degree},{High School Dropout}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude any qualification value",
+      "expectedResult": "job7,job15",
+      "testCaseId": "QUALIFICATION_TC030"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - qualification field is empty",
+      "expectedResult": "job7,job15",
+      "testCaseId": "QUALIFICATION_TC031"
+    },
+    {
+      "dbField": "qualificationid",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - qualification field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job8,job9,job10,job11,job12,job13,job14",
+      "testCaseId": "QUALIFICATION_TC032"
+    }
+  ],
+  "Hiring Pipeline": [
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "is",
+      "filterValue": "{default_hiring_pipeline_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for hiring pipeline 0",
+      "expectedResult": "job1,job2,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC001"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "is",
+      "filterValue": "{hiring_pipeline_1_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for hiring pipeline 1",
+      "expectedResult": "job3,job6,job9",
+      "testCaseId": "HIRING_PIPELINE_TC002"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "is",
+      "filterValue": "{hiring_pipeline_2_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for hiring pipeline 2",
+      "expectedResult": "job4,job7,job10",
+      "testCaseId": "HIRING_PIPELINE_TC003"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "is",
+      "filterValue": "{hiring_pipeline_3_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for hiring pipeline 3",
+      "expectedResult": "job5,job8,job11",
+      "testCaseId": "HIRING_PIPELINE_TC004"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "is_not",
+      "filterValue": "{default_hiring_pipeline_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude hiring pipeline 0",
+      "expectedResult": "job3,job4,job5,job6,job7,job8,job9,job10,job11",
+      "testCaseId": "HIRING_PIPELINE_TC005"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "is_not",
+      "filterValue": "{hiring_pipeline_1_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude hiring pipeline 1",
+      "expectedResult": "job1,job2,job4,job5,job7,job8,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC006"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "is_not",
+      "filterValue": "{hiring_pipeline_2_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude hiring pipeline 2",
+      "expectedResult": "job1,job2,job3,job5,job6,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC007"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "is_not",
+      "filterValue": "{hiring_pipeline_3_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude hiring pipeline 3",
+      "expectedResult": "job1,job2,job3,job4,job6,job7,job9,job10,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC008"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{default_hiring_pipeline_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value hiring pipeline 0",
+      "expectedResult": "job1,job2,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC009"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{hiring_pipeline_1_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value hiring pipeline 1",
+      "expectedResult": "job3,job6,job9",
+      "testCaseId": "HIRING_PIPELINE_TC010"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{hiring_pipeline_2_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value hiring pipeline 2",
+      "expectedResult": "job4,job7,job10",
+      "testCaseId": "HIRING_PIPELINE_TC011"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{hiring_pipeline_3_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value hiring pipeline 3",
+      "expectedResult": "job5,job8,job11",
+      "testCaseId": "HIRING_PIPELINE_TC012"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{default_hiring_pipeline_id},{hiring_pipeline_1_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - hiring pipeline 0 or 1",
+      "expectedResult": "job1,job2,job3,job6,job9,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC013"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{hiring_pipeline_1_id},{hiring_pipeline_2_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - hiring pipeline 1 or 2",
+      "expectedResult": "job3,job4,job6,job7,job9,job10",
+      "testCaseId": "HIRING_PIPELINE_TC014"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{hiring_pipeline_2_id},{hiring_pipeline_3_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - hiring pipeline 2 or 3",
+      "expectedResult": "job4,job5,job7,job8,job10,job11",
+      "testCaseId": "HIRING_PIPELINE_TC015"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{default_hiring_pipeline_id},{hiring_pipeline_1_id},{hiring_pipeline_2_id},{hiring_pipeline_3_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - any hiring pipeline value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC016"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{default_hiring_pipeline_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude hiring pipeline 0",
+      "expectedResult": "job3,job4,job5,job6,job7,job8,job9,job10,job11",
+      "testCaseId": "HIRING_PIPELINE_TC017"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{hiring_pipeline_1_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude hiring pipeline 1",
+      "expectedResult": "job1,job2,job4,job5,job7,job8,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC018"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{hiring_pipeline_2_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude hiring pipeline 2",
+      "expectedResult": "job1,job2,job3,job5,job6,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC019"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{hiring_pipeline_3_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude hiring pipeline 3",
+      "expectedResult": "job1,job2,job3,job4,job6,job7,job9,job10,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC020"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{default_hiring_pipeline_id},{hiring_pipeline_1_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude hiring pipeline 0 or 1",
+      "expectedResult": "job4,job5,job7,job8,job10,job11",
+      "testCaseId": "HIRING_PIPELINE_TC021"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "does_not_contain",
+      "filterValue": "{hiring_pipeline_1_id},{hiring_pipeline_2_id},{hiring_pipeline_3_id}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude hiring pipeline 1, 2, or 3",
+      "expectedResult": "job1,job2,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC022"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - hiring pipeline field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "HIRING_PIPELINE_TC023"
+    },
+    {
+      "dbField": "hiring_pipeline_id",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - hiring pipeline field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "HIRING_PIPELINE_TC024"
+    }
+  ],
+  "Created By": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin createdBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "CREATED_BY_TC001"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember createdBy",
+      "expectedResult": "job3,job4,job12,job15",
+      "testCaseId": "CREATED_BY_TC002"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember createdBy",
+      "expectedResult": "Empty",
+      "testCaseId": "CREATED_BY_TC003"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner createdBy",
+      "expectedResult": "job6,job7,job8,job9,job13,job14",
+      "testCaseId": "CREATED_BY_TC004"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team createdBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC005"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty createdBy",
+      "expectedResult": "Empty",
+      "testCaseId": "CREATED_BY_TC006"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin createdBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC007"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember createdBy",
+      "expectedResult": "job1,job2,job5,job6,job7,job8,job9,job10,job11,job13,job14",
+      "testCaseId": "CREATED_BY_TC008"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember createdBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC009"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner createdBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job10,job11,job12,job15",
+      "testCaseId": "CREATED_BY_TC010"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team createdBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "CREATED_BY_TC011"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty createdBy (should return all with values)",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC012"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin createdBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "CREATED_BY_TC013"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember createdBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job10,job11,job12,job15",
+      "testCaseId": "CREATED_BY_TC014"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember createdBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "CREATED_BY_TC015"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner createdBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC016"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team createdBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC017"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team createdBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC018"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or team createdBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC019"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - owner or team createdBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC020"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - restrictedTeamMember or team createdBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC021"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, teamMember, or restrictedTeamMember createdBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job10,job11,job12,job15",
+      "testCaseId": "CREATED_BY_TC022"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, restrictedTeamMember, or owner createdBy",
+      "expectedResult": "job1,job2,job5,job6,job7,job8,job9,job10,job11,job13,job14",
+      "testCaseId": "CREATED_BY_TC023"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any createdBy value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC024"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude team createdBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "CREATED_BY_TC025"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin createdBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC026"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember createdBy",
+      "expectedResult": "job1,job2,job5,job6,job7,job8,job9,job10,job11,job13,job14",
+      "testCaseId": "CREATED_BY_TC027"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember createdBy",
+      "expectedResult": "job6,job7,job8,job9,job13,job14",
+      "testCaseId": "CREATED_BY_TC028"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or team createdBy",
+      "expectedResult": "Empty",
+      "testCaseId": "CREATED_BY_TC029"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember or team createdBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "CREATED_BY_TC030"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude owner or team createdBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "CREATED_BY_TC031"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude restrictedTeamMember or owner createdBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job10,job11,job12,job15",
+      "testCaseId": "CREATED_BY_TC032"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude any createdBy value",
+      "expectedResult": "Empty",
+      "testCaseId": "CREATED_BY_TC033"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - createdBy field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "CREATED_BY_TC034"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - createdBy field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "CREATED_BY_TC035"
+    }
+  ],
+  "Updated By": [
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for admin updatedBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "UPDATED_BY_TC001"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for teamMember updatedBy",
+      "expectedResult": "job3,job4,job12,job15",
+      "testCaseId": "UPDATED_BY_TC002"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for restrictedTeamMember updatedBy",
+      "expectedResult": "Empty",
+      "testCaseId": "UPDATED_BY_TC003"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for owner updatedBy",
+      "expectedResult": "job6,job7,job8,job9,job13,job14",
+      "testCaseId": "UPDATED_BY_TC004"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for team updatedBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC005"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is filter - exact match for empty updatedBy",
+      "expectedResult": "Empty",
+      "testCaseId": "UPDATED_BY_TC006"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude admin updatedBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC007"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude teamMember updatedBy",
+      "expectedResult": "job1,job2,job5,job6,job7,job8,job9,job10,job11,job13,job14",
+      "testCaseId": "UPDATED_BY_TC008"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude restrictedTeamMember updatedBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC009"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude owner updatedBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job10,job11,job12,job15",
+      "testCaseId": "UPDATED_BY_TC010"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude team updatedBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "UPDATED_BY_TC011"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Not filter - exclude empty updatedBy (should return all with values)",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC012"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value admin updatedBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "UPDATED_BY_TC013"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or teamMember updatedBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job10,job11,job12,job15",
+      "testCaseId": "UPDATED_BY_TC014"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or restrictedTeamMember updatedBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "UPDATED_BY_TC015"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{teamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or owner updatedBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC016"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - single value team updatedBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC017"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin or team updatedBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC018"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - teamMember or team updatedBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC019"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - owner or team updatedBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC020"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[{team}],User:[{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - restrictedTeamMember or team updatedBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC021"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, teamMember, or restrictedTeamMember updatedBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job10,job11,job12,job15",
+      "testCaseId": "UPDATED_BY_TC022"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - admin, restrictedTeamMember, or owner updatedBy",
+      "expectedResult": "job1,job2,job5,job6,job7,job8,job9,job10,job11,job13,job14",
+      "testCaseId": "UPDATED_BY_TC023"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "contains_at_least_one",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains At Least One filter - any updatedBy value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC024"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude team updatedBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "UPDATED_BY_TC025"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin updatedBy",
+      "expectedResult": "job3,job4,job6,job7,job8,job9,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC026"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember updatedBy",
+      "expectedResult": "job1,job2,job5,job6,job7,job8,job9,job10,job11,job13,job14",
+      "testCaseId": "UPDATED_BY_TC027"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or teamMember updatedBy",
+      "expectedResult": "job6,job7,job8,job9,job13,job14",
+      "testCaseId": "UPDATED_BY_TC028"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{admin}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude admin or team updatedBy",
+      "expectedResult": "Empty",
+      "testCaseId": "UPDATED_BY_TC029"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{teamMember}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude teamMember or team updatedBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "UPDATED_BY_TC030"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[{team}],User:[{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude owner or team updatedBy",
+      "expectedResult": "job1,job2,job5,job10,job11",
+      "testCaseId": "UPDATED_BY_TC031"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude restrictedTeamMember or owner updatedBy",
+      "expectedResult": "job1,job2,job3,job4,job5,job10,job11,job12,job15",
+      "testCaseId": "UPDATED_BY_TC032"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "Team:[],User:[{admin},{teamMember},{restrictedTeamMember},{owner}]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does Not Contain filter - exclude any updatedBy value",
+      "expectedResult": "Empty",
+      "testCaseId": "UPDATED_BY_TC033"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_empty",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Is Empty filter - updatedBy field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "UPDATED_BY_TC034"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "has_any_value",
+      "filterValue": "Team:[],User:[]",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has Any Value filter - updatedBy field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "UPDATED_BY_TC035"
+    }
+  ],
+  "Job Industry": [
+    {
+      "dbField": "job_industry",
+      "filterType": "is",
+      "filterValue": "{Information Technology}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Information Technology",
+      "expectedResult": "job1,job2,job5,job8,job11,job12",
+      "testCaseId": "JOB_INDUSTRY_TC001"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is",
+      "filterValue": "{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Healthcare",
+      "expectedResult": "job3,job14",
+      "testCaseId": "JOB_INDUSTRY_TC002"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is",
+      "filterValue": "{Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Finance",
+      "expectedResult": "job4,job10,job15",
+      "testCaseId": "JOB_INDUSTRY_TC003"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is",
+      "filterValue": "{Manufacturing}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Manufacturing",
+      "expectedResult": "job6,job13",
+      "testCaseId": "JOB_INDUSTRY_TC004"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is",
+      "filterValue": "{Education}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Education",
+      "expectedResult": "job7",
+      "testCaseId": "JOB_INDUSTRY_TC005"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is",
+      "filterValue": "{E-commerce}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for E-commerce",
+      "expectedResult": "job9",
+      "testCaseId": "JOB_INDUSTRY_TC006"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is_not",
+      "filterValue": "{Information Technology}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Information Technology",
+      "expectedResult": "job3,job4,job6,job7,job9,job10,job13,job14,job15",
+      "testCaseId": "JOB_INDUSTRY_TC007"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is_not",
+      "filterValue": "{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Healthcare",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job15",
+      "testCaseId": "JOB_INDUSTRY_TC008"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is_not",
+      "filterValue": "{Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Finance",
+      "expectedResult": "job1,job2,job3,job5,job6,job7,job8,job9,job11,job12,job13,job14",
+      "testCaseId": "JOB_INDUSTRY_TC009"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is_not",
+      "filterValue": "{Manufacturing}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Manufacturing",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job8,job9,job10,job11,job12,job14,job15",
+      "testCaseId": "JOB_INDUSTRY_TC010"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is_not",
+      "filterValue": "{Education}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Education",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_INDUSTRY_TC011"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is_not",
+      "filterValue": "{E-commerce}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude E-commerce",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_INDUSTRY_TC012"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Information Technology}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value Information Technology",
+      "expectedResult": "job1,job2,job5,job8,job11,job12",
+      "testCaseId": "JOB_INDUSTRY_TC013"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Information Technology},{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Information Technology or Healthcare",
+      "expectedResult": "job1,job2,job3,job5,job8,job11,job12,job14",
+      "testCaseId": "JOB_INDUSTRY_TC014"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Information Technology},{Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Information Technology or Finance",
+      "expectedResult": "job1,job2,job4,job5,job8,job10,job11,job12,job15",
+      "testCaseId": "JOB_INDUSTRY_TC015"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Finance},{Manufacturing}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Finance or Manufacturing",
+      "expectedResult": "job4,job6,job10,job13,job15",
+      "testCaseId": "JOB_INDUSTRY_TC016"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Healthcare},{Manufacturing}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Healthcare or Manufacturing",
+      "expectedResult": "job3,job6,job13,job14",
+      "testCaseId": "JOB_INDUSTRY_TC017"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Education},{E-commerce}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Education or E-commerce",
+      "expectedResult": "job7,job9",
+      "testCaseId": "JOB_INDUSTRY_TC018"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Information Technology},{Healthcare},{Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Information Technology, Healthcare, or Finance",
+      "expectedResult": "job1,job2,job3,job4,job5,job8,job10,job11,job12,job14,job15",
+      "testCaseId": "JOB_INDUSTRY_TC019"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Manufacturing},{Education},{E-commerce}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Manufacturing, Education, or E-commerce",
+      "expectedResult": "job6,job7,job9,job13",
+      "testCaseId": "JOB_INDUSTRY_TC020"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Information Technology},{Healthcare},{Finance},{Manufacturing},{Education},{E-commerce}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - any industry value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_INDUSTRY_TC021"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "does_not_contain",
+      "filterValue": "{Information Technology}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Information Technology",
+      "expectedResult": "job3,job4,job6,job7,job9,job10,job13,job14,job15",
+      "testCaseId": "JOB_INDUSTRY_TC022"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "does_not_contain",
+      "filterValue": "{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Healthcare",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job15",
+      "testCaseId": "JOB_INDUSTRY_TC023"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "does_not_contain",
+      "filterValue": "{Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Finance",
+      "expectedResult": "job1,job2,job3,job5,job6,job7,job8,job9,job11,job12,job13,job14",
+      "testCaseId": "JOB_INDUSTRY_TC024"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "does_not_contain",
+      "filterValue": "{Information Technology},{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Information Technology or Healthcare",
+      "expectedResult": "job4,job6,job7,job9,job10,job13,job15",
+      "testCaseId": "JOB_INDUSTRY_TC025"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "does_not_contain",
+      "filterValue": "{Finance},{Manufacturing}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Finance or Manufacturing",
+      "expectedResult": "job1,job2,job3,job5,job7,job8,job9,job11,job12,job14",
+      "testCaseId": "JOB_INDUSTRY_TC026"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "does_not_contain",
+      "filterValue": "{Information Technology},{Finance},{Manufacturing}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Information Technology, Finance, or Manufacturing",
+      "expectedResult": "job3,job7,job9,job14",
+      "testCaseId": "JOB_INDUSTRY_TC027"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "does_not_contain",
+      "filterValue": "{Healthcare},{Education},{E-commerce}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Healthcare, Education, or E-commerce",
+      "expectedResult": "job1,job2,job4,job5,job6,job8,job10,job11,job12,job13,job15",
+      "testCaseId": "JOB_INDUSTRY_TC028"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "does_not_contain",
+      "filterValue": "{Information Technology},{Healthcare},{Finance},{Manufacturing},{Education},{E-commerce}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude any industry value",
+      "expectedResult": "Empty",
+      "testCaseId": "JOB_INDUSTRY_TC029"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - job industry field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "JOB_INDUSTRY_TC030"
+    },
+    {
+      "dbField": "job_industry",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - job industry field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_INDUSTRY_TC031"
+    }
+  ],
+  "Job Type": [
+    {
+      "dbField": "job_type",
+      "filterType": "is",
+      "filterValue": "{fulltime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for fulltime",
+      "expectedResult": "job1,job2,job5,job8,job9,job10,job14,job15",
+      "testCaseId": "JOB_TYPE_TC001"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "is",
+      "filterValue": "{parttime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for parttime",
+      "expectedResult": "job3",
+      "testCaseId": "JOB_TYPE_TC002"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "is",
+      "filterValue": "{contract}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for contract",
+      "expectedResult": "job4,job11",
+      "testCaseId": "JOB_TYPE_TC003"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "is",
+      "filterValue": "{contracttopermanent}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for contracttopermanent",
+      "expectedResult": "job6,job13",
+      "testCaseId": "JOB_TYPE_TC004"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "is_not",
+      "filterValue": "{fulltime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude fulltime",
+      "expectedResult": "job3,job4,job6,job7,job11,job12,job13",
+      "testCaseId": "JOB_TYPE_TC005"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "is_not",
+      "filterValue": "{parttime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude parttime",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_TYPE_TC006"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "is_not",
+      "filterValue": "{contract}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude contract",
+      "expectedResult": "job1,job2,job3,job5,job6,job7,job8,job9,job10,job12,job13,job14,job15",
+      "testCaseId": "JOB_TYPE_TC007"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "is_not",
+      "filterValue": "{contracttopermanent}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude contracttopermanent",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job8,job9,job10,job11,job12,job14,job15",
+      "testCaseId": "JOB_TYPE_TC008"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{fulltime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value fulltime",
+      "expectedResult": "job1,job2,job5,job8,job9,job10,job14,job15",
+      "testCaseId": "JOB_TYPE_TC009"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{parttime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value parttime",
+      "expectedResult": "job3",
+      "testCaseId": "JOB_TYPE_TC010"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{fulltime},{parttime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - fulltime or parttime",
+      "expectedResult": "job1,job2,job3,job5,job8,job9,job10,job14,job15",
+      "testCaseId": "JOB_TYPE_TC011"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{fulltime},{contract}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - fulltime or contract",
+      "expectedResult": "job1,job2,job4,job5,job8,job9,job10,job11,job14,job15",
+      "testCaseId": "JOB_TYPE_TC012"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{contract},{contracttopermanent}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - contract or contracttopermanent",
+      "expectedResult": "job4,job6,job11,job13",
+      "testCaseId": "JOB_TYPE_TC013"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{parttime},{contract}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - parttime or contract",
+      "expectedResult": "job3,job4,job11",
+      "testCaseId": "JOB_TYPE_TC014"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{fulltime},{contracttopermanent}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - fulltime or contracttopermanent",
+      "expectedResult": "job1,job2,job5,job6,job8,job9,job10,job13,job14,job15",
+      "testCaseId": "JOB_TYPE_TC015"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{fulltime},{parttime},{contract}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - fulltime, parttime, or contract",
+      "expectedResult": "job1,job2,job3,job4,job5,job8,job9,job10,job11,job14,job15",
+      "testCaseId": "JOB_TYPE_TC016"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{contract},{contracttopermanent},{parttime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - contract, contracttopermanent, or parttime",
+      "expectedResult": "job3,job4,job6,job11,job13",
+      "testCaseId": "JOB_TYPE_TC017"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{fulltime},{parttime},{contract},{contracttopermanent}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - any job type value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job8,job9,job10,job11,job13,job14,job15",
+      "testCaseId": "JOB_TYPE_TC018"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "does_not_contain",
+      "filterValue": "{fulltime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude fulltime",
+      "expectedResult": "job3,job4,job6,job7,job11,job12,job13",
+      "testCaseId": "JOB_TYPE_TC019"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "does_not_contain",
+      "filterValue": "{parttime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude parttime",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_TYPE_TC020"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "does_not_contain",
+      "filterValue": "{contract}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude contract",
+      "expectedResult": "job1,job2,job3,job5,job6,job7,job8,job9,job10,job12,job13,job14,job15",
+      "testCaseId": "JOB_TYPE_TC021"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "does_not_contain",
+      "filterValue": "{fulltime},{parttime}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude fulltime or parttime",
+      "expectedResult": "job4,job6,job7,job11,job12,job13",
+      "testCaseId": "JOB_TYPE_TC022"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "does_not_contain",
+      "filterValue": "{contract},{contracttopermanent}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude contract or contracttopermanent",
+      "expectedResult": "job1,job2,job3,job5,job7,job8,job9,job10,job12,job14,job15",
+      "testCaseId": "JOB_TYPE_TC023"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "does_not_contain",
+      "filterValue": "{fulltime},{contract}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude fulltime or contract",
+      "expectedResult": "job3,job6,job7,job12,job13",
+      "testCaseId": "JOB_TYPE_TC024"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "does_not_contain",
+      "filterValue": "{fulltime},{parttime},{contract}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude fulltime, parttime, or contract",
+      "expectedResult": "job6,job7,job12,job13",
+      "testCaseId": "JOB_TYPE_TC025"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "does_not_contain",
+      "filterValue": "{fulltime},{parttime},{contract},{contracttopermanent}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude any job type value",
+      "expectedResult": "job7,job12",
+      "testCaseId": "JOB_TYPE_TC026"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - job type field is empty",
+      "expectedResult": "job7,job12",
+      "testCaseId": "JOB_TYPE_TC027"
+    },
+    {
+      "dbField": "job_type",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - job type field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job8,job9,job10,job11,job13,job14,job15",
+      "testCaseId": "JOB_TYPE_TC028"
+    }
+  ],
+  "Job Function": [
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{Administrative}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Administrative",
+      "expectedResult": "job1",
+      "testCaseId": "JOB_FUNCTION_TC001"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{Engineering}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Engineering",
+      "expectedResult": "job2,job5,job8,job11,job13",
+      "testCaseId": "JOB_FUNCTION_TC002"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Healthcare",
+      "expectedResult": "job3,job14",
+      "testCaseId": "JOB_FUNCTION_TC003"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{Consultancy}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Consultancy",
+      "expectedResult": "job4",
+      "testCaseId": "JOB_FUNCTION_TC004"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{Construction and Skilled Trades}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Construction and Skilled Trades",
+      "expectedResult": "job6",
+      "testCaseId": "JOB_FUNCTION_TC005"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{Education and Training}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Education and Training",
+      "expectedResult": "job7",
+      "testCaseId": "JOB_FUNCTION_TC006"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{Accounting and Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Accounting and Finance",
+      "expectedResult": "job9",
+      "testCaseId": "JOB_FUNCTION_TC007"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Finance",
+      "expectedResult": "job10",
+      "testCaseId": "JOB_FUNCTION_TC008"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{Customer/Client Service and Support}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Customer/Client Service and Support",
+      "expectedResult": "job12",
+      "testCaseId": "JOB_FUNCTION_TC009"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is",
+      "filterValue": "{/Communication, Marketing and Public Relations}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Communication, Marketing and Public Relations (leading / = pass value as-is)",
+      "expectedResult": "job15",
+      "testCaseId": "JOB_FUNCTION_TC010"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is_not",
+      "filterValue": "{Administrative}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Administrative",
+      "expectedResult": "job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_FUNCTION_TC011"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is_not",
+      "filterValue": "{Engineering}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Engineering",
+      "expectedResult": "job1,job3,job4,job6,job7,job9,job10,job12,job14,job15",
+      "testCaseId": "JOB_FUNCTION_TC012"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is_not",
+      "filterValue": "{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Healthcare",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job15",
+      "testCaseId": "JOB_FUNCTION_TC013"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is_not",
+      "filterValue": "{Consultancy}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Consultancy",
+      "expectedResult": "job1,job2,job3,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_FUNCTION_TC014"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is_not",
+      "filterValue": "{Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Finance",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_FUNCTION_TC015"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Administrative}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value Administrative",
+      "expectedResult": "job1",
+      "testCaseId": "JOB_FUNCTION_TC016"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Engineering}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value Engineering",
+      "expectedResult": "job2,job5,job8,job11,job13",
+      "testCaseId": "JOB_FUNCTION_TC017"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Engineering},{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Engineering or Healthcare",
+      "expectedResult": "job2,job3,job5,job8,job11,job13,job14",
+      "testCaseId": "JOB_FUNCTION_TC018"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Engineering},{Consultancy}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Engineering or Consultancy",
+      "expectedResult": "job2,job4,job5,job8,job11,job13",
+      "testCaseId": "JOB_FUNCTION_TC019"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Finance},{Accounting and Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Finance or Accounting and Finance",
+      "expectedResult": "job9,job10",
+      "testCaseId": "JOB_FUNCTION_TC020"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Healthcare},{Education and Training}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Healthcare or Education and Training",
+      "expectedResult": "job3,job7,job14",
+      "testCaseId": "JOB_FUNCTION_TC021"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Administrative},{Engineering},{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Administrative, Engineering, or Healthcare",
+      "expectedResult": "job1,job2,job3,job5,job8,job11,job13,job14",
+      "testCaseId": "JOB_FUNCTION_TC022"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Finance},{Accounting and Finance},{Customer/Client Service and Support}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Finance, Accounting and Finance, or Customer/Client Service and Support",
+      "expectedResult": "job9,job10,job12",
+      "testCaseId": "JOB_FUNCTION_TC023"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Construction and Skilled Trades},{Education and Training},{/Communication, Marketing and Public Relations}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Construction and Skilled Trades, Education and Training, or Communication, Marketing and Public Relations",
+      "expectedResult": "job6,job7,job15",
+      "testCaseId": "JOB_FUNCTION_TC024"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Administrative},{Engineering},{Healthcare},{Consultancy},{Construction and Skilled Trades},{Education and Training},{Accounting and Finance},{Finance},{Customer/Client Service and Support},{/Communication, Marketing and Public Relations}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - any job function value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_FUNCTION_TC025"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "does_not_contain",
+      "filterValue": "{Engineering}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Engineering",
+      "expectedResult": "job1,job3,job4,job6,job7,job9,job10,job12,job14,job15",
+      "testCaseId": "JOB_FUNCTION_TC026"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "does_not_contain",
+      "filterValue": "{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Healthcare",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job15",
+      "testCaseId": "JOB_FUNCTION_TC027"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "does_not_contain",
+      "filterValue": "{Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Finance",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_FUNCTION_TC028"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "does_not_contain",
+      "filterValue": "{Engineering},{Healthcare}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Engineering or Healthcare",
+      "expectedResult": "job1,job4,job6,job7,job9,job10,job12,job15",
+      "testCaseId": "JOB_FUNCTION_TC029"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "does_not_contain",
+      "filterValue": "{Finance},{Accounting and Finance}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Finance or Accounting and Finance",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_FUNCTION_TC030"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "does_not_contain",
+      "filterValue": "{Engineering},{Healthcare},{Consultancy}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Engineering, Healthcare, or Consultancy",
+      "expectedResult": "job1,job6,job7,job9,job10,job12,job15",
+      "testCaseId": "JOB_FUNCTION_TC031"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "does_not_contain",
+      "filterValue": "{Administrative},{Engineering},{Healthcare},{Consultancy},{Construction and Skilled Trades},{Education and Training},{Accounting and Finance},{Finance},{Customer/Client Service and Support},{/Communication, Marketing and Public Relations}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude any job function value",
+      "expectedResult": "Empty",
+      "testCaseId": "JOB_FUNCTION_TC032"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - job function field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "JOB_FUNCTION_TC033"
+    },
+    {
+      "dbField": "job_function",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - job function field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_FUNCTION_TC034"
+    }
+  ],
+  "Salary Type": [
+    {
+      "dbField": "salarytype",
+      "filterType": "is",
+      "filterValue": "{monthly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for monthly",
+      "expectedResult": "job1,job4,job11,job15",
+      "testCaseId": "SALARY_TYPE_TC001"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "is",
+      "filterValue": "{annual}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for annually",
+      "expectedResult": "job2,job5,job8,job9,job10,job14",
+      "testCaseId": "SALARY_TYPE_TC002"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "is",
+      "filterValue": "{weekly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for weekly",
+      "expectedResult": "job3",
+      "testCaseId": "SALARY_TYPE_TC003"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "is",
+      "filterValue": "{hourly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for hourly",
+      "expectedResult": "job6,job13",
+      "testCaseId": "SALARY_TYPE_TC004"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "is_not",
+      "filterValue": "{monthly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude monthly",
+      "expectedResult": "job2,job3,job5,job6,job7,job8,job9,job10,job12,job13,job14",
+      "testCaseId": "SALARY_TYPE_TC005"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "is_not",
+      "filterValue": "{annual}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude annually",
+      "expectedResult": "job1,job3,job4,job6,job7,job11,job12,job13,job15",
+      "testCaseId": "SALARY_TYPE_TC006"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "is_not",
+      "filterValue": "{weekly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude weekly",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "SALARY_TYPE_TC007"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "is_not",
+      "filterValue": "{hourly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude hourly",
+      "expectedResult": "job1,job2,job3,job4,job5,job7,job8,job9,job10,job11,job12,job14,job15",
+      "testCaseId": "SALARY_TYPE_TC008"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{monthly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value monthly",
+      "expectedResult": "job1,job4,job11,job15",
+      "testCaseId": "SALARY_TYPE_TC009"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{annual}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value annually",
+      "expectedResult": "job2,job5,job8,job9,job10,job14",
+      "testCaseId": "SALARY_TYPE_TC010"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{monthly},{annual}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - monthly or annually",
+      "expectedResult": "job1,job2,job4,job5,job8,job9,job10,job11,job14,job15",
+      "testCaseId": "SALARY_TYPE_TC011"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{monthly},{weekly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - monthly or weekly",
+      "expectedResult": "job1,job3,job4,job11,job15",
+      "testCaseId": "SALARY_TYPE_TC012"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{weekly},{hourly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - weekly or hourly",
+      "expectedResult": "job3,job6,job13",
+      "testCaseId": "SALARY_TYPE_TC013"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{annual},{hourly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - annually or hourly",
+      "expectedResult": "job2,job5,job6,job8,job9,job10,job13,job14",
+      "testCaseId": "SALARY_TYPE_TC014"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{monthly},{annual},{weekly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - monthly, annually, or weekly",
+      "expectedResult": "job1,job2,job3,job4,job5,job8,job9,job10,job11,job14,job15",
+      "testCaseId": "SALARY_TYPE_TC015"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{weekly},{hourly},{monthly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - weekly, hourly, or monthly",
+      "expectedResult": "job1,job3,job4,job6,job11,job13,job15",
+      "testCaseId": "SALARY_TYPE_TC016"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{monthly},{annual},{weekly},{hourly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - any salary type value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job8,job9,job10,job11,job13,job14,job15",
+      "testCaseId": "SALARY_TYPE_TC017"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "does_not_contain",
+      "filterValue": "{monthly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude monthly",
+      "expectedResult": "job2,job3,job5,job6,job7,job8,job9,job10,job12,job13,job14",
+      "testCaseId": "SALARY_TYPE_TC018"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "does_not_contain",
+      "filterValue": "{annual}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude annually",
+      "expectedResult": "job1,job3,job4,job6,job7,job11,job12,job13,job15",
+      "testCaseId": "SALARY_TYPE_TC019"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "does_not_contain",
+      "filterValue": "{weekly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude weekly",
+      "expectedResult": "job1,job2,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "SALARY_TYPE_TC020"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "does_not_contain",
+      "filterValue": "{monthly},{annual}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude monthly or annually",
+      "expectedResult": "job3,job6,job7,job12,job13",
+      "testCaseId": "SALARY_TYPE_TC021"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "does_not_contain",
+      "filterValue": "{weekly},{hourly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude weekly or hourly",
+      "expectedResult": "job1,job2,job4,job5,job7,job8,job9,job10,job11,job12,job14,job15",
+      "testCaseId": "SALARY_TYPE_TC022"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "does_not_contain",
+      "filterValue": "{monthly},{annual},{weekly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude monthly, annually, or weekly",
+      "expectedResult": "job6,job7,job12,job13",
+      "testCaseId": "SALARY_TYPE_TC023"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "does_not_contain",
+      "filterValue": "{monthly},{annual},{weekly},{hourly}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude any salary type value",
+      "expectedResult": "job7,job12",
+      "testCaseId": "SALARY_TYPE_TC024"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - salary type field is empty",
+      "expectedResult": "job7,job12",
+      "testCaseId": "SALARY_TYPE_TC025"
+    },
+    {
+      "dbField": "salarytype",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - salary type field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job8,job9,job10,job11,job13,job14,job15",
+      "testCaseId": "SALARY_TYPE_TC026"
+    }
+  ],
+  "Enable Job Application Form": [
+    {
+      "dbField": "allowapply",
+      "filterType": "is",
+      "filterValue": "1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for enabled (1)",
+      "expectedResult": "job1,job2,job4,job8,job10,job11,job12,job13,job14",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC001"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "is",
+      "filterValue": "0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for disabled (0)",
+      "expectedResult": "job3,job5,job6,job7,job9,job15",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC002"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "is_not",
+      "filterValue": "1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude enabled (1)",
+      "expectedResult": "job3,job5,job6,job7,job9,job15",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC003"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude disabled (0)",
+      "expectedResult": "job1,job2,job4,job8,job10,job11,job12,job13,job14",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC004"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "contains_at_least_one",
+      "filterValue": "1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value enabled (1)",
+      "expectedResult": "job1,job2,job4,job8,job10,job11,job12,job13,job14",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC005"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "contains_at_least_one",
+      "filterValue": "0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value disabled (0)",
+      "expectedResult": "job3,job5,job6,job7,job9,job15",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC006"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "contains_at_least_one",
+      "filterValue": "1,0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - enabled or disabled (should return all)",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC007"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "does_not_contain",
+      "filterValue": "1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude enabled (1)",
+      "expectedResult": "job3,job5,job6,job7,job9,job15",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC008"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "does_not_contain",
+      "filterValue": "0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude disabled (0)",
+      "expectedResult": "job1,job2,job4,job8,job10,job11,job12,job13,job14",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC009"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "does_not_contain",
+      "filterValue": "1,0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude enabled or disabled",
+      "expectedResult": "Empty",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC010"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - allowapply field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC011"
+    },
+    {
+      "dbField": "allowapply",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - allowapply field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "ENABLE_JOB_APPLICATION_FORM_TC012"
+    }
+  ],
+  "Job Location Type": [
+    {
+      "dbField": "remote",
+      "filterType": "is",
+      "filterValue": "0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for on-site (0)",
+      "expectedResult": "job1,job3,job5,job6,job10",
+      "testCaseId": "JOB_LOCATION_TYPE_TC001"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "is",
+      "filterValue": "1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for remote (1)",
+      "expectedResult": "job2,job4,job7,job11",
+      "testCaseId": "JOB_LOCATION_TYPE_TC002"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "is",
+      "filterValue": "2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is filter - exact match for hybrid (2)",
+      "expectedResult": "job8,job9,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC003"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "is_not",
+      "filterValue": "0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude on-site (0)",
+      "expectedResult": "job2,job4,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC004"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "is_not",
+      "filterValue": "1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude remote (1)",
+      "expectedResult": "job1,job3,job5,job6,job8,job9,job10,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC005"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "is_not",
+      "filterValue": "2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Not filter - exclude hybrid (2)",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job10,job11",
+      "testCaseId": "JOB_LOCATION_TYPE_TC006"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "contains_at_least_one",
+      "filterValue": "0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value on-site (0)",
+      "expectedResult": "job1,job3,job5,job6,job10",
+      "testCaseId": "JOB_LOCATION_TYPE_TC007"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "contains_at_least_one",
+      "filterValue": "1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value remote (1)",
+      "expectedResult": "job2,job4,job7,job11",
+      "testCaseId": "JOB_LOCATION_TYPE_TC008"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "contains_at_least_one",
+      "filterValue": "2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - single value hybrid (2)",
+      "expectedResult": "job8,job9,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC009"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "contains_at_least_one",
+      "filterValue": "0,1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - on-site or remote",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job10,job11",
+      "testCaseId": "JOB_LOCATION_TYPE_TC010"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "contains_at_least_one",
+      "filterValue": "0,2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - on-site or hybrid",
+      "expectedResult": "job1,job3,job5,job6,job8,job9,job10,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC011"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "contains_at_least_one",
+      "filterValue": "1,2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - remote or hybrid",
+      "expectedResult": "job2,job4,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC012"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "contains_at_least_one",
+      "filterValue": "0,1,2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Contains At Least One filter - any location type (should return all)",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC013"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "does_not_contain",
+      "filterValue": "0",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude on-site (0)",
+      "expectedResult": "job2,job4,job7,job8,job9,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC014"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "does_not_contain",
+      "filterValue": "1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude remote (1)",
+      "expectedResult": "job1,job3,job5,job6,job8,job9,job10,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC015"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "does_not_contain",
+      "filterValue": "2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude hybrid (2)",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job10,job11",
+      "testCaseId": "JOB_LOCATION_TYPE_TC016"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "does_not_contain",
+      "filterValue": "0,1",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude on-site or remote (only hybrid)",
+      "expectedResult": "job8,job9,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC017"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "does_not_contain",
+      "filterValue": "0,2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude on-site or hybrid (only remote)",
+      "expectedResult": "job2,job4,job7,job11",
+      "testCaseId": "JOB_LOCATION_TYPE_TC018"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "does_not_contain",
+      "filterValue": "1,2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude remote or hybrid (only on-site)",
+      "expectedResult": "job1,job3,job5,job6,job10",
+      "testCaseId": "JOB_LOCATION_TYPE_TC019"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "does_not_contain",
+      "filterValue": "0,1,2",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Does Not Contain filter - exclude any location type",
+      "expectedResult": "Empty",
+      "testCaseId": "JOB_LOCATION_TYPE_TC020"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - remote field is empty",
+      "expectedResult": "Empty",
+      "testCaseId": "JOB_LOCATION_TYPE_TC021"
+    },
+    {
+      "dbField": "remote",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - remote field has any value",
+      "expectedResult": "job1,job2,job3,job4,job5,job6,job7,job8,job9,job10,job11,job12,job13,job14,job15",
+      "testCaseId": "JOB_LOCATION_TYPE_TC022"
+    }
+  ]
+}

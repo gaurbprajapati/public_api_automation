@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Titans - Varun Vishwakarma, Shivam Singh -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="10">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Customer Endpoint of Stripe API">
+		<classes>
+			<class name="io.rcrm.api.stripeapi.GetAllCustomersTest">
+				<methods>
+
+					<include name="getAllCustomerByEmailID" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

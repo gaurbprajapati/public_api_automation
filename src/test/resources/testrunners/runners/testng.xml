@@ -1,0 +1,3734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Rest API Test Suite" thread-count="30" parallel="tests">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+		<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Rest API regression Test">
+		<classes>
+			<class name="io.rcrm.api.candidate.AllEndPointsOfCandidatesTest">
+				<methods>
+					<include name="createNewCandidate" />
+					<include name="searchCandidates_GET" />
+					<include name="editCandidateBySlug_POST" />
+					<include name="showAllcandidates_GET" />
+
+					<include name="verifyValidationOfCreateAccount" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Contact Endpoints">
+		<classes>
+			<class name="io.rcrm.api.contact.CreateNewContactTest">
+				<methods>
+
+					<include name="createNewContact_POST" />
+					<include name="editContactBySlug_POST" />
+					<include name="verifyValidationOfCreateNewContact" />
+					<include name="showAllContacts_GET" />
+					<include name="searchContactByName_GET" />
+					<include name="searchContactBySlug_GET" />
+
+					<include name="verifyValidationOfCreateNewCandidate" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Job Endpoints">
+		<classes>
+			<class name="io.rcrm.api.job.AllEndPointsOfJobTest">
+				<methods>
+
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include name="createNewJob_POST" />
+					<include name="verifyValidationOfCreateNewContact" />
+					<include name="editJobBySlug_POST" />
+					<include name="showAllJobs_GET" />
+					<include name="searchJobByName_GET" />
+					<include name="searchJobBySlug_GET" />
+					<!-- <include name="deleteJobBySlug_GET" /> -->
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<!-- Candidate Endpoints -->
+
+	<test name="Create New Candidate for POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.CreateNewCandidateTest">
+				<methods>
+
+					<include name="CreateNewCandidateWithAllFields" />
+					<include name="createNewCandidateWithResume_POST" />
+					<include name="createNewCandidateWithResume" />
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="CreateNewCandidateWithAllFields" />
+					<include
+						name="userCannotCreateNewCandidateWithEmptyMandatoryField" />
+					<include
+						name="verifyInvalidValidationsForEmailField_CreateNewCandidate" />
+					<include
+						name="verifyInvalidValidationsForContactNumberField_CreateNewCandidate" />
+					<include
+						name="verifyAllMandatoryFieldsOfCreateNewCandidate" />
+					<include
+						name="verifyInvalidValidationsForGenderField_CreateNewCandidate" />
+					<include
+						name="verifyInvalidValidationsForQualificationField_CreateNewCandidate" />
+					<include
+						name="verifyInvalidValidationsForSpecializationField_CreateNewCandidate" />
+					<include name="verifyInvalidCurrentOrganizationSlug_CreateNewCandidate"/>
+					<include name="verifyValidCurrentOrganizationSlug_CreateNewCandidate"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<test name="Create New Candidate with invalid name lenth test">
+		<classes>
+			<class name="io.rcrm.api.candidate.CreateNewCandidateTest">
+				<methods>
+					<include name="invalidCandidateNameLengthTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate Profile Update Form - GET">
+		<classes>
+			<class name="io.rcrm.api.candidate.GetCandidateProfileUpdateFormTest">
+				<methods>
+					<include name="getProfileUpdateForm_200"/>
+					<include name="getProfileUpdateForm_404_InvalidEndpoint"/>
+					<include name="getProfileUpdateForm_401_Unauthorized"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Candidate for POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.DeleteCandidateTest">
+				<methods>
+
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="deleteCandidateBySlug_POST" />
+					<include name="deleteCandidateByInvalidSlug_POST" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Candidate for POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.EditCandidateTest">
+				<methods>
+
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="CreateNewCandidateWithAllFields" />
+					<include name="editCandidateBySlug_POST" />
+
+					<!-- Incorrect http status for same request body -->
+					<!-- <include name="editCandidateAndVerify422" /> -->
+					<include name="editCandidateByInvalidSlugAndVerify404" />
+					<include name="editAllFieldsOfCandidateAndVerifyResponse" />
+					<include name="editCandidateByValidOrganizationSlug"/>
+					<include name="editCandidateByInvalidOrganizationSlug"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="UnauthorizedUserCandidate Candidate for POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.UnauthorizedUserCandidateTest">
+				<methods>
+
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="unauthorizedUserCannotCreateNewCandidate" />
+					<include name="unauthorizedUserCannotSearchCandidate" />
+					<include name="unauthorizedUserCannotGetAllCandidateslist" />
+					<include name="unauthorizedUserCannotEditCandidate" />
+					<include name="unauthorizedUserCannotDeleteCandidate" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search candidate by fields - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.SearchCandidateTest">
+				<methods>
+
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="searchCandidateByEmail" />
+					<include name="searchCandidateByFirstName" />
+					<include name="searchCandidateByLastName" />
+					<include name="searchCandidateByLinkedin" />
+					<include name="searchCandidateBySlug" />
+					<include name="searchCandidateByAllFields" />
+					 <include name="searchCandidateByContactNumber" />
+					<include name="searchCandidateByCountry"/>
+					<include name="searchCandidateBySortByAsc"/>
+					<include name="searchCandidateBySortByDesc"/>
+					<include name="searchCandidateByState"/>
+					<include name="searchCandidateByCreatedFrom"/>
+					<include name="searchCandidateByCreatedTo"/>
+					<include name="searchCandidateByUpdatedFrom"/>
+					<include name="searchCandidateByUpdatedTo"/>
+					<include name="getSearchCandidateByCustomFields_200"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="SearchCandidate by Candidate fields - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.SearchCandidateBySlugTest">
+				<methods>
+
+					<include name="createNewCandidateWithMandatoryFields" />
+					<include name="searchCandidateByValidSlug" />
+					<include name="searchCandidateByInvalidSlug" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Candidate History ">
+		<classes>
+			<class name="io.rcrm.api.candidate.Test_CandidateHistoryTest">
+				<methods>
+					<include name="getAllHiringStagesIds_Test" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Job Endpoints -->
+
+	<test name="Job Endpoints">
+		<classes>
+			<class name="io.rcrm.api.job.CreateNewJobTest">
+				<methods>
+
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include name="createNewJob_POST" />
+					<include
+						name="userCanCreateNewJobWithOnlyMandatoryFieldsAndVerifyReponseBodyAndCode200" />
+					<include name="createNewJobWithInValidMandatoryFields" />
+					<include name="createNewJobWithEmptyRequestBody" />
+					<include
+						name="createNewJobWithInvalidJobNameCompanySlugOpenings" />
+					<include name="createNewJobWithInvalidContactSlug" />
+					<include name="createNewJobWithInvalidJobName" />
+					<include name="createNewJobWithInvalidMinimumExperience" />
+					<include name="createNewJobWithInvalidMaximumExperience" />
+					<include
+						name="VerifyErrorMessagesCreateNewJobWithInvalidSpecialization" />
+					<include
+						name="userCannotCreateNewJobWithInvalidCityFieldValueAndVerifyResponseErrorMessages" />
+					<include
+						name="VerifyInvalidValidationForLocalityField_CreateNewjob" />
+					<include
+						name="VerifyInvalidValidationForStateField_CreateNewjob" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Job delete Endpoint">
+		<classes>
+			<class name="io.rcrm.api.job.DeleteJobTest">
+				<methods>
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include
+						name="userCanCreateNewJobWithOnlyMandatoryFieldsAndVerifyReponseBodyAndCode200" />
+					<include name="deleteJobBySlug_GET" />
+					<include name="deleteJobByInvalidSlug_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Search Job By Slug  Endpoint">
+		<classes>
+			<class name="io.rcrm.api.job.SearchJobBySlugTest">
+				<methods>
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include
+						name="userCanCreateNewJobWithOnlyMandatoryFieldsAndVerifyReponseBodyAndCode200" />
+					<include name="searchJobBySlug_GET" />
+					<include name="searchJobByInvalidSlug_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Search Job By Job Fields Endpoint">
+		<classes>
+			<class name="io.rcrm.api.job.SearchJobsByFieldsTest">
+				<methods>
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include name="createNewJobAndVerifyStatusOk" />
+					<include name="searchJobByJobName_GET" />
+					<include name="searchJobByNoteForCandidate_GET" />
+					<include name="searchJobByCity_GET" />
+					<include name="searchJobByLocality_GET" />
+					<include name="searchJobByFullAddress_GET" />
+					<include name="searchJobByCountry_GET" />
+					<include name="searchJobByCompanyName_GET" />
+					<include name="searchJobByContactName_GET" />
+					<include name="searchJobByContactEmail_GET" />
+					<include name="searchJobByContactNumber_GET" />
+					<include name="searchJobByJobStatus_GET" />
+					<include name="searchJobBySlug_GET" />
+					<include name="searchJobByInvalidJobName_GET" />
+					<include name="searchJobByAllFields_GET" />
+					<include name="searchJobByCreatedFrom" />
+					<include name="searchJobByCreatedTo" />
+					<include name="searchJobByUpdatedFrom" />
+					<include name="searchJobByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="Edit Job Endpoint">
+		<classes>
+			<class name="io.rcrm.api.job.EditJobTest">
+				<methods>
+					<include name="createNewCompany_POST" />
+					<include name="createNewContact_POST" />
+					<include name="createNewWithOnlyMandatoryFields" />
+					<include name="editAllFieldsOfJob_POST" />
+					<include name="editJobByInvalidJobSlug_POST" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<!-- Company Endpoints -->
+
+	<test name="AllEndpointsOfCompany Company Endpoints">
+		<classes>
+			<class name="io.rcrm.api.company.AllEndpointsOfCompanyTest">
+				<methods>
+
+					<include name="createNewCompany_POST" />
+					<include name="editCompanyBySlug_POST" />
+					<include name="verifyValidationOfCreateNewCompany" />
+					<include name="showAllCompanies_GET" />
+					<include name="searchCompanyByName_GET" />
+					<include name="searchCompanyBySlug_GET" />
+					<include name="deleteCompanyBySlug_GET" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Create New Endpoints">
+		<classes>
+			<class name="io.rcrm.api.company.CreateNewCompanyTest">
+				<methods>
+
+					<include name="createNewCompanyWithMandatoryFields_POST" />
+					<include name="createNewCompanyWithEmptyRequestBody_POST" />
+					<include name="createNewCompanyWithAllFields_POST" />
+					<include name="verifyInvalidCompanyName" />
+					<include name="verifyEmptyCompanyName" />
+					<include
+						name="verifyCreateNewCompanyWithInvalidFieldsValue_POST" />
+					<include name="verifyInvalidCompanyLogo" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="GetAllCompanies">
+		<classes>
+			<class name="io.rcrm.api.company.GetAllCompaniesTest">
+				<methods>
+					<include name="createNewCompanyWithAllFields_POST" />
+					<include name="showAllCompanies_GET" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Company by Slug">
+		<classes>
+			<class name="io.rcrm.api.company.SearchCompanyBySlugTest">
+				<methods>
+
+					<include name="searchCompanyByInvalidSlug_GET" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Edit company ">
+		<classes>
+			<class name="io.rcrm.api.company.EditCompanyTest">
+				<methods>
+
+					<include name="editCompanyBySlug_POST" />
+					<include name="editCompanyBySlugWithEachField_POST" />
+					<include name="editCompanyBySlugWithoutCompanyName422_POST" />
+					<include name="editCompanyByInvalidSlug404_POST" />
+					<include name="editCompanyByInvalidFieldsValues422_POST" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Company by fields">
+		<classes>
+			<class name="io.rcrm.api.company.SearchCompanyByFieldsTest">
+				<methods>
+					<include name="searchCompanyByAllFields_GET" />
+					<include name="searchCompanyByName_GET" />
+					<include name="searchCompanyBySlug_GET" />
+					<include name="searchCompanyByInvalidName_GET" />
+					<include name="searchCompanyByCreatedFrom" />
+					<include name="searchCompanyByCreatedTo" />
+					<include name="searchCompanyByUpdatedFrom" />
+					<include name="searchCompanyByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Company">
+		<classes>
+			<class name="io.rcrm.api.company.DeleteCompanyTest">
+				<methods>
+					<include name="deleteCompanyBySlug_Test" />
+					<include name="deleteCompanyByInvalidSlug_Test" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Unauthorized User can not access API">
+		<classes>
+			<class
+				name="io.rcrm.api.company.UnauthorizedUserCompanyEndpointsTest">
+				<methods>
+					<include name="unauthrizedUserCanntCreateNewCompany" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<!-- CONTACT ENDPOINTS -->
+
+	<test name="ALL Contacts Endpoints-ALL">
+		<classes>
+			<class name="io.rcrm.api.contact.AllEndpointsOfContactTest">
+				<methods>
+
+					<include name="createNewContact_POST" />
+					<include name="editContactBySlug_POST" />
+					<include name="verifyValidationOfCreateNewContact" />
+					<include name="showAllContacts_GET" />
+					<include name="searchContactByName_GET" />
+					<include name="searchContactBySlug_GET" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create new Contact Endpoints">
+		<classes>
+			<class name="io.rcrm.api.contact.CreateNewContactTest">
+				<methods>
+
+					<include name="createNewCompanyWithMandatoryFields_POST" />
+					<include name="createNewContactWithMandatoryFields_POST" />
+					<include name="createNewContactWithEmptyRequestBody" />
+					<include name="createNewContactWithAllFields" />
+					<include name="createNewContactWithInvalidEmailId" />
+					<include name="createNewContactWithInvalidContactNumber" />
+
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit a Contact by Valid Slug - 200">
+		<classes>
+			<class name="io.rcrm.api.contact.EditContactTest">
+				<methods>
+					<include name="editContactByValidSlug_200" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit a Contact by Invalid Slug - 404">
+		<classes>
+			<class name="io.rcrm.api.contact.EditContactTest">
+				<methods>
+					<include name="editContactByInvalidSlug_404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit a Contact with Empty Request - 422">
+		<classes>
+			<class name="io.rcrm.api.contact.EditContactTest">
+				<methods>
+					<include name="editContactWithEmptyRequest_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit a Contact with Unauthorized Access - 401">
+		<classes>
+			<class name="io.rcrm.api.contact.EditContactTest">
+				<methods>
+					<include name="unauthorizedUserCannotEditContact_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Contact">
+		<classes>
+			<class name="io.rcrm.api.contact.DeleteContactTest">
+				<methods>
+					<include name="deleteContactBySlug_Test" />
+					<include name="deleteContactByInvalidSlug_Test" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get all Contact Endpoints">
+		<classes>
+			<class name="io.rcrm.api.contact.GetAllContactsTest">
+				<methods>
+					<include name="showAllContacts_GET" />
+					<include
+						name="unauthorizedUserCannotAccessShowAllContacts_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search contact by Slug">
+		<classes>
+			<class name="io.rcrm.api.contact.SearchByContactSlugTest">
+				<methods>
+					<include name="searchContactBySlug_GET" />
+					<include name="searchContactByInvalidSlug_GET" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search contact by Contact fields">
+		<classes>
+			<class name="io.rcrm.api.contact.SearchByContactFieldsTest">
+				<methods>
+
+					<include name="createNewContactWithAllFields" />
+					<include name="searchContactByAllFields_GET" />
+					<include name="searchContactByFirstName_GET" />
+					<include name="searchContactByLastName_GET" />
+					<include name="searchContactByEmail_GET" />
+					<include name="searchContactByLinkedin_GET" />
+					<include name="searchContactByContactNumber_GET" />
+					<include name="searchContactByCompanySlug_GET" />
+					<include name="searchContactByContactSlug_GET" />
+					<include name="searchContactByInvalidFieldValues_GET" />
+					<include name="searchContactByCreatedFrom" />
+					<include name="searchContactByCreatedTo" />
+					<include name="searchContactByUpdatedFrom" />
+					<include name="searchContactByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="All Deal Endpoints">
+		<classes>
+			<class name="io.rcrm.api.deals.AllEndPointsOfDealsTests">
+				<methods>
+
+					<include name="createNewDealWithAllFields" />
+					<include name="showAllDealsGET" />
+					<include name="searchDealByFields" />
+					<include name="editDealBySlug" />
+					<include name="searchDealBySlug" />
+					<include name="deleteDealBySlug" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Endpoints">
+		<classes>
+			<class name="io.rcrm.api.deals.CreateNewDealTest">
+				<methods>
+					<include name="createNewDealWithMandatoryFields" />
+					<include name="createNewDealWithAllFields" />
+					<include name="userShouldNotAbleToCreateDealWithEmptyData" />
+					<include
+						name="userShouldNotAbleToCreateDealWithMoreThanLimit" />
+					<include name="unauthorizedUserCreateNewDeal" />
+					<include name="createDealWithInvalidDealSplitData" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Endpoints">
+		<classes>
+			<class name="io.rcrm.api.deals.EditDealTest">
+				<methods>
+					<!-- <include name="editDealBySlug422_POST" /> -->
+					<include name="editDealBySlug_POST" />
+					<include name="editDealByInvalidSlug404_POST" />
+					<include name="editDealByInvalidFieldsValues422_POST" />
+					<include name="unauthorizedUserCannotEditDeal" />
+					<include name="editDealWithInvalidDealSplitData" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Deal by Slug">
+		<classes>
+			<class name="io.rcrm.api.deals.SearchDealBySlugTest">
+				<methods>
+
+					<include name="searchDealBySlug_GET" />
+					<include name="searchDealByInvalidSlug_GET" />
+					<include name="unauthorizedUserCannotSearchDealBySlug" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Deal by fields">
+		<classes>
+			<class name="io.rcrm.api.deals.SearchDealByFieldsTest">
+				<methods>
+					<include name="createNewDealWithMandatoryFieldsForSearch" />
+					<include name="searchDealByAllFields_GET" />
+					<include name="searchDealByName_GET" />
+					<include name="searchDealByAllFields_GET" />
+					<include name="searchDealBySlug_GET" />
+					<include name="searchDealByInvalidName_GET" />
+					<include name="unauthorizedUserCannotSearchDealByFields" />
+					<include name="searchDealByAddedFrom" />
+					<include name="searchDealByAddedTo" />
+					<include name="searchDealByClosingFrom" />
+					<include name="searchDealByClosingTo" />
+					<include name="searchDealByUpdatedFrom" />
+					<include name="searchDealByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetAllDeals">
+		<classes>
+			<class name="io.rcrm.api.deals.GetAllDealsTest">
+				<methods>
+					<include name="showAllDeals_GET" />
+					<include name="unauthorizedUserCannotGetAllDeals" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Endpoints">
+		<classes>
+			<class name="io.rcrm.api.deals.DeleteDealTest">
+				<methods>
+					<include name="deleteDealBySlug_GET" />
+					<include name="deleteDealByInvalidSlug_GET" />
+					<include name="unauthorizedUserCannotDeleteDeal" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Note EndPoints -->
+
+	<test name="Create Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.CreateNewNoteTest">
+				<methods>
+					<include name="createNewNote" />
+					<include name="createNoteWithDisableAutoTeamsPopulation" />
+					<include name="createNoteWithEnableAutoTeamsPopulation" />
+					<include name="createNoteWithCollaborators" />
+					<include name="createNoteWithInvalidCollaborators" />
+					<include name="createNoteWithInvalidCollaboratorsTeams" />
+					<include name="createNewNoteWithAllValidAssociates" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.AllEndpointsOfNotesTest">
+				<methods>
+
+					<include name="createNewNote" />
+					<include name="showAllNotes_GET" />
+					<include name="searchNoteByID" />
+					<include name="searchNoteByFields" />
+					<include name="editNoteById" />
+					<include name="DeleteNoteByID" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="Search Note By ID Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.SearchNoteByIDTest">
+				<methods>
+
+					<include name="searchNoteByID" />
+					<include
+						name="unauthorizedUserShouldNotBeAbleToSearchNoteByID_noteTest" />
+
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Delete Note By ID Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.DeleteNoteByIDTest">
+				<methods>
+
+					<include name="deleteNoteByID_noteTest" />
+					<include
+						name="unauthorizedUserShouldNotBeAbleToDeleteNoteByID_noteTest" />
+
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.GetAllNotesTest">
+				<methods>
+
+					<include name="getAllNotes_noteTest" />
+					<include
+						name="unauthorizedCannotAccessgGetAllNotes_noteTest" />
+
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search by all fields Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.SearchNoteByAllFieldsTest">
+				<methods>
+
+					<include name="searchNoteByAllFields_noteTest" />
+					<include name="searchNoteByAllByInvalidFields_noteTest" />
+					<include name="unauthorizedUserCannotAccessSearchNoteByAllFields_noteTest" />
+					<include name="searchNoteByDateFilters" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Notes Endpoints">
+		<classes>
+			<class name="io.rcrm.api.notes.EditNoteByIDTest">
+				<methods>
+
+					<include name="editNoteById_notesTest" />
+					<include name="unauthorizedCannoteEditNoteById_notesTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<!-- Notes Endpoints Ends Here -->
+
+
+
+	<test name="All Endpoints of Task Endpoint">
+		<classes>
+			<class name="io.rcrm.api.tasks.AllEndpointsOfTasksTest">
+				<methods>
+					<include name="createNewTask" />
+					<include name="showAllTasks" />
+					<include name="searchTaskByID" />
+					<include name="searchTaskByFields" />
+					<include name="deleteTaskByID" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create New Task Endpoint">
+		<classes>
+			<class name="io.rcrm.api.tasks.CreateNewTaskTest">
+				<methods>
+					<include name="createNewTask" />
+					<include name="createTaskWithDisableAutoTeamsPopulation" />
+					<include name="createTaskWithEnableAutoTeamsPopulation" />
+					<include name="createNewTaskWithCollaborators" />
+					<include name="createNewTaskWithInvalidCollaborators" />
+					<include name="createNewTaskWithInvalidCollaboratorTeams" />
+					<include name="createNewTaskPastDate" />
+					<include name="createNewTaskWithAllReminder" />
+					<include name="createNewTaskWithEmptyBody" />
+					<include name="createNewTaskWithInvalidMandatoryValue" />
+					<include name="createNewTaskWithLimitExceeds" />
+					<include name="createNewTaskWithAssociates" />
+					<include name="unauthorizedUserCannotCreateNewTask" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Edit Task Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.EditTaskTest">
+				<methods>
+					<include name="editTaskById_POST" />
+					<include name="editTaskByInvalidId404_POST" />
+					<include name="editTaskByInvalidFieldsValues422_POST" />
+					<include name="unauthorizedUserCannotEditTask" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Show All Tasks Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.GetAllTasksTest">
+				<methods>
+					<include name="showAllTasks_GET" />
+					<include name="unauthorizedUserCannotGetAllTasks" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Search Task By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.SearchTaskByFieldsTest">
+				<methods>
+					<include name="searchTaskByTitle_GET" />
+					<include name="searchTaskByInvalidTitle_GET" />
+					<include name="searchTaskByAllFields_GET" />
+					<include name="unauthorizedUserCannotSearchTaskByFields" />
+					<include name="searchTaskByCreatedFrom" />
+					<include name="searchTaskByCreatedTo" />
+					<include name="searchTaskByUpdatedFrom" />
+					<include name="searchTaskByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Task By ID Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.SearchTaskByIdTest">
+				<methods>
+					<include name="searchTaskById_GET" />
+					<include name="searchTaskByInvalidId_GET" />
+					<include name="unauthorizedUserCannotSearchTaskById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Task Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.DeleteTaskTest">
+				<methods>
+					<include name="deleteTaskById_GET" />
+					<include name="deleteTaskByInvalidID_GET" />
+					<include name="unauthorizedUserCannotDeleteTask" />
+					<include name="deleteTaskCreatedByUsers" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="ALL Call Log By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.AllEndpointsOfCallLogsTest">
+				<methods>
+					<include name="createNewCallLog" />
+					<include name="showAllCalLogs" />
+					<include name="searchCallLogByFields" />
+					<include name="searchCallLogByID" />
+					<include name="editCallLogByID" />
+					<include name="deleteCallLogByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Call Logs Endpoints 1">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithFields" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 2">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="verifyValidationOnDurationFieldPost_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 3">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createCallLogWithEnableDisableAutoTeamsPopulation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 4">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createCallLogWithInvalidCollaborators" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 5">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="userShouldNotBeAbleToCreateCallLogWithInvalidData" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 6">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithMandatoryValue" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 7">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithLimitExceeds" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 8">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="unauthorizedUserCannotCreateNewCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Call Logs Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.EditCallLogTest">
+				<methods>
+					<include name="editCallLogById_POST" />
+					<include name="editCallLogByInvalidId404_POST" />
+					<include name="editCallLogByInvalidFieldsValues422_POST" />
+					<include name="unauthorizedUserCannotEditCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Show All Call Logs Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.GetAllCallLogsTest">
+				<methods>
+					<include name="showAllCallLogs_GET" />
+					<include name="unauthorizedUserCannotGetAllCallLogs" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Call Log By Id Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.SearchCallLogByIdTest">
+				<methods>
+					<include name="searchCallLogById_GET" />
+					<include name="searchCallLogWithRecordingById_GET" />
+					<include name="searchCallLogByInvalidId_GET" />
+					<include name="unauthorizedUserCannotSearchCallLogById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Call Log By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.SearchCallLogByFieldsTest">
+				<methods>
+					<include name="searchCallLogByAllFields_GET" />
+					<include name="searchCallLogByCallType_GET" />
+					<include name="searchTaskByInvalidCallType_GET" />
+					<include name="unauthorizedUserCannotSearchCallLogByFields" />
+					<include name="searchCallLogByStartingFrom" />
+					<include name="searchCallLogByStartingTo" />
+					<include name="searchCallLogByUpdatedFrom" />
+					<include name="searchCallLogByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Call Log By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.DeleteCallLogTest">
+				<methods>
+					<include name="deleteCallLogById_GET" />
+					<include name="deleteCallLogByInvalidID_GET" />
+					<include name="unauthorizedUserCannotDeleteCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Call Log - Automated Call Log Restriction">
+		<classes>
+			<class name="io.rcrm.api.calllogs.DeleteCallLogTest">
+				<methods>
+					<include name="userCannotDeleteAutomatedCallLog_PublicAPI_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create New Meeting Endpoint">
+		<classes>
+			<class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+				<methods>
+					<include name="createNewMeetings" />
+					<include name="createMeetingsWithDisableAutoTeamsPopulation" />
+					<include name="createMeetingsWithEnableAutoTeamsPopulation" />
+					<include name="createMeetingsWithCollaborators" />
+					<include name="createMeetingsWithInvalidCollaborators" />
+					<include name="createMeetingsWithInvalidCollaboratorsTeams" />
+					<include name="createMeetingsWithInvalidCalendarInviteValue" />
+					<include name="createNewMeetingsWithAssociates" />
+					<include name="userShouldNotBeAbleToCreateNewMeetingWithEmptyFieldsData" />
+					<include name="verifyMeetingDescriptionWithMaxChars" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of Meeting Endpoint">
+		<classes>
+			<class name="io.rcrm.api.meeting.AllEndPointsOfMeetingTest">
+				<methods>
+					<include name="createNewMeeting" />
+					<include name="showAllMeeting" />
+					<include name="editMeetingByID" />
+					<include name="searchMeetingByFields" />
+					<include name="searchMeetingByID" />
+					<include name="deleteMeetingByID" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Meeting type Test-cases -6-Done">
+		<classes>
+			<class name="io.rcrm.api.meeting.MeetingTypeTest">
+				<methods>
+					<include name="getMeetingTypes" />
+					<include name="createMeetingWithMeetingType" />
+					<include name="verifyMeetingTypeInShowAllMeeting" />
+					<include name="verifyMeetingTypeInSearchMeetingByID" />
+					<include name="editMeetingType" />
+					<include name="createMeetingWithInvalidMeetingType" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="delete Meeting Endpoint">
+		<classes>
+			<class name="io.rcrm.api.meeting.DeleteMeetingTest">
+				<methods>
+					<include name="deleteMeetingByID" />
+					<include name="deleteMeetingByInvalidID" />
+					<include name="unauthorizedUserShouldNotAbleToDeleteMeetingByID" />
+                    <include name="deleteMeetingCreatedByUsers" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Meeting by ID Endpoint">
+		<classes>
+			<class name="io.rcrm.api.meeting.SearchMeetingByIdTest">
+				<methods>
+					<include name="searchMeetingByID" />
+					<include
+						name="unauthorizedUserShouldNotBeAbleToSearchMeetingByID_MeetingTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Meeting ">
+		<classes>
+			<class name="io.rcrm.api.meeting.GetAllMeetingTest">
+				<methods>
+					<include name="getAllMeeting_Test" />
+					<include name="unauthorizedUserCannotGetAllMeeting_Test" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Meeting by fields">
+		<classes>
+			<class name="io.rcrm.api.meeting.SearchMeetingByFieldsTest">
+				<methods>
+					<include name="searchMeetingByFields_Test" />
+					<include
+						name="unauthorizedUserCannotSearchMeetingByFields_Test" />
+					<include name="searchMeetingByInvalidFields_Test" />
+					<include name="searchMeetingByAddedFrom" />
+					<include name="searchMeetingByAddedTo" />
+					<include name="searchMeetingByClosingFrom" />
+					<include name="searchMeetingByClosingTo" />
+					<include name="searchMeetingByStartingFrom" />
+					<include name="searchMeetingByStartingTo" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="edit Meeting by fields">
+		<classes>
+			<class name="io.rcrm.api.meeting.EditMeetingTest">
+				<methods>
+					<include name="editMeetingByID" />
+					<include name="editMeetingCalendarInviteOption" />
+					<include name="unauthorizedUserCannotEditMeetingByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create New Call Logs Endpoint">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithFields" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<!-- Hotlist Endpoints -->
+
+	<test name="Create New hotlist ">
+		<classes>
+			<class name="io.rcrm.api.hotlists.CreateNewHotlistTest">
+				<methods>
+					<include name="createNewhotlists" />
+					<include
+						name="userShouldNotAbleToCreateHotlistWithInvalidSharedTeammmatesData" />
+					<include
+						name="userShouldNotAbleToCreateHotlistWithInvalidRelateToType" />
+					<include
+						name="userShouldNotAbleToCreateHotlistWithNameLengthMoreThan191Characters" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of Hotlist">
+		<classes>
+			<class name="io.rcrm.api.hotlists.AllEndpointsOfHotlistTest">
+				<methods>
+					<include name="createNewhotlists" />
+					<include name="showAllHotlistByID" />
+					<include name="searchHotlistByID" />
+					<include name="searchHotlistByFields" />
+					<include name="editHotlistByFields" />
+					<include name="deleteHotlistByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="Add Records To Hotlist">
+		<classes>
+			<class name="io.rcrm.api.hotlists.AddRecordsToHotlistTest">
+				<methods>
+					<include name="addEntityInHotlist" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Remove Records From Hotlist">
+		<classes>
+			<class name="io.rcrm.api.hotlists.RemoveRecordsFromHotlistTest">
+				<methods>
+					<include name="removeEntityFromHotlist" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Unauthorized user cannot access any hotlist endpoint ">
+		<classes>
+			<class
+				name="io.rcrm.api.hotlists.unAuthorizedCannotDoActionsOnHotlistendpoints_hotlistTest">
+				<methods>
+					<include
+						name="unathorizedUserCannotCreateNewhotlists_HotlistTest" />
+					<include
+						name="unathorizedUserCannotGetAllHotlistByID_HotlistTest" />
+					<include
+						name="unathorizedUserCannotSearchHotlistByID_HotlistTest" />
+					<include
+						name="unathorizedUserCannotSearchHotlistByFields_hotlistTest" />
+					<include
+						name="unathorizedUserCannotEditHotlistByFields_HotlistTest" />
+					<include
+						name="unathorizedUserCannotDeleteHotlistByID_HotlistTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Hotlist by ID">
+		<classes>
+			<class name="io.rcrm.api.hotlists.DeleteHotlistByIDTest">
+				<methods>
+
+					<include name="deleteHotlistByID_HotlistTest" />
+					<include
+						name="userShouldNotBeAbleToDeleteHotlistByInvalidID_HotlistTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Hotlist by ID">
+		<classes>
+			<class name="io.rcrm.api.hotlists.SeachHotlistByIDTest">
+				<methods>
+
+					<include name="searchHotlistByID_HotlistTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="edit Records To Hotlist">
+		<classes>
+			<class name="io.rcrm.api.hotlists.EditHotlistTest">
+				<methods>
+					<include name="editHotlistByName_HotlistTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<!-- Hotlist Endpoints End here -->
+
+
+	<!-- Candidate Endpoint - Assign , un-assign , Apply,Request update profile
+		link of candidate -->
+
+	<test name="Apply To job - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.ApplyToJobTest">
+				<methods>
+
+					<include name="authorizedUserCanApplyToJobWithValidData" />
+					<include
+						name="authorizedUserCannotApplyToJobWithInvalidJobSlug" />
+					<include
+						name="authorizedUserCannotApplyToJobWithInvalidCandidateSlug" />
+					<include
+						name="authorizedUserCannotApplyToJobWithInvalidCandidateAndJobSlug" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Request Update Profile link of Candidate - GET">
+		<classes>
+			<class name="io.rcrm.api.candidate.RequestUpdateProfileLinkTest">
+				<methods>
+
+					<include
+						name="authorizedUserCanRequestUpdateprofileLink_GET" />
+					<include
+						name="authorizedUserCannotRequestUpdateprofileLinkForInvalidCandidate_GET" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="unAssign Candidate to Job - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.UnAssignCandidateToJobTest">
+				<methods>
+					<include
+						name="authorizedUserCanUnAssignCandidateToJobWithValidData" />
+					<include name="verifyUserCanReUnAssignCandidateToJob" />
+
+					<include
+						name="authorizedUserCannotUnAssignCandidateToInvalidJob" />
+					<include
+						name="authorizedUserCannotUnAssignInvalidCandidateToValidJob" />
+					<include
+						name="authorizedUserCannotUnAssignInvalidCandidateToInvalidJob" />
+					<include
+						name="authorizedUserCannotUnAssignCandidateToJobWithEmptyQueryParameter" />
+					<include
+						name="authorizedUserCannotUnAssignCandidateToJobWithEmptyPathParameter" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Update Candidate hiring Stage">
+		<classes>
+			<class
+				name="io.rcrm.api.candidate.UpdateCandidateHiringStagePOSTTest">
+				<methods>
+
+					<include name="authorizedUserCanUpdateCandidateHiringStage" />
+					<include
+						name="usershouldNotBeAbleToUpdateHiringStageOfCandidateIfCandididateIsNotAssigned" />
+					<include
+						name="usershouldNotBeAbleToUpdateHiringStageOfWithInvalidCandidateJobSlug" />
+
+					<include
+						name="userShouldUpdateToEachHiringStageOfCandidateToJob" />
+						<include
+						name="authorizedUserCanUpdateCandidateHiringStageWithInvalidUpdatedBy"></include>
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get current Candidate hiring Stage">
+		<classes>
+			<class
+				name="io.rcrm.api.candidate.Test_GetCurrentHiringStageOfCandidateTest">
+				<methods>
+
+					<include name="getHiringStageOfCandidate" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update candidate visibiltiy in a Job">
+		<classes>
+			<class
+				name="io.rcrm.api.candidate.Test_UpdateCandidateVisibilityInAJobTest">
+				<methods>
+
+					<include name="userShouldUpdateCandidateVisibilityInAJob" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<!-- <test name="Create Notes with Associates Endpoint"> <classes> <class
+		name="io.rcrm.api.notes.CreateNewNoteTest"> <methods> <include name="createNewNoteWithAllValidAssociates"
+		/> </methods> </class> </classes> </test> <test name="Create New Call Logs
+		with Associates Endpoint"> <classes> <class name="io.rcrm.api.calllogs.CreateNewCallLog">
+		<methods> <include name="createNewCallLogWithFields" /> <include name="createnewCallLogWithAssociates"
+		with Associates Endpoint"> <classes> <class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+		<methods> <include name="createnewCallLogWithFields" /> <include name="createnewCallLogWithAssociates"
+		/> </methods> </class> </classes> </test> <test name="Create New Meeting
+		with Associates Endpoint"> <classes> <class name="io.rcrm.api.meeting.CreateNewMeetingTest">
+		<methods> <include name="createNewMeetings" /> <include name="createNewMeetingsWithAssociates"
+		/> </methods> </class> </classes> </test> <test name="Create New Task with
+		Associates Endpoint"> <classes> <class name="io.rcrm.api.tasks.CreateNewTaskTest">
+		<methods> <include name="createNewTaskWithAssociates" /> </methods> </class>
+		</classes> </test> -->
+
+
+	<!-- All Lists -->
+
+	<test name="Get All Note Types of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetNoteTypesTest">
+				<methods>
+					<include name="getAllNoteTypes_Test" />
+					<include name="unauthorizedUserCannotGetAllNoteTypes_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Qualifications of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetQualificationsTest">
+				<methods>
+					<include name="getAllQualifications_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllQualifications_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Currencies of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCurrenciesTest">
+				<methods>
+					<include name="getAllCurrencies_Test" />
+					<include name="unauthorizedUserCannotGetAllCurrencies_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Salary Types of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetSalaryTypesTest">
+				<methods>
+					<include name="getAllSalaryTypes_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllSalaryTypes_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Industries of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetIndustriesTest">
+				<methods>
+					<include name="getAllIndustries_Test" />
+					<include name="unauthorizedUserCannotGetAllIndustries_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Languages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetLanguagesTest">
+				<methods>
+					<include name="getAllLanguages_Test" />
+					<include name="unauthorizedUserCannotGetAllLanguages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All proficiencies of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetProficienciesTest">
+				<methods>
+					<include name="getAllProficiencies_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllProficiencies_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Call Types of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCallTypesTest">
+				<methods>
+					<include name="getAllCallTypes_Test" />
+					<include name="unauthorizedUserCannotGetAllCallTypes_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Contact Stages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetContactStagesTest">
+				<methods>
+					<include name="getAllContactStages_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllContactStages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Deal stages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetDealStagesTest">
+				<methods>
+					<include name="getAllDealStages_Test" />
+					<include name="unauthorizedUserCannotGetAllDealStages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Job stages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetJobStagesTest">
+				<methods>
+					<include name="getAllJobStages_Test" />
+					<include name="unauthorizedUserCannotGetAllJobStages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Candidate stages of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCandidateStagesTest">
+				<methods>
+					<include name="getAllCandidateStages_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllCandidateStages_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Candidate Questions of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCandidateQuestionsTest">
+				<methods>
+					<include name="getAllCandidateQuestions_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllCandidateQuestions_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get All Collaborators of account ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCollaboratorsTest">
+				<methods>
+					<include name="getAllCollaborators_Test" />
+					<include
+						name="unauthorizedUserShouldNotAccessCollaborators_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All custom hiring pipelines">
+		<classes>
+			<class name="io.rcrm.api.list.GetMultipleHiringPipelineListTest">
+				<methods>
+					<include name="getAllMultipleHiringPipeline_Test" />
+					<include
+						name="unauthorizedUserCannotGetAllMultipleHiringPipeline_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Assign Candidate to Job - POST">
+		<classes>
+			<class name="io.rcrm.api.candidate.AssignCandidateToJobTest">
+				<methods>
+
+					<include
+						name="authorizedUserCanAssignCandidateToJobWithValidData" />
+					<include
+						name="authorizedUserCannotReAssignCandidateToJobSameJob" />
+
+					<include
+						name="authorizedUserCannotAssignCandidateToInvalidJob" />
+					<include
+						name="authorizedUserCannotAssignInvalidCandidateToValidJob" />
+					<include
+						name="authorizedUserCannotAssignInvalidCandidateToInvalidJob" />
+					<include
+						name="authorizedUserCannotAssignCandidateToJobWithEmptyQueryParameter" />
+					<include
+						name="authorizedUserCannotAssignCandidateToJobWithEmptyPathParameter" />
+					<include name="verifyAssignCandidateToJobOwnerAsAdmin" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Candidate From Ziprecruiter Test">
+		<classes>
+			<class
+				name="io.rcrm.api.externalJobBoards.zipRecruiter.AddCandidateFromZipRecruiterTest">
+				<methods>
+					<include name="addCandidateFromZipRecruiterWithValidJobId" />
+					<include name="addCandidateFromZipRecruiterWithInValidJobId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of upload file public API">
+		<classes>
+			<class name="io.rcrm.api.files.UploadFilesTest">
+				<methods>
+					<include name="addFileInFileSection" />
+					<include name="addFileToFolderInFileSection" />
+					<include name="addFileToFolderJsonContent" />
+					<include name="addMultipleFiles" />
+					<include name="verifyLimitToAddMultipleFiles" />
+					<include name="getFilesInFileSection" />
+					<include name="getFilesWithInvalidAuth" />
+					<include name="getFilesWithInvalidSlug" />
+					<include name="getFilesWithInvalidEntity" />
+					<include name="addFileInFileSectionInvalidAuth" />
+					<include name="addFileInFileSectionWithEmptyFields" />
+					<include name="addFileInFileSectionWithInvalidFields" />
+					<include name="addFileWithLargeSize" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Note Summary-4">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateNoteSummaryTest">
+				<methods>
+					<include name="generateNoteSummary_Test" />
+					<include name="generateNoteSummaryWithInvalidKey_Test" />
+					<include name="generateNoteSummaryWithNullValues_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateNoteSummary_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Call Log Summary-4">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateCallLogSummaryTest">
+				<methods>
+					<include name="generateCallLogSummary_Test" />
+					<include name="generateCallLogSummaryWithInvalidKey_Test" />
+					<include name="generateCallLogSummaryWithNullValues_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateCallLogSummary_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate User Prompt-4">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateUserPromptTest">
+				<methods>
+					<include name="generateUserPromptForNoteSummary_Test" />
+					<include name="generateUserPromptForCallLogSummary_Test" />
+					<include name="generateUserPromptWillNullPrompt_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateUserPrompt_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Job Description Test - 6">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateJobDescriptionTest">
+				<methods>
+					<include
+						name="generateJobDescriptionWithMandatoryFields_Test" />
+					<include
+						name="generateJobDescriptionWithOptionalFields_Test" />
+					<include name="generateJobDescriptionWithInvalidKey_Test" />
+					<include name="generateJobDescriptionWithNullValues_Test" />
+					<include
+						name="generateJobDescriptionWithPartialNullValues_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateJobDescription_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Candidate Summary Test - 6">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateCandidateSummaryTest">
+				<methods>
+					<include
+						name="generateCandidateSummaryWithMandatoryFields_Test" />
+					<include
+						name="generateCandidateSummaryWithOptionalFields_Test" />
+					<include name="generateCandidateSummaryWithInvalidKey_Test" />
+					<include name="generateCandidateSummaryWithNullValues_Test" />
+					<include
+						name="generateCandidateSummaryWithPartialNullValues_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateCandidateSummary_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Email Template Test - 6">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateEmailTemplateTest">
+				<methods>
+					<include
+						name="generateEmailTemplateWithMandatoryFields_Test" />
+					<include
+						name="generateEmailTemplateWithOptionalFields_Test" />
+					<include name="generateEmailTemplateWithInvalidKey_Test" />
+					<include name="generateEmailTemplateWithNullValues_Test" />
+					<include name="generateEmailTemplateWithNullFields_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateEmailTemplate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Neptune Service - Generate Call Transcript - 3">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.neptune.GenerateCallTranscriptTest">
+				<methods>
+					<include name="generateCallTranscriptWithInvalidId_Test" />
+					<include name="generateCallTranscriptWithNullId_Test" />
+					<include
+						name="unauthorizedUserCannotGenerateCallTranscript_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Public Api Restriction On Free And Pro Plan Accounts">
+		<classes>
+			<class name="io.rcrm.api.adminsetting.apiandintegration.ApiAndIntegrationTest">
+				<methods>
+					<include name="verifyPublicApiRestrictionOnFreeAndProAccounts" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Candidate Ques and Ans- Get And Post1">
+		<classes>
+			<class name="io.rcrm.api.candidate.candQuesAnsTest">
+				<methods>
+					<include name="postCandQuesAndAnswersAssociatedWithJobWithValidResponse200"/>
+					<include name="getCandQuesAndAnswersWithValidResponse200" />
+					<include name="getCandQuesAndAnswersWithInValidResponse404"/>
+					<include name="postCandQuesAndAnswersWithValidResponse200"/>
+					<include name="postCandQuesAndAnswersWithInValidResponse404"/>
+					<include name="getCandQuesAndAnswersAssociatedWithJobWithValidResponse200"/>
+					<include name="getCandQuesAndAnswersAssociatedWithJobWithInValidResponse404"/>
+					<include name="postCandQuesAndAnswersAssociatedWithJobWithValidResponse404"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Company Custom Industry Public API endpoints">
+        <classes>
+            <class name="io.rcrm.api.company.CompanyCustomIndustryTest">
+                <methods>
+                    <include name="createNewCustomIndustry_POST"/>
+                    <include name="editNewCustomIndustry_POST"/>
+                    <include name="getAllCustomIndustries_GET"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="Job Associated Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.job.CustomFieldsAndJobAssociatedFieldsTest">
+				<methods>
+					<include name="getJobAssociatedFieldsWithValidResponse200"/>
+					<include name="getJobAssociatedFieldsWithInvalidResponse404"/>
+					<include name="getCustomFieldsWithValidResponse200"/>
+					<include name="getCustomFieldsWithInvalidResponse404"/>
+					<include name="getJobCustomFieldsWithValidResponse200"/>
+					<include name="getJobCustomFieldsWithInvalidResponse404"/>
+					<include name="updateJobAssociatedFieldsWithValidResponse200"/>
+					<include name="updateJobAssociatedFieldsWithInvalidResponse404"/>
+					<include name="getJobAssociatedFieldsWithInvalidAuthToken"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Off Limit Apis Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.AllEndpointsOfOffLimitTest">
+				<methods>
+					<include name="getOffLimitStatus" />
+					<include name="markCandidateAsOffLimit" />
+					<include name="markCompanyAsOffLimit" />
+					<include name="markContactAsOffLimit" />
+					<include name="getCandidatesOffLimit" />
+					<include name="getContactsOffLimit" />
+					<include name="getCompaniesOffLimit" />
+					<include name="markAsAvailableContact" />
+					<include name="markAsAvailableCompany" />
+					<include name="markAsAvailableCandidate" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Off Limit Status Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitStatusTest">
+				<methods>
+					<include name="getOffLimitStatusWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark Candidate As Off Limit Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkCandidateAsOffLimitTest">
+				<methods>
+					<include name="markCandidateAsOffLimitWithInvalidData" />
+					<include name="markCandidateAsOffLimitWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Mark Contact As Off Limit Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkContactAsOffLimitTest">
+				<methods>
+					<include name="markContactAsOffLimitWithInvalidData" />
+					<include name="markContactAsOffLimitWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test name="Mark Company As Off Limit Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkCompanyAsOffLimitTest">
+				<methods>
+					<include name="markCompanyAsOffLimitWithInvalidData" />
+					<include name="markCompanyAsOffLimitWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Off Limit Candidates Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitCandidatesTest">
+				<methods>
+					<include name="getOffLimitCandidatesWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Off Limit Contacts Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitContactsTest">
+				<methods>
+					<include name="getOffLimitContactsWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get All Off Limit Companies Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitCompaniesTest">
+				<methods>
+					<include name="getOffLimitCompaniesWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark As Available Candidate Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkCandidateAsAvailableTest">
+				<methods>
+					<include name="markAsAvailableCandidateWithInvalidSlug" />
+					<include name="markAsAvailableCandidateWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark As Available Contact Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkContactAsAvailableTest">
+				<methods>
+					<include name="markAsAvailableContactWithInvalidSlug" />
+					<include name="markAsAvailableContactWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Mark As Available Company Test">
+		<classes>
+			<class name="io.rcrm.api.offlimit.MarkCompanyAsAvailableTest">
+				<methods>
+					<include name="markAsAvailableCompanyWithInvalidSlug" />
+					<include name="markAsAvailableCompanyWithInvalidToken" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Team Performance Report Sequence KPIs">
+		<classes>
+			<class name="io.recruitcrm.report.TeamPerformanceReportSeqKPI_Test">
+				<methods>
+					<include name="getSequenceReport" />
+					<include name="getTeamPerformanceReport_SeqKPI"/>
+					<include name="getSequenceReportWithoutRequiredFields"/>
+					<include name="getSequenceReportWithInvalidFields"/>
+					<include name="verifyExportCSVForSequenceKPIs"/>
+					<include name="verifyExportCSVForSequenceKPIsWithoutRequiredFields"/>
+					<include name="verifyExportCSVForSequenceKPIsWithInvalidFields"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dashboard test case 1 ">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="getRecruiterAssigned_Test" />
+					<include name="getCandidatePipelineByOwner_Test" />
+					<include name="getCandidatePipelineByCompany_Test" />
+					<include name="getTotalDealStats_Test" />
+					<include name="getTotalDealStatsWithEmptyRequestBody_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Dashboard test case 2 ">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="getTotalJobStats_Test" />
+					<include name="getTotalCandidateStats_Test" />
+					<include name="getExportCompanyData_Test" />
+					<include name="exportRecruiterAsignedData_Test" />
+					<include name="exportOwnerData_Test" />
+					<include name="unautorizedUserCannotGetDashboardWidget_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Dashboard Candidate Statistics Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="verifyTotalCandidateStatistics_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dashboard Job Statistics Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="verifyTotalJobStatistics_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dashboard Deal Statistics Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="verifyTotalDealStatistics_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dashboard Candidate Pipeline By Company Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="verifyCandidatePipelineByCompany_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dashboard Candidate Pipeline Single Owner Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="verifyCandidatePipelineByCompanyWithSingleOwner_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dashboard Job Status Filter Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="verifyJobStatusFilterOnCandidatePipelineByCompanyForTeam_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dashboard Search Text Filter Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="verifySearchTextFilterOnCandidatePipelineByCompany_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Dashboard Team Member Ownership Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.dashboard.AllEndPointsOfDashboardTest">
+				<methods>
+					<include name="verifyDashboardShowsCompaniesRelatedToSpecificTeamMember_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="get Deactivate user collabotators test case ">
+		<classes>
+			<class name="io.rcrm.api.list.GetCollaboratorsTest">
+				<methods>
+					<include name="verifyGetDeactivateUserInAllCollaborators_Test" />
+					<include name="verifyGetDeactivateUser_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get deactivate user in team test case">
+		<classes>
+			<class name="io.recruitcrm.report.GetTeamMode_Test">
+				<methods>
+					<include name="verifyDeactivatedUserIDsGetTeamMode_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="CSV File Operations">
+		<classes>
+			<class name="io.recruitcrm.albatross.prePopulatedFields.CSVFileOperationsTest">
+				<methods>
+					<include name="getImportTemplate"/>
+					<include name="unauthorizedAccessToImportTemplate"/>
+					<include name="createNewImportTemplate_POST"/>
+					<include name="createInvalidImportTemplate_POST"/>
+					<include name="createInvalidAuthTokenTemplate_POST"/>
+					<include name="editNewImportTemplateSpecific_POST"/>
+					<include name="editInvalidImportTemplateSpecific_POST"/>
+					<include name="editInvalidAuthTokenTemplateSpecific_POST"/>
+					<include name="deleteImportTemplateSpecific_DELETE"/>
+					<include name="deleteNonExistingImportTemplateSpecific_DELETE"/>
+					<include name="deleteImportTemplateInvalidAuthToken_DELETE"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Mandatory Fields On Extension - 3">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.customFields.GetRequiredFieldsOnExtensionTest">
+				<methods>
+					<include name="postGetRequiredFieldsOnExtension_200" />
+					<include name="postGetRequiredFieldsOnExtensionWithInvallidEndpoint_404" />
+					<include name="postUnauthorizedUserCannotGetRequiredFieldsOnExtension_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update Mandatory Fields On Extension - 7">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.customFields.UpdateRequiredFieldsOnExtensionTest">
+				<methods>
+					<include name="postUpdateRequiredFieldsOnExtension_200" />
+					<include name="postUpdateRequiredFieldsOnExtensionWithInvalidEntityId_422" />
+					<include name="postUpdateRequiredFieldsOnExtensionWithInvalidKey_422" />
+					<include name="postUpdateRequiredFieldsOnExtensionWithNullEntityId_422" />
+					<include name="postUpdateRequiredFieldsOnExtensionWithNullKey_422" />
+					<include name="postUpdateRequiredFieldsOnExtensionWithNullValue_422" />
+					<include name="postUpdateRequiredFieldsOnExtensionWithUnauthorizedUser_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Upload Call Log Recording Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="uploadCallLogRecording" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Upload Call Log Recording 422 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="uploadCallLogRecording_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Upload Call Log Recording 401 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="uploadCallLogRecording_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Call Recording Upload Status Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchCallRecordingUploadStatus" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Status For Call Recording Not Uploaded Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchStatusForCallRecordingNotUploaded" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Status For Call Recording 404 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchStatusForCallRecording_404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Status For Call Recording 401 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchStatusForCallRecording_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Users Test - List of Users">
+		<classes>
+			<class name="io.rcrm.api.users.GetUsersTest">
+				<methods>
+					<include name="getAllUsers_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Users Test - Search Parameter">
+		<classes>
+			<class name="io.rcrm.api.users.GetUsersTest">
+				<methods>
+					<include name="getAllUsersWithTeamParemeter_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Users Test - Unauthorized Access">
+		<classes>
+			<class name="io.rcrm.api.users.GetUsersTest">
+				<methods>
+					<include name="unauthorizedUserCannotGetAllUsers_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Users Test - With Id">
+		<classes>
+			<class name="io.rcrm.api.users.SearchUsersTest">
+				<methods>
+					<include name="searchUsersWithId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Users Test - Search Parameters">
+		<classes>
+			<class name="io.rcrm.api.users.SearchUsersTest">
+				<methods>
+					<include name="searchUsersWithOtherParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Users Test - Unauthorized Access">
+		<classes>
+			<class name="io.rcrm.api.users.SearchUsersTest">
+				<methods>
+					<include name="unauthorizedUserCannotSearchUsers_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Deal by all associated fields">
+		<classes>
+			<class name="io.rcrm.api.deals.SearchDealByFieldsTest">
+				<methods>
+					<include name="searchDealByAssociatedEntities_GET" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search candidate by owner fields - GET">
+		<classes>
+			<class name="io.rcrm.api.candidate.SearchCandidateTest">
+				<methods>
+					<include name="searchCandidateByOwnerParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search company by owner fields - GET">
+		<classes>
+			<class name="io.rcrm.api.company.SearchCompanyByFieldsTest">
+				<methods>
+					<include name="searchCompanyByOwnerParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search contact by owner fields - GET">
+		<classes>
+			<class name="io.rcrm.api.contact.SearchByContactFieldsTest">
+				<methods>
+					<include name="searchContactByOwnerParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search job by owner fields - GET">
+		<classes>
+			<class name="io.rcrm.api.job.SearchJobsByFieldsTest">
+				<methods>
+					<include name="searchJobByOwnerParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search deal by owner fields - GET">
+		<classes>
+			<class name="io.rcrm.api.deals.SearchDealByFieldsTest">
+				<methods>
+					<include name="searchDealByOwnerParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search meeting by owner fields - GET">
+		<classes>
+			<class name="io.rcrm.api.meeting.SearchMeetingByFieldsTest">
+				<methods>
+					<include name="searchMeetingByOwnerParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search task by owner fields - GET">
+		<classes>
+			<class name="io.rcrm.api.tasks.SearchTaskByFieldsTest">
+				<methods>
+					<include name="searchTaskByOwnerParameters_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Get Entity Nested Custom Fields ATS - Positive Cases">
+		<classes>
+			<class name="io.rcrm.api.company.NestedCustomFieldsTest">
+				<methods>
+					<include name="getCandidateNestedCustomFields_Test" />
+					<include name="getJobNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Get Entity Nested Custom Fields CRM - Positive Cases">
+		<classes>
+			<class name="io.rcrm.api.company.NestedCustomFieldsTest">
+				<methods>
+					<include name="getCompanyNestedCustomFields_Test" />
+					<include name="getContactNestedCustomFields_Test" />
+					<include name="getDealNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Get All Nested Custom Fields - Positive Cases">
+		<classes>
+			<class name="io.rcrm.api.company.NestedCustomFieldsTest">
+				<methods>
+					<include name="getAllNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Nested Custom Fields Test - Get Nested Dependency - Negative Cases">
+		<classes>
+			<class name="io.rcrm.api.company.NestedCustomFieldsTest">
+				<methods>
+					<include name="getEmptyStateNestedCustomFields_Test" />
+					<include name="unauthorizedUserCannotGetNestedCustomFields_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Target Report API Test - 200">
+		<classes>
+			<class name="io.rcrm.api.targetReports.GetTargetReportsTest">
+				<methods>
+					<include name="getTargetReport_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Target Report API with Empty Data Test - 200">
+		<classes>
+			<class name="io.rcrm.api.targetReports.GetTargetReportsTest">
+				<methods>
+					<include name="getTargetReportWithEmptyData_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Target Report API with Invalid Request Type Test - 405">
+		<classes>
+			<class name="io.rcrm.api.targetReports.GetTargetReportsTest">
+				<methods>
+					<include name="getTargetReportWithInvalidRequestType_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get Target Report API with Unauthorized Access Test - 401">
+		<classes>
+			<class name="io.rcrm.api.targetReports.GetTargetReportsTest">
+				<methods>
+					<include name="getTargetReportWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Company History - Empty Record Check">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include name="getEmptyOffLimitHistoryOfCompany_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Company History - Valid History Fetch">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfCompany_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Company History - Re-Available Company">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfAvailableCompany_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Company History - Invalid Slug">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include
+						name="getOffLimitHistoryOfCompanyWithInvalidSlug_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Company History - Unauthorized Access">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForCompany_Test">
+				<methods>
+					<include
+						name="getOffLimitHistoryOfCompanyWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Candidate History - Empty Record Check">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include name="getEmptyOffLimitHistoryOfCandidate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Candidate History - Valid History Fetch">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfCandidate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Candidate History - Re-Available Candidate">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfAvailableCandidate_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Candidate History - Invalid Slug">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include
+						name="getOffLimitHistoryOfCandidateWithInvalidSlug_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Candidate History - Unauthorized Access">
+		<classes>
+			<class
+				name="io.rcrm.api.offlimit.GetOffLimitHistoryForCandidate_Test">
+				<methods>
+					<include
+						name="getOffLimitHistoryOfCandidateWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Contact History - Empty Record Check">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getEmptyOffLimitHistoryOfContact_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Contact History - Valid History Fetch">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfContact_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Contact History - Re-Available Contact">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfAvailableContact_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Contact History - Invalid Slug">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfContactWithInvalidSlug_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Off Limit Contact History - Unauthorized Access">
+		<classes>
+			<class name="io.rcrm.api.offlimit.GetOffLimitHistoryForContact_Test">
+				<methods>
+					<include name="getOffLimitHistoryOfContactWithUnauthorizedAccess_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Placements Public API - Create Placement With Valid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.CreatePlacementAPI_Test">
+                <methods>
+                    <include name="createPlacementWithValidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Public API - Create Placement With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.CreatePlacementAPI_Test">
+                <methods>
+                    <include name="createPlacementWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Placements Public API - Create Placement With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.CreatePlacementAPI_Test">
+                <methods>
+                    <include name="createPlacementWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Sorting Parameters">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithSortingParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Limit Parameters">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithLimitParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Invalid Page Number">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithInvalidPageNumber_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Missing Sort Params">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithMissingSortParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Invalid Sort Params">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithInvalidSortParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get All Placements Public API - Get All Placements With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetAllPlacementsAPI_Test">
+                <methods>
+                    <include name="getAllPlacementsWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Valid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithValidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Deleted Custom Fields">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithDeletedCustomFields_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Empty Data">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithEmptyData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements Custom Fields Public API - Get Placements Custom Fields With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsCustomFieldsAPI_Test">
+                <methods>
+                    <include name="getPlacementsCustomFieldsWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Placement By Id With Valid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deletePlacementByIdWithValidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Already Deleted Placement">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deleteAlreadyDeletedPlacement_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Placement By Id With Invalid Id">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deletePlacementByIdWithInvalidId_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Placement By Id With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deletePlacementByIdWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Delete Placements Public API - Delete Placement By Id With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.DeletePlacementByIdAPI_Test">
+                <methods>
+                    <include name="deletePlacementByIdWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Standard Fields">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithStandardFields_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Custom Fields">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithCustomFields_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Invalid Contact Slug">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithInvalidContactSlug_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Same Values">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementWithSameValues_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement By Id With Null Values">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementWithNullValues_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement With Invalid Id">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithInvalidId_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Edit Placements Public API - Edit Placement With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.EditPlacementByIdAPI_Test">
+                <methods>
+                    <include name="editPlacementByIdWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements By Id Public API - Get Placements By Id With Valid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsByIdAPI_Test">
+                <methods>
+                    <include name="getPlacementsByIdWithValidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements By Id Public API - Get Placements By Id With Invalid Id">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsByIdAPI_Test">
+                <methods>
+                    <include name="getPlacementsByIdWithInvalidId_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements By Id Public API - Get Placements By Id With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsByIdAPI_Test">
+                <methods>
+                    <include name="getPlacementsByIdWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Placements By Id Public API - Get Placements By Id With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.GetPlacementsByIdAPI_Test">
+                <methods>
+                    <include name="getPlacementsByIdWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Candidate Data">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByCandidateData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Company Slug And Name">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByCompanyData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Job Slug And Name">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByJobData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Contact Slug And Name">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByContactData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Deal Slug And Name">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByDealData_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Id">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementById_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Created From And To">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByCreatedFromAndTo_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Invalid Created From And To">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementByInvalidCreatedFromAndTo_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Sort Order">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithSortOrder_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Exact Search">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithExactSearch_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Multiple Entity Slugs">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithMultipleEntitySlugs_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Valid Placement Id And Invalid Slug Params">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithValidPlacementIdAndInvalidSlugParams_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Invalid Search Param">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithInvalidSearchParam_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement By Invalid Email">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithInvalidEmail_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Invalid Token">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithInvalidToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Search Placement Public API - Search Placement With Cross Account Token">
+        <classes>
+            <class name="io.rcrm.api.placement.SearchPlacementAPI_Test">
+                <methods>
+                    <include name="searchPlacementWithCrossAccountToken_PublicAPI" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+	<test name="Invoice Public API - Get Invoice Status With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceStatusAPI_Test">
+				<methods>
+					<include name="getInvoiceStatusWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Status With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceStatusAPI_Test">
+				<methods>
+					<include name="getInvoiceStatusWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Status With Invalid Request Type">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceStatusAPI_Test">
+				<methods>
+					<include name="getInvoiceStatusWithInvalidRequestType_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Status With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceStatusAPI_Test">
+				<methods>
+					<include name="getInvoiceStatusWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Get Invoice Custom Fields With Valid Token">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Fields With Deleted Custom Fields">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithDeletedCustomFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Fields With Empty Data">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithEmptyData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Fields With Invalid Token">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Fields With Cross Account Token">
+		<classes>
+			<class
+				name="io.rcrm.api.invoice.GetInvoiceCustomFieldsAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomFieldsWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Get Invoice Standard Templates With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceStandardTemplatesWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Custom Templates With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceCustomTemplatesWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Templates With Invalid Request Type">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceTemplatesWithInvalidRequestType_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Templates With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceTemplatesWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice Templates With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceTemplatesAPI_Test">
+				<methods>
+					<include name="getInvoiceTemplatesWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Get Invoice By Id With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceByIdAPI_Test">
+				<methods>
+					<include name="getInvoiceByIdWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice By Id With Invalid Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceByIdAPI_Test">
+				<methods>
+					<include name="getInvoiceByIdWithInvalidId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice By Id With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceByIdAPI_Test">
+				<methods>
+					<include name="getInvoiceByIdWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get Invoice By Id With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetInvoiceByIdAPI_Test">
+				<methods>
+					<include name="getInvoiceByIdWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Delete Invoice By Id With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteInvoiceByIdWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Delete Already Deleted Invoice">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteAlreadyDeletedInvoice_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Delete Invoice By Id With Invalid Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteInvoiceByIdWithInvalidId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Delete Invoice By Id With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteInvoiceByIdWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Delete Invoice By Id With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.DeleteInvoiceByIdAPI_Test">
+				<methods>
+					<include name="deleteInvoiceByIdWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Get All Invoices With Created On And Updated On Sorting Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithCreatedOnAndUpdatedOnSortingParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Issue Date And Due Date Sorting Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithIssueDateAndDueDateSortingParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Invalid Page Number">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithInvalidPageNumber_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Limit Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithLimitParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Missing Sort Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithMissingSortParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Invalid Sort Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithInvalidSortParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Get All Invoices With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.GetAllInvoicesAPI_Test">
+				<methods>
+					<include name="getAllInvoicesWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Search Invoice By Invoice Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByInvoiceId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Associated Slugs">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByAssociatedSlugs_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Owner Created By">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByOwnerCreatedBy_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Admin Created By">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByAdminCreatedBy_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Valid Issue Date Range">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByValidIssueDateRange_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Invalid Issue Date Range">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByInvalidIssueDateRange_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Valid Due Date Range">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByValidDueDateRange_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Invalid Due Date Range">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByInvalidDueDateRange_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Status Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByStatusId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice By Invalid Status Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceByInvalidStatusId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Limit And Page Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithLimitAndPageParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Sort Order Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithSortOrderParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Multiple Associated Slugs Params">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithMultipleAssociatedSlugsParams_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Invalid Search Param">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithInvalidSearchParam_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Search Invoice With Cross Account Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.SearchInvoiceAPI_Test">
+				<methods>
+					<include name="searchInvoiceWithCrossAccountToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invoice Public API - Create Invoice With Standard Template">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithStandardTemplate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Standard Entity Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithStandardEntityFieldsData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Custom Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCustomFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Entity Type Custom Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithEntityTypeCustomFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With All Standard Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithAllStandardFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With All Associations Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithAllAssociationsFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Empty Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithEmptyData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Random Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithRandomData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Invalid Invoice Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithWithInvalidInvoiceFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Invalid Amount Type">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithWithInvalidAmountType_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Invalid Due Date">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithInvalidDueDate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With More Than 500 Characters Description">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithDescriptionMoreThan500Characters_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Cross Account Template">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountTemplate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Create Invoice With Cross Account Company">
+		<classes>
+			<class name="io.rcrm.api.invoice.CreateInvoiceAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountCompany_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+    
+	<test name="Invoice Public API - Edit Invoice With Valid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithValidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Standard Entity Fields Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceWithStandardEntityFieldsData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Associations Fields Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceWithAssociationsFieldsData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice Without Changes">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithoutChanges_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice By Invalid Id">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidId_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Invalid Invoice Fields">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidInvoiceFields_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Invalid Amount Value">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidAmountValue_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Invalid Due Date">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidDueDate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Description More Than 500 Characters">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithDescriptionMoreThan500Characters_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Empty Data">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithEmptyData_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Invalid Token">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="editInvoiceByIdWithInvalidToken_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Cross Account Invoice">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountInvoice_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Cross Account Company">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountCompany_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Invoice Public API - Edit Invoice With Cross Account Template">
+		<classes>
+			<class name="io.rcrm.api.invoice.EditInvoiceByIdAPI_Test">
+				<methods>
+					<include name="createInvoiceWithCrossAccountTemplate_PublicAPI" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

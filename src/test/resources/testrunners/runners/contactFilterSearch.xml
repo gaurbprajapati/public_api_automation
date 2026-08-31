@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest API Test Suite" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    <test name="Number Type Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.NumberFieldContactFilterSearchTest">
+                <methods>
+                    <include name="numberFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Date Type Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.DateFieldContactFilterSearchTest">
+                <methods>
+                    <include name="dateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Text Type Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.TextFieldContactFilterSearchTest">
+                <methods>
+                    <include name="textFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hotlist Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.HotlistFieldContactFilterSearchTest">
+                <methods>
+                    <include name="hotlistFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Off Limit Status Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.OffLimitStatusFieldContactFilterSearchTest">
+                <methods>
+                    <include name="offLimitStatusFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Entity Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="entityCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Text Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="textCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Number Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="numberCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Date Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="dateCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Dropdown and Multiselect Custom Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CustomFieldContactFilterSearchTest">
+                <methods>
+                    <include name="dropdownAndMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Owner Dropdown Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.DropdownFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="ownerDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CreatedBy Dropdown Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.DropdownFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="createdByDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpdatedBy Dropdown Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.DropdownFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="updatedByDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Stage Dropdown Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.DropdownFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="stageDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LastCommsType Dropdown Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.DropdownFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="lastCommsTypeDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Notes Activity Filters -->
+    <test name="Notes Date Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.NotesActivityFieldContactFilterSearchTest">
+                <methods>
+                    <include name="notesDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Notes Multiselect Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.NotesActivityFieldContactFilterSearchTest">
+                <methods>
+                    <include name="notesMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Call Log Activity Filters -->
+    <test name="Call Log Date Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CallLogActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="callLogDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Call Log Multiselect Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CallLogActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="callLogMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Meeting Activity Filters -->
+    <test name="Meeting Date Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.MeetingActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="meetingsDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Meeting Multiselect Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.MeetingActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="meetingsMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Meeting Text Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.MeetingActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="meetingsTextFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Task Activity Filters -->
+    <test name="Task Date Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.TaskActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="tasksDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Task Multiselect Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.TaskActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="tasksMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Task Text Field Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.TaskActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="tasksTextFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Notes Note Exists (checkbox) Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.NotesActivityFieldContactFilterSearchTest">
+                <methods>
+                    <include name="notesNoteExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="Task Exists (checkbox) Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.TaskActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="tasksTaskExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Meeting Exists (checkbox) Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.MeetingActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="meetingsMeetingExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Call Log Exists (checkbox) Contact Filter Search">
+        <classes>
+            <class name="io.recruitcrm.ContactService.Filters.CallLogActivityFieldsContactFilterSearchTest">
+                <methods>
+                    <include name="callLogCallExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

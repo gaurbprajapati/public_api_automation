@@ -1,0 +1,55 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ master,albatross-api-automate ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+
+    - name: Cache Maven packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+
+    - name: Run E2E Tests
+      run: mvn test -P albatross -Denv=https://testapi.recruitcrm.io/v1/ -Dapikey=m0NoSATmljLFiwkCiMK2ENQ_UAO0wQ5IgwVrP0Xw8YgLA0xNntS-fpa9Jg-E8Vu_8VixsnjX5YdeJ4QRPZhRIl8xNjQxNDY4NDg1 -Demailid=test03012022@yopmail.com -Dpassword=123456 -Denvname=test
+
+
+    - name: "Import results to Xray"
+      uses: mikepenz/xray-action@v1.1.1
+      with:
+       username: ${{ secrets.JIRA_USERNAME }}
+       password: ${{ secrets.JIRA_PASSWORD }}
+       xrayCloud: "false"
+       xrayBaseUrl: "https://rcrm.atlassian.net/"
+       testFormat: "junit"
+       testPaths: "**/target/surefire-reports/TEST-TestSuite.xml" 
+       testExecKey: "TEST-3084"
+       projectKey: "TEST"
+
+    - name: Submit results to Xray
+      env:
+        JIRA_SERVER_URL: "https://rcrm.atlassian.net/"
+        JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+        JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
+
+      run: 'curl -H "Content-Type: multipart/form-data" -u $JIRA_USERNAME:$JIRA_PASSWORD -F "file=@target/surefire-reports/TEST-TestSuite.xml" "https://rcrm.atlassian.net/rest/raven/1.0/import/execution/junit?projectKey=TEST"'
+

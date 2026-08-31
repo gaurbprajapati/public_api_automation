@@ -1,0 +1,480 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": ["Candidates Details fetched successfully"]
+        },
+        "requestUuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "responseType": {
+          "type": "object",
+          "required": ["context", "code"],
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": ["Request is successful"]
+            },
+            "code": {
+              "type": "integer",
+              "enum": [103]
+            }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [200]
+        }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "object",
+      "required": ["next", "previous", "candidates"],
+      "properties": {
+        "next": {
+          "type": "string"
+        },
+        "previous": {
+          "type": "string"
+        },
+        "candidates": {
+          "type": "object",
+          "required": ["id", "srno", "firstname", "lastname", "candidatename", "emailid", "candidatedob", "age", "genderid", "contactnumber", "qualificationid", "workexpyr", "workexpmonth", "sourceid", "summary", "currentsalary", "gender", "willingtorelocate", "salaryexpectation", "noticeperiod", "address", "lat", "lng", "city", "locality", "currencyid", "currencycountry", "symbol", "accountid", "ownerid", "ownername", "ownerslug", "slug", "relevantexperience", "deleted", "createdby", "createdbyname", "createdon", "updatedby", "updatedbyname", "updatedon", "resumeupdatedon", "resumeupdaterequestedon", "requestresumelinkstatus", "resumeaddedon", "qualification", "availablefrom", "salarytype", "sms_consent", "sms_opt_out", "unavailable", "availability_updated_by", "accountlogo", "accounttitle", "candidateterms", "jobapplicationsettings", "eeocompliance", "gdprcompliance", "relatedcontactname", "contactid", "email_opt_out", "last_calllog_created_on", "last_calllog_created_by", "last_sms_sent_on", "last_sms_sent_by", "last_email_sent_on", "last_email_sent_by", "last_communication_timestamp", "last_meeting_created_on", "last_meeting_created_by", "last_message_sent_on", "last_message_sent_by", "candidate_company_id", "candidate_owner_status", "candidate_updator_status", "candidate_creator_status"],
+          "properties": {
+            "id": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "srno": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "firstname": {
+              "type": "string",
+              "minLength": 1
+            },
+            "lastname": {
+              "type": "string",
+              "minLength": 1
+            },
+            "candidatename": {
+              "type": "string",
+              "minLength": 1
+            },
+            "emailid": {
+              "type": "string",
+              "format": "email"
+            },
+            "candidatedob": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "age": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "genderid": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "contactnumber": {
+              "type": "string"
+            },
+            "qualificationid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "specialization": {
+              "type": ["string", "null"]
+            },
+            "workexpyr": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "workexpmonth": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sourceid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "summary": {
+              "type": "string"
+            },
+            "currentsalary": {
+              "type": "number",
+              "minimum": 0
+            },
+            "resume": {
+              "type": ["string", "null"]
+            },
+            "resumefilename": {
+              "type": ["string", "null"]
+            },
+            "lastorganisation": {
+              "type": ["string", "null"]
+            },
+            "gender": {
+              "type": "string",
+              "minLength": 1
+            },
+            "skill": {
+              "type": ["string", "null"]
+            },
+            "willingtorelocate": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "salaryexpectation": {
+              "type": "number",
+              "minimum": 0
+            },
+            "currentstatus": {
+              "type": ["string", "null"]
+            },
+            "noticeperiod": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "address": {
+              "type": "string"
+            },
+            "lat": {
+              "type": "number"
+            },
+            "lng": {
+              "type": "number"
+            },
+            "city": {
+              "type": "string"
+            },
+            "locality": {
+              "type": "string"
+            },
+            "state": {
+              "type": ["string", "null"]
+            },
+            "country": {
+              "type": ["string", "null"]
+            },
+            "currencyid": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "currencycountry": {
+              "type": "string",
+              "minLength": 1
+            },
+            "symbol": {
+              "type": "string",
+              "minLength": 1
+            },
+            "accountid": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "ownerid": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "ownername": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ownerPhoto": {
+              "type": ["string", "null"]
+            },
+            "createdbyphoto": {
+              "type": ["string", "null"]
+            },
+            "updatedbyphoto": {
+              "type": ["string", "null"]
+            },
+            "ownerslug": {
+              "type": "string",
+              "minLength": 1
+            },
+            "slug": {
+              "type": "string",
+              "minLength": 1
+            },
+            "relevantexperience": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "position": {
+              "type": ["string", "null"]
+            },
+            "canaccess": {
+              "type": ["string", "null"]
+            },
+            "profilepic": {
+              "type": ["string", "null"]
+            },
+            "profilepicUrl": {
+              "type": ["string", "null"]
+            },
+            "encryptedProfilepic": {
+              "type": ["string", "null"]
+            },
+            "profilefacebook": {
+              "type": ["string", "null"]
+            },
+            "profiletwitter": {
+              "type": ["string", "null"]
+            },
+            "profilelinkedin": {
+              "type": ["string", "null"]
+            },
+            "profilegithub": {
+              "type": ["string", "null"]
+            },
+            "profilexing": {
+              "type": ["string", "null"]
+            },
+            "source": {
+              "type": ["string", "null"]
+            },
+            "sourceadded": {
+              "type": ["string", "null"]
+            },
+            "deleted": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "createdby": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "createdbyname": {
+              "type": "string",
+              "minLength": 1
+            },
+            "createdon": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "updatedby": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "updatedbyname": {
+              "type": "string",
+              "minLength": 1
+            },
+            "updatedon": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "authid": {
+              "type": ["string", "null"]
+            },
+            "resumeupdatedon": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "resumeupdaterequestedon": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "requestresumelinkstatus": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "resumeaddedon": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sovren_document_id": {
+              "type": ["string", "null"]
+            },
+            "qualification": {
+              "type": "string"
+            },
+            "availablefrom": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "salarytype": {
+              "type": "string"
+            },
+            "salarytypelable": {
+              "type": ["string", "null"]
+            },
+            "sms_consent": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "sms_opt_out": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "languageskills": {
+              "type": ["string", "null"]
+            },
+            "unavailable": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "availability_updated_by": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "accountlogo": {
+              "type": ["string", "null"]
+            },
+            "accounttitle": {
+              "type": "string",
+              "minLength": 1
+            },
+            "candidateterms": {
+              "type": "string"
+            },
+            "jobapplicationsettings": {
+              "type": "string"
+            },
+            "eeocompliance": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "gdprcompliance": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "relatedtocandidate": {
+              "type": ["string", "null"]
+            },
+            "relatedcontactname": {
+              "type": "string"
+            },
+            "contactslug": {
+              "type": ["string", "null"]
+            },
+            "contactemail": {
+              "type": ["string", "null"]
+            },
+            "contactid": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "contactphoto": {
+              "type": ["string", "null"]
+            },
+            "contactdesignation": {
+              "type": ["string", "null"]
+            },
+            "contactprofilefacebook": {
+              "type": ["string", "null"]
+            },
+            "contactprofiletwitter": {
+              "type": ["string", "null"]
+            },
+            "contactprofilelinkedin": {
+              "type": ["string", "null"]
+            },
+            "companyname": {
+              "type": ["string", "null"]
+            },
+            "companyslug": {
+              "type": ["string", "null"]
+            },
+            "email_opt_out": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "last_calllog_created_on": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_calllog_created_by": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_sms_sent_on": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_sms_sent_by": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_email_sent_on": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_email_sent_by": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_communication_method": {
+              "type": ["string", "null"]
+            },
+            "last_communication_timestamp": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_meeting_created_on": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_meeting_created_by": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_message_sent_on": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "last_message_sent_by": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "candidate_company_slug": {
+              "type": ["string", "null"]
+            },
+            "candidate_company_id": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "candidate_company_city": {
+              "type": ["string", "null"]
+            },
+            "candidate_company_logo": {
+              "type": ["string", "null"]
+            },
+            "candidate_owner_status": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "candidate_updator_status": {
+              "type": "integer",
+              "enum": [0, 1]
+            },
+            "candidate_creator_status": {
+              "type": "integer",
+              "enum": [0, 1]
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

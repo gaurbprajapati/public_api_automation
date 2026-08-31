@@ -1,0 +1,57 @@
+package io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.biweeklyCalculations;
+
+import com.qa.api.util.reaper.ThreadManager;
+import io.rcrm.api.commanfunctions.commanFunction;
+import io.rcrm.api.testbase.TestBase;
+import io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.MultipleTimeEntryBaseTest;
+import io.recruitcrm.contractStaffing.common.TimesheetTestDataLoader;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import java.util.*;
+
+import static io.recruitcrm.contractStaffing.common.TimesheetTestDataLoader.TestSuite.SHIFT_BIWEEKLY;
+import com.qa.api.util.Owner;
+
+/**
+ * Biweekly calculations test: runs full flow (template → entities → timesheet → multi-entry update → evaluate)
+ * driven by BiweeklyCalculationsTest.json test data.
+ * 
+ * Key differences from weekly:
+ * - Two weeks of data (Week1 and Week2)
+ * - Weekly OT calculated separately for each week
+ * - Total amounts sum across both weeks
+ * - Day off handling verified for both weeks
+ */
+@TestBase.AccountType("Business|AlbatrossTkn|contractStaffing")
+public final class BiweeklyCalculationsTest extends MultipleTimeEntryBaseTest {
+
+    private List<Integer> createdTemplateIds = new ArrayList<>();
+    String albatrossAuthToken;
+    String apiAuthToken;
+    commanFunction function;
+
+    @BeforeClass
+    public void Setup() {
+        albatrossAuthToken = ThreadManager.getOwnerAlbatrossToken();
+        apiAuthToken = ThreadManager.getAccountApiKey();
+        function = new commanFunction();
+    }
+
+    @Owner("Yash Rampal")
+    @Test(dataProvider = "biweeklyDataProvider")
+    public void verifyBiweeklyCalculations(Map<String, Object> scenario) {
+        executeMultipleTimeEntryTest(scenario, albatrossAuthToken, apiAuthToken, function, createdTemplateIds);
+    }
+
+    @DataProvider(name = "biweeklyDataProvider", parallel = true)
+    public Object[][] provideBiweeklyTestData() {
+        List<Map<String, Object>> scenarios = TimesheetTestDataLoader.loadScenarios(SHIFT_BIWEEKLY);
+        Object[][] data = new Object[scenarios.size()][1];
+        for (int i = 0; i < scenarios.size(); i++) {
+            data[i][0] = scenarios.get(i);
+        }
+        return data;
+    }
+}

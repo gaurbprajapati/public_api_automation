@@ -1,0 +1,174 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "meta": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "responseType": {
+                    "type": "object",
+                    "properties": {
+                        "code": {
+                            "type": "integer"
+                        },
+                        "context": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "code",
+                        "context"
+                    ]
+                },
+                "requestUuid": {
+                    "type": "string"
+                },
+                "timestamp": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "status",
+                "message",
+                "responseType",
+                "requestUuid",
+                "timestamp"
+            ]
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "templateName": {
+                    "type": "string"
+                },
+                "workLogType": {
+                    "type": "integer"
+                },
+                "calculateBreakTime": {
+                    "type": "integer"
+                },
+                "workDayIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "workTime": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "workStartTime": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "workEndTime": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "customRules": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "ruleName": {
+                                "type": "string"
+                            },
+                            "workDayId": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer"
+                                }
+                            },
+                            "ruleType": {
+                                "type": "integer"
+                            },
+                            "chargeMethod": {
+                                "type": "integer"
+                            },
+                            "startTime": {
+                                "type": "integer"
+                            },
+                            "endTime": {
+                                "type": "integer"
+                            },
+                            "startDuration": {
+                                "type": "integer"
+                            },
+                            "endDuration": {
+                                "type": "integer"
+                            },
+                            "dailyThreshold": {
+                                "type": "integer"
+                            },
+                            "weeklyThreshold": {
+                                "type": "integer"
+                            },
+                            "payRateMultiplier": {
+                                "type": "integer"
+                            },
+                            "billRateMultiplier": {
+                                "type": "integer"
+                            },
+                            "payRatePerHour": {
+                                "type": "integer"
+                            },
+                            "billRatePerHour": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "ruleName",
+                            "workDayId",
+                            "ruleType",
+                            "chargeMethod",
+                            "startTime",
+                            "endTime",
+                            "startDuration",
+                            "endDuration",
+                            "dailyThreshold",
+                            "weeklyThreshold",
+                            "payRateMultiplier",
+                            "billRateMultiplier",
+                            "payRatePerHour",
+                            "billRatePerHour"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "templateName",
+                "workLogType",
+                "calculateBreakTime",
+                "workDayIds",
+                "workTime",
+                "workStartTime",
+                "workEndTime",
+                "customRules"
+            ]
+        }
+    },
+    "required": [
+        "meta",
+        "data"
+    ]
+}

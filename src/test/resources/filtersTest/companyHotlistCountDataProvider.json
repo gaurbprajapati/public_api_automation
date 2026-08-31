@@ -1,0 +1,162 @@
+{
+    "Created By": [
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{owner}}",
+            "fieldType": "text",
+            "count": 2,
+            "token": "owner",
+            "description": "Count of hotlists created by the owner"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{admin}}",
+            "fieldType": "text",
+            "count": 2,
+            "token": "admin",
+            "description": "Count of hotlists created by the admin"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{teamMember}}",
+            "fieldType": "text",
+            "count": 5,
+            "token": "teamMember",
+            "description": "Count of hotlists created by the team member"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{owner}},{{admin}}",
+            "fieldType": "text",
+            "count": 3,
+            "token": "owner",
+            "description": "Count of hotlists created by owner or admin"
+        },
+        {
+            "dbField": "userId",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{{owner}},{{admin}},{{teamMember}}",
+            "fieldType": "text",
+            "count": 7,
+            "token": "owner",
+            "description": "Count of hotlists created by owner, admin or team member"
+        }
+    ],
+    "Created On": [
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "today",
+            "fieldType": "date",
+            "count": 2,
+            "token": "owner",
+            "description": "Count of hotlists created today"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "yesterday",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists created yesterday"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_week",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists created last week"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_month",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists created last month"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_quarter",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists created last quarter"
+        },
+        {
+            "dbField": "createdOn",
+            "filterType": "is",
+            "filterValue": "last_year",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists created last year"
+        }
+    ],
+    "Updated On": [
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "today",
+            "fieldType": "date",
+            "count": 2,
+            "token": "owner",
+            "description": "Count of hotlists updated today"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "yesterday",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists updated yesterday"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_week",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists updated last week"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_month",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists updated last month"
+        },
+        {
+            "dbField": "updatedOn",
+            "filterType": "is",
+            "filterValue": "last_quarter",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists updated last quarter"
+        },
+        {
+            "dbField": "updatedon",
+            "filterType": "is",
+            "filterValue": "last_year",
+            "fieldType": "date",
+            "count": 1,
+            "token": "owner",
+            "description": "Count of hotlists updated last year"
+        }
+    ]
+}
+

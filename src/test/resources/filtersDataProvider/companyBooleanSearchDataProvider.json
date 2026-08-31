@@ -1,0 +1,1696 @@
+[
+  {
+    "testCaseId": "TC_BS_001",
+    "description": "Simple company name search - exact match",
+    "query": "Tech Solutions",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1"
+    ],
+    "expectedResultReason": "Company1 has companyname 'Tech Solutions Inc.' which contains 'Tech Solutions'. No other companies contain this exact phrase.",
+    "expectedResultName": [
+      "Tech Solutions Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_002",
+    "description": "Simple OR operation - company names",
+    "query": "Tech Solutions OR Innovate",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2"
+    ],
+    "expectedResultReason": "Company1 contains 'Tech Solutions' in companyname. Company2 contains 'Innovate' in companyname. Both match the OR condition.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_003",
+    "description": "Simple AND operation - city and company name",
+    "query": "San Francisco AND Tech",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 has city 'San Francisco' and companyname contains 'Tech'. Company11 has city 'San Francisco' and companyname contains 'Tech'. Both satisfy the AND condition.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_004",
+    "description": "NOT operation - exclude specific term",
+    "query": "Technology AND NOT Inc",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company10"
+    ],
+    "expectedResultReason": "Company10 has 'Technology' in aboutcompany and does NOT have 'Inc' in companyname. Company13 is excluded: companyname contains 'Technologies', which is a different token from 'Technology'\u2014boolean search does not match the two as equivalent. Companies excluded: Company1 (has Inc), Company8 (has Inc), Company11 (has Inc), Company13 (Technologies not Technology), Company15 (has Inc).",
+    "expectedResultName": [
+      "Microsoft Corporation"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_005",
+    "description": "Phrase search with quotes - exact phrase matching",
+    "query": "\"Will be open for offer after 2 months\"",
+    "entitiesInvolved": [
+      "notes"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company3",
+      "Company4",
+      "Company5",
+      "Company6",
+      "Company7",
+      "Company8",
+      "Company9",
+      "Company10",
+      "Company11",
+      "Company12",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Companies Company1\u2013Company12 each have a note whose description contains the phrase 'Will be open for offer after 2 months companyX'. Company1's note also lists associated_companies {associated_companies_company1,associated_companies_company2} (resolved in BooleanSearchCompanyTest to the entity company IDs used on that note). When a hit comes from that note, the search is also expected to return those two associated company records, so expectedResult appends associated_companies_company1 and associated_companies_company2 after Company12 for assertion against companyKeyToIdMap.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Under_Score_Analytics_Corp",
+      "Tecnolog\u00eda Ib\u00e9rica S.L.",
+      "O'Malley's Security Solutions",
+      "Top Secret Agency + Division",
+      "Minimal Data Corp",
+      "Bracket [Technologies] (Inc.)",
+      "\u963f\u91cc\u5df4\u5df4\u96c6\u56e2",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3",
+      "Alpha \u03b2 Systems Corp",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_006",
+    "description": "Cross-entity search - company name AND note description",
+    "query": "company1 AND \"Will be open for offer\"",
+    "entitiesInvolved": [
+      "companies",
+      "notes"
+    ],
+    "expectedResult": [
+      "Company1",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 has 'company1' referenced in notes description 'Will be open for offer after 2 months company1'. The cross-entity search finds companies matching both conditions. Company1's note lists associated_companies placeholders associated_companies_company1 and associated_companies_company2 (entity companies from createAssociatedEntities, not fixture Company1/Company2); those IDs are expected as associated_companies_company1 and associated_companies_company2 in expectedResult.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_007",
+    "description": "Call log search - find companies with specific call notes",
+    "query": "Initial contact",
+    "entitiesInvolved": [
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company1",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 has a call log with call_notes 'Initial contact call for company1'. No other companies have this exact phrase in their call logs. That call log lists associated_companies_company1 and associated_companies_company2 (entity company IDs, not fixture Company1/Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_008",
+    "description": "Task search - find companies with specific task titles",
+    "query": "Follow up",
+    "entitiesInvolved": [
+      "tasks"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company8",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 has task title 'Follow up call for company1'. Company8 has task title 'Follow up (2024) for company8'. Both match 'Follow up' in task titles. Company1's task lists associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Bracket [Technologies] (Inc.)",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_009",
+    "description": "Meeting search - find companies with specific meeting titles",
+    "query": "Business Development",
+    "entitiesInvolved": [
+      "meetings"
+    ],
+    "expectedResult": [
+      "Company1",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 has meeting title 'Business Development Meeting - Company 1' which contains 'Business Development'. No other companies have 'Business Development' in their meeting titles. That meeting lists associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_010",
+    "description": "Complex AND with parentheses - city and website",
+    "query": "(San Francisco OR M\u00fcnchen) AND https",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 has city 'San Francisco' and website 'https://www.techsolutions.com'. Company2 has city 'M\u00fcnchen' and website 'https://www.innovate-gmbh.de'. Company11 has city 'San Francisco' and website 'https://www.sigma-tech.com'. All satisfy (city match) AND (website contains https).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_011",
+    "description": "OR operation across multiple entities",
+    "query": "Follow-up OR \"Follow up\"",
+    "entitiesInvolved": [
+      "companies",
+      "tasks",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company8",
+      "Company12",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company2 has call log with 'Follow-up call for company2'. Company1 has task 'Follow up call for company1'. Company8 has task 'Follow up (2024) for company8'. Company12 has call log with 'Follow-up call for company12'. All match the OR condition. Company1's task and Company12's note/call/meeting list associated_companies placeholders; expectedResult also includes associated_companies_company1 and associated_companies_company2 (entity IDs from createAssociatedEntities, not fixture Company1/Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Bracket [Technologies] (Inc.)",
+      "Alpha \u03b2 Systems Corp",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_012",
+    "description": "NOT with AND - exclude specific companies",
+    "query": "Technology AND NOT \"Tech Solutions\"",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company8",
+      "Company10",
+      "Company11",
+      "Company15"
+    ],
+    "expectedResultReason": "These companies contain 'Technology' (or 'Technologies') in companyname or aboutcompany but do NOT contain 'Tech Solutions'. Company1 is excluded because it contains 'Tech Solutions'. Company2, Company3, Company4, Company5, Company6, Company9, Company12,Company13, Company14 do not contain 'Technology' or 'Technologies'.",
+    "expectedResultName": [
+      "Bracket [Technologies] (Inc.)",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3",
+      "Noble Technologies XVII Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_013",
+    "description": "Phrase search in aboutcompany field",
+    "query": "\"20+ years\"",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1"
+    ],
+    "expectedResultReason": "Company1 has aboutcompany containing the exact phrase '20+ years' in the text 'Leading technology solutions provider with 20+ years of experience'. No other companies contain this exact phrase.",
+    "expectedResultName": [
+      "Tech Solutions Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_014",
+    "description": "Cross-entity search - company AND call log",
+    "query": "company2 AND \"Follow-up call\"",
+    "entitiesInvolved": [
+      "companies",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company2"
+    ],
+    "expectedResultReason": "Company2 has a call log with call_notes 'Follow-up call for company2'. The search matches both the company reference and the call log content.",
+    "expectedResultName": [
+      "Innovate GmbH"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_015",
+    "description": "Multiple OR terms - find companies in specific cities",
+    "query": "San Francisco OR M\u00fcnchen OR Redmond",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 has city 'San Francisco'. Company2 has city 'M\u00fcnchen'. Company10 has city 'Redmond'. Company11 has city 'San Francisco'. All match the OR condition.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_016",
+    "description": "Nested parentheses with AND and OR",
+    "query": "(Tech OR Microsoft) AND (San Francisco OR Redmond)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 contains 'Tech' and city 'San Francisco'. Company11 contains 'Tech' and city 'San Francisco'. Company10 contains 'Microsoft' and city 'Redmond'. All satisfy (name match) AND (city match).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_017",
+    "description": "Search in company website URLs",
+    "query": "www.techsolutions.com OR www.microsoft.com",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10"
+    ],
+    "expectedResultReason": "Company1 has website 'https://www.techsolutions.com'. Company10 has website 'https://www.microsoft.com'. Both match the OR condition.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_019",
+    "description": "Task description search",
+    "query": "\"Schedule follow up call\"",
+    "entitiesInvolved": [
+      "tasks"
+    ],
+    "expectedResult": [
+      "Company1",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 has task with description 'Schedule follow up call after 2 weeks for company1' which contains the exact phrase 'Schedule follow up call'. No other companies have this exact phrase. That task lists associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_020",
+    "description": "Meeting description search",
+    "query": "\"Initial business development discussion\"",
+    "entitiesInvolved": [
+      "meetings"
+    ],
+    "expectedResult": [
+      "Company1",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 has meeting with description 'Initial business development discussion'. No other companies have this exact phrase in meeting descriptions. That meeting lists associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_021",
+    "description": "Complex query with multiple AND conditions",
+    "query": "San Francisco AND Technology AND Solutions",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1: city San Francisco; aboutcompany contains 'technology'; companyname contains 'Solutions' ('Tech Solutions Inc.'). Company11 (Sigma Technologies): city San Francisco; aboutcompany contains 'blockchain technology'; longtextCF contains 'Solutions' ('financial technology solutions', 'fintech solutions'). Company name uses 'Technologies' not 'Solutions', but the Solutions conjunct is still satisfied from long text. Both satisfy all three AND conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Sigma Technologies Inc. Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_022",
+    "description": "Search with special characters - underscores",
+    "query": "Under_Score*",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company3"
+    ],
+    "expectedResultReason": "Company3 has companyname 'Under_Score_Analytics_Corp' which contains 'Under_Score'. No other companies contain this term.",
+    "expectedResultName": [
+      "Under_Score_Analytics_Corp"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_023",
+    "description": "Search with special characters - apostrophes",
+    "query": "O'Malley*",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company5"
+    ],
+    "expectedResultReason": "Company5 has companyname 'O'Malley's Security Solutions' which contains 'O'Malley'. No other companies contain this term.",
+    "expectedResultName": [
+      "O'Malley's Security Solutions"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_024",
+    "description": "Search with brackets in company name",
+    "query": "[Technologies]",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company8",
+      "Company11",
+      "Company13",
+      "Company15"
+    ],
+    "expectedResultReason": "Brackets group the search term Technologies (not a literal [ character requirement). All four companies have 'Technologies' in company name and/or standard fields: Company8 'Bracket [Technologies] (Inc.)'; Company11 'Sigma Technologies Inc.'; Company13 'Salt/Pepper Technologies'; Company15 'Noble Technologies XVII Inc.'.",
+    "expectedResultName": [
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Inc. Σ",
+      "Salt/Pepper Technologies",
+      "Noble Technologies XVII Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_025",
+    "description": "Cross-entity search - notes AND tasks",
+    "query": "\"Will be open for offer\" AND \"Follow up\"",
+    "entitiesInvolved": [
+      "notes",
+      "tasks"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company8",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1: note 'Will be open for offer after 2 months company1' AND task title 'Follow up call for company1'. Company8 (Bracket [Technologies]): same note phrase for company8 AND task title 'Follow up (2024) for company8' (also 'Follow up' in task description). Companies 2–7 and 9–12 share the offer note text but have no task containing 'Follow up', so they do not match. Company1's note and task list associated_companies_company1 and associated_companies_company2; Company8's activities do not.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Bracket [Technologies] (Inc.)",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_026",
+    "description": "Search in LinkedIn profile URLs",
+    "query": "linkedin.com/company/techsolutions",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1"
+    ],
+    "expectedResultReason": "Company1 has profilelinkedin 'https://linkedin.com/company/techsolutions'. No other companies have this exact LinkedIn URL pattern.",
+    "expectedResultName": [
+      "Tech Solutions Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_027",
+    "description": "Multiple NOT operations",
+    "query": "Technology AND NOT Inc AND NOT Corp",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company10"
+    ],
+    "expectedResultReason": "Company10 (Microsoft Corporation) matches: has 'Technology' in aboutcompany, does NOT have 'Inc' in companyname, and does NOT have 'Corp' in companyname ('Corporation' \u2260 'Corp' when treated as standalone word). Company13 is excluded: companyname has 'Technologies', not the term 'Technology'\u2014boolean search does not treat them as equivalent. Companies excluded: Company1 (has Inc), Company8 (has 'Inc' in parentheses), Company11 (has Inc), Company12 (has Corp), Company13 (Technologies not Technology), Company15 (has Inc).",
+    "expectedResultName": [
+      "Microsoft Corporation"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_028",
+    "description": "Search in aboutcompany with HTML tags (should match cleaned text)",
+    "query": "enterprise software development",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1"
+    ],
+    "expectedResultReason": "Company1 has aboutcompany containing 'enterprise software development' (HTML tags are stripped during indexing). The text 'Leading technology solutions provider with 20+ years of experience in enterprise software development' matches.",
+    "expectedResultName": [
+      "Tech Solutions Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_029",
+    "description": "Call log search with company reference",
+    "query": "company3 AND \"Screening call\"",
+    "entitiesInvolved": [
+      "companies",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company3"
+    ],
+    "expectedResultReason": "Company3 has a call log with call_notes 'Screening call for company3'. The search matches both the company reference and the call log content.",
+    "expectedResultName": [
+      "Under_Score_Analytics_Corp"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_030",
+    "description": "Complex nested query with precedence",
+    "query": "((San Francisco OR Redmond) AND Technology) OR Microsoft",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches (San Francisco AND Technology). Company11 matches (San Francisco AND Technology). Company10 matches Microsoft. All satisfy the complex OR condition.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_031",
+    "description": "Search for companies with specific meeting types via description",
+    "query": "\"Client discussion meeting\"",
+    "entitiesInvolved": [
+      "meetings"
+    ],
+    "expectedResult": [
+      "Company2"
+    ],
+    "expectedResultReason": "Company2 has meeting with description 'Client discussion meeting'. No other companies have this exact phrase.",
+    "expectedResultName": [
+      "Innovate GmbH"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_032",
+    "description": "Search across all entities - comprehensive search",
+    "query": "company1",
+    "entitiesInvolved": [
+      "companies",
+      "notes",
+      "call_logs",
+      "tasks",
+      "meetings"
+    ],
+    "expectedResult": [
+      "Company1",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 has 'company1' referenced in notes description, task related_to, call log related_to, and meeting related_to. The comprehensive search across all entities finds Company1. Company1's activities list associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_033",
+    "description": "Wildcard search - prefix matching",
+    "query": "Tech*",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company8",
+      "Company10",
+      "Company11",
+      "Company13",
+      "Company15"
+    ],
+    "expectedResultReason": "The wildcard '*' matches anything starting with 'Tech' (case-insensitive). Company1: 'Tech' in companyname. Company2: 'Technologieunternehmen' in aboutcompany. Company8: 'Technologies' in companyname. Company10: 'Technology' in aboutcompany. Company11: 'Technologies' in companyname. Company13: 'Technologies' in companyname. Company15: 'Technologies' in companyname. All match the pattern.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Bracket [Technologies] (Inc.)",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3",
+      "Salt/Pepper Technologies",
+      "Noble Technologies XVII Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_034",
+    "description": "Search with Chinese characters",
+    "query": "\u963f\u91cc\u5df4\u5df4",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company9"
+    ],
+    "expectedResultReason": "Company9 has companyname '\u963f\u91cc\u5df4\u5df4\u96c6\u56e2' which contains '\u963f\u91cc\u5df4\u5df4'. No other companies contain Chinese characters.",
+    "expectedResultName": [
+      "\u963f\u91cc\u5df4\u5df4\u96c6\u56e2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_035",
+    "description": "Search with German characters",
+    "query": "M\u00fcnchen",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company2"
+    ],
+    "expectedResultReason": "Company2 has city 'M\u00fcnchen' with the German umlaut character. No other companies have this city name.",
+    "expectedResultName": [
+      "Innovate GmbH"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_036",
+    "description": "Search with Spanish characters",
+    "query": "Tecnolog\u00eda",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company4"
+    ],
+    "expectedResultReason": "Company4 has companyname 'Tecnolog\u00eda Ib\u00e9rica S.L.' which contains 'Tecnolog\u00eda' with the Spanish accented character. No other companies contain this term.",
+    "expectedResultName": [
+      "Tecnolog\u00eda Ib\u00e9rica S.L."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_037",
+    "description": "Empty result case - non-existent term",
+    "query": "NonExistentCompany12345",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": "Empty",
+    "expectedResultReason": "No company in the dataset contains 'NonExistentCompany12345' in any searchable field. This should return an empty result set.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_BS_038",
+    "description": "AND with conflicting conditions - should return empty",
+    "query": "San Francisco AND M\u00fcnchen",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": "Empty",
+    "expectedResultReason": "No single company can have both 'San Francisco' and 'M\u00fcnchen' as their city. This AND condition cannot be satisfied by any company, resulting in an empty result set.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_BS_039",
+    "description": "Search in address field",
+    "query": "\"123 Market Street\"",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 has address '123 Market Street, Suite 400'. Company11 has address '123 Market Street, Suite 500'. Both contain the exact phrase '123 Market Street'.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_040",
+    "description": "Search with plus sign in company name",
+    "query": "Top Secret Agency +",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company6"
+    ],
+    "expectedResultReason": "Company6 has companyname 'Top Secret Agency + Division' which contains 'Top Secret Agency +'. No other companies contain this term with the plus sign.",
+    "expectedResultName": [
+      "Top Secret Agency + Division"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_041",
+    "description": "Search in state field",
+    "query": "California",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company8",
+      "Company11",
+      "Company12"
+    ],
+    "expectedResultReason": "Company1 has state 'California'. Company8 has state '(California) State' which contains 'California'. Company11 has state 'California'. Company12 has state 'California'. All match the search term.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Inc. \u03a3",
+      "Alpha \u03b2 Systems Corp"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_042",
+    "description": "Search in country field",
+    "query": "United States",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company6",
+      "Company8",
+      "Company10",
+      "Company11",
+      "Company12",
+      "Company13",
+      "Company14",
+      "Company15"
+    ],
+    "expectedResultReason": "Multiple companies have country 'United States'. All these companies match the search term in the country field.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Top Secret Agency + Division",
+      "Bracket [Technologies] (Inc.)",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3",
+      "Alpha \u03b2 Systems Corp",
+      "Salt/Pepper Technologies",
+      "Analytics Corporation",
+      "Noble Technologies XVII Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_043",
+    "description": "Search in postal code field",
+    "query": "94105",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company8",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 has postal_code '94105'. Company8 has postal_code '[94105]' which contains '94105'. Company11 has postal_code '94105'. All three match the search term.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_044",
+    "description": "Cross-entity search with NOT - exclude companies with specific notes",
+    "query": "Technology AND NOT \"Will be open for offer\"",
+    "entitiesInvolved": [
+      "companies",
+      "notes"
+    ],
+    "expectedResult": [
+      "Company15"
+    ],
+    "expectedResultReason": "Search treats Technology and Technologies as distinct terms (no cross-match). Positive term Technology: Company15 has 'Technology' in aboutcompany (cite) and multiple 'technology' tokens in longtext; Company13 only has 'Technologies' in name/fields with no separate Technology/technology token, so it does not match. NOT 'Will be open for offer': fixture companies 1–12 have that note and are excluded; companies 13–15 have no such note. Among the remainder, only Company15 matches Technology. Company14 has no Technology token in fixture text. Company1's associated_companies_company1/2 are not expected (only tied via Company1, which fails NOT).",
+    "expectedResultName": [
+      "Noble Technologies XVII Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_045",
+    "description": "Search in locality field",
+    "query": "Financial District",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company11",
+      "Company15"
+    ],
+    "expectedResultReason": "Company1 has locality 'Financial District'. Company11 has locality 'Financial District'. Company15 has locality 'Financial District'. All match the search term.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Sigma Technologies Inc. \u03a3",
+      "Noble Technologies XVII Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_046",
+    "description": "Task search with specific description phrase",
+    "query": "\"Prepare interview questions\"",
+    "entitiesInvolved": [
+      "tasks"
+    ],
+    "expectedResult": [
+      "Company3"
+    ],
+    "expectedResultReason": "Company3 has task with description 'Prepare interview questions for company3'. No other companies have this exact phrase in task descriptions.",
+    "expectedResultName": [
+      "Under_Score_Analytics_Corp"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_047",
+    "description": "Call log search with specific notes phrase",
+    "query": "\"Reference check call\"",
+    "entitiesInvolved": [
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company5",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company5 has call log with call_notes 'Reference check call for company5'. No other companies have this exact phrase. That call log lists associated_companies_company2 (entity ID, not fixture Company2).",
+    "expectedResultName": [
+      "O'Malley's Security Solutions",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_048",
+    "description": "Meeting search with title containing brackets",
+    "query": "Follow_Up Meeting",
+    "entitiesInvolved": [
+      "meetings"
+    ],
+    "expectedResult": [
+      "Company4"
+    ],
+    "expectedResultReason": "Company4 has meeting title 'Follow_Up Meeting [Q1] - Company 4' which contains 'Follow_Up Meeting'. No other companies have this exact phrase in meeting titles.",
+    "expectedResultName": [
+      "Tecnolog\u00eda Ib\u00e9rica S.L."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_049",
+    "description": "Complex query with multiple parentheses levels",
+    "query": "((Technology OR Solutions) AND (San Francisco OR Redmond)) OR (Microsoft AND Corporation)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches (Solutions AND San Francisco). Company11 matches (Technology AND San Francisco). Company10 matches (Microsoft AND Corporation). All satisfy the complex OR condition.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_050",
+    "description": "Search for companies with minimal data",
+    "query": "Minimal Data",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company7"
+    ],
+    "expectedResultReason": "Company7 has companyname 'Minimal Data Corp' which contains 'Minimal Data'. No other companies contain this term.",
+    "expectedResultName": [
+      "Minimal Data Corp"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_051",
+    "description": "Complex multi-field query - company name, city, website, and notes",
+    "query": "(Tech Solutions OR Microsoft) AND (San Francisco OR Redmond) AND https AND \"Will be open for offer\"",
+    "entitiesInvolved": [
+      "companies",
+      "notes"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10"
+    ],
+    "expectedResultReason": "Company1 matches: (Tech Solutions) AND (San Francisco) AND (https in website) AND (note contains 'Will be open for offer'). Company10 matches: (Microsoft) AND (Redmond) AND (https in website) AND (note contains 'Will be open for offer'). Both satisfy all four AND conditions across multiple fields. Company1's note lists associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_052",
+    "description": "Complex query with multiple operators - company profile AND activities",
+    "query": "(California OR Washington) AND (Technology OR Solutions) AND NOT Inc AND (\"Follow up\" OR \"Follow-up\")",
+    "entitiesInvolved": [
+      "companies",
+      "tasks",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company12"
+    ],
+    "expectedResultReason": "Company12 (Alpha β Systems Corp): state California; (Technology OR Solutions) is satisfied by '{longtextCF}' ('comprehensive software solutions'—Solutions). NOT Inc: companyname is '... Corp', not 'Inc'. Call log has 'Follow-up call for company12' (matches \"Follow-up\"). Excluded: Company1, Company8, Company11 (Inc in companyname); Company10 (Washington and Technology in profile, but task/call text has no 'Follow up' or 'Follow-up').",
+    "expectedResultName": [
+      "Alpha \u03b2 Systems Corp"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_053",
+    "description": "Complex nested query with multiple field combinations",
+    "query": "((San Francisco AND \"123 Market Street\") OR (Redmond AND \"One Microsoft Way\")) AND (Technology OR Corporation) AND https",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: (San Francisco AND '123 Market Street') AND (Technology) AND (https). Company11 matches: (San Francisco AND '123 Market Street') AND (Technology) AND (https). Company10 matches: (Redmond AND 'One Microsoft Way') AND (Corporation) AND (https). All satisfy the complex nested conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_054",
+    "description": "Multi-entity complex query - company profile AND notes AND tasks AND call logs",
+    "query": "company1 AND \"Will be open for offer\" AND \"Follow up\" AND \"Initial contact\"",
+    "entitiesInvolved": [
+      "companies",
+      "notes",
+      "tasks",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company1",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 matches all conditions: has 'company1' reference, note contains 'Will be open for offer', task contains 'Follow up', and call log contains 'Initial contact'. Only Company1 satisfies all four entity conditions. Company1's note, task, and call log list associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_055",
+    "description": "Complex query with NOT excluding multiple terms",
+    "query": "Technology AND NOT Inc AND NOT Corp AND NOT \"Tech Solutions\" AND (San Francisco OR California)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": "Empty",
+    "expectedResultReason": "Companies in San Francisco/California with Technology but not Inc/Corp/Tech Solutions: Company1 has 'Tech Solutions' (excluded), Company11 has 'Inc' (excluded), Company12 has 'Corp' (excluded). No company satisfies all conditions.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_BS_056",
+    "description": "Complex query combining address, locality, and website fields",
+    "query": "(\"123 Market Street\" OR \"One Microsoft Way\") AND (\"Financial District\" OR \"Redmond\") AND (linkedin.com OR www.microsoft.com)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: ('123 Market Street') AND ('Financial District') AND (linkedin.com). Company11 matches: ('123 Market Street') AND ('Financial District') AND (linkedin.com). Company10 matches: ('One Microsoft Way') AND ('Redmond') AND (www.microsoft.com). All satisfy the complex field combinations.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_057",
+    "description": "Complex query with multiple parentheses levels and field combinations",
+    "query": "((Technology OR Solutions) AND (San Francisco OR Redmond) AND (\"94105\" OR \"98052\")) OR ((Microsoft OR Corporation) AND https AND linkedin.com)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11",
+      "Company14"
+    ],
+    "expectedResultReason": "Company1 matches Part 1: (Solutions AND San Francisco AND '94105'). Company11 matches Part 1: (Technology AND San Francisco AND '94105'). Company10 matches both Part 1 (Technology AND Redmond AND '98052') AND Part 2 (Microsoft AND Corporation AND https AND linkedin.com). Company14 matches Part 2: (Corporation AND https AND linkedin.com). All satisfy the complex nested OR conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3",
+      "Analytics Corporation"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_058",
+    "description": "Complex multi-field query with state, city, and website",
+    "query": "(California AND San Francisco AND \"Financial District\") OR (Washington AND Redmond AND www.microsoft.com)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: (California AND San Francisco AND 'Financial District'). Company11 matches: (California AND San Francisco AND 'Financial District'). Company10 matches: (Washington AND Redmond AND www.microsoft.com). All satisfy the complex field combinations.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_059",
+    "description": "Complex query combining company name, address, and activities",
+    "query": "(Tech OR Microsoft) AND (\"123 Market Street\" OR \"One Microsoft Way\") AND (\"Follow up\" OR \"Schedule interview\")",
+    "entitiesInvolved": [
+      "companies",
+      "tasks"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10"
+    ],
+    "expectedResultReason": "Company1 matches: (Tech) AND ('123 Market Street') AND ('Follow up' in task). Company10 matches: (Microsoft) AND ('One Microsoft Way') AND ('Schedule interview' in task). Both satisfy all three conditions across company profile and tasks. Company1's task lists associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_060",
+    "description": "Complex nested query with multiple NOT operations and field combinations",
+    "query": "((Technology OR Solutions) AND NOT Inc AND NOT Corp) AND ((San Francisco OR Redmond) AND (\"94105\" OR \"98052\")) AND NOT \"Tech Solutions\"",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company10"
+    ],
+    "expectedResultReason": "Microsoft Corporation (Company10) matches all conditions: (Technology in aboutcompany) AND (NOT Inc - doesn't have 'Inc') AND (NOT Corp - 'Corporation' \u2260 'Corp' when treated as standalone word) AND (Redmond) AND (postal code '98052') AND (NOT 'Tech Solutions' - doesn't have this phrase). Company1 and Company11 are in San Francisco with 94105 but have 'Inc' (excluded). Other companies with Technology/Solutions are not in San Francisco/Redmond with those postal codes.",
+    "expectedResultName": [
+      "Microsoft Corporation"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_061",
+    "description": "Complex query with website, LinkedIn, and meeting fields",
+    "query": "(https AND linkedin.com) AND (\"Business Development\" OR \"Client discussion\") AND NOT Inc",
+    "entitiesInvolved": [
+      "companies",
+      "meetings"
+    ],
+    "expectedResult": [
+      "Company2"
+    ],
+    "expectedResultReason": "Company2 matches: (https in website AND linkedin.com in profile) AND ('Client discussion' in meeting description) AND (NOT Inc in companyname). Only Company2 satisfies all conditions across website, LinkedIn, and meeting fields.",
+    "expectedResultName": [
+      "Innovate GmbH"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_062",
+    "description": "Complex multi-field query with city, state, country, and postal code",
+    "query": "(San Francisco OR Redmond) AND (California OR Washington) AND \"United States\" AND (\"94105\" OR \"98052\")",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: (San Francisco) AND (California) AND ('United States') AND ('94105'). Company11 matches: (San Francisco) AND (California) AND ('United States') AND ('94105'). Company10 matches: (Redmond) AND (Washington) AND ('United States') AND ('98052'). All satisfy all four address-related field conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_063",
+    "description": "Complex query combining company name, aboutcompany, and multiple activity types",
+    "query": "(Technology OR Solutions) AND (\"enterprise software\" OR \"cloud computing\") AND (\"Follow up\" OR \"Initial contact\" OR \"Business Development\")",
+    "entitiesInvolved": [
+      "companies",
+      "tasks",
+      "call_logs",
+      "meetings"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company12"
+    ],
+    "expectedResultReason": "Company1: (Technology OR Solutions) via companyname/longtext; ('enterprise software' OR 'cloud computing') in about/longtext; third clause via task 'Follow up', call 'Initial contact', meeting type Business Development. Company12 (Alpha β Systems Corp): (Technology OR Solutions) via 'software solutions' in longtext; 'enterprise software' in longtext ('enterprise software architecture'); third clause via call_notes 'Follow-up call for company12' (matches 'Follow up' as typically tokenized with 'Follow-up'). Company10 fails the first OR (no Technology/Solutions on profile as used by search). Associated companies from Company1 notes/tasks are not listed in expected: this query's API response returns only the two primary company hits.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Alpha \u03b2 Systems Corp"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_064",
+    "description": "Complex nested query with address, website, and call log fields",
+    "query": "((\"123 Market Street\" AND www.techsolutions.com) OR (\"One Microsoft Way\" AND www.microsoft.com)) AND (\"Initial contact\" OR \"Application call\")",
+    "entitiesInvolved": [
+      "companies",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10"
+    ],
+    "expectedResultReason": "Company1 matches: ('123 Market Street' AND www.techsolutions.com) AND ('Initial contact' in call log). Company10 matches: ('One Microsoft Way' AND www.microsoft.com) AND ('Application call' in call log). Both satisfy the complex nested conditions across address, website, and call log fields. Company1's call log lists associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_065",
+    "description": "Complex query with multiple field types and operators",
+    "query": "(San Francisco AND California AND \"94105\" AND \"Financial District\") OR (Redmond AND Washington AND \"98052\" AND \"Redmond\") AND (Technology OR Corporation) AND https",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: (San Francisco AND California AND '94105' AND 'Financial District') AND (Technology/Solutions) AND (https). Company11 matches: (San Francisco AND California AND '94105' AND 'Financial District') AND (Technology) AND (https). Company10 matches: (Redmond AND Washington AND '98052' AND 'Redmond') AND (Corporation) AND (https). All satisfy the complex multi-field conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_066",
+    "description": "Complex query combining notes, tasks, meetings, and call logs",
+    "query": "\"Will be open for offer\" AND (\"Follow up\" OR \"Review company profile\") AND (\"Business Development\" OR \"Client discussion\") AND (\"Initial contact\" OR \"Follow-up call\")",
+    "entitiesInvolved": [
+      "notes",
+      "tasks",
+      "meetings",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 matches: ('Will be open for offer' in note) AND ('Follow up' in task) AND ('Business Development' in meeting) AND ('Initial contact' in call log). Company2 matches: ('Will be open for offer' in note) AND ('Review company profile' in task) AND ('Client discussion' in meeting) AND ('Follow-up call' in call log). Both satisfy all four activity entity conditions. Company1's activities also list associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company1/Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_067",
+    "description": "Complex query with deep nesting and multiple field combinations",
+    "query": "(((Technology OR Solutions) AND (San Francisco OR Redmond)) AND (\"94105\" OR \"98052\")) OR ((Microsoft AND Corporation) AND (https AND linkedin.com))",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: ((Solutions AND San Francisco) AND '94105'). Company11 matches: ((Technology AND San Francisco) AND '94105'). Company10 matches: ((Microsoft AND Corporation) AND (https AND linkedin.com)). All satisfy the deeply nested conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_068",
+    "description": "Complex multi-field query excluding specific terms",
+    "query": "(California OR Washington) AND (Technology OR Solutions OR Corporation) AND NOT Inc AND NOT \"Tech Solutions\" AND (\"Follow up\" OR \"Schedule interview\")",
+    "entitiesInvolved": [
+      "companies",
+      "tasks"
+    ],
+    "expectedResult": [
+      "Company10"
+    ],
+    "expectedResultReason": "Company10 matches: (Washington) AND (Corporation) AND (NOT Inc) AND (NOT 'Tech Solutions') AND ('Schedule interview' in task). Company1 has 'Tech Solutions' (excluded). Company11 has 'Inc' (excluded). Company12 has 'Corp' (excluded). Only Company10 satisfies all conditions.",
+    "expectedResultName": [
+      "Microsoft Corporation"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_069",
+    "description": "Complex query with website, LinkedIn, address, and locality",
+    "query": "(https AND linkedin.com AND \"123 Market Street\" AND \"Financial District\") OR (www.microsoft.com AND \"One Microsoft Way\" AND \"Redmond\")",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: (https AND linkedin.com AND '123 Market Street' AND 'Financial District'). Company11 matches: (https AND linkedin.com AND '123 Market Street' AND 'Financial District'). Company10 matches: (www.microsoft.com AND 'One Microsoft Way' AND 'Redmond'). All satisfy the complex field combinations.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_070",
+    "description": "Complex query combining all entity types with multiple operators",
+    "query": "company1 AND \"Will be open for offer\" AND \"Follow up\" AND \"Initial business development discussion\" AND \"Initial contact\"",
+    "entitiesInvolved": [
+      "companies",
+      "notes",
+      "tasks",
+      "meetings",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company1",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 matches all conditions across all five entity types: has 'company1' reference, note contains 'Will be open for offer', task contains 'Follow up', meeting contains 'Initial business development discussion', and call log contains 'Initial contact'. Only Company1 satisfies all five entity conditions. Company1's activities list associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_071",
+    "description": "Search by Facebook profile URL",
+    "query": "facebook.com/techsolutions",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1"
+    ],
+    "expectedResultReason": "Company1 has profilefacebook 'https://facebook.com/techsolutions'. No other companies have this exact Facebook URL pattern.",
+    "expectedResultName": [
+      "Tech Solutions Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_072",
+    "description": "Search by Twitter profile URL",
+    "query": "twitter.com/innovate_gmbh",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company2"
+    ],
+    "expectedResultReason": "Company2 has profiletwitter 'https://twitter.com/innovate_gmbh'. No other companies have this exact Twitter URL pattern.",
+    "expectedResultName": [
+      "Innovate GmbH"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_073",
+    "description": "Complex query with Facebook and Twitter profiles",
+    "query": "(facebook.com OR twitter.com) AND (techsolutions OR innovate)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2"
+    ],
+    "expectedResultReason": "Company1 has facebook.com/techsolutions. Company2 has twitter.com/innovate_gmbh. Both match the OR conditions for social media profiles and company names.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_074",
+    "description": "Wildcard single character search - matches variations",
+    "query": "Tec?Solutions",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1"
+    ],
+    "expectedResultReason": "Company1 has companyname 'Tech Solutions Inc.' The wildcard '?' matches a single character, so 'Tech?Solutions' matches 'Tech Solutions' (with space).",
+    "expectedResultName": [
+      "Tech Solutions Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_075",
+    "description": "Wildcard single character search in company name",
+    "query": "Micro?oft",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company10"
+    ],
+    "expectedResultReason": "Company10 has companyname 'Microsoft Corporation'. The wildcard '?' matches a single character, so 'Micro?oft' matches 'Microsoft'.",
+    "expectedResultName": [
+      "Microsoft Corporation"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_076",
+    "description": "Complex query combining Facebook profile and company name",
+    "query": "facebook.com AND (Tech Solutions OR Innovate)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2"
+    ],
+    "expectedResultReason": "Company1 has facebook.com/techsolutions AND companyname contains 'Tech Solutions'. Company2 has facebook.com/innovate.gmbh AND companyname contains 'Innovate'. Both satisfy the AND condition.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_077",
+    "description": "Complex query with Twitter profile and city",
+    "query": "twitter.com AND (San Francisco OR M\u00fcnchen)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 has twitter.com/techsolutions AND city 'San Francisco'. Company2 has twitter.com/innovate_gmbh AND city 'M\u00fcnchen'. Company11 has twitter.com/sigma_tech AND city 'San Francisco'. All satisfy the AND condition.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_078",
+    "description": "Search by company contact number",
+    "query": "415-555-0100",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1"
+    ],
+    "expectedResultReason": "Company1 has contactnumber '415-555-0100'. No other companies have this exact phone number.",
+    "expectedResultName": [
+      "Tech Solutions Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_079",
+    "description": "Search by contact number with wildcard",
+    "query": "415-555*",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 has contactnumber '415-555-0100'. Company11 has contactnumber '415-555-0200'. Both match the wildcard pattern '415-555-*'.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_080",
+    "description": "Complex query with contact number and city",
+    "query": "\"415-555\" AND \"San Francisco\"",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 has contactnumber '415-555-0100' AND city 'San Francisco'. Company11 has contactnumber '415-555-0200' AND city 'San Francisco'. Both satisfy the AND condition.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_081",
+    "description": "Search by company contact number with country code",
+    "query": "+49 89",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company2"
+    ],
+    "expectedResultReason": "Company2 has contactnumber '+49 89 12345678' which contains '+49 89'. No other companies have this pattern.",
+    "expectedResultName": [
+      "Innovate GmbH"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_082",
+    "description": "Complex query combining social media profiles and website",
+    "query": "(facebook.com OR twitter.com OR linkedin.com) AND https",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company3",
+      "Company4",
+      "Company5",
+      "Company6",
+      "Company8",
+      "Company9",
+      "Company10",
+      "Company11",
+      "Company12",
+      "Company13",
+      "Company14",
+      "Company15"
+    ],
+    "expectedResultReason": "All these companies have at least one social media profile (Facebook, Twitter, or LinkedIn) AND have https in their website URLs. Company7 is excluded as it has minimal data.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Under_Score_Analytics_Corp",
+      "Tecnolog\u00eda Ib\u00e9rica S.L.",
+      "O'Malley's Security Solutions",
+      "Top Secret Agency + Division",
+      "Bracket [Technologies] (Inc.)",
+      "\u963f\u91cc\u5df4\u5df4\u96c6\u56e2",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3",
+      "Alpha \u03b2 Systems Corp",
+      "Salt/Pepper Technologies",
+      "Analytics Corporation",
+      "Noble Technologies XVII Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_083",
+    "description": "Complex query with NOT excluding social media profiles",
+    "query": "Technology AND NOT facebook.com AND NOT twitter.com",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": "Empty",
+    "expectedResultReason": "All companies with 'Technology' in their name or aboutcompany also have Facebook or Twitter profiles. This query excludes all of them, resulting in an empty result set.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_BS_085",
+    "description": "Complex query with wildcard and social media",
+    "query": "Tech* AND (facebook.com OR twitter.com)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company8",
+      "Company10",
+      "Company11",
+      "Company13",
+      "Company15"
+    ],
+    "expectedResultReason": "All these companies match 'Tech*' (in companyname or aboutcompany) AND have at least one social media profile (facebook.com or twitter.com). Company1: 'Tech Solutions' + facebook.com. Company2: 'Technologieunternehmen' in aboutcompany + facebook.com/twitter.com. Company8: '[Technologies]' + facebook.com/twitter.com. Company10: 'Technology' in aboutcompany + facebook.com/twitter.com. Company11: 'Technologies' + twitter.com. Company13: 'Technologies' + facebook.com/twitter.com. Company15: 'Technologies' + facebook.com/twitter.com.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Bracket [Technologies] (Inc.)",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3",
+      "Salt/Pepper Technologies",
+      "Noble Technologies XVII Inc."
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_087",
+    "description": "Complex query combining company profile and contact number",
+    "query": "(San Francisco OR Redmond) AND (\"415-555\" OR \"425-882\")",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: (San Francisco) AND ('415-555'). Company11 matches: (San Francisco) AND ('415-555'). Company10 matches: (Redmond) AND ('425-882'). All satisfy the complex OR conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_088",
+    "description": "Complex multi-field query with social media, website, and address",
+    "query": "(facebook.com OR twitter.com) AND https AND (\"123 Market Street\" OR \"One Microsoft Way\")",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: (facebook.com) AND (https) AND ('123 Market Street'). Company11 matches: (twitter.com) AND (https) AND ('123 Market Street'). Company10 matches: (twitter.com) AND (https) AND ('One Microsoft Way'). All satisfy all three AND conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_090",
+    "description": "Complex query with wildcard, social media, and activities",
+    "query": "Tech* AND (facebook.com OR twitter.com) AND \"Will be open for offer\"",
+    "entitiesInvolved": [
+      "companies",
+      "notes"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company8",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Tech* matches tokens beginning with Tech (case-insensitive as indexed): Company1 ('Tech Solutions', 'technology' in copy); Company2 (German 'Technologie' / 'Technologien' in about/longtext); Company8 ('Technologies' in name, 'technology' in longtext); Company10 ('Technology' / 'technology' in about/longtext); Company11 ('Technologies' in name, 'technology' in copy). Each has profilefacebook and/or profiletwitter URLs containing facebook.com or twitter.com. Companies 1–12 include a note with 'Will be open for offer'; other fixture companies either lack that note (13–15) or lack a Tech* match (e.g. company3 longtext has no Tech-prefixed token; company4 Spanish 'Tecnología' does not start with 'Tech'). This query's response returns five primary companies only—associated_companies from Company1's note are not listed in expected.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Bracket [Technologies] (Inc.)",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_091",
+    "description": "Search by call log subject field (if available in full_text_search)",
+    "query": "\"Initial contact\"",
+    "entitiesInvolved": [
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company1",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ],
+    "expectedResultReason": "Company1 has call log with call_notes 'Initial contact call for company1'. If call log subject field is indexed separately and contains 'Initial contact', this would match. Note: Subject field may not be populated in current test data, but is documented as searchable. That call log lists associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_092",
+    "description": "Complex query with contact number and call log notes",
+    "query": "\"415-555\" AND \"Initial contact\"",
+    "entitiesInvolved": [
+      "companies",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Company1"
+    ],
+    "expectedResultReason": "Company1 has contactnumber '415-555-0100' AND call log with call_notes 'Initial contact call for company1'. That call log lists associated_companies_company1 and associated_companies_company2 (entity IDs, not fixture Company2).",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "associated_companies_company1",
+      "associated_companies_company2"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_093",
+    "description": "Complex query combining social media profiles with contact numbers",
+    "query": "(facebook.com OR twitter.com) AND (\"415-555\" OR \"+49 89\" OR \"425-882\")",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company2",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: (facebook.com) AND ('415-555'). Company2 matches: (twitter.com) AND ('+49 89'). Company10 matches: (twitter.com) AND ('425-882'). Company11 matches: (twitter.com) AND ('415-555'). All satisfy the complex OR conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Innovate GmbH",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_095",
+    "description": "Complex query with wildcard, contact number, and social media",
+    "query": "Tech* AND (\"415-555\" OR \"425-882\") AND (facebook.com OR twitter.com)",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company10",
+      "Company11"
+    ],
+    "expectedResultReason": "Company1 matches: (Tech* in companyname 'Tech Solutions') AND ('415-555' in contact number) AND (facebook.com). Company10 matches: (Tech* in aboutcompany 'Technology leader') AND ('425-882' in contact number) AND (facebook.com and twitter.com). Company11 matches: (Tech* in companyname 'Sigma Technologies') AND ('415-555' in contact number) AND (twitter.com). All three satisfy all conditions.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. \u03a3"
+    ]
+  },
+  {
+    "testCaseId": "TC_BS_096",
+    "description": "Single-term company search — Technology (token distinct from Technologies)",
+    "query": "Technology",
+    "entitiesInvolved": [
+      "companies"
+    ],
+    "expectedResult": [
+      "Company1",
+      "Company8",
+      "Company10",
+      "Company11",
+      "Company15"
+    ],
+    "expectedResultReason": "Each expected company has the word 'technology' / 'Technology' in searchable company profile text (aboutcompany and/or long text custom field): Company1 ('technology' in aboutcompany and longtextCF); Company8 ('technology' in longtextCF); Company10 ('Technology' in aboutcompany; 'technology' in longtextCF); Company11 ('blockchain technology' / 'financial technology' in aboutcompany and longtextCF); Company15 ('Technology' in aboutcompany cite; 'technology' in longtextCF). Companies that only contain 'Technologies' (e.g. Company13 'Salt/Pepper Technologies' with no standalone 'technology' token in indexed fields) are excluded—boolean 'Technology' is not treated as matching 'Technologies' alone.",
+    "expectedResultName": [
+      "Tech Solutions Inc.",
+      "Bracket [Technologies] (Inc.)",
+      "Microsoft Corporation",
+      "Sigma Technologies Inc. Σ",
+      "Noble Technologies XVII Inc."
+    ]
+  }
+]

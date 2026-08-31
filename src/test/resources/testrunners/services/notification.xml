@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Rest API Test Suite" thread-count="6" parallel="tests">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+	
+	<test name="Fetch Notification Test - 6">
+		<classes>
+			<class name="io.recruitcrm.albatross.notification.NotificationsTest">
+				<methods>
+					<include name="postNotificationsForNewUserTest_200" />
+					<include name="postNotificationsTestWithMandatoryFields_200" />
+					<include name="postNotificationsTestWithOptionalFields_200" />
+					<include name="postNotificationsTestWithInvalidLimit_400" />
+					<include name="postNotificationsTestWithInvalidToken_400" />
+					<include name="postNotificationsForUnauthorizedUserTest_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Queue Notification Test - 9">
+		<classes>
+			<class name="io.recruitcrm.albatross.notification.QueueNotificationsTest">
+				<methods>
+					<include name="postQueueNotificationsTest_200" />
+					<include name="postQueueNotificationsWithInvalidActionTest_400" />
+					<include name="postQueueNotificationsWithInvalidSenderTest_400" />
+					<include name="postQueueNotificationsWithInvalidRecieverTest_400" />
+					<include name="postQueueNotificationsWithInvalidSourceTest_400" />
+					<include name="postQueueNotificationsWithInvalidTemplateIdTest_400" />
+					<include name="postQueueNotificationsWithInvalidCtaIdTest_400" />
+					<include name="postQueueNotificationsWithEmptyValuesTest_400" />
+					<include name="postQueueNotificationsforUnauthorizedAccessTest_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Toggle Notification Status Test - 5">
+		<classes>
+			<class name="io.recruitcrm.albatross.notification.ToggleNotificationStatusTest">
+				<methods>
+					<include name="postToggleNotificationsTest_200" />
+					<include name="postToggleNotificationsWithOptionalValuesTest_200" />
+					<include name="postToggleNotificationsWithInvalidNotificationIdTest_400" />
+					<include name="postToggleNotificationsWithEmptyValuesTest_400" />
+					<include name="postToggleNotificationsForUnauthorizedAccessTest_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Fetch Child Notification Test - 5">
+		<classes>
+			<class name="io.recruitcrm.albatross.notification.FetchChildNotificationsTest">
+				<methods>
+					<include name="postFetchChildNotificationsTest_200" />
+					<include name="postFetchChildNotificationsInvalidTokenTest_400" />
+					<include name="postFetchChildNotificationsInvalidLimitTest_400" />
+					<include name="postFetchChildNotificationsWithEmptyValuesTest_400" />
+					<include name="postFetchChildNotificationsforUnauthorizedAccessTest_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Last Seen Notification Test - 4">
+		<classes>
+			<class name="io.recruitcrm.albatross.notification.LastSeenNotificationTest">
+				<methods>
+					<include name="postLastSeenNotificationsTest_200" />
+					<include name="postLastSeenNotificationsWithInvalidIdTest_400" />
+					<include name="postLastSeenNotificationsWithEmptyIdTest_400" />
+					<include name="postLastSeenNotificationsForUnauthorizedUserTest_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Get Notification Badge Count Test - 3">
+		<classes>
+			<class name="io.recruitcrm.albatross.notification.GetNotificationBadgeCountTest">
+				<methods>
+					<include name="getNotificationCountTest_200" />
+					<include name="getNotificationCountWithInvalidURLTest_404" />
+					<include name="getNotificationCountForUnauthorizedAccessTest_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

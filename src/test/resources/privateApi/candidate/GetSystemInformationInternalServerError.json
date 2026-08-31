@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}\\+\\d{2}:\\d{2}$"
+    },
+    "status": {
+      "type": "integer",
+      "enum": [500]
+    },
+    "error": {
+      "type": "string",
+      "enum": ["Internal Server Error"]
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^/v\\d+/candidates/system-information$"
+    }
+  },
+  "required": ["timestamp", "status", "error", "path"]
+}
+

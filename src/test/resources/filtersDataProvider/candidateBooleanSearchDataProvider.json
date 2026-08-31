@@ -1,0 +1,893 @@
+[
+  {
+    "testCaseId": "TC_BS_CAND_001",
+    "description": "Simple candidate name search - exact match",
+    "query": "Alice Johnson",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has firstname 'Alice' and lastname 'Johnson'. No other candidate has the exact combination 'Alice Johnson'.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_002",
+    "description": "Simple OR operation - candidate names",
+    "query": "Alice Johnson OR KI-Entwickler",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate2"],
+    "expectedResultReason": "Candidate1 contains 'Alice Johnson'. Candidate2 has position 'KI-Entwickler'. Both match the OR condition.",
+    "expectedResultName": ["Alice Johnson", "alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_003",
+    "description": "Search by unique last organisation",
+    "query": "Bellavita",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has work_company_name 'Bellavita' in workhistory. No other candidate has this company name.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_004",
+    "description": "Search by unique position",
+    "query": "KI-Entwickler",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate2"],
+    "expectedResultReason": "Candidate2 has position 'KI-Entwickler'. No other candidate has this position.",
+    "expectedResultName": ["alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_005",
+    "description": "Phrase search in notes",
+    "query": "Candidate From Galgotia College",
+    "entitiesInvolved": ["notes"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has note with description 'Candidate From Galgotia College' (see booleanSearchCandidate_data.json). No other candidate has this exact phrase in notes.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_006",
+    "description": "Phrase search in notes - candidate2",
+    "query": "\"Candidate From Technische Universität München\"",
+    "entitiesInvolved": ["notes"],
+    "expectedResult": ["Candidate2"],
+    "expectedResultReason": "Candidate2 has note with description 'Candidate From Technische Universität München'. No other candidate has this exact phrase.",
+    "expectedResultName": ["alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_007",
+    "description": "Call log search - find candidate with specific call notes",
+    "query": "Initial contact call for candidate1",
+    "entitiesInvolved": ["call_logs"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has call log with call_notes 'Initial contact call for candidate1'. No other candidate has this exact phrase in call logs.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_008",
+    "description": "Task search - find candidate with specific task title",
+    "query": "Follow up for candidate1",
+    "entitiesInvolved": ["tasks"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has task title 'Follow up for candidate1'. Each candidate has unique task title 'Follow up for candidateN'.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_009",
+    "description": "Meeting search - find candidate with specific meeting title",
+    "query": "Interview Discussion - candidate1",
+    "entitiesInvolved": ["meetings"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has meeting title 'Interview Discussion - candidate1'. No other candidate has this exact meeting title.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_010",
+    "description": "Search with underscores",
+    "query": "Schulz_Jr",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate3"],
+    "expectedResultReason": "Candidate3 has firstname 'Schulz_Jr'. No other candidate contains this term with underscores.",
+    "expectedResultName": ["Schulz_Jr Ronaldo"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_011",
+    "description": "Search with apostrophes",
+    "query": "O'Connor",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate5"],
+    "expectedResultReason": "Candidate5 has firstname 'O'Connor'. No other candidate contains this term with apostrophe.",
+    "expectedResultName": ["O'Connor"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_012",
+    "description": "Search by unique organisation and position",
+    "query": "James Bond",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate6"],
+    "expectedResultReason": "Candidate6 has firstname 'James Bond' and lastname '(007)'. So 'James Bond' matches candidate6.",
+    "expectedResultName": ["James Bond"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_013",
+    "description": "Search by last organisation MI6",
+    "query": "MI6",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate6"],
+    "expectedResultReason": "Candidate6 has lastorganisation 'MI6'. No other candidate has this value.",
+    "expectedResultName": ["James Bond"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_014",
+    "description": "Search minimal data candidate",
+    "query": "Arjun Malhotra",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate7"],
+    "expectedResultReason": "Candidate7 has firstname 'Arjun' and lastname 'Malhotra'. No other candidate has this combination.",
+    "expectedResultName": ["Arjun Malhotra"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_015",
+    "description": "Search with special characters - SQL style",
+    "query": "@lbert",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate8"],
+    "expectedResultReason": "Candidate8 has firstname '@lbert @Google@'. Search for '@lbert' matches candidate8. No other candidate has this.",
+    "expectedResultName": ["@lbert @Google@"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_016",
+    "description": "Search with Chinese characters",
+    "query": "李小明",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate9"],
+    "expectedResultReason": "Candidate9 has firstname '李小明'. No other candidate contains Chinese characters.",
+    "expectedResultName": ["李小明"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_017",
+    "description": "Search by Microsoft Corporation",
+    "query": "Microsoft Corporation",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate10"],
+    "expectedResultReason": "Candidate10 has work_company_name 'Microsoft Corporation' in workhistory. Only candidate10 has 'Microsoft Corporation' in work history.",
+    "expectedResultName": ["Ralph (Lauren) Jr."]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_018",
+    "description": "Search with Greek letter Sigma",
+    "query": "Sigm Σ",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate11"],
+    "expectedResultReason": "Candidate11 has firstname 'Sigm Σ' and lastname 'Boy'. No other candidate contains the Sigma character.",
+    "expectedResultName": ["Sigm Σ Boy"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_019",
+    "description": "Search with Greek letters Alpha Beta",
+    "query": "Alpha α",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate12"],
+    "expectedResultReason": "Candidate12 has firstname 'Alpha α' and lastname 'Beta β'. No other candidate contains these Greek letters.",
+    "expectedResultName": ["Alpha α Beta β"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_020",
+    "description": "Search with slash in name",
+    "query": "Salt/Salt",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate13"],
+    "expectedResultReason": "Candidate13 has lastname 'Salt/Salt'. No other candidate contains 'Salt/Salt'.",
+    "expectedResultName": ["Phill Salt/Salt"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_021",
+    "description": "Search by Analytics Corporation",
+    "query": "Analytics Corporation",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate14"],
+    "expectedResultReason": "Candidate14 has work_company_name 'Analytics Corporation' in workhistory. No other candidate has this company.",
+    "expectedResultName": ["Kireon Pollard"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_022",
+    "description": "Search by Noble Technologies",
+    "query": "Noble Technologies",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate15"],
+    "expectedResultReason": "Candidate15 has work_company_name 'Noble Technologies XVII Inc.' in workhistory. Only candidate15 contains 'Noble Technologies'.",
+    "expectedResultName": ["Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_023",
+    "description": "Cross-entity search - candidate and note",
+    "query": "\"candidate1\" AND \"Candidate From Galgotia College\"",
+    "entitiesInvolved": ["entity", "notes","call_logs"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "NOT a reserved API token: candidate1 is plain query text. With entitiesInvolved [entity, notes], the second conjunct matches only Candidate1's note 'Candidate From Galgotia College'. The first conjunct is evaluated on the candidate profile index only; the fixture key candidate1 and strings like 'Follow up for candidate1' live under tasks/calls/meetings—not in this scope. For the same cross-entity AND with an explicit profile term, see TC_BS_CAND_041 (Alice AND Galgotia phrase).",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_024",
+    "description": "Task description search",
+    "query": "\"Schedule follow up for Student from Galgotia College\"",
+    "entitiesInvolved": ["tasks"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has task description 'Schedule follow up for Student from Galgotia College'. Candidate3+ use 'Schedule follow up for candidateN' instead.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_025",
+    "description": "Meeting description search",
+    "query": "\"Interview discussion for candidate1\"",
+    "entitiesInvolved": ["meetings"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has meeting with description 'Interview discussion for candidate1'. No other candidate has this exact phrase.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_026",
+    "description": "Search José García",
+    "query": "José García",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate4"],
+    "expectedResultReason": "Candidate4 has firstname 'José' and lastname 'García'. No other candidate has this Spanish name combination.",
+    "expectedResultName": ["José García"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_027",
+    "description": "Search Spanish city M@drid",
+    "query": "M@drid",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate4"],
+    "expectedResultReason": "Candidate4 has city 'M@drid'. No other candidate has this city.",
+    "expectedResultName": ["José García"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_028",
+    "description": "Search German city München",
+    "query": "München",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate2"],
+    "expectedResultReason": "Candidate2 has city 'M̐ünchen' and work_location 'München'. No other candidate has München.",
+    "expectedResultName": ["alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_029",
+    "description": "Empty result - non-existent term",
+    "query": "NonExistentCandidateXYZ12345",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": "Empty",
+    "expectedResultReason": "No candidate in the dataset contains 'NonExistentCandidateXYZ12345' in any searchable field.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_BS_CAND_030",
+    "description": "AND with conflicting conditions - empty",
+    "query": "Alice Johnson AND 李小明",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": "Empty",
+    "expectedResultReason": "No single candidate can match both 'Alice Johnson' and '李小明'. This AND condition cannot be satisfied.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_BS_CAND_031",
+    "description": "Search in skill field",
+    "query": "Java,Spring,SQL",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate8", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "Candidates1,10–15 have skill field exactly 'Java,Spring,SQL'. Candidate8 does not, but is still a hit when the engine treats comma-separated keywords as OR (or similar): the token SQL matches the substring SQL in skill 'SQL Injection,XSS,...' and in longtextCF (booleanSearchCandidate_data.json). That is consistent with TC_BS_CAND_062, where Candidate8 is excluded because Java must match—showing SQL alone can satisfy part of a comma query but not a standalone Java conjunct. For an exact full skill value only, add a separate quoted-phrase case if your parser supports it.",
+    "expectedResultName": ["Alice Johnson", "@lbert @Google@", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_032",
+    "description": "Search Follow up in tasks - multiple candidates",
+    "query": "Follow up",
+    "entitiesInvolved": ["tasks"],
+    "expectedResult": ["Candidate1", "Candidate2", "Candidate3", "Candidate4", "Candidate5", "Candidate6", "Candidate7", "Candidate8", "Candidate9", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "All 15 candidates have task title starting with 'Follow up for candidateN'. So 'Follow up' matches all.",
+    "expectedResultName": ["Alice Johnson", "alice müller", "Schulz_Jr Ronaldo", "José García", "O'Connor", "James Bond", "Arjun Malhotra", "@lbert @Google@", "李小明", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_033",
+    "description": "Search Initial contact in call_logs",
+    "query": "Initial contact",
+    "entitiesInvolved": ["call_logs"],
+    "expectedResult": ["Candidate1", "Candidate2", "Candidate4", "Candidate5", "Candidate6", "Candidate7", "Candidate8", "Candidate9", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "All 15 candidates have call_notes 'Initial contact call for candidateN'. So 'Initial contact' matches all.",
+    "expectedResultName": ["Alice Johnson", "alice müller", "José García", "O'Connor", "James Bond", "Arjun Malhotra", "@lbert @Google@", "李小明", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_034",
+    "description": "Search Interview Discussion in meetings",
+    "query": "Interview Discussion",
+    "entitiesInvolved": ["meetings"],
+    "expectedResult": ["Candidate1", "Candidate2", "Candidate3", "Candidate4", "Candidate5", "Candidate6", "Candidate7", "Candidate8", "Candidate9", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "All 15 candidates have meeting title 'Interview Discussion - candidateN'. So 'Interview Discussion' matches all.",
+    "expectedResultName": ["Alice Johnson", "alice müller", "Schulz_Jr Ronaldo", "José García", "O'Connor", "James Bond", "Arjun Malhotra", "@lbert @Google@", "李小明", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_035",
+    "description": "Complex AND - candidate token and unique note phrase",
+    "query": "candidate1 AND \"Galgotia College\"",
+    "entitiesInvolved": ["entity", "notes","call_logs"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1's note is 'Candidate From Galgotia College' (contains 'Galgotia College'). Other candidates use 'Candidate note for candidateN' in notes without Galgotia. Entity matches candidate1.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_036",
+    "description": "Search by email - aliceJohnson@testmail.com",
+    "query": "aliceJohnson@testmail.com",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has emailid 'aliceJohnson@testmail.com'. No other candidate has this email.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_037",
+    "description": "AND search - United States and Maplewood in entity",
+    "query": "United States AND Maplewood",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "booleanSearchCandidate_data.json gives city 'Maplewood' and country 'United States' for Candidate1 and Candidates10–15 (shared template fields). Other seeded candidates use different cities/countries (e.g. München, M@drid, WASHINGTON D.C., empty, injection test data, 北京市). UI sort order may differ from candidate id order.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_038",
+    "description": "AND search - Java, Spring and SQL in entity",
+    "query": "Java AND Spring AND SQL",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "booleanSearchCandidate_data.json: skill field is exactly 'Java,Spring,SQL' for Candidate1 and Candidates10–15, so all three conjuncts match on entity. Other candidates use different skills (Python, SQL Injection without Java+Spring together, etc.). Extra spaces around AND are covered by TC_BS_CAND_059.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_039",
+    "description": "AND search - Software Engineer (SDET) and Bellavita in entity",
+    "query": "Software Engineer (SDET) AND Bellavita",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has workhistory title 'Software Engineer (SDET)' and work_company_name 'Bellavita'. No other candidate has both.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_040",
+    "description": "AND search - Galgotia College and Btech in entity",
+    "query": "Galgotia College AND Btech",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has institute_name 'Galgotia College' and educational_qualification 'Btech' in educationhistory. No other candidate has both.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_041",
+    "description": "AND search - Candidate From Galgotia College and Alice in entity and notes",
+    "query": "Candidate From Galgotia College AND Alice",
+    "entitiesInvolved": ["entity", "notes"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has note description 'Candidate From Galgotia College' and firstname 'Alice'. No other candidate has both.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_042",
+    "description": "AND search - Schedule follow up for Student from Galgotia College and Candidate From Galgotia College in notes and tasks",
+    "query": "Schedule follow up for Student from Galgotia College AND Candidate From Galgotia College",
+    "entitiesInvolved": ["notes", "tasks"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has task description 'Schedule follow up for Student from Galgotia College' and note description 'Candidate From Galgotia College'. No other candidate has both.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_043",
+    "description": "NOT search - Software Engineer but not Java in entity",
+    "query": "Software Engineer NOT Java",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": "Empty",
+    "expectedResultReason": "Every candidate with 'Software Engineer' in entity (Candidate1, 10, 11, 12, 13, 14, 15) has 'Java' in skills. No candidate matches Software Engineer AND NOT Java.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_BS_CAND_044",
+    "description": "NOT search - Alice but not müller in entity",
+    "query": "NOT müller AND Alice",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has firstname 'Alice' (Alice Johnson). Candidate2 is 'alice müller' and is excluded by NOT müller. Only Candidate1 matches.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_045",
+    "description": "AND search - Müllerstraße 5 and Master of Science in entity",
+    "query": "Müllerstraße 5 AND Master of Science",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate2"],
+    "expectedResultReason": "Candidate2 has address 'Müllerstraße 5' and educational_qualification 'Master of Science'. No other candidate has both.",
+    "expectedResultName": ["alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_046",
+    "description": "OR search - Meet with Alice Müller for KI-Entwickler position OR Interview discussion for candidate1 in tasks and meetings",
+    "query": "Meet with Alice Müller for KI-Entwickler position OR Interview discussion for candidate1",
+    "entitiesInvolved": ["tasks", "meetings"],
+    "expectedResult": ["Candidate1", "Candidate2"],
+    "expectedResultReason": "Candidate2 has task description 'Meet with Alice Müller for KI-Entwickler position'. Candidate1 has meeting description 'Interview discussion for candidate1'. Both match the OR condition.",
+    "expectedResultName": ["Alice Johnson", "alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_047",
+    "description": "Search by email - Schulz_Jr with underscores",
+    "query": "Schulz_Jr@emailtest.temp.fix.com",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate3"],
+    "expectedResultReason": "Candidate3 has emailid 'Schulz_Jr@emailtest.temp.fix.com'. No other candidate has this email.",
+    "expectedResultName": ["Schulz_Jr Ronaldo"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_048",
+    "description": "AND search - Call to Data Scientist Lead at Under_Score_Analytics_Corp and Schedule follow up for candidate3 in tasks and call_logs",
+    "query": "Call to Data Scientist Lead at Under_Score_Analytics_Corp AND Schedule follow up for candidate3",
+    "entitiesInvolved": ["tasks", "call_logs"],
+    "expectedResult": ["Candidate3"],
+    "expectedResultReason": "Candidate3 has call_notes 'Call to Data Scientist Lead at Under_Score_Analytics_Corp' and task description 'Schedule follow up for candidate3'. No other candidate has both.",
+    "expectedResultName": ["Schulz_Jr Ronaldo"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_049",
+    "description": "Important field - Skill search (Java)",
+    "query": "Java",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "All these candidates have 'Java' in skill field (Java,Spring,SQL).",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_051",
+    "description": "Important field - Organization (lastorganisation) MI6",
+    "query": "MI6",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate6"],
+    "expectedResultReason": "Candidate6 has lastorganisation 'MI6'. No other candidate has this value.",
+    "expectedResultName": ["James Bond"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_052",
+    "description": "Important field - Work and Education History combination (Bellavita AND Galgotia College)",
+    "query": "Bellavita AND Galgotia College",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has work_company_name 'Bellavita' and institute_name 'Galgotia College' in work/education history. No other candidate has both.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_057",
+    "description": "Quotes - Exact phrase Senior Software Engineer",
+    "query": "\"Senior Software Engineer\"",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "All these candidates have position 'Senior Software Engineer'. Phrase search ensures exact match.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_058",
+    "description": "Accents / Unicode - Müllerstraße",
+    "query": "Müllerstraße",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate2"],
+    "expectedResultReason": "Candidate2 has address 'Müllerstraße 5'. Tests umlaut and unicode in query.",
+    "expectedResultName": ["alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_059",
+    "description": "Extra spaces - Java AND Spring (multiple spaces between terms)",
+    "query": "Java  AND  Spring",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "Candidates with skill Java,Spring. Query has extra spaces around AND; parser should normalize.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_060",
+    "description": "Case sensitivity - lowercase java",
+    "query": "java",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "If search is case-insensitive, 'java' matches skill 'Java'. All these candidates have Java in skills.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_062",
+    "description": "Java AND NOT (Python OR Ruby)",
+    "query": "Java AND NOT (Python OR Ruby)",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "Candidates with Java in skill and without Python or Ruby. Candidate2 has Python and is excluded.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_064",
+    "description": "OR combination - Java OR Python",
+    "query": "Java OR Python",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate2", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "Candidate1,10,11,12,13,14,15 have Java. Candidate2 has Python. All match OR condition.",
+    "expectedResultName": ["Alice Johnson", "alice müller", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_065",
+    "description": "Parentheses - valid (Java AND Spring) AND SQL",
+    "query": "(Java AND Spring) AND SQL",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "Valid parentheses grouping. All these candidates have skill Java,Spring,SQL.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_066",
+    "description": "NOT (Java AND (Python OR Ruby)) - nested parentheses",
+    "query": "NOT (Java AND (Python OR Ruby))",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate2", "Candidate3", "Candidate4", "Candidate5", "Candidate6", "Candidate7", "Candidate8", "Candidate9", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "No candidate has both Java and (Python or Ruby). So NOT(...) is true for all 15.",
+    "expectedResultName": ["Alice Johnson", "alice müller", "Schulz_Jr Ronaldo", "José García", "O'Connor", "James Bond", "Arjun Malhotra", "@lbert @Google@", "李小明", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_068",
+    "description": "Long text / Rich content - microservices architecture",
+    "query": "microservices architecture",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10"],
+    "expectedResultReason": "Candidate1 longtextCF and Candidate10 work description contain 'microservices architecture'.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr."]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_069",
+    "description": "Candidate and Activity combination - Alice AND meeting phrase",
+    "query": "Alice AND \"Interview discussion for candidate1\"",
+    "entitiesInvolved": ["entity", "meetings"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has firstname Alice and meeting description 'Interview discussion for candidate1'. Entity and activity combination.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_070",
+    "description": "Activity and Activity combination - call AND task",
+    "query": "Initial contact call for candidate1 AND Schedule follow up for Student from Galgotia College",
+    "entitiesInvolved": ["call_logs", "tasks"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has call_notes 'Initial contact call for candidate1' and task description 'Schedule follow up for Student from Galgotia College'. Both activities match.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_071",
+    "description": "Email OR entity - email enriched style",
+    "query": "aliceJohnson@testmail.com OR Software Engineer",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "Candidate1 has the email; all listed have 'Software Engineer' in position/title. OR returns union.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_072",
+    "description": "Invalid syntax - unbalanced parentheses (query validator)",
+    "query": "Java AND (Python)",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": "Empty",
+    "expectedResultReason": "Invalid query: unbalanced parentheses. Query validator should reject or return empty.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_BS_CAND_073",
+    "description": "Senior Software Developer - exact title (work history)",
+    "query": "Senior Software Developer",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate10"],
+    "expectedResultReason": "Candidate10 has work history title 'Senior Software Developer' at Microsoft Corporation. No other candidate has this exact title.",
+    "expectedResultName": ["Ralph (Lauren) Jr."]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_075",
+    "description": "Education and Work combination - Trinity College Dublin AND O'Malley",
+    "query": "Trinity College Dublin AND O'Malley's",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate5"],
+    "expectedResultReason": "Candidate5 has institute_name 'Trinity College Dublin' and work_company_name 'O'Malley's Security Solutions' / 'O'Malley's Firm'. Education and work history combination.",
+    "expectedResultName": ["O'Connor"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_076",
+    "description": "Multi-OR - Java OR Python OR Scrum",
+    "query": "Java OR Python OR Scrum",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate2", "Candidate4", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "Java: C1,C10,C11,C12,C13,C14,C15. Python: C2. Scrum: C4 (Gestión de Proyectos,Scrum,Jira). Union of all.",
+    "expectedResultName": ["Alice Johnson", "alice müller", "José García", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_078",
+    "description": "Technische Universität München - education and note combination",
+    "query": "Technische Universität München",
+    "entitiesInvolved": ["entity", "notes"],
+    "expectedResult": ["Candidate2"],
+    "expectedResultReason": "Candidate2 has institute_name 'Technische Universität München' and note 'Candidate From Technische Universität München'. Tests umlaut and entity+notes.",
+    "expectedResultName": ["alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_080",
+    "description": "Phone / contact number - unique 9876543210",
+    "query": "9876543210",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has contactnumber and phonenumberCF '9876543210'. Other candidates use different numbers.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_081",
+    "description": "Source field - LinkedIn (subset of candidates)",
+    "query": "LinkedIn",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14"],
+    "expectedResultReason": "Candidates 1 and 10–14 have source 'LinkedIn'. Candidate15 has empty source; others use different source strings per booleanSearchCandidate_data.json.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_082",
+    "description": "Languages field - Deutsch",
+    "query": "Deutsch",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate2"],
+    "expectedResultReason": "Candidate2 has languageskills 'Deutsch, Englisch'. No other candidate lists Deutsch.",
+    "expectedResultName": ["alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_083",
+    "description": "Case sensitivity - uppercase JAVA in skills",
+    "query": "JAVA",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "Same seven candidates as lowercase 'java' (TC_BS_CAND_060); search should be case-insensitive for skill tokens.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_084",
+    "description": "Number custom field value 75000",
+    "query": "75000",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has numberCF '75000'. No other candidate uses this exact numberCF value.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_085",
+    "description": "Address field - 123 Maple Street",
+    "query": "123 Maple Street",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has address '123 Maple Street'. Candidates 10 and 15 use '123 Main Street' instead.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_086",
+    "description": "Resume text - phrase Senior Java Developer",
+    "query": "\"Senior Java Developer\"",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 resumetext contains the exact phrase 'Senior Java Developer' (booleanSearchCandidate_data.json). Other candidates have null/empty resumetext.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_087",
+    "description": "Resume text - Résumé with accent",
+    "query": "Résumé",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 resumetext starts with 'Résumé excerpt'. Tests accented term in resume body.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_088",
+    "description": "Resume text - Node.js",
+    "query": "Node.js",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Only Candidate1 resumetext contains 'Node.js'.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_089",
+    "description": "Resume text - C++ token",
+    "query": "C++",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Only Candidate1 resumetext contains 'C++'.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_090",
+    "description": "Resume text - Full-stack",
+    "query": "Full-stack",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Only Candidate1 resumetext contains 'Full-stack'.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_091",
+    "description": "Phone with underscores - phonenumberCF",
+    "query": "876_543_2109",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate3"],
+    "expectedResultReason": "Candidate3 has contactnumber and phonenumberCF '876_543_2109'.",
+    "expectedResultName": ["Schulz_Jr Ronaldo"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_092",
+    "description": "Phonenumber custom field - not-a-number",
+    "query": "not-a-number",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate5"],
+    "expectedResultReason": "Candidate5 has phonenumberCF 'not-a-number' (O'Connor).",
+    "expectedResultName": ["O'Connor"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_093",
+    "description": "Employment status - Actively Looking",
+    "query": "\"Actively Looking\"",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "These candidates have currentstatus 'Actively Looking' in booleanSearchCandidate_data.json. Others use different status strings or empty status.",
+    "expectedResultName": ["Alice Johnson", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_094",
+    "description": "Wildcard - prefix asterisk matches Schulz_Jr firstname",
+    "query": "Schulz*",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate3"],
+    "expectedResultReason": "Candidate3 firstname is 'Schulz_Jr'. Prefix wildcard Schulz* should match tokens starting with Schulz.",
+    "expectedResultName": ["Schulz_Jr Ronaldo"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_095",
+    "description": "Wildcard - single question mark completes Johnson",
+    "query": "Johnso?",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 lastname is 'Johnson'. Johnso? should match if ? is a single-character wildcard.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_096",
+    "description": "Wildcard - prefix matches unique work history company Bellavita",
+    "query": "Bellavi*",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Only Candidate1 has work_company_name 'Bellavita' in booleanSearchCandidate_data.json.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_097",
+    "description": "Wildcard - prefix matches Ralph firstname",
+    "query": "Ralp*",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate10"],
+    "expectedResultReason": "Candidate10 firstname is 'Ralph'. No other candidate uses this prefix in indexed name fields.",
+    "expectedResultName": ["Ralph (Lauren) Jr."]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_098",
+    "description": "Wildcard AND - Bellavita work prefix and Galgotia education prefix",
+    "query": "Bellavi* AND Galgot*",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has Bellavita in work history and Galgotia College in education; both prefixes appear only together on Candidate1 in seed data.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_099",
+    "description": "Wildcard - prefix Noble* for current organisation",
+    "query": "Noble*",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate15"],
+    "expectedResultReason": "Only Candidate15 has work_company_name 'Noble Technologies XVII Inc.' containing 'Noble' as a prefix token; trailing * is the most widely supported wildcard form.",
+    "expectedResultName": ["Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_100",
+    "description": "NOT (Java AND Python) - no candidate has both skills",
+    "query": "NOT (Java AND Python)",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate2", "Candidate3", "Candidate4", "Candidate5", "Candidate6", "Candidate7", "Candidate8", "Candidate9", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "booleanSearchCandidate_data.json: Java appears only in Candidate1,10–15 (skill Java,Spring,SQL); Python only in Candidate2. No record has both, so (Java AND Python) is false for every candidate and NOT (...) matches all 15.",
+    "expectedResultName": ["Alice Johnson", "alice müller", "Schulz_Jr Ronaldo", "José García", "O'Connor", "James Bond", "Arjun Malhotra", "@lbert @Google@", "李小明", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_101",
+    "description": "NOT Java OR NOT Python - De Morgan equivalent of NOT (Java AND Python)",
+    "query": "NOT Java OR NOT Python",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate1", "Candidate2", "Candidate3", "Candidate4", "Candidate5", "Candidate6", "Candidate7", "Candidate8", "Candidate9", "Candidate10", "Candidate11", "Candidate12", "Candidate13", "Candidate14", "Candidate15"],
+    "expectedResultReason": "For each candidate either Java is absent OR Python is absent: Java-only candidates lack Python; Candidate2 lacks Java; Candidates3–9 lack both. So (NOT Java OR NOT Python) is true for all 15—same result as TC_BS_CAND_100.",
+    "expectedResultName": ["Alice Johnson", "alice müller", "Schulz_Jr Ronaldo", "José García", "O'Connor", "James Bond", "Arjun Malhotra", "@lbert @Google@", "李小明", "Ralph (Lauren) Jr.", "Sigm Σ Boy", "Alpha α Beta β", "Phill Salt/Salt", "Kireon Pollard", "Sir Josheph XVII"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_102",
+    "description": "NOT Java AND NOT Python - neither skill in indexed profile",
+    "query": "NOT Java AND NOT Python",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate3", "Candidate4", "Candidate5", "Candidate6", "Candidate7", "Candidate8", "Candidate9"],
+    "expectedResultReason": "Candidates3–9 have skills that do not include Java or Python (e.g. skill_1,skill_2; Scrum; penetration testing; espionage…; empty; SQL Injection…; Chinese skills). All others have Java and/or Python in skill per booleanSearchCandidate_data.json.",
+    "expectedResultName": ["Schulz_Jr Ronaldo", "José García", "O'Connor", "James Bond", "Arjun Malhotra", "@lbert @Google@", "李小明"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_103",
+    "description": "NOT (Java OR Python) - parentheses; equivalent to NOT Java AND NOT Python",
+    "query": "NOT (Java OR Python)",
+    "entitiesInvolved": ["entity"],
+    "expectedResult": ["Candidate3", "Candidate4", "Candidate5", "Candidate6", "Candidate7", "Candidate8", "Candidate9"],
+    "expectedResultReason": "De Morgan: NOT (Java OR Python) equals NOT Java AND NOT Python. Same seven candidates as TC_BS_CAND_102—neither token matches their skill field.",
+    "expectedResultName": ["Schulz_Jr Ronaldo", "José García", "O'Connor", "James Bond", "Arjun Malhotra", "@lbert @Google@", "李小明"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_104",
+    "description": "Files scope - lighthouse keyword in attached file content",
+    "query": "lighthouse",
+    "entitiesInvolved": ["files"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 has bs_cand1_lighthouse.txt attached (booleanSearchCandidate_data.json files fixture). File body contains 'lighthouse'. Other candidates have no file with this term.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_105",
+    "description": "Files scope - archipelago keyword in attached file content",
+    "query": "archipelago",
+    "entitiesInvolved": ["files"],
+    "expectedResult": ["Candidate2"],
+    "expectedResultReason": "Candidate2 has bs_cand2_archipelago.txt attached. File body contains 'archipelago'. No other seeded candidate file includes this term.",
+    "expectedResultName": ["alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_106",
+    "description": "Files scope - helmsman keyword in attached file",
+    "query": "helmsman",
+    "entitiesInvolved": ["files"],
+    "expectedResult": ["Candidate3"],
+    "expectedResultReason": "Candidate3 has bs_cand3_helmsman_cv.txt attached. File name and body contain 'helmsman'. Candidates1–2 files do not.",
+    "expectedResultName": ["Schulz_Jr Ronaldo"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_107",
+    "description": "Files scope - OR across two distinct file keywords",
+    "query": "lighthouse OR archipelago",
+    "entitiesInvolved": ["files"],
+    "expectedResult": ["Candidate1", "Candidate2"],
+    "expectedResultReason": "Candidate1 file contains lighthouse; Candidate2 file contains archipelago. Candidate3 file has neither term in indexed content/filename beyond helmsman.",
+    "expectedResultName": ["Alice Johnson", "alice müller"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_108",
+    "description": "Files scope - keyword absent from all attached files",
+    "query": "nonexistent_file_keyword_xyz",
+    "entitiesInvolved": ["files"],
+    "expectedResult": "Empty",
+    "expectedResultReason": "No seeded candidate file contains 'nonexistent_file_keyword_xyz' in filename or body.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_BS_CAND_109",
+    "description": "Cross-scope AND - profile firstname and files keyword",
+    "query": "Alice AND lighthouse",
+    "entitiesInvolved": ["entity", "files"],
+    "expectedResult": ["Candidate1"],
+    "expectedResultReason": "Candidate1 firstname is Alice (entity scope) and bs_cand1_lighthouse.txt contains lighthouse (files scope). Candidate2 has archipelago only; others lack lighthouse file match.",
+    "expectedResultName": ["Alice Johnson"]
+  },
+  {
+    "testCaseId": "TC_BS_CAND_110",
+    "description": "Files scope AND - both keywords on same candidate file set",
+    "query": "lighthouse AND archipelago",
+    "entitiesInvolved": ["files"],
+    "expectedResult": "Empty",
+    "expectedResultReason": "lighthouse appears only on Candidate1 file; archipelago only on Candidate2 file. No single candidate has both terms in files scope.",
+    "expectedResultName": "Empty"
+  }
+]

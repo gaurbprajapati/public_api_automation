@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- Owner - Technostars - Harika Kurella, Priyanka Shinde -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Create Call Logs Endpoints 1">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithFields" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 2">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="verifyValidationOnDurationFieldPost_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 3">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createCallLogWithEnableDisableAutoTeamsPopulation" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 4">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createCallLogWithInvalidCollaborators" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 5">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="userShouldNotBeAbleToCreateCallLogWithInvalidData" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 6">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithMandatoryValue" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 7">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="createNewCallLogWithLimitExceeds" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create Call Logs Endpoints 8">
+		<classes>
+			<class name="io.rcrm.api.calllogs.CreateNewCallLogTest">
+				<methods>
+					<include name="unauthorizedUserCannotCreateNewCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="ALL Call Log By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.AllEndpointsOfCallLogsTest">
+				<methods>
+					<include name="createNewCallLog" />
+					<include name="showAllCalLogs" />
+					<include name="searchCallLogByFields" />
+					<include name="searchCallLogByID" />
+					<include name="editCallLogByID" />
+					<include name="deleteCallLogByID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Call Logs Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.EditCallLogTest">
+				<methods>
+					<include name="editCallLogById_POST" />
+					<include name="editCallLogByInvalidId404_POST" />
+					<include name="editCallLogByInvalidFieldsValues422_POST" />
+					<include name="unauthorizedUserCannotEditCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Show All Call Logs Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.GetAllCallLogsTest">
+				<methods>
+					<include name="showAllCallLogs_GET" />
+					<include name="unauthorizedUserCannotGetAllCallLogs" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Call Log By Id Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.SearchCallLogByIdTest">
+				<methods>
+					<include name="searchCallLogById_GET" />
+					<include name="searchCallLogWithRecordingById_GET" />
+					<include name="searchCallLogByInvalidId_GET" />
+					<include name="unauthorizedUserCannotSearchCallLogById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Call Log By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.SearchCallLogByFieldsTest">
+				<methods>
+					<include name="searchCallLogByAllFields_GET" />
+					<include name="searchCallLogByCallType_GET" />
+					<include name="searchTaskByInvalidCallType_GET" />
+					<include name="unauthorizedUserCannotSearchCallLogByFields" />
+					<include name="searchCallLogByStartingFrom" />
+					<include name="searchCallLogByStartingTo" />
+					<include name="searchCallLogByUpdatedFrom" />
+					<include name="searchCallLogByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Call Log By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.calllogs.DeleteCallLogTest">
+				<methods>
+					<include name="deleteCallLogById_GET" />
+					<include name="deleteCallLogByInvalidID_GET" />
+					<include name="unauthorizedUserCannotDeleteCallLog" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Call Log - Automated Call Log Restriction">
+		<classes>
+			<class name="io.rcrm.api.calllogs.DeleteCallLogTest">
+				<methods>
+					<include name="userCannotDeleteAutomatedCallLog_PublicAPI_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Call Log Albatross AllEndPoints">
+		<classes>
+			<class name="io.recruitcrm.albatross.callLogs.AllEndpointsOfCallLogTest">
+				<methods>
+					<include name="addCallLog_POST" />
+					<include name="editCallLog_POST" />
+ 					<include name="getCallLogActivityData_GET" />
+					<include name="getCallLogList_GET" />
+					<include name="deleteCallLog_DELETE" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Call Log Albatross - Automated Call Log Restriction">
+		<classes>
+			<class name="io.recruitcrm.albatross.callLogs.AllEndpointsOfCallLogTest">
+				<methods>
+					<include name="userCannotDeleteAutomatedCallLog_Albatross_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Add Call Log Albatross EndPoints">
+		<classes>
+			<class name="io.recruitcrm.albatross.callLogs.AddCallLogTest">
+				<methods>
+					<include name="addCallLogPOST_200" />
+					<include name="callDurationFieldValidationPOST_422" />
+					<include name="addCallLogInvalidAuthPOST_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Upload Call Log Recording Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="uploadCallLogRecording" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Upload Call Log Recording 422 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="uploadCallLogRecording_422" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Upload Call Log Recording 401 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="uploadCallLogRecording_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Call Recording Upload Status Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchCallRecordingUploadStatus" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Status For Call Recording Not Uploaded Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchStatusForCallRecordingNotUploaded" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Status For Call Recording 404 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchStatusForCallRecording_404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Fetch Status For Call Recording 401 Test">
+		<classes>
+			<class name="io.rcrm.api.calllogs.UploadCallRecordingTest">
+				<methods>
+					<include name="fetchStatusForCallRecording_401" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

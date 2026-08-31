@@ -1,0 +1,307 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "meta": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "requestUuid": {
+                    "type": "string"
+                },
+                "responseType": {
+                    "type": "object",
+                    "properties": {
+                        "context": {
+                            "type": "string"
+                        },
+                        "code": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "context",
+                        "code"
+                    ]
+                },
+                "timestamp": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "message",
+                "requestUuid",
+                "responseType",
+                "timestamp",
+                "status"
+            ]
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "contractorsErrorData": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "timesheetId": {
+                                "type": "integer"
+                            },
+                            "timesheetPeriod": {
+                                "type": "string"
+                            },
+                            "error": {
+                                "type": "string"
+                            },
+                            "contractorName": {
+                                "type": "string"
+                            },
+                            "contractorProfilePicUrl": {
+                                "type": "string"
+                            },
+                            "contractorJobName": {
+                                "type": "string"
+                            },
+                            "companyProfilePicUrl": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "contractorSerialNumber": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "timesheetId",
+                            "timesheetPeriod",
+                            "error",
+                            "contractorName",
+                            "contractorProfilePicUrl",
+                            "contractorJobName",
+                            "contractorSerialNumber"
+                        ]
+                    }
+                },
+                "timesheetSettingsMetaData": {
+                    "type": "object",
+                    "properties": {
+                        "contractorId": {
+                            "type": "integer"
+                        },
+                        "workLogType": {
+                            "type": "integer"
+                        },
+                        "periodStart": {
+                            "type": "integer"
+                        },
+                        "periodEnd": {
+                            "type": "integer"
+                        },
+                        "timesheetId": {
+                            "type": "integer"
+                        },
+                        "timesheetSettingId": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "contractorId",
+                        "workLogType",
+                        "periodStart",
+                        "periodEnd",
+                        "timesheetId",
+                        "timesheetSettingId"
+                    ]
+                },
+                "contractorsLogData": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "contractorName": {
+                                "type": "string"
+                            },
+                            "contractorProfilePicUrl": {
+                                "type": "string"
+                            },
+                            "calculateBreakTime": {
+                                "type": "boolean"
+                            },
+                            "breakTimeThreshold": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "templateWorkDays": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "workDayId": {
+                                            "type": "integer"
+                                        },
+                                        "workTime": {
+                                            "type": "integer"
+                                        },
+                                        "workStartTime": {
+                                            "type": "integer"
+                                        },
+                                        "workEndTime": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "workDayId",
+                                        "workTime",
+                                        "workStartTime",
+                                        "workEndTime"
+                                    ]
+                                }
+                            },
+                            "timeLogs": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "date": {
+                                            "type": "integer"
+                                        },
+                                        "dayTypeId": {
+                                            "type": "integer"
+                                        },
+                                        "workTime": {
+                                            "type": [
+                                                "integer",
+                                                "null"
+                                            ]
+                                        },
+                                        "workStartTime": {
+                                            "type": [
+                                                "integer",
+                                                "null"
+                                            ]
+                                        },
+                                        "workEndTime": {
+                                            "type": [
+                                                "integer",
+                                                "null"
+                                            ]
+                                        },
+                                        "breakTime": {
+                                            "type": [
+                                                "integer",
+                                                "null"
+                                            ]
+                                        },
+                                        "breakIntervals": {
+                                            "type": [
+                                                "array",
+                                                "null"
+                                            ]
+                                        },
+                                        "overTime": {
+                                            "type": [
+                                                "integer",
+                                                "null"
+                                            ]
+                                        },
+                                        "remark": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ]
+                                        },
+                                        "totalTime": {
+                                            "type": [
+                                                "integer",
+                                                "null"
+                                            ]
+                                        },
+                                        "timesheetId": {
+                                            "type": "integer"
+                                        },
+                                        "timesheetPeriod": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ]
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "date",
+                                        "dayTypeId",
+                                        "timesheetId"
+                                    ]
+                                }
+                            },
+                            "totalTime": {
+                                "type": "integer"
+                            },
+                            "totalOvertime": {
+                                "type": "integer"
+                            },
+                            "approvers": {
+                                "type": "object",
+                                "properties": {
+                                    "agencyIds": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "clientIds": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "agencyIds",
+                                    "clientIds"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "contractorName",
+                            "contractorProfilePicUrl",
+                            "calculateBreakTime",
+                            "templateWorkDays",
+                            "timeLogs",
+                            "totalTime",
+                            "totalOvertime",
+                            "approvers"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "timesheetSettingsMetaData",
+                "contractorsLogData"
+            ]
+        }
+    },
+    "required": [
+        "meta",
+        "data"
+    ]
+}

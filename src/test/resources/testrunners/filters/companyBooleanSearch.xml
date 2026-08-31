@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Company Boolean Search Suite" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    
+    <!-- Boolean Search Query Validator Tests -->
+    <test name="Boolean Search Query Validator">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CompanyBooleanSearchQueryValidatorTest">
+                <methods>
+                    <include name="companyBooleanSearchQueryValidatorTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Boolean Search Tests -->
+    <test name="Company Boolean Search">
+        <classes>
+            <class name="io.recruitcrm.BooleanSearch.BooleanSearchCompanyTest">
+                <methods>
+                    <include name="booleanSearchCompanyTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,284 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"silent_progress": {
+			"type": "boolean"
+		},
+		"message": {
+			"type": "string"
+		},
+		"message_type": {
+			"type": "string"
+		},
+		"data": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"candidate_id": {
+							"type": "integer"
+						},
+						"institute_name": {
+							"type": "string"
+						},
+						"educational_qualification": {
+							"type": "string"
+						},
+						"educational_specialization": {
+							"type": "string"
+						},
+						"grade": {
+							"type": "string"
+						},
+						"education_location": {
+							"type": "string"
+						},
+					"education_start_date": {
+						"type": ["integer", "null"]
+					},
+						"education_end_date": {
+							"type": "integer"
+						},
+						"education_description": {
+							"type": "string"
+						},
+						"created_by": {
+							"type": "integer"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_by": {
+							"type": "integer"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"candidate_slug": {
+							"type": "string"
+						},
+						"is_manually_added": {
+							"type": "integer"
+						},
+						"accountid": {
+							"type": "integer"
+						}
+					},
+					"required": [
+						"id",
+						"candidate_id",
+						"institute_name",
+						"educational_qualification",
+						"educational_specialization",
+						"grade",
+						"education_location",
+						"education_start_date",
+						"education_end_date",
+						"education_description",
+						"created_by",
+						"created_on",
+						"updated_by",
+						"updated_on",
+						"candidate_slug",
+						"is_manually_added",
+						"accountid"
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"candidate_id": {
+							"type": "integer"
+						},
+						"institute_name": {
+							"type": "string"
+						},
+						"educational_qualification": {
+							"type": "string"
+						},
+						"educational_specialization": {
+							"type": "string"
+						},
+						"grade": {
+							"type": "string"
+						},
+						"education_location": {
+							"type": "string"
+						},
+					"education_start_date": {
+						"type": ["integer", "null"]
+					},
+						"education_end_date": {
+							"type": "integer"
+						},
+						"education_description": {
+							"type": "string"
+						},
+						"created_by": {
+							"type": "integer"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_by": {
+							"type": "integer"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"candidate_slug": {
+							"type": "string"
+						},
+						"is_manually_added": {
+							"type": "integer"
+						},
+						"accountid": {
+							"type": "integer"
+						}
+					},
+					"required": [
+						"id",
+						"candidate_id",
+						"institute_name",
+						"educational_qualification",
+						"educational_specialization",
+						"grade",
+						"education_location",
+						"education_start_date",
+						"education_end_date",
+						"education_description",
+						"created_by",
+						"created_on",
+						"updated_by",
+						"updated_on",
+						"candidate_slug",
+						"is_manually_added",
+						"accountid"
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"candidate_id": {
+							"type": "integer"
+						},
+						"institute_name": {
+							"type": "string"
+						},
+						"educational_qualification": {
+							"type": "string"
+						},
+						"educational_specialization": {
+							"type": "string"
+						},
+						"grade": {
+							"type": "string"
+						},
+						"education_location": {
+							"type": "string"
+						},
+					"education_start_date": {
+						"type": ["integer", "null"]
+					},
+						"education_end_date": {
+							"type": "integer"
+						},
+						"education_description": {
+							"type": "string"
+						},
+						"created_by": {
+							"type": "integer"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_by": {
+							"type": "integer"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"candidate_slug": {
+							"type": "string"
+						},
+						"is_manually_added": {
+							"type": "integer"
+						},
+						"accountid": {
+							"type": "integer"
+						}
+					},
+					"required": [
+						"id",
+						"candidate_id",
+						"institute_name",
+						"educational_qualification",
+						"educational_specialization",
+						"grade",
+						"education_location",
+						"education_start_date",
+						"education_end_date",
+						"education_description",
+						"created_by",
+						"created_on",
+						"updated_by",
+						"updated_on",
+						"candidate_slug",
+						"is_manually_added",
+						"accountid"
+					]
+				}
+			]
+		},
+		"user": {
+			"type": "string"
+		},
+		"notifications": {
+			"type": "array",
+			"items": {}
+		},
+		"status": {
+			"type": "string"
+		},
+		"application_version": {
+			"type": "string"
+		},
+		"recaptcha_site_key": {
+			"type": "string"
+		},
+		"start_time": {
+			"type": "number"
+		},
+		"end_time": {
+			"type": "number"
+		},
+		"time_to_output": {
+			"type": "number"
+		}
+	},
+	"required": [
+		"silent_progress",
+		"message",
+		"message_type",
+		"data",
+		"user",
+		"notifications",
+		"status",
+		"application_version",
+		"recaptcha_site_key",
+		"start_time",
+		"end_time",
+		"time_to_output"
+	]
+}

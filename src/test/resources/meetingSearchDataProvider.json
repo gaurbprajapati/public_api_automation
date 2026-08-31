@@ -1,0 +1,288 @@
+{
+  "meetingSearchTestCases": [
+    {
+      "testCaseId": "basic_text_search",
+      "description": "Basic text search patterns for meetings",
+      "searchTerms": [
+        {
+          "term": "consultation",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "candidate",
+          "expectedResults": ["meeting1", "meeting2", "meeting3", "meeting4", "meeting5", "meeting6", "meeting7", "meeting8", "meeting9", "meeting10", "meeting11", "meeting12"]
+        },
+        {
+          "term": "created by",
+          "expectedResults": ["meeting1", "meeting2", "meeting3", "meeting4", "meeting5", "meeting6", "meeting7", "meeting8", "meeting9", "meeting10", "meeting11", "meeting12"]
+        },
+        {
+          "term": "collaborator",
+          "expectedResults": ["meeting1", "meeting2", "meeting3", "meeting4", "meeting5", "meeting6", "meeting7", "meeting8", "meeting9", "meeting10", "meeting11", "meeting12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "title_specific_search",
+      "description": "Title-specific search terms for meetings",
+      "searchTerms": [
+        {
+          "term": "Initial consultation",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "Follow-up meeting",
+          "expectedResults": ["meeting2"]
+        },
+        {
+          "term": "Strategy discussion",
+          "expectedResults": ["meeting3"]
+        },
+        {
+          "term": "Client presentation",
+          "expectedResults": ["meeting4"]
+        },
+        {
+          "term": "Team standup",
+          "expectedResults": ["meeting5"]
+        },
+        {
+          "term": "Project review",
+          "expectedResults": ["meeting6"]
+        },
+        {
+          "term": "Training session",
+          "expectedResults": ["meeting7"]
+        },
+        {
+          "term": "Board meeting",
+          "expectedResults": ["meeting8"]
+        },
+        {
+          "term": "One-on-one",
+          "expectedResults": ["meeting9"]
+        },
+        {
+          "term": "Status update",
+          "expectedResults": ["meeting10"]
+        },
+        {
+          "term": "Planning session",
+          "expectedResults": ["meeting11"]
+        },
+        {
+          "term": "Code review",
+          "expectedResults": ["meeting12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "common_title_description_terms",
+      "description": "Common terms found in both title and description",
+      "searchTerms": [
+        {
+          "term": "English text",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "misspellings",
+          "expectedResults": ["meeting2"]
+        },
+        {
+          "term": "diacritics",
+          "expectedResults": ["meeting3"]
+        },
+        {
+          "term": "SQL test",
+          "expectedResults": ["meeting4"]
+        },
+        {
+          "term": "Lorem ipsum",
+          "expectedResults": ["meeting5"]
+        },
+        {
+          "term": "Unicode test",
+          "expectedResults": ["meeting6"]
+        },
+        {
+          "term": "palindrome test",
+          "expectedResults": ["meeting7"]
+        },
+        {
+          "term": "edge cases test",
+          "expectedResults": ["meeting8"]
+        },
+        {
+          "term": "boolean test",
+          "expectedResults": ["meeting9"]
+        },
+        {
+          "term": "regex test",
+          "expectedResults": ["meeting10"]
+        },
+        {
+          "term": "numbers test",
+          "expectedResults": ["meeting11"]
+        },
+        {
+          "term": "stemming test",
+          "expectedResults": ["meeting12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "case_sensitivity",
+      "description": "Case sensitivity testing",
+      "searchTerms": [
+        {
+          "term": "UPPERCASE",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "lowercase",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "MixedCase",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "CASE-SENSITIVE",
+          "expectedResults": ["meeting12"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "numbers_and_digits",
+      "description": "Numbers and digits search",
+      "searchTerms": [
+        {
+          "term": "12345",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "abc123",
+          "expectedResults": ["meeting6"]
+        },
+        {
+          "term": "0xFF",
+          "expectedResults": ["meeting3"]
+        },
+        {
+          "term": "one, two, three",
+          "expectedResults": ["meeting11"]
+        },
+        {
+          "term": "1st, 2nd, 3rd",
+          "expectedResults": ["meeting11"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "special_characters",
+      "description": "Special characters and symbols",
+      "searchTerms": [
+        {
+          "term": "!@#$%^&*()_+=-{}[]|:;'<>,.?/`~",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "$€¥£₹",
+          "expectedResults": ["meeting3"]
+        },
+        {
+          "term": "½ ⅓ ¾",
+          "expectedResults": ["meeting11"]
+        },
+        {
+          "term": "I II III IV",
+          "expectedResults": ["meeting11"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "unicode_and_emojis",
+      "description": "Unicode characters and emojis",
+      "searchTerms": [
+        {
+          "term": "😀🔥",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "🔥💡⚡",
+          "expectedResults": ["meeting6"]
+        },
+        {
+          "term": "résumé",
+          "expectedResults": ["meeting3"]
+        },
+        {
+          "term": "jalapeño",
+          "expectedResults": ["meeting3"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "multilingual_text",
+      "description": "Multilingual text search",
+      "searchTerms": [
+        {
+          "term": "こんにちは",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "Привет",
+          "expectedResults": ["meeting1"]
+        },
+        {
+          "term": "हिन्दी",
+          "expectedResults": ["meeting1", "meeting10"]
+        },
+        {
+          "term": "中文测试",
+          "expectedResults": ["meeting7"]
+        },
+        {
+          "term": "Français",
+          "expectedResults": ["meeting7"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "lorem_ipsum",
+      "description": "Lorem ipsum text",
+      "searchTerms": [
+        {
+          "term": "Lorem ipsum",
+          "expectedResults": ["meeting5"]
+        },
+        {
+          "term": "dolor sit amet",
+          "expectedResults": ["meeting5"]
+        },
+        {
+          "term": "consectetur adipiscing elit",
+          "expectedResults": ["meeting5"]
+        }
+      ]
+    },
+    {
+      "testCaseId": "partial_word_search",
+      "description": "Partial word matching",
+      "searchTerms": [
+        {
+          "term": "collabor",
+          "expectedResults": ["meeting1", "meeting2", "meeting3", "meeting4", "meeting5", "meeting6", "meeting7", "meeting8", "meeting9", "meeting10", "meeting11", "meeting12"]
+        },
+        {
+          "term": "admin",
+          "expectedResults": ["meeting1", "meeting2", "meeting6", "meeting10"]
+        },
+        {
+          "term": "team",
+          "expectedResults": ["meeting2", "meeting3", "meeting4", "meeting5", "meeting6", "meeting7", "meeting10", "meeting11", "meeting12"]
+        }
+      ]
+    }
+  ]
+}

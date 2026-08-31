@@ -1,0 +1,60 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Get invoice templates API response",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"template_id": {
+				"type": "integer"
+			},
+			"template_name": {
+				"type": "string"
+			},
+			"shared_with": {
+				"type": "object",
+				"properties": {
+					"teams": {
+						"type": "array",
+						"items": {}
+					},
+					"users": {
+						"type": "array",
+						"items": {
+							"type": "integer"
+						}
+					}
+				}
+			},
+			"invoice_fields": {
+				"type": "array",
+				"items": {
+					"type": "object",
+					"properties": {
+						"field_id": {
+							"type": "integer"
+						},
+						"field_name": {
+							"type": "string"
+						},
+						"field_type": {
+							"type": "string"
+						},
+						"default_value": {
+							"type": "string"
+						}
+					}
+				}
+			},
+			"due_date": {
+				"type": "string"
+			},
+			"created_by": {
+				"type": "integer"
+			},
+			"created_on": {
+				"type": "string"
+			}
+		}
+	}
+}

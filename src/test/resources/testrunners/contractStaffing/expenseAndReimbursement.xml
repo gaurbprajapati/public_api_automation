@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contract Staffing Expense and Reimbursement Suite" thread-count="10" parallel="tests">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	</listeners>
+
+	<!-- <test name="Agency - UpdateReimbursementTest - updateReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithInvoiceLinkedId" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	<test name="Export Timesheets test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.exportTimesheets.ExportTimesheetsFieldsTest">
+                <methods>
+                    <include name="exportTimesheetsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>  
+	<test name="Agency - CreateReimbursementTest - createReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithInvalidTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithBlankDescription">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithBlankDescription" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithBlankAmount">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithBlankAmount" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - DeleteReimbursementTest - deleteReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	 <test name="Agency - DeleteReimbursementTest - deleteReimbursementWithInvalidTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursementWithInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementCountTest - getReimbursementCountWithoutReimbursements_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementCountTest">
+				<methods>
+					<include name="getReimbursementCountWithoutReimbursements_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetReimbursementCountTest - getReimbursementCount_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementCountTest">
+				<methods>
+					<include name="getReimbursementCount_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementListWithoutReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementListWithoutReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementWithInvalidTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementWithInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetTimesheetsWithReimbursementTest - getTimesheetWithReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetTimesheetsWithReimbursementTest">
+				<methods>
+					<include name="getTimesheetWithReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementTest - updateReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetReimbursementCountTest - getReimbursementCountWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementCountTest">
+				<methods>
+					<include name="getReimbursementCountWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetReimbursementCountTest - getReimbursementCountWithNegativeTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementCountTest">
+				<methods>
+					<include name="getReimbursementCountWithNegativeTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetReimbursementList_Test - getReimbursements_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursements_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementsWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementsWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementsWithReopenedReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementsWithReopenedReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementRemarkExceedsMaxLength_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementRemarkExceedsMaxLength_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementWithPendingId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithPendingId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementWithEmptyRemark">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithEmptyRemark" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementInvalidTkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - approveReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="approveReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - rejectReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="rejectReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithBlankDescription">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithBlankDescription" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithBlankAmount">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithBlankAmount" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithApprovedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithApprovedId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableFlags_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableFlags_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableForNotApprovedReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableForNotApprovedReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableWithNoPayload_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableWithNoPayload_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableFlagsForInvalidTimesheetId_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableFlagsForInvalidTimesheetId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - approveAlreadyApprovedReimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="approveAlreadyApprovedReimbursement" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - rejectAlreadyRejectedReimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="rejectAlreadyRejectedReimbursement" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - rejectApprovedReimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="rejectApprovedReimbursement" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - approveRejectedReimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="approveRejectedReimbursement" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementStatusTest - rejectReimbursementWithNoRemark">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="rejectReimbursementWithNoRemark" /> 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementStatusTest - updateReimbursementWithInvalidStatus_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="updateReimbursementWithInvalidStatus_Test" /> 
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithReimbursementDisabled">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithReimbursementDisabled" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetStatusHistoryTest - getReimbursementStatusHistory_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetStatusHistoryTest">
+				<methods>
+					<include name="getReimbursementStatusHistory_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetStatusHistoryTest - getReimbursementStatusHistoryAfterApprove_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetStatusHistoryTest">
+				<methods>
+					<include name="getReimbursementStatusHistoryAfterApprove_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Get_Timesheet_Settings_By_Job_And_Contractor_With_Reimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="getTimesheetSettingsByJobAndContractorWithReimbursementTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Enable_Timesheet_Settings_Valid_Request_With_Reimbursement">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.EnableTimeSheetTest">
+				<methods>
+					<include name="verifyEnableTimesheetSettingsWithReimbursementTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - Delete_Approved_Reimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteApprovedReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - Reopen_Reimbursement_With_Invalid_Timesheet_Id">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetTimesheetsWithReimbursementTest - getTimesheetWithMissingJobId_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetTimesheetsWithReimbursementTest">
+				<methods>
+					<include name="getTimesheetWithMissingJobId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+    <test name="Agency - DeleteReimbursementTest - deleteReimbursementWithInvalidReimbursementID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursementWithInvalidReimbursementID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementWithInvoiceLinkedId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - DeleteReimbursementTest - deleteReimbursementWithInvalidTimesheetID">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursementWithInvalidTimesheetID" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - createReimbursementEmptyBody">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="createReimbursementEmptyBody" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - GetReimbursementList_Test - getReimbursementListWithNegativeTimesheetId_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetReimbursementList_Test">
+				<methods>
+					<include name="getReimbursementListWithNegativeTimesheetId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementsWithInvalidReimbursementId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementsWithInvalidReimbursementId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementWithEmptyPayload">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithEmptyPayload" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementStatusTest - updateReimbursementInvalidId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="updateReimbursementInvalidId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementStatusTest - updateReimbursementInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="updateReimbursementInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithInvalidReimbursementId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithInvalidReimbursementId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetStatusHistoryTest - getStatusHistoryWithInvalidReimbursementId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetStatusHistoryTest">
+				<methods>
+					<include name="getStatusHistoryWithInvalidReimbursementId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - GetStatusHistoryTest - getStatusHistoryWithInvalidTimesheetId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.GetStatusHistoryTest">
+				<methods>
+					<include name="getStatusHistoryWithInvalidTimesheetId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - UpdatePayableBillableForInvalidReimbursementId_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="UpdatePayableBillableForInvalidReimbursementId_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Time Sheet Sorting On Deals Test">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedTimesheets.TimeSheetSortingOnDealsTest">
+                <methods>
+                    <include name="verifyTimesheetSortingOnDealsTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+	<!-- <test name="Agency - Reject_Reimbursement_With_Invalid_Tkn">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementStatusTest">
+				<methods>
+					<include name="rejectReimbursementWithInvalidTkn" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	<test name="Agency - PostTimesheetsInvoicesTest - postTimesheetsInvoices_success">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.PostTimesheetsInvoicesTest">
+				<methods>
+					<include name="postTimesheetsInvoices_success" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - PostTimesheetsInvoicesTest - postTimesheetsInvoices_emptyTimesheetIds_returns400">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.PostTimesheetsInvoicesTest">
+				<methods>
+					<include name="postTimesheetsInvoices_emptyTimesheetIds_returns400" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - CreateReimbursementTest - verifyLimitExceededForReimbursements">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.CreateReimbursementTest">
+				<methods>
+					<include name="verifyLimitExceededForReimbursements" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	 <test name="Agency - PostTimesheetsInvoicesTest - postTimesheetsInvoices_unauthorized_returns401">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.PostTimesheetsInvoicesTest">
+				<methods>
+					<include name="postTimesheetsInvoices_unauthorized_returns401" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - PostTimesheetsInvoicesTest - postTimesheetsInvoices_templateNotFound_returns404">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.PostTimesheetsInvoicesTest">
+				<methods>
+					<include name="postTimesheetsInvoices_templateNotFound_returns404" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - updatePayableBillable_onlyAgencyApprovers_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="updatePayableBillable_onlyAgencyApprovers_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+    <test name="Agency - DeleteReimbursementTest - deleteReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.DeleteReimbursementTest">
+				<methods>
+					<include name="deleteReimbursementWithInvoiceLinkedId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdatePayableBillableForReimbursementTest - updatePayableBillableWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdatePayableBillableForReimbursementTest">
+				<methods>
+					<include name="updatePayableBillableWithInvoiceLinkedId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - ReopenReimbursementTest - reopenReimbursementWithInvoiceLinkedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenReimbursementWithInvoiceLinkedId" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agency - ReopenReimbursementTest - reopenRejectedReimbursement_Test">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.ReopenReimbursementTest">
+				<methods>
+					<include name="reopenRejectedReimbursement_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Agency - UpdateReimbursementTest - updateReimbursementWithRejectedId">
+		<classes>
+			<class name="io.recruitcrm.contractStaffing.expenseAndReimbursement.Agency.UpdateReimbursementTest">
+				<methods>
+					<include name="updateReimbursementWithRejectedId" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

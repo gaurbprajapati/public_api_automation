@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "requestUuid": { "type": "string" },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": { "type": "string" },
+            "code": { "type": "integer" }
+          },
+          "required": ["context", "code"]
+        },
+        "timestamp": { "type": "string" },
+        "status": { "type": "integer" }
+      },
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "srno": { "type": "integer" },
+          "companyId": { "type": "integer" },
+          "candidateId": { "type": ["integer", "null"] },
+          "jobId": { "type": "integer" },
+          "currencyId": { "type": ["integer", "null"] },
+          "archived": { "type": "boolean" },
+          "accountId": { "type": ["integer", "null"] },
+          "createdBy": { "type": ["integer", "null"] },
+          "createdOn": { "type": ["integer", "null"] },
+          "updatedBy": { "type": ["integer", "null"] },
+          "createdAt": { "type": ["string", "null"] },
+          "updatedAt": { "type": ["string", "null"] },
+          "companyName": { "type": ["string", "null"] },
+          "companySlug": { "type": ["string", "null"] },
+          "companyLogo": { "type": ["string", "null"] },
+          "candidateName": { "type": ["string", "null"] },
+          "candidateLogo": { "type": ["string", "null"] },
+          "candidateSlug": { "type": ["string", "null"] },
+          "jobName": { "type": ["string", "null"] },
+          "jobSlug": { "type": ["string", "null"] },
+          "createdByName": { "type": ["string", "null"] },
+          "createdByPhoto": { "type": ["string", "null"] },
+          "createdByStatus": { "type": ["integer", "null"] },
+          "updatedByName": { "type": ["string", "null"] },
+          "currencyName": { "type": ["string", "null"] },
+          "currencySymbol": { "type": ["string", "null"] },
+          "currencyCode": { "type": ["string", "null"] },
+          "associationsIds": { "type": ["array", "null"] },
+
+          "candidate": {
+            "type": "object",
+            "properties": {
+              "offLimitStatusId": { "type": ["integer", "null"] },
+              "offLimitReason": { "type": ["string", "null"] },
+              "offLimitEndDate": { "type": ["string", "null"] },
+              "offLimitStartDate": { "type": ["string", "null"] },
+              "statusLabel": { "type": ["string", "null"] },
+              "backgroundColorHex": { "type": ["string", "null"] },
+              "textColorHex": { "type": ["string", "null"] },
+              "markedByName": { "type": ["string", "null"] },
+              "name": { "type": ["string", "null"] },
+              "currentOrgName": { "type": ["string", "null"] },
+              "title": { "type": ["string", "null"] },
+              "initial": { "type": ["string", "null"] },
+              "email": { "type": ["string", "null"] },
+              "photo": { "type": ["string", "null"] },
+              "slug": { "type": ["string", "null"] },
+              "serialNumber": { "type": ["integer", "null"] },
+              "candidateId": { "type": ["integer", "null"] }
+            },
+            "required": ["name", "initial", "email", "slug", "candidateId"]
+          },
+
+          "company": {
+            "type": "object",
+            "properties": {
+              "offLimitStatusId": { "type": ["integer", "null"] },
+              "offLimitReason": { "type": ["string", "null"] },
+              "offLimitEndDate": { "type": ["string", "null"] },
+              "offLimitStartDate": { "type": ["string", "null"] },
+              "statusLabel": { "type": ["string", "null"] },
+              "backgroundColorHex": { "type": ["string", "null"] },
+              "textColorHex": { "type": ["string", "null"] },
+              "markedByName": { "type": ["string", "null"] },
+              "name": { "type": ["string", "null"] },
+              "website": { "type": ["string", "null"] },
+              "profilePic": { "type": ["string", "null"] },
+              "companyCity": { "type": ["string", "null"] },
+              "industryType": { "type": ["string", "null"] },
+              "initial": { "type": ["string", "null"] },
+              "slug": { "type": ["string", "null"] },
+              "serialNumber": { "type": ["integer", "null"] },
+              "companyId": { "type": ["integer", "null"] }
+            },
+            "required": ["name", "initial", "companyId"]
+          },
+
+          "job": {
+            "type": "object",
+            "properties": {
+              "name": { "type": ["string", "null"] },
+              "initial": { "type": ["string", "null"] },
+              "status": { "type": ["string", "null"] },
+              "companyName": { "type": ["string", "null"] },
+              "slug": { "type": ["string", "null"] },
+              "serialNumber": { "type": ["integer", "null"] },
+              "jobId": { "type": ["integer", "null"] },
+              "jobCity": { "type": ["string", "null"] }
+            },
+            "required": ["name", "initial", "status", "jobId"]
+          },
+
+          "deals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": ["string", "null"] },
+                "ownerName": { "type": ["string", "null"] },
+                "status": { "type": ["string", "null"] },
+                "initial": { "type": ["string", "null"] },
+                "slug": { "type": ["string", "null"] },
+                "serialNumber": { "type": ["integer", "null"] },
+                "dealId": { "type": ["integer", "null"] }
+              },
+              "required": ["name", "ownerName", "status", "initial", "dealId"]
+            }
+          },
+
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "offLimitStatusId": { "type": ["integer", "null"] },
+                "offLimitReason": { "type": ["string", "null"] },
+                "offLimitEndDate": { "type": ["string", "null"] },
+                "offLimitStartDate": { "type": ["string", "null"] },
+                "statusLabel": { "type": ["string", "null"] },
+                "backgroundColorHex": { "type": ["string", "null"] },
+                "textColorHex": { "type": ["string", "null"] },
+                "markedByName": { "type": ["string", "null"] },
+                "name": { "type": ["string", "null"] },
+                "title": { "type": ["string", "null"] },
+                "phoneNumber": { "type": ["string", "null"] },
+                "email": { "type": ["string", "null"] },
+                "profilePic": { "type": ["string", "null"] },
+                "initial": { "type": ["string", "null"] },
+                "slug": { "type": ["string", "null"] },
+                "serialNumber": { "type": ["integer", "null"] },
+                "contactId": { "type": ["integer", "null"] },
+                "companyName": { "type": ["string", "null"] }
+              },
+              "required": [
+                "backgroundColorHex",
+                "companyName",
+                "contactId",
+                "email",
+                "initial",
+                "markedByName",
+                "name",
+                "offLimitEndDate",
+                "offLimitReason",
+                "offLimitStartDate",
+                "offLimitStatusId",
+                "phoneNumber",
+                "profilePic",
+                "serialNumber",
+                "slug",
+                "statusLabel",
+                "textColorHex",
+                "title"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "companyId",
+          "candidateId",
+          "jobId",
+          "companyName",
+          "candidateName",
+          "jobName",
+          "candidate",
+          "company",
+          "job",
+          "deals",
+          "contacts"
+        ]
+      }
+    }
+  },
+  "required": ["meta", "data"]
+}

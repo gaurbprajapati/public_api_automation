@@ -1,0 +1,188 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer"
+            }
+          },
+          "required": ["context", "code"]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "remark": {
+            "type": ["string", "null"]
+          },
+          "stageDate": {
+            "type": "integer"
+          },
+          "pitchStage": {
+            "type": "string"
+          },
+          "contactId": {
+            "type": "integer"
+          },
+          "contactSlug": {
+            "type": "string"
+          },
+          "contactTitle": {
+            "type": ["string", "null"]
+          },
+          "name": {
+            "type": "string"
+          },
+          "contact": {
+            "type": "object",
+            "properties": {
+              "offLimitStatusId": {
+                "type": ["integer", "null"]
+              },
+              "offLimitReason": {
+                "type": ["string", "null"]
+              },
+              "offLimitEndDate": {
+                "type": ["integer", "null"]
+              },
+              "offLimitStartDate": {
+                "type": ["integer", "null"]
+              },
+              "statusLabel": {
+                "type": ["string", "null"]
+              },
+              "backgroundColorHex": {
+                "type": ["string", "null"]
+              },
+              "textColorHex": {
+                "type": ["string", "null"]
+              },
+              "markedBy": {
+                "type": ["integer", "null"]
+              },
+              "name": {
+                "type": "string"
+              },
+              "title": {
+                "type": ["string", "null"]
+              },
+              "slug": {
+                "type": "string"
+              },
+              "contactId": {
+                "type": "integer"
+              },
+              "profilePic": {
+                "type": ["string", "null"]
+              }
+            },
+            "required": ["name", "slug", "contactId"]
+          },
+          "contactNumber": {
+            "type": ["string", "null"]
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "company": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "photo": {
+                "type": ["string", "null"]
+              }
+            },
+            "required": ["name", "slug"]
+          },
+          "candidateId": {
+            "type": "integer"
+          },
+          "createdBy": {
+            "type": "integer"
+          },
+          "createdByName": {
+            "type": "string"
+          },
+          "createdOn": {
+            "type": "integer"
+          },
+          "updatedBy": {
+            "type": "integer"
+          },
+          "updatedOn": {
+            "type": "integer"
+          },
+          "contactEmailOptOut": {
+            "type": "string"
+          },
+          "entityType": {
+            "type": ["string", "null"]
+          },
+          "offLimitContact": {
+            "type": ["boolean", "null"]
+          },
+          "offLimitCandidate": {
+            "type": ["boolean", "null"]
+          },
+          "entityId": {
+            "type": ["integer", "null"]
+          },
+          "email": {
+            "type": ["string", "null"]
+          },
+          "phone": {
+            "type": ["string", "null"]
+          },
+          "statusId": {
+            "type": "integer"
+          },
+          "pitchedByAvatar": {
+            "type": ["string", "null"]
+          },
+          "count": {
+            "type": "integer"
+          },
+          "pitchHistory": {
+            "type": "array"
+          }
+        },
+        "required": ["id", "contactId", "name", "contact", "companyName", "company", "candidateId", "createdBy", "createdByName", "createdOn", "updatedBy", "updatedOn", "contactEmailOptOut", "statusId", "count", "pitchHistory"]
+      }
+    }
+  },
+  "required": ["meta", "data"]
+}
+

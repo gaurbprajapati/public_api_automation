@@ -1,0 +1,152 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "meta": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "requestUuid": {
+            "type": "string"
+          },
+          "responseType": {
+            "type": "object",
+            "properties": {
+              "context": {
+                "type": "string"
+              },
+              "code": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "context",
+              "code"
+            ]
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "message",
+          "requestUuid",
+          "responseType",
+          "timestamp",
+          "status"
+        ]
+      },
+      "data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "invoiceIdPrefix": {
+            "type": "string"
+          },
+          "invoiceIdNumber": {
+            "type": "string"
+          },
+          "description": {
+            "type": "null"
+          },
+          "companyAddress": {
+            "type": "null"
+          },
+          "email": {
+            "type": "null"
+          },
+          "contactNumber": {
+            "type": "null"
+          },
+          "additionalNote": {
+            "type": "null"
+          },
+          "issueDate": {
+            "type": "integer"
+          },
+          "paidOn": {
+            "type": "integer"
+          },
+          "dueDate": {
+            "type": "integer"
+          },
+          "totalAmount": {
+            "type": "number"
+          },
+          "invoicePdf": {
+            "type": "string"
+          },
+          "createdOn": {
+            "type": "integer"
+          },
+          "updatedOn": {
+            "type": "integer"
+          },
+          "invoiceItems": {
+            "type": ["string", "null"]
+          },
+          "isTemplateEdited": {
+            "type": "integer"
+          },
+          "new": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string"
+          },
+          "lastModifiedDate": {
+            "type": "string"
+          },
+          "createdByPlain": {
+            "type": "integer"
+          },
+          "lastModifiedByPlain": {
+            "type": "integer"
+          },
+          "createdDatePlain": {
+            "type": "integer"
+          },
+          "lastModifiedDatePlain": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "invoiceIdPrefix",
+          "invoiceIdNumber",
+          "description",
+          "companyAddress",
+          "email",
+          "contactNumber",
+          "additionalNote",
+          "issueDate",
+          "paidOn",
+          "dueDate",
+          "totalAmount",
+          "invoicePdf",
+          "createdOn",
+          "updatedOn",
+          "invoiceItems",
+          "isTemplateEdited",
+          "new",
+          "createdDate",
+          "lastModifiedDate",
+          "createdByPlain",
+          "lastModifiedByPlain",
+          "createdDatePlain",
+          "lastModifiedDatePlain"
+        ]
+      }
+    },
+    "required": [
+      "meta",
+      "data"
+    ]
+  }

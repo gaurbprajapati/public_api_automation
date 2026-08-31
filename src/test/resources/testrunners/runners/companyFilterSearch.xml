@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest API Test Suite" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    <test name="Text Type Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TextFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="textFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Number Type Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.NumberFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="numberFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Date Type Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.DateFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="dateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hotlist Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.HotlistFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="hotlistFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Contact Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.ContactFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="contactFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Entity Custom Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="entityCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Text Custom Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="textCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Number Custom Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="numberCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Date Custom Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="dateCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Dropdown and Multiselect Custom Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CustomFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="dropdownAndMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Owner Dropdown Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.DropdownFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="ownerDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CreatedBy Dropdown Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.DropdownFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="createdByDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpdatedBy Dropdown Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.DropdownFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="updatedByDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Industry Dropdown Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.DropdownFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="industryDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Off Limit Status Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.OffLimitStatusFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="offLimitStatusFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields Notes - Date Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.NotesActivityFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="notesDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields Notes - Multiselect and Dropdown Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.NotesActivityFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="notesMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields CallLog - Date Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CallLogActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="callLogDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields CallLog - Multiselect and Dropdown Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CallLogActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="callLogMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields Task - Date Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TaskActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="tasksDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields Task - Multiselect and Dropdown Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TaskActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="tasksMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields Task - Text Fields Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TaskActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="tasksTextFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields Meeting - Date Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.MeetingActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="meetingsDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields Meeting - Multiselect and Dropdown Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.MeetingActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="meetingsMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Company Activity Fields Meeting - Text Fields Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.MeetingActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="meetingsTextFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Notes Note Exists (checkbox) Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.NotesActivityFieldCompanyFilterSearchTest">
+                <methods>
+                    <include name="notesNoteExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Exists (checkbox) Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.TaskActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="tasksTaskExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Meeting Exists (checkbox) Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.MeetingActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="meetingsMeetingExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Call Log Exists (checkbox) Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CallLogActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="callLogCallExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>

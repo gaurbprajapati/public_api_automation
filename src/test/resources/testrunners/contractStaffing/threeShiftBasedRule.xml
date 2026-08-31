@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multiple Time Entry Test Suite" thread-count="8" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+    </listeners>
+
+
+    <!-- Three Rule - Multiple Time Entry Weekly Calculations -->
+    <test name="Multiple_Time_Entry_Three_Rule_Weekly_Calculation">
+        <classes>
+            <class name="io.recruitcrm.contractStaffing.shiftBasedRuleEngineCalculation.weeklyCalculations.testClass.ThreeRuleTest">
+                <methods>
+                    <include name="verifyThreeRuleMultipleTimeEntry" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

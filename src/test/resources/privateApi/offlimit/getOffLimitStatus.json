@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "status_label": {
+        "type": "string"
+      },
+      "status_colour_id": {
+        "type": "string"
+      },
+      "sequence_no": {
+        "type": "integer"
+      },
+      "account_id": {
+        "type": "integer"
+      },
+      "default": {
+        "type": "integer"
+      },
+      "background_color_hex": {
+        "type": "string"
+      },
+      "text_color_hex": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "status_label",
+      "status_colour_id",
+      "sequence_no",
+      "account_id",
+      "default",
+      "background_color_hex",
+      "text_color_hex"
+    ]
+  }
+}

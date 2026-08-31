@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "current_page": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "status_label": {
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            },
+            "end_date": {
+              "type": "string"
+            },
+            "updated_on": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "status_label",
+            "reason",
+            "end_date",
+            "updated_on"
+          ]
+        }
+      ]
+    },
+    "first_page_url": {
+      "type": "string"
+    },
+    "from": {
+      "type": "integer"
+    },
+    "next_page_url": {
+      "type": "null"
+    },
+    "path": {
+      "type": "string"
+    },
+    "per_page": {
+      "type": "integer"
+    },
+    "prev_page_url": {
+      "type": "null"
+    },
+    "to": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "current_page",
+    "data",
+    "first_page_url",
+    "from",
+    "next_page_url",
+    "path",
+    "per_page",
+    "prev_page_url",
+    "to"
+  ]
+}

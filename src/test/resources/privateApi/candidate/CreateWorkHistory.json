@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "requestUuid": {
+          "type": "string"
+        },
+        "responseType": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "code": {
+              "type": "integer"
+            }
+          },
+          "required": ["context", "code"]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "candidateId": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "workCompanyName": {
+          "type": "string"
+        },
+        "employmentType": {
+          "type": "integer"
+        },
+        "industryId": {
+          "type": "integer"
+        },
+        "workLocation": {
+          "type": "string"
+        },
+        "salary": {
+          "type": "integer"
+        },
+        "isCurrentlyWorking": {
+          "type": "boolean"
+        },
+        "workStartDate": {
+          "type": "integer"
+        },
+        "workEndDate": {
+          "type": "integer"
+        },
+        "workDescription": {
+          "type": "string"
+        },
+        "candidateSlug": {
+          "type": "string"
+        },
+        "isManuallyAdded": {
+          "type": "boolean"
+        },
+        "updatedBy": {
+          "type": "integer"
+        },
+        "createdBy": {
+          "type": "integer"
+        },
+        "createdOn": {
+          "type": "integer"
+        },
+        "updatedOn": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "candidateId",
+        "title",
+        "workCompanyName",
+        "employmentType",
+        "industryId",
+        "workLocation",
+        "salary",
+        "isCurrentlyWorking",
+        "workStartDate",
+        "workEndDate",
+        "workDescription",
+        "candidateSlug",
+        "isManuallyAdded",
+        "updatedBy",
+        "createdBy",
+        "createdOn",
+        "updatedOn"
+      ]
+    }
+  },
+  "required": ["meta", "data"]
+}

@@ -1,0 +1,589 @@
+{
+    "Contact": [
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1",
+            "description": "Is filter with single value - exact match for contact1 only"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact1},{contact2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company4",
+            "description": "Is filter with multiple values - exact match for contact1,contact2 combination"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company15,Company2",
+            "description": "Is filter with single value - exact match for contact2 only"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company3",
+            "description": "Is filter with single value - exact match for contact3 only"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact1},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company7",
+            "description": "Is filter with multiple values - exact match for contact1,contact3 combination"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company6",
+            "description": "Is filter with multiple values - exact match for contact2,contact3 combination"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact1},{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company5,Company9",
+            "description": "Is filter with all three values - exact match for contact1,contact2,contact3 combination"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with contact4 only - empty contact should return no companies"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact1},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with contact1 and contact4 combination - should return empty since no company has both"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact2},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with contact2 and contact4 combination - should return empty since no company has both"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with contact3 and contact4 combination - should return empty since no company has both"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact1},{contact2},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with contact1, contact2, and contact4 combination - should return empty since no company has all three"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact1},{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with contact1, contact3, and contact4 combination - should return empty since no company has all three"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact2},{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with contact2, contact3, and contact4 combination - should return empty since no company has all three"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is",
+            "filterValue": "{contact1},{contact2},{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Is filter with all four contacts combination - should return empty since no company has all four contacts"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company4,Company5,Company6,Company7,Company8,Company9",
+            "description": "Is Not filter with single value - excludes companies with exact match contact1 only"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact1},{contact2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company5,Company6,Company7,Company8,Company9",
+            "description": "Is Not filter with multiple values - excludes companies with exact match contact1,contact2 combination"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company4,Company5,Company6,Company7,Company8,Company9",
+            "description": "Is Not filter with single value - excludes companies with exact match contact3 only"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company3,Company4,Company5,Company6,Company7,Company8,Company9",
+            "description": "Is Not filter with single value - excludes companies with exact match contact2 only"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact1},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9",
+            "description": "Is Not filter with multiple values - excludes companies with exact match contact1,contact3 combination"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company4,Company5,Company7,Company8,Company9",
+            "description": "Is Not filter with multiple values - excludes companies with exact match contact2,contact3 combination"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact1},{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company4,Company6,Company7,Company8",
+            "description": "Is Not filter with all three values - excludes companies with exact match contact1,contact2,contact3 combination"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with contact4 - all companies should be returned since no company has contact4"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact1},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with contact1 and contact4 combination - all companies should be returned"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact2},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with contact2 and contact4 combination - all companies should be returned"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with contact3 and contact4 combination - all companies should be returned"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact1},{contact2},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with contact1, contact2, and contact4 combination - all companies should be returned"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact1},{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with contact1, contact3, and contact4 combination - all companies should be returned"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact2},{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with contact2, contact3, and contact4 combination - all companies should be returned"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_not",
+            "filterValue": "{contact1},{contact2},{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Is Not filter with all four contacts combination - all companies should be returned"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company4,Company5,Company7,Company9",
+            "description": "Contains filter with single value - companies that have contact1 (may have other contacts too)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact1},{contact2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company4,Company5,Company9",
+            "description": "Contains filter with multiple values - companies that have both contact1 and contact2 (may have additional contacts)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company5,Company6,Company9",
+            "description": "Contains filter with multiple values - companies that have both contact2 and contact3"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company15,Company2,Company4,Company5,Company6,Company9",
+            "description": "Contains filter with single value - companies that have contact2"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company3,Company5,Company6,Company7,Company9",
+            "description": "Contains filter with single value - companies that have contact3 (may have other contacts too)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact1},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company5,Company7,Company9",
+            "description": "Contains filter with multiple values - companies that have both contact1 and contact3 (may have additional contacts)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact1},{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company5,Company9",
+            "description": "Contains filter with all three values - companies that have all three contacts (contact1, contact2, and contact3)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with contact4 - empty contact should return no companies"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact1},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with contact1 and contact4 - should return empty since no company has both"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact2},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with contact2 and contact4 - should return empty since no company has both"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with contact3 and contact4 - should return empty since no company has both"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains",
+            "filterValue": "{contact1},{contact2},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Empty",
+            "description": "Contains filter with contact1, contact2, and contact4 - should return empty since no company has all three"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1},{contact2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company15,Company2,Company4,Company5,Company6,Company7,Company9",
+            "description": "Contains at Least One filter - companies that have at least one of contact1 or contact2"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company3,Company4,Company5,Company6,Company7,Company9",
+            "description": "Contains at Least One filter - companies that have at least one of contact1 or contact3"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company15,Company2,Company3,Company4,Company5,Company6,Company7,Company9",
+            "description": "Contains at Least One filter - companies that have at least one of contact2 or contact3"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1},{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company15,Company2,Company3,Company4,Company5,Company6,Company7,Company9",
+            "description": "Contains at Least One filter - companies that have at least one of contact1, contact2, or contact3"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company4,Company5,Company7,Company9",
+            "description": "Contains at Least One filter with contact1 and contact4 - returns companies with contact1 (contact4 has no companies)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact2},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company15,Company2,Company4,Company5,Company6,Company9",
+            "description": "Contains at Least One filter with contact2 and contact4 - returns companies with contact2 (contact4 has no companies)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company3,Company5,Company6,Company7,Company9",
+            "description": "Contains at Least One filter with contact3 and contact4 - returns companies with contact3 (contact4 has no companies)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "contains_at_least_one",
+            "filterValue": "{contact1},{contact2},{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company15,Company2,Company3,Company4,Company5,Company6,Company7,Company9",
+            "description": "Contains at Least One filter with all four contacts - returns companies with any of contact1, contact2, or contact3 (contact4 has no companies)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company6,Company8",
+            "description": "Does Not Contain filter with single value - excludes companies that have contact1 anywhere"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1},{contact2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company6,Company7,Company8",
+            "description": "Does Not Contain filter with multiple values - excludes companies that have both contact1 and contact2 together"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact2}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company3,Company7,Company8",
+            "description": "Does Not Contain filter with single value - excludes companies that have contact2 anywhere"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company4,Company8",
+            "description": "Does Not Contain filter with single value - excludes companies that have contact3 anywhere"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company4,Company6,Company8",
+            "description": "Does Not Contain filter with multiple values - excludes companies that have both contact1 and contact3 together"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company4,Company7,Company8",
+            "description": "Does Not Contain filter with multiple values - excludes companies that have both contact2 and contact3 together"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1},{contact2},{contact3}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company10,Company11,Company12,Company13,Company14,Company15,Company2,Company3,Company4,Company6,Company7,Company8",
+            "description": "Does Not Contain filter with all three values - excludes companies that have all three contacts together"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with contact4 - all companies should be returned since no company has contact4"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with contact1 and contact4 - excludes companies that have both contact1 and contact4 together (since contact4 has no companies, no company can have both, so all are included)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact2},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with contact2 and contact4 - excludes companies that have both contact2 and contact4 together (since contact4 has no companies, no company can have both, so all are included)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with contact3 and contact4 - excludes companies that have both contact3 and contact4 together (since contact4 has no companies, no company can have both, so all are included)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1},{contact2},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with contact1, contact2, and contact4 - excludes companies that have all three contact1, contact2, and contact4 together (since contact4 has no companies, no company can have all three together, so all are included)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "does_not_contain",
+            "filterValue": "{contact1},{contact2},{contact3},{contact4}",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "All",
+            "description": "Does Not Contain filter with all four contacts - excludes companies that have all four contact1, contact2, contact3, and contact4 together (since contact4 has no companies, no company can have all four together, so all are included)"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "is_empty",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company10,Company11,Company12,Company13,Company14,Company8",
+            "description": "Is Empty filter - companies with no contact assigned"
+        },
+        {
+            "dbField": "existing_contact",
+            "filterType": "has_any_value",
+            "filterValue": "",
+            "fieldType": "multiselect",
+            "filterValue_TYPE": "INTEGER_LIST",
+            "expectedResult": "Company1,Company15,Company2,Company3,Company4,Company5,Company6,Company7,Company9",
+            "description": "Has Any Value filter - companies with at least one contact assigned"
+        }
+    ]
+}

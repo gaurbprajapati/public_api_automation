@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Titans - Varun Vishwakarma, Shivam Singh -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="7">
+
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="All Deal Endpoints">
+		<classes>
+			<class name="io.rcrm.api.deals.AllEndPointsOfDealsTests">
+				<methods>
+                    <include name="createNewDealWithAllFields" />
+					<include name="showAllDealsGET" />
+					<include name="searchDealByFields" />
+					<include name="editDealBySlug" />
+					<include name="searchDealBySlug" />
+					<include name="deleteDealBySlug" />
+					<include name="getDealStageHistory"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Create Deal Endpoints">
+		<classes>
+			<class name="io.rcrm.api.deals.CreateNewDealTest">
+				<methods>
+					<include name="createNewDealWithMandatoryFields" />
+					<include name="createNewDealWithAllFields" />
+					<include name="userShouldNotAbleToCreateDealWithEmptyData" />
+					<include
+						name="userShouldNotAbleToCreateDealWithMoreThanLimit" />
+					<include name="unauthorizedUserCreateNewDeal" />
+					<include name="createDealWithInvalidDealSplitData" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Endpoints">
+		<classes>
+			<class name="io.rcrm.api.deals.EditDealTest">
+				<methods>
+					<include name="createNewDeal_POST" />
+					<!-- <include name="editDealBySlug422_POST" /> -->
+					<include name="editDealBySlug_POST" />
+					<include name="editDealByInvalidSlug404_POST" />
+					<include name="editDealByInvalidFieldsValues422_POST" />
+					<include name="unauthorizedUserCannotEditDeal" />
+					<include name="editDealWithInvalidDealSplitData" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Deal by Slug">
+		<classes>
+			<class name="io.rcrm.api.deals.SearchDealBySlugTest">
+				<methods>
+
+					<include name="createNewDeal_POST" />
+					<include name="searchDealBySlug_GET" />
+					<include name="searchDealByInvalidSlug_GET" />
+					<include name="unauthorizedUserCannotSearchDealBySlug" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Deal by fields">
+		<classes>
+			<class name="io.rcrm.api.deals.SearchDealByFieldsTest">
+				<methods>
+					<include name="createNewDealWithMandatoryFieldsForSearch" />
+					<include name="searchDealByAllFields_GET" />
+					<include name="searchDealByName_GET" />
+					<include name="searchDealByAllFields_GET" />
+					<include name="searchDealBySlug_GET" />
+					<include name="searchDealByInvalidName_GET" />
+					<include name="unauthorizedUserCannotSearchDealByFields" />
+					<include name="searchDealByAddedFrom" />
+					<include name="searchDealByAddedTo" />
+					<include name="searchDealByClosingFrom" />
+					<include name="searchDealByClosingTo" />
+					<include name="searchDealByUpdatedFrom" />
+					<include name="searchDealByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="GetAllDeals">
+		<classes>
+			<class name="io.rcrm.api.deals.GetAllDealsTest">
+				<methods>
+					<include name="showAllDeals_GET" />
+					<include name="unauthorizedUserCannotGetAllDeals" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Endpoints">
+		<classes>
+			<class name="io.rcrm.api.deals.DeleteDealTest">
+				<methods>
+					<include name="deleteDealBySlug_GET" />
+					<include name="deleteDealByInvalidSlug_GET" />
+					<include name="unauthorizedUserCannotDeleteDeal" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Global Search Endpoints Test Case 1">
+		<classes>
+			<class name="io.recruitcrm.albatross.global.GlobalSearchTest">
+				<methods>
+					<include name="globalSearchDeal"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Deal Albatross Endpoints Test Cases2-Done">
+		<classes>
+			<class name="io.recruitcrm.albatross.deal.AlbatrossEndpointsDealTest">
+				<methods>
+					<include name="getDealRelatedEntityData"/>
+					<include name="getDealStageHistory"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Deal Stage History Endpoint Test Cases">
+		<classes>
+			<class name="io.rcrm.api.deals.GetDealStageHistoryTest">
+				<methods>
+					<include name="getDealStageHistoryWithInvalidAuth"/>
+					<include name="getDealStageWithInvalidDealSlug"/>
+					<include name="getDealStageWithInvalidEntityType"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Long Text Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealLongTextCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Date Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealDateCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Number Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealNumberCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Checkbox Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealCheckboxCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Date-Time Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealDateTimeCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal File Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealFileCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Candidate Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealCandidateCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Company Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealCompanyCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Contact Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealContactCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Job Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealJobCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Deals Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealDealsCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal User Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealUserCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Create Deal Team Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="createDealTeamCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Long Text Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealLongTextCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Date Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealDateCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Number Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealNumberCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Checkbox Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealCheckboxCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Date-Time Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealDateTimeCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal File Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealFileCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Candidate Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealCandidateCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Company Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealCompanyCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Contact Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealContactCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Job Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealJobCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Deals Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealDealsCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal User Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealUserCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Edit Deal Team Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="editDealTeamCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Long Text Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealLongTextCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Date Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealDateCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Number Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealNumberCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Checkbox Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealCheckboxCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Date-Time Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealDateTimeCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal File Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealFileCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Candidate Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealCandidateCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Company Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealCompanyCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Contact Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealContactCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Job Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealJobCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Deals Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealDealsCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal User Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealUserCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Delete Deal Team Custom Field">
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.DealsCustomFieldTest">
+				<methods>
+					<include name="deleteDealTeamCustomField_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Deals - Verify Custom Field in All Deals">
+		<classes>
+			<class name="io.rcrm.api.deals.GetAllDealsTest">
+				<methods>
+					<include name="verifyCustomFieldValueInShowAllDeals_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

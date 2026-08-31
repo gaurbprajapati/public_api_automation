@@ -1,0 +1,197 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "meta": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "requestUuid": {
+                    "type": "string"
+                },
+                "responseType": {
+                    "type": "object",
+                    "properties": {
+                        "context": {
+                            "type": "string"
+                        },
+                        "code": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "context",
+                        "code"
+                    ]
+                },
+                "timestamp": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "message",
+                "requestUuid",
+                "responseType",
+                "timestamp",
+                "status"
+            ]
+        },
+        "data": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "jobStartDate": {
+                    "type": "integer"
+                },
+                "jobEndDate": {
+                    "type": "integer"
+                },
+                "timesheetFrequency": {
+                    "type": "integer"
+                },
+                "timesheetStartDay": {
+                    "type": "integer"
+                },
+                "workDayIds": {
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "approvers": {
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "payCurrencyId": {
+                    "type": "integer"
+                },
+                "billCurrencyId": {
+                    "type": "integer"
+                },
+                "billRate": {
+                    "type": "number"
+                },
+                "payRate": {
+                    "type": "number"
+                },
+                "calculateChargeBy": {
+                    "type": "integer"
+                },
+                "marginPercentage": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "markupPercentage": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "workLogType": {
+                    "type": "integer"
+                },
+                "calculateBreakTime": {
+                    "type": "boolean"
+                },
+                "templateWorkDays": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "workDayId": {
+                                "type": "integer"
+                            },
+                            "workTime": {
+                                "type": "integer"
+                            },
+                            "workStartTime": {
+                                "type": "integer"
+                            },
+                            "workEndTime": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "workDayId",
+                            "workTime",
+                            "workStartTime",
+                            "workEndTime"
+                        ]
+                    }
+                },
+                "customRules": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                },
+                "updatedOn": {
+                    "type": "integer"
+                },
+                "updatedBy": {
+                    "type": "integer"
+                },
+                "enabledOn": {
+                    "type": "integer"
+                },
+                "enabledBy": {
+                    "type": "integer"
+                }
+            }
+        },
+        "errors": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "errorType": {
+                        "type": "object",
+                        "properties": {
+                            "context": {
+                                "type": "string"
+                            },
+                            "code": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "context",
+                            "code"
+                        ]
+                    }
+                },
+                "required": [
+                    "message",
+                    "errorType"
+                ]
+            }
+        }
+    },
+    "required": [
+        "meta",
+        "data"
+    ]
+}

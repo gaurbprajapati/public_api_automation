@@ -1,0 +1,110 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"industry_id": {
+							"type": "integer"
+						},
+						"company_name": {
+							"type": "string"
+						},
+						"about_company": {
+							"type": "string"
+						},
+						"logo": {
+							"type": "string"
+						},
+						"slug": {
+							"type": "string"
+						},
+						"created_on": {
+							"type": "string"
+						},
+						"updated_on": {
+							"type": "string"
+						},
+						"website": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"address": {
+							"type": "string"
+						},
+						"facebook": {
+							"type": "string"
+						},
+						"twitter": {
+							"type": "string"
+						},
+						"linkedin": {
+							"type": "string"
+						},
+						"custom_fields": {
+							"type": "array",
+							"items": {}
+						},
+						"created_by": {
+							"type": "integer"
+						},
+						"updated_by": {
+							"type": "integer"
+						},
+						"owner": {
+							"type": "integer"
+						},
+						"resource_url": {
+							"type": "string"
+						},
+						"contact_slug": {
+							"type": "array",
+							"items": [
+								{
+									"type": "string"
+								},
+								{
+									"type": "string"
+								}
+							]
+						}
+					},
+					"required": [
+						"id",
+						"industry_id",
+						"company_name",
+						"about_company",
+						"logo",
+						"slug",
+						"created_on",
+						"updated_on",
+						"website",
+						"city",
+						"address",
+						"facebook",
+						"twitter",
+						"linkedin",
+						"custom_fields",
+						"created_by",
+						"updated_by",
+						"owner",
+						"resource_url",
+						"contact_slug"
+					]
+				}
+			]
+		}
+	},
+	"required": [
+		"data"
+	]
+}

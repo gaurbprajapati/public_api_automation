@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RBAC Albatross Security Test Suite" thread-count="8" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+
+    <test name="RBAC Get Activity Count Security Test for Candidate">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForCandidate_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Activity Count Security Test for Contact">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForContact_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Activity Count Security Test for Company">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForCompany_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Activity Count Security Test for Job">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForJob_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Activity Count Security Test for Deal">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForDeal_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Assigned Job Count Security Test for Candidate">  
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACGetAssignedJobCountSecurityTest">
+                <methods>
+                    <include name="getAssignedJobCountSecurity_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC_GetUsers_Test - get users RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBAC_GetUsers_Test">
+                <methods>
+                    <include name="getUsersRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC_GetJobStatusByAccount_Test - get job status by account RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBAC_GetJobStatusByAccount_Test">
+                <methods>
+                    <include name="getJobStatusByAccountRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC_GetDefaultOptions_Test - get default options RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.RBAC_GetDefaultOptions_Test">
+                <methods>
+                    <include name="getDefaultOptionsRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Education History Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACGetCandidateEducationHistorySecurityTest">
+                <methods>
+                    <include name="getCandidateEducationHistoryRBAC_Test"/>
+                </methods>
+            </class>
+        </classes>
+     </test>
+     <test name="RBAC Get Candidate Work History Security Test"> 
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACGetCandidateWorkHistorySecurityTest">
+                <methods>
+                    <include name="getCandidateWorkHistoryRBAC_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC_GetEntityColumns_Test - get entity columns RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBAC_GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC_GetSocialLinksCustomFields_Test - get social links custom fields RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.RBAC_GetSocialLinksCustomFields_Test">
+                <methods>
+                    <include name="getSocialLinksRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get User GPT Access Token Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetUserGPTAccessTokenSecurityTest">
+                <methods>
+                    <include name="getUserGPTTokenRBAC_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Off Limit Status Security Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.offlimit.RBAC_GetOffLimitStatus_Test">
+                <methods>
+                    <include name="getOffLimitStatusRBACAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name = "RBAC Get Enrichment Toggle Status Security Test for Candidate">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetEnrichmentToggleStatusSecurityTest">
+                <methods>
+                    <include name="getEnrichmentToggleStatusRBAC_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Nested Custom Fields Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.RBAC_GetNestedCustomFields_Test">
+                <methods>
+                    <include name="getNestedCustomFieldsRBACAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Entity Custom Fields Security Test">
+		<parameter name="role" value="all"/>
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.RBAC_GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsRBACAccess_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="RBAC Get Default Options Extension Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.RBAC_GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsExtensionRBACAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Nested Custom Fields Extension Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.RBAC_GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getNestedCustomFieldsExtensionRBACAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

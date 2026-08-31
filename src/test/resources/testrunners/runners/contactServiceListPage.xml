@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="contactServiceListPage" thread-count="10" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+        <listener class-name="io.rcrm.api.listeners.RetryListener"/>
+    </listeners>
+
+    <!-- Contact List Bulk Action Customisation Tests -->
+    <test name="Get Contact Bulk Action User View - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getContactBulkActionUserView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Bulk Action User View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getContactBulkActionUserView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Bulk Action User View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getContactBulkActionUserView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Bulk Action Account View - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getContactBulkActionAccountView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Bulk Action Account View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getContactBulkActionAccountView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Bulk Action Account View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="getContactBulkActionAccountView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Contact Bulk Action User View - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateContactBulkActionUserView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Contact Bulk Action User View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateContactBulkActionUserView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Contact Bulk Action User View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateContactBulkActionUserView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Contact Bulk Action User View - Restricted For Locked User">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateContactBulkActionUserView_RestrictedForLockedUser" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Contact Bulk Action Account View - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateContactBulkActionAccountView_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Contact Bulk Action Account View - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateContactBulkActionAccountView_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Contact Bulk Action Account View - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="updateContactBulkActionAccountView_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Other User Cannot Update Account View">
+        <classes>
+            <class name="io.recruitcrm.ContactService.ContactListBulkActionCustomisationTest">
+                <methods>
+                    <include name="verifyOtherUserCannotUpdateAccountView" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Hotlist Pinned Tests -->
+    <test name="Cross Account Hotlist Pinned Operations">
+        <classes>
+            <class name="io.recruitcrm.ContactService.CrossAccountPostHotlistPinnedTest">
+                <methods>
+                    <include name="crossAccountHotlistPinnedOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Cross Account Saved Search Pinned Tests -->
+    <test name="Cross Account Saved Search Pinned Operations">
+        <classes>
+            <class name="io.recruitcrm.ContactService.CrossAccountPostSavedSearchPinnedTest">
+                <methods>
+                    <include name="crossAccountSavedSearchPinnedOperations_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Get Contact Hotlist Count Tests -->
+    <test name="Get Contact Hotlist Count - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistCountTest">
+                <methods>
+                    <include name="getContactHotlistCountTest_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Hotlist Count - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistCountTest">
+                <methods>
+                    <include name="getContactHotlistCountTest_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Hotlist Count - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistCountTest">
+                <methods>
+                    <include name="getContactHotlistCountTest_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Hotlist Count - Data Provider">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistCountTest">
+                <methods>
+                    <include name="getContactHotlistCountTest_DataProvider" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Get Contact Hotlist Tests -->
+    <test name="Get Contact Hotlist - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistTest">
+                <methods>
+                    <include name="getContactHotlist_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Hotlist - Sort By Name">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistTest">
+                <methods>
+                    <include name="verifyContactHotlist_sortByName" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Hotlist - Sort By Created On">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistTest">
+                <methods>
+                    <include name="verifyContactHotlist_sortByCreatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Hotlist - Sort By Updated On">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistTest">
+                <methods>
+                    <include name="verifyContactHotlist_sortByUpdatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Hotlist - Filters">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistTest">
+                <methods>
+                    <include name="verifyContactHotlistFilters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Hotlist - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistTest">
+                <methods>
+                    <include name="getContactHotlist_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Contact Hotlist - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactHotlistTest">
+                <methods>
+                    <include name="getContactHotlist_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Contact List Page Entity Columns Tests -->
+    <test name="Contact List Page Entity Columns - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactEntityColumnsTest_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Entity Columns - Verify Custom Fields">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactEntityColumnsVerifyCustomFields_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Entity Columns - Verify Column Properties">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactEntityColumnsVerifyColumnProperties_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Entity Columns - Verify All Default Fields">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactEntityColumnsVerifyAllDefaultFields_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Entity Columns - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactEntityColumnsUnauthorizedTest_401" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Entity Columns - Invalid URL">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactEntityColumnsTest_404" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Entity Columns - Missing Entity">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactEntityColumnsTest_400" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Entity Columns - Method Not Allowed">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactEntityColumnsTest_405" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Contact List Page Account View Entity Columns Tests -->
+    <test name="Contact List Page Account View Entity Columns - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactAccountViewColumnsTest_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Account View Entity Columns - Verify Custom Fields">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactAccountViewColumnsVerifyCustomFields_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Account View Entity Columns - Verify Column Properties">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactAccountViewColumnsVerifyColumnProperties_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Account View Entity Columns - Verify All Default Fields">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactAccountViewColumnsVerifyAllDefaultFields_200" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Account View Entity Columns - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactAccountViewColumnsUnauthorizedTest_401" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Account View Entity Columns - Invalid URL">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactAccountViewColumnsTest_404" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Account View Entity Columns - Missing Entity">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactAccountViewColumnsTest_400" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact List Page Account View Entity Columns - Method Not Allowed">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactListPageEntityColumnsTest">
+                <methods>
+                    <include name="getContactAccountViewColumnsTest_405" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Contact Quick View Count Tests -->
+    <test name="Contact Quick View Count - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactQuickViewCountTest">
+                <methods>
+                    <include name="testContactQuickViewCount_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Quick View Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactQuickViewCountTest">
+                <methods>
+                    <include name="testContactQuickViewCount_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Quick View Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactQuickViewCountTest">
+                <methods>
+                    <include name="testContactQuickViewCount_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Quick View Count - All Contacts Count">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactQuickViewCountTest">
+                <methods>
+                    <include name="testAllContactsCount_AfterCreatingContact" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Quick View Count - My Contacts Count">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactQuickViewCountTest">
+                <methods>
+                    <include name="testMyContactsCount_AfterOwnershipChange" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Quick View Count - Not In Any Hotlist Count">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactQuickViewCountTest">
+                <methods>
+                    <include name="testNotInAnyHotlistCount_AfterAddingToHotlist" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Quick View Count - Off Limit Contacts Count">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactQuickViewCountTest">
+                <methods>
+                    <include name="testOffLimitContactsCount_AfterSettingOffLimit" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Contact Search Count Tests -->
+    <test name="Contact Search Count - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactSearchCountTest">
+                <methods>
+                    <include name="testContactSearchCount_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search Count - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactSearchCountTest">
+                <methods>
+                    <include name="testContactSearchCount_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search Count - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactSearchCountTest">
+                <methods>
+                    <include name="testContactSearchCount_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search Count - After Creating Contact">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactSearchCountTest">
+                <methods>
+                    <include name="testContactSearchCount_AfterCreatingContact" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search Count - With Owner Filter">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactSearchCountTest">
+                <methods>
+                    <include name="testContactSearchCount_WithOwnerFilter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search Count - With Off Limit Filter">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactSearchCountTest">
+                <methods>
+                    <include name="testContactSearchCount_WithOffLimitFilter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search Count - With Hotlist Filter">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetContactSearchCountTest">
+                <methods>
+                    <include name="testContactSearchCount_WithHotlistFilter" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Saved Search Count Tests -->
+    <test name="Get Saved Search Count - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Saved Search Count - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Saved Search Count - Invalid Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Saved Search Count - Data Provider">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchCountTest">
+                <methods>
+                    <include name="getSavedSearchCountTest_DataProvider" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Saved Searches List Tests -->
+    <test name="Saved Searches - Basic Validation and Schema">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="getContactSavedSearch_success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Sort By Name">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchList_sortByName" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Sort By Created On">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchList_sortByCreatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Sort By Updated On">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchList_sortByUpdatedOn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Pinned State">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_isPinnedReflectsPinUnpin" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Share Visibility">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_ShareWithTeammates_Visibility" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Collaborators">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_Collaborators_UserIdsListed" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Comprehensive Field Validation">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearch_ComprehensiveFieldValidation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Without Authentication">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Missing Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_MissingQueryParameters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Invalid Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="testSavedSearchList_InvalidQueryParameters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Searches - Filters">
+        <classes>
+            <class name="io.recruitcrm.ContactService.GetSavedSearchesTest">
+                <methods>
+                    <include name="verifySavedSearchesFilters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Post Contact Search Tests -->
+    <test name="Contact Search - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="testContactSearch_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Workflow">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="testContactSearch_Workflow" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="testContactSearch_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="testContactSearch_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="testContactSearch_EmptyRequestBody" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Invalid Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="testContactSearch_InvalidQueryParameters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Missing Query Parameters">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="testContactSearch_MissingQueryParameters" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Comprehensive Data Validation">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="testContactSearch_ComprehensiveDataValidation" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Sort By Text Fields">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="searchContact_SortByTextField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Sort By Numeric Fields">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="searchContact_SortByNumericField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Sort By Date Fields">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="searchContact_SortByDateField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Contact Search - Sort By Custom Fields">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostContactSearchTest">
+                <methods>
+                    <include name="searchContact_SortByCustomField" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Hotlist Pinned/Unpinned Tests -->
+    <test name="Hotlist Pin - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin Unpin - Workflow">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPinUnpin_Workflow" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Invalid Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_InvalidHotlistId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Invalid Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_InvalidHotlistId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Pin - Missing Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistPin_MissingHotlistId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hotlist Unpin - Missing Hotlist ID">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostHotlistPinnedTest">
+                <methods>
+                    <include name="testHotlistUnpin_MissingHotlistId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Saved Search Pinned/Unpinned Tests -->
+    <test name="Saved Search Pin - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Success">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_Success" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin Unpin - Workflow">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPinUnpin_Workflow" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Without Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_WithoutAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Invalid Auth">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_InvalidAuth" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Invalid Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_InvalidSavedSearchId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Invalid Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_InvalidSavedSearchId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Pin - Missing Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchPin_MissingSavedSearchId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Search Unpin - Missing Saved Search ID">
+        <classes>
+            <class name="io.recruitcrm.ContactService.PostSavedSearchPinnedTest">
+                <methods>
+                    <include name="testSavedSearchUnpin_MissingSavedSearchId" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,2157 @@
+{
+  "Call Log Added By": [
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[{{team}}],\"User\":[]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - notes from users who are members of the specified team",
+      "expectedResult": "Contact4, Contact5,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_001"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - notes from owner user (who is a team member)",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_002"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - notes from teamMember user (who is a team member)",
+      "expectedResult": "Contact5,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_003"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes from owner user",
+      "expectedResult": "Contact4, Contact5,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_004"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes from admin user",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_005"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes from teamMember user",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_006"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain notes from owner user",
+      "expectedResult": "Contact4, Contact5,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_007"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain notes from admin user",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_008"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain notes from teamMember user",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_009"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any user who added the note",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_010"
+    },
+    {
+      "dbField": "createdby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no user who added the note",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_BY_011"
+    }
+  ],
+  "Call Log Updated By": [
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[{{team}}],\"User\":[]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - notes updated by users who are members of the specified team",
+      "expectedResult": "Contact4, Contact5,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_001"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - notes updated by owner user (who is a team member)",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_002"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exact match - notes updated by teamMember user (who is a team member)",
+      "expectedResult": "Contact5,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_003"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes updated by owner user",
+      "expectedResult": "Contact4, Contact5,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_004"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes updated by admin user",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_005"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_not",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Exclude candidates with notes updated by teamMember user",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_006"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{owner}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain notes updated by owner user",
+      "expectedResult": "Contact4, Contact5,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_007"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{admin}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain notes updated by admin user",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_008"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "does_not_contain",
+      "filterValue": "{\"Team\":[],\"User\":[{{teamMember}}]}",
+      "fieldType": "dropdown",
+      "description": "Does not contain notes updated by teamMember user",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_009"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has any user who updated the note",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_010"
+    },
+    {
+      "dbField": "updatedby",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Has no user who updated the note",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_BY_011"
+    }
+  ],
+  "Call Type": [
+    {
+      "dbField": "calltype",
+      "filterType": "is_not",
+      "filterValue": "{{Custom Call Type}}",
+      "fieldType": "dropdown",
+      "description": "Exclude Outbound call type",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_TYPE_001"
+    },
+    {
+      "dbField": "calltype",
+      "filterType": "is",
+      "filterValue": "{{Custom Call Type}}",
+      "fieldType": "dropdown",
+      "description": "Exact match - Custom call type",
+      "expectedResult": "Contact11, Contact12,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_TYPE_002"
+    },
+    {
+      "dbField": "calltype",
+      "filterType": "does_not_contain",
+      "filterValue": "{{Custom Call Type}}",
+      "fieldType": "dropdown",
+      "description": "Exclude Custom call type",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_TYPE_003"
+    },
+    {
+      "dbField": "calltype",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{{Custom Call Type}}",
+      "fieldType": "dropdown",
+      "description": "Contains Custom call type",
+      "expectedResult": "Contact11, Contact12,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_TYPE_004"
+    },
+    {
+      "dbField": "calltype",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Call logs with any call type",
+      "expectedResult": "Contact11, Contact12,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_TYPE_005"
+    },
+    {
+      "dbField": "calltype",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "description": "Call logs with no call type",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10,Contact13,Contact14,Contact15,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_TYPE_006"
+    }
+  ],
+  "Call Log Added On": [
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "description": "Call logs added today",
+      "expectedResult": "Contact1,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_001"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "description": "Call logs added yesterday",
+      "expectedResult": "Contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_002"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "description": "Call logs added this week",
+      "expectedResult": "Contact1, Contact3,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_003"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "description": "Call logs added last week",
+      "expectedResult": "Contact2, Contact4",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_004"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "description": "Call logs added this month",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_005"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "description": "Call logs added last month",
+      "expectedResult": "Contact5, Contact6,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_006"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "description": "Call logs added this quarter",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_007"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "description": "Call logs added last quarter",
+      "expectedResult": "Contact7, Contact8,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_008"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "description": "Call logs added this year",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_009"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "description": "Call logs added last year",
+      "expectedResult": "Contact9, Contact10",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_010"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "description": "Call logs added in last 30 days",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_011"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "description": "Call logs added in last 60 days",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_012"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "description": "Call logs added in last 90 days",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_013"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "description": "Call logs added in last 365 days",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_014"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_equal_to",
+      "filterValue": "2024-01-15",
+      "fieldType": "date",
+      "description": "Call logs added on specific date 2024-01-15",
+      "expectedResult": "Contact1,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_015"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_before",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Call logs added before 2024-01-01",
+      "expectedResult": "Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_016"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_after",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Call logs added after 2024-01-01",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_017"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_between",
+      "filterValue": "2024-01-01, 2024-01-31",
+      "fieldType": "date",
+      "description": "Call logs added between 2024-01-01 and 2024-01-31",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_018"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Call logs added more than 30 days ago",
+      "expectedResult": "Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_019"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Call logs added less than 30 days ago",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_020"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has any creation date",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_021"
+    },
+    {
+      "dbField": "createdon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has no creation date",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ADDED_ON_022"
+    }
+  ],
+  "Call Log Updated On": [
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "today",
+      "fieldType": "date",
+      "description": "Call logs updated today",
+      "expectedResult": "Contact1,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_001"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "yesterday",
+      "fieldType": "date",
+      "description": "Call logs updated yesterday",
+      "expectedResult": "Contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_002"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_week",
+      "fieldType": "date",
+      "description": "Call logs updated this week",
+      "expectedResult": "Contact1, Contact3,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_003"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_week",
+      "fieldType": "date",
+      "description": "Call logs updated last week",
+      "expectedResult": "Contact2, Contact4",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_004"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_month",
+      "fieldType": "date",
+      "description": "Call logs updated this month",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_005"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_month",
+      "fieldType": "date",
+      "description": "Call logs updated last month",
+      "expectedResult": "Contact5, Contact6,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_006"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_quarter",
+      "fieldType": "date",
+      "description": "Call logs updated this quarter",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_007"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_quarter",
+      "fieldType": "date",
+      "description": "Call logs updated last quarter",
+      "expectedResult": "Contact7, Contact8,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_008"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "this_year",
+      "fieldType": "date",
+      "description": "Call logs updated this year",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_009"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_year",
+      "fieldType": "date",
+      "description": "Call logs updated last year",
+      "expectedResult": "Contact9, Contact10",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_010"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_30",
+      "fieldType": "date",
+      "description": "Call logs updated in last 30 days",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_011"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_60",
+      "fieldType": "date",
+      "description": "Call logs updated in last 60 days",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_012"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_90",
+      "fieldType": "date",
+      "description": "Call logs updated in last 90 days",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_013"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is",
+      "filterValue": "last_365",
+      "fieldType": "date",
+      "description": "Call logs updated in last 365 days",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "DATE_IS",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_014"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_equal_to",
+      "filterValue": "2024-01-15",
+      "fieldType": "date",
+      "description": "Call logs updated on specific date 2024-01-15",
+      "expectedResult": "Contact1,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_015"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_before",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Call logs updated before 2024-01-01",
+      "expectedResult": "Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_016"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_after",
+      "filterValue": "2024-01-01",
+      "fieldType": "date",
+      "description": "Call logs updated after 2024-01-01",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_017"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_between",
+      "filterValue": "2024-01-01, 2024-01-31",
+      "fieldType": "date",
+      "description": "Call logs updated between 2024-01-01 and 2024-01-31",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_018"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_mt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Call logs updated more than 30 days ago",
+      "expectedResult": "Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_019"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_lt",
+      "filterValue": "30",
+      "fieldType": "date",
+      "description": "Call logs updated less than 30 days ago",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "INTEGER",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_020"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has any update date",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_021"
+    },
+    {
+      "dbField": "updatedon",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "date",
+      "description": "Has no update date",
+      "expectedResult": "Contact13,Contact14,Contact15",
+      "filterValue_TYPE": "LONG",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_UPDATED_ON_022"
+    }
+  ],
+  "Call Log Association With": [
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}",
+          "{{contact1}}"
+        ],
+        "Company": [
+          "{{company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple contacts - contact1 has both contact1 and contact2",
+      "expectedResult": "Contact1, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_001"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact2}}"
+        ],
+        "Company": [
+          "{{company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple companies - contact2 has both contact1 and contact2",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_002"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact3}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact3 has contact1",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_003"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact4}}"
+        ],
+        "Company": [
+          "{{company4}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple jobs - contact4 has both job1 and job2",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_004"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_005"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_006"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single contact - contact5 has contact2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_007"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single job - contact5 has job2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_008"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact6}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Multiple deals - contact6 has both deal1 and deal2",
+      "expectedResult": "Contact6",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_009"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Single deal - contact7 has deal2",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_010"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{contact11}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return contact11",
+      "expectedResult": "Contact11",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_011"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}",
+          "{{contact5}}"
+        ],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return contact5",
+      "expectedResult": "Contact5, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_012"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All contacts",
+      "expectedResult": "All",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_013"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All contacts",
+      "expectedResult": "All",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_014"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact3}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "should return contacts 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact2, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_015"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact4}}"
+        ],
+        "Company": [
+          "{{company4}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude jobs with job1 - should return contacts 1,2,3,5,6,7,8,9,10,11",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_016"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact6}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "All contacts",
+      "expectedResult": "All",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_017"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact11}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + contact1 - should return contacts 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_018"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact2}}"
+        ],
+        "Company": [
+          "{{company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + contact2 - should return contacts 1,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Contact1, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_019"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact4}}"
+        ],
+        "Company": [
+          "{{company4}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: job1 + job2 - should return contacts 1,2,3,5,6,7,8,9,10,11,12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_020"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}",
+          "{{contact1}}"
+        ],
+        "Company": [
+          "{{company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: contact1 + contact2 - should return contacts 2,3,4,5,6,7,8,9,10,11,12",
+      "expectedResult": "Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_021"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Contact": [
+          "{{contact6}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude exact match: deal1 + deal2 - should return contacts 1,2,3,4,5,7,8,9,10,11,12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_022"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return contact3 and contact11 (both have contact1)",
+      "expectedResult": "Contact3, Contact11",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_023"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return contact2 and contact11 (both have contact1)",
+      "expectedResult": "Contact2, Contact11",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_024"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact2 - should return contact2 and contact5 (both have contact2)",
+      "expectedResult": "Contact2, Contact5, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_025"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job1 - should return contact4 and contact12 (both have job1)",
+      "expectedResult": "Contact4, Contact12, associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_026"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job2 - should return contact4 and contact5 (both have job2)",
+      "expectedResult": "Contact4, Contact5, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_027"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 - should return contact1 and contact12 (both have contact1)",
+      "expectedResult": "Contact1, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_028"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact2 - should return contact5 and contact7 (both have contact2)",
+      "expectedResult": "Contact1, Contact5, Contact7, associated_contacts_contact2, associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_029"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal1 - should return contact5 and contact6 (both have deal1)",
+      "expectedResult": "Contact5, Contact6, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_030"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal2 - should return contact6 and contact7 (both have deal2)",
+      "expectedResult": "Contact6, Contact7, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_031"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact1 AND contact1 - should return contact11 only (has both)",
+      "expectedResult": "Contact11",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_032"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact2 AND contact2 - should return contact5 only (has both)",
+      "expectedResult": "Contact5, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_033"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH job1 AND job2 - should return contact4 only (has both)",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_034"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH contact1 AND contact2 - should return contact1 only (has both)",
+      "expectedResult": "Contact1, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_035"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains BOTH deal1 AND deal2 - should return contact6 only (has both)",
+      "expectedResult": "Contact6",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_036"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 AND contact1 AND job1 - should return empty (no contact has all three)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_037"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 AND contact1 AND contact1 - should return empty (no contact has all three)",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_038"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact1 (OR logic) - should return contact2, contact3, contact11",
+      "expectedResult": "Contact2, Contact3, Contact11",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_039"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}",
+          "{{associated_companies_company2}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return contact3, contact5, contact11",
+      "expectedResult": "Contact3, Contact5, Contact11, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_040"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}",
+          "{{associated_candidates_candidate2}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return contact2, contact5, contact11",
+      "expectedResult": "Contact2, Contact5, Contact11, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_041"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}",
+          "{{associated_jobs_job2}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains job1 OR job2 - should return contact4, contact5, contact12",
+      "expectedResult": "Contact4, Contact5, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_042"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}",
+          "{{associated_contacts_contact2}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact2 - should return contact1, contact5, contact7, contact12",
+      "expectedResult": "Contact1, Contact5, Contact7, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_043"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}",
+          "{{associated_deals_deal2}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains deal1 OR deal2 - should return contact5, contact6, contact7",
+      "expectedResult": "Contact5, Contact6, Contact7, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_044"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact1 OR job1 OR contact1 OR deal1 - should return contact1, contact2, contact3, contact4, contact5, contact6, contact11, contact12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact11, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_045"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains contact1 OR contact1 (OR logic) - should return contact2, contact3, contact11",
+      "expectedResult": "Contact2, Contact3, Contact11",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_046"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - should return contacts 1,2,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact2, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_047"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - should return contacts 1,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_048"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [
+          "{{associated_jobs_job1}}"
+        ],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain job1 - returns companies with at least one note that doesn't include job1. associated_companies_contact1 is included because it has Contact1's note (no job1) even though it also has Contact12's note (has job1)",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact13, Contact14, Contact15, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_049"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [
+          "{{associated_contacts_contact1}}"
+        ],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 - returns companies with at least one note that doesn't include contact1. associated_companies_contact2 is included because it has Contact5's note (no contact1) and Contact7's note (no contact1) even though it also has Contact1's note (has contact1)",
+      "expectedResult": "Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact13, Contact14, Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_050"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [],
+        "Job": [],
+        "Candidate": [],
+        "deal": [
+          "{{associated_deals_deal1}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain deal1 - returns companies with at least one note that doesn't include deal1. associated_companies_contact2 is included because it has Contact1's note (no deal1) and Contact7's note (no deal1) even though it also has Contact5's note (has deal1)",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_051"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Contact": [],
+        "Company": [
+          "{{associated_companies_company1}}"
+        ],
+        "Job": [],
+        "Candidate": [
+          "{{associated_candidates_candidate1}}"
+        ],
+        "deal": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain contact1 AND contact1 - should return contacts 1,2,3,4,5,6,7,8,9,10,12",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact12, Contact13, Contact14, Contact15, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_052"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contact apart from 8, 9, 10 should be returned",
+      "expectedResult": "contact1, contact2, contact3, contact4, contact5, contact6, contact7, contact 8, contact 9, contact 10, contact 11, contact 12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_053"
+    },
+    {
+      "dbField": "call_log_associated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contact 13, 14, 15 should be returned",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_ASSOCIATION_WITH_054"
+    }
+  ],
+  "Call Log Collaborated With": [
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only team collaboration, no users",
+      "expectedResult": "Contact3",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_001"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only owner user collaboration, no teams",
+      "expectedResult": "Contact1,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_002"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only admin user collaboration, no teams",
+      "expectedResult": "Contact4",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_003"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - team and admin user collaboration",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_004"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - owner and admin user collaboration, no teams",
+      "expectedResult": "Contact5,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_005"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - only teamMember user collaboration, no teams",
+      "expectedResult": "Empty",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_006"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exact match - owner and teamMember user collaboration, no teams",
+      "expectedResult": "Contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_007"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude contacts with exactly team collaboration only",
+      "expectedResult": "Contact1, Contact2, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_008"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude contacts with exactly owner user collaboration only",
+      "expectedResult": "Contact2,Contact3,Contact4,Contact5,Contact6,Contact7,Contact8,Contact9,Contact10,Contact11,Contact12,Contact13,Contact14,Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_009"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude contacts with exactly team and admin collaboration",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_010"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is_not",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Exclude contacts with exactly owner and teamMember collaboration",
+      "expectedResult": "Contact1, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_011"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains team collaboration (may have additional collaborators)",
+      "expectedResult": "Contact3, Contact8",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_012"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains admin user collaboration (may have additional collaborators)",
+      "expectedResult": "Contact4, Contact5, Contact8,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_013"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains both team and admin collaboration (may have additional collaborators)",
+      "expectedResult": "Contact8",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_014"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "contains",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{owner}}",
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains both owner and admin user collaboration (may have additional collaborators)",
+      "expectedResult": "Contact5,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_015"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team or admin collaboration",
+      "expectedResult": "Contact3, Contact4, Contact5, Contact8,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_016"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team, owner, or teamMember collaboration",
+      "expectedResult": "Contact1,Contact2, Contact3, Contact5, Contact8,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_017"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "contains_at_least_one",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}",
+          "{{owner}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Contains at least one of team, admin, owner, or teamMember collaboration",
+      "expectedResult": "Contact1,Contact2, Contact3, Contact4, Contact5, Contact8,associated_contacts_contact2,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_018"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": []
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain team collaboration",
+      "expectedResult": "Contact1, Contact2, Contact4, Contact5, Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_019"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain admin user collaboration",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_020"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{admin}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain team OR admin collaboration",
+      "expectedResult": "Contact1, Contact2,Contact3,Contact4,Contact5,Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,Contact13,Contact14,Contact15,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_021"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "does_not_contain",
+      "filterValue": {
+        "Team": [
+          "{{team}}"
+        ],
+        "User": [
+          "{{owner}}",
+          "{{admin}}",
+          "{{teamMember}}"
+        ]
+      },
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Does not contain any of team, owner, admin, or teamMember collaboration",
+      "expectedResult": "All",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_022"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has any collaboration (users or teams)",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact8,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_023"
+    },
+    {
+      "dbField": "call_log_collaborated_with",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "multiselect",
+      "filterValue_TYPE": "ENTITY_ASSOCIATION",
+      "description": "Has no collaboration (empty users and teams)",
+      "expectedResult": "Contact6, Contact7, Contact9, Contact10, Contact11, Contact12,associated_contacts_contact1,associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_COLLABORATED_WITH_024"
+    }
+  ],
+  "Call Log Exists": [
+    {
+      "dbField": "call_log_exists",
+      "filterType": "yes",
+      "filterValue": "1",
+      "fieldType": "checkbox",
+      "filterValue_TYPE": "INTEGER",
+      "description": "Yes - Return contacts associated with at least one call log",
+      "expectedResult": "Contact1, Contact2, Contact3, Contact4, Contact5, Contact6, Contact7, Contact8, Contact9, Contact10, Contact11, Contact12, associated_contacts_contact1, associated_contacts_contact2",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_EXISTS_001"
+    },
+    {
+      "dbField": "call_log_exists",
+      "filterType": "no",
+      "filterValue": "0",
+      "fieldType": "checkbox",
+      "filterValue_TYPE": "INTEGER",
+      "description": "No - Return contacts with no associated call logs",
+      "expectedResult": "Contact13, Contact14, Contact15",
+      "testCaseId": "TC_CONTACT_CALL_LOG_CALL_LOG_EXISTS_002"
+    }
+  ]
+}

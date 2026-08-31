@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "sucess": {
+        "type": "boolean"
+      },
+      "statusCode": {
+        "type": "integer"
+      },
+      "message": {
+        "type": "string"
+      },
+      "data": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "field_id": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "field_id",
+              "value"
+            ]
+          }
+        ]
+      }
+    },
+    "required": [
+      "sucess",
+      "statusCode",
+      "message",
+      "data"
+    ]
+  }

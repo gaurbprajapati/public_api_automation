@@ -1,0 +1,580 @@
+{
+  "Contact LastCommsType": [
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{Email}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Email LastCommsType",
+      "expectedResult": "Company1,Company6,Company11"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for CallLog LastCommsType",
+      "expectedResult": "Company2,Company6,Company12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for SMS LastCommsType",
+      "expectedResult": "Company2,Company3,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Meeting LastCommsType",
+      "expectedResult": "Company4,Company9,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is",
+      "filterValue": "{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is filter - exact match for Message LastCommsType",
+      "expectedResult": "Company4,Company5,Company10"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{Email}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Email LastCommsType",
+      "expectedResult": "Company10,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude CallLog LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude SMS LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company4,Company5,Company6,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Meeting LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company12,Company2,Company3,Company4,Company5,Company6,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_not",
+      "filterValue": "{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Is Not filter - exclude Message LastCommsType",
+      "expectedResult": "Company1,Company11,Company12,Company15,Company2,Company3,Company4,Company6,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value Email LastCommsType",
+      "expectedResult": "Company1,Company6,Company11"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value CallLog LastCommsType",
+      "expectedResult": "Company2,Company6,Company12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value SMS LastCommsType",
+      "expectedResult": "Company2,Company3,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value Meeting LastCommsType",
+      "expectedResult": "Company4,Company9,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - single value Message LastCommsType",
+      "expectedResult": "Company4,Company5,Company10"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or CallLog LastCommsType",
+      "expectedResult": "Company1,Company2,Company6,Company11,Company12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or SMS LastCommsType",
+      "expectedResult": "Company1,Company2,Company3,Company6,Company8,Company11"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or Meeting LastCommsType",
+      "expectedResult": "Company1,Company4,Company6,Company9,Company11,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email or Message LastCommsType",
+      "expectedResult": "Company1,Company4,Company5,Company6,Company10,Company11"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or SMS LastCommsType",
+      "expectedResult": "Company2,Company3,Company6,Company8,Company12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or Meeting LastCommsType",
+      "expectedResult": "Company2,Company4,Company6,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog or Message LastCommsType",
+      "expectedResult": "Company2,Company4,Company5,Company6,Company10,Company12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{SMS},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - SMS or Meeting LastCommsType",
+      "expectedResult": "Company2,Company3,Company4,Company8,Company9,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{SMS},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - SMS or Message LastCommsType",
+      "expectedResult": "Company2,Company3,Company4,Company5,Company8,Company10"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Meeting or Message LastCommsType",
+      "expectedResult": "Company4,Company5,Company9,Company10,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email, CallLog or SMS LastCommsType",
+      "expectedResult": "Company1,Company2,Company3,Company6,Company8,Company11,Company12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email, CallLog or Meeting LastCommsType",
+      "expectedResult": "Company1,Company2,Company4,Company6,Company9,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email, CallLog or Message LastCommsType",
+      "expectedResult": "Company1,Company2,Company4,Company5,Company6,Company10,Company11,Company12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{SMS},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email, SMS or Meeting LastCommsType",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company6,Company8,Company9,Company11,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{SMS},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email, SMS or Message LastCommsType",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company10,Company11"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - Email, Meeting or Message LastCommsType",
+      "expectedResult": "Company1,Company4,Company5,Company6,Company9,Company10,Company11,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{SMS},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog, SMS or Meeting LastCommsType",
+      "expectedResult": "Company2,Company3,Company4,Company6,Company8,Company9,Company12,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{SMS},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog, SMS or Message LastCommsType",
+      "expectedResult": "Company2,Company3,Company4,Company5,Company6,Company8,Company10,Company12"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{CallLog},{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - CallLog, Meeting or Message LastCommsType",
+      "expectedResult": "Company2,Company4,Company5,Company6,Company9,Company10,Company12,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{SMS},{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - SMS, Meeting or Message LastCommsType",
+      "expectedResult": "Company2,Company3,Company4,Company5,Company8,Company9,Company10,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "contains_at_least_one",
+      "filterValue": "{Email},{CallLog},{SMS},{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Contains At Least One filter - any LastCommsType value",
+      "expectedResult": "Company1,Company2,Company3,Company4,Company5,Company6,Company8,Company9,Company10,Company11,Company12,Company15"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email LastCommsType",
+      "expectedResult": "Company10,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude SMS LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company4,Company5,Company6,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Meeting LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company12,Company2,Company3,Company4,Company5,Company6,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Message LastCommsType",
+      "expectedResult": "Company1,Company11,Company12,Company15,Company2,Company3,Company4,Company6,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or CallLog LastCommsType",
+      "expectedResult": "Company10,Company15,Company2,Company3,Company4,Company5,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or SMS LastCommsType",
+      "expectedResult": "Company10,Company12,Company15,Company2,Company4,Company5,Company6,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or Meeting LastCommsType",
+      "expectedResult": "Company10,Company12,Company2,Company3,Company4,Company5,Company6,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email or Message LastCommsType",
+      "expectedResult": "Company12,Company15,Company2,Company3,Company4,Company6,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or SMS LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company15,Company4,Company5,Company6,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or Meeting LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company2,Company3,Company4,Company5,Company6,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog or Message LastCommsType",
+      "expectedResult": "Company1,Company11,Company15,Company2,Company3,Company4,Company6,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{SMS},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude SMS or Meeting LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company12,Company2,Company4,Company5,Company6"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{SMS},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude SMS or Message LastCommsType",
+      "expectedResult": "Company1,Company11,Company12,Company15,Company2,Company4,Company6,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Meeting or Message LastCommsType",
+      "expectedResult": "Company1,Company11,Company12,Company2,Company3,Company6,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{SMS}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email, CallLog or SMS LastCommsType",
+      "expectedResult": "Company10,Company15,Company4,Company5,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email, CallLog or Meeting LastCommsType",
+      "expectedResult": "Company10,Company2,Company3,Company4,Company5,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email, CallLog or Message LastCommsType",
+      "expectedResult": "Company15,Company2,Company3,Company4,Company8,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{SMS},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email, SMS or Meeting LastCommsType",
+      "expectedResult": "Company10,Company12,Company2,Company4,Company5,Company6"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{SMS},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email, SMS or Message LastCommsType",
+      "expectedResult": "Company12,Company15,Company2,Company4,Company6,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude Email, Meeting or Message LastCommsType",
+      "expectedResult": "Company12,Company2,Company3,Company6,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{SMS},{Meeting}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog, SMS or Meeting LastCommsType",
+      "expectedResult": "Company1,Company10,Company11,Company4,Company5,Company6"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{SMS},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog, SMS or Message LastCommsType",
+      "expectedResult": "Company1,Company11,Company15,Company4,Company6,Company9"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{CallLog},{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude CallLog, Meeting or Message LastCommsType",
+      "expectedResult": "Company1,Company11,Company2,Company3,Company6,Company8"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{SMS},{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude SMS, Meeting or Message LastCommsType",
+      "expectedResult": "Company1,Company11,Company12,Company2,Company6"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "does_not_contain",
+      "filterValue": "{Email},{CallLog},{SMS},{Meeting},{Message}",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "STRING_LIST",
+      "description": "Does Not Contain filter - exclude any LastCommsType value",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "is_empty",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Is Empty filter - LastCommsType field is empty",
+      "expectedResult": "Empty"
+    },
+    {
+      "dbField": "last_communication_method",
+      "filterType": "has_any_value",
+      "filterValue": "",
+      "fieldType": "dropdown",
+      "filterValue_TYPE": "INTEGER_LIST",
+      "description": "Has Any Value filter - LastCommsType field has any value",
+      "expectedResult": "Company1,Company10,Company11,Company12,Company15,Company2,Company3,Company4,Company5,Company6,Company8,Company9"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Rest API Test Suite" verbose="1">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="All EndPoints of Seqences-free plan">
+		<classes>
+			<class name="io.recruitcrm.nyma.emailsequence.SequencesOnFreePlanTest">
+				<methods>
+					<include name="createEmailSequence" />
+					<include name="editEmailSequence" />
+					<include name="addEmailStepToSequence" />
+					<include name="addTaskStepToSequence" />
+					<include name="getEmailSequence" />
+					<include name="getEmailSequenceById" />
+					<include name="getEmailSequenceStats" />
+					<include name="DeleteStepInSequence" />
+					<include name="cloneSequence" />
+					<include name="createSecondSequence" />
+					<include name="validateEnrollments" />
+					<include name="enrollToSequence" />
+					<include name="getEnrollmentsOfSequence" />
+					<include name="updateStepByEnrollmentId" />
+					<include name="getEnrollmentDetails" />
+					<include name="unEnrollInSequence" />
+					<include name="DeleteSequence" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Public Api Restriction On Free And Pro Plan Accounts">
+		<classes>
+			<class name="io.rcrm.api.adminsetting.apiandintegration.ApiAndIntegrationTest">
+				<methods>
+					<include name="verifyPublicApiRestrictionOnFreeAndProAccounts" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+</suite>

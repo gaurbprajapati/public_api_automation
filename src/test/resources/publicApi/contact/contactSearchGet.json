@@ -1,0 +1,422 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["meta", "data"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["message", "requestUuid", "responseType", "timestamp", "status"],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": ["Entities retrieved successfully"]
+        },
+        "requestUuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "responseType": {
+          "type": "object",
+          "required": ["context", "code"],
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": ["Request is successful"]
+            },
+            "code": {
+              "type": "integer",
+              "enum": [103]
+            }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [200]
+        }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "firstname",
+          "lastname",
+          "slug",
+          "ownerid",
+          "accountid",
+          "createdby",
+          "createdon",
+          "updatedby",
+          "updatedon"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "srno": {
+            "type": "integer"
+          },
+          "companyid": {
+            "type": ["integer", "null"]
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "creatorname": {
+            "type": ["string", "null"]
+          },
+          "updatorname": {
+            "type": ["string", "null"]
+          },
+          "email": {
+            "type": ["string", "null"]
+          },
+          "contactnumber": {
+            "type": ["string", "null"]
+          },
+          "photo": {
+            "type": ["string", "null"]
+          },
+          "designation": {
+            "type": ["string", "null"]
+          },
+          "profilefacebook": {
+            "type": ["string", "null"]
+          },
+          "profiletwitter": {
+            "type": ["string", "null"]
+          },
+          "profilelinkedin": {
+            "type": ["string", "null"]
+          },
+          "profilexing": {
+            "type": ["string", "null"]
+          },
+          "companyname": {
+            "type": ["string", "null"]
+          },
+          "companyslug": {
+            "type": ["string", "null"]
+          },
+          "companydeleted": {
+            "type": ["boolean", "null"]
+          },
+          "slug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ownerid": {
+            "type": "integer"
+          },
+          "deleted": {
+            "type": ["boolean", "null"]
+          },
+          "ownername": {
+            "type": ["string", "null"]
+          },
+          "accountid": {
+            "type": "integer"
+          },
+          "createdby": {
+            "type": "integer"
+          },
+          "createdon": {
+            "type": "integer"
+          },
+          "updatedby": {
+            "type": "integer"
+          },
+          "updatedon": {
+            "type": "integer"
+          },
+          "city": {
+            "type": ["string", "null"]
+          },
+          "address": {
+            "type": ["string", "null"]
+          },
+          "lat": {
+            "type": ["number", "null"]
+          },
+          "lng": {
+            "type": ["number", "null"]
+          },
+          "locality": {
+            "type": ["string", "null"]
+          },
+          "stageid": {
+            "type": ["integer", "null"]
+          },
+          "stage": {
+            "type": ["string", "null"]
+          },
+          "canaccess": {
+            "type": ["boolean", "null"]
+          },
+          "formatted_profile_linkedin": {
+            "type": ["string", "null"]
+          },
+          "sms_consent": {
+            "type": ["boolean", "null"]
+          },
+          "sms_opt_out": {
+            "type": ["boolean", "null"]
+          },
+          "state": {
+            "type": ["string", "null"]
+          },
+          "country": {
+            "type": ["string", "null"]
+          },
+          "postal_code": {
+            "type": ["string", "null"]
+          },
+          "resumetext": {
+            "type": ["string", "null"]
+          },
+          "relatedtocandidate": {
+            "type": ["boolean", "null"]
+          },
+          "relatedcandidatename": {
+            "type": ["string", "null"]
+          },
+          "candidateslug": {
+            "type": ["string", "null"]
+          },
+          "candidateemail": {
+            "type": ["string", "null"]
+          },
+          "candidateid": {
+            "type": ["integer", "null"]
+          },
+          "candidateprofilepic": {
+            "type": ["string", "null"]
+          },
+          "candidateprofilefacebook": {
+            "type": ["string", "null"]
+          },
+          "candidateprofiletwitter": {
+            "type": ["string", "null"]
+          },
+          "candidateprofilelinkedin": {
+            "type": ["string", "null"]
+          },
+          "candidateprofilegithub": {
+            "type": ["string", "null"]
+          },
+          "company_id": {
+            "type": ["integer", "null"]
+          },
+          "company_srno": {
+            "type": ["integer", "null"]
+          },
+          "company_companyname": {
+            "type": ["string", "null"]
+          },
+          "company_parentcompanyid": {
+            "type": ["integer", "null"]
+          },
+          "company_parentcompanyslug": {
+            "type": ["string", "null"]
+          },
+          "haschildren": {
+            "type": ["boolean", "null"]
+          },
+          "hasparent": {
+            "type": ["boolean", "null"]
+          },
+          "parentcompanyname": {
+            "type": ["string", "null"]
+          },
+          "company_city": {
+            "type": ["string", "null"]
+          },
+          "company_lat": {
+            "type": ["number", "null"]
+          },
+          "company_lng": {
+            "type": ["number", "null"]
+          },
+          "company_industryid": {
+            "type": ["integer", "null"]
+          },
+          "company_industry": {
+            "type": ["string", "null"]
+          },
+          "company_website": {
+            "type": ["string", "null"]
+          },
+          "company_address": {
+            "type": ["string", "null"]
+          },
+          "company_logo": {
+            "type": ["string", "null"]
+          },
+          "company_ownerid": {
+            "type": ["integer", "null"]
+          },
+          "company_slug": {
+            "type": ["string", "null"]
+          },
+          "company_deleted": {
+            "type": ["boolean", "null"]
+          },
+          "company_profilefacebook": {
+            "type": ["string", "null"]
+          },
+          "company_profiletwitter": {
+            "type": ["string", "null"]
+          },
+          "company_profilelinkedin": {
+            "type": ["string", "null"]
+          },
+          "company_totalopenjob": {
+            "type": ["integer", "null"]
+          },
+          "company_totalclosedjob": {
+            "type": ["integer", "null"]
+          },
+          "company_totalonholdjob": {
+            "type": ["integer", "null"]
+          },
+          "company_totalcanceledjob": {
+            "type": ["integer", "null"]
+          },
+          "company_locality": {
+            "type": ["string", "null"]
+          },
+          "company_state": {
+            "type": ["string", "null"]
+          },
+          "company_country": {
+            "type": ["string", "null"]
+          },
+          "company_postal_code": {
+            "type": ["string", "null"]
+          },
+          "company_ownername": {
+            "type": ["string", "null"]
+          },
+          "company_creatorname": {
+            "type": ["string", "null"]
+          },
+          "company_updatorname": {
+            "type": ["string", "null"]
+          },
+          "company_accountid": {
+            "type": ["integer", "null"]
+          },
+          "company_createdby": {
+            "type": ["integer", "null"]
+          },
+          "company_createdon": {
+            "type": ["integer", "null"]
+          },
+          "company_updatedby": {
+            "type": ["integer", "null"]
+          },
+          "company_updatedon": {
+            "type": ["integer", "null"]
+          },
+          "company_linkedin_id": {
+            "type": ["string", "null"]
+          },
+          "company_monster_board_company_name": {
+            "type": ["string", "null"]
+          },
+          "company_indeed_opted_out": {
+            "type": ["boolean", "null"]
+          },
+          "email_opt_out": {
+            "type": ["boolean", "null"]
+          },
+          "contact_owner_status": {
+            "type": ["integer", "null"]
+          },
+          "contact_creator_status": {
+            "type": ["integer", "null"]
+          },
+          "contact_updator_status": {
+            "type": ["integer", "null"]
+          },
+          "last_calllog_created_on": {
+            "type": ["integer", "null"]
+          },
+          "last_calllog_created_by": {
+            "type": ["integer", "null"]
+          },
+          "last_sms_sent_on": {
+            "type": ["integer", "null"]
+          },
+          "last_sms_sent_by": {
+            "type": ["integer", "null"]
+          },
+          "last_email_sent_on": {
+            "type": ["integer", "null"]
+          },
+          "last_email_sent_by": {
+            "type": ["integer", "null"]
+          },
+          "last_meeting_created_on": {
+            "type": ["integer", "null"]
+          },
+          "last_meeting_created_by": {
+            "type": ["integer", "null"]
+          },
+          "last_message_sent_on": {
+            "type": ["integer", "null"]
+          },
+          "last_message_sent_by": {
+            "type": ["integer", "null"]
+          },
+          "last_communication_method": {
+            "type": ["string", "null"]
+          },
+          "last_communication_timestamp": {
+            "type": ["integer", "null"]
+          },
+          "candidate_linked": {
+            "type": ["boolean", "null"]
+          },
+          "contact_creator_photo": {
+            "type": ["string", "null"]
+          },
+          "contact_updator_photo": {
+            "type": ["string", "null"]
+          },
+          "contact_owner_photo": {
+            "type": ["string", "null"]
+          },
+          "photoUrl": {
+            "type": ["string", "null"]
+          }
+        },
+        "additionalProperties": true,
+        "patternProperties": {
+          "^custcolumn[0-9]+$": {
+            "type": ["string", "null"]
+          },
+          "^company_custcolumn[0-9]+$": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

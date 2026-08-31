@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RBAC Company Security Test Suite" thread-count="8" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+    <test name="RBAC Company Create Security - all">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.company.RBACCompanyCreateSecurityTest">
+                <methods>
+                    <include name="createCompanySecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Company View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.company.RBACCompanyViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCompany_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Company Edit Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.company.RBACCompanyViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editCompany_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Company Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.company.RBACCompanyViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteCompany_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBACGetCompanyOffLimitStatusSecurityTest">
+		<parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.CompanyService.RBACGetCompanyOffLimitStatusSecurityTest">
+                <methods>
+                    <include name="getCompanyOffLimitStatus_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBACGetCompanyWidgetCountSecurityTest">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.CompanyService.RBACGetCompanyWidgetCountSecurityTest">
+                <methods>
+                    <include name="getCompanyWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Company Related Hotlists Security Test">
+		<parameter name="role" value="all"/>
+		<classes>
+			<class name="io.recruitcrm.CompanyService.RBACGetCompanyRelatedHotlistsSecurityTest">
+				<methods>
+					<include name="getCompanyRelatedHotlists_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="RBACGetCompanyRelatedDealsSecurityTest">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.RBACGetCompanyRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getCompanyRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

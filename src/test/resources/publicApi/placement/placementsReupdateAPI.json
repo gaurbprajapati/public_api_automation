@@ -1,0 +1,28 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Placement re-update (same values) error response",
+	"type": "object",
+	"properties": {
+		"error": {
+			"type": "boolean",
+			"enum": [
+				true
+			]
+		},
+		"errorCode": {
+			"type": "integer",
+			"enum": [
+				422
+			]
+		},
+		"errorMessage": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"error",
+		"errorCode",
+		"errorMessage"
+	],
+	"additionalProperties": false
+}

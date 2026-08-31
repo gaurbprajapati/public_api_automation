@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest API Test Suite" thread-count="30" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+    </listeners>
+
+    <!-- Task Sidebar Filter Tests -->
+    <test name="Task Sidebar Filter - 1">
+        <classes>
+            <class name="io.recruitcrm.albatross.detailPageSideBar.TaskSideBarFilterTest">
+                <methods>
+                    <include name="taskSideBarFiltersTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Sidebar Combined Filter - 2">
+        <classes>
+            <class name="io.recruitcrm.albatross.detailPageSideBar.TaskSideBarFilterTest">
+                <methods>
+                    <include name="taskSideBarCombinedFilterTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Sidebar Filter Search - 3">
+        <classes>
+            <class name="io.recruitcrm.albatross.detailPageSideBar.TaskSideBarFilterTest">
+                <methods>
+                    <include name="taskSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- NotesAndCallLog Sidebar Filter Tests -->
+    <test name="NotesAndCallLog Sidebar Filters Test - 1">
+        <classes>
+            <class name="io.recruitcrm.albatross.detailPageSideBar.NotesAndCalllogTabFiltersTest">
+                <methods>
+                    <include name="notesAndCallLogTabFiltersTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NotesAndCallLog Sidebar Search Test - 2">
+        <classes>
+            <class name="io.recruitcrm.albatross.detailPageSideBar.NotesAndCalllogTabFiltersTest">
+                <methods>
+                    <include name="noteDescriptionSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Meeting Sidebar Filter Tests -->
+    <test name="Meeting Sidebar Filter - 1">
+        <classes>
+            <class name="io.recruitcrm.albatross.detailPageSideBar.MeetingSideBarFilterTest">
+                <methods>
+                    <include name="meetingSideBarFiltersTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Meeting Sidebar Combined Filter - 2">
+        <classes>
+            <class name="io.recruitcrm.albatross.detailPageSideBar.MeetingSideBarFilterTest">
+                <methods>
+                    <include name="meetingSideBarCombinedFilterTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Meeting Sidebar Filter Search - 3">
+        <classes>
+            <class name="io.recruitcrm.albatross.detailPageSideBar.MeetingSideBarFilterTest">
+                <methods>
+                    <include name="meetingSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

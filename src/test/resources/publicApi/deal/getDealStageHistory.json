@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "deal_stage_remarks": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "stage_name": {
+              "type": "string"
+            },
+            "stage_id": {
+              "type": "integer"
+            },
+            "reason": {
+              "type": ["string", "null"]
+            },
+            "updated_on": {
+              "type": "string"
+            },
+            "updated_by": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "stage_name",
+            "stage_id",
+            "reason",
+            "updated_on",
+            "updated_by"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "stage_name": {
+              "type": "string"
+            },
+            "stage_id": {
+              "type": "integer"
+            },
+            "reason": {
+              "type": "null"
+            },
+            "updated_on": {
+              "type": "string"
+            },
+            "updated_by": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "stage_name",
+            "stage_id",
+            "reason",
+            "updated_on",
+            "updated_by"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "deal_stage_remarks"
+  ]
+}

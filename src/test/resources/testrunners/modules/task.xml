@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!-- Owner - Technostars - Harika Kurella, Priyanka Shinde -->
+<suite name="Rest API Test Suite" verbose="1" parallel="methods"
+	thread-count="5">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Create New Task Endpoint">
+		<classes>
+			<class name="io.rcrm.api.tasks.CreateNewTaskTest">
+				<methods>
+					<include name="createNewTask" />
+					<include name="createTaskWithDisableAutoTeamsPopulation" />
+					<include name="createTaskWithEnableAutoTeamsPopulation" />
+					<include name="createNewTaskWithCollaborators" />
+					<include name="createNewTaskWithInvalidCollaborators" />
+					<include name="createNewTaskWithInvalidCollaboratorTeams" />
+					<include name="createNewTaskPastDate" />
+					<include name="createNewTaskWithAllReminder" />
+					<include name="createNewTaskWithEmptyBody" />
+					<include name="createNewTaskWithInvalidMandatoryValue" />
+					<include name="createNewTaskWithLimitExceeds" />
+					<include name="createNewTaskWithAssociates" />
+					<include name="unauthorizedUserCannotCreateNewTask" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="All Endpoints of Task Endpoint">
+		<classes>
+			<class name="io.rcrm.api.tasks.AllEndpointsOfTasksTest">
+				<methods>
+					<include name="createNewTask" />
+					<include name="showAllTasks" />
+					<include name="searchTaskByID" />
+					<include name="searchTaskByFields" />
+					<include name="deleteTaskByID" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Edit Task Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.EditTaskTest">
+				<methods>
+					<include name="editTaskById_POST" />
+					<include name="editTaskByInvalidId404_POST" />
+					<include name="editTaskByInvalidFieldsValues422_POST" />
+					<include name="unauthorizedUserCannotEditTask" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Show All Tasks Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.GetAllTasksTest">
+				<methods>
+					<include name="showAllTasks_GET" />
+					<include name="unauthorizedUserCannotGetAllTasks" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Search Task By ID Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.SearchTaskByIdTest">
+				<methods>
+					<include name="searchTaskById_GET" />
+					<include name="searchTaskByInvalidId_GET" />
+					<include name="unauthorizedUserCannotSearchTaskById" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Search Task By Fields Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.SearchTaskByFieldsTest">
+				<methods>
+					<include name="searchTaskByTitle_GET" />
+					<include name="searchTaskByAllFields_GET" />
+					<include name="searchTaskByInvalidTitle_GET" />
+					<include name="unauthorizedUserCannotSearchTaskByFields" />
+					<include name="searchTaskByCreatedFrom" />
+					<include name="searchTaskByCreatedTo" />
+					<include name="searchTaskByUpdatedFrom" />
+					<include name="searchTaskByUpdatedTo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete Task Endpoints">
+		<classes>
+			<class name="io.rcrm.api.tasks.DeleteTaskTest">
+				<methods>
+					<include name="deleteTaskById_GET" />
+					<include name="deleteTaskByInvalidID_GET" />
+					<include name="unauthorizedUserCannotDeleteTask" />
+					<include name="deleteTaskCreatedByUsers" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

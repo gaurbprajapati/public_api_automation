@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="RBAC Security Test Suite" thread-count="25" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+        <listener class-name="io.rcrm.api.listeners.RetryListener"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+
+    <!-- ==================== CANDIDATE RBAC TESTS ==================== -->
+    <test name="RBAC Candidate Create Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateCreateSecurityTest">
+                <methods>
+                    <include name="createCandidateSecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Candidate View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCandidate_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Candidate Edit Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editCandidate_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Candidate Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteCandidate_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+      <test name="RBAC Get Candidates V2 Security Test">
+    <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCandidateV2_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Widget Count Security Test">
+       <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCandidateWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Contact Numbers Security Test">
+        <parameter name="role" value="AccountOwner-AccountOwner"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateContactNumbers_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Activity Data Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateActivityData_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Candidate Education History - ViewEditDelete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateEducationHistory_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Work Experience Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateWorkExperience_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Update Default Social Links Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="updateDefaultSocialLinks_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Related Hotlists Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACCandidateViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="getCandidateRelatedHotlists_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBACGetPitchCandidateContactsSecurityTest">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.RBACGetPitchCandidateContactsSecurityTest">
+                <methods>
+                    <include name="getPitchCandidateContacts_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ==================== COMPANY RBAC TESTS ==================== -->
+    <test name="RBAC Company Create Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.company.RBACCompanyCreateSecurityTest">
+                <methods>
+                    <include name="createCompanySecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Company View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.company.RBACCompanyViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewCompany_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Company Edit Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.company.RBACCompanyViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editCompany_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Company Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.company.RBACCompanyViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteCompany_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    	<test name="RBACGetCompanyOffLimitStatusSecurityTest">
+		<parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.CompanyService.RBACGetCompanyOffLimitStatusSecurityTest">
+                <methods>
+                    <include name="getCompanyOffLimitStatus_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBACGetCompanyWidgetCountSecurityTest">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.CompanyService.RBACGetCompanyWidgetCountSecurityTest">
+                <methods>
+                    <include name="getCompanyWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Company Related Hotlists Security Test">
+		<parameter name="role" value="all"/>
+		<classes>
+			<class name="io.recruitcrm.CompanyService.RBACGetCompanyRelatedHotlistsSecurityTest">
+				<methods>
+					<include name="getCompanyRelatedHotlists_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="RBAC Get Company Industries Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.company.RBACGetCompanyIndustries_Test">
+				<methods>
+					<include name="getGetCompanyIndustriesWithRBACToken_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="RBACGetCompanyRelatedDealsSecurityTest">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.RBACGetCompanyRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getCompanyRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ==================== CONTACT RBAC TESTS ==================== -->
+    <test name="RBAC Contact Create Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.contact.RBACContactCreateSecurityTest">
+                <methods>
+                    <include name="createContactSecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Contact View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.contact.RBACContactViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewContact_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Contact Edit Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.contact.RBACContactViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editContact_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Contact Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.contact.RBACContactViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteContact_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ==================== CONTACT RBAC TESTS ==================== -->
+    <test name="RBAC Get Contact Widget Count Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.ContactService.RBACGetContactWidgetCountSecurityTest">
+                <methods>
+                    <include name="getContactWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Get Contact Related Hotlists Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.ContactService.RBACGetContactRelatedHotlistsSecurityTest">
+                <methods>
+                    <include name="getContactRelatedHotlists_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Get Contact Off-Limit Status Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.ContactService.RBACGetContactOffLimitStatusSecurityTest">
+                <methods>
+                    <include name="getContactOffLimitStatus_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Get Contact Related Deals Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.ContactService.RBACGetContactRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getContactRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ==================== JOB RBAC TESTS ==================== -->
+    <test name="RBAC Job Create Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.job.RBACJobCreateSecurityTest">
+                <methods>
+                    <include name="createJobSecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Job View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.job.RBACJobViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewJob_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Job Edit Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.job.RBACJobViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editJob_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Job Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.job.RBACJobViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteJob_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Get Job Widget Count Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACGetJobWidgetCountSecurityTest">
+                <methods>
+                    <include name="getJobWidgetCount_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Get Job Related Deals Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACGetJobRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getJobRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Get Job Related Hotlists Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.JobService.RBACGetJobRelatedHotlistsSecurityTest">
+                <methods>
+                    <include name="getJobRelatedHotlists_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ==================== DEAL RBAC TESTS ==================== -->
+    <test name="RBAC Deal Create Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.deal.RBACDealCreateSecurityTest">
+                <methods>
+                    <include name="createDealSecurityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Deal View Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.deal.RBACDealViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="viewDeal_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Deal Edit Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.deal.RBACDealViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="editDeal_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Deal Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.deal.RBACDealViewEditDeleteSecurityTest">
+                <methods>
+                    <include name="deleteDeal_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RBAC Get Candidate Related Deals Security Test">
+        <classes>
+            <class name="io.recruitcrm.CandidateService.RBACGetCandidateRelatedDealsSecurityTest">
+                <methods>
+                    <include name="getCandidateRelatedDeals_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ==================== EMAIL TEMPLATE RBAC TESTS ==================== -->
+    <!-- <test name="RBAC Email Template Delete Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.emailTemplate.RBACEmailTemplateDeleteSecurityTest">
+                <methods>
+                    <include name="deleteEmailTemplate_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <!-- ==================== ALBATROSS RBAC TESTS ==================== -->
+    <test name="RBAC Get Activity Count Security Test for Candidate">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForCandidate_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Activity Count Security Test for Contact">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForContact_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Activity Count Security Test for Company">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForCompany_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Activity Count Security Test for Job">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForJob_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Activity Count Security Test for Deal">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetActivityCountSecurityTest">
+                <methods>
+                    <include name="getActivityCountForDeal_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Assigned Job Count Security Test for Candidate">  
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACGetAssignedJobCountSecurityTest">
+                <methods>
+                    <include name="getAssignedJobCountSecurity_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC_GetUsers_Test - get users RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBAC_GetUsers_Test">
+                <methods>
+                    <include name="getUsersRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC_GetJobStatusByAccount_Test - get job status by account RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBAC_GetJobStatusByAccount_Test">
+                <methods>
+                    <include name="getJobStatusByAccountRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC_GetDefaultOptions_Test - get default options RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.RBAC_GetDefaultOptions_Test">
+                <methods>
+                    <include name="getDefaultOptionsRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Education History - Endpoint Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACGetCandidateEducationHistorySecurityTest">
+                <methods>
+                    <include name="getCandidateEducationHistoryRBAC_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Candidate Work History Security Test"> 
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.candidate.RBACGetCandidateWorkHistorySecurityTest">
+                <methods>
+                    <include name="getCandidateWorkHistoryRBAC_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC_GetEntityColumns_Test - get entity columns RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBAC_GetEntityColumns_Test">
+                <methods>
+                    <include name="getEntityColumnsRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC_GetSocialLinksCustomFields_Test - get social links custom fields RBAC Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.RBAC_GetSocialLinksCustomFields_Test">
+                <methods>
+                    <include name="getSocialLinksRBACAccess_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get User GPT Access Token Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetUserGPTAccessTokenSecurityTest">
+                <methods>
+                    <include name="getUserGPTTokenRBAC_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Off Limit Status Security Test">
+        <classes>
+            <class name="io.recruitcrm.albatross.offlimit.RBAC_GetOffLimitStatus_Test">
+                <methods>
+                    <include name="getOffLimitStatusRBACAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name = "RBAC Get Enrichment Toggle Status Security Test for Candidate">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.RBACGetEnrichmentToggleStatusSecurityTest">
+                <methods>
+                    <include name="getEnrichmentToggleStatusRBAC_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Nested Custom Fields Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.customFields.RBAC_GetNestedCustomFields_Test">
+                <methods>
+                    <include name="getNestedCustomFieldsRBACAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Entity Custom Fields Security Test">
+		<parameter name="role" value="all"/>
+		<classes>
+			<class name="io.recruitcrm.albatross.customFields.RBAC_GetEntityCustomFields_Test">
+				<methods>
+					<include name="getEntityCustomFieldsRBACAccess_Test"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+    <test name="RBAC Get Default Options Extension Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.RBAC_GetDefaultOptionsTest_ExtensionTest">
+                <methods>
+                    <include name="getDefaultOptionsExtensionRBACAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Get Nested Custom Fields Extension Security Test">
+        <parameter name="role" value="all"/>
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.RBAC_GetNestedCustomFieldsTest_ExtensionTest">
+                <methods>
+                    <include name="getNestedCustomFieldsExtensionRBACAccess_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="RBAC Hiring Pipeline Security Tests">
+        <classes>
+            <class name="io.recruitcrm.hiringPipeline.RBACHiringPipelineServiceTest">
+                <methods>
+                    <include name="hiringPipelineRBAC_Service_Test"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

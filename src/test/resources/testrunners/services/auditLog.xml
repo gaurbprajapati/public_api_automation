@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Owner - Titans - Varun Vishwakarma, Shivam Singh -->
+<suite name="AuditLog Rest API Test Suite">
+	<listeners>
+		<listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+	<listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+	</listeners>
+
+	<test name="Get AuditLog List Page Data">
+		<classes>
+			<class name="io.recruitcrm.albatross.auditlog.AuditLogListPageTest">
+				<methods>
+					<include name="getAuditLogListTest" />
+					<include name="getAuditLogListWithInvalidCredentialsTest" />
+					<include name="exportLogsInAuditLogTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Audit Log Get Count All Action Types">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.auditlog.AuditLogCountGetAllActionTypesTest">
+				<methods>
+					<include name="auditLogCountGetActionType_Create" />
+					<include name="auditLogCountGetActionType_Update" />
+					<include name="auditLogCountGetActionType_Delete" />
+					<include name="auditLogCountGetActionType_Import" />
+					<include name="auditLogCountGetActionType_Export" />
+					<include name="auditLogCountGetActionType_BulkUpdate" />
+					<include name="auditLogCountGetActionType_BulkDelete" />
+					<include name="auditLogCountGetActionType_MergeDuplicates" />
+					<include name="auditLogCountGetActionType_LinkRecord" />
+					<include name="auditLogCountGetActionType_Send" />
+					<include name="auditLogCountGetActionType_Archived" />
+					<include name="auditLogCountGetActionType_Parse" />
+					<include name="auditLogCountGetActionType_SubmitCandidates" />
+					<include name="auditLogCountGetActionType_Payment" />
+					<include name="auditLogCountGetActionType_ConnectEmail" />
+					<include name="auditLogCountGetActionType_DisconnectEmail" />
+					<include name="auditLogCountGetActionType_ConnectCalender" />
+					<include
+						name="auditLogCountGetActionType_DisconnectCalender" />
+					<include name="auditLogCountGetActionType_ParseAssign" />
+					<include name="auditLogCountGetActionType_Assign" />
+					<include name="auditLogCountGetActionType_AllActions" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Audit Log Get Count All Entities">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.auditlog.AuditLogCountGetAllEntitiesTest">
+				<methods>
+					<include name="auditLogCountGetAllEntities" />
+					<include name="auditLogCountGetAllCadidates" />
+					<include name="auditLogCountGetAllContacts" />
+					<include name="auditLogCountGetAllCompanies" />
+					<include name="auditLogCountGetAllDeals" />
+					<include name="auditLogCountGetAllJobs" />
+					<include name="auditLogCountGetOthers" />
+					<include name="auditLogCountGetWithInvalidCredentails" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+	<test name="Audit Log Export Logs All Action Types">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.auditlog.AuditLog_ExportLogs_AllActionsTest">
+				<methods>
+					<include name="auditLogExportLogsActionType_Create" />
+					<include name="auditLogExportLogsActionType_Update" />
+					<include name="auditLogExportLogsActionType_Delete" />
+					<include name="auditLogExportLogsActionType_Import" />
+					<include name="auditLogExportLogsActionType_Export" />
+					<include name="auditLogExportLogsActionType_BulkUpdate" />
+					<include name="auditLogExportLogsActionType_BulkDelete" />
+					<include
+						name="auditLogExportLogsActionType_MergeDuplicates" />
+					<include name="auditLogExportLogsActionType_LinkRecord" />
+					<include name="auditLogExportLogsActionType_Send" />
+					<include name="auditLogExportLogsActionType_Archived" />
+					<include name="auditLogExportLogsActionType_Parse" />
+					<include
+						name="auditLogExportLogsActionType_SubmitCandidates" />
+					<include name="auditLogExportLogsActionType_Payment" />
+					<include name="auditLogExportLogsActionType_ConnectEmail" />
+					<include
+						name="auditLogExportLogsActionType_DisconnectEmail" />
+					<include
+						name="auditLogExportLogsActionType_ConnectCalender" />
+					<include
+						name="auditLogExportLogsActionType_DisconnectCalender" />
+					<include name="auditLogExportLogsActionType_ParseAssign" />
+					<include name="auditLogExportLogsActionType_Assign" />
+					<include name="auditLogExportLogsActionType_AllActions" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Audit Log Export Logs All Entities">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.auditlog.AuditLog_ExportLogs_AllEntitiesTest">
+				<methods>
+					<include name="auditLogExportLogs_AllEntities" />
+					<include name="auditLogExportLogs_Candidates" />
+					<include name="auditLogExportLogs_Contacts" />
+					<include name="auditLogExportLogs_Company" />
+					<include name="auditLogExportLogs_Deals" />
+					<include name="auditLogExportLogs_Jobs" />
+					<include name="auditLogExportLogs_Others" />
+					<include name="auditLogExportLogsWithInvalidCredentails" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Audit Log Action logs test">
+		<classes>
+			<class
+				name="io.recruitcrm.albatross.auditlog.AuditLogActionTest">
+				<methods>
+					<include name="actionLogExportCandidateAuditLogTest" />
+					<include name="actionLogExportContactAuditLogTest" />
+					<include name="actionLogExportCompanyAuditLogTest" />
+					<include name="actionLogExportJobsAuditLogTest" />
+					<include name="actionLogExportUserAuditLogTest" />
+					<include name="actionLogExportDealsAuditLogTest" />
+					<include name="exportActionLogWithInvalidCredentialsTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Schedule Audit Log Page Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.auditlog.ScheduleAuditLogPageTest">
+				<methods>
+					<include name="scheduleAuditLog_Test" />
+					<include name="scheduleAuditLogToMultipleRecipients_Test" />
+					<include name="scheduleAuditLogWithInvalidIntervalType_Test" />
+					<include name="scheduleAuditLogWithEmptyData_Test" />
+					<include name="unauthorizedUserCannotScheduleAuditLog_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Get Schedule Audit Log Page Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.auditlog.ScheduleAuditLogPageTest">
+				<methods>
+					<include name="getScheduleAuditLogDetails_Test" />
+					<include name="getScheduleAuditLogEmptyDetails_Test" />
+					<include name="unauthorizedUserCannotGetScheduleAuditLogDetails_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="Cancel Schedule Audit Log Page Test">
+		<classes>
+			<class name="io.recruitcrm.albatross.auditlog.ScheduleAuditLogPageTest">
+				<methods>
+					<include name="cancelAuditLogSchedule_Test" />
+					<include name="unauthorizedUserCannotCancelAuditLogSchedule_Test" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

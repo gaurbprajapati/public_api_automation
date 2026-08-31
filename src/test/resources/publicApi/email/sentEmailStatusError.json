@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Email Send Failure Response",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["Failed"],
+      "description": "Status indicating failure"
+    },
+    "message": {
+      "type": "string",
+      "description": "Descriptive failure message"
+    },
+    "email_message_id": {
+      "type": "null",
+      "description": "Message ID will be null on failure"
+    },
+    "error_message": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cc": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bcc": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp in ISO 8601 format"
+    }
+  },
+  "required": ["status", "message", "email_message_id", "error_message", "created_at"],
+  "additionalProperties": false
+}

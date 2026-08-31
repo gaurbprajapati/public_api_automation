@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Contact Boolean Search Suite" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+
+    <!-- Contact Boolean Search -->
+    <test name="Contact Boolean Search">
+        <classes>
+            <class name="io.recruitcrm.BooleanSearch.BooleanSearchContactTest">
+                <methods>
+                    <include name="booleanSearchContactTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

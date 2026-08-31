@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Company Call Log Activity Fields Filter Search" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    <test name="Call Log Date Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CallLogActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="callLogDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Call Log Multiselect Field Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CallLogActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="callLogMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Call Log Exists (checkbox) Company Filter Search">
+        <classes>
+            <class name="io.recruitcrm.CompanyService.Filters.CallLogActivityFieldsCompanyFilterSearchTest">
+                <methods>
+                    <include name="callLogCallExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

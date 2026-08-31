@@ -1,0 +1,341 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "silent_progress": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "message_type": {
+      "type": "string",
+      "enum": ["is-success"]
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "starred": {
+                "type": "boolean"
+              },
+              "unread": {
+                "type": "boolean"
+              },
+              "folders": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "latest_draft_or_message": {
+                "type": "object",
+                "properties": {
+                  "starred": {
+                    "type": "boolean"
+                  },
+                  "unread": {
+                    "type": "boolean"
+                  },
+                  "folders": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "thread_id": {
+                    "type": "string"
+                  },
+                  "body": {
+                    "type": "string"
+                  },
+                  "grant_id": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "object": {
+                    "type": "string"
+                  },
+                  "snippet": {
+                    "type": "string"
+                  },
+                  "bcc": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "email": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["email"]
+                    }
+                  },
+                  "cc": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "email": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["email"]
+                    }
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "items": {}
+                  },
+                  "from": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["email"]
+                    }
+                  },
+                  "reply_to": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["email"]
+                    }
+                  },
+                  "to": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["email"]
+                    }
+                  },
+                  "date": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "starred",
+                  "unread",
+                  "folders",
+                  "subject",
+                  "thread_id",
+                  "body",
+                  "grant_id",
+                  "id",
+                  "object",
+                  "snippet",
+                  "bcc",
+                  "cc",
+                  "attachments",
+                  "from",
+                  "reply_to",
+                  "to",
+                  "date"
+                ]
+              },
+              "has_attachments": {
+                "type": "boolean"
+              },
+              "has_drafts": {
+                "type": "boolean"
+              },
+              "grant_id": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "object": {
+                "type": "string"
+              },
+              "snippet": {
+                "type": "string"
+              },
+              "subject": {
+                "type": "string"
+              },
+              "participants": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "required": ["email"]
+                }
+              },
+              "message_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "draft_ids": {
+                "type": "array",
+                "items": {}
+              },
+              "earliest_message_date": {
+                "type": "integer"
+              },
+              "latest_message_sent_date": {
+                "type": "integer"
+              },
+              "associations": {
+                "type": "array"
+              },
+              "recieveremail": {
+                "type": "string"
+              },
+              "recievername": {
+                "type": "string"
+              },
+              "senderemail": {
+                "type": "string"
+              },
+              "sendername": {
+                "type": "string"
+              },
+              "thread_participants": {
+                "type": "object",
+                "properties": {
+                  "cc_emails": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "bcc_emails": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "blacklisted": {
+                "type": "boolean"
+              },
+              "blacklisted_email": {
+                "type": "string"
+              },
+              "hide_details": {
+                "type": "boolean"
+              },
+              "numemailsinthread": {
+                "type": "integer"
+              },
+              "emailtype": {
+                "type": "string"
+              },
+              "date": {
+                "type": "integer"
+              },
+              "relatedcandidate": {
+                "type": "string"
+              },
+              "relatedcandidatename": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "starred",
+              "unread",
+              "folders",
+              "latest_draft_or_message",
+              "has_attachments",
+              "has_drafts",
+              "grant_id",
+              "id",
+              "object",
+              "snippet",
+              "subject",
+              "participants",
+              "message_ids",
+              "draft_ids",
+              "earliest_message_date",
+              "latest_message_sent_date",
+              "associations",
+              "recieveremail",
+              "recievername",
+              "senderemail",
+              "sendername",
+              "thread_participants",
+              "blacklisted",
+              "blacklisted_email",
+              "hide_details",
+              "numemailsinthread",
+              "emailtype",
+              "date"
+            ]
+          }
+        },
+        "filtered_count": {
+          "type": "integer"
+        },
+        "total_count": {
+          "type": "integer"
+        }
+      },
+      "required": ["records", "filtered_count", "total_count"]
+    },
+    "status": {
+      "type": "string"
+    },
+    "action_name": {
+      "type": "string"
+    },
+    "actionid": {
+      "type": "string"
+    },
+    "intercom": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "silent_progress",
+    "message",
+    "message_type",
+    "data",
+    "status",
+    "action_name",
+    "actionid",
+    "intercom"
+  ]
+}

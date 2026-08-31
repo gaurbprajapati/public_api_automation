@@ -1,0 +1,504 @@
+{
+    "Queries": [
+        {
+            "testCase": "Empty query",
+            "query": "",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Simple single term",
+            "query": "Technology",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Simple OR operation",
+            "query": "Technology OR Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Simple AND operation",
+            "query": "Technology AND Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Simple NOT operation",
+            "query": "NOT Technology",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "OR with parentheses",
+            "query": "(Technology OR Finance)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Nested parentheses",
+            "query": "(Technology OR (Finance OR Healthcare))",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Deeply nested AND operations",
+            "query": "developer AND (java AND (python AND (golang)))",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex nested query",
+            "query": "((Technology OR Finance) AND (Healthcare OR Education))",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Mixed AND and OR with parentheses",
+            "query": "(Technology AND Finance) OR Healthcare",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "NOT with parentheses",
+            "query": "NOT (Technology OR Finance)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Multiple NOT operations",
+            "query": "NOT Technology AND NOT Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with spaces in terms",
+            "query": "New York OR San Francisco",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with special characters",
+            "query": "Tech-Company OR Finance&Banking",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Special characters allowed",
+            "query": "apple-123",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Special characters at start",
+            "query": "-apple",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Invalid character sequence",
+            "query": "apple ### banana",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with numbers",
+            "query": "Company2024 OR Tech2025",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with apostrophe",
+            "query": "O'Brien OR Smith's",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with double quotes around terms",
+            "query": "\"Technology\" OR \"Finance\"",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with single quotes around terms",
+            "query": "'Technology' OR 'Finance'",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with quoted phrase containing spaces",
+            "query": "\"New York\" OR \"San Francisco\"",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with quotes inside parentheses",
+            "query": "(\"Technology\" OR \"Finance\")",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with quotes containing operators as text",
+            "query": "\"Technology OR Finance\"",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with quotes containing parentheses as text",
+            "query": "\"Company (Inc)\" OR \"Corp (LLC)\"",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with escaped quotes inside quotes",
+            "query": "\"Company \\\"Tech\\\" Inc\"",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex valid query with all operators",
+            "query": "((Technology OR Finance) AND NOT Healthcare) OR (Education AND Training)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with extra whitespace",
+            "query": "Technology   OR   Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Unmatched opening parenthesis",
+            "query": "(Technology OR Finance",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Unmatched closing parenthesis",
+            "query": "Technology OR Finance)",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Nested unmatched opening parenthesis",
+            "query": "(Technology OR (Finance OR Healthcare)",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Nested unmatched closing parenthesis",
+            "query": "(Technology OR Finance)) OR Healthcare",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Mismatched parentheses count",
+            "query": "(Technology OR Finance))",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Empty parentheses",
+            "query": "()",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "OR without left operand",
+            "query": "OR Technology",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "OR without right operand",
+            "query": "Technology OR",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Consecutive OR operators",
+            "query": "Technology OR OR Finance",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "AND without left operand",
+            "query": "AND Technology",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "AND without right operand",
+            "query": "Technology AND",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Consecutive operators",
+            "query": "Technology OR AND Finance",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "NOT without operand",
+            "query": "NOT",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "NOT followed by operator",
+            "query": "NOT OR Technology",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Multiple consecutive NOT operators",
+            "query": "NOT NOT Technology",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Parentheses with only operator inside",
+            "query": "(OR)",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Parentheses starting with operator",
+            "query": "(OR Technology)",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Parentheses ending with operator",
+            "query": "(Technology OR)",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Invalid operator - lowercase or",
+            "query": "Technology OR Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Invalid operator symbol - &&",
+            "query": "Technology && Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Invalid operator symbol - ||",
+            "query": "Technology || Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Invalid operator symbol - !",
+            "query": "!Technology",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with empty double quotes",
+            "query": "\"\" OR Technology",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with empty single quotes",
+            "query": "'' OR Technology",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with unmatched opening double quote",
+            "query": "\"Technology OR Finance",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Query with unmatched closing double quote",
+            "query": "Technology\" OR Finance",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Query with unmatched opening single quote",
+            "query": "'Technology OR Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with unmatched closing single quote",
+            "query": "Technology' OR Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with quotes only",
+            "query": "\"\"",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with quotes containing only spaces",
+            "query": "\"   \" OR Technology",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with multiple unmatched quotes",
+            "query": "\"Technology\" OR \"Finance",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Query with quotes around operator",
+            "query": "Technology \"OR\" Finance",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Query with quotes around NOT",
+            "query": "\"NOT\" Technology",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Query with quotes containing unmatched parentheses",
+            "query": "\"Technology (Inc\" OR Finance",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Query with quotes containing unmatched parentheses",
+            "query": "\"Technology (Inc\" ) OR Finance",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Query with quotes and parentheses mismatch",
+            "query": "(\"Technology\" OR \"Finance)",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Complex invalid query - unmatched parentheses",
+            "query": "((Technology OR Finance) AND NOT Healthcare) OR (Education AND Training",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Operator before opening parenthesis",
+            "query": "OR (Technology)",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Operator after closing parenthesis",
+            "query": "(Technology) OR",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Wildcard star",
+            "query": "app*",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Wildcard question mark",
+            "query": "ap?le",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Wildcard inside quotes",
+            "query": "\"app* search\"",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Very deeply nested query - 5 levels",
+            "query": "((((Technology OR Finance) AND Healthcare) OR Education) AND Training)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Very deeply nested query - 6 levels",
+            "query": "(((((Technology OR Finance) AND Healthcare) OR Education) AND Training) OR Consulting)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex query with multiple operators and deep nesting",
+            "query": "((Technology OR Finance) AND (Healthcare OR Education)) OR ((Banking AND Insurance) OR (Retail AND Ecommerce))",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Large query with many OR conditions",
+            "query": "Technology OR Finance OR Healthcare OR Education OR Banking OR Insurance OR Retail OR Ecommerce OR Manufacturing OR Logistics",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Large query with many AND conditions",
+            "query": "Technology AND Finance AND Healthcare AND Education AND Banking AND Insurance AND Retail AND Ecommerce",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex query with multiple NOT operations",
+            "query": "NOT Technology AND NOT Finance AND NOT Healthcare OR (Education AND Training)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Very complex nested query with all operators",
+            "query": "((Technology OR Finance) AND NOT Healthcare) OR ((Education AND Training) AND NOT Consulting) OR (Banking AND (Insurance OR Retail))",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Deeply nested query with quoted phrases",
+            "query": "(\"Technology Company\" OR \"Finance Firm\") AND ((\"Healthcare Provider\" OR \"Education Institute\") AND NOT \"Banking Corporation\")",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex query with multiple levels and quotes",
+            "query": "((\"Java Developer\" OR \"Python Engineer\") AND (\"Machine Learning\" OR \"Data Science\")) OR ((\"Frontend Developer\" AND \"React\") OR (\"Backend Developer\" AND \"Node.js\"))",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Large query with wildcards and operators",
+            "query": "Tech* OR Financ* OR Health* OR Educat* AND (Banking OR Insurance) OR Retail*",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex query with deeply nested parentheses and NOT",
+            "query": "NOT ((Technology OR Finance) AND (Healthcare OR Education)) OR (NOT Banking AND Insurance)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Very long query with many terms and operators",
+            "query": "(Technology OR Finance OR Healthcare OR Education OR Banking OR Insurance OR Retail OR Ecommerce OR Manufacturing OR Logistics OR Consulting OR Legal OR RealEstate OR Construction OR Hospitality OR Travel OR Media OR Entertainment OR Sports OR Fitness) AND (Software OR Hardware OR Services OR Products)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex query with multiple nested groups",
+            "query": "((A OR B) AND (C OR D)) OR ((E AND F) OR (G AND H)) AND ((I OR J) AND (K OR L))",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Deeply nested query with escaped quotes",
+            "query": "(\"Company \\\"Tech\\\" Inc\" OR \"Corp \\\"Finance\\\" LLC\") AND (\"Healthcare \\\"Provider\\\"\" OR \"Education \\\"Institute\\\"\")",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex query mixing quoted and unquoted terms",
+            "query": "(\"New York\" OR \"San Francisco\" OR \"Los Angeles\") AND (Technology OR Finance) AND NOT (\"Old Company\" OR \"Closed Business\")",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Very complex query with 7 levels of nesting",
+            "query": "(((((Technology OR Finance) AND Healthcare) OR (Education AND Training)) AND Banking) OR Insurance)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Large query with special characters and operators",
+            "query": "Tech-Company OR Finance&Banking OR Healthcare-Provider OR Education-Institute AND (Banking OR Insurance) OR Retail-Store",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex query with multiple NOT and nested groups",
+            "query": "NOT (Technology OR Finance) AND NOT (Healthcare OR Education) OR (Banking AND NOT Insurance) AND (Retail OR Ecommerce)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Very long query with quoted phrases and operators",
+            "query": "\"Java Developer\" OR \"Python Engineer\" OR \"Machine Learning Engineer\" OR \"Data Scientist\" OR \"Frontend Developer\" OR \"Backend Developer\" OR \"Full Stack Developer\" OR \"DevOps Engineer\" OR \"Cloud Architect\" OR \"Security Specialist\" AND (Technology OR Finance OR Healthcare)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex query with wildcards in nested structure",
+            "query": "((Tech* OR Financ*) AND (Health* OR Educat*)) OR ((Bank* AND Insur*) OR (Retail* AND Ecommerc*))",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Deeply nested invalid query - unmatched parentheses",
+            "query": "((((Technology OR Finance) AND Healthcare) OR Education) AND Training",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Complex invalid query - operator without operand in nested structure",
+            "query": "((Technology OR Finance) AND Healthcare) OR AND Education",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Large invalid query - unmatched quotes",
+            "query": "\"Technology OR Finance OR Healthcare OR Education OR Banking OR Insurance OR Retail OR Ecommerce",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Complex invalid query - parentheses mismatch in deep nesting",
+            "query": "((((Technology OR Finance) AND Healthcare) OR Education)) AND Training)",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Very complex invalid query - multiple errors",
+            "query": "((Technology OR Finance) AND Healthcare) OR (Education AND Training) OR Banking AND",
+            "expectedResult": "false"
+        },
+        {
+            "testCase": "Complex query with maximum nesting depth",
+            "query": "((((((Technology OR Finance) AND Healthcare) OR Education) AND Training) OR Consulting) AND Banking)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Large query with all operators and deep nesting",
+            "query": "NOT ((Technology OR Finance) AND (Healthcare OR Education)) OR (NOT Banking AND (Insurance OR Retail)) AND NOT (Ecommerce OR Manufacturing)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Very complex query with quoted phrases and deep nesting",
+            "query": "((\"Technology Company\" OR \"Finance Firm\") AND (\"Healthcare Provider\" OR \"Education Institute\")) OR (((\"Banking Corporation\" AND \"Insurance Agency\") OR (\"Retail Store\" AND \"Ecommerce Platform\")) AND NOT \"Closed Business\")",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Complex query with multiple levels of NOT operations",
+            "query": "NOT Technology AND NOT Finance AND NOT Healthcare OR (NOT Education AND Training) OR (Banking AND NOT Insurance)",
+            "expectedResult": "true"
+        },
+        {
+            "testCase": "Large query with wildcards and complex nesting",
+            "query": "((Tech* OR Financ* OR Health*) AND (Educat* OR Bank* OR Insur*)) OR ((Retail* AND Ecommerc*) OR (Manufactur* AND Logistic*)) AND NOT (Consult* OR Legal*)",
+            "expectedResult": "true"
+        }
+    ]
+}

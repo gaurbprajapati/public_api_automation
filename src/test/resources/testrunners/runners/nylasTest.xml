@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest API Test Suite" thread-count="1" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+    <test name="All Endpoints of scheduled Emails Nyma Endpoints">
+        <classes>
+            <class name="io.recruitcrm.nyma.scheduledEmail.AllEndpointsOfScheduledEmailsTest">
+                <methods>
+                    <include name="createScheduledEmailsPOST_Test" />
+                    <include name="createScheduledEmailsPOSTWithDraftId_Test" />
+                    <include name="createScheduledEmailsPOSTWithInvalidEmail_Test" />
+                    <include name="createScheduledEmailsPOSTWithDeleteEntity_Test" />
+                    <include name="getScheduledEmailsList_Test" />
+                    <include name="getScheduledEmailsListWithScheduledID_Test" />
+                    <include name="getScheduledEmailsListWithAttachment_Test" />
+                    <include name="cancelScheduledEmailsPOST_Test" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

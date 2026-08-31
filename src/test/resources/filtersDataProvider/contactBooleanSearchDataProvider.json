@@ -1,0 +1,1862 @@
+[
+  {
+    "testCaseId": "TC_CBS_001",
+    "description": "Simple contact designation search - exact match",
+    "query": "Senior Manager",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1"
+    ],
+    "expectedResultReason": "Contact1 has designation 'Senior Manager'. The longtextCF also contains 'senior manager'. No other contacts have this term.",
+    "expectedResultName": [
+      "John 😀 Smith 📧"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_002",
+    "description": "Simple OR operation - contact names",
+    "query": "Smith OR Müller",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2"
+    ],
+    "expectedResultReason": "Contact1 has 'Smith' in lastname 'Smith 📧' and longtextCF. Contact2 has 'Müller' in lastname and longtextCF. Both match the OR condition.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_003",
+    "description": "Simple AND operation - city and address",
+    "query": "San Francisco AND Market",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 has city 'San Francisco' and address '123 Market Street, Suite 400'. Contact11 has city 'San Francisco' and address '123 Market Street, Suite 500'. Contact11's longtextCF also contains 'market'. Both satisfy the AND condition.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_004",
+    "description": "NOT operation - exclude specific term",
+    "query": "Manager AND NOT Senior",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact6",
+      "Contact12"
+    ],
+    "expectedResultReason": "Contact6 has 'Manager' in designation 'Operations Manager' and does NOT have 'Senior'. Contact12 has 'Manager' in designation 'QA Manager' and does NOT have 'Senior'. Contact1 is excluded because designation is 'Senior Manager'. Other contacts do not have 'Manager' in any searchable field.",
+    "expectedResultName": [
+      "Agent Secret + Division",
+      "Alpha β Systems"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_005",
+    "description": "Phrase search with quotes - exact phrase matching",
+    "query": "\"Will be open for offer after 2 months\"",
+    "entitiesInvolved": [
+      "notes"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2",
+      "Contact3",
+      "Contact4",
+      "Contact5",
+      "Contact6",
+      "Contact7",
+      "Contact8",
+      "Contact9",
+      "Contact10",
+      "Contact11",
+      "Contact12",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contacts Contact1–Contact12 each have a note whose description contains the phrase 'Will be open for offer after 2 months companyX'. Contact1's note lists associated_contacts {associated_contacts_contact1,associated_contacts_contact2}. Contact5, Contact7 notes list associated_contacts_contact2. Contact12's note lists associated_contacts_contact1. When a hit comes from those notes, the search returns those associated contact records, so expectedResult appends associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller",
+      "Analytics Expert_123",
+      "José 🌍 García 📱",
+      "Seán O'Malley",
+      "Agent Secret + Division",
+      "Minimal Data",
+      "Bracket [Technologies] (Inc.)",
+      "阿里巴巴 集团",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ",
+      "Alpha β Systems",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_006",
+    "description": "Cross-entity search - contact reference AND note description",
+    "query": "company1 AND \"Will be open for offer\"",
+    "entitiesInvolved": [
+      "contacts",
+      "notes"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 has note description 'Will be open for offer after 2 months company1' which contains both 'company1' and 'Will be open for offer'. No other contacts' notes contain 'company1' as a standalone token. Contact1's note lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_007",
+    "description": "Call log search - find contacts with specific call notes",
+    "query": "Initial contact",
+    "entitiesInvolved": [
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 has a call log with call_notes 'Initial contact call for company1'. No other contacts have 'Initial contact' in their call logs. That call log lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_008",
+    "description": "Task search - find contacts with specific task titles",
+    "query": "Follow up",
+    "entitiesInvolved": [
+      "tasks"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact8",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 has task title 'Follow up call for company1'. Contact8 has task title 'Follow up (2024) for company8'. Both match 'Follow up' in task titles. Contact1's task lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Bracket [Technologies] (Inc.)",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_009",
+    "description": "Meeting search - find contacts with specific meeting titles",
+    "query": "Business Development",
+    "entitiesInvolved": [
+      "meetings"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 has meeting title 'Business Development Meeting - Company 1' which contains 'Business Development'. No other contacts have 'Business Development' in their meeting titles. That meeting lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_010",
+    "description": "Complex AND with parentheses - city and social profile",
+    "query": "(San Francisco OR München) AND https",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2",
+      "Contact7",
+      "Contact11",
+      "Contact12"
+    ],
+    "expectedResultReason": "Contact1 has city 'San Francisco' + own https profiles. Contact2 has city 'München' + own https profiles. Contact11 has city 'San Francisco' + own https profiles. Contact7 and Contact12 match via cross-table company2 (Innovate GmbH) which has city 'München' and website 'https://www.innovate-gmbh.de'.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller",
+      "Minimal Data",
+      "Sigma Technologies Σ",
+      "Alpha β Systems"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_011",
+    "description": "OR operation across multiple entities",
+    "query": "Follow-up OR \"Follow up\"",
+    "entitiesInvolved": [
+      "contacts",
+      "tasks",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2",
+      "Contact8",
+      "Contact12",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact2 has call log with 'Follow-up call for company2'. Contact1 has task 'Follow up call for company1'. Contact8 has task 'Follow up (2024) for company8'. Contact12 has call log with 'Follow-up call for company12'. All match the OR condition. Contact1's task lists associated_contacts_contact1 and associated_contacts_contact2. Contact12's call log lists associated_contacts_contact1.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller",
+      "Bracket [Technologies] (Inc.)",
+      "Alpha β Systems",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_012",
+    "description": "NOT with AND - exclude specific contacts",
+    "query": "Technologies AND NOT Σ",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact8",
+      "Contact13",
+      "Contact15"
+    ],
+    "expectedResultReason": "These contacts contain 'Technologies' in lastname but do NOT contain 'Σ'. Contact8 has '[Technologies] (Inc.)'. Contact13 has '/Pepper Technologies'. Contact15 has 'Technologies XVII'. Contact11 is excluded because lastname 'Technologies Σ' contains 'Σ'.",
+    "expectedResultName": [
+      "Bracket [Technologies] (Inc.)",
+      "Salt /Pepper Technologies",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_013",
+    "description": "Phrase search in longtextCF field",
+    "query": "\"expertise in senior manager\"",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1"
+    ],
+    "expectedResultReason": "Contact1 has longtextCF containing the exact phrase 'expertise in senior manager' in the text 'With expertise in senior manager, John Smith brings valuable insights'. No other contacts contain this exact phrase.",
+    "expectedResultName": [
+      "John 😀 Smith 📧"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_014",
+    "description": "Cross-entity search - contact AND call log",
+    "query": "company2 AND \"Follow-up call\"",
+    "entitiesInvolved": [
+      "contacts",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact2"
+    ],
+    "expectedResultReason": "Contact2 has a call log with call_notes 'Follow-up call for company2'. The search matches both 'company2' and 'Follow-up call' in the call log content.",
+    "expectedResultName": [
+      "Hans Müller"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_015",
+    "description": "Multiple OR terms - find contacts in specific cities",
+    "query": "San Francisco OR München OR Redmond",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2",
+      "Contact7",
+      "Contact10",
+      "Contact11",
+      "Contact12"
+    ],
+    "expectedResultReason": "Contact1 has city 'San Francisco'. Contact2 has city 'München'. Contact10 has city 'Redmond'. Contact11 has city 'San Francisco'. Contact7 and Contact12 match via cross-table company2 (Innovate GmbH) city 'München'.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller",
+      "Minimal Data",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ",
+      "Alpha β Systems"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_016",
+    "description": "Nested parentheses with AND and OR",
+    "query": "(Smith OR Nadella) AND (San Francisco OR Redmond)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10"
+    ],
+    "expectedResultReason": "Contact1 contains 'Smith' in lastname and city 'San Francisco'. Contact10 contains 'Nadella' in lastname and city 'Redmond'. Both satisfy (name match) AND (city match).",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_017",
+    "description": "Search in contact email domains",
+    "query": "techsolutions.com OR microsoft.com",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10"
+    ],
+    "expectedResultReason": "Contact1 has email 'john.smith@techsolutions.com'. Contact10 has email 'satya.nadella@microsoft.com'. Both match the OR condition on email domain.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_019",
+    "description": "Task description search",
+    "query": "\"Schedule follow up call\"",
+    "entitiesInvolved": [
+      "tasks"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 has task with description 'Schedule follow up call after 2 weeks for company1' which contains the exact phrase 'Schedule follow up call'. No other contacts have this exact phrase. That task lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_020",
+    "description": "Meeting description search",
+    "query": "\"Initial business development discussion\"",
+    "entitiesInvolved": [
+      "meetings"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 has meeting with description 'Initial business development discussion'. No other contacts have this exact phrase in meeting descriptions. That meeting lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_021",
+    "description": "Complex query with multiple AND conditions",
+    "query": "San Francisco AND Market AND Financial",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1: city San Francisco; address contains 'Market' ('123 Market Street'); locality 'Financial District'. Contact11: city San Francisco; address contains 'Market' ('123 Market Street'); locality 'Financial District'. Both satisfy all three AND conditions.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_022",
+    "description": "Search with special characters - underscores",
+    "query": "Expert_123*",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact3"
+    ],
+    "expectedResultReason": "Contact3 has lastname 'Expert_123' which contains 'Expert_123'. No other contacts contain this term.",
+    "expectedResultName": [
+      "Analytics Expert_123"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_023",
+    "description": "Search with special characters - apostrophes",
+    "query": "O'Malley*",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact5",
+      "Contact15"
+    ],
+    "expectedResultReason": "Contact5 has lastname 'O'Malley' which contains 'O'Malley'. No other contacts contain this term.",
+    "expectedResultName": [
+      "Seán O'Malley",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_024",
+    "description": "Search with brackets in contact name",
+    "query": "[Technologies]",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact8",
+      "Contact11",
+      "Contact13",
+      "Contact15"
+    ],
+    "expectedResultReason": "Brackets group the search term Technologies (not a literal bracket requirement). All four contacts have 'Technologies' in lastname: Contact8 '[Technologies] (Inc.)'; Contact11 'Technologies Σ'; Contact13 '/Pepper Technologies'; Contact15 'Technologies XVII'.",
+    "expectedResultName": [
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Σ",
+      "Salt /Pepper Technologies",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_025",
+    "description": "Cross-entity search - notes AND tasks",
+    "query": "\"Will be open for offer\" AND \"Follow up\"",
+    "entitiesInvolved": [
+      "notes",
+      "tasks"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact8",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1: note 'Will be open for offer after 2 months company1' AND task title 'Follow up call for company1'. Contact8: same note phrase AND task title 'Follow up (2024) for company8'. Contacts 2–7 and 9–12 share the offer note text but have no task containing 'Follow up'. Contact1's note and task list associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Bracket [Technologies] (Inc.)",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_026",
+    "description": "Search in LinkedIn profile URLs",
+    "query": "linkedin.com/in/johnsmith",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1"
+    ],
+    "expectedResultReason": "Contact1 has profilelinkedin 'https://linkedin.com/in/johnsmith'. No other contacts have this exact LinkedIn URL pattern.",
+    "expectedResultName": [
+      "John 😀 Smith 📧"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_027",
+    "description": "Multiple NOT operations",
+    "query": "Technologies AND NOT Inc AND NOT Σ",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact13",
+      "Contact15"
+    ],
+    "expectedResultReason": "Contact13 ('/Pepper Technologies') matches: has 'Technologies' in lastname, does NOT have 'Inc', does NOT have 'Σ'. Contact15 ('Technologies XVII') matches similarly. Contact8 excluded (has 'Inc' in '[Technologies] (Inc.)'). Contact11 excluded (has 'Σ' in 'Technologies Σ').",
+    "expectedResultName": [
+      "Salt /Pepper Technologies",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_028",
+    "description": "Search in longtextCF with unique content",
+    "query": "\"Blockchain Lead\"",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact11 has designation 'Blockchain Lead' which matches the exact phrase. No other contacts have this phrase in any searchable field.",
+    "expectedResultName": [
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_029",
+    "description": "Call log search with contact reference",
+    "query": "company3 AND \"Screening call\"",
+    "entitiesInvolved": [
+      "contacts",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact3"
+    ],
+    "expectedResultReason": "Contact3 has a call log with call_notes 'Screening call for company3'. The search matches both the reference and the call log content. Contact3's call log has no associated_contacts.",
+    "expectedResultName": [
+      "Analytics Expert_123"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_030",
+    "description": "Complex nested query with precedence",
+    "query": "((San Francisco OR Redmond) AND Manager) OR Nadella",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10"
+    ],
+    "expectedResultReason": "Contact1 matches (San Francisco AND Manager via designation 'Senior Manager'). Contact10 matches Nadella via lastname 'Nadella 🚀'. Contact11 has San Francisco but no 'Manager' in designation/profile. All satisfy the complex OR condition.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_031",
+    "description": "Search for contacts with specific meeting description",
+    "query": "\"Client discussion meeting\"",
+    "entitiesInvolved": [
+      "meetings"
+    ],
+    "expectedResult": [
+      "Contact2"
+    ],
+    "expectedResultReason": "Contact2 has meeting with description 'Client discussion meeting'. No other contacts have this exact phrase.",
+    "expectedResultName": [
+      "Hans Müller"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_032",
+    "description": "Search across all entities - comprehensive search",
+    "query": "company1",
+    "entitiesInvolved": [
+      "contacts",
+      "notes",
+      "call_logs",
+      "tasks",
+      "meetings"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 has 'company1' referenced in note description, task description, and call log notes. The comprehensive search across all entities finds Contact1. Contact1's activities list associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_033",
+    "description": "Wildcard search - prefix matching",
+    "query": "Tech*",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact8",
+      "Contact11",
+      "Contact13",
+      "Contact15"
+    ],
+    "expectedResultReason": "The wildcard '*' matches anything starting with 'Tech' (case-insensitive). Contact1: 'techsolutions' in email. Contact8: 'Technologies' in lastname. Contact11: 'Technologies' in lastname, 'technology' in longtextCF. Contact13: 'Technologies' in lastname. Contact15: 'Technologies' in lastname. All match the pattern.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Σ",
+      "Salt /Pepper Technologies",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_034",
+    "description": "Search with Chinese characters",
+    "query": "阿里巴巴",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact9"
+    ],
+    "expectedResultReason": "Contact9 has firstname '阿里巴巴' which contains '阿里巴巴'. No other contacts contain Chinese characters in their names.",
+    "expectedResultName": [
+      "阿里巴巴 集团"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_035",
+    "description": "Search with German characters",
+    "query": "München",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact2",
+      "Contact7",
+      "Contact12"
+    ],
+    "expectedResultReason": "Contact2 has city 'München' with the German umlaut character. No other contacts have this city name.",
+    "expectedResultName": [
+      "Hans Müller",
+      "Alpha β Systems",
+      "Minimal Data"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_036",
+    "description": "Search with Spanish characters",
+    "query": "García",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact4"
+    ],
+    "expectedResultReason": "Contact4 has lastname 'García 📱' which contains 'García' with the Spanish accented character. No other contacts contain this term.",
+    "expectedResultName": [
+      "José 🌍 García 📱"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_037",
+    "description": "Empty result case - non-existent term",
+    "query": "NonExistentContact12345",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": "Empty",
+    "expectedResultReason": "No contact in the dataset contains 'NonExistentContact12345' in any searchable field. This should return an empty result set.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_CBS_038",
+    "description": "AND with conflicting conditions - should return empty",
+    "query": "San Francisco AND München",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": "Empty",
+    "expectedResultReason": "No single contact can have both 'San Francisco' and 'München' as their city. This AND condition cannot be satisfied by any contact, resulting in an empty result set.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_CBS_039",
+    "description": "Search in address field",
+    "query": "\"123 Market Street\"",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 has address '123 Market Street, Suite 400'. Contact11 has address '123 Market Street, Suite 500'. Both contain the exact phrase '123 Market Street'.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_040",
+    "description": "Search with plus sign in contact name",
+    "query": "Agent Secret +",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact6"
+    ],
+    "expectedResultReason": "Contact6 has lastname 'Secret + Division' and longtextCF contains 'Agent Secret + Division'. No other contacts contain this term with the plus sign.",
+    "expectedResultName": [
+      "Agent Secret + Division"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_041",
+    "description": "Search in state field",
+    "query": "California",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact8",
+      "Contact11",
+      "Contact12"
+    ],
+    "expectedResultReason": "Contact1 has state 'California'. Contact8 has state '(California) State' which contains 'California'. Contact11 has state 'California'. Contact12 has state 'California'. All match the search term.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Σ",
+      "Alpha β Systems"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_042",
+    "description": "Search in country field",
+    "query": "United States",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact6",
+      "Contact8",
+      "Contact11",
+      "Contact12",
+      "Contact13",
+      "Contact14"
+    ],
+    "expectedResultReason": "Multiple contacts have 'United States' in country field. Contact10 excluded (country 'United St@tes' - @ breaks token). Contact15 excluded (country '_united states' - leading underscore breaks token). Contact8 matches ('United [States]' - brackets stripped).",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Agent Secret + Division",
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Σ",
+      "Alpha β Systems",
+      "Salt /Pepper Technologies",
+      "Analytics 📊 Corporation 💡"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_043",
+    "description": "Search in postal code field",
+    "query": "94105",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact8",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 has postal_code '94105'. Contact8 has postal_code '[94105]' which contains '94105'. Contact11 has postal_code '94105'. All three match the search term.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_044",
+    "description": "Cross-entity search with NOT - exclude contacts with specific notes",
+    "query": "Technologies AND NOT \"Will be open for offer\"",
+    "entitiesInvolved": [
+      "contacts",
+      "notes"
+    ],
+    "expectedResult": [
+      "Contact13",
+      "Contact15"
+    ],
+    "expectedResultReason": "Positive term Technologies: Contact8, Contact11, Contact13, Contact15 have 'Technologies' in lastname. NOT 'Will be open for offer': contacts 1–12 have that note and are excluded. Contacts 13–15 have no such note. Among the remainder, Contact13 and Contact15 match Technologies. Contact14 has no 'Technologies' in profile.",
+    "expectedResultName": [
+      "Salt /Pepper Technologies",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_045",
+    "description": "Search in locality field",
+    "query": "Financial District",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact11",
+      "Contact15"
+    ],
+    "expectedResultReason": "Contact1 has locality 'Financial District'. Contact11 has locality 'Financial District'. Contact15 has locality 'Financial District'. All match the search term.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Sigma Technologies Σ",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_046",
+    "description": "Task search with specific description phrase",
+    "query": "\"Prepare interview questions\"",
+    "entitiesInvolved": [
+      "tasks"
+    ],
+    "expectedResult": [
+      "Contact3"
+    ],
+    "expectedResultReason": "Contact3 has task with description 'Prepare interview questions for company3'. No other contacts have this exact phrase in task descriptions. Contact3's task has no associated_contacts.",
+    "expectedResultName": [
+      "Analytics Expert_123"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_047",
+    "description": "Call log search with specific notes phrase",
+    "query": "\"Reference check call\"",
+    "entitiesInvolved": [
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact5",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact5 has call log with call_notes 'Reference check call for company5'. No other contacts have this exact phrase. That call log lists associated_contacts_contact2.",
+    "expectedResultName": [
+      "Seán O'Malley",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_048",
+    "description": "Meeting search with title containing brackets",
+    "query": "Follow_Up Meeting",
+    "entitiesInvolved": [
+      "meetings"
+    ],
+    "expectedResult": [
+      "Contact4"
+    ],
+    "expectedResultReason": "Contact4 has meeting title 'Follow_Up Meeting [Q1] - Company 4' which contains 'Follow_Up Meeting'. No other contacts have this exact phrase in meeting titles. Contact4's meeting has no associated_contacts.",
+    "expectedResultName": [
+      "José 🌍 García 📱"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_049",
+    "description": "Complex query with multiple parentheses levels",
+    "query": "((Technologies OR Manager) AND (San Francisco OR Redmond)) OR (Nadella AND CEO)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches (Manager AND San Francisco) via designation 'Senior Manager' and city. Contact11 matches (Technologies AND San Francisco) via lastname 'Technologies Σ' and city. Contact10 matches (Nadella AND CEO) via lastname and designation. All satisfy the complex OR condition.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_050",
+    "description": "Search for contact with minimal data",
+    "query": "Minimal Data",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact7"
+    ],
+    "expectedResultReason": "Contact7 has firstname 'Minimal' and lastname 'Data'. No other contacts contain both these terms.",
+    "expectedResultName": [
+      "Minimal Data"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_051",
+    "description": "Complex multi-field query - contact name, city, social profile, and notes",
+    "query": "(Smith OR Nadella) AND (San Francisco OR Redmond) AND linkedin.com AND \"Will be open for offer\"",
+    "entitiesInvolved": [
+      "contacts",
+      "notes"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10"
+    ],
+    "expectedResultReason": "Contact1 matches: (Smith) AND (San Francisco) AND (linkedin.com in profile) AND (note contains 'Will be open for offer'). Contact10 matches: (Nadella) AND (Redmond) AND (linkedin.com in profile) AND (note contains 'Will be open for offer'). Contact1's note lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_052",
+    "description": "Complex query with multiple operators - contact profile AND activities",
+    "query": "(California OR Washington) AND (Technologies OR Manager) AND NOT Inc AND (\"Follow up\" OR \"Follow-up\")",
+    "entitiesInvolved": [
+      "contacts",
+      "tasks",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact12"
+    ],
+    "expectedResultReason": "Contact12: state California, designation 'QA Manager' matches Manager, NOT Inc satisfied (company2 is 'Innovate GmbH'), call log 'Follow-up call for company12' matches 'Follow-up'. Contact1 excluded: cross-table company1 'Tech Solutions Inc.' contains 'Inc', failing NOT Inc condition.",
+    "expectedResultName": [
+      "Alpha β Systems"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_053",
+    "description": "Complex nested query with multiple field combinations",
+    "query": "((San Francisco AND \"123 Market Street\") OR (Redmond AND \"One Microsoft Way\")) AND (Technologies OR CEO) AND linkedin.com",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact11 matches: (San Francisco AND '123 Market Street') AND (Technologies in lastname) AND (linkedin.com in profile). Contact10 matches: (Redmond AND 'One Microsoft Way') AND (CEO in designation) AND (linkedin.com in profile). Contact1 has SF and Market St but no Technologies/CEO.",
+    "expectedResultName": [
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_054",
+    "description": "Multi-entity complex query - contact profile AND notes AND tasks AND call logs",
+    "query": "company1 AND \"Will be open for offer\" AND \"Follow up\" AND \"Initial contact\"",
+    "entitiesInvolved": [
+      "contacts",
+      "notes",
+      "tasks",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 matches all conditions: note 'Will be open for offer after 2 months company1', task 'Follow up call for company1', call log 'Initial contact call for company1'. Only Contact1 satisfies all four entity conditions. Activities list associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_055",
+    "description": "Complex query with NOT excluding multiple terms",
+    "query": "Technologies AND NOT Inc AND NOT Σ AND (San Francisco OR California)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": "Empty",
+    "expectedResultReason": "Contacts with Technologies but not Inc/Σ: Contact13 (Portland/Oregon) and Contact15 (New York). Neither is in San Francisco or California. No contact satisfies all conditions.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_CBS_056",
+    "description": "Complex query combining address, locality, and social profiles",
+    "query": "(\"123 Market Street\" OR \"One Microsoft Way\") AND (\"Financial District\" OR \"Redmond\") AND (linkedin.com OR facebook.com)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: ('123 Market Street') AND ('Financial District') AND (linkedin.com). Contact11 matches: ('123 Market Street') AND ('Financial District') AND (linkedin.com). Contact10 matches: ('One Microsoft Way') AND ('Redmond') AND (facebook.com). All satisfy the complex field combinations.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_057",
+    "description": "Complex query with multiple parentheses levels and field combinations",
+    "query": "((Technologies OR Manager) AND (San Francisco OR Redmond) AND (\"94105\" OR \"98052\")) OR ((Nadella OR Corporation) AND linkedin.com AND facebook.com)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11",
+      "Contact14"
+    ],
+    "expectedResultReason": "Contact1 matches Part 1: (Manager AND San Francisco AND '94105'). Contact11 matches Part 1: (Technologies AND San Francisco AND '94105'). Contact10 matches Part 2: (Nadella AND linkedin.com AND facebook.com). Contact14 matches Part 2: (Corporation in lastname AND linkedin.com AND facebook.com). All satisfy the complex nested OR conditions.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ",
+      "Analytics 📊 Corporation 💡"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_058",
+    "description": "Complex multi-field query with state, city, and social profiles",
+    "query": "(California AND San Francisco AND \"Financial District\") OR (Washington AND Redmond AND facebook.com)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: (California AND San Francisco AND 'Financial District'). Contact11 matches: (California AND San Francisco AND 'Financial District'). Contact10 matches: (Washington AND Redmond AND facebook.com). All satisfy the complex field combinations.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_059",
+    "description": "Complex query combining contact name, address, and activities",
+    "query": "(Smith OR Nadella) AND (\"123 Market Street\" OR \"One Microsoft Way\") AND (\"Follow up\" OR \"Schedule interview\")",
+    "entitiesInvolved": [
+      "contacts",
+      "tasks"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10"
+    ],
+    "expectedResultReason": "Contact1 matches: (Smith) AND ('123 Market Street') AND ('Follow up' in task). Contact10 matches: (Nadella) AND ('One Microsoft Way') AND ('Schedule interview' in task). Contact1's task lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_060",
+    "description": "Complex nested query with multiple NOT operations and field combinations",
+    "query": "((Technologies OR Manager) AND NOT Inc AND NOT Σ) AND ((San Francisco OR Redmond) AND (\"94105\" OR \"98052\")) AND NOT \"Smith\"",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": "Empty",
+    "expectedResultReason": "Contacts with (Technologies OR Manager) AND NOT Inc AND NOT Σ: Contact1 (Manager), Contact6 (Manager), Contact12 (Manager), Contact13 (Technologies), Contact15 (Technologies). Then (SF OR Redmond) AND (94105 OR 98052): only Contact1 (SF + 94105). But Contact1 has 'Smith' in lastname → excluded by NOT Smith. No contact satisfies all conditions.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_CBS_061",
+    "description": "Complex query with social profiles, LinkedIn, and meeting fields",
+    "query": "(linkedin.com AND facebook.com) AND (\"Business Development Meeting\" OR \"Client discussion meeting\") AND NOT Inc",
+    "entitiesInvolved": [
+      "contacts",
+      "meetings"
+    ],
+    "expectedResult": [
+      "Contact2"
+    ],
+    "expectedResultReason": "Contact2: linkedin.com and facebook.com in profiles, meeting description 'Client discussion meeting', NOT Inc satisfied (company2 'Innovate GmbH'). Contact1 excluded: cross-table company1 'Tech Solutions Inc.' contains 'Inc', failing NOT Inc condition.",
+    "expectedResultName": [
+      "Hans Müller"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_062",
+    "description": "Complex multi-field query with city, state, country, and postal code",
+    "query": "(San Francisco OR Redmond) AND (California OR Washington) AND (\"94105\" OR \"98052\")",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: (San Francisco) AND (California) AND ('94105'). Contact11 matches: (San Francisco) AND (California) AND ('94105'). Contact10 matches: (Redmond) AND (Washington) AND ('98052'). All three satisfy the complex multi-field conditions.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_063",
+    "description": "Complex query combining contact profile and multiple activity types",
+    "query": "(Technologies OR Manager) AND (\"strategic partnerships\" OR \"client relations\") AND (\"Follow up\" OR \"Initial contact\" OR \"Business Development Meeting\")",
+    "entitiesInvolved": [
+      "contacts",
+      "tasks",
+      "call_logs",
+      "meetings"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact8"
+    ],
+    "expectedResultReason": "Contact1: (Manager in designation); ('strategic partnerships' in longtextCF); ('Follow up' in task, 'Initial contact' in call log, 'Business Development Meeting' in meeting). Contact8: (Technologies in lastname); ('client relations' and 'strategic partnerships' in longtextCF); ('Follow up (2024)' in task). Both match all three conjuncts. Contact6 has Manager and 'client relations' in longtextCF but no matching activity ('Follow up'/'Initial contact'/'Business Development Meeting'). Contact1's activities list associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Bracket [Technologies] (Inc.)"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_064",
+    "description": "Complex nested query with address, email, and call log fields",
+    "query": "((\"123 Market Street\" AND techsolutions.com) OR (\"One Microsoft Way\" AND microsoft.com)) AND (\"Initial contact\" OR \"Application call\")",
+    "entitiesInvolved": [
+      "contacts",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10"
+    ],
+    "expectedResultReason": "Contact1 matches: ('123 Market Street' AND techsolutions.com in email) AND ('Initial contact' in call log). Contact10 matches: ('One Microsoft Way' AND microsoft.com in email) AND ('Application call' in call log). Contact1's call log lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_065",
+    "description": "Complex query with multiple field types and operators",
+    "query": "(San Francisco AND California AND \"94105\" AND \"Financial District\") OR (Redmond AND Washington AND \"98052\") AND (Technologies OR CEO) AND linkedin.com",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: (San Francisco AND California AND '94105' AND 'Financial District'). Contact11 matches: (San Francisco AND California AND '94105' AND 'Financial District') AND (Technologies) AND (linkedin.com). Contact10 matches: (Redmond AND Washington AND '98052') AND (CEO) AND (linkedin.com). All satisfy the complex multi-field conditions.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_066",
+    "description": "Complex query combining notes, tasks, meetings, and call logs",
+    "query": "\"Will be open for offer\" AND (\"Follow up\" OR \"Review company profile\") AND (\"Business Development Meeting\" OR \"Client Meeting\") AND (\"Initial contact\" OR \"Follow-up call\")",
+    "entitiesInvolved": [
+      "notes",
+      "tasks",
+      "meetings",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 matches: ('Will be open for offer' in note) AND ('Follow up' in task) AND ('Business Development Meeting' in meeting title) AND ('Initial contact' in call log). Contact2 matches: ('Will be open for offer' in note) AND ('Review company profile' in task) AND ('Client Meeting' in meeting title) AND ('Follow-up call' in call log). Contact1's activities list associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_067",
+    "description": "Complex query with deep nesting and multiple field combinations",
+    "query": "(((Technologies OR Manager) AND (San Francisco OR Redmond)) AND (\"94105\" OR \"98052\")) OR ((Nadella AND CEO) AND (linkedin.com AND facebook.com))",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: ((Manager AND San Francisco) AND '94105'). Contact11 matches: ((Technologies AND San Francisco) AND '94105'). Contact10 matches: ((Nadella AND CEO) AND (linkedin.com AND facebook.com)). All satisfy the deeply nested conditions.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_068",
+    "description": "Complex multi-field query excluding specific terms",
+    "query": "(California OR Washington) AND (Technologies OR Manager OR CEO) AND NOT Inc AND NOT \"Smith\" AND (\"Follow up\" OR \"Schedule interview\")",
+    "entitiesInvolved": [
+      "contacts",
+      "tasks"
+    ],
+    "expectedResult": [
+      "Contact10"
+    ],
+    "expectedResultReason": "Contact10 matches: (Washington) AND (CEO) AND (NOT Inc) AND (NOT 'Smith') AND ('Schedule interview' in task title 'Schedule interview for company10'). Contact1 excluded (has 'Smith'). Contact8 excluded (has 'Inc'). Contact12 has California + Manager + no Inc + no Smith, but task is 'Skills assessment' (no 'Follow up' or 'Schedule interview'). Only Contact10 satisfies all conditions.",
+    "expectedResultName": [
+      "Satya 💼 Nadella 🚀"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_069",
+    "description": "Complex query with social profiles, address, and locality",
+    "query": "(linkedin.com AND facebook.com AND \"123 Market Street\" AND \"Financial District\") OR (microsoft.com AND \"One Microsoft Way\" AND \"Redmond\")",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: (linkedin.com AND facebook.com AND '123 Market Street' AND 'Financial District'). Contact11 matches: (linkedin.com AND facebook.com AND '123 Market Street' AND 'Financial District'). Contact10 matches: (microsoft.com in email AND 'One Microsoft Way' AND 'Redmond'). All satisfy the complex field combinations.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_070",
+    "description": "Complex query combining all entity types with multiple operators",
+    "query": "company1 AND \"Will be open for offer\" AND \"Follow up\" AND \"Initial business development discussion\" AND \"Initial contact\"",
+    "entitiesInvolved": [
+      "contacts",
+      "notes",
+      "tasks",
+      "meetings",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 matches all conditions across all five entity types: note 'Will be open for offer after 2 months company1', task 'Follow up call for company1', meeting description 'Initial business development discussion', call log 'Initial contact call for company1'. Only Contact1 satisfies all five entity conditions. Activities list associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_071",
+    "description": "Search by Facebook profile URL",
+    "query": "facebook.com/john.smith",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1"
+    ],
+    "expectedResultReason": "Contact1 has profilefacebook 'https://facebook.com/john.smith'. No other contacts have this exact Facebook URL pattern.",
+    "expectedResultName": [
+      "John 😀 Smith 📧"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_072",
+    "description": "Search by Twitter profile URL",
+    "query": "twitter.com/hans_mueller",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact2"
+    ],
+    "expectedResultReason": "Contact2 has profiletwitter 'https://twitter.com/hans_mueller'. No other contacts have this exact Twitter URL pattern.",
+    "expectedResultName": [
+      "Hans Müller"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_073",
+    "description": "Complex query with Facebook and Twitter profiles",
+    "query": "(facebook.com OR twitter.com) AND (john.smith OR hans_mueller)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2"
+    ],
+    "expectedResultReason": "Contact1 has facebook.com/john.smith. Contact2 has twitter.com/hans_mueller. Both match the OR conditions for social media profiles and name references.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_074",
+    "description": "Wildcard single character search - matches variations",
+    "query": "Smit?",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1"
+    ],
+    "expectedResultReason": "Contact1 has lastname 'Smith 📧'. The wildcard '?' matches a single character, so 'Smit?' matches 'Smith'.",
+    "expectedResultName": [
+      "John 😀 Smith 📧"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_075",
+    "description": "Wildcard single character search in contact name",
+    "query": "Nadell?",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact10"
+    ],
+    "expectedResultReason": "Contact10 has lastname 'Nadella 🚀'. The wildcard '?' matches a single character, so 'Nadell?' matches 'Nadella'.",
+    "expectedResultName": [
+      "Satya 💼 Nadella 🚀"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_076",
+    "description": "Complex query combining Facebook profile and contact name",
+    "query": "facebook.com AND (Smith OR Müller)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2"
+    ],
+    "expectedResultReason": "Contact1 has facebook.com/john.smith AND lastname contains 'Smith'. Contact2 has facebook.com/hans.mueller AND lastname is 'Müller'. Both satisfy the AND condition.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_077",
+    "description": "Complex query with Twitter profile and city",
+    "query": "twitter.com AND (San Francisco OR München)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2",
+      "Contact7",
+      "Contact11",
+      "Contact12"
+    ],
+    "expectedResultReason": "Contact1: own twitter + city SF. Contact2: own twitter + city München. Contact11: own twitter + city SF. Contact7: company2 twitter + company2 city München. Contact12: own twitter + company2 city München.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller",
+      "Minimal Data",
+      "Sigma Technologies Σ",
+      "Alpha β Systems"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_078",
+    "description": "Search by contact number",
+    "query": "415-555-0101",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1"
+    ],
+    "expectedResultReason": "Contact1 has contactnumber '415-555-0101'. No other contacts have this exact phone number.",
+    "expectedResultName": [
+      "John 😀 Smith 📧"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_079",
+    "description": "Search by contact number with wildcard",
+    "query": "415-555*",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 has contactnumber '415-555-0101'. Contact11 has contactnumber '415-555-0201'. Both match the wildcard pattern '415-555*'.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_080",
+    "description": "Complex query with contact number and city",
+    "query": "\"415-555\" AND \"San Francisco\"",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 has contactnumber '415-555-0101' AND city 'San Francisco'. Contact11 has contactnumber '415-555-0201' AND city 'San Francisco'. Both satisfy the AND condition.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_081",
+    "description": "Search by contact number with country code",
+    "query": "+49 89",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact2"
+    ],
+    "expectedResultReason": "Contact2 has contactnumber '+49 89 12345679' which contains '+49 89'. No other contacts have this pattern.",
+    "expectedResultName": [
+      "Hans Müller"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_082",
+    "description": "Complex query combining social media profiles and email",
+    "query": "(facebook.com OR twitter.com OR linkedin.com) AND techsolutions",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1"
+    ],
+    "expectedResultReason": "Contact1 has social media profiles (facebook.com, twitter.com, linkedin.com) AND email contains 'techsolutions' (john.smith@techsolutions.com). No other contacts have 'techsolutions' in any field.",
+    "expectedResultName": [
+      "John 😀 Smith 📧"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_083",
+    "description": "Complex query with NOT excluding social media profiles",
+    "query": "Technologies AND NOT facebook.com AND NOT twitter.com",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": "Empty",
+    "expectedResultReason": "All contacts with 'Technologies' in their name (Contact8, Contact11, Contact13, Contact15) also have Facebook or Twitter profiles. This query excludes all of them, resulting in an empty result set.",
+    "expectedResultName": "Empty"
+  },
+  {
+    "testCaseId": "TC_CBS_085",
+    "description": "Complex query with wildcard and social media",
+    "query": "Tech* AND (facebook.com OR twitter.com)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact8",
+      "Contact11",
+      "Contact13",
+      "Contact15"
+    ],
+    "expectedResultReason": "All these contacts match 'Tech*' (in lastname or email) AND have at least one social media profile (facebook.com or twitter.com). Contact1: 'techsolutions' in email + facebook.com. Contact8: 'Technologies' in lastname + facebook.com/twitter.com. Contact11: 'Technologies' in lastname + twitter.com. Contact13: 'Technologies' in lastname + facebook.com/twitter.com. Contact15: 'Technologies' in lastname + facebook.com/twitter.com.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Σ",
+      "Salt /Pepper Technologies",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_087",
+    "description": "Complex query combining contact profile and contact number",
+    "query": "(San Francisco OR Redmond) AND (\"415-555\" OR \"425-882\")",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: (San Francisco) AND ('415-555'). Contact11 matches: (San Francisco) AND ('415-555'). Contact10 matches: (Redmond) AND ('425-882'). All satisfy the complex OR conditions.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_088",
+    "description": "Complex multi-field query with social media, email, and address",
+    "query": "(facebook.com OR twitter.com) AND linkedin.com AND (\"123 Market Street\" OR \"One Microsoft Way\")",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: (facebook.com) AND (linkedin.com) AND ('123 Market Street'). Contact11 matches: (twitter.com) AND (linkedin.com) AND ('123 Market Street'). Contact10 matches: (facebook.com) AND (linkedin.com) AND ('One Microsoft Way'). All satisfy all three AND conditions.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_090",
+    "description": "Complex query with wildcard, social media, and activities",
+    "query": "Tech* AND (facebook.com OR twitter.com) AND \"Will be open for offer\"",
+    "entitiesInvolved": [
+      "contacts",
+      "notes"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact8",
+      "Contact11"
+    ],
+    "expectedResultReason": "Tech* matches tokens beginning with Tech (case-insensitive). Contact1 ('techsolutions' in email), Contact8 ('Technologies' in lastname), Contact11 ('Technologies' in lastname). Each has social profile URLs containing facebook.com or twitter.com. Contacts 1–12 include a note with 'Will be open for offer'. Contact13 and Contact15 match Tech* with social profiles but have no such note (contacts 13–15 have no activities).",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Bracket [Technologies] (Inc.)",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_091",
+    "description": "Search by call log notes exact phrase",
+    "query": "\"Initial contact\"",
+    "entitiesInvolved": [
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact1 has call log with call_notes 'Initial contact call for company1'. That call log lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "associated_contacts_contact1",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_092",
+    "description": "Complex query with contact number and call log notes",
+    "query": "\"415-555\" AND \"Initial contact\"",
+    "entitiesInvolved": [
+      "contacts",
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact1"
+    ],
+    "expectedResultReason": "Contact1 has contactnumber '415-555-0101' AND call log with call_notes 'Initial contact call for company1'. That call log lists associated_contacts_contact1 and associated_contacts_contact2.",
+    "expectedResultName": [
+      "John 😀 Smith 📧"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_093",
+    "description": "Complex query combining social media profiles with contact numbers",
+    "query": "(facebook.com OR twitter.com) AND (\"415-555\" OR \"+49 89\" OR \"425-882\")",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact2",
+      "Contact10",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: (facebook.com) AND ('415-555'). Contact2 matches: (twitter.com) AND ('+49 89'). Contact10 matches: (twitter.com) AND ('425-882'). Contact11 matches: (twitter.com) AND ('415-555'). All satisfy the complex OR conditions.",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Hans Müller",
+      "Satya 💼 Nadella 🚀",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_095",
+    "description": "Complex query with wildcard, contact number, and social media",
+    "query": "Tech* AND (\"415-555\" OR \"425-882\") AND (facebook.com OR twitter.com)",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact1",
+      "Contact11"
+    ],
+    "expectedResultReason": "Contact1 matches: (Tech* in email 'techsolutions') AND ('415-555' in contact number) AND (facebook.com). Contact11 matches: (Tech* in lastname 'Technologies') AND ('415-555' in contact number '415-555-0201') AND (twitter.com). Contact10 does NOT match Tech* (email is microsoft.com, no Tech prefix in any field).",
+    "expectedResultName": [
+      "John 😀 Smith 📧",
+      "Sigma Technologies Σ"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_096",
+    "description": "Single-term search — designation field",
+    "query": "CEO",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact10"
+    ],
+    "expectedResultReason": "Contact10 has designation 'CEO'. No other contacts have the standalone term 'CEO' in any searchable profile field. 'CTO' (Contact8) is a different token.",
+    "expectedResultName": [
+      "Satya 💼 Nadella 🚀"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_098",
+    "description": "Search by designation with special characters",
+    "query": "\"Director de Proyectos\"",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact4"
+    ],
+    "expectedResultReason": "Contact4 has designation 'Director de Proyectos'. No other contacts have this exact Spanish designation.",
+    "expectedResultName": [
+      "José 🌍 García 📱"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_099",
+    "description": "Search for contact with @ in city name",
+    "query": "M@drid",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact4",
+      "Contact9"
+    ],
+    "expectedResultReason": "Contact4 has city 'M@drid' which contains 'M@drid'. No other contacts have this term with the @ symbol.",
+    "expectedResultName": [
+      "José 🌍 García 📱",
+      "阿里巴巴 集团"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_100",
+    "description": "Search for contact by email domain with special characters",
+    "query": "bracket-tech.com",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact8"
+    ],
+    "expectedResultReason": "Contact8 has email 'bracket.tech@bracket-tech.com' which contains 'bracket-tech.com'. No other contacts have this email domain.",
+    "expectedResultName": [
+      "Bracket [Technologies] (Inc.)"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_101",
+    "description": "Cross-entity search combining task title and meeting description",
+    "query": "\"Follow up\" AND \"Project planning discussion\"",
+    "entitiesInvolved": [
+      "tasks",
+      "meetings"
+    ],
+    "expectedResult": [
+      "Contact8"
+    ],
+    "expectedResultReason": "Contact8 has task title 'Follow up (2024) for company8' AND meeting description 'Project planning discussion'. No other contact has both conditions met. Contact1 has 'Follow up' in task but meeting description is 'Initial business development discussion'.",
+    "expectedResultName": [
+      "Bracket [Technologies] (Inc.)"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_102",
+    "description": "Search for contact with slash in name",
+    "query": "/Pepper",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact13"
+    ],
+    "expectedResultReason": "Contact13 has lastname '/Pepper Technologies' which contains '/Pepper'. No other contacts contain this term with the slash character.",
+    "expectedResultName": [
+      "Salt /Pepper Technologies"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_103",
+    "description": "Search by designation - DevOps Engineer",
+    "query": "\"DevOps Engineer\"",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact13"
+    ],
+    "expectedResultReason": "Contact13 has designation 'DevOps Engineer'. No other contacts have this exact phrase in their searchable fields.",
+    "expectedResultName": [
+      "Salt /Pepper Technologies"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_104",
+    "description": "Search across entity for contacts without activities",
+    "query": "Portland AND Oregon",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact13"
+    ],
+    "expectedResultReason": "Contact13 has city 'Portland' and state 'Oregon'. No other contacts have both these terms. Contact13 has no activities but matches via entity (profile) fields.",
+    "expectedResultName": [
+      "Salt /Pepper Technologies"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_105",
+    "description": "Complex query with designation and city for activity-less contacts",
+    "query": "(\"Data Scientist\" OR \"Executive Director\") AND (Boston OR \"New York\")",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact14",
+      "Contact15"
+    ],
+    "expectedResultReason": "Contact14 has designation 'Data Scientist' and city 'Boston'. Contact15 has designation 'Executive Director' and city 'New York'. Both satisfy the OR/AND conditions. Contact3 has designation 'Data Scientist' but city is '_City_With_Underscores' (not Boston/New York).",
+    "expectedResultName": [
+      "Analytics 📊 Corporation 💡",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_106",
+    "description": "Search for contacts by Geschäftsführer designation",
+    "query": "Geschäftsführer",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact2"
+    ],
+    "expectedResultReason": "Contact2 has designation 'Geschäftsführer' with the German umlaut. The longtextCF also contains 'geschäftsführer'. No other contacts contain this term.",
+    "expectedResultName": [
+      "Hans Müller"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_107",
+    "description": "Complex query with all four activity types and NOT",
+    "query": "\"Will be open for offer\" AND \"Follow up\" AND NOT \"Business Development\"",
+    "entitiesInvolved": [
+      "notes",
+      "tasks",
+      "meetings"
+    ],
+    "expectedResult": [
+      "Contact4",
+      "Contact8"
+    ],
+    "expectedResultReason": "Contact4: note 'Will be open for offer after 2 months company4', meeting title 'Follow_Up Meeting' matches phrase 'Follow up' (underscore is token separator), no 'Business Development' in activity text fields (only in longtextCF which is outside search scope). Contact8: note 'Will be open for offer after 2 months company8', task 'Follow up (2024) for company8', meeting 'Project Discussion' (no 'Business Development'). Contact1 excluded: meeting title is 'Business Development Meeting'.",
+    "expectedResultName": [
+      "José 🌍 García 📱",
+      "Bracket [Technologies] (Inc.)"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_108",
+    "description": "Search by email with OR across different domains",
+    "query": "innovate-gmbh.de OR sigma-tech.com OR noble-tech-xvii.com",
+    "entitiesInvolved": [
+      "contacts"
+    ],
+    "expectedResult": [
+      "Contact2",
+      "Contact11",
+      "Contact15"
+    ],
+    "expectedResultReason": "Contact2 has email 'hans.mueller@innovate-gmbh.de'. Contact11 has email 'sigma.tech@sigma-tech.com'. Contact15 has email 'noble.tech@noble-tech-xvii.com'. Each matches one of the OR terms.",
+    "expectedResultName": [
+      "Hans Müller",
+      "Sigma Technologies Σ",
+      "Noble Technologies XVII"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_109",
+    "description": "Search for specific call log phrase unique to Contact5",
+    "query": "\"Reference check call\" AND company5",
+    "entitiesInvolved": [
+      "call_logs"
+    ],
+    "expectedResult": [
+      "Contact5",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact5 has call log 'Reference check call for company5' which matches both terms. Contact5's call log lists associated_contacts_contact2.",
+    "expectedResultName": [
+      "Seán O'Malley",
+      "associated_contacts_contact2"
+    ]
+  },
+  {
+    "testCaseId": "TC_CBS_110",
+    "description": "Search for O'Brien's in task title - apostrophe in activity",
+    "query": "O'Brien*",
+    "entitiesInvolved": [
+      "tasks"
+    ],
+    "expectedResult": [
+      "Contact5",
+      "associated_contacts_contact2"
+    ],
+    "expectedResultReason": "Contact5 has task title 'O'Brien's Offer preparation for company5' which matches 'O'Brien*'. Contact5's task lists associated_contacts_contact2.",
+    "expectedResultName": [
+      "Seán O'Malley",
+      "associated_contacts_contact2"
+    ]
+  }
+]

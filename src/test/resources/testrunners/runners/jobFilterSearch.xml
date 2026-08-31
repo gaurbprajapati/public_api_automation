@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest API Test Suite" thread-count="40" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReportListener"/>
+        <listener class-name="io.rcrm.api.listeners.FilterSearchReporter"/>
+    </listeners>
+    <test name="Owner Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="ownerDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Status Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="statusDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Qualification Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="qualificationDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hiring Pipeline Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="hiringPipelineDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Created By Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="createdByDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updated By Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="updatedByDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Industry Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="jobIndustryDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Type Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="jobTypeDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Function Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="jobFunctionDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Salary Type Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="salaryTypeDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enable Job Application Form Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="enableJobApplicationFormDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Job Location Type Dropdown Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DropdownFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="jobLocationTypeDropdownFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hotlist Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.HotlistFieldJobFilterSearchTest">
+                <methods>
+                    <include name="hotlistFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Target Companies Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TargetCompaniesFieldJobFilterSearchTest">
+                <methods>
+                    <include name="targetCompaniesFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Collaborator Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.CollaboratorFieldJobFilterSearchTest">
+                <methods>
+                    <include name="collaboratorFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Number Fields Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.NumberFieldJobFilterSearchTest">
+                <methods>
+                    <include name="numberFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Date Fields Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.DateFieldJobFilterSearchTest">
+                <methods>
+                    <include name="dateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Text Fields Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TextFieldJobFilterSearchTest">
+                <methods>
+                    <include name="textFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job custom field filter search (see filters/jobCustomFieldFilter.xml) -->
+    <test name="Entity Custom Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.CustomFieldJobFilterSearchTest">
+                <methods>
+                    <include name="entityCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Text Custom Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.CustomFieldJobFilterSearchTest">
+                <methods>
+                    <include name="textCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Number Custom Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.CustomFieldJobFilterSearchTest">
+                <methods>
+                    <include name="numberCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Date Custom Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.CustomFieldJobFilterSearchTest">
+                <methods>
+                    <include name="dateCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Dropdown And Multiselect Custom Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.CustomFieldJobFilterSearchTest">
+                <methods>
+                    <include name="dropdownAndMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkbox And File Custom Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.CustomFieldJobFilterSearchTest">
+                <methods>
+                    <include name="checkboxCustomFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Job activity filters: notes, task, meeting (see filters/jobActivityFilters.xml) -->
+    <test name="Notes Date Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.NotesActivityFieldJobFilterSearchTest">
+                <methods>
+                    <include name="notesDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Notes Multiselect Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.NotesActivityFieldJobFilterSearchTest">
+                <methods>
+                    <include name="notesMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Notes Note Exists (checkbox) Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.NotesActivityFieldJobFilterSearchTest">
+                <methods>
+                    <include name="notesNoteExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Date Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TaskActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="tasksDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Multiselect Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TaskActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="tasksMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Text Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TaskActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="tasksTextFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Task Exists (checkbox) Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.TaskActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="tasksTaskExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Meeting Date Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.MeetingActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="meetingsDateFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Meeting Multiselect Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.MeetingActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="meetingsMultiselectFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Meeting Text Field Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.MeetingActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="meetingsTextFieldFilterSearchTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Meeting Exists (checkbox) Job Filter Search">
+        <classes>
+            <class name="io.recruitcrm.JobService.Filters.MeetingActivityFieldsJobFilterSearchTest">
+                <methods>
+                    <include name="meetingsMeetingExistsFilterSearchTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

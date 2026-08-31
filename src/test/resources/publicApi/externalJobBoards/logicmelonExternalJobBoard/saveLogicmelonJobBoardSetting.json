@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "account_id": {
+      "type": "integer"
+    },
+    "job_board_id": {
+      "type": "integer"
+    },
+    "settings": {
+      "username": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "apikey": {
+        "type": "string"
+      }
+    },
+    "created_on": {
+      "type": "integer"
+    },
+    "created_by": {
+      "type": "integer"
+    },
+    "updated_on": {
+      "type": "integer"
+    },
+    "updated_by": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "account_id",
+    "job_board_id",
+    "settings",
+    "created_on",
+    "created_by",
+    "updated_on",
+    "updated_by"
+  ]
+}

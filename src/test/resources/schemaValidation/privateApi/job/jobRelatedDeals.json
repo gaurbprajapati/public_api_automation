@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "meta",
+    "data"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "message",
+        "requestUuid",
+        "responseType",
+        "timestamp",
+        "status"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "enum": [
+            "Related deals fetched successfully"
+          ]
+        },
+        "requestUuid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        },
+        "responseType": {
+          "type": "object",
+          "required": [
+            "context",
+            "code"
+          ],
+          "properties": {
+            "context": {
+              "type": "string",
+              "enum": [
+                "Request is successful"
+              ]
+            },
+            "code": {
+              "type": "integer",
+              "enum": [
+                103
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "timestamp": {
+          "type": "string",
+          "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$"
+        },
+        "status": {
+          "type": "integer",
+          "enum": [
+            200
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "data": {
+      "type": "object",
+      "required": [
+        "deals"
+      ],
+      "properties": {
+        "deals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "accountid",
+              "srno",
+              "name",
+              "dealstage",
+              "dealstagelabel",
+              "dealvalue",
+              "dealpercentagevalue",
+              "closedate",
+              "companyname",
+              "companyslug",
+              "ownername",
+              "archived",
+              "relatedcandidate",
+              "relatedcompany",
+              "slug",
+              "deal_owner_status",
+              "dealtype",
+              "split_type",
+              "createdby",
+              "createdon",
+              "updatedby",
+              "updatedon",
+              "migration_reserved1",
+              "symbol",
+              "ownerid",
+              "percentage"
+            ],
+            "properties": {
+              "id": { "type": "integer", "minimum": 1 },
+              "accountid": { "type": "integer", "minimum": 1 },
+              "srno": { "type": "integer", "minimum": 1 },
+              "name": { "type": "string", "minLength": 1 },
+              "dealstage": { "type": "integer", "minimum": 1 },
+              "dealstagelabel": { "type": "string", "minLength": 1 },
+              "dealvalue": { "type": "number", "minimum": 0 },
+              "dealpercentagevalue": { "type": "number", "minimum": 0 },
+              "closedate": { "type": "integer", "minimum": 0 },
+              "companyname": { "type": "string", "minLength": 1 },
+              "companyslug": { "type": "string", "minLength": 1 },
+              "ownername": { "type": "string", "minLength": 1 },
+              "archived": { "type": "integer", "enum": [0, 1] },
+              "relatedcandidate": { "type": "integer", "minimum": 1 },
+              "relatedcompany": { "type": "integer", "minimum": 1 },
+              "slug": { "type": "string", "minLength": 1 },
+              "deal_owner_status": { "type": "integer", "enum": [0, 1] },
+              "dealtype": { "type": "integer", "minimum": 1 },
+              "split_type": { "type": "integer", "enum": [0, 1] },
+              "createdby": { "type": "integer", "minimum": 0 },
+              "createdon": { "type": "integer", "minimum": 0 },
+              "updatedby": { "type": "integer", "minimum": 0 },
+              "updatedon": { "type": "integer", "minimum": 0 },
+              "migration_reserved1": { "type": "string" },
+              "symbol": { "type": "string", "minLength": 1 },
+              "ownerid": { "type": "integer", "minimum": 1 },
+              "percentage": { "type": "string", "pattern": "^\\d+$" },
+              "candidatename": { "type": ["string", "null"] },
+              "candidateslug": { "type": ["string", "null"] },
+              "contactnumber": { "type": ["string", "null"] },
+              "emailid": { "type": ["string", "null"] },
+              "profilepic": { "type": ["string", "null"] },
+              "position": { "type": ["string", "null"] },
+              "related_job": { "type": ["string", "null"] },
+              "sourceid": { "type": ["integer", "null"] },
+              "owner_photo": { "type": ["string", "null"] },
+              "email_opt_out": { "type": ["integer", "null"] },
+              "migration_reserved2": { "type": ["string", "null"] },
+              "migration_reserved3": { "type": ["string", "null"] },
+              "migration_reserved4": { "type": ["string", "null"] },
+              "migration_reserved5": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Rest API Test Suite" parallel="tests" thread-count="15">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG" />
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+
+    <test name="Update Meeting collaborators and attendee Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.UpdateMeetingTest">
+                <methods>
+                    <include name="updateMeetingCollaborator" />
+                    <include name="updateMeetingCollaborator_401" />
+                    <include name="updateMeetingCollaborator_404" />
+                    <include name="updateMeetingAttendee" />
+                    <include name="updateMeetingAttendee_401" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Update Task collaborators Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.UpdateTaskTest">
+                <methods>
+                    <include name="updateTaskCollaborator" />
+                    <include name="updateTaskCollaborator_422" />
+                    <include name="updateTaskCollaborator_401" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Bulk Update Meeting Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.BulkUpdateMeetingsTest">
+                <methods>
+                    <include name="bulkUpdateMeetings" />
+                    <include name="bulkUpdateMeetings_401" />
+                    <include name="bulkUpdateMeetings_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Bulk Update Tasks Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.BulkUpdateTasksTest">
+                <methods>
+                    <include name="bulkUpdateTasks" />
+                    <include name="bulkUpdateTasks_401" />
+                    <include name="bulkUpdateTasks_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Bulk Delete Meeting Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.BulkDeleteMeetingTest">
+                <methods>
+                    <include name="bulkDeleteMeetings" />
+                    <include name="bulkDeleteMeetings_401" />
+                    <include name="bulkDeleteMeetings_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Bulk Delete Tasks Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.BulkDeleteMeetingTest">
+                <methods>
+                    <include name="bulkDeleteMeetings" />
+                    <include name="bulkDeleteMeetings_401" />
+                    <include name="bulkDeleteMeetings_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Count of Meeting Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.GetMeetingTest">
+                <methods>
+                    <include name="getCountOfMeetings" />
+                    <include name="getCountOfMeetings_401" />
+                    <include name="getCountOfMeetings_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get List Meeting Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.GetMeetingTest">
+                <methods>
+                    <include name="getListOfMeetings" />
+                    <include name="getListOfMeetings_401" />
+                    <include name="getListOfMeetings_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Filter Meetings Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.GetMeetingTest">
+                <methods>
+                    <include name="filterMeetings" />
+                    <include name="globalSaveMeetings" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Get List of Task Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.GetTaskTest">
+                <methods>
+                    <include name="getListOfTasks" />
+                    <include name="getListOfTasks_401" />
+                    <include name="getListOfTasks_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Count of Task Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.GetTaskTest">
+                <methods>
+                    <include name="getCountOfTasks" />
+                    <include name="getCountOfTasks_401" />
+                    <include name="getCountOfTasks_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Filter Task Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.GetTaskTest">
+                <methods>
+                    <include name="filterTasks" />
+                    <include name="globalSaveTasks" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Task Sequencing Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.TaskSequencingTest">
+                <methods>
+                    <include name="getLatestTask_POST" />
+                    <include name="getLatestTask_POST_401" />
+                    <include name="getLatestTask_POST_422" />
+                    <include name="getTaskList_POST" />
+                    <include name="getTaskList_POST_401" />
+                    <include name="getTaskList_POST_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Meeting By Id In Calendar Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.GetMeetingByIdTest">
+                <methods>
+                    <include name="getMeetingById" />
+                    <include name="getMeetingByInvalidId" />
+                    <include name="getMeetingById_401" />
+                    <include name="getMeetingById_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Calendar Meetings Tests">
+        <classes>
+            <class name="io.recruitcrm.ostrich.GetCalendarMeetingsTest">
+                <methods>
+                    <include name="getCalendarMeetings" />
+                    <include name="getCalendarMeetings_401" />
+                    <include name="getCalendarMeetings_422" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

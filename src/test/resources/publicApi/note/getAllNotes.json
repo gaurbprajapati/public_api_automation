@@ -1,0 +1,136 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+	  "current_page": {
+		"type": "integer"
+	  },
+	  "data": {
+		"type": "array",
+		"items": [
+		  {
+			"type": "object",
+			"properties": {
+			  "id": {
+				"type": "integer"
+			  },
+			  "note_type": {
+				"type": [
+					"null",
+					"object"
+				],
+				"properties": {
+				  "id": {
+					"type": "integer"
+				  },
+				  "label": {
+					"type": "string"
+				  }
+				},
+				"required": [
+				  "id",
+				  "label"
+				]
+			  },
+			  "description": {
+				"type": "string"
+			  },
+			  "related_to": {
+				"type": "string"
+			  },
+			  "related_to_type": {
+				"type": "string"
+			  },
+			  "created_on": {
+				"type": "string"
+			  },
+			  "updated_on": {
+				"type": "string"
+			  },
+			  "created_by": {
+				"type": "integer"
+			  },
+			  "updated_by": {
+				"type": "integer"
+			  },
+			  "related": {
+				"type": [
+					"null",
+					"object"
+				]
+			  },
+			  "associated_candidates": {
+				"type": "array",
+				"items": {}
+			  },
+			  "associated_companies": {
+				"type": "array",
+				"items": {}
+			  },
+			  "associated_jobs": {
+				"type": "array",
+				"items": {}
+			  },
+			  "associated_contacts": {
+				"type": "array",
+				"items": {}
+			  },
+			  "associated_deals": {
+				"type": "array",
+				"items": {}
+			  }
+			},
+			"required": [
+			  "id",
+			  "note_type",
+			  "description",
+			  "related_to",
+			  "related_to_type",
+			  "created_on",
+			  "updated_on",
+			  "created_by",
+			  "updated_by",
+			  "related",
+			  "associated_candidates",
+			  "associated_companies",
+			  "associated_jobs",
+			  "associated_contacts",
+			  "associated_deals"
+			]
+		  }
+		]
+	  },
+	  "first_page_url": {
+		"type": "string"
+	  },
+	  "from": {
+		"type": "integer"
+	  },
+	  "next_page_url": {
+		"type": "string"
+	  },
+	  "path": {
+		"type": "string"
+	  },
+	  "per_page": {
+		"type": "string"
+	  },
+	  "prev_page_url": {
+		"type": "null"
+	  },
+	  "to": {
+		"type": "integer"
+	  }
+	},
+	"required": [
+	  "current_page",
+	  "data",
+	  "first_page_url",
+	  "from",
+	  "next_page_url",
+	  "path",
+	  "per_page",
+	  "prev_page_url",
+	  "to"
+	]
+  }

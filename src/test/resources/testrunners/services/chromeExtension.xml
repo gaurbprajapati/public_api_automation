@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rest API Test Suite" thread-count="30" parallel="tests">
+    <listeners>
+        <listener class-name="io.rcrm.api.listeners.ExtentReporterNG"/>
+    <listener class-name="io.rcrm.api.listeners.TestTrackingListener" />
+    </listeners>
+
+    <test name="Create Candidate And Verify Duplicate Candidate Merge And Override Data By Phone Number Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateAndVerifyDuplicateCandidateMergeAndOverrideDataByPhoneNumber_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Candidate And Verify Duplicate Candidate Merge And Override Data By EmailId Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateAndVerifyDuplicateCandidateMergeAndOverrideDataByEmailId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Candidate With Empty Request Body Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createNewCandidateWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create New Candidate Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="unauthorizedUserCannotCreateNewCandidate_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Candidate And Verify Duplicate Candidate Merge By Phone Number Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateAndVerifyDuplicateCandidateMergeByPhoneNumber_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Candidate And Verify Duplicate Candidate Merge By EmailId Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateAndVerifyDuplicateCandidateMergeByEmailId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="create New Candidate Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createNewCandidate_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+        <test name="Create Candidate Hotlist With Empty Request Body Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateHotlistWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create Candidate Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="unauthorizedUserCannotCreateCandidateHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Candidate Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CandidateTest_ExtensionTest">
+                <methods>
+                    <include name="createCandidateHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Create Duplicate Company and Verify Data Override by Company Website">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createDuplicateCompanyAndVerifyDataOverrideByCompanyWebsite_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Contact">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="createNewContact_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Contact with Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="createNewContactWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create New Contact">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotCreateNewContact_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Contact and Verify Duplicate Contact Merge by Email ID">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="createContactAndVerifyDuplicateContactMergeByEmailId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Company Contact and Verify Override Contact Data by Email ID">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createCompanyContactAndVerifyOverrideContactDataByEmailId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Create Duplicate Company and Verify Data Override by Company Name">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createDuplicateCompanyAndVerifyDataOverrideByCompanyName_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Company and Verify Duplicate Merge by Name">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createCompanyAndVerifyDuplicateMergeByName_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Company and Verify Duplicate Merge by Website">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createCompanyAndVerifyDuplicateMergeByWebsite_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create New Company with Empty Request Body">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createNewCompanyWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Unauthorized User Cannot Create New Company">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotCreateNewCompany_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Company Contact and Verify Contact Merge by Email ID">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createCompanyContactAndVerifyContactMergeByEmailId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Create Company Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createCompanyHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Add Company  in exiting Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="addCompanyInExistingHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Company Hotlist with Empty Request Body Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createCompanyHotlistWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create Company Hotlist with Empty Entity Name Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="createCompanyHotlistWithEmptyEntityName_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Unauthorized User Cannot Create Company Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotCreateCompanyHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Company Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="getCompanyHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Company Hotlist with Empty Entity Name Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="getCompanyHotlistWithEmptyEntityName_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Unauthorized User Cannot Get Company Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotGetCompanyHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Create Contact Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="createContactHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Add Contact in Existing Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="addContactInExistingHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create Contact Hotlist with Empty Request Body Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="createContactHotlistWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Unauthorized User Cannot Create Contact Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotCreateContactHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Contact Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="getContactHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Unauthorized User Cannot Get Contact Hotlist Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotGetContactHotlist_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Hotlist Related to Company ID Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="getHotlistRelatedToCompanyId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Hotlist Related to Company ID Empty Request Body Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="getHotlistRelatedToCompanyIdWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Unauthorized User Cannot Get Hotlist Related to Company ID Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.CompanyTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotGetHotlistRelatedToCompanyId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Hotlist Related to contact ID Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="getHotlistRelatedToContactId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Hotlist Related to Contact ID Empty Request Body Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="getHotlistRelatedToContactIdWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Unauthorized User Cannot Get Hotlist Related to Contact ID Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotGetHotlistRelatedToContactId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create Meeting with Empty Request Body Extension">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="createMeetingWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create Task Extension 661">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotCreateTask_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create Meeting Extension 3">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="unautorizedUserCannotCreateMeeting_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create Meeting Extension 4">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="createMeeting_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create Task Extension 66">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="createTask_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Create Task with Empty Request Body Extension 6622">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="createTaskWithEmptyRequestBody_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Create Contact and Verify Duplicate Contact Merge and Override date by Email ID">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.ContactTest_ExtensionTest">
+                <methods>
+                    <include name="createContactAndVerifyDuplicateContactMergeAndOverrideDataByEmailId_Extension"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Get All Users Teams - Extensions">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="getAllUsersTeams_Extensions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Get All Users Teams - Extensions">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="unauthorizedUserCannotGetAllUsersTeams_Extensions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Search Entity - Extensions">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="verifySeachEntity_Extensions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Search Entity with Empty Request Body - Extensions">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="verifySeachEntityWithEmptyRequestBody_Extensions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Search Entity - Extensions">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="unauthorizedUserCannotSearchEntity_Extensions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Get Auth User Details - Extensions">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="getAuthUsetDetails_Extensions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Unauthorized User Cannot Get Auth User Details - Extensions">
+        <classes>
+            <class name="io.recruitcrm.albatross.chromeExtension.AllEntityActivityTest_ExtensionTest">
+                <methods>
+                    <include name="unauthorizedUserCannotGetAuthUserDetails_Extensions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
